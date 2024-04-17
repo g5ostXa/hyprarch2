@@ -10,6 +10,6 @@
 # ----------------------------------------------------- 
 
 paru -Scc
-su -c 'pacman -Qtdq | pacman -Rns -'
-su -c 'pacman -Qqd | pacman -Rsu -'
+sudo su -c 'pacman -Qtdq | pacman -Rns -'
+sudo su -c 'pacman -Qqd | pacman -Rsu -'
 
