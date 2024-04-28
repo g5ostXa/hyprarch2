@@ -1,4 +1,5 @@
 bibata-cursor-theme
+chkservice
 dracula-gtk-theme
 paru
 paru-debug
