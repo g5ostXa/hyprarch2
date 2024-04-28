@@ -531,6 +531,7 @@ mkinitcpio
 mkinitcpio-busybox
 mobile-broadband-provider-info
 mousepad
+mpdecimal
 mpfr
 mpg123
 mpv
