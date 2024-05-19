@@ -19,5 +19,5 @@ alias hyprstatus='hyprarch2 status'
 alias fire='sudo firecfg'
 alias unfire='sudo firecfg --clean'
 alias firetop='firejail --top'
-alias nf='neofetch'
+alias ff='fastfetch'
 end
