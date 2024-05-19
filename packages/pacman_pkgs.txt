@@ -89,6 +89,7 @@ expat
 eza
 f2fs-tools
 fakeroot
+fastfetch
 ffmpeg
 fftw
 figlet
@@ -542,7 +543,6 @@ mujs
 multipath-tools
 ncurses
 ndctl
-neofetch
 neovim
 nettle
 network-manager-applet
@@ -974,6 +974,7 @@ xxhash
 xz
 yajl
 yara
+yyjson
 zeromq
 zimg
 zlib
