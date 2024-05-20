@@ -512,6 +512,8 @@ lrzip
 lsd
 lsof
 lsscsi
+lua51
+lua51-lpeg
 luajit
 lvm2
 lxappearance
