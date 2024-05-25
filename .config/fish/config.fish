@@ -20,4 +20,5 @@ alias fire='sudo firecfg'
 alias unfire='sudo firecfg --clean'
 alias firetop='firejail --top'
 alias ff='fastfetch'
+alias clean='~/dotfiles/scripts/cleanup.sh'
 end
