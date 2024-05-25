@@ -42,6 +42,7 @@ ca-certificates-mozilla
 ca-certificates-utils
 cairo
 cairomm
+cairomm-1.16
 cantarell-fonts
 capstone
 cdparanoia
@@ -128,6 +129,7 @@ glib-networking
 glib2
 glibc
 glibmm
+glibmm-2.68
 glslang
 glu
 gmp
@@ -160,6 +162,8 @@ gtk-update-icon-cache
 gtk-vnc
 gtk2
 gtk3
+gtk4
+gtkmm-4.0
 gtkmm3
 gtksourceview4
 gufw
@@ -418,6 +422,7 @@ libseccomp
 libsecret
 libshout
 libsigc++
+libsigc++-3.0
 libsixel
 libslirp
 libsm
@@ -584,6 +589,7 @@ pam
 pambase
 pango
 pangomm
+pangomm-2.48
 papirus-icon-theme
 parted
 patch
