@@ -1,0 +1,12 @@
+bibata-cursor-theme
+chkservice
+dracula-gtk-theme
+paru
+paru-debug
+pfetch
+protonvpn-cli-community
+swaylock-effects
+swww
+trizen
+tuned
+wlogout
