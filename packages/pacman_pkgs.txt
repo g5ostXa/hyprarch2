@@ -4,6 +4,7 @@ acl
 adobe-source-code-pro-fonts
 adwaita-cursors
 adwaita-icon-theme
+adwaita-icon-theme-legacy
 akonadi-mime
 alacritty
 alsa-lib
