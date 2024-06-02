@@ -8,7 +8,7 @@ cd "$HOME"; cd;
 git clone https://aur.archlinux.org/paru.git
 cd paru && makepkg -si
 cd $HOME; cd;
-paru -S bibata-cursor-theme dracula-gtk-theme pfetch swaylock-effects swww trizen wlogout wlr-randr
+paru -S bibata-cursor-theme dracula-gtk-theme swaylock-effects swww trizen wlogout wlr-randr
 
 }
 
