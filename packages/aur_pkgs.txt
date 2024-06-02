@@ -3,7 +3,6 @@ chkservice
 dracula-gtk-theme
 paru
 paru-debug
-pfetch
 protonvpn-cli-community
 swaylock-effects
 swww
