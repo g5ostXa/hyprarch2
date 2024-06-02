@@ -17,8 +17,7 @@ eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
 
 if [[ $(tty) == *"pts"* ]]; then
-    
-    pfetch;
+
     date | lolcat -a;
       
 fi
