@@ -23,7 +23,7 @@ By g5ostXa :ghost:
 - In virt-manager please make sure that 3D acceleration is enabled in Video Virtio and the Listen type is set to None in Display Spice
 
 ## Insallation
-- Please refer to my [archbase.md](https://github.com/g5ostXa/hyprarch2/blob/master/archbase.md) to install arch
+- Please refer to my [arch-lvm-luks.md](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md) to install arch
 - Within the new minimal arch base install, download the [Repo](https://github.com/g5ostXa/hyprarch2) in the ~/Downloads directory and run the install script
 ```
 $ cd Downloads
