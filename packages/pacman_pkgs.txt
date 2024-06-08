@@ -52,6 +52,7 @@ cliphist
 cmatrix
 coreutils
 cpio
+cpupower
 cryptsetup
 curl
 dav1d
@@ -198,6 +199,7 @@ iproute2
 iptables-nft
 iputils
 iso-codes
+iw
 jack2
 jansson
 jbigkit
@@ -886,6 +888,7 @@ texinfo
 thin-provisioning-tools
 thunar
 tldr
+tlp
 tomlplusplus
 tpm2-tss
 tracker3
@@ -913,6 +916,7 @@ unibilium
 unzip
 upower
 usbredir
+usbutils
 util-linux
 util-linux-libs
 v4l-utils
