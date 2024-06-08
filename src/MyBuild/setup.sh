@@ -27,7 +27,7 @@ cp -r "$HOME"/Downloads/hyprarch2/.bashrc ~/
 cp -r "$HOME"/Downloads/hyprarch2/dotfiles/* ~/dotfiles
 cp -r "$HOME"/Downloads/hyprarch2/wallpaper/ ~/
 cp -r "$HOME"/Downloads/hyprarch2/src/ ~/
-cp -r "$HOME"/Downloads/hyprarch2/archbase.md ~/
+cp -r "$HOME"/Downloads/hyprarch2/docs/ ~/
 cp -r "$HOME"/Downloads/hyprarch2/.icons/ ~/
 
 }
