@@ -7,5 +7,4 @@ protonvpn-cli-community
 swaylock-effects
 swww
 trizen
-tuned
 wlogout
