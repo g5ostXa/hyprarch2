@@ -13,6 +13,7 @@ gtk_settings="$HOME/dotfiles/gtk/gtk.sh"
 hyprclean="$HOME/src/MyBuild/hyprclean.sh"
 sysctl_dir="/etc/sysctl.d/"
 secure_script="$HOME/Downloads/hyprarch2/src/MyBuild/secure.sh"
+firejail_script="$HOME/src/MyBuild/firejail.sh"
 
 }
 
