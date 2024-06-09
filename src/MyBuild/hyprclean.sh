@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Clean up after install
 clean_up() {
     
     cd "$HOME"; cd;
