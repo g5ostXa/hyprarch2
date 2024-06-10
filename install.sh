@@ -14,8 +14,7 @@ function_1() {
     source "$hyprclean"
     source ~/.bashrc
     source "$gtk_settings"
-    source "$firejail_script"
-
+    
 }
 
 # hyprarch2 end of install greeting
