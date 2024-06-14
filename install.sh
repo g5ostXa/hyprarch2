@@ -1,9 +1,7 @@
 #!/bin/bash
 
-set -e
-
-# Set variables
-main_vars="$HOME/Downloads/hyprarch2/src/MyBuild/variables.sh"
+set -e;
+main_vars="$HOME/Downloads/hyprarch2/src/MyBuild/variables.sh";
 
 # Source all installation scripts // The order matters!
 function_1() {
@@ -19,7 +17,6 @@ function_1() {
     
 }
 
-# hyprarch2 end of install greeting
 function_2() {
 
     echo "The installation is officially completed!" | lolcat;
