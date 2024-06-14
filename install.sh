@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Set variables
 main_vars="$HOME/Downloads/hyprarch2/src/MyBuild/variables.sh"
 
