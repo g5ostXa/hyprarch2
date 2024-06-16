@@ -189,6 +189,7 @@ hyphen
 hyprcursor
 hyprland
 hyprlang
+hyprutils
 iana-etc
 icu
 imagemagick
@@ -775,7 +776,7 @@ readline
 reflector
 reiserfsprogs
 rmlint
-rofi
+rofi-wayland
 rsync
 rtkit
 rubberband
