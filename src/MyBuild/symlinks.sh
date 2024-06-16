@@ -18,6 +18,7 @@ ln -s ~/dotfiles/vim/ ~/.config/
 ln -s ~/dotfiles/wal ~/.config/
 ln -s ~/dotfiles/waybar/ ~/.config/
 ln -s ~/dotfiles/wlogout/ ~/.config/
+ln -s ~/dotfiles/fastfetch/ ~/.config/
 
 sudo chown -R "$USER": "$HOME/.config/"*
 
