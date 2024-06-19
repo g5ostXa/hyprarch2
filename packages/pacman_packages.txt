@@ -832,7 +832,6 @@ ruby-time
 ruby-tmpdir
 ruby-uri
 rubygems
-sbctl
 sdbus-cpp
 sdl2
 sdl2_image
