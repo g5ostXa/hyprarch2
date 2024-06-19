@@ -1,7 +1,8 @@
 #!/bin/bash
 
-set -e;
-main_vars="$HOME/Downloads/hyprarch2/src/MyBuild/variables.sh";
+set -e
+
+main_vars="$HOME/Downloads/hyprarch2/src/MyBuild/variables.sh"
 
 # Source all installation scripts // The order matters!
 function_1() {

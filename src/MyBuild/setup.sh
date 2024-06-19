@@ -1,5 +1,7 @@
 #!/bin/bash
 
+dotfiles_dir="$HOME/dotfiles/"
+
 # Create dotfiles directory if needed
 function_1() {
 

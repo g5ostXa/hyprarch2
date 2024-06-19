@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sysctl_dir="/etc/sysctl.d/"
+
 # UFW installation and configuration
 ufw_config() {
 
