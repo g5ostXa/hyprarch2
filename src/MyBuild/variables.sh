@@ -12,5 +12,4 @@ secure_script="$HOME/Downloads/hyprarch2/src/MyBuild/secure.sh"
 
 }
 
-# Call funtions
 main_vars

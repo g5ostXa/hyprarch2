@@ -20,5 +20,4 @@ sleep 1; systemctl reboot
 
 }
 
-# Call funtions
 main_function

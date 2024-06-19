@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function_1() {
+kill_destroy_disable_fire() {
 
 sudo virsh net-destroy default;
 killall virt-manager;
@@ -12,5 +12,4 @@ sudo firecfg;
 
 }
 
-# Call functions
-function_1
+kill_destroy_disable_fire

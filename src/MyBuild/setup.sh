@@ -34,7 +34,6 @@ cp -r "$HOME"/Downloads/hyprarch2/.icons/ ~/
 
 }
 
-# Call functions
 function_1
 function_2
 

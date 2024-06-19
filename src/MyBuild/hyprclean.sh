@@ -12,5 +12,4 @@ clean_up() {
 
 }
 
-# Call functions
 clean_up

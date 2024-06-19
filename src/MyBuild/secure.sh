@@ -35,6 +35,5 @@ fi
 
 }
 
-# Call functions
 ufw_config
 sysctl_hardening

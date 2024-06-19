@@ -20,5 +20,4 @@ sleep 1; systemctl poweroff
 
 }
 
-# Call functions
 main_function 

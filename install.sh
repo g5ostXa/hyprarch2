@@ -5,7 +5,7 @@ set -e
 main_vars="$HOME/Downloads/hyprarch2/src/MyBuild/variables.sh"
 
 # Source all installation scripts // The order matters!
-function_1() {
+source_main_scripts() {
 
     source "$main_vars"
     source "$install_packages"
@@ -18,7 +18,7 @@ function_1() {
     
 }
 
-function_2() {
+end_of_install_greeting() {
 
     echo "The installation is officially completed!" | lolcat;
     echo "You may now reboot in your new hyprarch2 system..." | lolcat;
@@ -26,6 +26,5 @@ function_2() {
 
 }
 
-# Call functions
-function_1
-function_2
+source_main_scripts
+end_of_install_greeting
