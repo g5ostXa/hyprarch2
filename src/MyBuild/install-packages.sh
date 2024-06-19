@@ -11,6 +11,7 @@ install_packages() {
     if [ $? -eq 0 ]; then
         echo "Paru successfully built! Moving on..."
     else
+        echo "Paru failed to build... Exiting script"
         exit 1
     fi
 
