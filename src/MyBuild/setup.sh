@@ -2,7 +2,7 @@
 
 dotfiles_dir="$HOME/dotfiles/"
 
-create_dotfiles_dir() {
+dotfiles_dir() {
     if [ -d "$dotfiles_dir" ]; then
         echo "dotfiles directory already exists, aborting!"
         exit 1
@@ -16,7 +16,7 @@ create_dotfiles_dir() {
 
 }
 
-remove_files() {
+setup_config() {
     local paths=(
         "$HOME/.config/fish/"
         "$HOME/.config/autostart/"
@@ -46,6 +46,6 @@ copy_files() {
 
 }
 
-create_dotfiles_dir
-remove_files
+dotfiles_dir
+setup_config
 copy_files
