@@ -8,11 +8,11 @@ function_1() {
 if [ -d "$dotfiles_dir" ]; then
     echo "dotfiles directory already exists, aborting!"
 else
-    echo "Creating dotfiles directory..." | lolcat;
-    sleep 2;
-    mkdir -p "$dotfiles_dir";
-    echo "dotfiles directory created!" | lolcat;
-    sleep 2;
+    echo "Creating dotfiles directory..." | lolcat
+    sleep 2
+    mkdir -p "$dotfiles_dir"
+    echo "dotfiles directory created!" | lolcat
+    sleep 2
 fi
 
 }
@@ -24,7 +24,7 @@ rm -rf ~/.config/fish/
 rm -rf ~/.config/autostart/
 rm -rf ~/.bashrc
 rm -rf ~/.icons
-cp -r "$HOME"/Downloads/hyprarch2/.config/* "$HOME"/.config/;
+cp -r "$HOME"/Downloads/hyprarch2/.config/* "$HOME"/.config/
 cp -r "$HOME"/Downloads/hyprarch2/.bashrc ~/
 cp -r "$HOME"/Downloads/hyprarch2/dotfiles/* ~/dotfiles
 cp -r "$HOME"/Downloads/hyprarch2/wallpaper/ ~/
