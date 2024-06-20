@@ -5,7 +5,7 @@ packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
 install_packages() {
 
 sudo pacman -Syu && sudo pacman -S --needed - < "$packages"
-git clone https://aur.archlinux.org/paru.git "$HOME"
+cd "$HOME"; git clone https://aur.archlinux.org/paru.git 
 cd "$HOME/paru" && makepkg -si
 
 if [ $? -eq 0 ]; then
