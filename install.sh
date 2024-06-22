@@ -8,9 +8,7 @@ main_vars="$HOME/Downloads/hyprarch2/src/MyBuild/variables.sh"
 source_main_scripts() {
 
 source "$main_vars"
-source "$install_packages"
 source "$setup_script"
-source "$symlinks_script"
 source "$secure_script"
 source "$hyprclean"
 source ~/.bashrc
