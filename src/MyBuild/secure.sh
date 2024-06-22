@@ -19,10 +19,10 @@ echo "The installation will continue in 5 seconds..." | lolcat; sleep 6
 sysctl_hardening() {
 
 if [ -d "$sysctl_dir" ]; then
-    echo "$sysctl_dir exists so we are good to go!"
+    echo "$sysctl_dir exists so we are good to go!" | lolcat
     sleep 2 
 else
-    echo "creating sysctl.d in /etc..."
+    echo "creating sysctl.d in /etc..." | lolcat
     sleep 2
     sudo mkdir -p "$sysctl_dir"
     echo "$sysctl_dir Created!" | lolcat
