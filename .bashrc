@@ -19,8 +19,7 @@ cat ~/.cache/wal/sequences
 if [[ $(tty) == *"pts"* ]]; then
 
     echo "Vrch7inuX" | figlet | lolcat;   
-    date | lolcat -a;
-      
+        
 fi
 
 # Set fish interactively
