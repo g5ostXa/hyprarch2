@@ -23,13 +23,13 @@ $aur_helper -S bibata-cursor-theme dracula-gtk-theme swaylock-effects swww trize
 
 dotfiles_dir() {
     if [ -d "$dotfiles_dir" ]; then
-        echo "dotfiles directory already exists, aborting!" | lolcat
+        echo "$dotfiles_dir already exists, aborting!" | lolcat
         exit 1
     else
-        echo "Creating dotfiles directory..." | lolcat
+        echo "Creating $dotfiles_dir..." | lolcat
         sleep 2
         mkdir -p "$dotfiles_dir"
-        echo "dotfiles directory created!" | lolcat
+        echo "$dotfiles_dir created!" | lolcat
         sleep 2
     fi
 
@@ -57,7 +57,7 @@ setup_config() {
 copy_files() {
     cp -r "$HOME/Downloads/hyprarch2/.config/"* "$HOME/.config/"
     cp -r "$HOME/Downloads/hyprarch2/.bashrc" "$HOME/"
-    cp -r "$HOME/Downloads/hyprarch2/dotfiles/"* "$HOME/dotfiles/"
+    cp -r "$HOME/Downloads/hyprarch2/dotfiles/"* "$dotfiles_dir/"
     cp -r "$HOME/Downloads/hyprarch2/wallpaper/" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/src/" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/docs/" "$HOME/"
