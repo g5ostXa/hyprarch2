@@ -533,7 +533,7 @@ lzop
 m4
 mailcap
 make
-mbedtls2 
+mbedtls2
 md4c
 mdadm
 media-player-info
