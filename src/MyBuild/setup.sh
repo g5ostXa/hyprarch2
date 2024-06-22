@@ -66,6 +66,7 @@ copy_files() {
     cp -r "$HOME/Downloads/hyprarch2/install.sh" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/README.md" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/packages/" "$HOME/"
+    cp -r "$HOME/Downloads/hyprarch2/RELEASES/" "$HOME/"
 
 }
 
