@@ -1,0 +1,2 @@
+- [v0.1.2](https://github.com/g5ostXa/hyprarch2/tree/v0.1.2)
+- [v0.1.3](https://github.com/g5ostXa/hyprarch2/tree/v0.1.3)
