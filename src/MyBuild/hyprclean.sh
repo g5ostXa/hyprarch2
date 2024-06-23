@@ -2,7 +2,7 @@
 
 cleanup_script="$HOME/dotfiles/scripts/cleanup.sh"
 hyprarch2_dir="$HOME/Downloads/hyprarch2"
-sysctl_readme="/etc/sysctl.d/README"
+sysctl_readme="/etc/sysctl.d/README.md"
 
 clean_up() {
     echo "Starting cleanup process..." | lolcat
