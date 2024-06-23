@@ -18,14 +18,14 @@ clean_up() {
 
     if [ -e "$sysctl_readme" ]; then
         echo "Removing $sysctl_readme..." | lolcat
-        sudo rm -f "$sysctl_readme"
+        sudo rm -rf "$sysctl_readme"
     else
         echo "$sysctl_readme does not exist, skipping..." | lolcat
     fi
 
     if [ -f "$cleanup_script" ]; then
         echo "Executing cleanup script..." | lolcat
-        sudo bash "$cleanup_script"
+        bash "$cleanup_script"
     else
         echo "Cleanup script $cleanup_script not found, skipping..." | lolcat
     fi
