@@ -118,7 +118,7 @@ Expected layout:
 ## Base Installation
 - Install the system base:
 ```
-# pacstrap -K /mnt base linux linux-firmware nano intel-ucode lvm2
+# pacstrap -K /mnt base linux linux-firmware vim intel-ucode lvm2
 ```
 
 ## Fstab and Enter installation
