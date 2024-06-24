@@ -57,17 +57,17 @@ By g5ostXa :ghost:
 ```
 # gdisk /dev/sda
 ```
-- o (Delete all partitions and create new protective mbr)
-- n (for new)
-- accept defaults (1)
-- accept defaults (first sector)
-- +512M (last sector)
-- ef00 (EFI code)
-- n (for new)
-- accept defaults (all)
-- 8e00 (LVM code)
-- w (for write)
-- y (for yes)
+- `o` (Delete all partitions and create new protective mbr)
+- `n` (for new)
+- `accept defaults` (1)
+- `accept defaults` (first sector)
+- `+512M` (last sector)
+- `ef00` (EFI code)
+- `n` (for new)
+- `accept` defaults (all)
+- `8e00` (LVM code)
+- `w` (for write)
+- `y` (for yes)
 
 Expected layout:
 
@@ -139,7 +139,7 @@ Expected layout:
 ```
 # hwclock --systohc
 ```
-- To set the locales, edit **/etc/locale.gen** and uncomment the following line:
+- To set the locales, edit `/etc/locale.gen` and uncomment the following line:
 ```
 en_US.UTF-8
 ```
@@ -157,7 +157,7 @@ en_US.UTF-8
 ```
 # echo HOSTNAME >> /etc/hostname
 ```
-- To configure localhosts, edit **/etc/hosts** and use the following example:
+- To configure localhosts, edit `/etc/hosts` and use the following example:
 
 | Addresses |  Hosts       |
 |:-------- | :-----------: |
@@ -173,11 +173,11 @@ en_US.UTF-8
 ```
 - Install main system:
 ```
-# pacman -S grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers git reflector xdg-utils xdg-user-dirs dnsmasq lsof htop fastfetch ufw gufw firejail apparmor audit firefox
+# pacman -S grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers git reflector xdg-utils xdg-user-dirs dnsmasq lsof htop neofetch ufw gufw firejail apparmor audit firefox
 ```
 
 ## Kernel hooks and grub configuration
-- Edit **/etc/mkinitcpio.conf** to add the "encrypt" and "lvm2" hooks using the following order:
+- Edit `/etc/mkinitcpio.conf` to add the `"encrypt"` and `"lvm2"` hooks using the following order:
 ```
 HOOKS=(base udev autodetect modconf block encrypt lvm2 filesystems keyboard fsck)
 ```
@@ -189,11 +189,11 @@ HOOKS=(base udev autodetect modconf block encrypt lvm2 filesystems keyboard fsck
 ```
 # grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 ```
-- Next, we need to edit **/etc/default/grub** to add the following line to GRUB_CMDLINE_LINUX:
+- Next, we need to edit `/etc/default/grub` to add the following line to GRUB_CMDLINE_LINUX:
 ```    
 GRUB_CMDLINE_LINUX="cryptdevice=UUID=PASTE-UUID-HERE:NAME-OF-ENCRYPTED-DISK root=/dev/NAME-OF-VOLUME-GROUP/root"
 
-Note: Replace **PASTE-UUID-HERE**, **NAME-OF-ENCRYPTED-DISK** and **NAME-OF-VOLUME-GROUP** with the correct values.  
+Note: Replace "PASTE-UUID-HERE", "NAME-OF-ENCRYPTED-DISK" and "NAME-OF-VOLUME-GROUP" with the correct values.  
 ```
 - Finally, generate the new grub configuration:
 ```
@@ -214,8 +214,7 @@ Note: Replace **PASTE-UUID-HERE**, **NAME-OF-ENCRYPTED-DISK** and **NAME-OF-VOLU
 ```
 # systemctl enable fstrim.timer
 ```
-- To automatically refresh pacman mirrors once a week, we need to edit /etc/xdg/reflector/reflector.conf to ajust the country, protocol and other features for reflector to select the right mirrors. 
-- Then, enable reflector with the following command:
+- To automatically refresh pacman mirrors once a week, we need to edit `/etc/xdg/reflector/reflector.conf` to ajust the country, protocol and other features for reflector to select the right mirrors. Then, enable reflector with the following command:
 ```
 # systemctl enable reflector.timer
 ```
@@ -231,15 +230,13 @@ Note: Replace **PASTE-UUID-HERE**, **NAME-OF-ENCRYPTED-DISK** and **NAME-OF-VOLU
 ```
 
 ## Wheel and sudo
-- Access the sudoers file with the following command:
+- Access the sudoers file using vim:
 ```
 # EDITOR=nano visudo
-
-Note: To let anyone in the wheel group use sudo, uncomment this line:
-
-%wheel ALL=(ALL:ALL) ALL
 ```
-
+Note: To let anyone in the wheel group use sudo, uncomment this line:
+`%wheel ALL=(ALL:ALL) ALL`
+ 
 ## Exit installation and reboot
 ```
 # exit
@@ -251,5 +248,4 @@ Note: To let anyone in the wheel group use sudo, uncomment this line:
 # reboot
 ```
 </div>
-
 
