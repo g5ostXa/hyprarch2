@@ -5,6 +5,5 @@ paru
 paru-debug
 protonvpn-cli-community
 swaylock-effects
-swww
 trizen
 wlogout

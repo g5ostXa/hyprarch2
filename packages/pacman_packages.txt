@@ -875,6 +875,7 @@ supermin
 svt-av1
 swappy
 swayidle
+swww
 syndication
 syndication5
 syntax-highlighting
