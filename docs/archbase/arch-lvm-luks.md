@@ -233,7 +233,7 @@ Note: Replace "PASTE-UUID-HERE", "NAME-OF-ENCRYPTED-DISK" and "NAME-OF-VOLUME-GR
 ## Wheel and sudo
 - Access the sudoers file using vim:
 ```
-# EDITOR=nano visudo
+# EDITOR=vim visudo
 ```
 Note: To let anyone in the wheel group use sudo, uncomment this line:
 `%wheel ALL=(ALL:ALL) ALL`
