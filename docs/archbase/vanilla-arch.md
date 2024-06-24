@@ -21,7 +21,7 @@ By g5ostXa :ghost:
 - [Locales](#locales)
 - [Hosts and hostname](#hosts-and-hostname)
 - [Root password & system install](#root-password--system-install)
-- [Kernel hooks and grub configuration](#kernel-hooks-and-grub-configuration)
+- [Kernel image generation and grub](#kernel-image-generation-and-grub)
 - [Systemd services](#systemd-services)
 - [Users](#users)
 - [Wheel and sudo](#wheel-and-sudo)
@@ -148,7 +148,7 @@ en_US.UTF-8
 # pacman -S grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers git reflector xdg-utils xdg-user-dirs dnsmasq lsof htop fastfetch ufw gufw firejail apparmor audit firefox
 ```
 
-## Kernel hooks and grub configuration
+## Kernel image generation and grub
 - Regenerate the kernel image:
 ```
 # mkinitcpio -p linux
