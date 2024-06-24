@@ -67,7 +67,7 @@ By g5ostXa :ghost:
 - `accept` defaults (all)
 - `8e00` (LVM code)
 - `w` (for write)
-- `y` (for yes)
+- `y` (for comfirmation)
 
 Expected layout:
 
