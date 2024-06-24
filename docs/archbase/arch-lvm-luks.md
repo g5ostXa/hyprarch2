@@ -166,7 +166,6 @@ en_US.UTF-8
 | ::1      |  localhost    |
 | 127.0.1.1|  "hostname".localdomain  "hostname"
 
-
 ## Root password & system install
 - To set root password:
 ```
