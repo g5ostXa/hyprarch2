@@ -214,7 +214,7 @@ Note: Replace "PASTE-UUID-HERE", "NAME-OF-ENCRYPTED-DISK" and "NAME-OF-VOLUME-GR
 ```
 # systemctl enable fstrim.timer
 ```
-- To automatically refresh pacman mirrors once a week, we need to edit `/etc/xdg/reflector/reflector.conf` to ajust the country, protocol and other features for reflector to select the right mirrors. Then, enable reflector with the following command:
+- To automatically refresh pacman mirrors once a week, we need to edit `/etc/xdg/reflector/reflector.conf`. Then, enable reflector with the following command:
 ```
 # systemctl enable reflector.timer
 ```
