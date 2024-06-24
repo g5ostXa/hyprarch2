@@ -20,7 +20,7 @@ By g5ostXa :ghost:
 - [Fstab and Enter installation](#fstab-and-enter-installation)
 - [Locales](#locales)
 - [Hosts and hostname](#hosts-and-hostname)
-- [Root password & system install](#root-password--system-install)
+- [Root password and system install](#root-password-and-system-install)
 - [Kernel image generation and grub](#kernel-image-generation-and-grub)
 - [Systemd services](#systemd-services)
 - [Users](#users)
@@ -138,7 +138,7 @@ en_US.UTF-8
 | ::1      |  localhost    |
 | 127.0.1.1|  "hostname".localdomain  "hostname"
 
-## Root password & system install
+## Root password and system install
 - To set root password:
 ```
 # passwd
