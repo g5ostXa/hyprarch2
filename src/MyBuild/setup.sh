@@ -17,7 +17,7 @@ else
     exit 1
 fi
 
-$aur_helper -S bibata-cursor-theme dracula-gtk-theme swaylock-effects swww trizen wlogout wlr-randr
+$aur_helper -S bibata-cursor-theme dracula-gtk-theme swaylock-effects trizen wlogout wlr-randr
 
 }
 
