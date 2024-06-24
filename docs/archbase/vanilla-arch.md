@@ -47,7 +47,7 @@ By g5ostXa :ghost:
 
 ## Partitions
 - Note: This example assumes `sda` is the disk name. You can verify this with `lsblk` command.
-- Now, let's wipe the disk properly to later use with Luks encryption:
+- Optionally, run the following if you want to use disk encryption:
 ```
 # dd if=/dev/zero of=/dev/sda status=progress
 ```
