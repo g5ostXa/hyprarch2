@@ -24,7 +24,7 @@ By g5ostXa :ghost:
 
 ## Insallation
 - Please refer to my [arch-lvm-luks.md](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md) to install arch
-- Within the new minimal arch base install, download the [Repo](https://github.com/g5ostXa/hyprarch2) in the ~/Downloads directory and run the install script
+- Within the new minimal arch base install, download the [Repo](https://github.com/g5ostXa/hyprarch2) in the `~/Downloads` directory and run the install script
 ```
 $ cd Downloads
 $ git clone git@github.com:g5ostXa/hyprarch2.git
