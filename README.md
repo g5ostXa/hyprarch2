@@ -19,7 +19,7 @@ By g5ostXa :ghost:
 
 ## Preparation
 - Make sure to create new ssh key and add it to github before installing
-- The install script assumes the repo is cloned in the ~/Downloads directory
+- The install script assumes the repo is cloned in the `~/Downloads` directory
 - In virt-manager please make sure that 3D acceleration is enabled in Video Virtio and the Listen type is set to None in Display Spice
 
 ## Insallation
@@ -38,8 +38,8 @@ $ Hyprland
 ```
 
 ## Basic key bindings
-- <kbd>SUPER</kbd> + <kbd>RETURN</kbd>: Alacritty
-- <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>RETURN</kbd>: Rofi 
-- <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>B</kbd>: Reload waybar 
-- <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>Q</kbd>: Logout screen
+- `SUPER` + `RETURN`: Alacritty
+- `SUPER` + `CTRL` + `RETURN`: Rofi 
+- `SUPER` + `SHIFT` + `B`: Reload waybar 
+- `SUPER` + `CTRL` + `Q`: Logout screen
 
