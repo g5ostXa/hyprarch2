@@ -2,7 +2,7 @@
 
 dotfiles_dir="$HOME/dotfiles/"
 packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
-aur_helper="paru"
+aur_helper="paru-bin"
 
 install_packages() {
 
@@ -17,7 +17,7 @@ else
     exit 1
 fi
 
-$aur_helper -S bibata-cursor-theme dracula-gtk-theme swaylock-effects trizen wlogout wlr-randr
+paru -S bibata-cursor-theme dracula-gtk-theme swaylock-effects trizen wlogout
 
 }
 
