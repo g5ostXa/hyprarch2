@@ -42,7 +42,6 @@ sysctl_hardening() {
     fi
 }
 
-# Main script execution
 ufw_config
 sysctl_hardening
 
