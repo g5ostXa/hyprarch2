@@ -33,7 +33,7 @@ $ git clone git@github.com:g5ostXa/hyprarch2.git
 $ cd hyprarch2 && ./install.sh
 ```
 
-## ✨ Hyprland 
+## ➜ Hyprland 
 - To start [hyprland](https://hyprland.org) from tty
 ```
 $ Hyprland
