@@ -4,6 +4,5 @@ dracula-gtk-theme
 paru
 paru-debug
 protonvpn-cli-community
-swaylock-effects
 trizen
 wlogout

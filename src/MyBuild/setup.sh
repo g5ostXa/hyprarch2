@@ -17,7 +17,7 @@ else
     exit 1
 fi
 
-paru -S bibata-cursor-theme dracula-gtk-theme swaylock-effects trizen wlogout
+paru -S bibata-cursor-theme dracula-gtk-theme trizen wlogout
 
 }
 
