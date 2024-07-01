@@ -187,8 +187,10 @@ http-parser
 hwdata
 hyphen
 hyprcursor
+hypridle
 hyprland
 hyprlang
+hyprlock
 hyprutils
 iana-etc
 icu

@@ -81,7 +81,6 @@ create_symlinks() {
     ln -s ~/dotfiles/rofi/ ~/.config/
     ln -s ~/dotfiles/starship/starship.toml ~/.config/
     ln -s ~/dotfiles/swappy/ ~/.config/
-    ln -s ~/dotfiles/swaylock/ ~/.config
     ln -s ~/dotfiles/vim/ ~/.config/
     ln -s ~/dotfiles/wal ~/.config/
     ln -s ~/dotfiles/waybar/ ~/.config/
