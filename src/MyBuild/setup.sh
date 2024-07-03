@@ -38,7 +38,6 @@ dotfiles_dir() {
 setup_config() {
     local paths=(
         "$HOME/.config/fish/"
-        "$HOME/.config/autostart/"
         "$HOME/.bashrc"
         "$HOME/.icons"
     )
@@ -55,7 +54,6 @@ setup_config() {
 }
 
 copy_files() {
-    cp -r "$HOME/Downloads/hyprarch2/.config/"* "$HOME/.config/"
     cp -r "$HOME/Downloads/hyprarch2/.bashrc" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/dotfiles/"* "$dotfiles_dir/"
     cp -r "$HOME/Downloads/hyprarch2/wallpaper/" "$HOME/"
@@ -86,6 +84,7 @@ create_symlinks() {
     ln -s ~/dotfiles/waybar/ ~/.config/
     ln -s ~/dotfiles/wlogout/ ~/.config/
     ln -s ~/dotfiles/fastfetch/ ~/.config/
+    ln -s ~/dotfiles/fish/ ~/.config/
 
 sudo chown -R "$USER": "$HOME/.config/"*
 
