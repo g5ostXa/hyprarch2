@@ -1,19 +1,27 @@
 #!/bin/bash
 
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+WHITE='\033[0;37m'
+RC='\033[0m'
+
 dotfiles_dir="$HOME/dotfiles/"
 packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
 aur_helper="paru-bin"
 
 install_packages() {
-
 sudo pacman -Syu && sudo pacman -S --needed - < "$packages"
 cd "$HOME"; git clone https://aur.archlinux.org/$aur_helper.git 
 cd "$HOME/$aur_helper/" && makepkg -si
 
 if [ $? -eq 0 ]; then
-    echo "$aur_helper successfully built! Moving on..." | lolcat
+    echo -e "${GREEN}$aur_helper successfully built! Moving on...${RC}"
 else
-    echo "$aur_helper failed to build... Exiting script" | lolcat
+    echo -e "${RED}$aur_helper failed to build... Exiting script!${RC}"
     exit 1
 fi
 
@@ -23,13 +31,13 @@ paru -S bibata-cursor-theme dracula-gtk-theme trizen wlogout
 
 dotfiles_dir() {
     if [ -d "$dotfiles_dir" ]; then
-        echo "$dotfiles_dir already exists, aborting!" | lolcat
+        echo -e "${RED}$dotfiles_dir already exists, aborting!${RC}"
         exit 1
     else
-        echo "Creating $dotfiles_dir..." | lolcat
+        echo -e "${CYAN}Creating $dotfiles_dir...${RC}"
         sleep 2
         mkdir -p "$dotfiles_dir"
-        echo "$dotfiles_dir created!" | lolcat
+        echo -e "${GREEN}$dotfiles_dir created!${RC}"
         sleep 2
     fi
 
@@ -45,9 +53,9 @@ setup_config() {
     for path in "${paths[@]}"; do
         if [ -e "$path" ]; then
             rm -rf "$path"
-            echo "Removed $path" | lolcat
+            echo -e "${YELLOW}Removed $path${RC}"
         else
-            echo "Path $path does not exist" | lolcat
+            echo -e "${RED}Path $path does not exist${RC}"
         fi
     done
 

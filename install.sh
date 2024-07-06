@@ -2,7 +2,7 @@
 
 set -e
 
-main_vars="$HOME/Downloads/hyprarch2/src/MyBuild/variables.sh"
+main_vars="$HOME/Downloads/hyprarch2/src/variables.sh"
 
 # Source all installation scripts // The order matters!
 source_main_scripts() {
