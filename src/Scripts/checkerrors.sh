@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo CheckErrors | figlet
 
 check_errors() {
