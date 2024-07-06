@@ -13,7 +13,7 @@ sysctl_dir="/etc/sysctl.d/"
 sysctl_source_dir="$HOME/Downloads/hyprarch2/sysctl"
 
 ufw_config() {
-    echo "Updating system and installing UFW..."
+    echo -e "${CYAN}Updating system and installing UFW...${RC}"
     sudo pacman -Syu && sudo pacman -S --noconfirm ufw
     # sudo ufw default deny incoming
     # sudo ufw default allow outgoing
