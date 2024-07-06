@@ -55,7 +55,7 @@ setup_config() {
             rm -rf "$path"
             echo -e "${YELLOW}Removed $path${RC}"
         else
-            echo -e "path $path ${RED}does not exist${RC}"
+            echo -e "Path $path ${RED}does not exist${RC}"
         fi
     done
 
