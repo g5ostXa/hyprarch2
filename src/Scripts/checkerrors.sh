@@ -1,14 +1,17 @@
 #!/bin/bash
 
+YELLOW='\033[0;33m'
+RC='\033[0m' 
+
 echo CheckErrors | figlet
 
 check_errors() {
-echo "Checking for system errors with root..."
-sudo journalctl -p 3 -b | lolcat
-echo "Checking for sys errors as user..."
-journalctl -p 3 -b | lolcat
-echo "Checking systemd for any failed services"
-systemctl --failed | lolcat
+echo -e "${YELLOW}Checking for system errors with root...${RC}"
+sudo journalctl -p 3 -b
+echo -e "${YELLOW}Checking for system errors as user...${RC}"
+journalctl -p 3 -b
+echo -e "${YELLOW}Checking systemd for any failed services${RC}"
+systemctl --failed
 
 }
 
