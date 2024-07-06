@@ -70,6 +70,8 @@ copy_files() {
     cp -r "$HOME/Downloads/hyprarch2/README.md" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/packages/" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/RELEASES/" "$HOME/"
+    sudo cp -r "$HOME/Downloads/hyprarch2/dotfiles/login/issue" "/etc/"
+    sudo chown -R root: /etc/issue
 
 }
 
