@@ -22,7 +22,7 @@ else
     exit 1
 fi
 
-cd "$HOME"
+cd "$HOME"; rm -rf paru
 paru -S --needed --noconfirm bibata-cursor-theme dracula-gtk-theme trizen wlogout
 
 }
