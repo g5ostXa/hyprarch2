@@ -6,9 +6,7 @@ RC='\033[0m'
 echo CheckErrors | figlet
 
 check_errors() {
-echo -e "${YELLOW}Checking for system errors as root...${RC}"
-sudo journalctl -p 3 -b
-echo -e "${YELLOW}Checking for system errors as user...${RC}"
+echo -e "${YELLOW}Checking for system errors...${RC}"
 journalctl -p 3 -b
 echo -e "${YELLOW}Checking systemd for any failed services${RC}"
 systemctl --failed
