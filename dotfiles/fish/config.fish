@@ -20,4 +20,5 @@ alias firetop='firejail --top'
 alias ff='fastfetch'
 alias clean='~/dotfiles/scripts/cleanup.sh'
 alias errcheck='~/src/Scripts/checkerrors.sh'
+alias cw='cliphist wipe'
 end
