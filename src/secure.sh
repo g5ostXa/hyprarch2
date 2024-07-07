@@ -43,7 +43,7 @@ sysctl_hardening() {
         sudo sysctl --system
         echo -e "${GREEN}Sysctl hardening applied successfully!${RC}"
     else
-        echo -e "${RED}Source directory $sysctl_source_dir does not exist. Aborting sysctl hardening.${RC}" | lolcat
+        echo -e "${RED}Source directory $sysctl_source_dir does not exist. Aborting sysctl hardening.${RC}"
     fi
 }
 
