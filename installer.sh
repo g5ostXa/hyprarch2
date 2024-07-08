@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GREEN='\033[0;32m'
-NONE='\033[0m'
+RC='\033[0m'
 
 # Header
 echo -e "${GREEN}"
@@ -15,7 +15,7 @@ cat <<"EOF"
 EOF
 echo "Welcome to hyprarch2"
 echo
-echo -e "${NONE}"
+echo -e "${RC}"
 echo
 while true; do
     read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " yn
