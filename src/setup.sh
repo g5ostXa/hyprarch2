@@ -56,7 +56,7 @@ remove_existing_local_paths() {
             rm -rf "$path"
             echo -e "${YELLOW}Removed $path${RC}"
         else
-            echo -e "Path $path ${RED}does not exist${RC}"
+            echo -e "Path $path ${RED}not found, skipping...${RC}"
         fi
     done
 
