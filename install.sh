@@ -46,7 +46,6 @@ source "$gtk_settings"
 
 echo -e "${GREEN}The installation is officially completed!${RC}"
 echo -e "${GREEN}You may now reboot in your new hyprarch2 system...${RC}"
-
 echo -e ${CYAN}
 cat <<"EOF"
 
@@ -64,5 +63,4 @@ __        __   _                            _
        |___/|_|
 
 EOF
-echo
 echo -e ${RC}
