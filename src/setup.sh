@@ -11,7 +11,7 @@ packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
 aur_helper="paru-bin"
 
 install_packages() {
-sudo pacman -Syu && sudo pacman -S --needed --noconfirm - < "$packages"
+sudo pacman -Syu && sudo pacman -S --needed - < "$packages"
 cd "$HOME"; git clone https://aur.archlinux.org/$aur_helper.git 
 cd "$HOME/$aur_helper/" && makepkg -si
 
