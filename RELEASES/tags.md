@@ -3,4 +3,4 @@
 - [v0.1.4](https://github.com/g5ostXa/hyprarch2/tree/v0.1.4)
 - [v0.2.0](https://github.com/g5ostXa/hyprarch2/tree/v0.2.0)
 - [v0.2.1](https://github.com/g5ostXa/hyprarch2/tree/v0.2.1)
-
+- [v0.2.2](https://github.com/g5ostXa/hyprarch2/tree/v0.2.2)
