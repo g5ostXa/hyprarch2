@@ -39,7 +39,7 @@ window {
     margin:                       0px; 
     color:                        #FFFFFF;
     border:                       3px;
-    border-color:                 #FFFFFF;
+    border-color:                 #000000;
     cursor:                       "default";
     transparency:                 "real";
     location:                     north;
