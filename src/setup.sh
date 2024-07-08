@@ -41,7 +41,7 @@ dotfiles_dir() {
 
 }
 
-setup_config() {
+remove_existing_local_paths() {
     local paths=(
         "$HOME/.config/fish/"
         "$HOME/.bashrc"
@@ -103,6 +103,6 @@ sudo chown -R "$USER": "$HOME/.config/"*
 
 install_packages
 dotfiles_dir
-setup_config
+remove_existing_local_paths
 copy_files
 create_symlinks
