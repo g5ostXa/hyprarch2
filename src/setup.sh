@@ -45,7 +45,10 @@ setup_config() {
     local paths=(
         "$HOME/.config/fish/"
         "$HOME/.bashrc"
-        "$HOME/.icons"
+        "$HOME/.icons/"
+        "$HOME/docs/"
+        "$HOME/README.md"
+        "$HOME/sysctl/"
     )
 
     for path in "${paths[@]}"; do
