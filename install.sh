@@ -35,10 +35,12 @@ done
 sleep 2
 set -e
 
-main_vars="$HOME/Downloads/hyprarch2/src/variables.sh"
+setup_script="$HOME/Downloads/hyprarch2/src/setup.sh"
+gtk_settings="$HOME/dotfiles/hypr/scripts/gtk.sh"
+hyprclean="$HOME/src/hyprclean.sh"
+secure_script="$HOME/src/secure.sh"
 
 # Source all installation scripts // The order matters!
-source "$main_vars"
 source "$setup_script"
 source "$secure_script"
 source "$hyprclean"
