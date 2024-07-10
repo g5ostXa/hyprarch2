@@ -10,6 +10,8 @@ cat <<"EOF"
 
 EOF
 
-sudo pacman -Rns $(pacman -Qtdq)
 paru -Scc
+sudo su -c 'pacman -Qtdq | pacman -Rns -'
+sudo su -c 'pacman -Qqd | pacman -Rsu -'
+
 
