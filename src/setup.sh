@@ -11,19 +11,19 @@ packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
 aur_helper="paru-bin"
 
 install_packages() {
-sudo pacman -Syu && sudo pacman -S --needed - < "$packages"
-cd "$HOME"; git clone https://aur.archlinux.org/$aur_helper.git 
-cd "$HOME/$aur_helper/" && makepkg -si
+    sudo pacman -Syu && sudo pacman -S --needed - < "$packages"
+    cd "$HOME"; git clone https://aur.archlinux.org/$aur_helper.git 
+    cd "$HOME/$aur_helper/" && makepkg -si
 
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}$aur_helper successfully built! Moving on...${RC}"
-else
-    echo -e "${RED}$aur_helper failed to build... Exiting script!${RC}"
-    exit 1
-fi
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}$aur_helper successfully built! Moving on...${RC}"
+    else
+        echo -e "${RED}$aur_helper failed to build... Exiting script!${RC}"
+        exit 1
+    fi
 
-cd "$HOME"; rm -rf paru-bin
-paru -S --needed --noconfirm bibata-cursor-theme dracula-gtk-theme trizen wlogout
+    cd "$HOME"; rm -rf paru-bin
+    paru -S --needed --noconfirm bibata-cursor-theme dracula-gtk-theme trizen wlogout
 
 }
 
@@ -49,6 +49,10 @@ remove_existing_local_paths() {
         "$HOME/docs/"
         "$HOME/README.md"
         "$HOME/sysctl/"
+        "$HOME/wallpaper/"
+        "$HOME/packages/"
+        "$HOME/install.sh"
+        "$HOME/src/"
     )
 
     for path in "${paths[@]}"; do
