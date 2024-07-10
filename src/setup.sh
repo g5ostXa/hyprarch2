@@ -45,7 +45,6 @@ remove_existing_local_paths() {
     local paths=(
         "$HOME/.config/fish/"
         "$HOME/.bashrc"
-        "$HOME/.icons/"
         "$HOME/docs/"
         "$HOME/README.md"
         "$HOME/sysctl/"
