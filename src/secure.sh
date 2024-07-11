@@ -7,7 +7,7 @@ CYAN='\033[0;36m'
 RC='\033[0m'
 
 sysctl_dir="/etc/sysctl.d/"
-sysctl_source_dir="$HOME/Downloads/hyprarch2/sysctl"
+sysctl_source_dir="$HOME/sysctl"
 
 ufw_config() {
     echo -e "${CYAN}Installing and configuring UFW...${RC}"
