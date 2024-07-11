@@ -84,6 +84,7 @@ copy_files() {
 
 create_symlinks() {
     ln -s ~/dotfiles/gtk/.Xresources ~/
+    ln -s ~/dotfiles/gtk/.gtkrc-2.0 ~/
     ln -s ~/dotfiles/alacritty/ ~/.config/
     ln -s ~/dotfiles/dunst/ ~/.config/
     ln -s ~/dotfiles/gtk/gtk-3.0/ ~/.config/
