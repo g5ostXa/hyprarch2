@@ -52,6 +52,7 @@ remove_existing_local_paths() {
         "$HOME/packages/"
         "$HOME/install.sh"
         "$HOME/src/"
+        "$HOME/.gtkrc-2.0"
     )
 
     for path in "${paths[@]}"; do
