@@ -519,6 +519,7 @@ linux-firmware-whence
 linux-headers
 llvm-libs
 lm_sensors
+lmdb
 lolcat
 lrzip
 lsd
