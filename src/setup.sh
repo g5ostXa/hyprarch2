@@ -72,7 +72,6 @@ copy_files() {
     cp -r "$HOME/Downloads/hyprarch2/wallpaper/" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/src/" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/docs/" "$HOME/"
-    cp -r "$HOME/Downloads/hyprarch2/.icons/" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/sysctl/" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/install.sh" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/README.md" "$HOME/"

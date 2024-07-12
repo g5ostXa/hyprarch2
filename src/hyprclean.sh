@@ -31,7 +31,7 @@ clean_up() {
 
     if [ -f "$cleanup_script" ]; then
         echo -e "${YELLOW}Executing cleanup script...${RC}"
-        bash "$cleanup_script"
+        source "$cleanup_script"
     else
         echo -e "${RED}Cleanup script $cleanup_script not found, skipping...${RC}"
     fi
