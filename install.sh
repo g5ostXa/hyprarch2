@@ -14,23 +14,37 @@ cat <<"EOF"
 
 EOF
 echo "Welcome to hyprarch2"
-echo
 echo -e "${RC}"
-echo
-while true; do
-    read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " yn
-    case $yn in
-        [Yy]* )
-            echo ":: Starting Installation..."
-            echo
-        break;;
-        [Nn]* )
-            echo ":: Installation Canceled."
-            exit;
-        break;;
-        * ) echo ":: Please answer yes or no.";;
-    esac
-done
+
+if [ -n "$SSH_CONNECTION" ]; then
+  while true; do
+      read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " yn
+      case $yn in
+          [Yy]* )
+              echo ":: Starting Installation..."
+          break;;
+          [Nn]* )
+              echo ":: Installation Canceled."
+              exit;
+          break;;
+          * ) echo ":: Please answer yes or no.";;
+      esac
+   done
+else
+
+if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" ;then
+    echo
+    echo ":: Sarting Installation..."
+    echo
+elif [ $? -eq 130 ]; then
+    echo ":: Installation canceled"
+    exit 130
+else
+    echo
+    echo ":: Installation canceled"
+    exit;
+  fi
+fi
 
 sleep 2
 set -e
