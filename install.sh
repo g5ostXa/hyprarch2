@@ -33,14 +33,11 @@ if [ -n "$SSH_CONNECTION" ]; then
 else
 
 if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" ;then
-    echo
     echo ":: Sarting Installation..."
-    echo
 elif [ $? -eq 130 ]; then
     echo ":: Installation canceled"
     exit 130
 else
-    echo
     echo ":: Installation canceled"
     exit;
   fi
