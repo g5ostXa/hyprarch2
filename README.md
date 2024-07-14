@@ -14,7 +14,7 @@ By g5ostXa :ghost:
 - [arch-wiki](https://wiki.archlinux.org)
 - [dotfiles (Stephan Raabe)](https://gitlab.com/stephan-raabe/dotfiles)
 - [archbase (g5ostXa)](https://gist.github.com/g5ostXa/5f9255430996b9d77d6004d6d2308b4d)
-- [Hyprland wiki](https://wiki.hyprland.org)
+- [hyprland wiki](https://wiki.hyprland.org)
 - [hyprwm](https://github.com/hyprwm/Hyprland)
 
 ## ⚙️ Setup
