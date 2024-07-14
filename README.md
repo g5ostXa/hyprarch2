@@ -29,7 +29,7 @@ By g5ostXa :ghost:
 > - Within the new minimal arch base install, download the [Repo](https://github.com/g5ostXa/hyprarch2) in the `~/Downloads` directory and run the install script
 ```
 $ cd Downloads
-$ git clone git@github.com:g5ostXa/hyprarch2.git
+$ git clone --depth 1 git@github.com:g5ostXa/hyprarch2.git
 $ cd hyprarch2 && ./install.sh
 ```
 
