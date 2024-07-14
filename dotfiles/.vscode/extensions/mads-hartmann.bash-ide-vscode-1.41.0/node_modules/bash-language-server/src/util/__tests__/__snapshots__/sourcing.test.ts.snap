@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getSourcedUris returns a set of sourced files (but ignores some unhandled cases) 2`] = `
+[
+  {
+    "error": null,
+    "range": {
+      "end": {
+        "character": 28,
+        "line": 1,
+      },
+      "start": {
+        "character": 6,
+        "line": 1,
+      },
+    },
+    "uri": "file:///Users/bash/file-in-path.sh",
+  },
+  {
+    "error": null,
+    "range": {
+      "end": {
+        "character": 33,
+        "line": 3,
+      },
+      "start": {
+        "character": 6,
+        "line": 3,
+      },
+    },
+    "uri": "file:///bin/extension.inc",
+  },
+  {
+    "error": null,
+    "range": {
+      "end": {
+        "character": 22,
+        "line": 5,
+      },
+      "start": {
+        "character": 6,
+        "line": 5,
+      },
+    },
+    "uri": "file:///Users/bash/x",
+  },
+  {
+    "error": null,
+    "range": {
+      "end": {
+        "character": 36,
+        "line": 7,
+      },
+      "start": {
+        "character": 6,
+        "line": 7,
+      },
+    },
+    "uri": "file:///Users/scripts/release-client.sh",
+  },
+  {
+    "error": null,
+    "range": {
+      "end": {
+        "character": 23,
+        "line": 9,
+      },
+      "start": {
+        "character": 6,
+        "line": 9,
+      },
+    },
+    "uri": "file:///Users/bash-user/myscript",
+  },
+  {
+    "error": "non-constant source not supported",
+    "range": {
+      "end": {
+        "character": 23,
+        "line": 13,
+      },
+      "start": {
+        "character": 6,
+        "line": 13,
+      },
+    },
+    "uri": null,
+  },
+  {
+    "error": "non-constant source not supported",
+    "range": {
+      "end": {
+        "character": 66,
+        "line": 16,
+      },
+      "start": {
+        "character": 49,
+        "line": 16,
+      },
+    },
+    "uri": null,
+  },
+  {
+    "error": "non-constant source not supported",
+    "range": {
+      "end": {
+        "character": 66,
+        "line": 18,
+      },
+      "start": {
+        "character": 6,
+        "line": 18,
+      },
+    },
+    "uri": null,
+  },
+  {
+    "error": null,
+    "range": {
+      "end": {
+        "character": 30,
+        "line": 25,
+      },
+      "start": {
+        "character": 8,
+        "line": 25,
+      },
+    },
+    "uri": "file:///Users/bash/issue206.sh",
+  },
+  {
+    "error": "non-constant source not supported",
+    "range": {
+      "end": {
+        "character": 22,
+        "line": 47,
+      },
+      "start": {
+        "character": 8,
+        "line": 47,
+      },
+    },
+    "uri": null,
+  },
+  {
+    "error": "non-constant source not supported",
+    "range": {
+      "end": {
+        "character": 39,
+        "line": 59,
+      },
+      "start": {
+        "character": 8,
+        "line": 59,
+      },
+    },
+    "uri": null,
+  },
+  {
+    "error": "non-constant source not supported",
+    "range": {
+      "end": {
+        "character": 42,
+        "line": 62,
+      },
+      "start": {
+        "character": 8,
+        "line": 62,
+      },
+    },
+    "uri": null,
+  },
+  {
+    "error": "non-constant source not supported",
+    "range": {
+      "end": {
+        "character": 67,
+        "line": 89,
+      },
+      "start": {
+        "character": 10,
+        "line": 89,
+      },
+    },
+    "uri": null,
+  },
+]
+`;

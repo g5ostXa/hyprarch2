@@ -1,0 +1,641 @@
+{
+	"name": "vscode-office",
+	"displayName": "Office Viewer(Markdown Editor)",
+	"description": "View word,excel files and using WYSIWYG editor for markdown.",
+	"version": "3.3.7",
+	"publisher": "cweijan",
+	"icon": "images/icon.png",
+	"engines": {
+		"vscode": "^1.64.0"
+	},
+	"keywords": [
+		"pdf",
+		"word",
+		"markdown",
+		"xlsx",
+		"excel"
+	],
+	"categories": [
+		"Visualization",
+		"Other"
+	],
+	"bugs": {
+		"url": "https://github.com/cweijan/vscode-office/issues",
+		"email": "cweijan@163.com"
+	},
+	"homepage": "https://github.com/cweijan/vscode-office/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cweijan/vscode-office.git"
+	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"themes": [
+			{
+				"label": "One Dark Modern",
+				"uiTheme": "vs-dark",
+				"path": "./theme/onedark-modern.json"
+			},
+			{
+				"label": "One Dark Modern Classic",
+				"uiTheme": "vs-dark",
+				"path": "./theme/onedark-modern-classic.json"
+			}
+		],
+		"iconThemes": [
+			{
+				"id": "office-material-icon-theme",
+				"label": "Office Material Icon Theme",
+				"path": "./theme/material-icons.json",
+				"_watch": true
+			}
+		],
+		"languages": [
+			{
+				"id": "reg",
+				"aliases": [
+					"REG",
+					"reg"
+				],
+				"extensions": [
+					".reg",
+					".REG"
+				],
+				"configuration": "./syntaxes/reg-language-configuration.json"
+			},
+			{
+				"id": "http",
+				"aliases": [
+					"HTTP",
+					"Http",
+					"http"
+				],
+				"extensions": [
+					".http",
+					".rest"
+				],
+				"firstLine": "^(GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS|CONNECT|TRACE)\\s+(.*?)HTTP/[0-9\\.]+$",
+				"configuration": "./syntaxes/http-language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "reg",
+				"scopeName": "source.reg",
+				"path": "./syntaxes/reg.tmLanguage"
+			},
+			{
+				"language": "http",
+				"scopeName": "source.http",
+				"path": "./syntaxes/http.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "http",
+				"path": "./snippets/http.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "rest-client.request",
+				"title": "Send Request",
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.rerun-last-request",
+				"title": "Rerun Last Request",
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.cancel-request",
+				"title": "Cancel Request",
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.switch-environment",
+				"title": "Switch Environment",
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.history",
+				"title": "View Request History",
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.clear-history",
+				"title": "Clear Request History",
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.save-response",
+				"title": "Save Full Response",
+				"icon": {
+					"light": "./images/save.svg",
+					"dark": "./images/save-inverse.svg"
+				},
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.save-response-body",
+				"title": "Save Response Body",
+				"icon": {
+					"light": "./images/save-body.svg",
+					"dark": "./images/save-body-inverse.svg"
+				},
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.copy-response-body",
+				"title": "Copy Response Body",
+				"icon": {
+					"light": "./images/copy.svg",
+					"dark": "./images/copy-inverse.svg"
+				},
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.generate-codesnippet",
+				"title": "Generate Code Snippet",
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.copy-codesnippet",
+				"title": "Copy Code Snippet",
+				"icon": {
+					"light": "./images/copy.svg",
+					"dark": "./images/copy-inverse.svg"
+				},
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.copy-request-as-curl",
+				"title": "Copy Request As cURL",
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.clear-aad-token-cache",
+				"title": "Clear Azure AD Token Cache",
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.fold-response",
+				"title": "Fold Response",
+				"category": "Rest Client"
+			},
+			{
+				"command": "rest-client.unfold-response",
+				"title": "Unfold Response",
+				"category": "Rest Client"
+			},
+			{
+				"command": "office.reg.jumpToKey",
+				"title": "REG: Jump to registry key"
+			},
+			{
+				"command": "office.markdown.switch",
+				"title": "Switch markdown editor",
+				"icon": {
+					"dark": "./images/switch.svg",
+					"light": "./images/switch_light.svg"
+				}
+			},
+			{
+				"command": "office.markdown.paste",
+				"title": "Enhance pater in markdown"
+			},
+			{
+				"command": "office.html.preview",
+				"title": "Preview HTML"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "office.markdown.paste",
+				"key": "ctrl+v",
+				"when": "!terminalFocus && !filesExplorerFocus && resourceLangId == markdown"
+			},
+			{
+				"command": "office.html.preview",
+				"key": "ctrl+shift+v",
+				"when": "editorTextFocus && editorLangId == html"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "rest-client.fold-response",
+					"when": "httpResponsePreviewFocus"
+				},
+				{
+					"command": "rest-client.unfold-response",
+					"when": "httpResponsePreviewFocus"
+				},
+				{
+					"command": "rest-client.save-response",
+					"when": "httpResponsePreviewFocus"
+				},
+				{
+					"command": "rest-client.save-response-body",
+					"when": "httpResponsePreviewFocus"
+				},
+				{
+					"command": "rest-client.copy-response-body",
+					"when": "httpResponsePreviewFocus"
+				},
+				{
+					"command": "rest-client.copy-codesnippet",
+					"when": "codeSnippetPreviewFocus"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "office.markdown.switch",
+					"when": "resourceExtname == '.md'",
+					"group": "navigation@-2"
+				},
+				{
+					"when": "httpResponsePreviewFocus",
+					"command": "rest-client.save-response",
+					"group": "navigation@1"
+				},
+				{
+					"when": "httpResponsePreviewFocus",
+					"command": "rest-client.save-response-body",
+					"group": "navigation@2"
+				},
+				{
+					"when": "httpResponsePreviewFocus",
+					"command": "rest-client.copy-response-body",
+					"group": "navigation@3"
+				},
+				{
+					"when": "httpResponsePreviewFocus",
+					"command": "rest-client.fold-response",
+					"group": "1_rest-client@1"
+				},
+				{
+					"when": "httpResponsePreviewFocus",
+					"command": "rest-client.unfold-response",
+					"group": "1_rest-client@2"
+				},
+				{
+					"when": "codeSnippetPreviewFocus",
+					"command": "rest-client.copy-codesnippet",
+					"group": "navigation"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "office.html.preview",
+					"group": "navigation@1",
+					"when": "editorTextFocus && editorLangId == html"
+				},
+				{
+					"command": "rest-client.request",
+					"when": "editorTextFocus && editorLangId == http",
+					"group": "rest-client@1"
+				},
+				{
+					"command": "rest-client.generate-codesnippet",
+					"when": "editorTextFocus && editorLangId == http",
+					"group": "rest-client@2"
+				},
+				{
+					"command": "rest-client.copy-request-as-curl",
+					"when": "editorTextFocus && editorLangId == http",
+					"group": "rest-client@3"
+				}
+			]
+		},
+		"customEditors": [
+			{
+				"viewType": "cweijan.officeViewer",
+				"displayName": "Office Viewer",
+				"selector": [
+					{
+						"filenamePattern": "*.xlsx"
+					},
+					{
+						"filenamePattern": "*.xlsm"
+					},
+					{
+						"filenamePattern": "*.csv"
+					},
+					{
+						"filenamePattern": "*.xls"
+					},
+					{
+						"filenamePattern": "*.ods"
+					},
+					{
+						"filenamePattern": "*.docx"
+					},
+					{
+						"filenamePattern": "*.dotx"
+					},
+					{
+						"filenamePattern": "*.pdf"
+					},
+					{
+						"filenamePattern": "*.ttf"
+					},
+					{
+						"filenamePattern": "*.woff"
+					},
+					{
+						"filenamePattern": "*.woff2"
+					},
+					{
+						"filenamePattern": "*.otf"
+					},
+					{
+						"filenamePattern": "*.jar"
+					},
+					{
+						"filenamePattern": "*.zip"
+					},
+					{
+						"filenamePattern": "*.apk"
+					},
+					{
+						"filenamePattern": "*.vsix"
+					},
+					{
+						"filenamePattern": "file:/**/*.svg"
+					}
+				]
+			},
+			{
+				"viewType": "cweijan.imageViewer",
+				"displayName": "Image Preview(Office Viewer)",
+				"priority": "option",
+				"selector": [
+					{
+						"filenamePattern": "file:/**/*.jpg"
+					},
+					{
+						"filenamePattern": "file:/**/*.png"
+					},
+					{
+						"filenamePattern": "file:/**/*.gif"
+					},
+					{
+						"filenamePattern": "file:/**/*.apng"
+					},
+					{
+						"filenamePattern": "file:/**/*.apng"
+					},
+					{
+						"filenamePattern": "file:/**/*.bmp"
+					},
+					{
+						"filenamePattern": "file:/**/*.ico"
+					},
+					{
+						"filenamePattern": "file:/**/*.cur"
+					},
+					{
+						"filenamePattern": "file:/**/*.jpeg"
+					},
+					{
+						"filenamePattern": "file:/**/*.pjpeg"
+					},
+					{
+						"filenamePattern": "file:/**/*.pjp"
+					},
+					{
+						"filenamePattern": "file:/**/*.tif"
+					},
+					{
+						"filenamePattern": "file:/**/*.webp"
+					}
+				]
+			},
+			{
+				"viewType": "cweijan.markdownViewer",
+				"displayName": "Markdown Editor",
+				"selector": [
+					{
+						"filenamePattern": "file:/**/*.md"
+					}
+				]
+			},
+			{
+				"viewType": "cweijan.htmlViewer",
+				"displayName": "Html Viewer",
+				"priority": "option",
+				"selector": [
+					{
+						"filenamePattern": "*.html"
+					},
+					{
+						"filenamePattern": "*.htm"
+					}
+				]
+			},
+			{
+				"viewType": "cweijan.classViewer",
+				"displayName": "Java Decompiler",
+				"selector": [
+					{
+						"filenamePattern": "file:/**/*.class"
+					}
+				]
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Office",
+			"properties": {
+				"vscode-office.viewAbsoluteLocal": {
+					"type": "boolean",
+					"default": false,
+					"description": "Support view absolute path image from markdown viewer."
+				},
+				"vscode-office.chromiumPath": {
+					"type": "string",
+					"description": "Set the chromium browser location for exporting markdown pdf."
+				},
+				"vscode-office.pdfMarginTop": {
+					"type": "integer",
+					"default": 25,
+					"description": "Printed pdf default top margin."
+				},
+				"vscode-office.openOutline": {
+					"type": "boolean",
+					"default": true,
+					"description": "Open markdown outline."
+				},
+				"vscode-office.hideToolbar": {
+					"type": "boolean",
+					"default": false,
+					"description": "Hide markdown toolbar."
+				},
+				"vscode-office.previewCode": {
+					"type": "boolean",
+					"default": true,
+					"description": "Preview code in markdown."
+				},
+				"vscode-office.editorTheme": {
+					"type": "string",
+					"enum": [
+						"Auto",
+						"Light",
+						"Solarized"
+					],
+					"default": "light",
+					"markdownDescription": "The theme for the Markdown editor."
+				},
+				"vscode-office.previewCodeHighlight.style": {
+					"type": "string",
+					"enum": [
+						"abap",
+						"algol",
+						"algol_nu",
+						"arduino",
+						"autumn",
+						"borland",
+						"bw",
+						"colorful",
+						"dracula",
+						"emacs",
+						"friendly",
+						"fruity",
+						"github",
+						"igor",
+						"lovelace",
+						"manni",
+						"monokai",
+						"monokailight",
+						"murphy",
+						"native",
+						"paraiso-dark",
+						"paraiso-light",
+						"pastie",
+						"perldoc",
+						"pygments",
+						"rainbow_dash",
+						"rrt",
+						"solarized-dark",
+						"solarized-dark256",
+						"solarized-light",
+						"swapoff",
+						"tango",
+						"trac",
+						"vim",
+						"vs",
+						"xcode",
+						"ant-design"
+					],
+					"default": "dracula",
+					"markdownDescription": "Default syntax highlight style of markdown preview code. Refer to [Chroma Style Gallery](https://xyproto.github.io/splash/docs/longer/all.html). Only applies when `#vscode-office.previewCode#` is enabled."
+				},
+				"vscode-office.previewCodeHighlight.showLineNumber": {
+					"type": "boolean",
+					"default": true,
+					"markdownDescription": "Show line numbers in markdown preview code window. Only applies when `#vscode-office.previewCode#` is enabled."
+				},
+				"vscode-office.editorLanguage": {
+					"type": "string",
+					"enum": [
+						"en_US",
+						"ja_JP",
+						"ko_KR",
+						"ru_RU",
+						"zh_CN",
+						"zh_TW"
+					],
+					"default": "en_US",
+					"description": "You could change your editor language."
+				},
+				"vscode-office.workspacePathAsImageBasePath": {
+					"type": "boolean",
+					"default": false,
+					"description": "Using workspace path as markdown image base path."
+				},
+				"vscode-office.pasterImgPath": {
+					"type": "string",
+					"default": "image/${fileName}/${now}.png",
+					"description": "Markdown paste image path, variables: workspaceDir, fileName, now."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"dev": "vite --mode=development",
+		"lint:fix": "eslint src/**/*.ts --fix",
+		"build": "rimraf out && vite build --mode=production",
+		"package": "vsce package --no-dependencies",
+		"publish": "vsce publish --no-dependencies",
+		"vscode:prepublish": "npm run build"
+	},
+	"devDependencies": {
+		"@types/node": "^20.11.30",
+		"@types/node-fetch": "^2.5.7",
+		"@types/react": "^18.2.66",
+		"@types/react-dom": "^18.2.22",
+		"@types/vscode": "^1.64.0",
+		"@typescript-eslint/eslint-plugin": "^7.1.1",
+		"@typescript-eslint/parser": "^7.1.1",
+		"@vitejs/plugin-react": "^4.2.1",
+		"esbuild": "^0.14.54",
+		"esbuild-plugin-copy": "^1.3.0",
+		"eslint": "^8.57.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-react": "^7.34.1",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.6",
+		"eslint-plugin-unused-imports": "^3.1.0",
+		"less": "^4.2.0",
+		"rimraf": "^3.0.2",
+		"vite": "^5.2.0"
+	},
+	"dependencies": {
+		"@ant-design/icons": "^5.3.5",
+		"@antv/s2": "^2.0.0-next.16",
+		"@types/adm-zip": "^0.5.0",
+		"adm-zip": "^0.5.10",
+		"antd": "^5.15.4",
+		"axios": "^1.4.0",
+		"cheerio": "^1.0.0-rc.3",
+		"chrome-finder": "^1.0.7",
+		"date-format": "^4.0.14",
+		"docx-preview": "^0.3.0",
+		"file-type": "^18.0.0",
+		"highlight.js": "^10.1.2",
+		"iconv-lite": "^0.6.3",
+		"katex": "^0.16.2",
+		"markdown-it": "^13.0.1",
+		"markdown-it-anchor": "^8.6.5",
+		"markdown-it-checkbox": "^1.1.0",
+		"markdown-it-plantuml": "^1.4.1",
+		"markdown-it-toc-done-right": "^4.2.0",
+		"mustache": "^4.0.1",
+		"opentype.js": "^1.3.4",
+		"pdf-lib": "^1.11.2",
+		"puppeteer-core": "^1.20.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-image-gallery": "^1.3.0",
+		"udsv": "^0.5.3",
+		"vscode-html-to-docx": "^1.1.2",
+		"xlsx": "^0.18.5"
+	},
+	"__metadata": {
+		"id": "936b1be7-8595-4f76-b102-aa6bb915da73",
+		"publisherId": "43004267-e6e4-497f-b826-dda371e4ec49",
+		"publisherDisplayName": "Weijan Chen",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1720915411000,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}

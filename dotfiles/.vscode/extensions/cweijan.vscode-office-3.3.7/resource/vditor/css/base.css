@@ -1,0 +1,70 @@
+*:not(.katex, .katex *) {
+    border-color: var(--ext-border-color) !important;
+}
+
+.vditor-content hr {
+    background-color: var(--hr-bg) !important;
+}
+
+.dropdown-menu.show:before,
+.dropdown-item {
+    background-color: var(--second-bg-color) !important;
+    color: var(--front-color) !important;
+}
+
+.dropdown-item:hover {
+    background: var(--dropdown-hover-background) !important;
+}
+
+.vditor-reset--error {
+    color: var(--error-color) !important;
+}
+
+
+.vditor-input {
+    border: 1px solid var(--ext-border-color);
+}
+
+.vditor-toolbar {
+    background-color: var(--bg-color);
+}
+
+.vditor-toolbar__item .vditor-tooltipped {
+    color: var(--front-color)
+}
+
+.vditor-content code:not(.hljs) {
+    background-color: var(--code-bg-color) !important;
+    color: var(--front-color) !important;
+}
+
+.vditor-reset {
+    font-size: var(--vscode-editor-font-size)
+}
+
+.vditor,
+.vditor-content,
+.vditor-content *:not(.hljs, .hljs *, .katex, .katex *, a, hr, .vditor-reset--error,code) {
+    background-color: var(--bg-color) !important;
+    color: var(--front-color) !important;
+}
+
+.vditor-content .language-flowchart svg,
+.vditor-content .language-mermaid svg,
+.vditor-content .language-mindmap canvas{
+    background-color: white !important;
+}
+
+
+.vditor-content .vditor-wysiwyg__preview>code {
+    color: var(--front-color);
+    background-color: var(--bg-color) !important;
+}
+
+.vditor-hint button:not(.vditor-menu--disabled):hover {
+    background-color: var(--second-bg-color) !important;
+}
+
+.vditor-content .vditor-outline li > span:hover > span {
+    color: var(--list-hover-color) !important;
+}

@@ -1,0 +1,52 @@
+{
+	"name": "copilot-theme",
+	"displayName": "Copilot Theme",
+	"description": "A VSCode implementation of the theme displayed on Github Copilot website.",
+	"version": "1.1.0",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.57.0"
+	},
+	"publisher": "benjaminbenais",
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"Theme",
+		"Dark Theme",
+		"Copilot",
+		"Github Copilot"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/benjaminbenais/copilot-theme"
+	},
+	"icon": "theme-icon.png",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Copilot Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Copilot Theme-color-theme.json"
+			},
+			{
+				"label": "Copilot Theme - Higher Contrast",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Copilot Theme-color-theme-higher-contrast.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "0f74f457-2be2-484d-8569-0eaab1fe38d7",
+		"publisherId": "282b1298-006e-45b3-ab0f-64116429c9a8",
+		"publisherDisplayName": "Benjamin Benais",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1720369941339,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}

@@ -1,0 +1,98 @@
+.mtk5,
+.mtki {
+  font-family: "Cartograph CF";
+  font-style: italic;
+  font-size: 105%;
+  font-weight: 400;
+}
+.mtk3,
+.mtk5,
+.mtk10,
+.mtk15,
+.mtk16,
+.mtk17,
+.mtk18 {
+  font-weight: 800;
+}
+.mtk3 {
+  color: transparent;
+  background-image: linear-gradient(45deg, #c29ffd 50%, #ffb5dc);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.mtk5 {
+  color: transparent;
+  background-image: linear-gradient(45deg, #20e3b2 35%, #2cccff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.mtk10,
+.mtk15 {
+  font-weight: 800;
+  color: transparent;
+  background-image: linear-gradient(to right top, #fc6c8f, #ff2ced);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.mtk16 {
+  color: transparent;
+  background-image: linear-gradient(45deg, #9a86fd, #6a5af9);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.mtk17 {
+  color: transparent;
+  background-image: linear-gradient(45deg, #0c97fa, #16e1f5);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.mtk18 {
+  color: transparent;
+  background-image: linear-gradient(90deg, #82aaff 50%, #3d6ef7);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+/* Custom for border left change tab file, extension, debug ... */
+.monaco-workbench
+  .activitybar
+  > .content
+  :not(.monaco-menu)
+  > .monaco-action-bar
+  .action-item.checked
+  .active-item-indicator:before {
+  border: 0;
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, #d66efd, #fc6c8f, #ff2ced);
+}
+/* Custom gradient for border top change tab (thanh chuyển tab) */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active.tab-border-top
+  > .tab-border-top-container {
+  background-image: linear-gradient(to left, #d66efd, #fc6c8f, #ff2ced);
+  height: 3px;
+}
+/* Custom style for cursor (con trỏ chuột) */
+.monaco-editor .cursors-layer .cursor {
+  background-image: linear-gradient(to bottom, #faff89, #ea72ad);
+}
+/* Một vài màu gradient đẹp */
+/* Purple : linear-gradient(45deg, #d12efd 0%, #6c00d1 100%); 
+linear-gradient(45deg, #6b2cf5, #d450e6)*/
+/* Pink : linear-gradient(to left top, #fc6c8f, #ff2ced, #ffb86c);#ff00d6 */
+/* Skin :linear-gradient(to right top, #c29ffd, #ffb4dc, #fef0d1)*/
+/* Orange: linear-gradient(-89deg, rgb(251, 0, 255), rgb(253, 49, 152) 32%, rgb(254, 77, 93) 70%, rgb(255, 121, 0)) */

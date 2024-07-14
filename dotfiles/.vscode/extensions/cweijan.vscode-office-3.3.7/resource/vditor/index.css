@@ -1,0 +1,34 @@
+body {
+    padding: 0;
+}
+
+code {
+    color: #24292e;
+}
+
+a {
+    text-decoration: none;
+}
+
+.vditor-panel span[aria-label="ID<Alt+Enter>"],
+.vditor-panel .vditor-icon[data-type="down"] {
+    display: none !important;
+}
+
+.vditor-reset {
+    padding: 0 5% !important;
+}
+
+.win32 * {
+    text-shadow: 0 0 0.55px #7c7c7cdd;
+}
+
+.vditor-toolbar__item .vditor-tooltipped[data-type="selectTheme"] {
+    width: 55px;
+    font-size: 14px;
+    color: var(--vscode-charts-red);
+}
+
+html {
+    scrollbar-color: unset;
+}
