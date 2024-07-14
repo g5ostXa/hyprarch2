@@ -34,10 +34,10 @@ else
   if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" ;then
       echo ":: Sarting Installation..."
   elif [ $? -eq 130 ]; then
-      echo ":: Installation canceled"
+      echo ":: Installation canceled."
       exit 130
   else
-      echo ":: Installation canceled"
+      echo ":: Installation canceled."
     exit;
   fi
 fi
