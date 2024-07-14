@@ -31,14 +31,13 @@ if [ -n "$SSH_CONNECTION" ]; then
       esac
    done
 else
-
-if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" ;then
-    echo ":: Sarting Installation..."
-elif [ $? -eq 130 ]; then
-    echo ":: Installation canceled"
-    exit 130
-else
-    echo ":: Installation canceled"
+  if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" ;then
+      echo ":: Sarting Installation..."
+  elif [ $? -eq 130 ]; then
+      echo ":: Installation canceled"
+      exit 130
+  else
+      echo ":: Installation canceled"
     exit;
   fi
 fi
