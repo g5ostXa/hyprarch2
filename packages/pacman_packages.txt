@@ -953,7 +953,7 @@ which
 wireless_tools
 wl-clipboard
 wlr-randr
-wlroots
+wlroots0.17
 woff2
 wolfssl
 wpa_supplicant
