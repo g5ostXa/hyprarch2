@@ -6,5 +6,4 @@ paru-debug
 proton-pass
 protonvpn-cli-community
 trizen
-visual-studio-code-bin
 wlogout
