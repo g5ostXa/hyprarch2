@@ -911,6 +911,7 @@ ttf-fira-code
 ttf-fira-sans
 ttf-firacode-nerd
 ttf-font-awesome
+ttf-jetbrains-mono-nerd
 tumbler
 twolame
 tzdata
