@@ -93,13 +93,6 @@
         "tooltip": false
     },    
 
-    // ChatGPT Launcher
-    "custom/chatgpt": {
-        "format": "",
-        "on-click": "chromium --app=https://chat.openai.com",
-        "tooltip": false
-    },
-
     // Calculator
     "custom/calculator": {
         "format": "",
@@ -109,7 +102,7 @@
 
     // Rofi Application Launcher
     "custom/appmenu": {
-        "format": "hyprarch2",
+        "format": "hyprarch2 󰣇",
         "on-click": "rofi -show drun -replace",
         "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
         "tooltip": false
