@@ -32,7 +32,7 @@ if [ -n "$SSH_CONNECTION" ]; then
     esac
   done
 else
-  if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" ; then
+  if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
     echo ":: Starting Installation..."
   elif [ $? -eq 130 ]; then
     echo ":: Installation canceled."
