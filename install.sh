@@ -18,7 +18,7 @@ echo -e "${RC}"
 
 if [ -n "$SSH_CONNECTION" ]; then
   while true; do
-    read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " yn
+    read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
     case $yn in
       [Yy]* )
         echo ":: Starting Installation..."
