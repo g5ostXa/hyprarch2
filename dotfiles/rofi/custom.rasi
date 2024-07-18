@@ -1,5 +1,5 @@
 /*
- * ROFI color theme
+ * ROFI color theme with rounded corners
  *
  * Dark theme based on Dracula GTK Theme (https://draculatheme.com/gtk)
  */
@@ -29,6 +29,7 @@
 window {
     transparency: "real";
     background-color: #282a36CC; /* base00 + CC (80% opacity) */
+    border-radius: 10px; /* Adjust the radius for rounded corners */
 }
 
 mainbox {
@@ -37,6 +38,7 @@ mainbox {
     padding: 30px 0;
     border: 1px;
     border-color: @base0D;
+    border-radius: 10px; /* Rounded corners for the main box */
 }
 
 inputbar {
@@ -74,6 +76,7 @@ textbox {
     background-color: @base00; /* dark background */
     text-color: @base05; /* lighter text */
     padding: 5px;
+    border-radius: 5px; /* Rounded corners for buttons and textboxes */
 }
 
 button selected {
@@ -137,3 +140,4 @@ element selected active,
 element alternate active {
     text-color: @base0B;
 }
+
