@@ -1,9 +1,0 @@
-bibata-cursor-theme
-chkservice
-dracula-gtk-theme
-paru
-paru-debug
-proton-pass
-protonvpn-cli-community
-trizen
-wlogout
