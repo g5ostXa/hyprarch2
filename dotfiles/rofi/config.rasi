@@ -16,14 +16,10 @@ configuration {
     icon-theme:                 "kora";
     display-drun:               "APPS";
     display-run:                "RUN";
-    display-filebrowser:        "FILES";
-    display-window:             "WINDOW";
     drun-display-format:        "{name}";
     hover-select:               true;
     me-select-entry:            "";
     me-accept-entry:            "MousePrimary";
-    window-format:              "{w} · {c} · {t}";
-    
 }
 
 @theme "~/dotfiles/rofi/custom.rasi"
