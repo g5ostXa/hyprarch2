@@ -23,7 +23,7 @@ install_packages() {
     fi
 
     cd "$HOME"; rm -rf paru-bin
-    paru -S --needed --noconfirm bibata-cursor-theme dracula-gtk-theme trizen wlogout
+    paru -S --needed --noconfirm bibata-cursor-theme dracula-gtk-theme dracula-incons-theme trizen wlogout
 
 }
 
