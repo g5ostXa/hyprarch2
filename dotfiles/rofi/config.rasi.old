@@ -248,3 +248,4 @@ error-message {
     border-radius:               20px;
     background-color:            @background;
     text-color:                  @foreground;
+}
