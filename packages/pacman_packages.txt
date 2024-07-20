@@ -169,7 +169,6 @@ gtk4
 gtkmm-4.0
 gtkmm3
 gtksourceview4
-gufw
 guile
 gum
 gupnp
@@ -435,7 +434,6 @@ libslirp
 libsm
 libsndfile
 libsodium
-libsoup
 libsoup3
 libsoxr
 libssh
@@ -945,7 +943,6 @@ wavpack
 waybar
 wayland
 wayland-protocols
-webkit2gtk
 webkit2gtk-4.1
 webrtc-audio-processing-1
 wget
