@@ -30,7 +30,6 @@ bash
 bat
 binutils
 bison
-bleachbit
 breeze-icons
 bridge-utils
 brightnessctl
