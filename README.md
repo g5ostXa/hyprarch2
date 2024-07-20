@@ -40,9 +40,9 @@ $ Hyprland
 ```
 
 ## ⌨️ Basic Keybinds
-- `SUPER` + `B`: Firefox
-- `SUPER` + `RETURN`: Alacritty
-- `SUPER` + `CTRL` + `RETURN`: Rofi 
-- `SUPER` + `SHIFT` + `B`: Reload waybar 
-- `SUPER` + `CTRL` + `Q`: Wlogout
+- `SUPER` + `B` : Firefox
+- `SUPER` + `RETURN` : Alacritty
+- `SUPER` + `CTRL` + `RETURN` : Rofi 
+- `SUPER` + `SHIFT` + `B` : Reload waybar 
+- `SUPER` + `CTRL` + `Q` : Wlogout
 
