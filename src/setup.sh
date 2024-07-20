@@ -90,7 +90,7 @@ create_symlinks() {
     ln -s ~/dotfiles/hypr/ ~/.config/
     ln -s ~/dotfiles/nvim/ ~/.config/
     ln -s ~/dotfiles/rofi/ ~/.config/
-    ln -s ~/dotfiles/starship/starship.toml ~/.config/
+    ln -s ~/dotfiles/starship/ ~/.config/
     ln -s ~/dotfiles/swappy/ ~/.config/
     ln -s ~/dotfiles/vim/ ~/.config/
     ln -s ~/dotfiles/wal ~/.config/
