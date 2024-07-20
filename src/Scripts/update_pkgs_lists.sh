@@ -43,5 +43,7 @@ fi
 
 }
 
+notify-send "Package lists are now updated!"
+
 check_dir
 update_lists
