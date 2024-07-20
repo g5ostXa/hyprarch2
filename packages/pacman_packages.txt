@@ -997,4 +997,5 @@ yyjson
 zeromq
 zimg
 zlib
+zram-generator
 zstd
