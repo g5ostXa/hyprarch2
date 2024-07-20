@@ -23,15 +23,15 @@ fi
 }
 
 update_lists() {
-pacman -Qqn > "$package_lists_dir/pacman_packages.txt"
-pacman -Qm | awk '{print $1}' > "$package_lists_dir/aur_packages.txt"
+    pacman -Qqn > "$package_lists_dir/pacman_packages.txt"
+    pacman -Qm | awk '{print $1}' > "$package_lists_dir/aur_packages.txt"
 
-echo -e "${GREEN}Calculating number of pacman packages...${RC}"
-wc -l "$package_lists_dir/pacman_packages.txt"
-echo ""
+    echo -e "${GREEN}Calculating number of pacman packages...${RC}"
+    wc -l "$package_lists_dir/pacman_packages.txt"
+    echo ""
 
-echo -e "${GREEN}Calculating number of AUR packages...${RC}"
-wc -l "$package_lists_dir/aur_packages.txt"
+    echo -e "${GREEN}Calculating number of AUR packages...${RC}"
+    wc -l "$package_lists_dir/aur_packages.txt"
 
 if [ $? -eq 0 ]; then
     echo ""
