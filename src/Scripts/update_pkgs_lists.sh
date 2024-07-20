@@ -8,7 +8,7 @@ RC='\033[0m'
 package_lists_dir="$HOME/packages"
 
 check_dir() {
-if [ -f "$package_lists_dir" ]; then
+if [ -d "$package_lists_dir" ]; then
     rm -rf "$package_lists_dir"/*
     echo ""
     echo -e "${YELLOW}Updating package lists...${RC}"
