@@ -14,11 +14,22 @@ export PATH="/usr/lib/ccache/bin/:$PATH"
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
 
-if [[ $(tty) == *"pts"* ]]; then
-    
-    echo "Vrch7inuX" | figlet | lolcat   
-    date | lolcat
+CYAN='\033[0;36m'
+RC='\033[0m'
 
+if [[ $(tty) == *"pts"* ]]; then
+echo -e "${CYAN}"
+cat <<"EOF"
+ _                                    _     ____
+| |__  _   _ _ __  _ __ __ _ _ __ ___| |__ |___ \
+| '_ \| | | | '_ \| '__/ _` | '__/ __| '_ \  __) |
+| | | | |_| | |_) | | | (_| | | | (__| | | |/ __/
+|_| |_|\__, | .__/|_|  \__,_|_|  \___|_| |_|_____|
+       |___/|_|
+EOF
+echo ""
+date 
+echo -e "${RC}"
 fi
 
 # Set fish interactively
