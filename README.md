@@ -43,5 +43,6 @@ $ Hyprland
 - `SUPER` + `RETURN`: Alacritty
 - `SUPER` + `CTRL` + `RETURN`: Rofi 
 - `SUPER` + `SHIFT` + `B`: Reload waybar 
-- `SUPER` + `CTRL` + `Q`: Logout screen
+- `SUPER` + `CTRL` + `Q`: Wlogout
+- `SUPER` + `B`: Launch Firefox
 
