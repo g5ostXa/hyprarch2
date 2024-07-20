@@ -35,7 +35,7 @@ update_lists() {
 
 if [ $? -eq 0 ]; then
     echo ""
-    echo -e "${YELLOW}Package lists are now updated !${RC}"
+    echo -e "${YELLOW}Package lists are now up to date!${RC}"
     notify-send "Package lists are now up to date!"
 else
     echo ""
