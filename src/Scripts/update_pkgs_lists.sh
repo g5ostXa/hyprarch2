@@ -12,11 +12,13 @@ if [ -d "$package_lists_dir" ]; then
     rm -rf "$package_lists_dir"/*
     echo ""
     echo -e "${YELLOW}Updating package lists...${RC}"
+    echo ""
     sleep 1
 else
     mkdir -p $HOME/packages/
     echo ""
     echo -e "${YELLOW}Updating package lists...${RC}"
+    echo ""
     sleep 1
 fi
 
