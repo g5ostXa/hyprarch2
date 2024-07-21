@@ -15,7 +15,7 @@ if [ -d "$package_lists_dir" ]; then
     echo ""
     sleep 1
 else
-    mkdir -p $HOME/packages/
+    mkdir -p "$package_lists_dir"
     echo ""
     echo -e "${YELLOW}Updating package lists...${RC}"
     echo ""
