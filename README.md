@@ -38,10 +38,15 @@ $ cd hyprarch2 && ./install.sh
 $ Hyprland
 ```
 
-## ⌨️ Basic Keybinds
+## ⌨️ Some useful keybinds
 - `SUPER` + `B` : Firefox
 - `SUPER` + `RETURN` : Alacritty
 - `SUPER` + `CTRL` + `RETURN` : Rofi 
 - `SUPER` + `SHIFT` + `B` : Reload waybar 
 - `SUPER` + `CTRL` + `Q` : Wlogout
-
+- `SUPER` + `U` : Update package lists
+- `SUPER` + `Q` : killactive
+- `SUPER` + `CTRL` + `P` : Proton-pass
+- `SUPER` + `E` : Thunar
+- `SUPER` + `F` : Fullscreen
+- `SUPER` + `T` : Togglefloating
