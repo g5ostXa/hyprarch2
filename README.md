@@ -17,11 +17,10 @@ By g5ostXa :ghost:
 - [hyprland wiki](https://wiki.hyprland.org)
 - [hyprland github](https://github.com/hyprwm/Hyprland)
 
-## ⚙️ Setup
+## ⚙️  Setup
 > [!IMPORTANT]
 > - Make sure to create new ssh key and add it to github before installing
-> - The install script assumes the repo is cloned in the `~/Downloads` directory
-> - In virt-manager please make sure that 3D acceleration is enabled in Video Virtio and the Listen type is set to None in Display Spice
+> - In virt-manager please verify that `3D acceleration` is enabled in `Video Virtio` and the `Listen type` is set to `None` in `Display Spice`
 
 ## 💻 Installation
 > [!NOTE]
