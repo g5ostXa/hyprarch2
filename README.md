@@ -25,7 +25,7 @@ By g5ostXa :ghost:
 
 ## 💻 Installation
 > [!NOTE]
-> - Please refer to my [arch-lvm-luks.md](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md) to install Arch manually, or simply use archinstall from the tty
+> - [arch-lvm-luks.md](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md) will guide you through installing Arch manually, or you can simply use archinstall from the archiso for a best effort Arch install 
 > - Within the new minimal Arch base install, download the [Repo](https://github.com/g5ostXa/hyprarch2) in the `~/Downloads` directory and run the install script
 ```
 $ cd Downloads
