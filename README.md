@@ -20,7 +20,7 @@ By g5ostXa :ghost:
 ## ⚙️ Setup
 > [!IMPORTANT]
 > - Make sure to create new ssh key and add it to github before installing
-> - In virt-manager please verify that `3D acceleration` is enabled in `Video Virtio` and the `Listen type` is set to `None` in `Display Spice`
+> - If installing in virt-manager, please verify that `3D acceleration` is enabled in `Video Virtio` and the `Listen type` is set to `None` in `Display Spice`
 
 ## 💻 Installation
 > [!NOTE]
@@ -33,7 +33,7 @@ $ cd hyprarch2 && ./install.sh
 ```
 
 ## ➜ Hyprland 
-- To start [hyprland](https://hyprland.org) from tty
+- Start [Hyprland](https://hyprland.org) from tty
 ```
 $ Hyprland
 ```
