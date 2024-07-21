@@ -17,7 +17,7 @@ By g5ostXa :ghost:
 - [hyprland wiki](https://wiki.hyprland.org)
 - [hyprland github](https://github.com/hyprwm/Hyprland)
 
-## ⚙️  Setup
+## ⚙️ Setup
 > [!IMPORTANT]
 > - Make sure to create new ssh key and add it to github before installing
 > - In virt-manager please verify that `3D acceleration` is enabled in `Video Virtio` and the `Listen type` is set to `None` in `Display Spice`
