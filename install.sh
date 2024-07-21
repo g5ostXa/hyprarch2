@@ -24,7 +24,7 @@ if [ -n "$SSH_CONNECTION" ]; then
         echo ":: Starting Installation..."
         break;;
       [Nn]* )
-        echo ":: Installation Canceled."
+        echo ":: Installation canceled..."
         exit;
         break;;
       * )
@@ -35,10 +35,10 @@ else
   if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
     echo ":: Starting Installation..."
   elif [ $? -eq 130 ]; then
-    echo ":: Installation canceled."
+    echo ":: Installation canceled..."
     exit 130
   else
-    echo ":: Installation canceled."
+    echo ":: Installation canceled..."
     exit;
   fi
 fi
