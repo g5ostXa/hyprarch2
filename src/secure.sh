@@ -12,9 +12,9 @@ sysctl_source_dir="$HOME/sysctl"
 ufw_config() {
     echo -e "${CYAN}Installing and configuring UFW...${RC}"
     sudo pacman -S --noconfirm ufw
-    # sudo ufw default deny incoming
-    # sudo ufw default allow outgoing
-    # sudo systemctl enable --now ufw.service
+    sudo ufw default deny incoming
+    sudo ufw default allow outgoing
+    sudo systemctl enable --now ufw.service
 
     echo -e "${CYAN}NOTE:${RC}"
     echo -e "${YELLOW}A reboot may be required for the firewall to be enabled and active!${RC}"
@@ -47,6 +47,12 @@ sysctl_hardening() {
     fi
 }
 
-ufw_config
+# Check if ufw is enabled
+if ! systemctl is-enabled --quiet ufw.service; then
+    ufw_config
+else
+    echo -e "${GREEN}UFW is already enabled.${RC}"
+fi
+
 sysctl_hardening
 
