@@ -19,11 +19,12 @@ clean_up() {
     cd "$HOME" && rm -rf paru-bin
 
     if [ $? -eq 0 ]; then
-        echo -e "${green}paru-bin removed !${RC}"
+        echo -e "${GREEN}paru-bin removed !${RC}"
         sleep 1
     else
         echo -e "${RED}Failed to remove paru-bin...${RC}"
-
+    fi
+    
     if [ -d "$hyprarch2_dir" ]; then
         echo -e "${YELLOW}Removing $hyprarch2_dir...${RC}"
         rm -rf "$hyprarch2_dir"
@@ -52,7 +53,7 @@ clean_up() {
         echo -e "${RED}trash-empty command not found, skipping...${RC}"
     fi
 
-    echo -e "${GREEN}Cleanup process completed successfully!${RC}"
+    echo -e "${GREEN}Cleanup process completed successfully !${RC}"
 
 }
 
