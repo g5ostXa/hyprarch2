@@ -17,10 +17,10 @@ ufw_config() {
     sudo pacman -S --noconfirm ufw
     sudo ufw default deny incoming
     sudo ufw default allow outgoing
-    sudo systemctl enable --now ufw.service
+    sudo ufw enable && sudo systemctl enable ufw.service
 
     echo -e "${CYAN}NOTE:${RC}"
-    echo -e "${YELLOW}A reboot may be required for the firewall to be enabled and active!${RC}"
+    echo -e "${YELLOW}A reboot is required for the firewall to be enabled and active !${RC}"
     echo -e "${YELLOW}The installation will continue in 5 seconds...${RC}"
     sleep 6
 }
