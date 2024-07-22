@@ -1,3 +1,3 @@
 #!/bin/bash
 
-hyprctl dispatch exit
+killall -9 Hyprland sleep 2
