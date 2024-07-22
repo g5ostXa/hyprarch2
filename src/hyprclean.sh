@@ -13,7 +13,13 @@ sysctl_readme="/etc/sysctl.d/README.md"
 clean_up() {
     echo -e "${CYAN}Starting cleanup process...${RC}"
     sleep 1
-    cd "$HOME"
+    cd "$HOME" && rm -rf paru-bin
+
+    if [ $? -eq 0 ]; then
+        echo -e "${green}paru-bin removed !${RC}"
+        sleep 1
+    else
+        echo -e "${RED}Failed to remove paru-bin...${RC}"
 
     if [ -d "$hyprarch2_dir" ]; then
         echo -e "${YELLOW}Removing $hyprarch2_dir...${RC}"
@@ -44,6 +50,7 @@ clean_up() {
     fi
 
     echo -e "${GREEN}Cleanup process completed successfully!${RC}"
+
 }
 
 clean_up

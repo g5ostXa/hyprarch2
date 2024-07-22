@@ -22,7 +22,7 @@ install_packages() {
         exit 1
     fi
 
-    cd "$HOME"; rm -rf paru-bin
+    cd "$HOME"
     paru -S --needed --noconfirm bibata-cursor-theme dracula-gtk-theme dracula-icons-theme trizen wlogout
 
 }
