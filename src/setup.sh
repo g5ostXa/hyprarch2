@@ -6,6 +6,9 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RC='\033[0m'
 
+echo -e "${CYAN}---> RUNNING SETUP.SH <---${RC}"
+sleep 3
+
 dotfiles_dir="$HOME/dotfiles/"
 packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
 aur_helper="paru-bin"

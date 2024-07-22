@@ -6,6 +6,9 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RC='\033[0m' 
 
+echo -e "${CYAN}---> RUNNING HYPRCLEAN.SH <---${RC}"
+sleep 3
+
 cleanup_script="$HOME/dotfiles/scripts/cleanup.sh"
 hyprarch2_dir="$HOME/Downloads/hyprarch2"
 sysctl_readme="/etc/sysctl.d/README.md"

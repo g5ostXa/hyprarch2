@@ -6,6 +6,9 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RC='\033[0m'
 
+echo -e "${CYAN}---> RUNNING SECURE.SH <---${RC}"
+sleep 3
+
 sysctl_dir="/etc/sysctl.d/"
 sysctl_source_dir="$HOME/sysctl"
 
