@@ -7,14 +7,8 @@
 </div>
 
 <div align="center">
-  <div style="display: flex; justify-content: center; align-items: center;">
-    <a href="https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.3" style="margin-right: 10px;">
-      <img src="https://img.shields.io/badge/release-v0.2.3-blue.svg" alt="Release">
-    </a>
-    <a href="https://github.com/g5ostXa/hyprarch2" style="margin-left: 10px;">
-      <img src="https://img.shields.io/badge/repo%20size-40M-blue" alt="Repo Size">
-    </a>
-  </div>
+
+[![Release](https://img.shields.io/badge/release-v0.2.3-blue.svg)](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.3)
 </div>
 
 <div align="center">
