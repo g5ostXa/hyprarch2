@@ -46,7 +46,7 @@ $ Hyprland
 - `SUPER` + `SHIFT` + `B` : Reload waybar 
 - `SUPER` + `CTRL` + `Q` : Wlogout
 - `SUPER` + `U` : Update package lists
-- `SUPER` + `Q` : killactive
+- `SUPER` + `Q` : Killactive
 - `SUPER` + `CTRL` + `P` : Proton-pass
 - `SUPER` + `E` : Thunar
 - `SUPER` + `F` : Fullscreen
