@@ -51,7 +51,6 @@ remove_existing_local_paths() {
         "$HOME/docs/"
         "$HOME/README.md"
         "$HOME/sysctl/"
-        "$HOME/wallpaper/"
         "$HOME/packages/"
         "$HOME/install.sh"
         "$HOME/src/"
@@ -71,7 +70,6 @@ remove_existing_local_paths() {
 copy_files() {
     cp -r "$HOME/Downloads/hyprarch2/.bashrc" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/dotfiles/"* "$dotfiles_dir/"
-    cp -r "$HOME/Downloads/hyprarch2/wallpaper/" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/src/" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/docs/" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/sysctl/" "$HOME/"
