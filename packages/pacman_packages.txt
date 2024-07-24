@@ -456,6 +456,7 @@ liburcu
 liburing
 libusb
 libusbmuxd
+libutf8proc
 libuv
 libva
 libvdpau
