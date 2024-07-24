@@ -70,7 +70,6 @@ remove_existing_local_paths() {
 }
 
 install_wallpaper() {
-
     if [ -d "$wallpaper_dir" ]; then
         echo -e "${YELLOW}Installing wallpapers...${RC}"
         sleep 1
