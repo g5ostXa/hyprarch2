@@ -82,10 +82,10 @@ install_wallpaper() {
     fi
 
     if [ $? -eq 0 ]; then
-        echo -e "${GREEN}Installed WALLPAPERS !${RC}"
+        echo -e "${GREEN}Installed wallpaper !${RC}"
         sleep 2
     else
-        echo "${RED}Failed to install wallpaper${RC}"
+        echo "${RED}Failed to install wallpaper...${RC}"
         sleep 2
     fi
 

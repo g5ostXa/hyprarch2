@@ -46,16 +46,11 @@ fi
 sleep 2
 set -e
 
-setup_script="$HOME/Downloads/hyprarch2/src/setup.sh"
-gtk_settings="$HOME/dotfiles/hypr/scripts/gtk.sh"
-hyprclean="$HOME/src/hyprclean.sh"
-secure_script="$HOME/src/secure.sh"
-
-source "$setup_script"
-source "$secure_script"
-source "$hyprclean"
+source "$HOME/Downloads/hyprarch2/src/setup.sh"
+source "$HOME/src/secure.sh"
+source "$HOME/src/hyprclean.sh"
 source ~/.bashrc
-source "$gtk_settings"
+source "$HOME/dotfiles/hypr/scripts/gtk.sh"
 
 echo -e "${GREEN}The installation is officially completed!${RC}"
 echo -e "${GREEN}You may now reboot in your new hyprarch2 system...${RC}"
