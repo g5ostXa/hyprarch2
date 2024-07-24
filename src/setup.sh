@@ -12,6 +12,8 @@ sleep 3
 dotfiles_dir="$HOME/dotfiles/"
 packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
 aur_helper="paru-bin"
+wallpaper="https://github.com/g5ostXa/wallpaper.git"
+wallpaper_dir="$HOME/wallpaper"
 
 install_packages() {
     sudo pacman -Syu && sudo pacman -S --needed - < "$packages"
@@ -67,6 +69,29 @@ remove_existing_local_paths() {
 
 }
 
+install_wallpaper() {
+
+    if [ -d "$wallpaper_dir" ]; then
+        echo -e "${YELLOW}Installing wallpapers...${RC}"
+        sleep 1
+        rm -rf "$wallpaper_dir"
+        cd "$HOME" && git clone "$wallpaper"
+    else 
+        echo -e "${YELLOW}Installing wallpapers...${RC}"
+        sleep 1
+        cd "$HOME" && git clone "$wallpaper"
+    fi
+
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}wallpaper repo cloned !${RC}"
+        sleep 2
+    else
+        echo "${RED}Failed to install wallpaper${RC}"
+        sleep 2
+    fi
+
+}
+
 copy_files() {
     cp -r "$HOME/Downloads/hyprarch2/.bashrc" "$HOME/"
     cp -r "$HOME/Downloads/hyprarch2/dotfiles/"* "$dotfiles_dir/"
@@ -108,5 +133,6 @@ sudo chown -R "$USER": "$HOME/.config/"*
 install_packages
 dotfiles_dir
 remove_existing_local_paths
+install_wallpaper
 copy_files
 create_symlinks
