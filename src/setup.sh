@@ -23,7 +23,7 @@ install_packages() {
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}$aur_helper successfully built! Moving on...${RC}"
     else
-        echo -e "${RED}$aur_helper failed to build... Exiting script!${RC}"
+        echo -e "${RED}$aur_helper failed to build... Exiting script !${RC}"
         exit 1
     fi
 
@@ -34,13 +34,13 @@ install_packages() {
 
 dotfiles_dir() {
     if [ -d "$dotfiles_dir" ]; then
-        echo -e "${RED}$dotfiles_dir already exists, aborting!${RC}"
+        echo -e "${RED}$dotfiles_dir already exists, aborting !${RC}"
         exit 1
     else
         echo -e "${CYAN}Creating $dotfiles_dir...${RC}"
         sleep 2
         mkdir -p "$dotfiles_dir"
-        echo -e "${GREEN}$dotfiles_dir created!${RC}"
+        echo -e "${GREEN}$dotfiles_dir created !${RC}"
         sleep 2
     fi
 
@@ -82,7 +82,7 @@ install_wallpaper() {
     fi
 
     if [ $? -eq 0 ]; then
-        echo -e "${GREEN}wallpaper repo cloned !${RC}"
+        echo -e "${GREEN}Installed WALLPAPERS !${RC}"
         sleep 2
     else
         echo "${RED}Failed to install wallpaper${RC}"
