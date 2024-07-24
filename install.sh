@@ -51,7 +51,6 @@ gtk_settings="$HOME/dotfiles/hypr/scripts/gtk.sh"
 hyprclean="$HOME/src/hyprclean.sh"
 secure_script="$HOME/src/secure.sh"
 
-# Source all installation scripts // The order matters!
 source "$setup_script"
 source "$secure_script"
 source "$hyprclean"
