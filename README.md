@@ -15,7 +15,7 @@
 
 ## 📦 Sources
 - [arch-wiki](https://wiki.archlinux.org)
-- [dotfiles (Stephan Raabe)](https://github.com/mylinuxforwork/dotfiles)
+- [dotfiles (ml4w)](https://github.com/mylinuxforwork/dotfiles)
 - [archbase (g5ostXa)](https://gist.github.com/g5ostXa/5f9255430996b9d77d6004d6d2308b4d)
 - [hyprland wiki](https://wiki.hyprland.org)
 - [hyprland github](https://github.com/hyprwm/Hyprland)
