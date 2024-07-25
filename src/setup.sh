@@ -6,7 +6,9 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RC='\033[0m'
 
+echo "=============================="
 echo -e "${CYAN}---> RUNNING SETUP.SH <---${RC}"
+echo "=============================="
 sleep 3
 
 packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
