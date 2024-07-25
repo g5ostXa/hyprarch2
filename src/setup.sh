@@ -9,7 +9,6 @@ RC='\033[0m'
 echo -e "${CYAN}---> RUNNING SETUP.SH <---${RC}"
 sleep 3
 
-dotfiles_dir="$HOME/dotfiles/"
 packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
 aur_helper="paru-bin"
 wallpaper="https://github.com/g5ostXa/wallpaper.git"
@@ -32,30 +31,11 @@ install_packages() {
 
 }
 
-dotfiles_dir() {
-    if [ -d "$dotfiles_dir" ]; then
-        echo -e "${RED}$dotfiles_dir already exists, aborting !${RC}"
-        exit 1
-    else
-        echo -e "${CYAN}Creating $dotfiles_dir...${RC}"
-        sleep 2
-        mkdir -p "$dotfiles_dir"
-        echo -e "${GREEN}$dotfiles_dir created !${RC}"
-        sleep 2
-    fi
-
-}
-
 remove_existing_local_paths() {
     local paths=(
         "$HOME/.config/fish/"
         "$HOME/.bashrc"
-        "$HOME/docs/"
-        "$HOME/README.md"
-        "$HOME/sysctl/"
-        "$HOME/packages/"
-        "$HOME/install.sh"
-        "$HOME/src/"
+        "$HOME/dotfiles/"
     )
 
     for path in "${paths[@]}"; do
@@ -92,16 +72,7 @@ install_wallpaper() {
 }
 
 copy_files() {
-    cp -r "$HOME/Downloads/hyprarch2/.bashrc" "$HOME/"
-    cp -r "$HOME/Downloads/hyprarch2/dotfiles/"* "$dotfiles_dir/"
-    cp -r "$HOME/Downloads/hyprarch2/src/" "$HOME/"
-    cp -r "$HOME/Downloads/hyprarch2/docs/" "$HOME/"
-    cp -r "$HOME/Downloads/hyprarch2/sysctl/" "$HOME/"
-    cp -r "$HOME/Downloads/hyprarch2/install.sh" "$HOME/"
-    cp -r "$HOME/Downloads/hyprarch2/README.md" "$HOME/"
-    cp -r "$HOME/Downloads/hyprarch2/packages/" "$HOME/"
-    cp -r "$HOME/Downloads/hyprarch2/RELEASES/" "$HOME/"
-    cp -r "$HOME/Downloads/hyprarch2/LICENSE" "$HOME/"
+    cp -r "$HOME/Downloads/hyprarch2/"* "$HOME/"
     sudo cp -r "$HOME/Downloads/hyprarch2/dotfiles/login/issue" "/etc/"
     sudo chown -R root: /etc/issue
 
@@ -125,12 +96,9 @@ create_symlinks() {
     ln -s ~/dotfiles/fastfetch/ ~/.config/
     ln -s ~/dotfiles/fish/ ~/.config/
 
-sudo chown -R "$USER": "$HOME/.config/"*
-
 }
 
 install_packages
-dotfiles_dir
 remove_existing_local_paths
 install_wallpaper
 copy_files
