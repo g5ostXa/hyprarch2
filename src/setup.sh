@@ -76,6 +76,15 @@ copy_files() {
     sudo cp -r "$HOME/Downloads/hyprarch2/dotfiles/login/issue" "/etc/"
     sudo chown -R root: /etc/issue
 
+    if [ -f "$HOME/.bashrc" ]; then
+        echo -e  "${YELLOW}.bashrc exists in home...${RC}"
+    else
+        echo -e  "${YELLOW}Copying .bashrc to home folder...${RC}"
+        cp -r "$HOME/Downloads/hyprarch2/.bashrc" "$HOME/"
+    fi
+
+    sleep 2
+
 }
 
 create_symlinks() {
