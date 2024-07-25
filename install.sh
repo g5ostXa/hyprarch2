@@ -18,7 +18,7 @@ echo -e "${RC}"
 
 if [ -n "$SSH_CONNECTION" ]; then
   while true; do
-    read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
+    read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
     case $yn in
       [Yy]* )
         echo ":: Starting Installation..."
@@ -49,12 +49,12 @@ set -e
 source "$HOME/Downloads/hyprarch2/src/setup.sh"
 source "$HOME/src/secure.sh"
 source "$HOME/src/hyprclean.sh"
-source ~/.bashrc
+source "$HOME/.bashrc"
 source "$HOME/dotfiles/hypr/scripts/gtk.sh"
 
 echo -e "${GREEN}The installation is officially completed!${RC}"
 echo -e "${GREEN}You may now reboot in your new hyprarch2 system...${RC}"
-echo -e ${CYAN}
+echo -e "${CYAN}"
 cat <<"EOF"
 
 __        __   _                            _
@@ -71,4 +71,4 @@ __        __   _                            _
        |___/|_|
 
 EOF
-echo -e ${RC}
+echo -e "${RC}"
