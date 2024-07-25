@@ -7,4 +7,5 @@ paru-debug
 proton-pass
 protonvpn-cli-community
 trizen
+vscodium-bin
 wlogout
