@@ -6,23 +6,26 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RC='\033[0m' 
 
+echo "=============================="
 echo -e "${CYAN}---> RUNNING HYPRCLEAN.SH <---${RC}"
+echo "=============================="
 sleep 3
 
 cleanup_script="$HOME/dotfiles/scripts/cleanup.sh"
 hyprarch2_dir="$HOME/Downloads/hyprarch2"
 sysctl_readme="/etc/sysctl.d/README.md"
+aur_helper="paru-bin"
 
 clean_up() {
     echo -e "${CYAN}Starting cleanup process...${RC}"
     sleep 1
-    cd "$HOME" && rm -rf paru-bin
+    cd "$HOME" && rm -rf "$aur_helper"
 
     if [ $? -eq 0 ]; then
-        echo -e "${GREEN}paru-bin removed !${RC}"
+        echo -e "${GREEN}"$aur_helper" removed !${RC}"
         sleep 1
     else
-        echo -e "${RED}Failed to remove paru-bin...${RC}"
+        echo -e "${RED}Failed to remove $aur_helper...${RC}"
     fi
     
     if [ -d "$hyprarch2_dir" ]; then
