@@ -16,17 +16,12 @@
 ## 📦 Sources
 - [arch-wiki](https://wiki.archlinux.org)
 - [dotfiles (ml4w)](https://github.com/mylinuxforwork/dotfiles)
-- [archbase (g5ostXa)](https://gist.github.com/g5ostXa/5f9255430996b9d77d6004d6d2308b4d)
 - [hyprland wiki](https://wiki.hyprland.org)
-- [hyprland github](https://github.com/hyprwm/Hyprland)
+- [wallpaper](https://github.com/g5ostXa/wallpaper)
 
-## ⚙️ Setup
+## ⚙️ Setup and installation
 > [!IMPORTANT]
-> - Make sure to create new ssh key and add it to github before installing
 > - If installing in virt-manager, please verify that `3D acceleration` is enabled in `Video Virtio` and the `Listen type` is set to `None` in `Display Spice`
-
-## 💻 Installation
-> [!NOTE]
 > - [arch-lvm-luks.md](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md) will guide you through installing Arch manually, or you can simply run `archinstall` from the archiso for a best effort automated Arch install 
 > - After installing Arch, download the [Repo](https://github.com/g5ostXa/hyprarch2) in the `~/Downloads` directory and run the install script
 ```
