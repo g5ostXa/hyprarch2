@@ -4,6 +4,8 @@ GREEN='\033[0;32m'
 CYAN='\033[0;36m'
 RC='\033[0m'
 
+version_name="$HOME/Downloads/hyprarch2/.version/latest"
+
 echo -e "${GREEN}"
 cat <<"EOF"
  ___           _        _ _
@@ -14,6 +16,7 @@ cat <<"EOF"
 
 EOF
 echo "Welcome to hyprarch2"
+cat "$version_name"
 echo -e "${RC}"
 
 if [ -n "$SSH_CONNECTION" ]; then
