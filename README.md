@@ -22,7 +22,7 @@
 ## ⚙️ Setup and installation
 > [!IMPORTANT]
 > - If installing in virt-manager, please verify that **_3D acceleration_** is enabled in **_Video Virtio_** and the **_Listen type_** is set to **_None_** in **_Display Spice_**
-> - [arch-lvm-luks.md](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md) will guide you through installing Arch manually, or you can simply run `archinstall` from the archiso for a best effort automated Arch install 
+> - [arch-lvm-luks.md](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md) will guide you through installing Arch manually, or you can simply run [archinstall](https://github.com/archlinux/archinstall) from the archiso for a best effort automated Arch install 
 > - After installing Arch, download the [Repo](https://github.com/g5ostXa/hyprarch2) in the `~/Downloads` directory and run the [install script](https://github.com/g5ostXa/hyprarch2/blob/master/install.sh)
 ```
 $ cd Downloads
