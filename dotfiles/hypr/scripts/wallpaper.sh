@@ -6,18 +6,22 @@
 #   \_/\_/ \__,_|_|_| .__/ \__,_| .__/ \___|_|    
 #                   |_|         |_|               
 #  
-# by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
+
+default_wall="$HOME/wallpaper/dracula-arch.jpg"
 
 case $1 in
 
-    # Load wallpaper from .cache of last session 
+    # Load wallpaper 
     "init")
-        if [ -f ~/.cache/current_wallpaper.jpg ]; then
+        if [ -f "$default_wall" ]; then
+            wal -q -i "$default_wall"
+        elif [ -f ~/.cache/current_wallpaper.jpg ]; then
             wal -q -i ~/.cache/current_wallpaper.jpg
         else
             wal -q -i ~/wallpaper/
         fi
+
     ;;
 
     # Select wallpaper with rofi
