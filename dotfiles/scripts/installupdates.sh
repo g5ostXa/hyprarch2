@@ -5,10 +5,7 @@
 #  | || | | \__ \ || (_| | | | | |_| | |_) | (_| | (_| | ||  __/\__ \ 
 # |___|_| |_|___/\__\__,_|_|_|  \___/| .__/ \__,_|\__,_|\__\___||___/ 
 #                                    |_|                              
-# by Stephan Raabe (2023) 
-# ----------------------------------------------------- 
-# Required: paru trizen timeshift btrfs-grub
-# ----------------------------------------------------- 
+# Required: paru trizen
 
 sleep 1
 clear
@@ -50,27 +47,6 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
-
-if [[ $(_isInstalledParu "Timeshift") == 1 ]];
-then
-    while true; do
-        read -p "DO YOU WANT TO CREATE A SNAPSHOT? (Yy/Nn): " yn
-        case $yn in
-            [Yy]* )
-                echo ""
-                read -p "Enter a comment for the snapshot: " c
-                sudo timeshift --create --comments "$c"
-                sudo timeshift --list
-                sudo grub-mkconfig -o /boot/grub/grub.cfg
-                echo "DONE. Snapshot $c created!"
-                echo ""
-            break;;
-            [Nn]* ) 
-            break;;
-            * ) echo "Please answer yes or no.";;
-        esac
-    done
-fi
 
 echo "-----------------------------------------------------"
 echo "Start update"
