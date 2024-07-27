@@ -55,7 +55,7 @@ source "$HOME/src/hyprclean.sh"
 source "$HOME/.bashrc"
 source "$HOME/dotfiles/hypr/scripts/gtk.sh"
 
-echo -e "${GREEN}The installation is officially completed!${RC}"
+echo -e "${GREEN}The installation is officially completed !${RC}"
 echo -e "${GREEN}You may now reboot in your new hyprarch2 system...${RC}"
 echo -e "${CYAN}"
 cat <<"EOF"
