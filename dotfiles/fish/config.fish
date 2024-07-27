@@ -2,7 +2,8 @@ if status is-interactive
 
 # ALIASES
 alias ls='lsd'
-alias ll='lsd -al'
+alias ll='lsd -a'
+alias ls -al='lsd -al'
 alias vpn-connect='sudo protonvpn connect -f'
 alias vpn-disconnect='sudo protonvpn disconnect'
 alias vpn-reconnect='sudo protonvpn reconnect'
