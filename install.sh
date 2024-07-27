@@ -24,7 +24,7 @@ if [ -n "$SSH_CONNECTION" ]; then
     read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
     case $yn in
       [Yy]* )
-        echo ":: Starting Installation..."
+        echo ":: Installing hyprarch2 $version_name"
         break;;
       [Nn]* )
         echo ":: Installation canceled..."
@@ -36,7 +36,7 @@ if [ -n "$SSH_CONNECTION" ]; then
   done
 else
   if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
-    echo ":: Starting Installation..."
+    echo ":: Installing hyprarch2 $version_name"
   elif [ $? -eq 130 ]; then
     echo ":: Installation canceled..."
     exit 130
