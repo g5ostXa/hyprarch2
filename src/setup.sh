@@ -86,7 +86,7 @@ copy_files() {
         cp -r "$HOME/Downloads/hyprarch2/.bashrc" "$HOME/"
     fi
 
-    # Tempotary fix for issue (#30)
+    # Temporary fix for issue (#30)
     if [ -d "$HOME/.version/" ]; then
         echo -e "${YELLOW}$HOME/.version/ exists...${RC}"
     else
