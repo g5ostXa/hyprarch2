@@ -5,3 +5,4 @@
 - [v0.2.1](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.1)
 - [v0.2.2](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.2)
 - [v0.2.3](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.3)
+- [v0.2.3](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.4)
