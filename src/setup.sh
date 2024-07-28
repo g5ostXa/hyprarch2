@@ -80,7 +80,7 @@ copy_files() {
 
     # Temporary fix for issue (#30)
     if [ -f "$HOME/.bashrc" ]; then
-        echo -e  "${YELLOW}.bashrc exists in home...${RC}"
+        echo -e  "${YELLOW}$HOME/.bashrc exits...${RC}"
     else
         echo -e  "${YELLOW}Copying .bashrc to home folder...${RC}"
         cp -r "$HOME/Downloads/hyprarch2/.bashrc" "$HOME/"
