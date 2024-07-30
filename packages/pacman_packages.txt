@@ -70,6 +70,8 @@ device-mapper
 dhcpcd
 dialog
 diffutils
+distro-info
+distro-info-data
 dmidecode
 dnsmasq
 dnssec-anchors
