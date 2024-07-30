@@ -90,7 +90,7 @@ copy_files() {
     if [ -d "$HOME/.version/" ]; then
         echo -e "${YELLOW}$HOME/.version/ exists...${RC}"
     else
-        echo -e "{YELLOW}Copying .version/ to home folder...${RC}"
+        echo -e "${YELLOW}Copying .version/ to home folder...${RC}"
         cp -r "$HOME/Downloads/hyprarch2/.version/" "$HOME/"
     fi
 
