@@ -228,20 +228,6 @@ window#waybar.empty #window {
 }
 
 /* -----------------------------------------------------
- * Custom Youtube
- * ----------------------------------------------------- */
-
-#custom-youtube {
-    background-color: @backgroundlight;
-    font-size: 16px;
-    color: @textcolor2;
-    border-radius: 15px;
-    padding: 2px 10px 0px 10px;
-    margin: 5px 15px 5px 0px;
-    opacity:0.8;
-}
-
-/* -----------------------------------------------------
  * Hardware Group
  * ----------------------------------------------------- */
 
@@ -276,12 +262,11 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
  #backlight {
-    background-color: @backgroundlight;
     font-size: 16px;
     color: @textcolor2;
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
-    margin: 8px 15px 8px 0px;
+    margin: 5px 15px 5px 0px;
     opacity:0.8;
 }
 
