@@ -28,13 +28,14 @@
     "spacing": 0,
 
     // Load Modules
-    "include": ["~/dotfiles/waybar/modules.json"],
+    "include": ["~/dotfiles/waybar/modules.jsonc"],
 
     // Modules Left
     "modules-left": [
         "custom/appmenu",
         "custom/wallpaper",
-        "custom/waybarthemes",          
+        "custom/waybarthemes",
+        "backlight",
         "wlr/taskbar",
         "group/quicklinks",
         "hyprland/window"
