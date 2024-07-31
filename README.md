@@ -42,7 +42,6 @@ $ Hyprland
 - `SUPER` + `CTRL` + `RETURN` : Rofi 
 - `SUPER` + `SHIFT` + `B` : Reload waybar 
 - `SUPER` + `CTRL` + `Q` : Wlogout
-- `SUPER` + `U` : Update package lists
 - `SUPER` + `Q` : Killactive
 - `SUPER` + `CTRL` + `P` : Proton-pass
 - `SUPER` + `E` : Thunar
