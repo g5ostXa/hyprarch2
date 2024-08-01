@@ -10,7 +10,7 @@
     // General Settings
 
     // Position TOP
-    "layer": "top",
+    "position": "top",
     "margin-top": 14,
     "margin-bottom": 0,
 
