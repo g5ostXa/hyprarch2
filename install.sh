@@ -5,6 +5,7 @@ CYAN='\033[0;36m'
 RC='\033[0m'
 
 version_name="$HOME/Downloads/hyprarch2/.version/latest"
+clear
 
 echo -e "${GREEN}"
 cat <<"EOF"
@@ -18,13 +19,14 @@ EOF
 echo "Welcome to hyprarch2"
 cat "$version_name"
 echo -e "${RC}"
+echo ""
 
 if [ -n "$SSH_CONNECTION" ]; then
   while true; do
     read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
     case $yn in
       [Yy]* )
-        echo ":: Installing hyprarch2 $version_name"
+        echo ":: Starting Installation..."
         break;;
       [Nn]* )
         echo ":: Installation canceled..."
@@ -36,7 +38,7 @@ if [ -n "$SSH_CONNECTION" ]; then
   done
 else
   if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
-    echo ":: Installing hyprarch2 $version_name"
+    echo ":: Starting Installation..."
   elif [ $? -eq 130 ]; then
     echo ":: Installation canceled..."
     exit 130
