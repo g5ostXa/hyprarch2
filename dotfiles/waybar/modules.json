@@ -9,9 +9,9 @@
 //
 {
     // Workspaces
-    "hyprland/workspaces" : {
-	"on-scroll-up": "hyprctl dispatch workspace r-1",
-        "on-scroll-down": "hyprctl dispatch workspace r+1",   
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace r-1",
+        "on-scroll-down": "hyprctl dispatch workspace r+1",
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,
@@ -22,8 +22,8 @@
             "default": ""
         },
         "persistent_workspaces": {
-             "*": 5
-        }       
+            "*": 5
+        }
     },
 
     // Taskbar
@@ -34,7 +34,7 @@
         "on-click": "activate",
         "on-click-middle": "close",
         "ignore-list": [
-           "Alacritty"
+            "Alacritty"
         ],
         "app_ids-mapping": {
             "firefoxdeveloperedition": "firefox-developer-edition"
@@ -59,13 +59,13 @@
         "format": "  {}",
         "tooltip-format": "{}",
         "escape": true,
-        "return-type": "json",       
+        "return-type": "json",
         "exec": "~/dotfiles/scripts/updates.sh",
         "restart-interval": 60,
         "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
         "tooltip": false
     },
-    
+
     // Wallpaper
     "custom/wallpaper": {
         "format": "",
@@ -93,7 +93,7 @@
         "format": "",
         "on-click": "thunar",
         "tooltip": false
-    },    
+    },
 
     // Calculator
     "custom/calculator": {
@@ -109,7 +109,7 @@
         "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
         "tooltip": false
     },
-    
+
     // Power Menu
     "custom/exit": {
         "format": "",
@@ -130,13 +130,11 @@
 
     // System tray
     "tray": {
-        // "icon-size": 21,
         "spacing": 10
     },
 
     // Clock
     "clock": {
-        // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
@@ -153,14 +151,14 @@
         "on-click": "alacritty -e htop"
     },
 
-    // Harddisc space used
+    // Harddisk space used
     "disk": {
         "interval": 30,
         "format": "   {percentage_used}% ",
         "path": "/",
         "on-click": "alacritty -e htop"
-    }, 
-    
+    },
+
     // Network
     "network": {
         "format": "{ifname}",
@@ -169,16 +167,15 @@
         "format-disconnected": "Disconnected",
         "tooltip-format": " {ifname} via {gwaddri}",
         "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
-        "on-click": "alacritty --class dotfiles-floating -e nmtui",
+        "on-click": "alacritty --class dotfiles-floating -e nmtui"
     },
 
     // Battery
     "battery": {
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
@@ -186,14 +183,11 @@
         "format-charging": "  {capacity}%",
         "format-plugged": "  {capacity}%",
         "format-alt": "{icon}  {time}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format-icons": ["", "", "", "", ""]
     },
 
     // Pulseaudio
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -207,12 +201,12 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", " ", " "]
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
 
-    // Other
+    // User
     "user": {
         "format": "{user}",
         "interval": 60,
