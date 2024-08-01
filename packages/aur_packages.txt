@@ -2,6 +2,7 @@ bibata-cursor-theme
 chkservice
 dracula-gtk-theme
 dracula-icons-theme
+hyprpicker
 paru
 paru-debug
 proton-pass
