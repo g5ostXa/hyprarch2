@@ -49,9 +49,11 @@ capstone
 cdparanoia
 cjson
 cliphist
+cmake
 cmatrix
 coreutils
 cpio
+cppdap
 cpupower
 cryptsetup
 curl
@@ -565,6 +567,7 @@ networkmanager
 networkmanager-openvpn
 nftables
 nilfs-utils
+ninja
 nm-connection-editor
 npth
 nspr
@@ -779,6 +782,7 @@ rav1e
 readline
 reflector
 reiserfsprogs
+rhash
 rmlint
 rofi-wayland
 rsync
@@ -953,6 +957,7 @@ which
 wireless_tools
 wl-clipboard
 wlr-randr
+wlroots
 wlroots0.17
 woff2
 wolfssl
