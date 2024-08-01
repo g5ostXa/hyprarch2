@@ -19,7 +19,6 @@
     // "margin-top": 0,
     // "margin-bottom": 14,
     
-    "layer": "top",
     "height": 16,
     "margin-left": 0,
     "margin-right": 0,    
@@ -34,8 +33,8 @@
         "custom/wallpaper",
         "custom/waybarthemes",
         "backlight",
+        "pulseaudio",
         "wlr/taskbar",
-        "group/quicklinks",
         "hyprland/window"
     ],
 
@@ -47,10 +46,10 @@
     // Modules Right    
     "modules-right": [
         "custom/updates",
-        "pulseaudio",
         "battery", 
         "group/hardware",
         "custom/cliphist",
+        "group/quicklinks",
         "network",
         "custom/exit",
         "clock"
