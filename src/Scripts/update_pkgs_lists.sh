@@ -11,13 +11,17 @@ check_dir() {
 if [ -d "$package_lists_dir" ]; then
     rm -rf "$package_lists_dir"/*
     echo ""
-    echo -e "${YELLOW}Updating package lists...${RC}"
+    echo -e "${YELLOW}--------------------------------${RC}"
+    echo -e "${YELLOW}---> Updating package lists <---${RC}"
+    echo -e "${YELLOW}--------------------------------${RC}"
     echo ""
     sleep 1
 else
     mkdir -p "$package_lists_dir"
     echo ""
-    echo -e "${YELLOW}Updating package lists...${RC}"
+    echo -e "${YELLOW}--------------------------------${RC}"
+    echo -e "${YELLOW}---> Updating package lists <---${RC}"
+    echo -e "${YELLOW}--------------------------------${RC}"
     echo ""
     sleep 1
 fi
@@ -39,10 +43,12 @@ if [ $? -eq 0 ]; then
     echo ""
     echo -e "${YELLOW}Package lists are now up to date!${RC}"
     notify-send "Package lists are now up to date!"
+    echo -e "${YELLOW}--------------------------------${RC}"
 else
     echo ""
     echo -e "${RED}Failed to update package lists...${RC}"
     notify-send "Failed to update package lists..."
+    echo -e "${YELLOW}--------------------------------${RC}"
 fi
 
 }
