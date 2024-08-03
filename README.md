@@ -26,7 +26,7 @@
 > - For the first step, [arch-lvm-luks.md](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md) will guide you through installing Arch manually, or you can simply run [archinstall](https://github.com/archlinux/archinstall) from the archiso for a best effort automated Arch install
 > - Before installing hyprarch2, please make sure that all needed dependencies are installed
 ```
-$ sudo pacman -S network-manager-applet wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum dnsmasq htop fastfetch
+$ sudo pacman -S wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum dnsmasq htop fastfetch
 ```
 - Then, Download the [Repo](https://github.com/g5ostXa/hyprarch2) in the `~/Downloads` directory and run the [install script](https://github.com/g5ostXa/hyprarch2/blob/master/install.sh)
 ```
