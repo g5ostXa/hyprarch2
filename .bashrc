@@ -10,12 +10,12 @@
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '
 
+CYAN='\033[0;36m'
+RC='\033[0m'
+
 export PATH="/usr/lib/ccache/bin/:$PATH"
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
-
-CYAN='\033[0;36m'
-RC='\033[0m'
 
 if [[ $(tty) == *"pts"* ]]; then
 echo -e "${CYAN}"
