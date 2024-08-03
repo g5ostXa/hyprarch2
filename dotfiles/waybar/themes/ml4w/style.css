@@ -286,7 +286,7 @@ window#waybar.empty #window {
 }
 
 #pulseaudio.muted {
-    background-color: @backgroundlight;
+    background-color: @backgrounddark;
     color: @textcolor1;
 }
 
