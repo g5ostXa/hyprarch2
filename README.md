@@ -36,7 +36,7 @@ $ cd hyprarch2 && ./install.sh
 ```
 
 ## ➜ Hyprland 
-- Start [Hyprland](https://hyprland.org) from tty
+- Start [Hyprland](https://hyprland.org) from tty:
 ```
 $ Hyprland
 ```
