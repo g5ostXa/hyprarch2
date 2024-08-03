@@ -4,8 +4,8 @@ GREEN='\033[0;32m'
 CYAN='\033[0;36m'
 RC='\033[0m'
 
-version_name="$HOME/Downloads/hyprarch2/.version/latest"
 clear
+version_name="$HOME/Downloads/hyprarch2/.version/latest"
 
 echo -e "${GREEN}"
 cat <<"EOF"
