@@ -12,7 +12,7 @@ $ git clone --depth 1 https://github.com/g5ostXa/wallpaper.git
 ```
 
 ### Change default wallpaper
-Edit `dotfiles/hypr/scripts/wallpaper.sh` and modify the "default-wall" variable
+Edit `dotfiles/hypr/scripts/wallpaper.sh` and modify the "default_wall" variable value at line 11
 
 [wallpaper.sh](https://github.com/g5ostXa/hyprarch2/blob/master/dotfiles/hypr/scripts/wallpaper.sh)
 
