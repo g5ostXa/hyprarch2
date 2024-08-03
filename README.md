@@ -21,9 +21,9 @@
 
 ## ⚙️ Setup and installation
 > [!IMPORTANT]
-> - The installation process is devided in 2 main steps. Each step is essential. The first step is the installation of the base of archlinux and the second step is the installation of hyprarch2.
+> - The installation process is devided in 2 main steps, both of which are essential. The first step is the installation of arch-base and the second step is the installation of hyprarch2 on top of arch.
 > - If installing in virt-manager, please verify that **_3D acceleration_** is enabled in **_Video Virtio_** and the **_Listen type_** is set to **_None_** in **_Display Spice_**
-> - For the first step, [arch-lvm-luks.md](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md) will guide you through installing Arch manually, or you can simply run [archinstall](https://github.com/archlinux/archinstall) from the archiso for a best effort automated Arch install
+> - To install arch manually, refer to the  [arch-lvm-luks.md](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md) guide. Alternatively, you can simply run [archinstall](https://github.com/archlinux/archinstall) to install arch automatically (The easy way). 
 > - Before installing hyprarch2, please make sure that all needed dependencies are installed
 ```
 $ sudo pacman -S --needed --noconfirm wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum dnsmasq htop fastfetch
