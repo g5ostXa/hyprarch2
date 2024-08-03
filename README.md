@@ -27,7 +27,7 @@
 ```
 $ sudo pacman -Suy && sudo pacman -S network-manager-applet wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum dnsmasq htop fastfetch
 ``` 
-> - Then, download the [Repo](https://github.com/g5ostXa/hyprarch2) in the `~/Downloads` directory and run the [install script](https://github.com/g5ostXa/hyprarch2/blob/master/install.sh)
+- Then, download the [Repo](https://github.com/g5ostXa/hyprarch2) in the `~/Downloads` directory and run the [install script](https://github.com/g5ostXa/hyprarch2/blob/master/install.sh)
 ```
 $ cd Downloads
 $ git clone --depth 1 git@github.com:g5ostXa/hyprarch2.git
