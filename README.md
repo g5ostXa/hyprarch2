@@ -22,13 +22,13 @@
 ## ⚙️ Setup and installation
 > [!IMPORTANT]
 > - The installation process is devided in 2 main steps, both of which are essential. The first step is the installation of arch-base and the second step is the installation of hyprarch2 on top of arch.
-> - If installing in virt-manager, please verify that **_3D acceleration_** is enabled in **_Video Virtio_** and the **_Listen type_** is set to **_None_** in **_Display Spice_**
+> - If installing in virt-manager, please verify that **_3D acceleration_** is enabled in **_Video Virtio_** and the **_Listen type_** is set to **_None_** in **_Display Spice_**.
 > - To install arch manually, refer to the  [arch-lvm-luks.md](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md) guide. Alternatively, you can simply run [archinstall](https://github.com/archlinux/archinstall) to install arch automatically (The easy way). 
-> - Before installing hyprarch2, please make sure that all needed dependencies are installed
+> - Before installing hyprarch2, please make sure that all needed dependencies are installed:
 ```
 $ sudo pacman -S --needed --noconfirm wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum dnsmasq htop fastfetch
 ```
-- Then, Download the [Repo](https://github.com/g5ostXa/hyprarch2) in the `~/Downloads` directory and run the [install script](https://github.com/g5ostXa/hyprarch2/blob/master/install.sh)
+- Then, Download the [Repo](https://github.com/g5ostXa/hyprarch2) in the `~/Downloads` directory and run the [install script](https://github.com/g5ostXa/hyprarch2/blob/master/install.sh):
 ```
 $ cd Downloads
 $ git clone --depth 1 git@github.com:g5ostXa/hyprarch2.git
