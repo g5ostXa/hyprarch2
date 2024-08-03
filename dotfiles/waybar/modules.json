@@ -206,7 +206,7 @@
         "on-click": "pavucontrol"
     },
 
-    // User
+    // Other
     "user": {
         "format": "{user}",
         "interval": 60,
