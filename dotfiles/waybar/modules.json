@@ -95,13 +95,6 @@
         "tooltip": false
     },
 
-    // Calculator
-    "custom/calculator": {
-        "format": "",
-        "on-click": "qalculate-gtk",
-        "tooltip": false
-    },
-
     // Rofi Application Launcher
     "custom/appmenu": {
         "format": "hyprarch2 󰣇",
@@ -142,13 +135,13 @@
     // CPU
     "cpu": {
         "format": "/ C {usage}% ",
-        "on-click": "alacritty -e htop"
+        "on-click": "alacritty -e btop"
     },
 
     // Memory
     "memory": {
         "format": "/ M {}% ",
-        "on-click": "alacritty -e htop"
+        "on-click": "alacritty -e btop"
     },
 
     // Harddisk space used
@@ -156,7 +149,7 @@
         "interval": 30,
         "format": "   {percentage_used}% ",
         "path": "/",
-        "on-click": "alacritty -e htop"
+        "on-click": "alacritty -e btop"
     },
 
     // Network
