@@ -38,6 +38,7 @@ btop
 btrfs-progs
 bubblewrap
 bzip2
+c-ares
 ca-certificates
 ca-certificates-mozilla
 ca-certificates-utils
@@ -85,6 +86,7 @@ edk2-ovmf
 efibootmgr
 efitools
 efivar
+electron30
 enchant
 ethtool
 exfatprogs
@@ -571,6 +573,7 @@ nspr
 nss
 ntfs-3g
 numactl
+obsidian
 ocl-icd
 oniguruma
 openal
