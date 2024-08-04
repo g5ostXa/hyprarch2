@@ -525,7 +525,6 @@ lm_sensors
 lmdb
 lolcat
 lrzip
-lsd
 lsof
 lsscsi
 lua51-lpeg
