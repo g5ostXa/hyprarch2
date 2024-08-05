@@ -12,6 +12,7 @@ alsa-topology-conf
 alsa-ucm-conf
 aom
 apparmor
+appstream
 archlinux-keyring
 argon2
 at-spi2-core
@@ -90,6 +91,7 @@ electron30
 enchant
 ethtool
 exfatprogs
+exiv2
 exo
 expat
 eza
@@ -138,6 +140,9 @@ glibmm-2.68
 glslang
 glu
 gmp
+gnome-autoar
+gnome-desktop-4
+gnome-desktop-common
 gnu-free-fonts
 gnupg
 gnutls
@@ -177,6 +182,7 @@ guile
 gum
 gupnp
 gupnp-igd
+gvfs
 gzip
 harfbuzz
 harfbuzz-icu
@@ -294,6 +300,7 @@ lcms2
 less
 libaccounts-glib
 libaccounts-qt
+libadwaita
 libaio
 libakonadi
 libappindicator-gtk3
@@ -355,6 +362,7 @@ libexif
 libffi
 libfontenc
 libgcrypt
+libgexiv2
 libgirepository
 libgit2
 libglvnd
@@ -390,6 +398,7 @@ libmnl
 libmodplug
 libmpc
 libmpdclient
+libnautilus-extension
 libnbd
 libndp
 libnetfilter_conntrack
@@ -419,6 +428,8 @@ libpipewire
 libplacebo
 libplist
 libpng
+libportal
+libportal-gtk4
 libproxy
 libpsl
 libpulse
@@ -500,6 +511,7 @@ libxkbcommon
 libxkbcommon-x11
 libxkbfile
 libxml2
+libxmlb
 libxmu
 libxpresent
 libxrandr
@@ -557,6 +569,7 @@ mtdev
 mtools
 mujs
 multipath-tools
+nautilus
 ncurses
 ndctl
 neovim
@@ -893,7 +906,6 @@ tar
 tdb
 texinfo
 thin-provisioning-tools
-thunar
 tldr
 tlp
 tomlplusplus

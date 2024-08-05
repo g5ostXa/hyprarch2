@@ -48,6 +48,6 @@ $ Hyprland
 - `SUPER` + `SHIFT` + `B` : Reload waybar 
 - `SUPER` + `CTRL` + `Q` : Wlogout
 - `SUPER` + `Q` : Killactive
-- `SUPER` + `E` : Thunar
+- `SUPER` + `E` : Nautilus
 - `SUPER` + `F` : Fullscreen
 - `SUPER` + `T` : Togglefloating
