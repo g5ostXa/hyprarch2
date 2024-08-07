@@ -28,6 +28,7 @@ avahi
 base
 base-devel
 bash
+bash-language-server
 bat
 binutils
 bison
@@ -408,6 +409,7 @@ libnfs
 libnftnl
 libnghttp2
 libnghttp3
+libngtcp2
 libnice
 libnl
 libnm
@@ -555,6 +557,7 @@ md4c
 mdadm
 media-player-info
 mesa
+meson
 mimetreeparser
 minizip
 mkinitcpio
@@ -579,7 +582,9 @@ networkmanager
 networkmanager-openvpn
 nftables
 nilfs-utils
+ninja
 nm-connection-editor
+nodejs
 npth
 nspr
 nss
@@ -718,6 +723,7 @@ python-shtab
 python-six
 python-termcolor
 python-tomli
+python-tqdm
 python-trove-classifiers
 python-typeguard
 python-typing_extensions
@@ -861,6 +867,7 @@ sed
 shaderc
 shadow
 shared-mime-info
+shfmt
 signon-kwallet-extension
 signon-plugin-oauth2
 signon-ui
