@@ -29,7 +29,7 @@ install_packages() {
     fi
 
     cd "$HOME"
-    paru -S --needed --noconfirm bibata-cursor-theme dracula-gtk-theme dracula-icons-theme hyprpicker trizen wlogout
+    paru -S --needed --noconfirm bibata-cursor-theme dracula-gtk-theme dracula-icons-theme hyprpicker trizen typos-lsp-bin vim-language-server wlogout
 
 }
 
