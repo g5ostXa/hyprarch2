@@ -585,10 +585,7 @@ nftables
 nilfs-utils
 ninja
 nm-connection-editor
-node-gyp
 nodejs
-nodejs-nopt
-npm
 npth
 nspr
 nss
@@ -868,7 +865,6 @@ sdl2_ttf
 seabios
 seatd
 sed
-semver
 shaderc
 shadow
 shared-mime-info
