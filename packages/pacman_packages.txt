@@ -541,9 +541,11 @@ lolcat
 lrzip
 lsof
 lsscsi
+lua
 lua-language-server
 lua51-lpeg
 luajit
+luarocks
 lvm2
 lxappearance
 lynis
@@ -1017,5 +1019,6 @@ yara
 yyjson
 zeromq
 zimg
+zip
 zlib
 zstd
