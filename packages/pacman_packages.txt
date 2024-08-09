@@ -28,6 +28,7 @@ avahi
 base
 base-devel
 bash
+bash-completion
 bash-language-server
 bat
 binutils
