@@ -929,6 +929,7 @@ tree-sitter-lua
 tree-sitter-markdown
 tree-sitter-python
 tree-sitter-query
+tree-sitter-vim
 tree-sitter-vimdoc
 tslib
 ttf-fira-code

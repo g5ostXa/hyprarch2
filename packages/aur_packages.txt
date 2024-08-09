@@ -3,6 +3,7 @@ chkservice
 dracula-gtk-theme
 dracula-icons-theme
 hyprpicker
+pacseek-bin
 paru
 paru-debug
 proton-pass
