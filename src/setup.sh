@@ -115,6 +115,7 @@ create_symlinks() {
     ln -s ~/dotfiles/wlogout/ ~/.config/
     ln -s ~/dotfiles/fastfetch/ ~/.config/
     ln -s ~/dotfiles/fish/ ~/.config/
+    ln -s ~/dotfiles/pacseek/ ~/.config/
 
 }
 
