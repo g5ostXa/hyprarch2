@@ -22,6 +22,6 @@ sed -i '/^#dnssec/s/^#//g' "$CONF_FILE"
 
 sed -i '/^#bind-interfaces/s/^#//g' "$CONF_FILE"
 
-# sudo systemctl enable dnsmasq.service
+sudo systemctl enable dnsmasq.service
 echo "Configuration updated and dnsmasq service enabled."
 
