@@ -2,17 +2,22 @@
 
 CONF_FILE="/etc/dnsmasq.conf"
 
+RED='\033[0;31m'
+YELLOW='\033[0;33m'
+GREEN='\033[0;32m'
+RC='\033[0m'
+
 if [ -f "$CONF_FILE" ]; then
-	echo "Configuring dnsmasq..."
+	echo -e "${YELLOW}Configuring dnsmasq...${RC}"
 	sleep 1
 else
-	echo ":: ERROR: dnsmasq may not be installed, or the config file doesn't exist. Exiting..."
+	echo -e "${RED}:: ERROR: dnsmasq may not be installed, or the config file doesn't exist. Exiting...${RC}"
 	exit 1
 fi
 
 # Check if the script is run as root
 if [ "$EUID" -ne 0 ]; then
-	echo "Please run as root or use sudo."
+	echo -e "${RED}Please run as root or use sudo...$}{RC}"
 	exit 1
 fi
 
@@ -23,5 +28,5 @@ sed -i '/^#dnssec/s/^#//g' "$CONF_FILE"
 sed -i '/^#bind-interfaces/s/^#//g' "$CONF_FILE"
 
 sudo systemctl enable dnsmasq.service
-echo "Configuration updated and dnsmasq service enabled."
+echo -e "${GREEN}Configuration updated and dnsmasq service enabled!${RC}"
 
