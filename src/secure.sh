@@ -25,9 +25,9 @@ ufw_config() {
     sudo ufw default allow outgoing
     sudo ufw enable && sudo systemctl enable ufw.service
 
-    echo -e "${CYAN}NOTE:${RC}"
-    echo -e "${YELLOW}A reboot is required for the firewall to be enabled and active !${RC}"
-    echo -e "${YELLOW}The installation will continue in 5 seconds...${RC}"
+    echo -e "${CYAN}==> NOTE:${RC}"
+    echo -e "${YELLOW}-> A reboot is required for the firewall to be enabled and active !${RC}"
+    echo -e "${YELLOW}-> The installation will continue in 5 seconds...${RC}"
     sleep 6
 }
 
