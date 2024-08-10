@@ -13,6 +13,10 @@ sleep 3
 
 sysctl_dir="/etc/sysctl.d/"
 sysctl_source_dir="$HOME/sysctl"
+dnsmasq_script="$HOME/src/Scripts/dnsmasq.sh"
+
+# Configure and enable dnsmasq
+source "$dnsmasq_script"
 
 ufw_config() {
     echo -e "${CYAN}Installing and configuring UFW...${RC}"
