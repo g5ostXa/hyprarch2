@@ -12,7 +12,6 @@ echo -e "${CYAN}==========================${RC}"
 sleep 3
 
 pacman_packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
-aur_packages="$HOME/Downloads/hyprarch2/packages/aur_packages.txt"
 aur_helper="paru-bin"
 wallpaper="https://github.com/g5ostXa/wallpaper.git"
 wallpaper_dir="$HOME/wallpaper"
@@ -30,7 +29,7 @@ install_packages() {
     fi
 
     cd "$HOME"
-    paru -S --needed --noconfirm - < "$aur_packages"
+    paru -S --needed --noconfirm bibata-cursor-theme chkservice dracula-gtk-theme dracula-icons-theme hyprpicker pacseek-bin protonvpn-cli-community trizen typos-lsp-bin vim-language-server vscodium-bin wlogout
 }
 
 remove_existing_local_paths() {
