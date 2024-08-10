@@ -6,7 +6,6 @@ hyprpicker
 pacseek-bin
 paru
 paru-debug
-proton-pass
 protonvpn-cli-community
 trizen
 typos-lsp-bin
