@@ -11,7 +11,7 @@ echo -e "${CYAN}---> RUNNING HYPRCLEAN.SH <---${RC}"
 echo -e "${CYAN}==============================${RC}"
 sleep 3
 
-cleanup_script="$HOME/dotfiles/scripts/cleanup.sh"
+cleanup_script="$HOME/src/Scripts/cleanup.sh"
 hyprarch2_dir="$HOME/Downloads/hyprarch2"
 sysctl_readme="/etc/sysctl.d/README.md"
 aur_helper="paru-bin"
