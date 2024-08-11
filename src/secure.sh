@@ -14,9 +14,7 @@ sleep 3
 sysctl_dir="/etc/sysctl.d/"
 sysctl_source_dir="$HOME/sysctl"
 dnsmasq_script="$HOME/src/Scripts/dnsmasq.sh"
-
-# Configure and enable dnsmasq
-sudo "$dnsmasq_script"
+dnsmasq_config="/etc/dnsmasq.conf"
 
 ufw_config() {
     echo -e "${CYAN}Installing and configuring UFW...${RC}"
@@ -56,6 +54,31 @@ sysctl_hardening() {
     fi
 }
 
+dnsmasq_config() {
+if [ -f "$dnsmasq_config" ]; then
+	echo -e "${YELLOW}Configuring dnsmasq...${RC}"
+	sleep 1
+else
+	echo -e "${RED}:: ERROR: dnsmasq may not be installed, or the config file doesn't exist. Exiting...${RC}"
+	exit 1
+fi
+
+if [ "$EUID" -ne 0 ]; then
+	echo -e "${RED}Please run as root or use sudo...$}{RC}"
+	exit 1
+fi
+
+sed -i '/^#conf-file=\/usr\/share\/dnsmasq\/trust-anchors.conf/s/^#//g' "$dnsmasq_config"
+
+sed -i '/^#dnssec/s/^#//g' "$dnsmasq_config"
+
+sed -i '/^#bind-interfaces/s/^#//g' "$dnsmasq_config"
+
+sudo systemctl enable dnsmasq.service
+echo -e "${GREEN}Configuration updated and dnsmasq service enabled!${RC}"
+
+}
+
 # Check if ufw is enabled
 if ! systemctl is-enabled --quiet ufw.service; then
     ufw_config
@@ -64,4 +87,4 @@ else
 fi
 
 sysctl_hardening
-
+dnsmasq_config
