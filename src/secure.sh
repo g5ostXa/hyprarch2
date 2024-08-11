@@ -58,23 +58,20 @@ if [ -f "$dnsmasq_config" ]; then
 	echo -e "${YELLOW}Configuring dnsmasq...${RC}"
 	sleep 1
 else
-	echo -e "${RED}:: ERROR: dnsmasq may not be installed, or the config file doesn't exist. Exiting...${RC}"
-	exit 1
+	echo -e "${RED}:: ERROR: dnsmasq may not be installed, or the config file doesn't exist. Skipping...${RC}"
+	return 1
 fi
 
-if [ "$EUID" -ne 0 ]; then
-	echo -e "${RED}Please run as root or use sudo...$}{RC}"
-	exit 1
+if systemctl is-enabled --quiet dnsmasq.service; then
+	echo -e "${GREEN}dnsmasq is already configured and enabled...${RC}"
+ 	return
+else
+ 	sudo sed -i '/^#conf-file=\/usr\/share\/dnsmasq\/trust-anchors.conf/s/^#//g' "$dnsmasq_config"
+	sudo sed -i '/^#dnssec/s/^#//g' "$dnsmasq_config"
+	sudo sed -i '/^#bind-interfaces/s/^#//g' "$dnsmasq_config"
+	sudo systemctl enable dnsmasq.service
+	echo -e "${GREEN}Configuration updated and dnsmasq service enabled!${RC}"
 fi
-
-sed -i '/^#conf-file=\/usr\/share\/dnsmasq\/trust-anchors.conf/s/^#//g' "$dnsmasq_config"
-
-sed -i '/^#dnssec/s/^#//g' "$dnsmasq_config"
-
-sed -i '/^#bind-interfaces/s/^#//g' "$dnsmasq_config"
-
-sudo systemctl enable dnsmasq.service
-echo -e "${GREEN}Configuration updated and dnsmasq service enabled!${RC}"
 
 }
 
