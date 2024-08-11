@@ -18,7 +18,7 @@ wallpaper_dir="$HOME/wallpaper"
 
 pacman_config() {
     echo -e "${CYAN}Configuring pacman...${RC}"
-sleep 2
+    sleep 2
 
 if grep -Fq "#ParallelDownloads" /etc/pacman.conf; then
      sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
