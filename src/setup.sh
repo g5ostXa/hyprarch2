@@ -46,7 +46,7 @@ pacman_config() {
         exit
     else
         sudo sed -i '/^ParallelDownloads = .*/a ILoveCandy' /etc/pacman.conf
-        echo -e "${CYAN}I love candy activated${RC}"
+        echo -e "${CYAN}I love candy activated!${RC}"
     fi
 
 }
