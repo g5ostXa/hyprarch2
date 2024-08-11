@@ -16,6 +16,41 @@ aur_helper="paru-bin"
 wallpaper="https://github.com/g5ostXa/wallpaper.git"
 wallpaper_dir="$HOME/wallpaper"
 
+pacman_config() {
+    echo -e "${CYAN}Configuring pacman...${RC}"
+sleep 2
+
+if grep -Fq "#ParallelDownloads" /etc/pacman.conf; then
+     sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
+     echo -e "${CYAN}Parallel downloads activated!${RC}"
+else
+     echo -e "${RED}Failed to activate parallel downloads...${RC}"
+fi
+
+if grep -Fxq "#Color" /etc/pacman.conf; then
+     sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
+     echo -e "${CYAN}Colors activated!${RC}"
+else
+     echo -e "${RED}Failed to activate colors...${RC}"
+fi
+
+if grep -Fxq "#VerbosePkgLists" /etc/pacman.conf; then
+      sudo sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
+      echo -e "${CYAN}Verbose pkg lists activated!${RC}"
+else 
+     echo -e "${RED}Failed to activate verbose pkg lists...${RC}"
+fi
+
+if grep -Fxq "ILoveCandy" /etc/pacman.conf; then
+     echo -e "${RED}I love candy already activated...${RC}"
+     exit
+else
+     sudo sed -i '/^ParallelDownloads = .*/a ILoveCandy' /etc/pacman.conf
+     echo -e "${CYAN}I love candy activated${RC}"
+fi
+
+}
+
 install_packages() {
     sudo pacman -Syu && sudo pacman -S --needed - < "$pacman_packages"
     cd "$HOME"; git clone https://aur.archlinux.org/"$aur_helper.git"
@@ -118,6 +153,7 @@ create_symlinks() {
 
 }
 
+pacman_config
 install_packages
 remove_existing_local_paths
 install_wallpaper
