@@ -1,11 +1,11 @@
 #!/bin/bash
 
-CONF_FILE="/etc/dnsmasq.conf"
-
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
 GREEN='\033[0;32m'
 RC='\033[0m'
+
+CONF_FILE="/etc/dnsmasq.conf"
 
 if [ -f "$CONF_FILE" ]; then
 	echo -e "${YELLOW}Configuring dnsmasq...${RC}"
@@ -29,4 +29,3 @@ sed -i '/^#bind-interfaces/s/^#//g' "$CONF_FILE"
 
 sudo systemctl enable dnsmasq.service
 echo -e "${GREEN}Configuration updated and dnsmasq service enabled!${RC}"
-
