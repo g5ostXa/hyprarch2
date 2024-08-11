@@ -53,7 +53,7 @@ sysctl_hardening() {
     fi
 }
 
-dnsmasq_config() {
+config_dnsmasq() {
 if [ -f "$dnsmasq_config" ]; then
 	echo -e "${YELLOW}Configuring dnsmasq...${RC}"
 	sleep 1
@@ -83,4 +83,4 @@ else
 fi
 
 sysctl_hardening
-dnsmasq_config
+config_dnsmasq
