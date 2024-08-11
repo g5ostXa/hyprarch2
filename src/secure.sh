@@ -64,7 +64,7 @@ config_dnsmasq() {
 
     if systemctl is-enabled --quiet dnsmasq.service; then
         echo -e "${GREEN}dnsmasq is already configured and enabled...${RC}"
-        return
+        return 1
     elif command -v dnsmasq >/dev/null 2>&1; then
         sudo sed -i '/^#conf-file=\/usr\/share\/dnsmasq\/trust-anchors.conf/s/^#//g' "$dnsmasq_config"
         sudo sed -i '/^#dnssec/s/^#//g' "$dnsmasq_config"
