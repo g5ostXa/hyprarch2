@@ -43,7 +43,7 @@ pacman_config() {
 
     if grep -Fxq "ILoveCandy" /etc/pacman.conf; then
         echo -e "${RED}I love candy already activated...${RC}"
-        exit
+        return 1
     else
         sudo sed -i '/^ParallelDownloads = .*/a ILoveCandy' /etc/pacman.conf
         echo -e "${CYAN}I love candy activated!${RC}"
