@@ -694,6 +694,7 @@ python-dbus
 python-distro
 python-docopt
 python-fastjsonschema
+python-filelock
 python-gobject
 python-idna
 python-inflect
