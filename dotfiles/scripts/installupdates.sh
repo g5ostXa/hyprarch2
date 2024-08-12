@@ -5,21 +5,14 @@
 #  | || | | \__ \ || (_| | | | | |_| | |_) | (_| | (_| | ||  __/\__ \ 
 # |___|_| |_|___/\__\__,_|_|_|  \___/| .__/ \__,_|\__,_|\__\___||___/ 
 #                                    |_|                              
-# Required: paru trizen
+# ----------------------------------------------------- 
+# Required: paru trizen 
+# ----------------------------------------------------- 
 
 sleep 1
 clear
-
-cat <<"EOF"
- _   _           _       _            
-| | | |_ __   __| | __ _| |_ ___  ___ 
-| | | | '_ \ / _` |/ _` | __/ _ \/ __|
-| |_| | |_) | (_| | (_| | ||  __/\__ \
- \___/| .__/ \__,_|\__,_|\__\___||___/
-      |_|                             
-
-EOF
-
+figlet "Updates"
+echo
 _isInstalledParu() {
     package="$1";
     check="$(paru -Qs --color always "${package}" | grep "local" | grep "${package} ")";
@@ -35,24 +28,24 @@ _isInstalledParu() {
 # Confirm Start
 # ------------------------------------------------------
 
-while true; do
-    read -p "DO YOU WANT TO START THE UPDATE NOW? (Yy/Nn): " yn
-    case $yn in
-        [Yy]* )
-            echo ""
-        break;;
-        [Nn]* ) 
-            exit;
-        break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+if gum confirm "DO YOU WANT TO START THE UPDATE NOW?" ;then
+    echo 
+    echo ":: Update started."
+elif [ $? -eq 130 ]; then
+        exit 130
+else
+    echo
+    echo ":: Update canceled."
+    exit;
+fi
 
-echo "-----------------------------------------------------"
-echo "Start update"
-echo "-----------------------------------------------------"
-echo ""
-
-paru 
+trizen -Syu --noconfirm --noedit --noinfo
 
 notify-send "Update complete"
+echo 
+echo ":: Update complete"
+echo 
+echo 
+
+echo "Press [ENTER] to close."
+read
