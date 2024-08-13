@@ -9,13 +9,18 @@ require("settings.lualine")
 require("settings.alpha")
 require("settings.ibl")
 require("settings.autoclose")
-
 vim.cmd "Alpha"
 vim.cmd "Neotree"
 vim.opt.relativenumber = true
 
 -- Theme
 vim.cmd.colorscheme "dracula"
+
+-- Set cursor to "Beam" when exiting nvim
+vim.api.nvim_create_autocmd('VimLeave', {
+	pattern = '*',
+	command = 'set guicursor=a:ver25'
+})
 
 -- Both visual and normal mode for each, so you can open with a visual selection or without.
 vim.api.nvim_set_keymap('v', '<leader>a', ':GPTModelsCode<CR>', { noremap = true })
