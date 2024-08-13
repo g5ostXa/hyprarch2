@@ -376,6 +376,7 @@ libical
 libice
 libidn2
 libiec61883
+libimagequant
 libimobiledevice
 libimobiledevice-glue
 libinih
@@ -697,6 +698,7 @@ python-fastjsonschema
 python-filelock
 python-gobject
 python-idna
+python-importlib-metadata
 python-inflect
 python-jaraco.context
 python-jaraco.functools
@@ -713,6 +715,7 @@ python-notify2
 python-ordered-set
 python-packaging
 python-perf
+python-pillow
 python-pip
 python-platformdirs
 python-psutil
@@ -737,6 +740,7 @@ python-urllib3
 python-validate-pyproject
 python-wheel
 python-yaml
+python-zipp
 qalculate-gtk
 qca-qt5
 qca-qt6

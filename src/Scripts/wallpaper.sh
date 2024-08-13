@@ -7,79 +7,34 @@
 #                   |_|         |_|               
 #  
 # ----------------------------------------------------- 
-
-default_wall="$HOME/wallpaper/dracula-arch.jpg"
-
-case $1 in
-
-    # Load wallpaper 
-    "init")
-        if [ -f "$default_wall" ]; then
-            wal -q -i "$default_wall"
-        elif [ -f ~/.cache/current_wallpaper.jpg ]; then
-            wal -q -i ~/.cache/current_wallpaper.jpg
-        else
-            wal -q -i ~/wallpaper/
-        fi
-
-    ;;
-
-    # Select wallpaper with rofi
-    "select")
-        selected=$(ls -1 ~/wallpaper | grep "jpg" | rofi -dmenu -replace -config ~/dotfiles/rofi/config-wallpaper.rasi)
-        if [ ! "$selected" ]; then
-            echo "No wallpaper selected"
-            exit
-        fi
-        wal -q -i ~/wallpaper/$selected
-    ;;
-
-    # Randomly select wallpaper 
-    *)
-        wal -q -i ~/wallpaper/
-    ;;
-
-esac
+# Get selected wallpaper
+# ----------------------------------------------------- 
+wallpaper="$1"
+used_wallpaper="$wallpaper"
 
 # ----------------------------------------------------- 
-# Load current pywal color scheme
+# Execute pywal
 # ----------------------------------------------------- 
+wal -q -i "$used_wallpaper"
 source "$HOME/.cache/wal/colors.sh"
-echo "Wallpaper: $wallpaper"
 
-# ----------------------------------------------------- 
+# -----------------------------------------------------
 # Copy selected wallpaper into .cache folder
-# ----------------------------------------------------- 
-cp $wallpaper ~/.cache/current_wallpaper.jpg
+# -----------------------------------------------------
+cp "$wallpaper" "$HOME/.cache/current_wallpaper.jpg"
 
-# ----------------------------------------------------- 
-# get wallpaper iamge name
-# ----------------------------------------------------- 
+# -----------------------------------------------------
+# Get wallpaper image name
+# -----------------------------------------------------
 newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 
 # ----------------------------------------------------- 
-# Reload waybar with new colors
+# Reload Waybar
 # -----------------------------------------------------
-~/dotfiles/waybar/launch.sh
+source "$HOME/dotfiles/waybar/launch.sh"
 
-# ----------------------------------------------------- 
-# Set the new wallpaper
 # -----------------------------------------------------
-transition_type="wipe"
-# transition_type="outer"
-# transition_type="random"
-
-swww img $wallpaper \
-    --transition-bezier .43,1.19,1,.4 \
-    --transition-fps=60 \
-    --transition-type=$transition_type \
-    --transition-duration=0.7 \
-    --transition-pos "$( hyprctl cursorpos )"
-
-# ----------------------------------------------------- 
 # Send notification
-# ----------------------------------------------------- 
+# -----------------------------------------------------
 sleep 1
-notify-send "Colors and Wallpaper updated" "with image $newwall"
-
-echo "DONE!"
+notify-send "Wallpaper and colors updated!" "with image $newwall"

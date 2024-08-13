@@ -64,7 +64,7 @@ install_packages() {
     fi
 
     cd "$HOME"
-    paru -S --needed --noconfirm bibata-cursor-theme chkservice dracula-gtk-theme dracula-icons-theme hyprpicker pacseek-bin protonvpn-cli-community trizen typos-lsp-bin vim-language-server vscodium-bin wlogout
+    paru -S --needed --noconfirm bibata-cursor-theme chkservice dracula-gtk-theme dracula-icons-theme hyprpicker pacseek-bin protonvpn-cli-community trizen typos-lsp-bin vim-language-server vscodium-bin waypaper wlogout
 }
 
 remove_existing_local_paths() {
@@ -150,6 +150,7 @@ create_symlinks() {
     ln -s ~/dotfiles/fastfetch/ ~/.config/
     ln -s ~/dotfiles/fish/ ~/.config/
     ln -s ~/dotfiles/pacseek/ ~/.config/
+    ln -s ~/dotfiles/waypaper/ ~/.config/
 
 }
 

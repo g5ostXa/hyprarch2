@@ -11,4 +11,5 @@ trizen
 typos-lsp-bin
 vim-language-server
 vscodium-bin
+waypaper
 wlogout
