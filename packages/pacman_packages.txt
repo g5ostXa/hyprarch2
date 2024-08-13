@@ -13,6 +13,7 @@ alsa-ucm-conf
 aom
 apparmor
 appstream
+aquamarine
 archlinux-keyring
 argon2
 at-spi2-core
@@ -203,6 +204,7 @@ hyprland
 hyprlang
 hyprlock
 hyprutils
+hyprwayland-scanner
 iana-etc
 icu
 imagemagick
@@ -679,6 +681,7 @@ portaudio
 procps-ng
 progress
 psmisc
+pugixml
 pulseaudio
 pwgen
 python
