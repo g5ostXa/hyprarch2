@@ -21,7 +21,7 @@ By g5ostXa :ghost:
 - [Locales](#locales)
 - [Hosts and hostname](#hosts-and-hostname)
 - [Root password and system install](#root-password-and-system-install)
-- [Kernel hooks and grub configuration](#kernel-hooks-and-grub-configuration)
+- [Kernel image generation and grub](#kernel-image-generation-and-grub)
 - [Systemd services](#systemd-services)
 - [Users](#users)
 - [Wheel and sudo](#wheel-and-sudo)
@@ -47,14 +47,14 @@ By g5ostXa :ghost:
 
 ## Partitions
 _**Note: This example assumes `sda` is the disk name. You can verify this with `lsblk` command.**_
-- Wipe the disk properly to later use with Luks encryption:
+- Optionally, wipe the disk for a clean install:
 ```
 # dd if=/dev/zero of=/dev/sda status=progress
 ```
 ```
 # sync
 ```
-- Now, let's create the EFI and LVM partitions:
+- Now, let's create both the boot and root partitions:
 ```
 # gdisk /dev/sda
 ```
@@ -66,7 +66,6 @@ _**Note: This example assumes `sda` is the disk name. You can verify this with `
 - `ef00` (EFI code)
 - `n` (for new)
 - `accept` defaults (all)
-- `8e00` (LVM code)
 - `w` (for write)
 - `y` (for comfirmation)
 
@@ -75,50 +74,23 @@ Expected layout:
 | Mount points | Parition | Partition type | Suggested size |
 |:-------------|:--------:|:---------------|:---------------|
 | /mnt/boot        | /dev/sda1| EFI (ef00)     | 512M           |           
-| /mnt            | /dev/sda2| Linux LVM (8e00)| Remainder of the device |
-    
+| /mnt            | /dev/sda2| Linux Filesystem | Remainder of the device |
 
 ## Formatting
 ```
-# cryptsetup luksFormat /dev/sda2
-
-# cryptsetup open /dev/sda2 "name of encrypted disk"
-
-# pvcreate /dev/mapper/"name of encrypted disk"
-
-# vgcreate "name of volume group" /dev/mapper/"name of encrypted disk"
-
-# lvcreate -L 50G "name of volume group" -n root
-
-# lvcreate -L 4G "name of volume group" -n swap
-
-# lvcreate -l 100%FREE "name of volume group" -n home
+# mkfs.ext4 /dev/sda2
 
 # mkfs.fat -F32 /dev/sda1
 
-# mkfs.ext4 /dev/"name of volume group"/root
+# mount /dev/sda2 /mnt
 
-# mkfs.ext4 /dev/"name of volume group"/home
-
-# mkswap /dev/"name of volume group"/swap
-
-# mount /dev/"name of volume group"/root /mnt
-
-# mkdir /mnt/home
-
-# mount /dev/"name of volume group"/home /mnt/home
-
-# mkdir /mnt/boot
-
-# mount /dev/sda1 /mnt/boot
-
-# swapon /dev/"name of volume group"/swap
+# mount --mkdir /dev/sda1 /mnt/boot
 ```
-
+  
 ## Base Installation
 - Install the system base:
 ```
-# pacstrap -K /mnt base linux linux-firmware vim intel-ucode lvm2
+# pacstrap -K /mnt base linux linux-firmware vim intel-ucode
 ```
 
 ## Fstab and Enter installation
@@ -176,12 +148,8 @@ en_US.UTF-8
 # pacman -S --needed --noconfirm grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers git reflector xdg-utils xdg-user-dirs gum dnsmasq lsof htop fastfetch vim openssh ufw firejail apparmor audit firefox
 ```
 
-## Kernel hooks and grub configuration
-- Edit `/etc/mkinitcpio.conf` to add the `"encrypt"` and `"lvm2"` hooks using the following order:
-```
-HOOKS=(base udev autodetect modconf block encrypt lvm2 filesystems keyboard fsck)
-```
-- Now, regenerate the kernel image:
+## Kernel image generation and grub
+- Regenerate the kernel image:
 ```
 # mkinitcpio -p linux
 ```
@@ -189,23 +157,12 @@ HOOKS=(base udev autodetect modconf block encrypt lvm2 filesystems keyboard fsck
 ```
 # grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 ```
-- Next, we need to edit `/etc/default/grub` to add the following line to GRUB_CMDLINE_LINUX:
-```    
-GRUB_CMDLINE_LINUX="cryptdevice=UUID=PASTE-UUID-HERE:NAME-OF-ENCRYPTED-DISK root=/dev/NAME-OF-VOLUME-GROUP/root"
-
-Note: Replace "PASTE-UUID-HERE", "NAME-OF-ENCRYPTED-DISK" and "NAME-OF-VOLUME-GROUP" with the correct values.  
-```
 - Finally, generate the new grub configuration:
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## Systemd services
-
-- To create user with encrypted isolated home:
-```
-# systemctl enable systemd-homed.service
-```
 - Enable NetworkManager at system startup:
 ```
 # systemctl enable NetworkManager.service
@@ -220,13 +177,13 @@ Note: Replace "PASTE-UUID-HERE", "NAME-OF-ENCRYPTED-DISK" and "NAME-OF-VOLUME-GR
 ```
 
 ## Users
-- Create new user with encrypted isolated home:
+- Create new user:
 ```
-# homectl create USER --disk-size=BYTES --storage=luks --umask=0077 --member-of="adm,audio,audit,avahi,dbus,disk,dnsmasq,firejail,git,groups,input,libvirt,log,lp,optical,polkitd,power,users,uucp,uuidd,video,wheel"
+# useradd USERNAME -m -G wheel
 ```
-- Inspect new user:
+- Set password for new user:
 ```
-# homectl inspect USER
+# passwd USERNAME
 ```
 
 ## Wheel and sudo
@@ -248,4 +205,3 @@ Note: To let anyone in the wheel group use sudo, uncomment this line:
 # reboot
 ```
 </div>
-
