@@ -32,6 +32,9 @@ set ttyfast                 " Speed up scrolling in Vim
 " set noswapfile            " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
 
+" Set "Beam" cursor when exiting nvim
+set guicursor=n-v-c-sm:ver25,i-ci-ve:ver25,r-cr-o:ver25
+
 " All lines below were added to fix grey background bug 
 hi NonText ctermbg=none guibg=NONE
 hi Normal guibg=NONE ctermbg=NONE
