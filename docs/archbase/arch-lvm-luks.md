@@ -88,9 +88,9 @@ Expected layout:
 
 # vgcreate "name of volume group" /dev/mapper/"name of encrypted disk"
 
-# lvcreate -L 40G "name of volume group" -n root
+# lvcreate -L 50G "name of volume group" -n root
 
-# lvcreate -L 2G "name of volume group" -n swap
+# lvcreate -L 4G "name of volume group" -n swap
 
 # lvcreate -l 100%FREE "name of volume group" -n home
 
