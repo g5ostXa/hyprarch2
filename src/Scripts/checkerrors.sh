@@ -2,7 +2,7 @@
 
 CYAN='\033[0;36m'
 YELLOW='\033[0;33m'
-RC='\033[0m' 
+RC='\033[0m'
 
 echo -e "${CYAN}"
 cat <<"EOF"
@@ -16,10 +16,10 @@ EOF
 echo -e "${RC}"
 
 check_errors() {
-echo -e "${YELLOW}Checking for system errors with journalctl...${RC}"
-journalctl -p 3 -b
-echo -e "${YELLOW}Checking systemd for any failed services...${RC}"
-systemctl --failed
+	echo -e "${YELLOW}Checking for system errors with journalctl...${RC}"
+	journalctl -p 3 -b
+	echo -e "${YELLOW}Checking systemd for any failed services...${RC}"
+	systemctl --failed
 
 }
 

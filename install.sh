@@ -22,30 +22,33 @@ echo -e "${RC}"
 echo ""
 
 if [ -n "$SSH_CONNECTION" ]; then
-  while true; do
-    read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
-    case $yn in
-      [Yy]* )
-        echo ":: Starting Installation..."
-        break;;
-      [Nn]* )
-        echo ":: Installation canceled..."
-        exit;
-        break;;
-      * )
-        echo ":: Please answer yes or no.";;
-    esac
-  done
+	while true; do
+		read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
+		case $yn in
+		[Yy]*)
+			echo ":: Starting Installation..."
+			break
+			;;
+		[Nn]*)
+			echo ":: Installation canceled..."
+			exit
+			break
+			;;
+		*)
+			echo ":: Please answer yes or no."
+			;;
+		esac
+	done
 else
-  if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
-    echo ":: Starting Installation..."
-  elif [ $? -eq 130 ]; then
-    echo ":: Installation canceled..."
-    exit 130
-  else
-    echo ":: Installation canceled..."
-    exit;
-  fi
+	if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
+		echo ":: Starting Installation..."
+	elif [ $? -eq 130 ]; then
+		echo ":: Installation canceled..."
+		exit 130
+	else
+		echo ":: Installation canceled..."
+		exit
+	fi
 fi
 
 sleep 2
