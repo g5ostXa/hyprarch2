@@ -493,7 +493,6 @@ libvterm
 libwacom
 libwebp
 libwireplumber
-libwpe
 libx11
 libxau
 libxcb
@@ -966,7 +965,6 @@ wlr-randr
 woff2
 wolfssl
 wpa_supplicant
-wpebackend-fdo
 x264
 x265
 xautolock
