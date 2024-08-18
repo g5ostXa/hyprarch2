@@ -1,6 +1,6 @@
 <div align="center">
     
-<img src="https://user-images.githubusercontent.com/25181517/186884156-e63da389-f3e1-4dca-a6c1-d76e886ba22a.png" width="200" height="200"/>
+<img src="https://github.com/g5ostXa/hyprarch2/blob/master/assets/archinstall.png" width="200" height="200"/>
 </div>
 
 <div align="center">
