@@ -6,10 +6,9 @@
 # |____/ \___|_|  \___|\___|_| |_|___/_| |_|\___/ \__| 
 #                                                      
 #  
-# by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
 
-DIR="$HOME/Pictures/screenshots/"
+DIR="$HOME/assets/screenshots/"
 NAME="screenshot_$(date +%d%m%Y_%H%M%S).png"
 
 option2="Selected area"
