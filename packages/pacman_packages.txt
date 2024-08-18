@@ -149,7 +149,6 @@ gnome-desktop-common
 gnu-free-fonts
 gnupg
 gnutls
-go
 gobject-introspection
 gobject-introspection-runtime
 gperftools
