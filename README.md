@@ -18,6 +18,7 @@
 - [dotfiles (ml4w)](https://github.com/mylinuxforwork/dotfiles)
 - [hyprland wiki](https://wiki.hyprland.org)
 - [wallpaper](https://github.com/g5ostXa/wallpaper)
+- [archinstall](https://github.com/archlinux/archinstall)
 
 ## ⚙️ Setup and installation
 > [!IMPORTANT]
