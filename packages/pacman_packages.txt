@@ -810,6 +810,7 @@ rav1e
 readline
 reflector
 reiserfsprogs
+ripgrep
 rmlint
 rofi-wayland
 rsync
