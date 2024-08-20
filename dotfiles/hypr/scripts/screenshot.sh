@@ -8,7 +8,7 @@
 #  
 # ----------------------------------------------------- 
 
-DIR="$HOME/assets/screenshots/"
+DIR="$HOME/Pictures/screenshots"
 NAME="screenshot_$(date +%d%m%Y_%H%M%S).png"
 
 option2="Selected area"
