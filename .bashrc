@@ -30,7 +30,7 @@ alias ff="fastfetch"
 alias clean="~/src/Scripts/cleanup.sh"
 alias errcheck="~/src/Scripts/checkerrors.sh"
 alias cw="cliphist wipe"
-alias update-pkgs-lists="~/src/Scripts/update_pkgs_lists.sh"
+alias hyprlist="~/src/Scripts/hyprlist.sh"
 alias killhypr="~/src/Scripts/killhypr.sh"
 
 # Colors
