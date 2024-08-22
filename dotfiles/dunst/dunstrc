@@ -32,10 +32,10 @@
     indicate_hidden = yes
     transparency = 0
     separator_height = 2
-    padding = 8
-    horizontal_padding = 8
+    padding = 5
+    horizontal_padding = 5
     text_icon_padding = 0
-    frame_width = 3
+    frame_width = 2
     frame_color = "#44475a"
     separator_color = frame
     sort = yes
@@ -71,7 +71,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 0
+    corner_radius = 5
     ignore_dbusclose = false
 
     ### Wayland ###
