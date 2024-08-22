@@ -22,7 +22,3 @@ dependency_packages=$(sudo pacman -Qqd)
 if [ -n "$dependency_packages" ]; then
 	sudo pacman -Rsu $dependency_packages
 fi
-
-if command -v notify-send >/dev/null 2>&1; then
-	notify-send "Cleanup complete !"
-fi
