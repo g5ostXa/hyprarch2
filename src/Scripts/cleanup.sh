@@ -23,4 +23,6 @@ if [ -n "$dependency_packages" ]; then
 	sudo pacman -Rsu $dependency_packages
 fi
 
-notify-send "Cleanup complete !"
+if command -v notify-send >/dev/null 2>&1; then
+	notify-send "Cleanup complete !"
+fi
