@@ -37,4 +37,4 @@ source "$HOME/dotfiles/waybar/launch.sh"
 # Send notification
 # -----------------------------------------------------
 sleep 1
-notify-send "Wallpaper and colors updated!" "with image $newwall"
+notify-send --icon=/usr/share/icons/Dracula/16/folder-pictures.svg "Wallpaper and colors updated!" "with image $newwall"
