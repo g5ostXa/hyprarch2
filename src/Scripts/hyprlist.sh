@@ -45,12 +45,12 @@ update_lists() {
 	if [ $? -eq 0 ]; then
 		echo ""
 		echo -e "${YELLOW}Package lists are now up to date!${RC}"
-		notify-send "Package lists are now up to date!"
+		notify-send --icon=/usr/share/icons/Dracula/16/folder-text.svg "Package lists are now up to date!"
 		echo -e "${YELLOW}--------------------------------${RC}"
 	else
 		echo ""
 		echo -e "${RED}Failed to update package lists...${RC}"
-		notify-send "Failed to update package lists..."
+		notify-send --urgency=critical "Failed to update package lists..."
 		echo -e "${YELLOW}--------------------------------${RC}"
 	fi
 
