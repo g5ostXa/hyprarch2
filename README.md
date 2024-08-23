@@ -40,7 +40,8 @@ $ Hyprland
 ## ⌨️ Some useful keybinds
 - `SUPER` + `B` : Firefox
 - `SUPER` + `RETURN` : Alacritty
-- `SUPER` + `CTRL` + `RETURN` : Rofi 
+- `SUPER` + `CTRL` + `RETURN` : Rofi
+- `SUPER` + `CTRL` + `W` : Waypaper 
 - `SUPER` + `SHIFT` + `B` : Reload waybar 
 - `SUPER` + `CTRL` + `Q` : Wlogout
 - `SUPER` + `Q` : Killactive
