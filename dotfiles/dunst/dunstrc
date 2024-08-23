@@ -12,11 +12,11 @@
 [global]
     ### Display ###
     monitor = 0
-    follow = mouse
+    follow = none
 
     ### Geometry ###
     width = 300
-    height = 300
+    height = (0,300)
     origin = top-right
     offset = 10x50
     scale = 0
@@ -28,22 +28,24 @@
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
     progress_bar_max_width = 300
+    progress_bar_corner_radius = 0
 
     indicate_hidden = yes
-    transparency = 0
+    transparency = 15
     separator_height = 2
     padding = 5
     horizontal_padding = 5
     text_icon_padding = 0
-    frame_width = 2
+    frame_width = 1
     frame_color = "#44475a"
+    gap_size = 0
     separator_color = frame
     sort = yes
     idle_threshold = 120
 
     ### Text ###
     font = Monospace 10 
-    line_height = 0
+    line_height = 1
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
@@ -56,9 +58,11 @@
     show_indicators = yes
 
     ### Icons ###
+    enable_recursive_icon_lookup = true
+    icon_theme = "Dracula, breeze"
     icon_position = left
-    min_icon_size = 0
-    max_icon_size = 32
+    min_icon_size = 32
+    max_icon_size = 128
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
     ### History ###
@@ -90,15 +94,18 @@
     foreground = "#f8f8f2"
     frame_color = "#44475a"
     timeout = 3
+    icon=/usr/share/icons/Dracula/actions/24/documentinfo.svg
 
 [urgency_normal]
     background = "#282a36"
     foreground = "#f8f8f2"
     frame_color = "#44475a"
     timeout = 10
+    icon=/usr/share/icons/Dracula/actions/24/documentinfo.svg
 
 [urgency_critical]
     background = "#282a36"
     foreground = "#ff5555"  
     frame_color = "#44475a"
     timeout = 0
+    icon = /usr/share/icons/Dracula/16/folder-important.svg
