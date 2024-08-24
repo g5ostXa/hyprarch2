@@ -80,13 +80,6 @@
         "tooltip": false
     },
 
-    // Keybindings
-    "custom/keybindings": {
-        "format": "",
-        "on-click": "~/dotfiles/hypr/scripts/keybindings.sh",
-        "tooltip": false
-    },
-
     // Filemanager Launcher
     "custom/filemanager": {
         "format": "",
