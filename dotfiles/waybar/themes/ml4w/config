@@ -52,7 +52,7 @@
         "group/quicklinks",
         "network",
         "clock",
-	"custom/exit"
+	    "custom/exit"
     ],
 
     // Group Quicklinks
