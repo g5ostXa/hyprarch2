@@ -52,7 +52,7 @@
         "group/quicklinks",
         "network",
         "clock",
-	    "custom/exit"
+        "custom/exit"
     ],
 
     // Group Quicklinks
@@ -61,7 +61,7 @@
         "modules": [
             "custom/filemanager",
             "custom/browser"
-         ]
+        ]
     },
 
     // Group Hardware
@@ -74,3 +74,4 @@
         ]
     }
 }
+
