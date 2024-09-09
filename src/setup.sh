@@ -130,6 +130,14 @@ copy_files() {
 		cp -r "$HOME/Downloads/hyprarch2/.version/" "$HOME/"
 	fi
 
+	# Temporary fix for issue (#30)
+	if [ -f "$HOME/.gitignore" ]; then
+		echo -e "${YELLOW}$HOME/.gitignore exists...${RC}"
+	else
+		echo -e "${YELLOW}Copying .gitignore to home folder...${RC}"
+		cp -r "$HOME/Downloads/hyprarch2/.gitignore" "$HOME/"
+	fi
+
 	sleep 2
 
 }
