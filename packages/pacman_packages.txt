@@ -806,6 +806,7 @@ qt6-webchannel
 qt6-webengine
 qtkeychain-qt6
 rav1e
+re2
 readline
 reflector
 reiserfsprogs
