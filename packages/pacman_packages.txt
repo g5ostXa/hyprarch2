@@ -93,6 +93,7 @@ efivar
 electron30
 enchant
 ethtool
+exempi
 exfatprogs
 exiv2
 exo
@@ -341,6 +342,7 @@ libcdio-paranoia
 libcloudproviders
 libcolord
 libconfig
+libcue
 libcups
 libdaemon
 libdatrie
@@ -370,9 +372,11 @@ libgirepository
 libgit2
 libglvnd
 libgpg-error
+libgsf
 libgtop
 libgudev
 libguestfs
+libgxps
 libical
 libice
 libidn2
@@ -382,6 +386,7 @@ libimobiledevice
 libimobiledevice-glue
 libinih
 libinput
+libiptcdata
 libisl
 libisoburn
 libisofs
@@ -539,6 +544,7 @@ linux-headers
 llvm-libs
 lm_sensors
 lmdb
+localsearch
 lolcat
 lrzip
 lsof
@@ -673,6 +679,8 @@ polkit
 polkit-gnome
 polkit-qt5
 polkit-qt6
+poppler
+poppler-glib
 popt
 portaudio
 procps-ng
@@ -900,11 +908,12 @@ tar
 tdb
 texinfo
 thin-provisioning-tools
+tinysparql
 tldr
 tlp
 tomlplusplus
+totem-pl-parser
 tpm2-tss
-tracker3
 trash-cli
 tree-sitter
 tree-sitter-bash
