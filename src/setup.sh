@@ -65,7 +65,7 @@ install_packages() {
 	fi
 
 	cd "$HOME"
-	paru -S --needed --noconfirm bibata-cursor-theme dracula-gtk-theme dracula-icons-theme hyprpicker pacseek-bin protonvpn-cli-community trizen typos-lsp-bin vim-language-server vscodium-bin waypaper wlogout
+	paru -S --needed --noconfirm bibata-cursor-theme dracula-gtk-theme dracula-icons-theme pacseek-bin protonvpn-cli-community trizen typos-lsp-bin vim-language-server vscodium-bin waypaper wlogout
 
 }
 
