@@ -1,7 +1,6 @@
 bibata-cursor-theme
 dracula-gtk-theme
 dracula-icons-theme
-hyprpicker
 pacseek-bin
 paru
 paru-debug

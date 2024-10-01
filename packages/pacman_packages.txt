@@ -203,6 +203,7 @@ hypridle
 hyprland
 hyprlang
 hyprlock
+hyprpicker
 hyprutils
 hyprwayland-scanner
 iana-etc
@@ -692,6 +693,7 @@ pwgen
 python
 python-attrs
 python-autocommand
+python-build
 python-cairo
 python-cffi
 python-charset-normalizer
@@ -708,6 +710,7 @@ python-gobject
 python-idna
 python-importlib-metadata
 python-inflect
+python-installer
 python-jaraco.context
 python-jaraco.functools
 python-jaraco.text
@@ -729,6 +732,7 @@ python-platformdirs
 python-psutil
 python-pycparser
 python-pygments
+python-pyproject-hooks
 python-pythondialog
 python-pyudev
 python-pywal
