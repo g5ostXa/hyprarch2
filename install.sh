@@ -58,7 +58,7 @@ source "$HOME/Downloads/hyprarch2/src/setup.sh"
 source "$HOME/src/secure.sh"
 source "$HOME/src/hyprclean.sh"
 source "$HOME/.bashrc"
-source "$HOME/src/Scripts/gtk.sh"
+source "$HOME/dotfiles/hypr/scripts/gtk.sh"
 
 echo -e "${GREEN}The installation is officially completed !${RC}"
 echo -e "${CYAN}"
