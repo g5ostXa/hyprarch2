@@ -11,7 +11,7 @@
 PS1='[\u@\h \W]\$ '
 
 # Aliases
-alias ls="eza --icons=always"
+alias ls="eza --icons=always --color=always"
 alias ll="ls -al"
 alias vpn-connect="sudo protonvpn connect -f"
 alias vpn-disconnect="sudo protonvpn disconnect"

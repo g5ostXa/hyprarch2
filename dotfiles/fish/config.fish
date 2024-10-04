@@ -1,7 +1,7 @@
 if status is-interactive
 
 # ALIASES
-alias ls='eza --icons=always'
+alias ls='eza --icons=always --color=always'
 alias ll='ls -al'
 alias vpn-connect='sudo protonvpn connect -f'
 alias vpn-disconnect='sudo protonvpn disconnect'
