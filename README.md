@@ -48,4 +48,3 @@ $ Hyprland
 - `SUPER` + `E` : Nautilus
 - `SUPER` + `F` : Fullscreen
 - `SUPER` + `T` : Togglefloating
-
