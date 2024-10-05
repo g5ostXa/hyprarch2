@@ -14,7 +14,7 @@ $ sudo mkdir /etc/sysctl.d/; sudo cp -r "$HOME"/Downloads/hyprarch2/sysctl/* /et
 ```
 $ sudo chown -R root:root /etc/sysctl.d/; sudo chown -R root:root /etc/sysctl.d/*
 ```
-- Remove `README.md` and hpyrarch2 directory if not needed
+- Remove `README.md` and `hyprarch2` directory if not needed
 ```
 $ sudo rm -rf /etc/sysctl.d/README.md; rm -rf ~/Downloads/hyprarch2/
 ```
