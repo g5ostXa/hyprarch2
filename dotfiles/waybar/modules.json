@@ -60,7 +60,7 @@
         "tooltip-format": "{}",
         "escape": true,
         "return-type": "json",
-        "exec": "~/dotfiles/scripts/updates.sh",
+        "exec": "~/src/Scripts/updates.sh",
         "restart-interval": 60,
         "on-click": "alacritty -e ~/src/Scripts/installupdates.sh",
         "tooltip": false
