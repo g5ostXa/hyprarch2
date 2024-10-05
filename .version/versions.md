@@ -14,3 +14,4 @@
 - [v1.0.4](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.0.4)
 - [v1.1](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.1)
 - [v1.1.1](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.1.1)
+- [v1.1.2](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.1.2)
