@@ -54,9 +54,9 @@ fi
 sleep 2
 set -e
 
-source "$HOME/Downloads/hyprarch2/src/setup.sh"
-source "$HOME/src/secure.sh"
-source "$HOME/src/hyprclean.sh"
+source "$HOME/Downloads/hyprarch2/src/.install/setup.sh"
+source "$HOME/src/.install/secure.sh"
+source "$HOME/src/.install/hyprclean.sh"
 source "$HOME/.bashrc"
 source "$HOME/dotfiles/hypr/scripts/gtk.sh"
 
