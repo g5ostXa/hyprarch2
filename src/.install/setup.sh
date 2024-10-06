@@ -8,33 +8,29 @@ CYAN='\033[0;36m'
 RC='\033[0m'
 
 # Define variables
-pacman_packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
-aur_helper="paru-bin"
-wallpaper="https://github.com/g5ostXa/wallpaper.git"
-wallpaper_dir="$HOME/wallpaper"
-pacman_config="$HOME/Downloads/hyprarch2/src/Scripts/pacman.sh"
+PACMAN_PACKAGES="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
+AUR_HELPER="paru-bin"
+WALLPAPER_REPO="https://github.com/g5ostXa/wallpaper.git"
+WALLPAPER_DIR="$HOME/wallpaper"
 
-# Display script banner
+# Script banner
 echo -e "${CYAN}==========================${RC}"
 echo -e "${CYAN}---> RUNNING SETUP.SH <---${RC}"
 echo -e "${CYAN}==========================${RC}"
 sleep 3
 
-# Configure pacman
-source "$pacman_config"
-
 install_packages() {
-	sudo pacman -Syu && sudo pacman -S --needed - <"$pacman_packages"
+	sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
 	cd "$HOME"
-	git clone https://aur.archlinux.org/"$aur_helper.git"
-	cd "$HOME/$aur_helper/" && makepkg -si
+	git clone https://aur.archlinux.org/"$AUR_HELPER.git"
+	cd "$HOME/$AUR_HELPER/" && makepkg -si
 
 	if [ $? -eq 0 ]; then
-		echo -e "${GREEN}Successfully built $aur_helper!${RC}"
+		echo -e "${GREEN}Successfully built $AUR_HELPER!${RC}"
 		echo -e "${CYAN}Installing some important packages from the AUR...${RC}"
 		sleep 1.5
 	else
-		echo -e "${RED}Failed to build $aur_helper, Exiting script...${RC}"
+		echo -e "${RED}Failed to build $AUR_HELPER, Exiting script...${RC}"
 		exit 1
 	fi
 
@@ -62,15 +58,15 @@ remove_existing_local_paths() {
 }
 
 install_wallpaper() {
-	if [ -d "$wallpaper_dir" ]; then
+	if [ -d "$WALLPAPER_DIR" ]; then
 		echo -e "${YELLOW}Installing wallpapers...${RC}"
 		sleep 1
-		rm -rf "$wallpaper_dir"
-		cd "$HOME" && git clone "$wallpaper"
+		rm -rf "$WALLPAPER_DIR"
+		cd "$HOME" && git clone "$WALLPAPER_REPO"
 	else
 		echo -e "${YELLOW}Installing wallpapers...${RC}"
 		sleep 1
-		cd "$HOME" && git clone "$wallpaper"
+		cd "$HOME" && git clone "$WALLPAPER_REPO"
 	fi
 
 	if [ $? -eq 0 ]; then

@@ -6,7 +6,7 @@ CYAN='\033[0;36m'
 RC='\033[0m'
 
 # Define version name
-version_name="$HOME/Downloads/hyprarch2/.version/latest"
+VERSION_NAME="$HOME/Downloads/hyprarch2/.version/latest"
 
 # Installation greeter
 clear
@@ -20,7 +20,7 @@ cat <<"EOF"
 
 EOF
 echo "Welcome to hyprarch2"
-cat "$version_name"
+cat "$VERSION_NAME"
 echo -e "${RC}"
 echo ""
 
@@ -31,6 +31,7 @@ if [ -n "$SSH_CONNECTION" ]; then
 		case $yn in
 		[Yy]*)
 			echo ":: Starting Installation..."
+			sleep 2; set -e
 			break
 			;;
 		[Nn]*)
@@ -46,6 +47,7 @@ if [ -n "$SSH_CONNECTION" ]; then
 else
 	if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
 		echo ":: Starting Installation..."
+		sleep 2; set -e
 	elif [ $? -eq 130 ]; then
 		echo ":: Installation canceled..."
 		exit 130
@@ -55,10 +57,8 @@ else
 	fi
 fi
 
-sleep 2
-set -e
-
-# Execute installation scripts
+# Execute main scripts
+source "$HOME/Downloads/hyprarch2/src/Scripts/pacman.sh"
 source "$HOME/Downloads/hyprarch2/src/.install/setup.sh"
 source "$HOME/src/.install/secure.sh"
 source "$HOME/src/.install/hyprclean.sh"
