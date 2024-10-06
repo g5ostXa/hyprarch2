@@ -58,9 +58,11 @@ install_packages() {
 	cd "$HOME/$aur_helper/" && makepkg -si
 
 	if [ $? -eq 0 ]; then
-		echo -e "${GREEN}$aur_helper successfully built! Moving on...${RC}"
+		echo -e "${GREEN}Successfully built $aur_helper!${RC}"
+		echo -e "${CYAN}Installing some important packages from the AUR...${RC}"
+		sleep 1.5
 	else
-		echo -e "${RED}$aur_helper failed to build... Exiting script !${RC}"
+		echo -e "${RED}Failed to build $aur_helper, Exiting script...${RC}"
 		exit 1
 	fi
 
