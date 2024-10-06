@@ -24,7 +24,7 @@ cat "$VERSION_NAME"
 echo -e "${RC}"
 echo ""
 
-# Installation promot
+# Installation prompt
 if [ -n "$SSH_CONNECTION" ]; then
 	while true; do
 		read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
