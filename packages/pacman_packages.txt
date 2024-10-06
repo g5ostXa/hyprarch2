@@ -730,7 +730,6 @@ python-platformdirs
 python-psutil
 python-pycparser
 python-pygments
-python-pythondialog
 python-pyudev
 python-pywal
 python-requests

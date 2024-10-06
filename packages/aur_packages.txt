@@ -5,6 +5,7 @@ pacseek-bin
 paru
 paru-debug
 protonvpn-cli-community
+python-pythondialog
 trizen
 typos-lsp-bin
 vim-language-server
