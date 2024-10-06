@@ -1,55 +1,27 @@
 #!/bin/bash
 
+# Define colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RC='\033[0m'
 
+# Define variables
+pacman_packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
+aur_helper="paru-bin"
+wallpaper="https://github.com/g5ostXa/wallpaper.git"
+wallpaper_dir="$HOME/wallpaper"
+pacman_config="$HOME/Downloads/hyprarch2/src/Scripts/pacman.sh"
+
+# Display script banner
 echo -e "${CYAN}==========================${RC}"
 echo -e "${CYAN}---> RUNNING SETUP.SH <---${RC}"
 echo -e "${CYAN}==========================${RC}"
 sleep 3
 
-pacman_packages="$HOME/Downloads/hyprarch2/packages/pacman_packages.txt"
-aur_helper="paru-bin"
-wallpaper="https://github.com/g5ostXa/wallpaper.git"
-wallpaper_dir="$HOME/wallpaper"
-
-pacman_config() {
-	echo -e "${CYAN}Configuring pacman...${RC}"
-	sleep 2
-
-	if grep -Fq "#ParallelDownloads" /etc/pacman.conf; then
-		sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
-		echo -e "${CYAN}Parallel downloads activated!${RC}"
-	else
-		echo -e "${RED}Failed to activate parallel downloads...${RC}"
-	fi
-
-	if grep -Fxq "#Color" /etc/pacman.conf; then
-		sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
-		echo -e "${CYAN}Colors activated!${RC}"
-	else
-		echo -e "${RED}Failed to activate colors...${RC}"
-	fi
-
-	if grep -Fxq "#VerbosePkgLists" /etc/pacman.conf; then
-		sudo sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
-		echo -e "${CYAN}Verbose pkg lists activated!${RC}"
-	else
-		echo -e "${RED}Failed to activate verbose pkg lists...${RC}"
-	fi
-
-	if grep -Fxq "ILoveCandy" /etc/pacman.conf; then
-		echo -e "${RED}I love candy already activated...${RC}"
-		return 1
-	else
-		sudo sed -i '/^ParallelDownloads = .*/a ILoveCandy' /etc/pacman.conf
-		echo -e "${CYAN}I love candy activated!${RC}"
-	fi
-
-}
+# Configure pacman
+source "$pacman_config"
 
 install_packages() {
 	sudo pacman -Syu && sudo pacman -S --needed - <"$pacman_packages"
@@ -166,7 +138,6 @@ create_symlinks() {
 
 }
 
-pacman_config
 install_packages
 remove_existing_local_paths
 install_wallpaper

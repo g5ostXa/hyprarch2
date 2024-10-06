@@ -1,12 +1,15 @@
 #!/bin/bash
 
+# Define colors
 GREEN='\033[0;32m'
 CYAN='\033[0;36m'
 RC='\033[0m'
 
-clear
+# Define version name
 version_name="$HOME/Downloads/hyprarch2/.version/latest"
 
+# Installation greeter
+clear
 echo -e "${GREEN}"
 cat <<"EOF"
  ___           _        _ _
@@ -21,6 +24,7 @@ cat "$version_name"
 echo -e "${RC}"
 echo ""
 
+# Installation promot
 if [ -n "$SSH_CONNECTION" ]; then
 	while true; do
 		read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
@@ -54,12 +58,14 @@ fi
 sleep 2
 set -e
 
+# Execute installation scripts
 source "$HOME/Downloads/hyprarch2/src/.install/setup.sh"
 source "$HOME/src/.install/secure.sh"
 source "$HOME/src/.install/hyprclean.sh"
 source "$HOME/.bashrc"
 source "$HOME/dotfiles/hypr/scripts/gtk.sh"
 
+# End of script message
 echo -e "${GREEN}The installation is officially completed !${RC}"
 echo -e "${CYAN}"
 cat <<"EOF"

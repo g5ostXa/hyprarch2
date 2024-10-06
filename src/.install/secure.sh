@@ -1,19 +1,22 @@
 #!/bin/bash
 
+# Define colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RC='\033[0m'
 
+# Define variables
+sysctl_dir="/etc/sysctl.d/"
+sysctl_source_dir="$HOME/sysctl"
+dnsmasq_config="/etc/dnsmasq.conf"
+
+# Script banner
 echo -e "${CYAN}===========================${RC}"
 echo -e "${CYAN}---> RUNNING SECURE.SH <---${RC}"
 echo -e "${CYAN}===========================${RC}"
 sleep 3
-
-sysctl_dir="/etc/sysctl.d/"
-sysctl_source_dir="$HOME/sysctl"
-dnsmasq_config="/etc/dnsmasq.conf"
 
 ufw_config() {
 	echo -e "${CYAN}Installing and configuring UFW...${RC}"

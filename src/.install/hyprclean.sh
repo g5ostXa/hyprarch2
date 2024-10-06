@@ -1,20 +1,23 @@
 #!/bin/bash
 
+# Define colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RC='\033[0m'
 
-echo -e "${CYAN}==============================${RC}"
-echo -e "${CYAN}---> RUNNING HYPRCLEAN.SH <---${RC}"
-echo -e "${CYAN}==============================${RC}"
-sleep 3
-
+# Define variables
 cleanup_script="$HOME/src/Scripts/cleanup.sh"
 hyprarch2_dir="$HOME/Downloads/hyprarch2"
 sysctl_readme="/etc/sysctl.d/README.md"
 aur_helper="paru-bin"
+
+# Script banner 
+echo -e "${CYAN}==============================${RC}"
+echo -e "${CYAN}---> RUNNING HYPRCLEAN.SH <---${RC}"
+echo -e "${CYAN}==============================${RC}"
+sleep 3
 
 echo -e "${CYAN}Starting cleanup process...${RC}"
 sleep 1
