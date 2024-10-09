@@ -26,7 +26,7 @@ sleep 1
 cd "$HOME" && rm -rf "$AUR_HELPER_NAME"
 
 if [ $? -eq 0 ]; then
-	echo -e "${GREEN}$AUR_HELPER_NAME removed !${RC}"
+	echo -e "${GREEN}Removing $AUR_HELPER_NAME...${RC}"
 	sleep 1
 else
 	echo -e "${RED}Failed to remove $AUR_HELPER_NAME...${RC}"
