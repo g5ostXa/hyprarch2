@@ -41,6 +41,7 @@ RC='\033[0m'
 export PATH="/usr/lib/ccache/bin/:$PATH"
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
+HYPRARCH2_VERSION="$HOME/.version/latest"
 
 # Init banner
 if [[ $(tty) == *"pts"* ]]; then
@@ -53,8 +54,7 @@ cat <<"EOF"
 |_| |_|\__, | .__/|_|  \__,_|_|  \___|_| |_|_____|
        |___/|_|
 EOF
-echo ""
-date 
+cat "$HYPRARCH2_VERSION"
 echo -e "${RC}"
 fi
 
