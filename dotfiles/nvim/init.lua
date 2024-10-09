@@ -16,7 +16,7 @@ vim.opt.relativenumber = true
 -- Theme
 vim.cmd.colorscheme "dracula"
 
--- Set cursor to "Beam" when exiting nvim
+-- Set cursor back to 'Beam' in alacritty when exiting nvim
 vim.api.nvim_create_autocmd('VimLeave', {
 	pattern = '*',
 	command = 'set guicursor=a:ver25'

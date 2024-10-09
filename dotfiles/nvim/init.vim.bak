@@ -32,10 +32,11 @@ set ttyfast                 " Speed up scrolling in Vim
 " set noswapfile            " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
 
-" Set "Beam" cursor when exiting nvim
+" Set cursor back to "Beam" in alacritty when exiting nvim
 set guicursor=n-v-c-sm:ver25,i-ci-ve:ver25,r-cr-o:ver25
 
-" All lines below were added to fix grey background bug 
+" All lines below were added to fix grey background bug in alacritty.
+" You might want to set this for root as well, for when using nvim with 'sudo'
 hi NonText ctermbg=none guibg=NONE
 hi Normal guibg=NONE ctermbg=NONE
 hi NormalNC guibg=NONE ctermbg=NONE
