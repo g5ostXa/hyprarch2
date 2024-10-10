@@ -11,7 +11,7 @@
 
 sleep 1
 clear
-figlet "Updates"
+figlet "System update"
 echo
 _isInstalledParu() {
     package="$1";
