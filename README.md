@@ -31,11 +31,12 @@ $ git clone --depth 1 git@github.com:g5ostXa/hyprarch2.git
 $ cd hyprarch2 && ./install.sh
 ```
 
-## ➜ Hyprland 
+## ➜ Hyprland and wallpaper
 - Start [Hyprland](https://hyprland.org) from tty:
 ```
 $ Hyprland
 ```
+- Initialize wallpaper and waybar on first launch: https://github.com/g5ostXa/hyprarch2/blob/master/docs/wallpaper/README.md
 
 ## ⌨️ Some useful keybinds
 - `SUPER` + `B` : Firefox
