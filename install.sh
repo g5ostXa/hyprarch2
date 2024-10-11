@@ -59,7 +59,7 @@ fi
 PACMAN_CONFIGURATION="$HOME/Downloads/hyprarch2/src/Scripts/pacman.sh"
 SYSTEM_INSTALLATION="$HOME/Downloads/hyprarch2/src/.install/setup.sh"
 SECURITY_CONFIGURATION="$HOME/src/.install/secure.sh"
-CLEANUP_SCRIPT="$HOME/src/.install/cleanup.sh"
+CLEANUP_SCRIPT="$HOME/src/.install/hyprclean.sh"
 
 # Execute main scripts
 source "$PACMAN_CONFIGURATION"
