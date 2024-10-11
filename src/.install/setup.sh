@@ -84,7 +84,6 @@ copy_files() {
 	sudo cp -r "$HOME/Downloads/hyprarch2/dotfiles/login/issue" "/etc/"
 	sudo chown -R root: /etc/issue
 
-	# Temporary fix for issue (#30)
 	if [ -f "$HOME/.bashrc" ]; then
 		echo -e "${YELLOW}$HOME/.bashrc exits...${RC}"
 	else
@@ -92,7 +91,6 @@ copy_files() {
 		cp -r "$HOME/Downloads/hyprarch2/.bashrc" "$HOME/"
 	fi
 
-	# Temporary fix for issue (#30)
 	if [ -d "$HOME/.version/" ]; then
 		echo -e "${YELLOW}$HOME/.version/ exists...${RC}"
 	else
@@ -100,7 +98,6 @@ copy_files() {
 		cp -r "$HOME/Downloads/hyprarch2/.version/" "$HOME/"
 	fi
 
-	# Temporary fix for issue (#30)
 	if [ -f "$HOME/.gitignore" ]; then
 		echo -e "${YELLOW}$HOME/.gitignore exists...${RC}"
 	else
