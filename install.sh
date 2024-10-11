@@ -30,8 +30,7 @@ if [ -n "$SSH_CONNECTION" ]; then
 		read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
 		case $yn in
 		[Yy]*)
-			echo ":: Starting Installation..."
-			sleep 2; set -e
+			echo ":: Starting Installation..."; sleep 2; set -e;
 			break
 			;;
 		[Nn]*)
@@ -46,8 +45,7 @@ if [ -n "$SSH_CONNECTION" ]; then
 	done
 else
 	if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
-		echo ":: Starting Installation..."
-		sleep 2; set -e
+		echo ":: Starting Installation..."; sleep 2; set -e;
 	elif [ $? -eq 130 ]; then
 		echo ":: Installation canceled..."
 		exit 130
@@ -57,15 +55,20 @@ else
 	fi
 fi
 
-# Execute main scripts
-source "$HOME/Downloads/hyprarch2/src/Scripts/pacman.sh"
-source "$HOME/Downloads/hyprarch2/src/.install/setup.sh"
-source "$HOME/src/.install/secure.sh"
-source "$HOME/src/.install/hyprclean.sh"
-source "$HOME/.bashrc"
-source "$HOME/dotfiles/hypr/scripts/gtk.sh"
+# Define main scripts
+PACMAN_CONFIGURATION="$HOME/Downloads/hyprarch2/src/Scripts/pacman.sh"
+SYSTEM_INSTALLATION="$HOME/Downloads/hyprarch2/src/.install/setup.sh"
+SECURITY_CONFIGURATION="$HOME/src/.install/secure.sh"
+CLEANUP_SCRIPT="$HOME/src/.install/cleanup.sh"
 
-# End of script message
+# Execute main scripts
+source "$PACMAN_CONFIGURATION"
+source "$SYSTEM_INSTALLATION"
+source "$SECURITY_CONFIGURATION"
+source "$CLEANUP_SCRIPT"
+source "$HOME/.bashrc"
+
+# End of installation message
 echo -e "${GREEN}The installation is officially completed !${RC}"
 echo -e "${CYAN}"
 cat <<"EOF"
