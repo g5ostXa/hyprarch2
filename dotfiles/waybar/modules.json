@@ -91,7 +91,7 @@
     "custom/appmenu": {
         "format": "hyprarch2 󰣇",
         "on-click": "rofi -show drun -replace",
-        "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
+        "on-click-right": "~/src/Scripts/keybindings.sh",
         "tooltip": false
     },
 
