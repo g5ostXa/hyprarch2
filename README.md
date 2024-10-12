@@ -38,7 +38,7 @@ $ Hyprland
 ```
 
 ## ⌨️ Some useful keybinds
-- `Alt` + `L` : Alacritty
+- `ALT` + `L` : Alacritty
 - `SUPER` + `B` : Firefox
 - `SUPER` + `CTRL` + `RETURN` : Rofi
 - `SUPER` + `CTRL` + `W` : Waypaper 
