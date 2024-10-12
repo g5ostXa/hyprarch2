@@ -38,8 +38,8 @@ $ Hyprland
 ```
 
 ## ⌨️ Some useful keybinds
+- `Alt` + `L` : Alacritty
 - `SUPER` + `B` : Firefox
-- `SUPER` + `RETURN` : Alacritty
 - `SUPER` + `CTRL` + `RETURN` : Rofi
 - `SUPER` + `CTRL` + `W` : Waypaper 
 - `SUPER` + `SHIFT` + `B` : Reload waybar 
