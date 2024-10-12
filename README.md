@@ -36,9 +36,6 @@ $ cd hyprarch2 && ./install.sh
 ```
 $ Hyprland
 ```
-- Initialize wallpaper and waybar on first launch: https://github.com/g5ostXa/hyprarch2/blob/master/docs/wallpaper/README.md
-
-- Here's a useful list of systemd services and timers that I use: https://github.com/g5ostXa/hyprarch2/blob/master/docs/systemd/services-timers.txt
 
 ## ⌨️ Some useful keybinds
 - `SUPER` + `B` : Firefox
