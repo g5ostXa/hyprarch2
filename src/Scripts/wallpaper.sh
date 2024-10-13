@@ -24,9 +24,11 @@ cache_and_waybar() {
 
  	# Send notification
   	SERVICE="waybar"
+   	sleep 1.5
         if pgrep -x "$SERVICE" >/dev/nul; then notify-send --icon=/usr/share/icons/Dracula/16/folder-pictures.svg "Wallpaper and colors updated!" "with image $newwall"; fi;
 
 	# Reload waybar
+ 	sleep 1.5
 	source "$HOME/dotfiles/waybar/launch.sh"
 
 }
