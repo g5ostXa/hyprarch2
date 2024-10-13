@@ -4,32 +4,27 @@
 # wallpaper.sh
 # ----------------------------------------------------
 
-wall_select_and_colors() {
-	# Define selected wallpaper
-	wallpaper="$1"
-	used_wallpaper="$wallpaper"
+# Define selected wallpaper
+wallpaper="$1"
+used_wallpaper="$wallpaper"
 
-	# Apply pywal colors
-	wal -q -i "$used_wallpaper"
-	source "$HOME/.cache/wal/colors.sh"
+# Define service
+SRVC="waybar"
 
-}
+# Apply pywal colors
+wal -q -i "$used_wallpaper"
+source "$HOME/.cache/wal/colors.sh"
 
-cache_and_waybar() {
-	# Copy selected wallpaper to ~/.cache/
-	cp "$wallpaper" "$HOME/.cache/current_wallpaper.jpg"
+# Copy selected wallpaper to ~/.cache/
+cp "$wallpaper" "$HOME/.cache/current_wallpaper.jpg"
 
-	# Get new wallpaper's name
-	newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
+# Get new wallpaper's name
+newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 
-	# Reload waybar
-	source "$HOME/dotfiles/waybar/launch.sh"
+# Send notification
+if pgrep -x "$SRVC" >/dev/null; then
+notify-send --icon=/usr/share/icons/Dracula/16/folder-pictures.svg "Wallpaper and colors updated!" "with image $newwall"; fi
 
-	# Send notification
-	sleep 1
-	notify-send --icon=/usr/share/icons/Dracula/16/folder-pictures.svg "Wallpaper and colors updated!" "with image $newwall"
+# Reload waybar
+source "$HOME/dotfiles/waybar/launch.sh"
 
-}
-
-wall_select_and_colors
-cache_and_waybar
