@@ -5,17 +5,14 @@
 # |   <  __/ |_| | |_) | | | | | (_| | | | | | (_| \__ \
 # |_|\_\___|\__, |_.__/|_|_| |_|\__,_|_|_| |_|\__, |___/
 #           |___/                             |___/
-# -----------------------------------------------------
 
-# -----------------------------------------------------
-# Define keybindings.conf location
-# -----------------------------------------------------
-config_file=~/dotfiles/hypr/conf/keybindings.conf
+
+binds_conf="~/dotfiles/hypr/conf/keybindings.conf"
 
 # -----------------------------------------------------
 # Parse keybindings
 # -----------------------------------------------------
-keybinds=$(grep -oP '(?<=bind = ).*' $config_file)
+keybinds=$(grep -oP '(?<=bind = ).*' $binds_conf)
 keybinds=$(echo "$keybinds" | sed 's/$mainMod/SUPER/g' | sed 's/,\([^,]*\)$/ = \1/' | sed 's/, exec//g' | sed 's/^,//g')
 
 # -----------------------------------------------------
