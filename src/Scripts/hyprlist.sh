@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ---------------------------------------------------------
-# hyprliast.sh
+# hyprlist.sh
 # Script to automate package lists generation for hyprarch2
 # The lists are located in ~/packages/
 # ---------------------------------------------------------
