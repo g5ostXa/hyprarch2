@@ -22,14 +22,12 @@ cache_and_waybar() {
 	# Get new wallpaper's name
 	newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 
- 	# Send notification
-  	SRVC="waybar"
-   	sleep 1.5
-        if pgrep -x "$SRVC" >/dev/nul; then notify-send --icon=/usr/share/icons/Dracula/16/folder-pictures.svg "Wallpaper and colors updated!" "with image $newwall"; fi;
-
 	# Reload waybar
- 	sleep 1.5
 	source "$HOME/dotfiles/waybar/launch.sh"
+
+	# Send notification
+	sleep 1
+	notify-send --icon=/usr/share/icons/Dracula/16/folder-pictures.svg "Wallpaper and colors updated!" "with image $newwall"
 
 }
 
