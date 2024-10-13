@@ -350,6 +350,7 @@ libdatrie
 libdbusmenu-glib
 libdbusmenu-gtk3
 libdbusmenu-qt5
+libdecor
 libdeflate
 libdisplay-info
 libdovi
