@@ -5,27 +5,27 @@
 # ----------------------------------------------------
 
 wall_select_and_colors() {
-# Define selected wallpaper
+	# Define selected wallpaper
 	wallpaper="$1"
 	used_wallpaper="$wallpaper"
 
-# Apply pywal colors
+	# Apply pywal colors
 	wal -q -i "$used_wallpaper"
 	source "$HOME/.cache/wal/colors.sh"
 
 }
 
 cache_and_waybar() {
-# Copy selected wallpaper to ~/.cache/
+	# Copy selected wallpaper to ~/.cache/
 	cp "$wallpaper" "$HOME/.cache/current_wallpaper.jpg"
 
-# Get new wallpaper's name
+	# Get new wallpaper's name
 	newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 
-# Reload waybar
+	# Reload waybar
 	source "$HOME/dotfiles/waybar/launch.sh"
 
-# Send notification
+	# Send notification
 	sleep 1
 	notify-send --icon=/usr/share/icons/Dracula/16/folder-pictures.svg "Wallpaper and colors updated!" "with image $newwall"
 
