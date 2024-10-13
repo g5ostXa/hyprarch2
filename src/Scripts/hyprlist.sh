@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# ---------------------------------------------------------
+# hyprliast.sh
 # Script to automate package lists generation for hyprarch2
 # The lists are located in ~/packages/
+# ---------------------------------------------------------
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
