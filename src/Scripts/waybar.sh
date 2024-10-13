@@ -4,6 +4,7 @@
 # waybar.sh
 # --------------------------------------------------------
 
+# Define service
 SERVICE="waybar"
 
 # Launch waybar with bottom/light theme if not already running
