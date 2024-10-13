@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# --------------------------------------------------------
+# waybar.sh
+# --------------------------------------------------------
+
 SERVICE="waybar"
 
 # Launch waybar with bottom/light theme if not already running
