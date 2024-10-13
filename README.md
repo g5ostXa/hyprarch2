@@ -37,6 +37,13 @@ $ cd hyprarch2 && ./install.sh
 $ Hyprland
 ```
 
+## ➜ Quick links
+- **Wallpaper and waybar engine documentation**:
+  * https://github.com/g5ostXa/hyprarch2/blob/master/docs/wallpaper-waybar/README.md
+
+- **Here's a list of systemd services and timers that I use**:
+  * https://github.com/g5ostXa/hyprarch2/blob/master/docs/systemd/services-timers.txt
+
 ## ⌨️ Some useful keybinds
 - `ALT` + `L` : Alacritty
 - `SUPER` + `B` : Firefox
