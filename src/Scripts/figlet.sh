@@ -17,15 +17,15 @@ EOF
 read -p "Enter the text for ascii encoding: " mytext
 
 if [ -f ~/figlet.txt ]; then
-    touch ~/figlet.txt
+	touch ~/figlet.txt
 fi
 
-echo "cat <<\"EOF\"" > ~/figlet.txt
-figlet "$mytext" >> ~/figlet.txt
-echo "" >> ~/figlet.txt
-echo "EOF" >> ~/figlet.txt
+echo "cat <<\"EOF\"" >~/figlet.txt
+figlet "$mytext" >>~/figlet.txt
+echo "" >>~/figlet.txt
+echo "EOF" >>~/figlet.txt
 
-lines=$( cat ~/figlet.txt )
+lines=$(cat ~/figlet.txt)
 wl-copy "$lines"
 xclip -sel clip ~/figlet.txt
 

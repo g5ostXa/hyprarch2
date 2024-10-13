@@ -52,7 +52,7 @@ update_lists() {
 		echo -e "${RED}Failed to update package lists...${RC}"
 		echo -e "${YELLOW}------------------------------${RC}"
 		notify-send --urgency=critical "Failed to update package lists..."
-		
+
 	fi
 
 }

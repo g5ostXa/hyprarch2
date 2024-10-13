@@ -13,7 +13,7 @@ HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 SYSCTL_README="/etc/sysctl.d/README.md"
 AUR_HELPER_NAME="paru-bin"
 
-# Script banner 
+# Script banner
 echo -e "${CYAN}==============================${RC}"
 echo -e "${CYAN}---> RUNNING HYPRCLEAN.SH <---${RC}"
 echo -e "${CYAN}==============================${RC}"

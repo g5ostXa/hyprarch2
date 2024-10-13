@@ -30,7 +30,9 @@ if [ -n "$SSH_CONNECTION" ]; then
 		read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
 		case $yn in
 		[Yy]*)
-			echo ":: Starting Installation..."; sleep 2; set -e;
+			echo ":: Starting Installation..."
+			sleep 2
+			set -e
 			break
 			;;
 		[Nn]*)
@@ -45,7 +47,9 @@ if [ -n "$SSH_CONNECTION" ]; then
 	done
 else
 	if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
-		echo ":: Starting Installation..."; sleep 2; set -e;
+		echo ":: Starting Installation..."
+		sleep 2
+		set -e
 	elif [ $? -eq 130 ]; then
 		echo ":: Installation canceled..."
 		exit 130
