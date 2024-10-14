@@ -3,7 +3,7 @@
 # ---------------------------------------------------------
 # hyprlist.sh
 # Script to automate package lists generation for hyprarch2
-# The lists are located in ~/packages/
+# The lists are located in ~/src/.install/packages/
 # ---------------------------------------------------------
 
 RED='\033[0;31m'
@@ -11,7 +11,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 RC='\033[0m'
 
-package_lists_dir="$HOME/packages"
+package_lists_dir="$HOME/src/.install/packages/"
 
 check_dir() {
 	if [ -d "$package_lists_dir" ]; then
