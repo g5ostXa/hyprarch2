@@ -42,7 +42,7 @@ $ Hyprland
   * https://github.com/g5ostXa/hyprarch2/blob/master/docs/wallpaper-waybar/README.md
 
 - **Here's a list of systemd services and timers that I use**:
-  * https://github.com/g5ostXa/hyprarch2/blob/master/docs/systemd/services-timers.txt
+  * https://github.com/g5ostXa/hyprarch2/blob/master/docs/systemd/services-timers.md
 
 ## ⌨️ Some useful keybinds
 - `ALT` + `L` : Alacritty
