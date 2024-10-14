@@ -55,4 +55,5 @@ $ Hyprland
 - `SUPER` + `Q` : Killactive
 - `SUPER` + `E` : Nautilus
 - `SUPER` + `F` : Fullscreen
-- `SUPER` + `T` : Togglefloating
+- `SUPER` + `T` : Toggle floating
+- `SUPER` + `SHIFT` + `H` : Toggle hypridle
