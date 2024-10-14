@@ -13,6 +13,7 @@
 - [dotfiles (ml4w)](https://github.com/mylinuxforwork/dotfiles)
 - [hyprland wiki](https://wiki.hyprland.org)
 - [wallpaper](https://github.com/g5ostXa/wallpaper)
+- [sysctl](https://github.com/g5ostXa/sysctl)
 - [archbase](https://gist.github.com/g5ostXa/5f9255430996b9d77d6004d6d2308b4d)
 
 ## ⚙️ Setup and installation
