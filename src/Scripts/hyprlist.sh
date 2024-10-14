@@ -11,7 +11,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 RC='\033[0m'
 
-package_lists_dir="$HOME/src/.install/packages/"
+package_lists_dir="$HOME/src/.install/packages"
 
 check_dir() {
 	if [ -d "$package_lists_dir" ]; then
