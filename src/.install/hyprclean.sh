@@ -17,6 +17,7 @@ HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 AUR_HELPER_NAME="paru-bin"
 SYSCTL_README="/etc/sysctl.d/README.md"
 SYSCTL_LICENSE="/etc/sysctl.d/LICENSE"
+SYSCTL_GIT_FOLDER="/etc/sysctl.d/.git"
 
 # Script banner
 echo -e "${CYAN}==============================${RC}"
@@ -59,6 +60,14 @@ if [ -e "$SYSCTL_LICENSE" ]; then
 	sudo rm -rf "$SYSCTL_LICENSE"
 else
 	echo -e "${RED}$SYSCTL_LICENSE does not exist, skipping...${RC}"
+fi
+
+# Remove .git folder from target directory
+if [ -e "$SYSCTL_GIT_FOLDER" ]; then
+	echo -e "${YELLOW}Removing $SYSCTL_GIT_FOLDER...${RC}"
+	sudo rm -rf "$SYSCTL_GIT_FOLDER"
+else
+	echo -e "${RED}$SYSCTL_GIT_FOLDER does not exist, skipping...${RC}"
 fi
 
 # Run cleanup.sh
