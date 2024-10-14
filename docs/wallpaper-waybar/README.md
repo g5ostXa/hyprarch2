@@ -11,7 +11,7 @@ When launching `hyprland` from the tty, one of the first configuration file to b
 This file is responsible for a lot of things, but it's also responsible for launching the wallpaper and `waybar` at startup.
 
 The backend for the wallpaper engine is `swww` and is the first daemon to be started to initiate the wallpaper. then, `waypaper --restore` is the command that follows the initialization of `swww`.
-When `autostart.conf` runs `waypaper --restore`, it triggers a file called `dotfiles/waypaper/config.ini`, which is set to run the wallpaer script (`wallpaper.sh`).
+When `autostart.conf` runs `waypaper --restore`, it triggers a file called `dotfiles/waypaper/config.ini`, which is set to run the wallpaper script (`wallpaper.sh`).
 
 - `config.ini`
 ```
@@ -37,7 +37,7 @@ swww_transition_duration = 0
 You can see in the file above that the post command is `~/src/Scripts/wallpaper.sh $wallpaper`.
 This will run `wallpaper.sh` and set `$wallpaper` as the wallpaper. The wallpaper folder is defined as well for `waypaper` to know where to find them.
 
-Finally, `wallpaper.sh` is set to create a color scheme using `pywal` then, launch waybar based on the wallpaper colors.
+Finally, `wallpaper.sh` is set to create a color scheme using `pywal` then launch waybar based on the wallpaper colors.
 
 If for any reason `wallpaper.sh` fails to run, causing `waybar` to not launch as well, another script called `waybar.sh` will check if `waybar` is running and launch it if needed.
 
