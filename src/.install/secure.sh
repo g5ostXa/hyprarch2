@@ -36,7 +36,6 @@ ufw_config() {
 	sleep 6
 }
 
-# Function to apply sysctl hardening (kernel and networking)
 sysctl_hardening() {
 	echo -e "${YELLOW}Checking if $SYSCTL_DIR exists...${RC}"
 
