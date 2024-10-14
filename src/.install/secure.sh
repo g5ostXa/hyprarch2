@@ -14,6 +14,7 @@ RC='\033[0m'
 # Define variables
 SYSCTL_DIR="/etc/sysctl.d/"
 SYSCTL_SOURCE_DIR="$HOME/sysctl"
+SYSCTL_REPO="https://github.com/g5ostXa/sysctl.git"
 DNSMASQ_CONFIG="/etc/dnsmasq.conf"
 
 # Script banner
@@ -49,15 +50,27 @@ sysctl_hardening() {
 
 	sleep 2
 
-	if [ -d "$SYSCTL_SOURCE_DIR" ]; then
+	if [ ! -d "$SYSCTL_SOURCE_DIR" ]; then
+		echo -e "${YELLOW}Cloning sysctl repo...${RC}"
+		cd "$HOME" && git clone "$SYSCTL_REPO"
 		echo -e "${YELLOW}Copying sysctl configurations from $SYSCTL_SOURCE_DIR to $SYSCTL_DIR...${RC}"
-		sudo cp -r "$SYSCTL_SOURCE_DIR"/* "$SYSCTL_DIR"
+		sleep 2
+		sudo cp -r "$SYSCTL_SOURCE_DIR"/* "$SYSCTL_DIR/"
+		sudo chown -R root:root "$SYSCTL_DIR"/*
+		sudo sysctl --system
+		echo -e "${GREEN}sysctl hardening applied successfully!${RC}"
+	else 
+		rm -rf "$SYSCTL_SOURCE_DIR"
+		echo -e "${YELLOW}Cloning sysctl repo...${RC}"
+		cd "$HOME" && git clone "$SYSCTL_REPO"
+		echo -e "${YELLOW}Copying sysctl configurations from $SYSCTL_SOURCE_DIR to $SYSCTL_DIR...${RC}"
+		sleep 2
+		sudo cp -r "$SYSCTL_SOURCE_DIR"/* "$SYSCTL_DIR/"
 		sudo chown -R root:root "$SYSCTL_DIR"/*
 		sudo sysctl --system
 		echo -e "${GREEN}Sysctl hardening applied successfully!${RC}"
-	else
-		echo -e "${RED}Source directory $SYSCTL_SOURCE_DIR does not exist. Aborting sysctl hardening.${RC}"
 	fi
+
 }
 
 config_dnsmasq() {

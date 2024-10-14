@@ -14,7 +14,6 @@ RC='\033[0m'
 # Define variables
 CLEANUP_SCRIPT="$HOME/src/Scripts/cleanup.sh"
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
-SYSCTL_README="/etc/sysctl.d/README.md"
 AUR_HELPER_NAME="paru-bin"
 
 # Script banner
@@ -42,14 +41,6 @@ if [ -d "$HYPRARCH2_DIR" ]; then
 	rm -rf "$HYPRARCH2_DIR"
 else
 	echo -e "${RED}$HYPRARCH2_DIR does not exist, skipping...${RC}"
-fi
-
-# Remove README from target directory
-if [ -e "$SYSCTL_README" ]; then
-	echo -e "${YELLOW}Removing $SYSCTL_README...${RC}"
-	sudo rm -rf "$SYSCTL_README"
-else
-	echo -e "${RED}$SYSCTL_README does not exist, skipping...${RC}"
 fi
 
 # Run cleanup.sh
