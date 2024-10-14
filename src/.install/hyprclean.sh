@@ -15,6 +15,8 @@ RC='\033[0m'
 CLEANUP_SCRIPT="$HOME/src/Scripts/cleanup.sh"
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 AUR_HELPER_NAME="paru-bin"
+SYSCTL_README="/etc/sysctl.d/README.md"
+SYSCTL_LICENSE="/etc/sysctl.d/LICENSE"
 
 # Script banner
 echo -e "${CYAN}==============================${RC}"
@@ -41,6 +43,22 @@ if [ -d "$HYPRARCH2_DIR" ]; then
 	rm -rf "$HYPRARCH2_DIR"
 else
 	echo -e "${RED}$HYPRARCH2_DIR does not exist, skipping...${RC}"
+fi
+
+# Remove README from target directory
+if [ -e "$SYSCTL_README" ]; then
+	echo -e "${YELLOW}Removing $SYSCTL_README...${RC}"
+	sudo rm -rf "$SYSCTL_README"
+else
+	echo -e "${RED}$SYSCTL_README does not exist, skipping...${RC}"
+fi
+
+# Remove LICENSE from target directory
+if [ -e "$SYSCTL_LICENSE" ]; then
+	echo -e "${YELLOW}Removing $SYSCTL_LICENSE...${RC}"
+	sudo rm -rf "$SYSCTL_LICENSE"
+else
+	echo -e "${RED}$SYSCTL_LICENSE does not exist, skipping...${RC}"
 fi
 
 # Run cleanup.sh
