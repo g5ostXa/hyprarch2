@@ -1,17 +1,24 @@
-- [v0.1.2](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.1.2)
-- [v0.1.3](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.1.3)
-- [v0.1.4](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.1.4)
-- [v0.2.0](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.0)
-- [v0.2.1](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.1)
-- [v0.2.2](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.2)
-- [v0.2.3](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.3)
-- [v0.2.4](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.4)
-- [v0.2.5](https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.5)
-- [v1.0](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.0)
-- [v1.0.1](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.0.1)
-- [v1.0.2](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.0.2)
-- [v1.0.3](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.0.3)
-- [v1.0.4](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.0.4)
-- [v1.1](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.1)
-- [v1.1.1](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.1.1)
-- [v1.1.2](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.1.2)
+**Version 0.1**
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v0.1.2
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v0.1.3
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v0.1.4
+
+**Version 0.2**
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.0
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.1
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.2
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.3
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.4
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v0.2.5
+
+**Version 1.0**
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v1.0
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v1.0.1
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v1.0.2
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v1.0.3
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v1.0.4
+
+**Version 1.1**
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v1.1
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v1.1.1
+- https://github.com/g5ostXa/hyprarch2/releases/tag/v1.1.2
