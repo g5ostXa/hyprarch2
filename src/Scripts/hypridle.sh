@@ -4,6 +4,7 @@
 # hypridle.sh
 # ----------------------------------------------------
 
+# Define service
 SERVICE="hypridle"
 
 idle_toggle() {
