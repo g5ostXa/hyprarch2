@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ------------------------------------------------------
-# secure.sh 
+# secure.sh
 # ------------------------------------------------------
 
 # Define colors
@@ -59,7 +59,7 @@ sysctl_hardening() {
 		sudo chown -R root:root "$SYSCTL_DIR"/*
 		sudo sysctl --system
 		echo -e "${GREEN}sysctl hardening applied successfully!${RC}"
-	else 
+	else
 		rm -rf "$SYSCTL_SOURCE_DIR"
 		echo -e "${YELLOW}Cloning sysctl repo...${RC}"
 		cd "$HOME" && git clone "$SYSCTL_REPO"
