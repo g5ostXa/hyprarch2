@@ -45,7 +45,7 @@ $ Hyprland
 - **Here's a list of systemd services and timers that I use**:
   * https://github.com/g5ostXa/hyprarch2/blob/master/docs/systemd/services-timers.md
 
-## ⌨️ Some useful keybinds
+## ⌨️ General keybindings
 - `ALT` + `L` : Alacritty
 - `SUPER` + `B` : Firefox
 - `SUPER` + `CTRL` + `RETURN` : Rofi
@@ -57,3 +57,4 @@ $ Hyprland
 - `SUPER` + `F` : Fullscreen
 - `SUPER` + `T` : Toggle floating
 - `SUPER` + `SHIFT` + `H` : Toggle hypridle
+- `SUPER` + `CTRL` + `M` : Exit hyprland
