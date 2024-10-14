@@ -63,7 +63,7 @@ else
 fi
 
 # Remove .git folder from target directory
-if [ -e "$SYSCTL_GIT_FOLDER" ]; then
+if [ -d "$SYSCTL_GIT_FOLDER" ]; then
 	echo -e "${YELLOW}Removing $SYSCTL_GIT_FOLDER...${RC}"
 	sudo rm -rf "$SYSCTL_GIT_FOLDER"
 else
