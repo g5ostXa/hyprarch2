@@ -46,7 +46,7 @@ $ Hyprland
   * https://github.com/g5ostXa/hyprarch2/blob/master/docs/systemd/services-timers.md
 
 ## ⌨️ General keybindings
-- `ALT` + `L` : Alacritty
+- `SUPER` + `RETURN` : Alacritty
 - `SUPER` + `B` : Firefox
 - `SUPER` + `CTRL` + `RETURN` : Rofi
 - `SUPER` + `CTRL` + `W` : Waypaper 
