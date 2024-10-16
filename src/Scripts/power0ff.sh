@@ -10,7 +10,7 @@ RC='\033[0m'
 gum_prompt() {
 	if gum confirm "Are you sure you want to shutdown now ?"; then
 		clear
-		gum spin --spinner dot --title ":: Running power0ff.sh ..." -- sleep 2
+		gum spin --spinner points --title "Running power0ff.sh ..." -- sleep 3
 		main_function
 	elif [ $? -eq 130 ]; then
 		exit 130
