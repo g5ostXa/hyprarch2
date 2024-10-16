@@ -1,25 +1,44 @@
 #!/bin/bash
 
-# This is a simple and fancy poweroff script :)
-# Requires figlet and lolcat
+# ----------------------------------------
+# power0ff.sh
+# ----------------------------------------
+
+CYAN='\033[0;36m'
+RC='\033[0m'
+
+gum_prompt() {
+	if gum confirm "Are you sure you want to shutdown now ?"; then
+		clear
+		gum spin --spinner dot --title ":: Running power0ff.sh ..." -- sleep 2
+		main_function
+	elif [ $? -eq 130 ]; then
+		exit 130
+	else
+		echo ":: Aborted..."
+	fi
+
+}
 
 main_function() {
-
-	echo "PowerOff in..." | figlet | lolcat
-	echo "5..." | figlet | lolcat
+	clear
+	echo -e "${CYAN}"
+	echo "Poweroff in..."
+	echo "5..."
 	sleep 1
-	echo "4..." | figlet | lolcat
+	echo "4..."
 	sleep 1
-	echo "3..." | figlet | lolcat
+	echo "3..."
 	sleep 1
-	echo "2..." | figlet | lolcat
+	echo "2..."
 	sleep 1
-	echo "1..." | figlet | lolcat
+	echo "1..."
 	sleep 1
-	echo "Good Bye!" | figlet | lolcat
+	echo "Good bye!"
 	sleep 1
+	echo -e "${RC}"
 	systemctl poweroff
 
 }
 
-main_function
+gum_prompt
