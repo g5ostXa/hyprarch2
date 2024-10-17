@@ -34,7 +34,7 @@ install_packages() {
 		echo -e "${GREEN}Successfully built $AUR_HELPER!${RC}"
 		echo -e "${CYAN}Installing some important packages from the AUR...${RC}"
 		sleep 1.5
-		cd "$HOME"
+		cd "$HOME/"
 	else
 		echo -e "${RED}Failed to build $AUR_HELPER, Exiting script...${RC}"
 		exit 1
@@ -75,8 +75,8 @@ copy_files() {
 		echo -e "${RED}$HYPRARCH2_DIR directory does not exist, exiting...${RC}"
 		exit 1
 	else
-		cp -r "$HOME/Downloads/hyprarch2/"* "$HOME/"
-		sudo cp -r "$HOME/Downloads/hyprarch2/dotfiles/login/issue" "/etc/"
+		cp -r "$HYPRARCH2_DIR"/* "$HOME/"
+		sudo cp -r "$HYPRARCH2_DIR/dotfiles/login/issue" "/etc/"
 		sudo chown -R root: /etc/issue
 	fi
 
@@ -84,21 +84,21 @@ copy_files() {
 		echo -e "${YELLOW}$HOME/.bashrc exits...${RC}"
 	else
 		echo -e "${YELLOW}Copying .bashrc to home folder...${RC}"
-		cp -r "$HOME/Downloads/hyprarch2/.bashrc" "$HOME/"
+		cp -r "$HYPRARCH2_DIR/.bashrc" "$HOME/"
 	fi
 
 	if [ -d "$HOME/.version/" ]; then
 		echo -e "${YELLOW}$HOME/.version/ exists...${RC}"
 	else
 		echo -e "${YELLOW}Copying .version/ to home folder...${RC}"
-		cp -r "$HOME/Downloads/hyprarch2/.version/" "$HOME/"
+		cp -r "$HYPRARCH2_DIR/.version/" "$HOME/"
 	fi
 
 	if [ -f "$HOME/.gitignore" ]; then
 		echo -e "${YELLOW}$HOME/.gitignore exists...${RC}"
 	else
 		echo -e "${YELLOW}Copying .gitignore to home folder...${RC}"
-		cp -r "$HOME/Downloads/hyprarch2/.gitignore" "$HOME/"
+		cp -r "$HYPRARCH2_DIR/.gitignore" "$HOME/"
 	fi
 
 	sleep 2
