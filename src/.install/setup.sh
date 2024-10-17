@@ -16,6 +16,7 @@ PACMAN_PACKAGES="$HOME/Downloads/hyprarch2/src/.install/pacman_packages.txt"
 AUR_HELPER="paru-bin"
 WALLPAPER_REPO="https://github.com/g5ostXa/wallpaper.git"
 WALLPAPER_DIR="$HOME/wallpaper"
+HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 
 # Script banner
 echo -e "${CYAN}==========================${RC}"
@@ -33,31 +34,13 @@ install_packages() {
 		echo -e "${GREEN}Successfully built $AUR_HELPER!${RC}"
 		echo -e "${CYAN}Installing some important packages from the AUR...${RC}"
 		sleep 1.5
+		cd "$HOME"
 	else
 		echo -e "${RED}Failed to build $AUR_HELPER, Exiting script...${RC}"
 		exit 1
 	fi
 
-	cd "$HOME"
 	paru -S --needed --noconfirm bibata-cursor-theme dracula-gtk-theme dracula-icons-theme pacseek-bin protonvpn-cli-community trizen typos-lsp-bin vim-language-server vscodium-bin waypaper wlogout
-
-}
-
-remove_existing_local_paths() {
-	local paths=(
-		"$HOME/.config/fish/"
-		"$HOME/.bashrc"
-		"$HOME/dotfiles/"
-	)
-
-	for path in "${paths[@]}"; do
-		if [ -e "$path" ]; then
-			rm -rf "$path"
-			echo -e "${YELLOW}Removed $path${RC}"
-		else
-			echo -e "Path $path ${RED}not found, skipping...${RC}"
-		fi
-	done
 
 }
 
@@ -84,9 +67,18 @@ install_wallpaper() {
 }
 
 copy_files() {
-	cp -r "$HOME/Downloads/hyprarch2/"* "$HOME/"
-	sudo cp -r "$HOME/Downloads/hyprarch2/dotfiles/login/issue" "/etc/"
-	sudo chown -R root: /etc/issue
+	if [ -f "$HOME/.bashrc" ]; then
+		rm -rf "$HOME/.bashrc"
+	fi
+
+	if [ ! -d "$HYPRARCH2_DIR" ]; then
+		echo -e "${RED}$HYPRARCH2_DIR directory does not exist, exiting...${RC}"
+		exit 1
+	else
+		cp -r "$HOME/Downloads/hyprarch2/"* "$HOME/"
+		sudo cp -r "$HOME/Downloads/hyprarch2/dotfiles/login/issue" "/etc/"
+		sudo chown -R root: /etc/issue
+	fi
 
 	if [ -f "$HOME/.bashrc" ]; then
 		echo -e "${YELLOW}$HOME/.bashrc exits...${RC}"
@@ -136,7 +128,6 @@ create_symlinks() {
 }
 
 install_packages
-remove_existing_local_paths
 install_wallpaper
 copy_files
 create_symlinks
