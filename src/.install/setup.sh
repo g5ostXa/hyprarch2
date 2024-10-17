@@ -26,7 +26,7 @@ sleep 3
 
 install_packages() {
 	sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
-	cd "$HOME"
+	cd "$HOME/"
 	git clone https://aur.archlinux.org/"$AUR_HELPER.git"
 	cd "$HOME/$AUR_HELPER/" && makepkg -si
 
