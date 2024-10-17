@@ -16,20 +16,10 @@ package_lists_dir="$HOME/src/.install/packages"
 check_dir() {
 	if [ -d "$package_lists_dir" ]; then
 		rm -rf "$package_lists_dir"/*
-		echo ""
-		echo -e "${YELLOW}--------------------------------${RC}"
-		echo -e "${YELLOW}---> Updating package lists <---${RC}"
-		echo -e "${YELLOW}--------------------------------${RC}"
-		echo ""
-		sleep 1
+		gum spin --spinner meter --title "Updating package lists..." -- sleep 3
 	else
 		mkdir -p "$package_lists_dir"
-		echo ""
-		echo -e "${YELLOW}--------------------------------${RC}"
-		echo -e "${YELLOW}---> Updating package lists <---${RC}"
-		echo -e "${YELLOW}--------------------------------${RC}"
-		echo ""
-		sleep 1
+		gum spin --spinner meter --title "Updating package lists..." -- sleep 3
 	fi
 
 }
