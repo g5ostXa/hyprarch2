@@ -45,16 +45,20 @@ $ Hyprland
 - **Here's a list of systemd services and timers that I use**:
   * https://github.com/g5ostXa/hyprarch2/blob/master/docs/systemd/services-timers.md
 
-## ⌨️ General keybindings
-- `SUPER` + `RETURN` : Alacritty
-- `SUPER` + `B` : Firefox
-- `SUPER` + `CTRL` + `RETURN` : Rofi
-- `SUPER` + `CTRL` + `W` : Waypaper 
-- `SUPER` + `SHIFT` + `B` : Reload waybar 
-- `SUPER` + `CTRL` + `Q` : Wlogout
-- `SUPER` + `Q` : Killactive
-- `SUPER` + `E` : Nautilus
-- `SUPER` + `F` : Fullscreen
-- `SUPER` + `T` : Toggle floating
-- `SUPER` + `SHIFT` + `H` : Toggle hypridle
-- `SUPER` + `CTRL` + `M` : Exit hyprland
+## ⌨️ Keybindings
+- All keybinds here:
+  - https://github.com/g5ostXa/hyprarch2/blob/master/dotfiles/hypr/conf/keybindings.conf
+
+- General keybinds:
+  - `SUPER` + `RETURN` : Alacritty
+  - `SUPER` + `B` : Firefox
+  - `SUPER` + `CTRL` + `RETURN` : Rofi
+  - `SUPER` + `CTRL` + `W` : Waypaper 
+  - `SUPER` + `SHIFT` + `B` : Reload waybar 
+  - `SUPER` + `CTRL` + `Q` : Wlogout
+  - `SUPER` + `Q` : Killactive
+  - `SUPER` + `E` : Nautilus
+  - `SUPER` + `F` : Fullscreen
+  - `SUPER` + `T` : Toggle floating
+  - `SUPER` + `SHIFT` + `H` : Toggle hypridle
+  - `SUPER` + `CTRL` + `M` : Exit hyprland
