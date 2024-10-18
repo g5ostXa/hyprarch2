@@ -39,10 +39,10 @@ $ Hyprland
 ```
 
 ## ➜ Quick links
-- **Wallpaper and waybar engine documentation**:
+- Wallpaper and waybar engine documentation:
   * https://github.com/g5ostXa/hyprarch2/blob/master/docs/wallpaper-waybar/README.md
 
-- **Here's a list of systemd services and timers that I use**:
+- Here's a list of systemd services and timers that I use:
   * https://github.com/g5ostXa/hyprarch2/blob/master/docs/systemd/services-timers.md
 
 ## ⌨️ Keybindings
