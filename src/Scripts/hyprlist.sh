@@ -2,38 +2,38 @@
 
 # ---------------------------------------------------------
 # hyprlist.sh
-# Script to automate package lists generation for hyprarch2
-# The lists are located in ~/src/.install/packages/
 # ---------------------------------------------------------
 
+# Define colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 RC='\033[0m'
 
-package_lists_dir="$HOME/src/.install/packages"
+# Define package directory path
+PKG_LIST_DIR="$HOME/src/.install/packages"
 
-check_dir() {
-	if [ -d "$package_lists_dir" ]; then
-		rm -rf "$package_lists_dir"/*
+prep_function() {
+	if [ -d "$PKG_LIST_DIR" ]; then
+		rm -rf "$PKG_LIST_DIR"/*
 		gum spin --spinner meter --title "Updating package lists..." -- sleep 3
 	else
-		mkdir -p "$package_lists_dir"
+		mkdir -p "$PKG_LIST_DIR"
 		gum spin --spinner meter --title "Updating package lists..." -- sleep 3
 	fi
 
 }
 
-update_lists() {
-	pacman -Qqn >"$package_lists_dir"/pacman_packages.txt
-	pacman -Qm | awk '{print $1}' >"$package_lists_dir"/aur_packages.txt
+main_function() {
+	pacman -Qqn >"$PKG_LIST_DIR"/pacman_packages.txt
+	pacman -Qm | awk '{print $1}' >"$PKG_LIST_DIR"/aur_packages.txt
 
 	echo -e "${GREEN}Total number of pacman packages...${RC}"
-	wc -l "$package_lists_dir"/pacman_packages.txt
+	wc -l "$PKG_LIST_DIR"/pacman_packages.txt
 	echo ""
 
 	echo -e "${GREEN}Total number of AUR packages...${RC}"
-	wc -l "$package_lists_dir"/aur_packages.txt
+	wc -l "$PKG_LIST_DIR"/aur_packages.txt
 
 	if [ $? -eq 0 ]; then
 		echo ""
@@ -50,5 +50,5 @@ update_lists() {
 
 }
 
-check_dir
-update_lists
+prep_function
+main_function
