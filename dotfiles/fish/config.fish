@@ -22,4 +22,5 @@ alias errcheck='~/src/Scripts/checkerrors.sh'
 alias cw='cliphist wipe'
 alias hyprlist='~/src/Scripts/hyprlist.sh'
 alias killhypr='~/src/Scripts/killhypr.sh'
+alias destroy='rm -rf'
 end
