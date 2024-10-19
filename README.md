@@ -46,7 +46,7 @@ $ Hyprland
   * https://github.com/g5ostXa/hyprarch2/blob/master/docs/systemd/services-timers.md
 
 ## ⌨️ Keybindings
-- All keybinds here:
+- All available keybinds here:
   - https://github.com/g5ostXa/hyprarch2/blob/master/dotfiles/hypr/conf/keybindings.conf
 
 - General keybinds:
@@ -58,7 +58,5 @@ $ Hyprland
   - `SUPER` + `CTRL` + `Q` : Wlogout
   - `SUPER` + `Q` : Killactive
   - `SUPER` + `E` : Nautilus
-  - `SUPER` + `F` : Fullscreen
-  - `SUPER` + `T` : Toggle floating
   - `SUPER` + `SHIFT` + `H` : Toggle hypridle
   - `SUPER` + `CTRL` + `M` : Exit hyprland
