@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ----------------------------------------
-# r3boot.sh
+# reboot.sh
 # ----------------------------------------
 
 # Define colors
@@ -11,7 +11,7 @@ RC='\033[0m'
 gum_prompt() {
 	if gum confirm "Are you sure you want to reboot the system ?"; then
 		clear
-		gum spin --spinner points --title "Running r3boot.sh ..." -- sleep 3
+		gum spin --spinner points --title "Running reboot.sh ..." -- sleep 3
 		main_function
 	elif [ $? -eq 130 ]; then
 		exit 130

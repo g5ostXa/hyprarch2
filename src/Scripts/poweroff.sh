@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ----------------------------------------
-# power0ff.sh
+# poweroff.sh
 # ----------------------------------------
 
 # Define colors
@@ -11,7 +11,7 @@ RC='\033[0m'
 gum_prompt() {
 	if gum confirm "Are you sure you want to power off the system ?"; then
 		clear
-		gum spin --spinner points --title "Running power0ff.sh ..." -- sleep 3
+		gum spin --spinner points --title "Running poweroff.sh ..." -- sleep 3
 		main_function
 	elif [ $? -eq 130 ]; then
 		exit 130
