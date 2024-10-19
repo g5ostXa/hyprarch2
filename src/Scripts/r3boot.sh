@@ -4,11 +4,12 @@
 # r3boot.sh
 # ----------------------------------------
 
+# Define colors
 CYAN='\033[0;36m'
 RC='\033[0m'
 
 gum_prompt() {
-	if gum confirm "Are you sure you want to reboot now ?"; then
+	if gum confirm "Are you sure you want to reboot the system ?"; then
 		clear
 		gum spin --spinner points --title "Running r3boot.sh ..." -- sleep 3
 		main_function
