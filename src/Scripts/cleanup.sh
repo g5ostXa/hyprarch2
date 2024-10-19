@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# -----------------------------------------------
+# cleanup.sh
+# -----------------------------------------------
+
 cat <<"EOF"
   ____ _                                
  / ___| | ___  __ _ _ __    _   _ _ __  
@@ -10,6 +14,7 @@ cat <<"EOF"
 
 EOF
 
+main_function() {
 paru -Scc
 # Remove orphaned packages
 orphaned_packages=$(sudo pacman -Qtdq)
@@ -22,3 +27,7 @@ dependency_packages=$(sudo pacman -Qqd)
 if [ -n "$dependency_packages" ]; then
 	sudo pacman -Rsu $dependency_packages
 fi
+
+}
+
+main_function
