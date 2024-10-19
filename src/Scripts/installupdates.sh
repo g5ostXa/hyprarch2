@@ -2,7 +2,9 @@
 
 # -----------------------------------------------------
 # installupdates.sh
-# Dependencies: paru trizen gum
+# -----------------------------------------------------
+
+# Requires: PARU | TRIZEN | GUM
 # -----------------------------------------------------
 
 sleep 1
@@ -20,10 +22,7 @@ _isInstalledParu() {
 	return #false
 }
 
-# ------------------------------------------------------
-# Confirm Start
-# ------------------------------------------------------
-
+# Confirm start
 if gum confirm "DO YOU WANT TO START THE UPDATE NOW?"; then
 	echo
 	echo ":: Update started."
