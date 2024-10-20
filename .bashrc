@@ -33,6 +33,7 @@ alias cw="cliphist wipe"
 alias hyprlist="~/src/Scripts/hyprlist.sh"
 alias killhypr="~/src/Scripts/killhypr.sh"
 alias destroy="rm -rf"
+alias mirrors-update="~/src/Scripts/mirrors.sh"
 
 # Colors
 CYAN='\033[0;36m'
