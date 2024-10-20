@@ -5,7 +5,7 @@
 
 <div align="center">
 
-[![Release](https://img.shields.io/badge/Latest_Release-v1.2.3-blue.svg)](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.2.3)
+[![Release](https://img.shields.io/badge/Latest_Release-v1.2.4-blue.svg)](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.2.4)
 </div>
 
 ## 📦 Sources
