@@ -58,5 +58,5 @@ $ Hyprland
   - `SUPER` + `CTRL` + `Q` : Wlogout
   - `SUPER` + `Q` : Killactive
   - `SUPER` + `E` : Nautilus
-  - `SUPER` + `SHIFT` + `H` : Toggle hypridle
+  - `SUPER` + `SHIFT` +`N` : Toggle hypridle
   - `SUPER` + `CTRL` + `M` : Exit hyprland
