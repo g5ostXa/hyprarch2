@@ -43,6 +43,7 @@ check_backup() {
 		if command -v figlet >/dev/null 2>&1; then
 			figlet "Mirrorlist"
 		fi
+
 		echo "" | sudo tee -a >/dev/null
 		if gum confirm "Remove existing backup and create a fresh one?"; then
 			sudo rm -rf "$MIRRORLIST_BAK"
