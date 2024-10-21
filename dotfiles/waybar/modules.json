@@ -69,7 +69,7 @@
     // Wallpaper
     "custom/wallpaper": {
         "format": "",
-        "on-click": "waypaper",
+        "on-click": "bwrap --dev-bind / / waypaper",
         "tooltip": false
     },
 
