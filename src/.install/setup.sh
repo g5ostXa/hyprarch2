@@ -100,6 +100,13 @@ copy_files() {
 		echo -e "${YELLOW}Copying .gitignore to home folder...${RC}"
 		cp -r "$HYPRARCH2_DIR/.gitignore" "$HOME/"
 	fi
+	
+	if [ -d "$HOME/.mozilla/" ]; then
+		echo -e "${YELLOW}$HOME/.mozilla/ exists...${RC}"
+	else
+		echo -e "${YELLOW}Copying .mozilla/ to home folder...${RC}"
+		cp -r "$HYPRARCH2_DIR/.mozilla/" "$HOME/"
+	fi
 
 	sleep 2
 
