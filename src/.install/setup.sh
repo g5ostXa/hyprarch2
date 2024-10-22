@@ -71,6 +71,10 @@ copy_files() {
 		rm -rf "$HOME/.bashrc"
 	fi
 
+  	if [ -d "$HOME/.mozilla/" ]; then
+   		rm -rf "$HOME/.mozilla/"
+	fi
+
 	if [ ! -d "$HYPRARCH2_DIR" ]; then
 		echo -e "${RED}$HYPRARCH2_DIR directory does not exist, exiting...${RC}"
 		exit 1
@@ -100,6 +104,12 @@ copy_files() {
 		echo -e "${YELLOW}Copying .gitignore to home folder...${RC}"
 		cp -r "$HYPRARCH2_DIR/.gitignore" "$HOME/"
 	fi
+
+ 	if [ -d "$HOME/.mozilla/" ]; then
+  		echo -e "${YELLOW}$HOME/.mozilla/ exists...${RC}"
+    	else
+     		echo -e "${YELLOW}Copying .mozilla/ to home folder...${RC}"
+       	fi
 
 	sleep 2
 
