@@ -135,7 +135,6 @@ geoclue
 gettext
 giflib
 git
-git-filter-repo
 github-cli
 glib-networking
 glib2
