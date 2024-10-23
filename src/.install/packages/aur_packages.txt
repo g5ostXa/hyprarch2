@@ -2,8 +2,8 @@ bibata-cursor-theme
 dracula-gtk-theme
 dracula-icons-theme
 pacseek-bin
-paru
-paru-debug
+paru-bin
+paru-bin-debug
 protonvpn-cli-community
 python-pythondialog
 trizen
