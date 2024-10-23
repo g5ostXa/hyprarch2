@@ -12,5 +12,5 @@ Here's a list of services and timers I use on `hyprarch2`
 - apparmor.service
 - tlp.service
 - cpupower.service
-- uditd.service
+- auditd.service
 - upower.service
