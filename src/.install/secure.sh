@@ -78,12 +78,12 @@ config_dnsmasq() {
 		sleep 1
 	else
 		echo -e "${RED}:: ERROR: dnsmasq may not be installed, or the config file doesn't exist. Skipping...${RC}"
-		return 1
+		return
 	fi
 
 	if systemctl is-enabled --quiet dnsmasq.service; then
 		echo -e "${GREEN}dnsmasq is already configured and enabled...${RC}"
-		return 1
+		return
 	elif command -v dnsmasq >/dev/null 2>&1; then
 		sudo sed -i '/^#conf-file=\/usr\/share\/dnsmasq\/trust-anchors.conf/s/^#//g' "$DNSMASQ_CONFIG"
 		sudo sed -i '/^#dnssec/s/^#//g' "$DNSMASQ_CONFIG"
@@ -92,7 +92,7 @@ config_dnsmasq() {
 		echo -e "${GREEN}Configuration updated and dnsmasq service enabled!${RC}"
 	else
 		echo -e "${RED}dnsmasq is not installed. Skipping...${RC}"
-		return 1
+		return
 	fi
 }
 
