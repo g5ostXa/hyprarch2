@@ -31,7 +31,7 @@ sleep 1
 # Remove aur helper git directory
 if [ -d "$HOME/$AUR_HELPER_NAME" ]; then
 	echo -e "${YELLOW}Removing $AUR_HELPER_NAME...${RC}"
- 	rm -rf "$HOME/$AUR_HELPER_NAME"
+	rm -rf "$HOME/$AUR_HELPER_NAME"
 else
 	echo echo -e "${RED}$AUR_HELPER_NAME does not exist, skipping...${RC}"
 fi
