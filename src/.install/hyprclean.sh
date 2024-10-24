@@ -29,13 +29,11 @@ echo -e "${CYAN}Starting cleanup process...${RC}"
 sleep 1
 
 # Remove aur helper git directory
-cd "$HOME" && rm -rf "$AUR_HELPER_NAME"
-
-if [ $? -eq 0 ]; then
-	echo -e "${GREEN}Removing $AUR_HELPER_NAME...${RC}"
-	sleep 1
+if [ -d "$HOME/$AUR_HELPER_NAME" ]; then
+	echo -e "${YELLOW}Removing $AUR_HELPER_NAME...${RC}"
+ 	rm -rf "$HOME/$AUR_HELPER_NAME"
 else
-	echo -e "${RED}Failed to remove $AUR_HELPER_NAME...${RC}"
+	echo echo -e "${RED}$AUR_HELPER_NAME does not exist, skipping...${RC}"
 fi
 
 # Remove hyprarch2 git directory
