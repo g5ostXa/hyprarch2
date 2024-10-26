@@ -53,7 +53,7 @@ is_installed_figlet() {
 refresh_backup() {
 	clear
 	is_installed_figlet
-	echo "" | sudo tee -a >/dev/null
+	sudo -v
 	if gum confirm "Remove existing backup and create a fresh one?"; then
 		sudo rm -rf "$MIRRORLIST_BAK"
 		sudo cp -r "$MIRRORLIST" "$MIRRORLIST_BAK"
@@ -72,7 +72,7 @@ refresh_backup() {
 create_backup() {
 	clear
 	is_installed_figlet
-	echo "" | sudo tee -a >/dev/null
+	sudo -v
 	if gum confirm "Do you want to create a backup of your current mirrorlist?"; then
 		sudo cp -r "$MIRRORLIST" "$MIRRORLIST_BAK"
 		sudo chmod 644 "$MIRRORLIST_BAK"
