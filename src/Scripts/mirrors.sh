@@ -47,6 +47,7 @@ is_installed_figlet() {
 		echo "Mirrors.sh"
 		echo "--------------------------"
 	fi
+
 }
 
 refresh_backup() {
@@ -83,6 +84,7 @@ create_backup() {
 		sleep 2
 		create_mirrorlist
 	fi
+
 }
 
 if [ -f "$MIRRORLIST_BAK" ]; then
