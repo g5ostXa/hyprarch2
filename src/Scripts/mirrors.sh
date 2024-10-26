@@ -38,42 +38,55 @@ create_mirrorlist() {
 
 }
 
-check_backup() {
-	if [ -f "$MIRRORLIST_BAK" ]; then
-		if command -v figlet >/dev/null 2>&1; then
-			figlet "Mirrorlist"
-		fi
-
-		echo "" | sudo tee -a >/dev/null
-		if gum confirm "Remove existing backup and create a fresh one?"; then
-			sudo rm -rf "$MIRRORLIST_BAK"
-			sudo cp -r "$MIRRORLIST" "$MIRRORLIST_BAK"
-			echo "Refreshed $MIRRORLIST_BAK"
-			sleep 2
-			create_mirrorlist
-		else
-			echo "Unchanged: $MIRRORLIST_BAK"
-			sleep 2
-			create_mirrorlist
-		fi
+is_installed_figlet() {
+	clear
+	if command -v figlet >/dev/null 2>&1; then
+		figlet "Mirrorlist"
 	else
-		if command -v figlet >/dev/null 2>&1; then
-			figlet "Mirrorlist"
-		fi
+		echo "--------------------------"
+		echo "Mirrors.sh"
+		echo "--------------------------"
+	fi
+}
 
-		echo "" | sudo tee -a >/dev/null
-		if gum confirm "Do you want to create a backup of your current mirrorlist?"; then
-			sudo cp -r "$MIRRORLIST" "$MIRRORLIST_BAK"
-			echo "Saved $MIRRORLIST as $MIRRORLIST_BAK"
-			sleep 2
-			create_mirrorlist
-		else
-			echo "No backup created..."
-			sleep 2
-			create_mirrorlist
-		fi
+refresh_backup() {
+	clear
+	is_installed_figlet
+	echo "" | sudo tee -a >/dev/null
+	if gum confirm "Remove existing backup and create a fresh one?"; then
+		sudo rm -rf "$MIRRORLIST_BAK"
+		sudo cp -r "$MIRRORLIST" "$MIRRORLIST_BAK"
+		sudo chmod 644 "$MIRRORLIST_BAK"
+		echo "Refreshed $MIRRORLIST_BAK"
+		sleep 2
+		create_mirrorlist
+	else
+		echo "Unchanged: $MIRRORLIST_BAK"
+		sleep 2
+		create_mirrorlist
 	fi
 
 }
 
-check_backup
+create_backup() {
+	clear
+	is_installed_figlet
+	echo "" | sudo tee -a >/dev/null
+	if gum confirm "Do you want to create a backup of your current mirrorlist?"; then
+		sudo cp -r "$MIRRORLIST" "$MIRRORLIST_BAK"
+		sudo chmod 644 "$MIRRORLIST_BAK"
+		echo "Saved $MIRRORLIST as $MIRRORLIST_BAK"
+		sleep 2
+		create_mirrorlist
+	else
+		echo "No backup created..."
+		sleep 2
+		create_mirrorlist
+	fi
+}
+
+if [ -f "$MIRRORLIST_BAK" ]; then
+	refresh_backup
+else
+	create_backup
+fi
