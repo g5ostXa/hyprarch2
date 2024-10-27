@@ -83,7 +83,7 @@
     // Filemanager Launcher
     "custom/filemanager": {
         "format": "",
-        "on-click": "nautilus",
+        "on-click": "~/src/Scripts/sandboxes/bwrap-nautilus.sh",
         "tooltip": false
     },
 
@@ -116,13 +116,13 @@
     // CPU
     "cpu": {
         "format": "/ C {usage}% ",
-        "on-click": "alacritty -e bwrap --dev-bind / / btop"
+        "on-click": "alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
     },
 
     // Memory
     "memory": {
         "format": "/ M {}% ",
-        "on-click": "alacritty -e bwrap --dev-bind / / btop"
+        "on-click": "alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
     },
 
     // Harddisk space used
@@ -130,7 +130,7 @@
         "interval": 30,
         "format": "   {percentage_used}% ",
         "path": "/",
-        "on-click": "alacritty -e bwrap --dev-bind / / btop"
+        "on-click": "alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
     },
 
     // Network

@@ -24,4 +24,5 @@ alias hyprlist='~/src/Scripts/hyprlist.sh'
 alias killhypr='~/src/Scripts/killhypr.sh'
 alias destroy='rm -rf'
 alias mirrors-update='~/src/Scripts/mirrors.sh'
+alias bwrap-btop='~/src/Scripts/sandboxes/bwrap-btop.sh'
 end
