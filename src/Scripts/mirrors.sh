@@ -73,7 +73,6 @@ is_installed_reflector() {
 }
 
 refresh_backup() {
-	clear
 	is_installed_figlet
 	sudo -v
 	is_installed_gum
@@ -94,7 +93,6 @@ refresh_backup() {
 }
 
 create_backup() {
-	clear
 	is_installed_figlet
 	sudo -v
 	is_installed_gum
