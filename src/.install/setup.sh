@@ -12,7 +12,7 @@ CYAN='\033[0;36m'
 RC='\033[0m'
 
 # Define variables
-PACMAN_PACKAGES="$HOME/Downloads/hyprarch2/src/.install/packages/pacman_packages.txt"
+PACMAN_PACKAGES="$HOME/Downloads/hyprarch2/src/packages/pacman_packages.txt"
 AUR_HELPER="paru-bin"
 WALLPAPER_REPO="https://github.com/g5ostXa/wallpaper.git"
 WALLPAPER_DIR="$HOME/wallpaper"

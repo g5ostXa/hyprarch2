@@ -11,7 +11,7 @@ YELLOW='\033[0;33m'
 RC='\033[0m'
 
 # Define package directory path
-PKG_LIST_DIR="$HOME/src/.install/packages"
+PKG_LIST_DIR="$HOME/src/packages"
 
 prep_function() {
 	if [ -d "$PKG_LIST_DIR" ]; then
