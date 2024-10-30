@@ -46,23 +46,23 @@ By g5ostXa :ghost:
 ```
 
 ## Partitions
-_**Note: This example assumes `sda` is the disk name. You can verify this with `lsblk` command.**_
+_**Note: This example assumes `nvme0n1` is the disk name. You can verify this with `lsblk` command.**_
 - Optionally, wipe the disk for a clean install:
 ```
-# dd if=/dev/zero of=/dev/sda status=progress
+# dd if=/dev/zero of=/dev/nvme0n1 status=progress
 ```
 ```
 # sync
 ```
 - Now, let's create both the boot and root partitions:
 ```
-# gdisk /dev/sda
+# gdisk /dev/nvme0n1
 ```
 - `o` (Delete all partitions and create new protective mbr)
 - `n` (for new)
 - `accept defaults` (1)
 - `accept defaults` (first sector)
-- `+512M` (last sector)
+- `+1G` (last sector)
 - `ef00` (EFI code)
 - `n` (for new)
 - `accept` defaults (all)
@@ -73,18 +73,18 @@ Expected layout:
 
 | Mount points | Parition | Partition type | Suggested size |
 |:-------------|:--------:|:---------------|:---------------|
-| /mnt/boot        | /dev/sda1| EFI (ef00)     | 512M           |           
-| /mnt            | /dev/sda2| Linux Filesystem | Remainder of the device |
+| /mnt/boot        | /dev/nvme0n1p1| EFI (ef00)     | 1G           |           
+| /mnt            | /dev/nvme0n1p2| Linux Filesystem | Remainder of the device |
 
 ## Formatting
 ```
-# mkfs.ext4 /dev/sda2
+# mkfs.ext4 /dev/nvme0n1p2
 
-# mkfs.fat -F32 /dev/sda1
+# mkfs.fat -F32 /dev/nvme0n1p1
 
-# mount /dev/sda2 /mnt
+# mount /dev/nvme0n1p2 /mnt
 
-# mount --mkdir /dev/sda1 /mnt/boot
+# mount --mkdir /dev/nvme0n1p1 /mnt/boot
 ```
   
 ## Base Installation
