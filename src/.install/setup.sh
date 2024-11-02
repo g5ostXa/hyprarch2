@@ -26,15 +26,14 @@ sleep 3
 
 install_packages() {
 	sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
-	cd "$HOME/"
-	git clone https://aur.archlinux.org/"$AUR_HELPER.git"
+	cd && git clone https://aur.archlinux.org/"$AUR_HELPER.git"
 	cd "$HOME/$AUR_HELPER/" && makepkg -si
 
 	if [ $? -eq 0 ]; then
 		echo -e "${GREEN}Successfully built $AUR_HELPER!${RC}"
 		echo -e "${CYAN}Installing some important packages from the AUR...${RC}"
 		sleep 1.5
-		cd "$HOME/"
+		cd
 	else
 		echo -e "${RED}Failed to build $AUR_HELPER, Exiting script...${RC}"
 		exit 1
@@ -49,11 +48,11 @@ install_wallpaper() {
 		echo -e "${YELLOW}Installing wallpapers...${RC}"
 		sleep 1
 		rm -rf "$WALLPAPER_DIR"
-		cd "$HOME" && git clone "$WALLPAPER_REPO"
+		cd && git clone "$WALLPAPER_REPO"
 	else
 		echo -e "${YELLOW}Installing wallpapers...${RC}"
 		sleep 1
-		cd "$HOME" && git clone "$WALLPAPER_REPO"
+		cd && git clone "$WALLPAPER_REPO"
 	fi
 
 	if [ $? -eq 0 ]; then
@@ -92,13 +91,6 @@ copy_files() {
 	else
 		echo -e "${YELLOW}Copying .version/ to home folder...${RC}"
 		cp -r "$HYPRARCH2_DIR/.version/" "$HOME/"
-	fi
-
-	if [ -f "$HOME/.gitignore" ]; then
-		echo -e "${YELLOW}$HOME/.gitignore exists...${RC}"
-	else
-		echo -e "${YELLOW}Copying .gitignore to home folder...${RC}"
-		cp -r "$HYPRARCH2_DIR/.gitignore" "$HOME/"
 	fi
 
 	sleep 2
