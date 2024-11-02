@@ -18,6 +18,8 @@ PS1='[\u@\h \W]\$ '
 # --------------------------------------------------------------------
 alias ls="eza --icons=always --color=always"
 alias ll="ls -al"
+
+# Sandboxes
 alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
 
 # ProtonVPN
