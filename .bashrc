@@ -16,6 +16,8 @@ PS1='[\u@\h \W]\$ '
 # --------------------------------------------------------------------
 # Aliases
 # --------------------------------------------------------------------
+alias ls="eza --icons=always --color=always"
+alias ll="ls -al"
 alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
 
 # ProtonVPN
@@ -31,8 +33,6 @@ alias hyprstatus="hyprarch2 status"
 alias hyprlist="~/src/Scripts/hyprlist.sh"
 
 # System tools
-alias ls="eza --icons=always --color=always"
-alias ll="ls -al"
 alias libvirtStop="~/src/Scripts/libvirtStop.sh"
 alias fire="sudo firecfg"
 alias unfire="sudo firecfg --clean"

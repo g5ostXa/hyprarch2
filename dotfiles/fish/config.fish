@@ -1,6 +1,8 @@
 if status is-interactive
 
+# ----------------------------------------------------
 # ALIASES
+# ----------------------------------------------------
 alias ls='eza --icons=always --color=always'
 alias ll='ls -al'
 alias vpn-connect='sudo protonvpn connect -f'
@@ -16,13 +18,10 @@ alias hyprstatus='hyprarch2 status'
 alias fire='sudo firecfg'
 alias unfire='sudo firecfg --clean'
 alias firetop='firejail --top'
-alias ff='fastfetch'
 alias clean='~/src/Scripts/cleanup.sh'
 alias errcheck='~/src/Scripts/checkerrors.sh'
 alias cw='cliphist wipe'
 alias hyprlist='~/src/Scripts/hyprlist.sh'
-alias killhypr='~/src/Scripts/killhypr.sh'
-alias destroy='rm -rf'
 alias mirrors-update='~/src/Scripts/mirrors.sh'
 alias bwrap-btop='~/src/Scripts/sandboxes/bwrap-btop.sh'
 end
