@@ -7,46 +7,56 @@
 # ~/.bashrc
 #
 
+# --------------------------------------------------------------------
+# Defaults
+# --------------------------------------------------------------------
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '
 
+# --------------------------------------------------------------------
 # Aliases
-alias ls="eza --icons=always --color=always"
-alias ll="ls -al"
+# --------------------------------------------------------------------
+alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
+
+# ProtonVPN
 alias vpn-connect="sudo protonvpn connect -f"
 alias vpn-disconnect="sudo protonvpn disconnect"
 alias vpn-reconnect="sudo protonvpn reconnect"
 alias vpn-status="sudo protonvpn status"
-alias reboot="~/src/Scripts/reboot.sh"
-alias poweroff="~/src/Scripts/poweroff.sh"
+
+# hyprarch2 repo control
 alias hyprarch2="/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME"
-alias libvirtStop="~/src/Scripts/libvirtStop.sh"
 alias hyprpush="hyprarch2 push --set-upstream git@github.com:g5ostXa/hyprarch2.git master"
 alias hyprstatus="hyprarch2 status"
+alias hyprlist="~/src/Scripts/hyprlist.sh"
+
+# System tools
+alias ls="eza --icons=always --color=always"
+alias ll="ls -al"
+alias libvirtStop="~/src/Scripts/libvirtStop.sh"
 alias fire="sudo firecfg"
 alias unfire="sudo firecfg --clean"
 alias firetop="firejail --top"
-alias ff="fastfetch"
 alias clean="~/src/Scripts/cleanup.sh"
 alias errcheck="~/src/Scripts/checkerrors.sh"
 alias cw="cliphist wipe"
-alias hyprlist="~/src/Scripts/hyprlist.sh"
-alias killhypr="~/src/Scripts/killhypr.sh"
-alias destroy="rm -rf"
 alias mirrors-update="~/src/Scripts/mirrors.sh"
-alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
+alias reboot="~/src/Scripts/reboot.sh"
+alias poweroff="~/src/Scripts/poweroff.sh"
 
-# Colors
-CYAN='\033[0;36m'
-RC='\033[0m'
-
+# --------------------------------------------------------------------
 # General
+# --------------------------------------------------------------------
 export PATH="/usr/lib/ccache/bin/:$PATH"
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
 HYPRARCH2_VERSION="$HOME/.version/latest"
+CYAN='\033[0;36m'
+RC='\033[0m'
 
-# Init banner
+# --------------------------------------------------------------------
+# Shell init
+# --------------------------------------------------------------------
 if [[ $(tty) == *"pts"* ]]; then
 echo -e "${CYAN}"
 cat <<"EOF"
