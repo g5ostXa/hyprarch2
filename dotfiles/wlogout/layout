@@ -28,7 +28,7 @@
     "text" : "Suspend",
     "keybind" : "u"
 }
-
+{
     "label" : "reboot",
     "action" : "$HOME/src/Scripts/hypr/power.sh reboot",
     "text" : "Reboot",
