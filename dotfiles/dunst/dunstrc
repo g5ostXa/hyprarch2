@@ -16,7 +16,7 @@
 
     ### Geometry ###
     width = 400
-    height = (0, 400)
+    height = (0,400)
     origin = top-right
     offset = 10x50
     scale = 0
