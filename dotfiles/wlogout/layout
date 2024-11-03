@@ -1,36 +1,36 @@
 {
     "label" : "lock",
-    "action" : "$HOME/src/Scripts/power.sh lock",
+    "action" : "$HOME/src/Scripts/hypr/power.sh lock",
     "text" : "Lock",
     "keybind" : "l"
 }
 {
     "label" : "hibernate",
-    "action" : "$HOME/src/Scripts/power.sh hibernate",
+    "action" : "$HOME/src/Scripts/hypr/power.sh hibernate",
     "text" : "Hibernate",
     "keybind" : "h"
 }
 {
     "label" : "logout",
-    "action" : "$HOME/src/Scripts/power.sh exit",
+    "action" : "$HOME/src/Scripts/hypr/power.sh exit",
     "text" : "Exit",
     "keybind" : "e"
 }
 {
     "label" : "shutdown",
-    "action" : "$HOME/src/Scripts/power.sh shutdown",
+    "action" : "$HOME/src/Scripts/hypr/power.sh shutdown",
     "text" : "Shutdown",
     "keybind" : "s"
 }
 {
     "label" : "suspend",
-    "action" : "$HOME/src/Scripts/power.sh suspend",
+    "action" : "$HOME/src/Scripts/hypr/power.sh suspend",
     "text" : "Suspend",
     "keybind" : "u"
 }
-{
+
     "label" : "reboot",
-    "action" : "$HOME/src/Scripts/power.sh reboot",
+    "action" : "$HOME/src/Scripts/hypr/power.sh reboot",
     "text" : "Reboot",
     "keybind" : "r"
 }
