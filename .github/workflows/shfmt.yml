@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  format-shell-scripts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: ryohidaka/action-sh-format@v0.3.2
+        with:
+          path: "."
+          indent: 4
+          commit-user-name: "GitHub Actions"
+          commit-user-email: "actions@github.com"
+          commit-message: "chore: Format ShellScripts"
+          dry-run: false
