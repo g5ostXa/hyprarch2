@@ -1,0 +1,50 @@
+name: shellcheck
+
+on:
+  push:
+    branches:
+      - master 
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        default: 'World'
+        required: true
+        type: string
+
+jobs:
+  merge_and_shellcheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      # Step 2: Merge the branch with the main branch (if it's a PR)
+      - name: Merge with main branch
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch origin main
+          git checkout main
+          git pull
+          git checkout -
+          git merge main
+
+      # Step 3: Run ShellCheck on all shell scripts
+      - name: Install ShellCheck and Run
+        run: |
+          sudo apt-get update
+          sudo apt-get install shellcheck -y
+          shellcheck **/*.sh
+
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 4: Send a greeting
+      - name: Send greeting
+        run: echo "Hello ${{ inputs.name }}"
