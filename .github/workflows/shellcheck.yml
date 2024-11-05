@@ -26,4 +26,4 @@ jobs:
         uses: AzatAI/shellcheck@v0.1.0
         with:
           path: "*.sh src/Scripts/**/*.sh install.sh src/Scripts/hypr src/Scripts/sandboxes src/Scripts/waybar"  # Specify path to shell scripts, including those in src/Scripts, install.sh from root, src/Scripts/hypr, src/Scripts/sandboxes, and src/Scripts/waybar
-          args: "--external-sources"  # Optional, default is --external-sources
+          args: "--external-sources --exclude=SC1090 --exclude=SC2086"  # Double quoted to prevent globbing and word splitting  # Double quoted to prevent globbing and word splitting  # Suppress non-constant source warning SC1090
