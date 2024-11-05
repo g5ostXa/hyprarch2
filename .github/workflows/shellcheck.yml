@@ -22,17 +22,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Run a one-line script
-        run: echo "Hello, world!"
-
-      - name: Run a multi-line script
-        run: |
-          echo "Add other actions to build,"
-          echo "test, and deploy your project."
-
       - name: Run Shell Check
         uses: AzatAI/shellcheck@v0.1.0
         with:
-          path: "*.sh"  # Specify path to shell scripts
-          args: "--external-sources --exclude=SC1090"  # Suppress non-constant source warning
-
+          path: "*.sh src/Scripts/**/*.sh install.sh src/Scripts/hypr src/Scripts/sandboxes src/Scripts/waybar"  # Specify path to shell scripts, including those in src/Scripts, install.sh from root, src/Scripts/hypr, src/Scripts/sandboxes, and src/Scripts/waybar
+          args: "--external-sources"  # Optional, default is --external-sources
