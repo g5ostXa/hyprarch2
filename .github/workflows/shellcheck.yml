@@ -1,9 +1,7 @@
 yaml
 
-name: shellcheck
-
 on:
-  push:
+ push:
     branches:
       - master
   pull_request:
