@@ -16,6 +16,7 @@ main_function() {
 			is_installed_figlet
 			is_installed_gum
 			sudo -v
+			set -e
 			gum spin --spinner points --title "Setting up VPN and DNS..." -- $VPN_CONNECT
 			gum spin --spinner points --title "Refreshinng dnsmasq..." -- $DNS_RESTART
 			Hyprland
