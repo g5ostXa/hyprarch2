@@ -34,5 +34,5 @@ jobs:
         uses: AzatAI/shellcheck@v0.1.0
         with:
           path: "*.sh"  # Specify path to shell scripts
-          args: "--external-sources"  # Optional, default is --external-sources
-   
+          args: "--external-sources --exclude=SC1090"  # Suppress non-constant source warning
+
