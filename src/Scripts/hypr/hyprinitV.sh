@@ -46,6 +46,7 @@ is_installed_gum() {
 		echo "Type 'sudo pacman -Syu gum' to install"
 		exit 1
 	fi
+
 }
 
 main_function
