@@ -44,4 +44,4 @@ If for any reason `wallpaper.sh` fails to run, causing `waybar` to not launch as
 **Quick links**
 - [wallpaper.sh](https://github.com/g5ostXa/hyprarch2/blob/master/src/Scripts/wallpaper.sh)
 - [autostart.conf](https://github.com/g5ostXa/hyprarch2/blob/master/dotfiles/hypr/conf/autostart.conf)
-- [waybar.sh](https://github.com/g5ostXa/hyprarch2/blob/master/src/Scripts/waybar.sh)
+- [waybar.sh](https://github.com/g5ostXa/hyprarch2/blob/master/src/Scripts/waybar/waybar.sh)

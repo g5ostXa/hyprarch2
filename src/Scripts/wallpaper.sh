@@ -28,7 +28,7 @@ main_function() {
 	fi
 
 	# Reload waybar
-	source "$HOME/dotfiles/waybar/launch.sh"
+	source "$HOME/src/Scripts/waybar/launch.sh"
 
 }
 
