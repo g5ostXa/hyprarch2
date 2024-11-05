@@ -1,4 +1,4 @@
-            - name: Shell Check
+ - name: Shell Check
   # You may pin to the exact commit or the version.
   # uses: AzatAI/shellcheck@b2c6335033177e39ba6df3f1a190f4d9afe81d85
   uses: AzatAI/shellcheck@v0.1.0
