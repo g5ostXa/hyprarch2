@@ -17,8 +17,8 @@ main_function() {
 			is_installed_gum
 			sudo -v
 			set -e
-			gum spin --spinner points --title "Setting up VPN and DNS..." -- $VPN_CONNECT
-			gum spin --spinner points --title "Refreshinng dnsmasq..." -- $DNS_RESTART
+			gum spin --spinner points --title "Connecting to ProtonVPN..." -- $VPN_CONNECT
+			gum spin --spinner points --title "Restarting DNSmask service..." -- sleep 3 && $DNS_RESTART
 			Hyprland
 		else
 			Hyprland
