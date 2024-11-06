@@ -17,7 +17,7 @@
     scale = 0
     notification_limit = 0
 
-### Proghress Bar ###
+### Progress Bar ###
     progress_bar = true
     progress_bar_height = 10
     progress_bar_frame_width = 1
