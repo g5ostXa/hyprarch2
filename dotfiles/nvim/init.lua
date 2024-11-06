@@ -14,7 +14,7 @@ vim.cmd "Neotree"
 vim.opt.relativenumber = true
 
 -- Theme
-vim.cmd.colorscheme "dracula"
+vim.cmd.colorscheme "tokyonight-night"
 
 -- Set cursor back to "Beam" in alacritty when exiting nvim
 vim.api.nvim_create_autocmd('VimLeave', {

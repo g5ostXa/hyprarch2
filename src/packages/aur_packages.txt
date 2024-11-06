@@ -1,11 +1,11 @@
 bibata-cursor-theme
-dracula-gtk-theme
 dracula-icons-theme
 pacseek-bin
 paru-bin
 paru-bin-debug
 protonvpn-cli-community
 python-pythondialog
+tokyonight-gtk-theme-git
 trizen
 typos-lsp-bin
 vim-language-server

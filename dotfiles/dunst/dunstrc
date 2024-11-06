@@ -1,20 +1,14 @@
-#      _                 _    
-#   __| |_   _ _ __  ___| |_  
-#  / _` | | | | '_ \/ __| __| 
-# | (_| | |_| | | | \__ \ |_  
-#  \__,_|\__,_|_| |_|___/\__| 
-#                             
-#  
-# ----------------------------------------------------- 
-
-# See dunst(5) for all configuration options
+#      _                 _
+#   __| |_   _ _ __  ___| |_
+#  / _` | | | | '_ \/ __| __|
+# | (_| | |_| | | | \__ \ |_ 
+#  \__,_|\__,_|_| |_|___/\__|
 
 [global]
-    ### Display ###
+
     monitor = 0
     follow = mouse
 
-    ### Geometry ###
     width = 400
     height = (0,400)
     origin = top-right
@@ -22,14 +16,12 @@
     scale = 0
     notification_limit = 0
 
-    ### Progress bar ###
     progress_bar = true
     progress_bar_height = 10
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
     progress_bar_max_width = 300
     progress_bar_corner_radius = 0
-
     indicate_hidden = yes
     transparency = 15
     separator_height = 2
@@ -37,14 +29,13 @@
     horizontal_padding = 5
     text_icon_padding = 0
     frame_width = 1
-    frame_color = "#44475a"
+    frame_color = "#3b4261"
     gap_size = 0
     separator_color = frame
     sort = yes
     idle_threshold = 120
 
-    ### Text ###
-font = Monospace 12
+    font = Monospace 12
     line_height = 1
     markup = full
     format = "<b>%s</b>\n%b"
@@ -57,7 +48,6 @@ font = Monospace 12
     hide_duplicate_count = false
     show_indicators = yes
 
-    ### Icons ###
     enable_recursive_icon_lookup = true
     icon_theme = "Dracula, breeze"
     icon_position = left
@@ -65,11 +55,9 @@ font = Monospace 12
     max_icon_size = 128
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
-    ### History ###
     sticky_history = yes
     history_length = 20
 
-    ### Misc/Advanced ###
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/xdg-open
     always_run_script = true
@@ -78,34 +66,31 @@ font = Monospace 12
     corner_radius = 5
     ignore_dbusclose = false
 
-    ### Wayland ###
     force_xwayland = false
 
-    ### Legacy ###
     force_xinerama = false
 
-    ### Mouse ###
     mouse_left_click = do_action, close_current
     mouse_middle_click = open_url, close_current
     mouse_right_click = close_all
 
 [urgency_low]
-    background = "#282a36"
-    foreground = "#f8f8f2"
-    frame_color = "#44475a"
+    background = "#1a1b26"
+    foreground = "#a9b1d6"
+    frame_color = "#3b4261"
     timeout = 10
-    icon=/usr/share/icons/Dracula/actions/24/documentinfo.svg
+    icon = /usr/share/icons/Dracula/actions/24/documentinfo.svg
 
 [urgency_normal]
-    background = "#282a36"
-    foreground = "#f8f8f2"
-    frame_color = "#44475a"
+    background = "#1a1b26"
+    foreground = "#c0caf5"
+    frame_color = "#3b4261"
     timeout = 10
-    icon=/usr/share/icons/Dracula/actions/24/documentinfo.svg
+    icon = /usr/share/icons/Dracula/actions/24/documentinfo.svg
 
 [urgency_critical]
-    background = "#282a36"
-    foreground = "#ff5555"  
-    frame_color = "#44475a"
+    background = "#1a1b26"
+    foreground = "#f7768e"
+    frame_color = "#3b4261"
     timeout = 0
     icon = /usr/share/icons/Dracula/16/folder-important.svg

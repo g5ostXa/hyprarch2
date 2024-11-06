@@ -1,4 +1,4 @@
 return {
-  "Mofiqul/dracula.nvim",
-  name = "dracula",
+  "folke/tokyonight.nvim",
+  name = "tokyonight",
   }

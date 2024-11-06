@@ -36,6 +36,8 @@ is_installed_figlet() {
 		echo "---------------------------------"
 	else
 		figlet "hyprinitV"
+		echo ""
+		echo "---------------------------------------------"
 	fi
 
 }

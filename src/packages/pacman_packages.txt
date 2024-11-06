@@ -147,6 +147,7 @@ gmp
 gnome-autoar
 gnome-desktop-4
 gnome-desktop-common
+gnome-themes-extra
 gnu-free-fonts
 gnupg
 gnutls
