@@ -5,10 +5,11 @@
 #  \__,_|\__,_|_| |_|___/\__|
 
 [global]
-
+### Display ###
     monitor = 0
     follow = mouse
-
+    
+### Geometry ###
     width = 400
     height = (0,400)
     origin = top-right
@@ -16,6 +17,7 @@
     scale = 0
     notification_limit = 0
 
+### Proghress Bar ###
     progress_bar = true
     progress_bar_height = 10
     progress_bar_frame_width = 1
@@ -35,6 +37,7 @@
     sort = yes
     idle_threshold = 120
 
+### Text ###
     font = Monospace 12
     line_height = 1
     markup = full
@@ -48,6 +51,7 @@
     hide_duplicate_count = false
     show_indicators = yes
 
+### Icons ###
     enable_recursive_icon_lookup = true
     icon_theme = "Dracula, breeze"
     icon_position = left
@@ -55,9 +59,11 @@
     max_icon_size = 128
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
+### History ###
     sticky_history = yes
     history_length = 20
 
+### Misc/Advanced ###
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/xdg-open
     always_run_script = true
@@ -66,14 +72,18 @@
     corner_radius = 5
     ignore_dbusclose = false
 
+### Wayland ###
     force_xwayland = false
 
+### Legacy ###
     force_xinerama = false
 
+### Mouse ###
     mouse_left_click = do_action, close_current
     mouse_middle_click = open_url, close_current
     mouse_right_click = close_all
 
+### Notification Urgency ###
 [urgency_low]
     background = "#1a1b26"
     foreground = "#a9b1d6"
