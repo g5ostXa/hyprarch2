@@ -91,6 +91,7 @@ efibootmgr
 efitools
 efivar
 electron31
+electron32
 enchant
 ethtool
 exempi
