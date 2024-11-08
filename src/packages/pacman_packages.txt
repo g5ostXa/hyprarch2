@@ -611,6 +611,7 @@ openbsd-netcat
 opencore-amr
 openexr
 openjpeg2
+openresolv
 openssh
 openssl
 openvpn
@@ -970,6 +971,7 @@ webkit2gtk-4.1
 webrtc-audio-processing-1
 wget
 which
+wireguard-tools
 wireless_tools
 wl-clipboard
 wlr-randr

@@ -24,5 +24,5 @@ alias cw='cliphist wipe'
 alias hyprlist='~/src/Scripts/hyprlist.sh'
 alias mirrors-update='~/src/Scripts/mirrors.sh'
 alias bwrap-btop='~/src/Scripts/sandboxes/bwrap-btop.sh'
-alias hyprinitV='~/src/Scripts/hypr/hyprinitV.sh'
+alias st4rtX='~/src/Scripts/hypr/st4rtX.sh'
 end
