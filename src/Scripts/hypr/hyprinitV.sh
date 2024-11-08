@@ -31,13 +31,12 @@ main_function() {
 
 is_installed_figlet() {
 	if ! command -v figlet >/dev/null 2>&1; then
-		echo "---------------------------------"
-		echo "hyprinitV | By g5ostXa | 2024"
-		echo "---------------------------------"
+		echo "--------------------------------"
+		echo "hyprinitV.sh | By g5ostXa | 2024"
+		echo "--------------------------------"
 	else
-		figlet "hyprinitV"
+		figlet -f smslant "hyprinitV"
 		echo ""
-		echo "---------------------------------------------"
 	fi
 
 }
