@@ -42,7 +42,8 @@ create_mirrorlist() {
 is_installed_figlet() {
 	clear
 	if command -v figlet >/dev/null 2>&1; then
-		figlet "Mirrorlist"
+		figlet -f smslant "Mirrorlist"
+		echo ""
 	else
 		echo "--------------------------"
 		echo "Mirrors.sh"
