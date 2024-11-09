@@ -13,7 +13,6 @@ RC='\033[0m'
 
 # Define variables
 PACMAN_PACKAGES="$HOME/Downloads/hyprarch2/src/packages/pacman_packages.txt"
-AUR_HELPER="paru-bin"
 WALLPAPER_REPO="https://github.com/g5ostXa/wallpaper.git"
 WALLPAPER_DIR="$HOME/wallpaper"
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
@@ -24,24 +23,61 @@ echo -e "${CYAN}---> RUNNING SETUP.SH <---${RC}"
 echo -e "${CYAN}==========================${RC}"
 sleep 3
 
-install_packages() {
-	sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
-	cd && git clone https://aur.archlinux.org/"$AUR_HELPER.git"
-	cd "$HOME/$AUR_HELPER/" && makepkg -si
+sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
+clear
 
-	if [ $? -eq 0 ]; then
-		echo -e "${GREEN}Successfully built $AUR_HELPER!${RC}"
-		echo -e "${CYAN}Installing some important packages from the AUR...${RC}"
-		sleep 1.5
-		cd
-	else
-		echo -e "${RED}Failed to build $AUR_HELPER, Exiting script...${RC}"
+# Check if figlet is installed
+is_installed_figlet() {
+	if ! command -v figlet >/dev/null 2>&1; then
+		echo -e "${RED};; figlet is not installed...${RC}"
 		exit 1
 	fi
 
-	paru -S --needed --noconfirm bibata-cursor-theme dracula-icons-theme pacseek-bin tokyonight-gtk-theme-git trizen typos-lsp-bin vim-language-server vscodium-bin waypaper wlogout
+}
+
+# Check if gum is installed
+is_installed_gum() {
+	if ! command -v gum >/dev/null 2>&1; then
+		echo -e "${RED};; gum is not installed...${RC}"
+		exit 1
+	fi
 
 }
+
+# Check if git is installed
+is_installed_git() {
+	if ! command -v git >/dev/null 2>&1; then
+		echo -e "${RED};; git is not installed...${RC}"
+		exit 1
+	fi
+
+}
+
+# Run checks and display figlet banner
+is_installed_figlet
+echo -e "${CYAN}"
+figlet -f smslant "AUR"
+echo -e "${RC}" && echo ""
+is_installed_gum
+is_installed_git
+
+# Run main operation if all checks passed
+echo -e "${YELLOW};; Please choose option:${RC}" && echo ""
+AUR_HELPER=$(gum choose "yay" "paru" "aura" "CANCEL")
+
+if [ -n "$AUR_HELPER" ]; then
+	if [[ ! "$AUR_HELPER" == "CANCEL" ]]; then
+		cd && git clone https://aur.archlinux.org/"$AUR_HELPER"-bin
+		cd "$AUR_HELPER"-bin && makepkg -si && cd
+	else
+		echo -e "${RED};; Operation canceled... :(${RC}"
+		exit 0
+	fi
+else
+	exit 1
+fi
+
+paru -S --needed --noconfirm bibata-cursor-theme dracula-icons-theme pacseek-bin tokyonight-gtk-theme-git trizen typos-lsp-bin vim-language-server vscodium-bin waypaper wlogout
 
 install_wallpaper() {
 	if [ -d "$WALLPAPER_DIR" ]; then
@@ -119,7 +155,6 @@ create_symlinks() {
 
 }
 
-install_packages
 install_wallpaper
 copy_files
 create_symlinks
