@@ -77,7 +77,7 @@ else
 	exit 1
 fi
 
-paru -S --needed --noconfirm bibata-cursor-theme dracula-icons-theme pacseek-bin tokyonight-gtk-theme-git trizen typos-lsp-bin vim-language-server vscodium-bin waypaper wlogout
+"$AUR_HELPER" -S --needed --noconfirm bibata-cursor-theme dracula-icons-theme pacseek-bin tokyonight-gtk-theme-git trizen typos-lsp-bin vim-language-server vscodium-bin waypaper wlogout
 
 install_wallpaper() {
 	if [ -d "$WALLPAPER_DIR" ]; then
