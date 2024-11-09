@@ -22,23 +22,20 @@ alias ll="ls -al"
 # Sandboxes
 alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
 
-# ProtonVPN
-alias vpn-connect="sudo protonvpn connect -f"
-alias vpn-disconnect="sudo protonvpn disconnect"
-alias vpn-reconnect="sudo protonvpn reconnect"
-alias vpn-status="sudo protonvpn status"
+# ProtonVPN / Wireguard
+alias wgstatus="~/src/Scripts/wgstatus.sh"
 
 # hyprarch2 repo control
 alias hyprarch2="/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME"
 alias hyprpush="hyprarch2 push --set-upstream git@github.com:g5ostXa/hyprarch2.git master"
-alias hyprstatus="hyprarch2 status"
 alias hyprlist="~/src/Scripts/hyprlist.sh"
+alias hstatus="hyprarch2 status"
+alias hpush="hyprarch2 push"
 
 # System tools
 alias libvirtStop="~/src/Scripts/libvirtStop.sh"
 alias fire="sudo firecfg"
 alias unfire="sudo firecfg --clean"
-alias firetop="firejail --top"
 alias clean="~/src/Scripts/cleanup.sh"
 alias errcheck="~/src/Scripts/checkerrors.sh"
 alias cw="cliphist wipe"
@@ -53,7 +50,9 @@ alias st4rtX="~/src/Scripts/hypr/st4rtX.sh"
 export PATH="/usr/lib/ccache/bin/:$PATH"
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
+
 HYPRARCH2_VERSION="$HOME/.version/latest"
+
 CYAN='\033[0;36m'
 RC='\033[0m'
 
@@ -62,6 +61,7 @@ RC='\033[0m'
 # --------------------------------------------------------------------
 if [[ $(tty) == *"pts"* ]]; then
 echo -e "${CYAN}"
+
 cat <<"EOF"
  _                                    _     ____
 | |__  _   _ _ __  _ __ __ _ _ __ ___| |__ |___ \
@@ -70,6 +70,7 @@ cat <<"EOF"
 |_| |_|\__, | .__/|_|  \__,_|_|  \___|_| |_|_____|
        |___/|_|
 EOF
+
 cat "$HYPRARCH2_VERSION"
 echo -e "${RC}"
 fi
