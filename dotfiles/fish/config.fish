@@ -14,7 +14,7 @@ alias hpush='hyprarch2 push'
 # System tools
 alias ls='eza --icons=always --color=always'
 alias ll='ls -al'
-alias wgstatus='~/src/Scripts/wgstatus.sh'
+alias wgstatus='sudo ~/src/Scripts/wgstatus.sh'
 alias reboot='~/src/Scripts/reboot.sh'
 alias poweroff='~/src/Scripts/poweroff.sh'
 alias fire='sudo firecfg'

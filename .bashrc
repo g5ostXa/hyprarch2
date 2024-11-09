@@ -23,7 +23,7 @@ alias ll="ls -al"
 alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
 
 # ProtonVPN / Wireguard
-alias wgstatus="~/src/Scripts/wgstatus.sh"
+alias wgstatus="sudo ~/src/Scripts/wgstatus.sh"
 
 # hyprarch2 repo control
 alias hyprarch2="/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME"

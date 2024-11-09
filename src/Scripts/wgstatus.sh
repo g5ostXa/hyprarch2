@@ -5,14 +5,17 @@
 # --------------------------------
 
 # Get wireguard status and basic info
-sudo -v
 if [[ $(wg show | grep -c "peer:") -gt 0 ]]; then
-	echo "connected"
+	echo ""
+    echo "VPN status:"
+    echo "connected"
     echo ""
-    wgstatus
+    wg show
 else
+    echo ""
+    echo "VPN status:"
 	echo "disconnected"
     echo ""
-    wgstatus
+    wg show
 fi
 
