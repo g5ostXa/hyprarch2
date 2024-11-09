@@ -39,7 +39,7 @@ install_packages() {
 		exit 1
 	fi
 
-	paru -S --needed --noconfirm bibata-cursor-theme dracula-icons-theme pacseek-bin protonvpn-cli-community tokyonight-gtk-theme-git trizen typos-lsp-bin vim-language-server vscodium-bin waypaper wlogout
+	paru -S --needed --noconfirm bibata-cursor-theme dracula-icons-theme pacseek-bin tokyonight-gtk-theme-git trizen typos-lsp-bin vim-language-server vscodium-bin waypaper wlogout
 
 }
 

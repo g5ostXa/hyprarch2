@@ -12,30 +12,12 @@
 MIRRORLIST="/etc/pacman.d/mirrorlist"
 MIRRORLIST_BAK="/etc/pacman.d/mirrorlist.bak"
 REFLECTOR_CMD="sudo reflector --country Canada --protocol https --latest 20 --age 6 --sort rate --save $MIRRORLIST"
-SERVICE="openvpn"
-VPN_NAME="protonvpn"
-VPN_CONNECT="sudo protonvpn connect -f"
-VPN_DISCONNECT="sudo protonvpn disconnect"
 SYNC_DATABASE="sudo pacman -Syu"
 
 create_mirrorlist() {
-	if pgrep -x "$SERVICE" >/dev/null; then
-		gum spin --spinner points --title "Disconnecting VPN" -- $VPN_DISCONNECT
-	fi
-
 	gum spin --spinner globe --title "Fetching the latest mirrors..." -- $REFLECTOR_CMD
 	gum spin --spinner points --title "Synchronizing package database..." -- $SYNC_DATABASE
-
-	if pgrep -x "$SERVICE" >/dev/null; then
-		echo "$VPN_NAME is already running..."
-		echo "The mirrors are now up to date!"
-		exit 0
-	elif command -v "$VPN_NAME" >/dev/null 2>&1; then
-		gum spin --spinner points --title "Reconnecting VPN..." -- $VPN_CONNECT
-		echo "The mirrors are now up to date!"
-	else
-		echo "The mirrors are now up to date!"
-	fi
+	echo "The mirrors are now up to date!"
 
 }
 
