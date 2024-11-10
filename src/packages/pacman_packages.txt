@@ -589,6 +589,7 @@ nautilus
 ncurses
 ndctl
 neovim
+netscanner
 nettle
 network-manager-applet
 networkmanager
