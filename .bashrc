@@ -13,6 +13,13 @@
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '
 
+# Colors
+CYAN='\033[0;36m'
+RC='\033[0m'
+
+# Pre-load current hyprarch2 version name
+HYPRARCH2_VERSION="$HOME/.version/latest"
+
 # --------------------------------------------------------------------
 # Aliases
 # --------------------------------------------------------------------
@@ -48,14 +55,8 @@ alias st4rtX="~/src/Scripts/hypr/st4rtX.sh"
 # General
 # --------------------------------------------------------------------
 export PATH="/usr/lib/ccache/bin/:$PATH"
-
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
-
-HYPRARCH2_VERSION="$HOME/.version/latest"
-
-CYAN='\033[0;36m'
-RC='\033[0m'
 
 # --------------------------------------------------------------------
 # Shell init
