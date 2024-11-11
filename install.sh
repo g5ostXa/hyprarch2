@@ -42,7 +42,6 @@ if [ -n "$SSH_CONNECTION" ]; then
 		[Nn]*)
 			echo ":: Installation canceled..."
 			exit
-			break
 			;;
 		*)
 			echo ":: Please answer yes or no."
