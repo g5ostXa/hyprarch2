@@ -4,23 +4,13 @@
 # installupdates.sh
 # -----------------------------------------------------
 
-# Requires: PARU | TRIZEN | GUM
+# Requires: gum | trizen | libnotify
 # -----------------------------------------------------
 
 sleep 1
 clear
 figlet "System update"
 echo
-_isInstalledParu() {
-	package="$1"
-	check="$(paru -Qs --color always "${package}" | grep "local" | grep "${package} ")"
-	if [ -n "${check}" ]; then
-		echo 0 #'0' means 'true' in Bash
-		return #true
-	fi
-	echo 1 #'1' means 'false' in Bash
-	return #false
-}
 
 # Confirm start
 if gum confirm "DO YOU WANT TO START THE UPDATE NOW?"; then
