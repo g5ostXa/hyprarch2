@@ -8,8 +8,9 @@ if status is-interactive
 # hyprpush is meant to re-initialize the repo or rebase it locally. To push normally, use hpush.
 alias hyprarch2='/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME'
 alias hyprpush='hyprarch2 push --set-upstream git@github.com:g5ostXa/hyprarch2.git master'
-alias hstatus='hyprarch2 status'
-alias hpush='hyprarch2 push'
+alias h2status='hyprarch2 status'
+alias h2push='hyprarch2 push'
+alias h2pull='hyprarch2 pull'
 
 # System tools
 alias ls='eza --icons=always --color=always'
