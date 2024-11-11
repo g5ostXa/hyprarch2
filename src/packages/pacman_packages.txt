@@ -593,7 +593,6 @@ netscanner
 nettle
 network-manager-applet
 networkmanager
-networkmanager-openvpn
 nftables
 nilfs-utils
 ninja
@@ -615,7 +614,6 @@ openjpeg2
 openresolv
 openssh
 openssl
-openvpn
 opus
 orc
 os-prober
