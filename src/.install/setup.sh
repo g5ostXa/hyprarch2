@@ -118,15 +118,28 @@ copy_files() {
 	if [ -f "$HOME/.bashrc" ]; then
 		echo -e "${YELLOW}$HOME/.bashrc exits...${RC}"
 	else
+		echo ""
 		echo -e "${YELLOW}Copying .bashrc to home folder...${RC}"
+		echo ""
 		cp -r "$HYPRARCH2_DIR/.bashrc" "$HOME/"
 	fi
 
 	if [ -d "$HOME/.version/" ]; then
 		echo -e "${YELLOW}$HOME/.version/ exists...${RC}"
 	else
+		echo ""
 		echo -e "${YELLOW}Copying .version/ to home folder...${RC}"
+		echo ""
 		cp -r "$HYPRARCH2_DIR/.version/" "$HOME/"
+	fi
+
+	if [ -d "$HOME/.github/" ]; then
+		echo -e "${YELLOW}$HOME/.github/ exists...${RC}"
+	else
+		echo ""
+		echo -e "${YELLOW}Copying .github/ to home folder...${RC}"
+		echo ""
+		cp -r "$HYPRARCH2_DIR/.github/" "$HOME/"
 	fi
 
 	sleep 2
