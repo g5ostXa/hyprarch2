@@ -14,3 +14,4 @@ Here's a list of services and timers I use on `hyprarch2`
 - cpupower.service
 - auditd.service
 - upower.service
+- wg-quick@wg0.service
