@@ -5,7 +5,7 @@
 > - `waypaper` is a GUI app for selecting wallpapers. It can be launched from the keybind `SUPER` + `CTRL` + `W` during session time.
 > - `waybar` can also be reloaded during session time at any momment with the keybind `SUPER` + `SHIFT` + `B`
 
-**Setting up the wallpaper**
+**How it works**
 
 When launching `hyprland` from the tty, one of the first configuration file to be sourced by `hyprland.conf` is `autostart.conf`.
 This file is responsible for a lot of things, but it's also responsible for launching the wallpaper and `waybar` at startup.
