@@ -11,11 +11,15 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RC='\033[0m'
 
-# Define variables
-SYSCTL_DIR="/etc/sysctl.d/"
+# Define variables for sysctl
+SYSCTL_DIR="/etc/sysctl.d"
 SYSCTL_SOURCE_DIR="$HOME/sysctl"
 SYSCTL_REPO="https://github.com/g5ostXa/sysctl.git"
+
+# Define variables for dnsmasq and dnssec
 DNSMASQ_CONFIG="/etc/dnsmasq.conf"
+DNSSEC_TARGET_DIR="/etc/NetworkManager/dnsmasq.d"
+DNSSEC_SOURCE_FILE_LOC="$HOME/docs/security/dnsmasq/dnssec.conf"
 
 # Script banner
 echo -e "${CYAN}===========================${RC}"
@@ -36,72 +40,84 @@ ufw_config() {
 	sleep 6
 }
 
-sysctl_hardening() {
-	echo -e "${YELLOW}Checking if $SYSCTL_DIR exists...${RC}"
+# kernel params
+echo -e "${YELLOW}Checking if $SYSCTL_DIR exists...${RC}"
+if [ -d "$SYSCTL_DIR" ]; then
+	echo -e "${GREEN}$SYSCTL_DIR exists, proceeding with sysctl hardening...${RC}"
+else
+	echo -e "${YELLOW}$SYSCTL_DIR does not exist, creating directory...${RC}"
+	sudo mkdir -p "$SYSCTL_DIR"
+	echo -e "${GREEN}$SYSCTL_DIR created!${RC}"
+fi
 
-	if [ -d "$SYSCTL_DIR" ]; then
-		echo -e "${GREEN}$SYSCTL_DIR exists, proceeding with sysctl hardening...${RC}"
-	else
-		echo -e "${YELLOW}$SYSCTL_DIR does not exist, creating directory...${RC}"
-		sudo mkdir -p "$SYSCTL_DIR"
-		echo -e "${GREEN}$SYSCTL_DIR created!${RC}"
-	fi
-
+sleep 2
+if [ ! -d "$SYSCTL_SOURCE_DIR" ]; then
+	echo -e "${YELLOW}Cloning sysctl repo...${RC}"
+	cd "$HOME" && git clone "$SYSCTL_REPO"
+	echo -e "${YELLOW}Copying sysctl configurations from $SYSCTL_SOURCE_DIR to $SYSCTL_DIR...${RC}"
 	sleep 2
+	sudo cp -r "$SYSCTL_SOURCE_DIR"/* "$SYSCTL_DIR/"
+	sudo chown -R root:root "$SYSCTL_DIR"/*
+	sudo sysctl --system
+	echo -e "${GREEN}sysctl hardening applied successfully!${RC}"
+else
+	rm -rf "$SYSCTL_SOURCE_DIR"
+	echo -e "${YELLOW}Cloning sysctl repo...${RC}"
+	cd "$HOME" && git clone "$SYSCTL_REPO"
+	echo -e "${YELLOW}Copying sysctl configurations from $SYSCTL_SOURCE_DIR to $SYSCTL_DIR...${RC}"
+	sleep 2
+	sudo cp -r "$SYSCTL_SOURCE_DIR"/* "$SYSCTL_DIR/"
+	sudo chown -R root:root "$SYSCTL_DIR"/*
+	sudo sysctl --system
+	echo -e "${GREEN}Sysctl hardening applied successfully!${RC}"
+fi
 
-	if [ ! -d "$SYSCTL_SOURCE_DIR" ]; then
-		echo -e "${YELLOW}Cloning sysctl repo...${RC}"
-		cd "$HOME" && git clone "$SYSCTL_REPO"
-		echo -e "${YELLOW}Copying sysctl configurations from $SYSCTL_SOURCE_DIR to $SYSCTL_DIR...${RC}"
+# dnsmasq and dnssec
+if [ -f "$DNSMASQ_CONFIG" ]; then
+	echo -e "${YELLOW}Configuring dnsmasq...${RC}"
+	sleep 1
+else
+	echo -e "${RED}:: ERROR: dnsmasq may not be installed, or the config file doesn't exist. Skipping...${RC}"
+	return
+fi
+
+if systemctl is-enabled --quiet dnsmasq.service; then
+	echo -e "${GREEN}dnsmasq is already configured and enabled...${RC}"
+	return
+elif command -v dnsmasq >/dev/null 2>&1; then
+	sudo sed -i '/^#conf-file=\/usr\/share\/dnsmasq\/trust-anchors.conf/s/^#//g' "$DNSMASQ_CONFIG"
+	sudo sed -i '/^#dnssec/s/^#//g' "$DNSMASQ_CONFIG"
+	sudo sed -i '/^#bind-interfaces/s/^#//g' "$DNSMASQ_CONFIG"
+
+	if [ ! -d "$DNSSEC_TARGET_DIR" ]; then
+		sudo mkdir -p "$DNSSEC_TARGET_DIR"
+		sudo chown -R "$DNSSEC_TARGET_DIR"
+		sudo chmod 755 "$DNSSEC_TARGET_DIR"
+		echo -e "${GREEN}Created $DNSSEC_TARGET_DIR${RC}"
 		sleep 2
-		sudo cp -r "$SYSCTL_SOURCE_DIR"/* "$SYSCTL_DIR/"
-		sudo chown -R root:root "$SYSCTL_DIR"/*
-		sudo sysctl --system
-		echo -e "${GREEN}sysctl hardening applied successfully!${RC}"
 	else
-		rm -rf "$SYSCTL_SOURCE_DIR"
-		echo -e "${YELLOW}Cloning sysctl repo...${RC}"
-		cd "$HOME" && git clone "$SYSCTL_REPO"
-		echo -e "${YELLOW}Copying sysctl configurations from $SYSCTL_SOURCE_DIR to $SYSCTL_DIR...${RC}"
-		sleep 2
-		sudo cp -r "$SYSCTL_SOURCE_DIR"/* "$SYSCTL_DIR/"
-		sudo chown -R root:root "$SYSCTL_DIR"/*
-		sudo sysctl --system
-		echo -e "${GREEN}Sysctl hardening applied successfully!${RC}"
+		echo -e "${YELLOW}$DNSSEC_TARGET_DIR already exist...${RC}"
 	fi
 
-}
-
-config_dnsmasq() {
-	if [ -f "$DNSMASQ_CONFIG" ]; then
-		echo -e "${YELLOW}Configuring dnsmasq...${RC}"
-		sleep 1
+	if [ -f "$DNSSEC_SOURCE_FILE_LOC" ]; then
+		sudo cp -r "$DNSSEC_SOURCE_FILE_LOC" "$DNSSEC_TARGET_DIR"
+		sudo chown -R root:root "$DNSSEC_TARGET_DIR"/dnssec.conf
+		sudo chmod 600 "$DNSSEC_TARGET_DIR"/dnssec.conf
 	else
-		echo -e "${RED}:: ERROR: dnsmasq may not be installed, or the config file doesn't exist. Skipping...${RC}"
+		echo -e "${RED}$DNSSEC_SOURCE_FILE_LOC does not exist, skipping...${RC}"
 		return
 	fi
 
-	if systemctl is-enabled --quiet dnsmasq.service; then
-		echo -e "${GREEN}dnsmasq is already configured and enabled...${RC}"
-		return
-	elif command -v dnsmasq >/dev/null 2>&1; then
-		sudo sed -i '/^#conf-file=\/usr\/share\/dnsmasq\/trust-anchors.conf/s/^#//g' "$DNSMASQ_CONFIG"
-		sudo sed -i '/^#dnssec/s/^#//g' "$DNSMASQ_CONFIG"
-		sudo sed -i '/^#bind-interfaces/s/^#//g' "$DNSMASQ_CONFIG"
-		sudo systemctl enable dnsmasq.service
-		echo -e "${GREEN}Configuration updated and dnsmasq service enabled!${RC}"
-	else
-		echo -e "${RED}dnsmasq is not installed. Skipping...${RC}"
-		return
-	fi
-}
+	sudo systemctl enable dnsmasq.service
+	echo -e "${GREEN}Configuration updated and dnsmasq service enabled!${RC}"
+else
+	echo -e "${RED}dnsmasq is not installed. Skipping...${RC}"
+	return
+fi
 
-# Check if ufw is enabled
+# uncomplicated firewall (ufw)
 if ! systemctl is-enabled --quiet ufw.service; then
 	ufw_config
 else
 	echo -e "${GREEN}UFW is already enabled.${RC}"
 fi
-
-sysctl_hardening
-config_dnsmasq
