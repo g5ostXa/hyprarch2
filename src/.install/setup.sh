@@ -62,7 +62,7 @@ is_installed_gum
 is_installed_git
 
 # Run main operation if all checks passed
-echo -e "${YELLOW};; Please choose option:${RC}" && echo ""
+echo -e "${YELLOW};; Which aur helper do you want to install?:${RC}" && echo ""
 AUR_HELPER=$(gum choose "yay" "paru" "aura" "CANCEL")
 
 if [ -n "$AUR_HELPER" ]; then
