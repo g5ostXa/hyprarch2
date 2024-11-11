@@ -42,8 +42,10 @@ ufw_config() {
 
 # kernel params
 echo -e "${YELLOW}Checking if $SYSCTL_DIR exists...${RC}"
+sleep 2
 if [ -d "$SYSCTL_DIR" ]; then
 	echo -e "${GREEN}$SYSCTL_DIR exists, proceeding with sysctl hardening...${RC}"
+	sleep 2
 else
 	echo -e "${YELLOW}$SYSCTL_DIR does not exist, creating directory...${RC}"
 	sudo mkdir -p "$SYSCTL_DIR"
@@ -60,6 +62,7 @@ if [ ! -d "$SYSCTL_SOURCE_DIR" ]; then
 	sudo chown -R root:root "$SYSCTL_DIR"/*
 	sudo sysctl --system
 	echo -e "${GREEN}sysctl hardening applied successfully!${RC}"
+	sleep 2
 else
 	rm -rf "$SYSCTL_SOURCE_DIR"
 	echo -e "${YELLOW}Cloning sysctl repo...${RC}"
@@ -70,19 +73,22 @@ else
 	sudo chown -R root:root "$SYSCTL_DIR"/*
 	sudo sysctl --system
 	echo -e "${GREEN}Sysctl hardening applied successfully!${RC}"
+	sleep 2
 fi
 
 # dnsmasq and dnssec
 if [ -f "$DNSMASQ_CONFIG" ]; then
 	echo -e "${YELLOW}Configuring dnsmasq...${RC}"
-	sleep 1
+	sleep 2
 else
 	echo -e "${RED}:: ERROR: dnsmasq may not be installed, or the config file doesn't exist. Skipping...${RC}"
+	sleep 2
 	return
 fi
 
 if systemctl is-enabled --quiet dnsmasq.service; then
 	echo -e "${GREEN}dnsmasq is already configured and enabled...${RC}"
+	sleep 2
 	return
 elif command -v dnsmasq >/dev/null 2>&1; then
 	sudo sed -i '/^#conf-file=\/usr\/share\/dnsmasq\/trust-anchors.conf/s/^#//g' "$DNSMASQ_CONFIG"
@@ -97,6 +103,7 @@ elif command -v dnsmasq >/dev/null 2>&1; then
 		sleep 2
 	else
 		echo -e "${YELLOW}$DNSSEC_TARGET_DIR already exist...${RC}"
+		sleep 2
 	fi
 
 	if [ -f "$DNSSEC_SOURCE_FILE_LOC" ]; then
@@ -105,13 +112,16 @@ elif command -v dnsmasq >/dev/null 2>&1; then
 		sudo chmod 600 "$DNSSEC_TARGET_DIR"/dnssec.conf
 	else
 		echo -e "${RED}$DNSSEC_SOURCE_FILE_LOC does not exist, skipping...${RC}"
+		sleep 2
 		return
 	fi
 
 	sudo systemctl enable dnsmasq.service
 	echo -e "${GREEN}Configuration updated and dnsmasq service enabled!${RC}"
+	sleep 2
 else
 	echo -e "${RED}dnsmasq is not installed. Skipping...${RC}"
+	sleep 2
 	return
 fi
 
@@ -120,4 +130,5 @@ if ! systemctl is-enabled --quiet ufw.service; then
 	ufw_config
 else
 	echo -e "${GREEN}UFW is already enabled.${RC}"
+	sleep 2
 fi
