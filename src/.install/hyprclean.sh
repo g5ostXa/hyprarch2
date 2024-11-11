@@ -14,7 +14,6 @@ RC='\033[0m'
 # Define variables
 CLEANUP_SCRIPT="$HOME/src/Scripts/cleanup.sh"
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
-AUR_HELPER_NAME="paru-bin"
 SYSCTL_README="/etc/sysctl.d/README.md"
 SYSCTL_LICENSE="/etc/sysctl.d/LICENSE"
 SYSCTL_GIT_FOLDER="/etc/sysctl.d/.git"
@@ -27,14 +26,6 @@ sleep 3
 
 echo -e "${CYAN}Starting cleanup process...${RC}"
 sleep 1
-
-# Remove aur helper git directory
-if [ -d "$HOME/$AUR_HELPER_NAME" ]; then
-	echo -e "${YELLOW}Removing $AUR_HELPER_NAME...${RC}"
-	rm -rf "$HOME/$AUR_HELPER_NAME"
-else
-	echo echo -e "${RED}$AUR_HELPER_NAME does not exist, skipping...${RC}"
-fi
 
 # Remove hyprarch2 git directory
 if [ -d "$HYPRARCH2_DIR" ]; then

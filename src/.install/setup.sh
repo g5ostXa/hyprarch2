@@ -79,23 +79,23 @@ fi
 
 "$AUR_HELPER" -S --needed --noconfirm bibata-cursor-theme dracula-icons-theme pacseek-bin tokyonight-gtk-theme-git trizen typos-lsp-bin vim-language-server vscodium-bin waypaper wlogout
 
+if [ -d "$HOME/$AUR_HELPER-bin" ]; then
+	rm -rf "$HOME/$AUR_HELPER-bin"
+fi
+
 install_wallpaper() {
 	if [ -d "$WALLPAPER_DIR" ]; then
 		echo -e "${YELLOW}Installing wallpapers...${RC}"
 		sleep 1
 		rm -rf "$WALLPAPER_DIR"
 		cd && git clone "$WALLPAPER_REPO"
+		echo -e "${GREEN}Wallpaper repository installed !${RC}"
+		sleep 2
 	else
 		echo -e "${YELLOW}Installing wallpapers...${RC}"
 		sleep 1
 		cd && git clone "$WALLPAPER_REPO"
-	fi
-
-	if [ $? -eq 0 ]; then
-		echo -e "${GREEN}Installed wallpaper !${RC}"
-		sleep 2
-	else
-		echo "${RED}Failed to install wallpaper...${RC}"
+		echo -e "${GREEN}Wallpaper repository installed !${RC}"
 		sleep 2
 	fi
 
