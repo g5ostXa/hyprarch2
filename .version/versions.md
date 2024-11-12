@@ -6,3 +6,4 @@
   - https://github.com/g5ostXa/hyprarch2/releases/tag/v1.2.7
   - https://github.com/g5ostXa/hyprarch2/releases/tag/v1.2.8
   - https://github.com/g5ostXa/hyprarch2/releases/tag/v1.2.9
+  - https://github.com/g5ostXa/hyprarch2/releases/tag/v1.2.10
