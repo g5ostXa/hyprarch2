@@ -1,4 +1,4 @@
-name: CI
+  name: CI
 
 on:
   push:
@@ -37,7 +37,8 @@ jobs:
           find dotfiles -type f \( -name "*.conf" -o -name "*.yml" -o -name "*.json" \) | while read -r file; do
             case "$file" in
               *.json)
-                jq empty "$file" || { echo "JSON validation failed for $file"; exit 1; }
+                # Remove comments before validation
+                sed -E '/^\s*\/\//d; s/\/\*.*\*\///' "$file" | jq empty || { echo "JSON validation failed for $file"; exit 1; }
                 ;;
               *.yml)
                 yamllint "$file" || { echo "YAML validation failed for $file"; exit 1; }
@@ -50,3 +51,9 @@ jobs:
                 ;;
             esac
           done
+      
+      
+      
+      
+      
+    
