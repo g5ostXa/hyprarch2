@@ -1,3 +1,5 @@
+name: CI
+
 on:
   push:
     branches: [ "master" ]
@@ -32,20 +34,19 @@ jobs:
 
       - name: Validate configuration files in dotfiles directory
         run: |
-          for file in dotfiles/*; do
+          find dotfiles -type f \( -name "*.conf" -o -name "*.yml" -o -name "*.json" \) | while read -r file; do
             case "$file" in
-              *.conf|*.yml|*.json)
-                if [[ "$file" == *.json ]]; then
-                  jq empty "$file" || { echo "JSON validation failed for $file"; exit 1; }
-                elif [[ "$file" == *.yml ]]; then
-                  yamllint "$file" || { echo "YAML validation failed for $file"; exit 1; }
-                else
-                  echo "$file: no specific validation, assumed valid."
-                fi
+              *.json)
+                jq empty "$file" || { echo "JSON validation failed for $file"; exit 1; }
+                ;;
+              *.yml)
+                yamllint "$file" || { echo "YAML validation failed for $file"; exit 1; }
+                ;;
+              *.conf)
+                echo "$file is assumed valid."
                 ;;
               *)
                 echo "Skipping $file as it's not a recognized config type."
                 ;;
             esac
           done
-
