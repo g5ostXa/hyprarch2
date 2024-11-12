@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # ------------------------------------------------------
 # secure.sh
 # ------------------------------------------------------
@@ -129,7 +128,11 @@ dnsmasq_dnssec() {
 # Firewall check
 if ! systemctl is-enabled --quiet ufw.service; then
 	ufw_config
+	sysctl_params
+	dnsmasq_dnssec
 else
 	echo -e "${GREEN}UFW is already enabled.${RC}"
 	sleep 0.5
+	sysctl_params
+	dnsmasq_dnssec
 fi
