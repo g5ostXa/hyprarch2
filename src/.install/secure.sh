@@ -37,12 +37,11 @@ ufw_config() {
 	echo -e "${CYAN}==> NOTE:${RC}"
 	echo -e "${YELLOW}-> A reboot is required for the firewall to be enabled and active!${RC}"
 	echo -e "${YELLOW}-> The installation will continue in 5 seconds...${RC}"
-	sleep 6
+	sleep 5
 }
 
-# kernel params
+sysctl_params() {
 echo -e "${YELLOW}Checking if $SYSCTL_DIR exists...${RC}"
-sleep 2
 if [ -d "$SYSCTL_DIR" ]; then
 	echo -e "${GREEN}$SYSCTL_DIR exists, proceeding with sysctl hardening...${RC}"
 	sleep 2
@@ -50,9 +49,9 @@ else
 	echo -e "${YELLOW}$SYSCTL_DIR does not exist, creating directory...${RC}"
 	sudo mkdir -p "$SYSCTL_DIR"
 	echo -e "${GREEN}$SYSCTL_DIR created!${RC}"
+ 	sleep 2
 fi
 
-sleep 2
 if [ ! -d "$SYSCTL_SOURCE_DIR" ]; then
 	echo -e "${YELLOW}Cloning sysctl repo...${RC}"
 	cd "$HOME" && git clone "$SYSCTL_REPO"
@@ -76,13 +75,13 @@ else
 	sleep 2
 fi
 
-# dnsmasq and dnssec
+}
+
+dnsmasq_dnssec() {
 if [ -f "$DNSMASQ_CONFIG" ]; then
 	echo -e "${YELLOW}Configuring dnsmasq...${RC}"
-	sleep 2
 else
 	echo -e "${RED}:: ERROR: dnsmasq may not be installed, or the config file doesn't exist. Skipping...${RC}"
-	sleep 2
 	return
 fi
 
@@ -122,13 +121,15 @@ elif command -v dnsmasq >/dev/null 2>&1; then
 else
 	echo -e "${RED}dnsmasq is not installed. Skipping...${RC}"
 	sleep 2
-	return
+ 	return
 fi
 
-# uncomplicated firewall (ufw)
+}
+
+# Firewall check
 if ! systemctl is-enabled --quiet ufw.service; then
 	ufw_config
 else
 	echo -e "${GREEN}UFW is already enabled.${RC}"
-	sleep 2
+	sleep 0.5
 fi
