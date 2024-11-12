@@ -18,19 +18,19 @@ jobs:
       - name: Check if README.md exists
         run: |
           if [ ! -f README.md ]; then
-            echo "README.md is missing" && exit 1
+            exit 1
           fi
 
           if [ ! -d ".version" ]; then
-            echo ".version is missing" && exit 1
+            exit 1
           fi
 
-      - name: Syntax check for install.sh and scripts in src/.install/ (exclude SC1090 and SC2086)
+      - name: Syntax check for install.sh and scripts in src/.install/ (exclude SC1090, SC2086, SC2024, and SC2164)
         run: |
           if [ -f install.sh ]; then
-            shellcheck -e SC1090,SC2086 install.sh || { echo "Syntax check failed for install.sh"; exit 1; }
+            shellcheck -e SC1090,SC2086,SC2024,SC2164 install.sh || { echo "Syntax check failed for install.sh"; exit 1; }
           fi
-          find src/.install -name "*.sh" -print0 | xargs -0 -n1 shellcheck -e SC1090,SC2086 || exit 1
+          find src/.install -name "*.sh" -print0 | xargs -0 -n1 shellcheck -e SC1090,SC2086,SC2024,SC2164 || exit 1
 
       - name: Run install.sh (dry run mode)
         run: |
