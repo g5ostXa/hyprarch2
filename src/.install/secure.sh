@@ -19,7 +19,7 @@ SYSCTL_REPO="https://github.com/g5ostXa/sysctl.git"
 # Define variables for dnsmasq and dnssec
 DNSMASQ_CONFIG="/etc/dnsmasq.conf"
 DNSSEC_TARGET_DIR="/etc/NetworkManager/dnsmasq.d"
-DNSSEC_SOURCE_FILE_LOC="$HOME/docs/security/dnsmasq/dnssec.conf"
+DNSSEC_SOURCE_FILE_LOC="$HOME/docs/NetworkManager/dnsmasq.d/dnssec.conf"
 
 # Script banner
 echo -e "${CYAN}===========================${RC}"
