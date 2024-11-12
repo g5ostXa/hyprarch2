@@ -1,2 +1,0 @@
-## VPN
-Currently under construction
