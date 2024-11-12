@@ -30,7 +30,10 @@ is_installed_gum() {
 clear
 is_installed_figlet
 is_installed_gum
-sudo -v
-set -e
-gum spin --spinner points --title "Restarting DNSmask service..." -- sleep 3 && $DNS_RESTART
-Hyprland
+if gum confirm "Do you want to restart dnsmasq.service before launching hyprland?"; then
+	sudo -v && set -e
+	gum spin --spinner points --title "Restarting dnsmasq.service..." -- sleep 3 && $DNS_RESTART
+	Hyprland
+else
+	gum spin --spinner points --title "Launching hyprland..." -- sleep 3 && Hyprland
+fi
