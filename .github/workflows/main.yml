@@ -15,7 +15,7 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4
 
-      - name: Check if README.md and .version exist
+      - name: Check if README.md  and .version exist
         run: |
           if [ ! -f README.md ]; then
             exit 1
