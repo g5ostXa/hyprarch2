@@ -35,7 +35,7 @@ $ cd hyprarch2 && ./install.sh
 ## ➜ Hyprland
 - Start [Hyprland](https://hyprland.org) from tty:
 ```
-$ Hyprland
+$ st4rtX
 ```
 
 ## ➜ Quick links
