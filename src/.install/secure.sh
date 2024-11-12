@@ -125,7 +125,7 @@ dnsmasq_dnssec() {
 
 }
 
-# Firewall check
+# Firewall check (UFW)
 if ! systemctl is-enabled --quiet ufw.service; then
 	ufw_config
 	sysctl_params
