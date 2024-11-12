@@ -8,12 +8,12 @@ DNS_RESTART="sudo systemctl restart dnsmasq.service"
 
 is_installed_figlet() {
 	if ! command -v figlet >/dev/null 2>&1; then
- 		clear
+		clear
 		echo "--------------------------------"
 		echo "st4rtX.sh"
 		echo "--------------------------------"
 	else
- 		clear
+		clear
 		figlet -f smslant "st4rtX"
 		echo ""
 	fi
