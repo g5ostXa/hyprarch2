@@ -20,7 +20,7 @@ jobs:
           if [ ! -f README.md ]; then
             echo "README.md is missing" && exit 1
           fi
-          if [ ! -f .version ]; then
+          if [ ! -d .version/ ]; then
             echo ".version file is missing" && exit 1
           fi
 
