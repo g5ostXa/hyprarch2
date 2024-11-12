@@ -67,13 +67,14 @@ PACMAN_CONFIGURATION="$HOME/Downloads/hyprarch2/src/Scripts/pacman.sh"
 SYSTEM_INSTALLATION="$HOME/Downloads/hyprarch2/src/.install/setup.sh"
 SECURITY_CONFIGURATION="$HOME/src/.install/secure.sh"
 CLEANUP_SCRIPT="$HOME/src/.install/hyprclean.sh"
+BASHRC="$HOME/.bashrc"
 
 # Execute main scripts
 source "$PACMAN_CONFIGURATION"
 source "$SYSTEM_INSTALLATION"
 source "$SECURITY_CONFIGURATION"
 source "$CLEANUP_SCRIPT"
-source "$HOME/.bashrc"
+source "$BASHRC"
 
 # End of installation message
 echo -e "${GREEN}The installation is officially completed !${RC}"
