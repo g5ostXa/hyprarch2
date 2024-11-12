@@ -16,7 +16,7 @@ EOF
 
 main_function() {
 	trizen -Scc
-	
+
 	# Remove orphaned packages
 	orphaned_packages=$(sudo pacman -Qtdq)
 	if [ -n "$orphaned_packages" ]; then
