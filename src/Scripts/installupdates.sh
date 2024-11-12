@@ -9,17 +9,17 @@
 
 sleep 1
 clear
-figlet "System update"
-echo
+figlet -f smslant "System update"
+echo ""
 
 # Confirm start
 if gum confirm "DO YOU WANT TO START THE UPDATE NOW?"; then
-	echo
+	echo ""
 	echo ":: Update started."
 elif [ $? -eq 130 ]; then
 	exit 130
 else
-	echo
+	echo ""
 	echo ":: Update canceled."
 	exit
 fi
@@ -27,10 +27,10 @@ fi
 trizen -Syu --noconfirm --noedit --noinfo
 
 notify-send "Update complete"
-echo
+echo ""
 echo ":: Update complete"
-echo
-echo
+echo ""
+echo ""
 
 echo "Press [ENTER] to close."
-read
+read -r
