@@ -18,7 +18,7 @@ jobs:
       - name: Check if README.md and .version exist
         run: |
           if [ ! -f README.md ]; then
-            echo "README.md is missing" && exit 1
+            exit 1
           fi
 
           if [ ! -d ".version" ]; then
