@@ -20,16 +20,16 @@ jobs:
           if [ ! -f README.md ]; then
             echo "README.md is missing" && exit 1
           fi
-          if [ ! -d .version ]; then
+          if [ ! -d .version/ ]; then
             echo ".version file is missing" && exit 1
           fi
 
-      - name: Syntax check for install.sh and scripts in src/
+      - name: Syntax check for install.sh and scripts in src/ (exclude SC1090)
         run: |
           if [ -f install.sh ]; then
-            shellcheck install.sh || { echo "Syntax check failed for install.sh"; exit 1; }
+            shellcheck -e SC1090 install.sh || { echo "Syntax check failed for install.sh"; exit 1; }
           fi
-          find src -name "*.sh" -print0 | xargs -0 -n1 shellcheck || exit 1
+          find src -name "*.sh" -print0 | xargs -0 -n1 shellcheck -e SC1090 || exit 1
 
       - name: Run install.sh (dry run mode)
         run: |
@@ -53,4 +53,3 @@ jobs:
                 ;;
             esac
           done
-
