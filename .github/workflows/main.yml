@@ -13,7 +13,7 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4
 
-      - name: Check if README.md exists
+      - name: Check if README.md and .version exist
         run: |
           if [ ! -f README.md ]; then
             echo "README.md is missing" && exit 1
