@@ -8,10 +8,12 @@ DNS_RESTART="sudo systemctl restart dnsmasq.service"
 
 is_installed_figlet() {
 	if ! command -v figlet >/dev/null 2>&1; then
+ 		clear
 		echo "--------------------------------"
 		echo "st4rtX.sh"
 		echo "--------------------------------"
 	else
+ 		clear
 		figlet -f smslant "st4rtX"
 		echo ""
 	fi
@@ -27,7 +29,6 @@ is_installed_gum() {
 
 }
 
-clear
 is_installed_figlet
 is_installed_gum
 if gum confirm "Do you want to restart dnsmasq.service before launching hyprland?"; then
