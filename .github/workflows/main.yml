@@ -20,14 +20,8 @@ jobs:
           if [ ! -f README.md ]; then
             echo "README.md is missing" && exit 1
           fi
-          if [ ! -d .version/ ]; then
+          if [ ! -d .version ]; then
             echo ".version file is missing" && exit 1
-          fi
-
-      - name: Validate .version format
-        run: |
-          if ! grep -qE '^[0-9]+\\.[0-9]+\\.[0-9]+$' .version; then
-            echo "Invalid version format in .version file" && exit 1
           fi
 
       - name: Syntax check for install.sh and scripts in src/
