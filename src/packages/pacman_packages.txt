@@ -210,7 +210,6 @@ hyprwayland-scanner
 iana-etc
 icu
 imagemagick
-imath
 imlib2
 iniparser
 intel-ucode
@@ -218,6 +217,7 @@ iproute2
 iptables-nft
 iputils
 iso-codes
+iucode-tool
 iw
 jack2
 jansson
@@ -352,7 +352,6 @@ libdbusmenu-glib
 libdbusmenu-gtk3
 libdbusmenu-qt5
 libdecor
-libdeflate
 libdisplay-info
 libdovi
 libdrm
@@ -609,7 +608,6 @@ oniguruma
 openal
 openbsd-netcat
 opencore-amr
-openexr
 openjpeg2
 openresolv
 openssh
