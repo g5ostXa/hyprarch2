@@ -5,7 +5,7 @@
 # ---------------
 # By g5ostXa (2024)
 # ---------------------------
-# Requires: reflector gum figlet
+# Requires: reflector | gum | figlet
 # ----------------------------------------------------
 
 # Define variables
