@@ -22,7 +22,7 @@ SYSCTL_GIT_FOLDER="/etc/sysctl.d/.git"
 echo -e "${CYAN}"
 figlet -f smslant "hyprclean.sh"
 echo ""
-echo "Starting cleanup process...$"
+echo "Starting cleanup process..."
 echo -e "${RC}" && echo ""
 sleep 1
 
