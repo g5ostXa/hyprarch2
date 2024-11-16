@@ -5,28 +5,34 @@
 # ------------------------------------------------
 
 # Define colors
-GREEN='\033[0;32m'
 CYAN='\033[0;36m'
 RC='\033[0m'
 
 # Define version name
 VERSION_NAME="$HOME/Downloads/hyprarch2/.version/latest"
 
-# Installation greeter
-clear
-echo -e "${GREEN}"
-cat <<"EOF"
- ___           _        _ _
-|_ _|_ __  ___| |_ __ _| | | ___ _ __
- | || '_ \/ __| __/ _` | | |/ _ \ '__|
- | || | | \__ \ || (_| | | |  __/ |
-|___|_| |_|___/\__\__,_|_|_|\___|_|
-
+# Install greeter
+if command -v figlet >/dev/null 2>&1; then
+	clear
+	echo -e "${CYAN}"
+	figlet -f smslant "Installer"
+	echo "Welcome to hyprarch2"
+	cat "$VERSION_NAME"
+	echo -e "${RC}" && echo ""
+else
+	clear
+	echo -e "${CYAN}"
+	cat <<"EOF"
+	 ___           _        _ _
+	|_ _|_ __  ___| |_ __ _| | | ___ _ __
+	 | || '_ \/ __| __/ _` | | |/ _ \ '__|
+	 | || | | \__ \ || (_| | | |  __/ |
+	|___|_| |_|___/\__\__,_|_|_|\___|_|
 EOF
-echo "Welcome to hyprarch2"
-cat "$VERSION_NAME"
-echo -e "${RC}"
-echo ""
+	echo "Welcome to hyprarch2"
+	cat "$VERSION_NAME"
+	echo -e "${RC}" && echo ""
+fi
 
 # Installation prompt
 if [ -n "$SSH_CONNECTION" ]; then
@@ -77,22 +83,10 @@ source "$CLEANUP_SCRIPT"
 source "$BASHRC"
 
 # End of installation message
-echo -e "${GREEN}The installation is officially completed !${RC}"
 echo -e "${CYAN}"
-cat <<"EOF"
-
-__        __   _                            _
-\ \      / /__| | ___ ___  _ __ ___   ___  | |_ ___
- \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \ | __/ _ \
-  \ V  V /  __/ | (_| (_) | | | | | |  __/ | || (_) |
-   \_/\_/ \___|_|\___\___/|_| |_| |_|\___|  \__\___/
-
- _                                    _     ____  _
-| |__  _   _ _ __  _ __ __ _ _ __ ___| |__ |___ \| |
-| '_ \| | | | '_ \| '__/ _` | '__/ __| '_ \  __) | |
-| | | | |_| | |_) | | | (_| | | | (__| | | |/ __/|_|
-|_| |_|\__, | .__/|_|  \__,_|_|  \___|_| |_|_____(_)
-       |___/|_|
-
-EOF
+figlet -f smslant "hyprarch2"
+echo ""
+echo ";; Installation status: COMPLETE"
+echo ";; Errors reported: 0"
+echo ""
 echo -e "${RC}"

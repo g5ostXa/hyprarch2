@@ -19,12 +19,12 @@ SYSCTL_LICENSE="/etc/sysctl.d/LICENSE"
 SYSCTL_GIT_FOLDER="/etc/sysctl.d/.git"
 
 # Script banner
-echo -e "${CYAN}==============================${RC}"
-echo -e "${CYAN}---> RUNNING HYPRCLEAN.SH <---${RC}"
-echo -e "${CYAN}==============================${RC}"
-sleep 3
-
-echo -e "${CYAN}Starting cleanup process...${RC}"
+clear
+echo -e "${CYAN}"
+figlet -f smslant "hyprclean.sh"
+echo ""
+echo "Starting cleanup process...$"
+echo -e "${RC}" && echo ""
 sleep 1
 
 # Remove hyprarch2 git directory

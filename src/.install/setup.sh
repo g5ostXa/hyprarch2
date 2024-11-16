@@ -17,16 +17,6 @@ WALLPAPER_REPO="https://github.com/g5ostXa/wallpaper.git"
 WALLPAPER_DIR="$HOME/wallpaper"
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 
-# Script banner
-echo -e "${CYAN}==========================${RC}"
-echo -e "${CYAN}---> RUNNING SETUP.SH <---${RC}"
-echo -e "${CYAN}==========================${RC}"
-sleep 3
-
-sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
-clear
-
-# Check if figlet is installed
 is_installed_figlet() {
 	if ! command -v figlet >/dev/null 2>&1; then
 		echo -e "${RED};; figlet is not installed...${RC}"
@@ -35,7 +25,6 @@ is_installed_figlet() {
 
 }
 
-# Check if gum is installed
 is_installed_gum() {
 	if ! command -v gum >/dev/null 2>&1; then
 		echo -e "${RED};; gum is not installed...${RC}"
@@ -44,7 +33,6 @@ is_installed_gum() {
 
 }
 
-# Check if git is installed
 is_installed_git() {
 	if ! command -v git >/dev/null 2>&1; then
 		echo -e "${RED};; git is not installed...${RC}"
@@ -53,35 +41,52 @@ is_installed_git() {
 
 }
 
-# Run checks and display figlet banner
+install_aur_helper() {
+	clear && echo -e "${CYAN}"
+	figlet -f smslant "AUR"
+	echo -e "${RC}" && echo ""
+	is_installed_gum
+	echo -e "${YELLOW};; Which aur helper do you want to install?:${RC}" && echo ""
+	AUR_HELPER=$(gum choose "yay" "paru" "aura" "CANCEL")
+
+	if [ -n "$AUR_HELPER" ]; then
+		if [[ ! "$AUR_HELPER" == "CANCEL" ]]; then
+			is_installed_git
+			cd && git clone https://aur.archlinux.org/"$AUR_HELPER"-bin
+			cd "$AUR_HELPER"-bin && makepkg -si && cd
+		else
+			echo -e "${RED};; Operation canceled... :(${RC}"
+			exit 0
+		fi
+	else
+		exit 1
+	fi
+
+	"$AUR_HELPER" -S --needed --noconfirm \
+		bibata-cursor-theme \
+		dracula-icons-theme \
+		pacseek-bin \
+		tokyonight-gtk-theme-git \
+		trizen \
+		typos-lsp-bin \
+		vim-language-server \
+		vscodium-bin \
+		waypaper \
+		wlogout
+
+	if [ -d "$HOME/$AUR_HELPER-bin" ]; then
+		rm -rf "$HOME/$AUR_HELPER-bin"
+	fi
+
+}
+
+# Start run / Display script banner / Install pacman packages
+clear
 is_installed_figlet
 echo -e "${CYAN}"
-figlet -f smslant "AUR"
+figlet -f smslant "setup.sh"
 echo -e "${RC}" && echo ""
-is_installed_gum
-is_installed_git
-
-# Run main operation if all checks passed
-echo -e "${YELLOW};; Which aur helper do you want to install?:${RC}" && echo ""
-AUR_HELPER=$(gum choose "yay" "paru" "aura" "CANCEL")
-
-if [ -n "$AUR_HELPER" ]; then
-	if [[ ! "$AUR_HELPER" == "CANCEL" ]]; then
-		cd && git clone https://aur.archlinux.org/"$AUR_HELPER"-bin
-		cd "$AUR_HELPER"-bin && makepkg -si && cd
-	else
-		echo -e "${RED};; Operation canceled... :(${RC}"
-		exit 0
-	fi
-else
-	exit 1
-fi
-
-"$AUR_HELPER" -S --needed --noconfirm bibata-cursor-theme dracula-icons-theme pacseek-bin tokyonight-gtk-theme-git trizen typos-lsp-bin vim-language-server vscodium-bin waypaper wlogout
-
-if [ -d "$HOME/$AUR_HELPER-bin" ]; then
-	rm -rf "$HOME/$AUR_HELPER-bin"
-fi
+sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
 
 install_wallpaper() {
 	if [ -d "$WALLPAPER_DIR" ]; then
@@ -168,6 +173,7 @@ create_symlinks() {
 
 }
 
+install_aur_helper
 install_wallpaper
 copy_files
 create_symlinks

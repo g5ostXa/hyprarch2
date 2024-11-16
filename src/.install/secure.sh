@@ -21,10 +21,10 @@ DNSSEC_TARGET_DIR="/etc/NetworkManager/dnsmasq.d"
 DNSSEC_SOURCE_FILE_LOC="$HOME/docs/NetworkManager/dnsmasq.d/dnssec.conf"
 
 # Script banner
-echo -e "${CYAN}===========================${RC}"
-echo -e "${CYAN}---> RUNNING SECURE.SH <---${RC}"
-echo -e "${CYAN}===========================${RC}"
-sleep 3
+clear
+echo -e "${CYAN}"
+figlet -f smslant "secure.sh"
+echo -e "${RC}" && echo ""
 
 ufw_config() {
 	echo -e "${CYAN}Installing and configuring UFW...${RC}"
