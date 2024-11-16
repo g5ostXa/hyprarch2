@@ -145,7 +145,7 @@ en_US.UTF-8
 ```
 - Install main system:
 ```
-# pacman -S --needed --noconfirm grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers git reflector xdg-utils xdg-user-dirs gum dnsmasq lsof htop fastfetch vim openssh ufw firejail apparmor audit firefox
+# pacman -S --needed --noconfirm grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers git reflector xdg-utils xdg-user-dirs gum figlet dnsmasq lsof htop fastfetch vim openssh ufw firejail apparmor audit firefox
 ```
 
 ## Kernel image generation and grub
