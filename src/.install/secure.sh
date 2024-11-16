@@ -21,7 +21,6 @@ DNSSEC_TARGET_DIR="/etc/NetworkManager/dnsmasq.d"
 DNSSEC_SOURCE_FILE_LOC="$HOME/docs/NetworkManager/dnsmasq.d/dnssec.conf"
 
 # Script banner
-clear
 echo -e "${CYAN}"
 figlet -f smslant "secure.sh"
 echo -e "${RC}" && echo ""

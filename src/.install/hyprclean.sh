@@ -19,7 +19,6 @@ SYSCTL_LICENSE="/etc/sysctl.d/LICENSE"
 SYSCTL_GIT_FOLDER="/etc/sysctl.d/.git"
 
 # Script banner
-clear
 echo -e "${CYAN}"
 figlet -f smslant "hyprclean.sh"
 echo ""
