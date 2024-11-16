@@ -38,7 +38,7 @@ By g5ostXa :ghost:
 ```
 - Refresh/sync repositories:
 ```
-# pacman -Syyy
+# pacman -Sy
 ```
 - Enable network time protocol and set timezone:
 ```
