@@ -81,7 +81,7 @@ install_aur_helper() {
 }
 
 # Start run / Display script banner / Install pacman packages
-clear
+sleep 2 && clear
 is_installed_figlet
 echo -e "${CYAN}"
 figlet -f smslant "setup.sh"
