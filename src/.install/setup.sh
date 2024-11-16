@@ -47,7 +47,7 @@ install_aur_helper() {
 	echo -e "${RC}" && echo ""
 	is_installed_gum
 	echo -e "${YELLOW};; Which aur helper do you want to install?:${RC}" && echo ""
-	AUR_HELPER=$(gum choose "yay" "paru" "aura" "CANCEL")
+	AUR_HELPER=$(gum choose "paru" "yay" "CANCEL")
 
 	if [ -n "$AUR_HELPER" ]; then
 		if [[ ! "$AUR_HELPER" == "CANCEL" ]]; then
@@ -62,13 +62,7 @@ install_aur_helper() {
 		exit 1
 	fi
 
-	if [[ "$AUR_HELPER" == "aura" ]]; then
-		INSTALL_SWITCH="-A"
-	else
-		INSTALL_SWITCH="-S --needed"
-	fi
-
-	"$AUR_HELPER" "$INSTALL_SWITCH" --noconfirm \
+	"$AUR_HELPER" -S --needed --noconfirm \
 		bibata-cursor-theme \
 		dracula-icons-theme \
 		pacseek-bin \
