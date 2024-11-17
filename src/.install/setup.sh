@@ -6,7 +6,6 @@
 
 # Define colors
 RED='\033[0;31m'
-GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RC='\033[0m'
@@ -51,8 +50,11 @@ install_aur_helper() {
 	if [ -n "$AUR_HELPER" ]; then
 		if [[ ! "$AUR_HELPER" == "CANCEL" ]]; then
 			is_installed_git
-			cd && git clone https://aur.archlinux.org/"$AUR_HELPER"-bin
-			cd "$AUR_HELPER"-bin && makepkg -si && cd
+			cd || exit
+			git clone https://aur.archlinux.org/"$AUR_HELPER"-bin
+			cd "$AUR_HELPER"-bin || exit
+			makepkg -si
+			cd || exit
 		else
 			echo -e "${RED};; Operation canceled... :(${RC}"
 			exit 0
@@ -75,23 +77,30 @@ install_aur_helper() {
 
 	if [ -d "$HOME/$AUR_HELPER-bin" ]; then
 		rm -rf "$HOME/$AUR_HELPER-bin"
+		if [ $? -eq 0 ]; then
+			echo -e "${CYAN};; $AUR_HELPER-bin removed !${RC}"
+			sleep 2
+		else
+			echo -e "${RED};; Failed to remove $AUR_HELPER-bin...${RC}"
+			sleep 2
+		fi
 	fi
 
 }
 
 install_wallpaper() {
 	if [ -d "$WALLPAPER_DIR" ]; then
-		echo -e "${YELLOW}Installing wallpapers...${RC}"
+		echo -e "${YELLOW};; Installing wallpapers...${RC}"
 		sleep 1
 		rm -rf "$WALLPAPER_DIR"
 		cd && git clone "$WALLPAPER_REPO"
-		echo -e "${GREEN}Wallpaper repository installed !${RC}"
+		echo -e "${CYAN};; Wallpaper repository installed !${RC}"
 		sleep 2
 	else
-		echo -e "${YELLOW}Installing wallpapers...${RC}"
+		echo -e "${YELLOW};; Installing wallpapers...${RC}"
 		sleep 1
 		cd && git clone "$WALLPAPER_REPO"
-		echo -e "${GREEN}Wallpaper repository installed !${RC}"
+		echo -e "${CYAN};; Wallpaper repository installed !${RC}"
 		sleep 2
 	fi
 
@@ -101,34 +110,30 @@ copy_files() {
 	if [ -f "$HOME/.bashrc" ]; then
 		rm -rf "$HOME/.bashrc"
 	fi
-
 	if [ ! -d "$HYPRARCH2_DIR" ]; then
-		echo -e "${RED}$HYPRARCH2_DIR directory does not exist, exiting...${RC}"
+		echo -e "${RED};; $HYPRARCH2_DIR directory does not exist, exiting...${RC}"
 		exit 1
 	else
 		cp -r "$HYPRARCH2_DIR"/* "$HOME/"
 		sudo cp -r "$HYPRARCH2_DIR/dotfiles/login/issue" "/etc/"
 		sudo chown -R root: /etc/issue
 	fi
-
 	if [ -f "$HOME/.bashrc" ]; then
-		echo -e "${YELLOW}$HOME/.bashrc exits...${RC}"
+		echo -e "${YELLOW};; $HOME/.bashrc exits...${RC}"
 	else
-		echo -e "${YELLOW}Copying .bashrc to home folder...${RC}"
+		echo -e "${YELLOW};; Copying .bashrc to home folder...${RC}"
 		cp -r "$HYPRARCH2_DIR/.bashrc" "$HOME/"
 	fi
-
 	if [ -d "$HOME/.version/" ]; then
-		echo -e "${YELLOW}$HOME/.version/ exists...${RC}"
+		echo -e "${YELLOW};; $HOME/.version/ exists...${RC}"
 	else
-		echo -e "${YELLOW}Copying .version/ to home folder...${RC}"
+		echo -e "${YELLOW};; Copying .version/ to home folder...${RC}"
 		cp -r "$HYPRARCH2_DIR/.version/" "$HOME/"
 	fi
-
 	if [ -d "$HOME/.github/" ]; then
-		echo -e "${YELLOW}$HOME/.github/ exists...${RC}"
+		echo -e "${YELLOW};; $HOME/.github/ exists...${RC}"
 	else
-		echo -e "${YELLOW}Copying .github/ to home folder...${RC}"
+		echo -e "${YELLOW};; Copying .github/ to home folder...${RC}"
 		cp -r "$HYPRARCH2_DIR/.github/" "$HOME/"
 	fi
 

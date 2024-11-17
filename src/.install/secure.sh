@@ -6,7 +6,6 @@
 
 # Define colors
 RED='\033[0;31m'
-GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RC='\033[0m'
@@ -27,7 +26,7 @@ figlet -f smslant "secure.sh"
 echo -e "${RC}" && echo ""
 
 ufw_config() {
-	echo -e "${CYAN}Installing and configuring UFW...${RC}"
+	echo -e "${CYAN};; Installing and configuring UFW...${RC}"
 	sudo pacman -S --noconfirm ufw
 	sudo ufw default deny incoming
 	sudo ufw default allow outgoing
@@ -40,37 +39,37 @@ ufw_config() {
 }
 
 sysctl_params() {
-	echo -e "${YELLOW}Checking if $SYSCTL_DIR exists...${RC}"
+	echo -e "${YELLOW};; Checking if $SYSCTL_DIR exists...${RC}"
 	if [ -d "$SYSCTL_DIR" ]; then
-		echo -e "${GREEN}$SYSCTL_DIR exists, proceeding with sysctl hardening...${RC}"
+		echo -e "${CYAN};; $SYSCTL_DIR exists, proceeding with sysctl hardening...${RC}"
 		sleep 2
 	else
-		echo -e "${YELLOW}$SYSCTL_DIR does not exist, creating directory...${RC}"
+		echo -e "${YELLOW};;  $SYSCTL_DIR does not exist, creating directory...${RC}"
 		sudo mkdir -p "$SYSCTL_DIR"
-		echo -e "${GREEN}$SYSCTL_DIR created!${RC}"
+		echo -e "${CYAN};; $SYSCTL_DIR created!${RC}"
 		sleep 2
 	fi
 
 	if [ ! -d "$SYSCTL_SOURCE_DIR" ]; then
-		echo -e "${YELLOW}Cloning sysctl repo...${RC}"
+		echo -e "${YELLOW};; Cloning sysctl repo...${RC}"
 		cd "$HOME" && git clone "$SYSCTL_REPO"
-		echo -e "${YELLOW}Copying sysctl configurations from $SYSCTL_SOURCE_DIR to $SYSCTL_DIR...${RC}"
+		echo -e "${YELLOW};; Copying sysctl configurations from $SYSCTL_SOURCE_DIR to $SYSCTL_DIR...${RC}"
 		sleep 2
 		sudo cp -r "$SYSCTL_SOURCE_DIR"/* "$SYSCTL_DIR/"
 		sudo chown -R root:root "$SYSCTL_DIR"/*
 		sudo sysctl --system
-		echo -e "${GREEN}sysctl hardening applied successfully!${RC}"
+		echo -e "${CYAN};; sysctl hardening applied successfully!${RC}"
 		sleep 2
 	else
 		rm -rf "$SYSCTL_SOURCE_DIR"
-		echo -e "${YELLOW}Cloning sysctl repo...${RC}"
+		echo -e "${YELLOW};; Cloning sysctl repo...${RC}"
 		cd "$HOME" && git clone "$SYSCTL_REPO"
-		echo -e "${YELLOW}Copying sysctl configurations from $SYSCTL_SOURCE_DIR to $SYSCTL_DIR...${RC}"
+		echo -e "${YELLOW};; Copying sysctl configurations from $SYSCTL_SOURCE_DIR to $SYSCTL_DIR...${RC}"
 		sleep 2
 		sudo cp -r "$SYSCTL_SOURCE_DIR"/* "$SYSCTL_DIR/"
 		sudo chown -R root:root "$SYSCTL_DIR"/*
 		sudo sysctl --system
-		echo -e "${GREEN}Sysctl hardening applied successfully!${RC}"
+		echo -e "${CYAN};; Sysctl hardening applied successfully!${RC}"
 		sleep 2
 	fi
 
@@ -78,14 +77,14 @@ sysctl_params() {
 
 dnsmasq_dnssec() {
 	if [ -f "$DNSMASQ_CONFIG" ]; then
-		echo -e "${YELLOW}Configuring dnsmasq...${RC}"
+		echo -e "${YELLOW};; Configuring dnsmasq...${RC}"
 	else
-		echo -e "${RED}:: ERROR: dnsmasq may not be installed, or the config file doesn't exist. Skipping...${RC}"
+		echo -e "${RED};; ERROR: dnsmasq may not be installed, or the config file doesn't exist. Skipping...${RC}"
 		return
 	fi
 
 	if systemctl is-enabled --quiet dnsmasq.service; then
-		echo -e "${GREEN}dnsmasq is already configured and enabled...${RC}"
+		echo -e "${GREEN};; dnsmasq is already configured and enabled...${RC}"
 		sleep 2
 		return
 	elif command -v dnsmasq >/dev/null 2>&1; then
@@ -97,10 +96,10 @@ dnsmasq_dnssec() {
 			sudo mkdir -p "$DNSSEC_TARGET_DIR"
 			sudo chown -R "$DNSSEC_TARGET_DIR"
 			sudo chmod 755 "$DNSSEC_TARGET_DIR"
-			echo -e "${GREEN}Created $DNSSEC_TARGET_DIR${RC}"
+			echo -e "${CYAN};; Created $DNSSEC_TARGET_DIR${RC}"
 			sleep 2
 		else
-			echo -e "${YELLOW}$DNSSEC_TARGET_DIR already exist...${RC}"
+			echo -e "${YELLOW};; $DNSSEC_TARGET_DIR already exist...${RC}"
 			sleep 2
 		fi
 
@@ -109,16 +108,16 @@ dnsmasq_dnssec() {
 			sudo chown -R root:root "$DNSSEC_TARGET_DIR"/dnssec.conf
 			sudo chmod 600 "$DNSSEC_TARGET_DIR"/dnssec.conf
 		else
-			echo -e "${RED}$DNSSEC_SOURCE_FILE_LOC does not exist, skipping...${RC}"
+			echo -e "${RED};; $DNSSEC_SOURCE_FILE_LOC does not exist, skipping...${RC}"
 			sleep 2
 			return
 		fi
 
 		sudo systemctl enable dnsmasq.service
-		echo -e "${GREEN}Configuration updated and dnsmasq service enabled!${RC}"
+		echo -e "${CYAN};; Configuration updated and dnsmasq service enabled!${RC}"
 		sleep 2
 	else
-		echo -e "${RED}dnsmasq is not installed. Skipping...${RC}"
+		echo -e "${RED};; dnsmasq is not installed. Skipping...${RC}"
 		sleep 2
 		return
 	fi
@@ -131,7 +130,7 @@ if ! systemctl is-enabled --quiet ufw.service; then
 	sysctl_params
 	dnsmasq_dnssec
 else
-	echo -e "${GREEN}UFW is already enabled.${RC}"
+	echo -e "${CYAN};; UFW is already enabled.${RC}"
 	sleep 0.5
 	sysctl_params
 	dnsmasq_dnssec
