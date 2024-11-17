@@ -44,7 +44,7 @@ install_aur_helper() {
 	clear && echo -e "${CYAN}"
 	figlet -f smslant "AUR"
 	echo -e "${RC}" && echo ""
-	
+
 	echo -e "${YELLOW};; Which aur helper do you want to install?:${RC}" && echo ""
 	AUR_HELPER=$(gum choose "paru" "yay" "CANCEL")
 
@@ -162,7 +162,7 @@ create_symlinks() {
 }
 
 # -----------------------------------------------------
-# Script header 
+# Script header
 # -----------------------------------------------------
 is_installed_figlet
 
