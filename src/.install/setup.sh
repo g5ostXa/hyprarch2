@@ -76,14 +76,11 @@ install_aur_helper() {
 		wlogout
 
 	if [ -d "$HOME/$AUR_HELPER-bin" ]; then
-		rm -rf "$HOME/$AUR_HELPER-bin"
-		if [ $? -eq 0 ]; then
-			echo -e "${CYAN};; $AUR_HELPER-bin removed !${RC}"
-			sleep 2
-		else
-			echo -e "${RED};; Failed to remove $AUR_HELPER-bin...${RC}"
-			sleep 2
-		fi
+		echo -e "${CYAN};; Removing $AUR_HELPER-bin...${RC}"
+		rm -rf "$HOME/$AUR_HELPER-bin" && sleep 2
+	else
+		echo -e "${RED};; $AUR_HELPER-bin does not exist...${RC}" && sleep 2
+		return
 	fi
 
 }
