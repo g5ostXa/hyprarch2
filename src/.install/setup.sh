@@ -45,7 +45,6 @@ install_aur_helper() {
 	clear && echo -e "${CYAN}"
 	figlet -f smslant "AUR"
 	echo -e "${RC}" && echo ""
-	is_installed_gum
 	echo -e "${YELLOW};; Which aur helper do you want to install?:${RC}" && echo ""
 	AUR_HELPER=$(gum choose "paru" "yay" "CANCEL")
 
@@ -79,14 +78,6 @@ install_aur_helper() {
 	fi
 
 }
-
-# Start run / Display script banner / Install pacman packages
-sleep 2 && clear
-is_installed_figlet
-echo -e "${CYAN}"
-figlet -f smslant "setup.sh"
-echo -e "${RC}" && echo ""
-sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
 
 install_wallpaper() {
 	if [ -d "$WALLPAPER_DIR" ]; then
@@ -167,6 +158,22 @@ create_symlinks() {
 
 }
 
+# -----------------------------------------------------
+# Script header
+# -----------------------------------------------------
+is_installed_figlet
+echo -e "${CYAN}"
+figlet -f smslant "setup.sh"
+echo -e "${RC}" && echo ""
+
+is_installed_gum
+gum spin --spinner points --title "Preparing to install main packages..." -- sleep 5
+
+sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
+
+# -----------------------------------------------------
+# Call functions
+# -----------------------------------------------------
 install_aur_helper
 install_wallpaper
 copy_files
