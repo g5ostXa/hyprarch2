@@ -169,7 +169,7 @@ echo -e "${RC}" && echo ""
 is_installed_gum
 gum spin --spinner points --title "Preparing to install main packages..." -- sleep 5
 
-sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
+sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES" && sleep 2
 
 # -----------------------------------------------------
 # Call functions
