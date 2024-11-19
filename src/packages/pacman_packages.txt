@@ -749,7 +749,6 @@ python-validate-pyproject
 python-wheel
 python-yaml
 python-zipp
-qalculate-gtk
 qca-qt5
 qca-qt6
 qemu-audio-alsa
