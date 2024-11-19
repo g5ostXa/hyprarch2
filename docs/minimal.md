@@ -1,4 +1,4 @@
-## Base packages
+## Packages
 This is a sub-project for improving package management on hyprarch2.
 
 #### Main goal
