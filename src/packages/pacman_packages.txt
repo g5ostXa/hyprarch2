@@ -197,7 +197,6 @@ highway
 hivex
 htop
 http-parser
-hugo
 hwdata
 hyphen
 hyprcursor
