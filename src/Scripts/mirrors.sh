@@ -17,7 +17,7 @@ SYNC_DATABASE="sudo pacman -Syu"
 create_mirrorlist() {
 	gum spin --spinner globe --title "Fetching the latest mirrors..." -- $REFLECTOR_CMD
 	gum spin --spinner points --title "Synchronizing package database..." -- $SYNC_DATABASE
-	echo "The mirrors are now up to date!"
+	echo ";; The mirrors are now up to date!"
 
 }
 
@@ -36,8 +36,8 @@ is_installed_figlet() {
 
 is_installed_gum() {
 	if ! command -v gum >/dev/null 2>&1; then
-		echo "gum needs to be installed to run this script..."
-		echo "Type 'sudo pacman -S gum' to install, then run this script again."
+		echo ";; gum needs to be installed to run this script..."
+		echo ";; Type 'sudo pacman -S gum' to install, then run this script again."
 		exit 1
 	fi
 
@@ -48,7 +48,7 @@ is_installed_reflector() {
 		if gum confirm "Do you want to install reflector now?"; then
 			sudo pacman -Syu --noconfirm reflector
 		else
-			echo "Aborting script..."
+			echo ";; Aborting script..."
 			exit 1
 		fi
 	fi
@@ -64,11 +64,11 @@ refresh_backup() {
 		sudo rm -rf "$MIRRORLIST_BAK"
 		sudo cp -r "$MIRRORLIST" "$MIRRORLIST_BAK"
 		sudo chmod 644 "$MIRRORLIST_BAK"
-		echo "Refreshed $MIRRORLIST_BAK"
+		echo ";; Refreshed $MIRRORLIST_BAK"
 		sleep 2
 		create_mirrorlist
 	else
-		echo "Unchanged: $MIRRORLIST_BAK"
+		echo ";; Unchanged: $MIRRORLIST_BAK"
 		sleep 2
 		create_mirrorlist
 	fi
@@ -83,11 +83,11 @@ create_backup() {
 	if gum confirm "Do you want to create a backup of your current mirrorlist?"; then
 		sudo cp -r "$MIRRORLIST" "$MIRRORLIST_BAK"
 		sudo chmod 644 "$MIRRORLIST_BAK"
-		echo "Saved $MIRRORLIST as $MIRRORLIST_BAK"
+		echo ";; Saved $MIRRORLIST as $MIRRORLIST_BAK"
 		sleep 2
 		create_mirrorlist
 	else
-		echo "No backup created..."
+		echo ";; No backup created..."
 		sleep 2
 		create_mirrorlist
 	fi
