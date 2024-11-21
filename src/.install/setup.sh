@@ -71,6 +71,7 @@ install_aur_helper() {
 		tokyonight-gtk-theme-git \
 		trizen \
 		typos-lsp-bin \
+		unimatrix-git \
 		vim-language-server \
 		vscodium-bin \
 		waypaper \
