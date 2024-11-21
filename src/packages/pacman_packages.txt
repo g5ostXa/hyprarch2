@@ -54,7 +54,6 @@ capstone
 cdparanoia
 cjson
 cliphist
-cmatrix
 coreutils
 cpio
 cpupower

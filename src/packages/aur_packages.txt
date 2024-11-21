@@ -6,6 +6,7 @@ paru-bin-debug
 tokyonight-gtk-theme-git
 trizen
 typos-lsp-bin
+unimatrix-git
 vim-language-server
 vscodium-bin
 waypaper
