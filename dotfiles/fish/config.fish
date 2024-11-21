@@ -3,9 +3,10 @@ if status is-interactive
 # ----------------------------------------------------
 # ALIASES
 # ----------------------------------------------------
+# hyprpush is meant to re-initialize the repo or rebase it locally. 
+# To push normally, use h2push.
 
-# hyprarch2 management
-# hyprpush is meant to re-initialize the repo or rebase it locally. To push normally, use hpush.
+# hyprarch2
 alias hyprarch2='/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME'
 alias hyprpush='hyprarch2 push --set-upstream git@github.com:g5ostXa/hyprarch2.git master'
 alias h2status='hyprarch2 status'
@@ -28,4 +29,5 @@ alias hyprlist='~/src/Scripts/hyprlist.sh'
 alias mirrors-update='~/src/Scripts/mirrors.sh'
 alias bwrap-btop='~/src/Scripts/sandboxes/bwrap-btop.sh'
 alias st4rtX='~/src/Scripts/hypr/st4rtX.sh'
+alias r4in='unimatrix -n -s 96 -l o'
 end

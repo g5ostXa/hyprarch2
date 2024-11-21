@@ -12,12 +12,8 @@
 # --------------------------------------------------------------------
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '
-
-# Colors
 CYAN='\033[0;36m'
 RC='\033[0m'
-
-# Pre-load current hyprarch2 version name
 HYPRARCH2_VERSION="$HOME/.version/latest"
 
 # --------------------------------------------------------------------
@@ -29,10 +25,10 @@ alias ll="ls -al"
 # Sandboxes
 alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
 
-# ProtonVPN / Wireguard
+# Wireguard
 alias wgstatus="sudo ~/src/Scripts/wgstatus.sh"
 
-# hyprarch2 repo control
+# hyprarch2
 alias hyprarch2="/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME"
 alias hyprpush="hyprarch2 push --set-upstream git@github.com:g5ostXa/hyprarch2.git master"
 alias hyprlist="~/src/Scripts/hyprlist.sh"
@@ -40,7 +36,7 @@ alias h2status="hyprarch2 status"
 alias h2push="hyprarch2 push"
 alias h2pull="hyprarch2 pull"
 
-# System tools
+# System
 alias libvirtStop="~/src/Scripts/libvirtStop.sh"
 alias fire="sudo firecfg"
 alias unfire="sudo firecfg --clean"
@@ -51,6 +47,7 @@ alias mirrors-update="~/src/Scripts/mirrors.sh"
 alias reboot="~/src/Scripts/reboot.sh"
 alias poweroff="~/src/Scripts/poweroff.sh"
 alias st4rtX="~/src/Scripts/hypr/st4rtX.sh"
+alias r4in="unimatrix -n -s 96 -l o"
 
 # --------------------------------------------------------------------
 # General
