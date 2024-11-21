@@ -9,7 +9,7 @@ if status is-interactive
 # hyprarch2
 alias hyprarch2='/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME'
 alias hyprpush='hyprarch2 push --set-upstream git@github.com:g5ostXa/hyprarch2.git master'
-alias hyprlist='~/src/Scritps/hyprlist.sh'
+alias hyprlist='~/src/Scripts/hyprlist.sh'
 alias h2status='hyprarch2 status'
 alias h2push='hyprarch2 push'
 alias h2pull='hyprarch2 pull'
@@ -32,5 +32,5 @@ alias st4rtX='~/src/Scripts/hypr/st4rtX.sh'
 
 # Misc
 alias r4in='unimatrix -n -s 96 -l o'
-alias myarch='~/g5ostXa/myarch.sh'
+alias myarch='~/b4shL4nd/scripts/myarch.sh'
 end
