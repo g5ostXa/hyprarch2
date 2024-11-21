@@ -19,14 +19,6 @@ HYPRARCH2_VERSION="$HOME/.version/latest"
 # --------------------------------------------------------------------
 # Aliases
 # --------------------------------------------------------------------
-alias ls="eza --icons=always --color=always"
-alias ll="ls -al"
-
-# Sandboxes
-alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
-
-# Wireguard
-alias wgstatus="sudo ~/src/Scripts/wgstatus.sh"
 
 # hyprarch2
 alias hyprarch2="/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME"
@@ -37,6 +29,10 @@ alias h2push="hyprarch2 push"
 alias h2pull="hyprarch2 pull"
 
 # System
+alias ls="eza --icons=always --color=always"
+alias ll="ls -al"
+alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
+alias wgstatus="sudo ~/src/Scripts/wgstatus.sh"
 alias libvirtStop="~/src/Scripts/libvirtStop.sh"
 alias fire="sudo firecfg"
 alias unfire="sudo firecfg --clean"
@@ -47,7 +43,10 @@ alias mirrors-update="~/src/Scripts/mirrors.sh"
 alias reboot="~/src/Scripts/reboot.sh"
 alias poweroff="~/src/Scripts/poweroff.sh"
 alias st4rtX="~/src/Scripts/hypr/st4rtX.sh"
+
+# Misc
 alias r4in="unimatrix -n -s 96 -l o"
+alias myarch="~/g5ostXa/myarch.sh"
 
 # --------------------------------------------------------------------
 # General
