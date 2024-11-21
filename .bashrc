@@ -46,7 +46,7 @@ alias st4rtX="~/src/Scripts/hypr/st4rtX.sh"
 
 # Misc
 alias r4in="unimatrix -n -s 96 -l o"
-alias myarch="~/b4shL4nd/scripts/myarch.sh"
+alias myarch="~/src/Scripts/github/myarch.sh"
 
 # --------------------------------------------------------------------
 # General
