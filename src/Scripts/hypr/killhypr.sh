@@ -1,2 +1,2 @@
 #!/bin/bash
-killall -9 Hyprland sleep 2
+uwsm stop

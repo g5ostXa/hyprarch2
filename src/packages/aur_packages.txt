@@ -7,6 +7,7 @@ tokyonight-gtk-theme-git
 trizen
 typos-lsp-bin
 unimatrix-git
+uwsm
 vim-language-server
 vscodium-bin
 waypaper

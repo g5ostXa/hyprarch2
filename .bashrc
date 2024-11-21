@@ -43,6 +43,7 @@ alias mirrors-update="~/src/Scripts/mirrors.sh"
 alias reboot="~/src/Scripts/reboot.sh"
 alias poweroff="~/src/Scripts/poweroff.sh"
 alias st4rtX="~/src/Scripts/hypr/st4rtX.sh"
+alias killhypr="~/src/Scripts/hypr/killhypr.sh"
 
 # Misc
 alias r4in="unimatrix -n -s 96 -l o"
@@ -73,4 +74,11 @@ if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTI
 then
 	shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
 	exec fish $LOGIN_OPTION
+fi
+
+# -------------------------------------------------------------------
+# Start hyprland using uwsm
+# -------------------------------------------------------------------
+if uwsm check may-start && uwsm select; then
+	exec systemd-cat -t uwsm_start uwsm start default
 fi

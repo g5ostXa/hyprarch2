@@ -731,6 +731,7 @@ python-pycparser
 python-pygments
 python-pyudev
 python-pywal
+python-pyxdg
 python-requests
 python-rich
 python-setuptools
