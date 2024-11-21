@@ -3,8 +3,6 @@
 # --------------------------------
 # wgstatus.sh
 # --------------------------------
-
-# Get wireguard status and basic info
 if [[ $(wg show | grep -c "peer:") -gt 0 ]]; then
 	echo ""
 	echo "VPN status:"

@@ -3,7 +3,6 @@
 # ----------------------------------
 # st4rtX.sh
 # ----------------------------------
-
 DNS_RESTART="sudo systemctl restart dnsmasq.service"
 
 is_installed_figlet() {

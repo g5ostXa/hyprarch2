@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # -------------------------------------------
-# xdg.sh 
+# xdg.sh
 # -------------------------------------------
-
 sleep 1
 
 # kill all possible running xdg-desktop-portals

@@ -6,7 +6,6 @@
 
 # Requires: gum | trizen | libnotify
 # -----------------------------------------------------
-
 sleep 1
 clear
 figlet -f smslant "System update"
