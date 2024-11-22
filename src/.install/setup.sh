@@ -72,6 +72,7 @@ install_aur_helper() {
 		trizen \
 		typos-lsp-bin \
 		unimatrix-git \
+		uwsm \
 		vim-language-server \
 		vscodium-bin \
 		waypaper \
