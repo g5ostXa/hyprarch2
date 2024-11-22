@@ -47,7 +47,7 @@ alias killhypr="~/src/Scripts/hypr/killhypr.sh"
 
 # Misc
 alias r4in="unimatrix -n -s 96 -l o"
-alias myarch="~/src/Scripts/github/myarch.sh"
+alias getproject="~/src/Scripts/github/getproject.sh"
 
 # --------------------------------------------------------------------
 # General
