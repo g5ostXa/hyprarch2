@@ -45,7 +45,7 @@ install_aur_helper() {
 	figlet -f smslant "AUR"
 	echo -e "${RC}" && echo ""
 
-	echo -e "${YELLOW};; Which aur helper do you want to install?:${RC}" && echo ""
+	echo -e "${YELLOW};; Which aur helper do you want to install ?${RC}" && echo ""
 	AUR_HELPER=$(gum choose "paru" "yay" "CANCEL")
 
 	if [ -n "$AUR_HELPER" ]; then
