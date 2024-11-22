@@ -166,6 +166,7 @@ create_symlinks() {
 	ln -s ~/dotfiles/fish/ ~/.config/
 	ln -s ~/dotfiles/pacseek/ ~/.config/
 	ln -s ~/dotfiles/waypaper/ ~/.config/
+	ln -s ~/dotfiles/uwsm/ ~/.config/
 
 }
 
