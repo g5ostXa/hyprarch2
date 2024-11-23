@@ -40,7 +40,7 @@ is_installed_git() {
 
 }
 
-install_aur_helper() {
+install_aur_packages() {
 	clear && echo -e "${CYAN}"
 	figlet -f smslant "AUR"
 	echo -e "${RC}" && echo ""
@@ -184,7 +184,7 @@ gum spin --spinner points --title "Preparing to install main packages..." -- sle
 
 sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES" && sleep 2
 
-install_aur_helper
+install_aur_packages
 install_wallpaper
 copy_files
 create_symlinks
