@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # --------------------------
-# myarch.sh | By g5ostXa
+# getproject.sh | By g5ostXa
 # --------------------------
 check_cloned_repo() {
 	if [ ! -d "$HOME/Downloads/$OPTION" ]; then
@@ -16,16 +16,15 @@ is_installed_figlet() {
 	clear
 	if command -v figlet >/dev/null 2>&1; then
 		echo -e "${CYAN}"
-		figlet -f smslant "myarch.sh"
+		figlet -f smslant "getproject.sh"
 		echo -e "${RC}"
 		echo ""
 	else
 		echo -e "${CYAN}"
 		echo "--------------------------"
-		echo "myarch.sh"
+		echo "getproject.sh"
 		echo "--------------------------"
 		echo -e "${RC}"
-		echo ""
 	fi
 
 }
