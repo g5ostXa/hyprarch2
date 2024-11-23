@@ -57,7 +57,7 @@ choose_option() {
 	echo -e "${CYAN};; Select one of g5ostXa's projects to download:${RC}"
 	echo ""
 
-	OPTION=$(gum choose "g5ostXa" "b4shL4nd" "sysctl" "wallpaper" "CANCEL")
+	OPTION=$(gum choose "g5ostXa" "b4shL4nd" "sysctl" "wallpaper" "g5ost4rchives" "CANCEL")
 	if [[ -n "$OPTION" ]]; then
 		if [[ ! "$OPTION" == "CANCEL" ]]; then
 			gum spin --spinner points --title "Installing $OPTION..." -- sleep 3
