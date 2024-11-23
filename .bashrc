@@ -44,6 +44,7 @@ alias reboot="~/src/Scripts/reboot.sh"
 alias poweroff="~/src/Scripts/poweroff.sh"
 alias st4rtX="~/src/Scripts/hypr/st4rtX.sh"
 alias killhypr="~/src/Scripts/hypr/killhypr.sh"
+alias lumine="~/src/Scripts/lumine.sh"
 
 # Misc
 alias r4in="unimatrix -n -s 96 -l o"

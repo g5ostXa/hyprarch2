@@ -30,6 +30,7 @@ alias mirrors-update='~/src/Scripts/mirrors.sh'
 alias bwrap-btop='~/src/Scripts/sandboxes/bwrap-btop.sh'
 alias st4rtX='~/src/Scripts/hypr/st4rtX.sh'
 alias killhypr='~/src/Scripts/hypr/killhypr.sh'
+alias lumine='~/src/Scripts/lumine.sh'
 
 # Misc
 alias r4in='unimatrix -n -s 96 -l o'
