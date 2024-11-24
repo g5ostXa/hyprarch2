@@ -3,6 +3,9 @@ dracula-icons-theme
 pacseek-bin
 paru-bin
 paru-bin-debug
+python-imageio
+python-imageio-ffmpeg
+python-screeninfo
 tokyonight-gtk-theme-git
 trizen
 typos-lsp-bin

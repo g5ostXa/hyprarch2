@@ -34,6 +34,7 @@ bash-language-server
 bat
 binutils
 bison
+blas
 breeze-icons
 bridge-utils
 brightnessctl
@@ -51,6 +52,7 @@ cairomm
 cairomm-1.16
 cantarell-fonts
 capstone
+cblas
 cdparanoia
 cjson
 cliphist
@@ -196,7 +198,6 @@ highway
 hivex
 htop
 http-parser
-hugo
 hwdata
 hyphen
 hyprcursor
@@ -302,6 +303,7 @@ kxmlgui
 kxmlgui5
 l-smash
 lame
+lapack
 lcms2
 less
 libaccounts-glib
@@ -721,6 +723,7 @@ python-markupsafe
 python-mdurl
 python-more-itertools
 python-notify2
+python-numpy
 python-ordered-set
 python-packaging
 python-perf
