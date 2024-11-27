@@ -1,5 +1,4 @@
 <div align="center">
-    
 <img src="https://github.com/g5ostXa/hyprarch2/blob/master/assets/IMG_3279.png" width="300" height="300"/>
 </div>
 
