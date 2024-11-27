@@ -16,7 +16,7 @@
 - [archbase](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md)
 
 ## ⚠️ Disclaimer
-This repository is my personal playground for [hyprland](https://hyprland.org) and [archlinux](https://archlinux.org). All my testing is done via the master branch and in a VM so there is a lot of weird / bad commits. This is basically a forked version of [ml4w-dotfiles (v2.5)] (https://github.com/mylinuxforwork/dotfiles) at one of it's earliest stages.
+This repository is my personal playground for [hyprland](https://hyprland.org) and [archlinux](https://archlinux.org). All my testing is done via the master branch and in a VM so there is a lot of weird / bad commits. This is basically a forked version of [ml4w-dotfiles (v2.5)](https://github.com/mylinuxforwork/dotfiles) at one of it's earliest stages.
 
 Also, I'm still kinda new to `linux`, `github` and `bash-scripting` so my code is not the best for sure. It is made to work for me and my environement, and will probably not work on any one else's machine unless you know what youre doing and change some of the code and config files to match your needs.
 
