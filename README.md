@@ -5,7 +5,6 @@
 
 <div align="center">
 
-[![.github/workflows/main.yml](https://github.com/g5ostXa/hyprarch2/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/g5ostXa/hyprarch2/actions/workflows/main.yml)
 [![Release](https://img.shields.io/badge/Latest_Release-v1.2.12-blue.svg)](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.2.12)
 </div>
 
