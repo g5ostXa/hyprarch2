@@ -15,6 +15,15 @@
 - [sysctl](https://github.com/g5ostXa/sysctl)
 - [archbase](https://gist.github.com/g5ostXa/5f9255430996b9d77d6004d6d2308b4d)
 
+## ⚠️ Disclaimer
+This repository is my personal playground for [hyprland](https://hyprland.org) and [archlinux](https://archlinux.org). All my testing is done via the master branch and in a VM so there is a lot of weird / bad commits. This is basically a forked version of [ml4w-dotfiles (v2.5)] (https://github.com/mylinuxforwork/dotfiles) at one of it's earliest stages.
+
+Also, I'm still kinda new to `linux`, `github` and `bash-scripting` so my code is not the best for sure. It is made to work for me and my environement, and will probably not work on any one else's machine unless you know what youre doing and change some of the code and config files to match your needs.
+
+Again, this project is very new and I don't recommend just trying it thinking it's gonna work straight out of the box.
+
+If you want to contribute, feel free to submit a PR.
+
 ## ⚙️ Setup and installation
 > [!IMPORTANT]
 > - The installation process is divided in 2 main steps, both of which are essential. The first step is the installation of Arch-base (minimal) and the second step is the installation of [hyprland](https://hyprland.org) on top of arch.
