@@ -10,7 +10,8 @@
 ## ⚠️ Disclaimer
 > [!WARNING]
 > - This repository is basically a heavily modified fork of [ml4w-dotfiles (v2.5)](https://github.com/mylinuxforwork/dotfiles).
-It is my personal playground for [hyprland](https://hyprland.org) and [archlinux](https://archlinux.org). 90% of my testing is done via the master branch so there is a lot of weird / bad commits. 
+It is my personal playground for [hyprland](https://hyprland.org) and [archlinux](https://archlinux.org).
+> - 90% of my testing is done via the master branch so there is a lot of weird / bad commits. 
 > - Also, [hyprarch2](https://github.com/g5ostXa/hyprarch2) is specific to my own machines, configs and needs and was not created with _compatibility_ in mind. Although it works for me, it probably won't work for you out of the box. Keep in mind that the installer does not care what packages you want installed or not. Either it installs all the packages in `src/packages/` or the script will fail. 
 > - Install at your own risks.
 
