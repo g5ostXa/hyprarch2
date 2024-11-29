@@ -16,13 +16,22 @@
 - [archbase](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md)
 
 ## ⚠️ Disclaimer
-This repository is my personal playground for [hyprland](https://hyprland.org) and [archlinux](https://archlinux.org). All my testing is done via the master branch and in a VM so there is a lot of weird / bad commits. This is basically a forked version of [ml4w-dotfiles (v2.5)](https://github.com/mylinuxforwork/dotfiles) at one of it's earliest stages.
+> [!WARNING]
+> - This repository is basically a heavily modified fork of [ml4w-dotfiles (v2.5)](https://github.com/mylinuxforwork/dotfiles).
+It is my personal playground for [hyprland](https://hyprland.org) and [archlinux](https://archlinux.org). 90% of my testing is done via the master branch so there is a lot of weird / bad commits. 
+> - Also, [hyprarch2](https://github.com/g5ostXa/hyprarch2) is specific to my own machines, configs and needs and was not created with _compatibility_ in mind. Although it works for me, it probably won't work for you out of the box. Keep in mind that the installer does not care what packages you want installed or not. Either it installs all the packages in `src/packages/` or the script will fail. 
+> - Install at your own risks.
 
-Also, I'm still kinda new to `linux`, `github` and `bash-scripting` so my code is not the best for sure. It is made to work for me and my environement, and will probably not work on any one else's machine unless you know what youre doing and change some of the code and config files to match your needs.
-
-Again, this project is very new and I don't recommend just trying it thinking it's gonna work straight out of the box.
-
-If you want to contribute, feel free to submit a PR.
+##  Contributions
+If you want to contribute to my project, feel free to clone it and submit a PR.
+```
+   __                              __   ___
+  / /  __ _____  _______ _________/ /  |_  |
+ / _ \/ // / _ \/ __/ _ `/ __/ __/ _ \/ __/
+/_//_/\_, / .__/_/  \_,_/_/  \__/_//_/____/
+     /___/_/
+  
+```
 
 ## ⚙️ Setup and installation
 > [!IMPORTANT]
@@ -65,3 +74,4 @@ $ st4rtX
   - `SUPER` + `E` : Nautilus
   - `SUPER` + `SHIFT` +`N` : Toggle hypridle
   - `SUPER` + `CTRL` + `M` : Exit hyprland
+
