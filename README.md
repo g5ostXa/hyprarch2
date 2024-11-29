@@ -7,14 +7,6 @@
 [![Release](https://img.shields.io/badge/Latest_Release-v1.2.12-blue.svg)](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.2.12)
 </div>
 
-## 📦 Sources
-- [arch-wiki](https://wiki.archlinux.org)
-- [dotfiles (ml4w)](https://github.com/mylinuxforwork/dotfiles)
-- [hyprland wiki](https://wiki.hyprland.org)
-- [wallpaper](https://github.com/g5ostXa/wallpaper)
-- [sysctl](https://github.com/g5ostXa/sysctl)
-- [archbase](https://github.com/g5ostXa/hyprarch2/blob/master/docs/archbase/arch-lvm-luks.md)
-
 ## ⚠️ Disclaimer
 > [!WARNING]
 > - This repository is basically a heavily modified fork of [ml4w-dotfiles (v2.5)](https://github.com/mylinuxforwork/dotfiles).
@@ -22,7 +14,7 @@ It is my personal playground for [hyprland](https://hyprland.org) and [archlinux
 > - Also, [hyprarch2](https://github.com/g5ostXa/hyprarch2) is specific to my own machines, configs and needs and was not created with _compatibility_ in mind. Although it works for me, it probably won't work for you out of the box. Keep in mind that the installer does not care what packages you want installed or not. Either it installs all the packages in `src/packages/` or the script will fail. 
 > - Install at your own risks.
 
-##  Contributions
+## :octocat: Contributions
 If you want to contribute to my project, feel free to clone it and submit a PR.
 ```
    __                              __   ___
@@ -49,7 +41,7 @@ $ git clone --depth 1 git@github.com:g5ostXa/hyprarch2.git
 $ cd hyprarch2 && ./install.sh
 ```
 
-## ➜ Hyprland
+## 💧 Hyprland
 - Start [Hyprland](https://hyprland.org) from tty:
 ```
 $ st4rtX
@@ -74,4 +66,3 @@ $ st4rtX
   - `SUPER` + `E` : Nautilus
   - `SUPER` + `SHIFT` +`N` : Toggle hypridle
   - `SUPER` + `CTRL` + `M` : Exit hyprland
-
