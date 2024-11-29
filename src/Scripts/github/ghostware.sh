@@ -62,7 +62,7 @@ choose_option() {
 		if [[ ! "$OPTION" == "CANCEL" ]]; then
 			gum spin --spinner points --title "Installing $OPTION..." -- sleep 3
 			is_installed_git
-			git clone --depth 1 git@github.com:g5ostXa/"$OPTION".git
+			git clone --depth 1 https://github.com/g5ostXa/"$OPTION".git
 			cd || exit
 			check_cloned_repo
 		else
