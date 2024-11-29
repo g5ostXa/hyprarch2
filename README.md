@@ -22,6 +22,7 @@ The code is customized for my specific environment and may require adjustments t
 
 Contributions are welcome via PRs.
 
+
 ## ⚙️ Setup and installation
 > [!IMPORTANT]
 > - The installation process is divided in 2 main steps, both of which are essential. The first step is the installation of Arch-base (minimal) and the second step is the installation of [hyprland](https://hyprland.org) on top of arch.
