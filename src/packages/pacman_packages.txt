@@ -822,7 +822,6 @@ readline
 reflector
 reiserfsprogs
 ripgrep
-rmlint
 rofi-wayland
 rsync
 rtkit
