@@ -40,8 +40,7 @@ $ sudo pacman -S --needed --noconfirm wireless_tools dialog os-prober mtools dos
 
  You can now clone the [`hyprarch2`](https://github.com/g5ostXa/hyprarch2) repository in the `~/Downloads` directory and run the [`install script`](https://github.com/g5ostXa/hyprarch2/blob/master/install.sh):
 ```bash
-$ cd Downloads
-$ git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
+$ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 $ cd hyprarch2 && ./install.sh
 ```
 
