@@ -35,7 +35,7 @@ If you want to contribute to my project, feel free to submit a PR.
 
 Before installing [`hyprarch2`](https://github.com/g5ostXa/hyprarch2), please make sure that all needed dependencies are installed:
 ```ruby
-$ sudo pacman -S --needed --noconfirm wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum figlet dnsmasq htop fastfetch vim openssh
+$ sudo pacman -S --needed --noconfirm wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum figlet dnsmasq vim openssh
 ```
 
  You can now clone the [`hyprarch2`](https://github.com/g5ostXa/hyprarch2) repository in the `~/Downloads` directory and run the [`install script`](https://github.com/g5ostXa/hyprarch2/blob/master/install.sh):
