@@ -16,14 +16,15 @@ It is my personal playground for [hyprland](https://hyprland.org) and [archlinux
 > - Install at your own risks.
 
 ## :octocat: Contributions
-If you want to contribute to my project, feel free to clone it and submit a PR.
-```
+If you want to contribute to my project, feel free to submit a PR.
+```md
    __                              __   ___
   / /  __ _____  _______ _________/ /  |_  |
  / _ \/ // / _ \/ __/ _ `/ __/ __/ _ \/ __/
 /_//_/\_, / .__/_/  \_,_/_/  \__/_//_/____/
      /___/_/
-  
+
+[hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2
 ```
 
 ## ⚙️ Setup and installation
