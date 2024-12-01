@@ -17,6 +17,7 @@
 > - Also, do not forget to backup your current system before proceeding.
 
 ## :octocat: `Contributions`
+If you like my project, give it a ⭐ !\
 If you want to contribute to my project, feel free to submit a PR.
 ```md
    __                              __   ___
