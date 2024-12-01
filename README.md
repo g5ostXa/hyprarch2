@@ -50,6 +50,11 @@ Start [`hyprland`](https://hyprland.org) from tty:
 $ st4rtX
 ```
 
+##  `Screenshots`
+<img src="https://github.com/g5ostXa/hyprarch2/blob/master/docs/screenshots/screenshot-20241201-164323.png"/>
+<img src="https://github.com/g5ostXa/hyprarch2/blob/master/docs/screenshots/screenshot-20241201-165449.png"/>
+<img src="https://github.com/g5ostXa/hyprarch2/blob/master/docs/screenshots/screenshot-20241201-165540.png"/>
+
 ## ➜ `Quick links`
 Wallpaper and waybar engine documentation:
 - https://github.com/g5ostXa/hyprarch2/blob/master/docs/wallpaper-waybar/README.md
