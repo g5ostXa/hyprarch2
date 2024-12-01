@@ -1,14 +1,4 @@
-//  __  __           _       _            
-// |  \/  | ___   __| |_   _| | ___  ___  
-// | |\/| |/ _ \ / _` | | | | |/ _ \/ __| 
-// | |  | | (_) | (_| | |_| | |  __/\__ \ 
-// |_|  |_|\___/ \__,_|\__,_|_|\___||___/ 
-//                                        
-//  
-// ----------------------------------------------------- 
-//
 {
-    // Workspaces
     "hyprland/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace r-1",
         "on-scroll-down": "hyprctl dispatch workspace r+1",
@@ -25,8 +15,6 @@
             "*": 5
         }
     },
-
-    // Taskbar
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 18,
@@ -44,8 +32,6 @@
             "Foot Server": "Terminal"
         }
     },
-
-    // Cliphist
     "custom/cliphist": {
         "format": "",
         "on-click": "sleep 0.1 && ~/src/Scripts/cliphist.sh",
@@ -53,8 +39,6 @@
         "on-click-middle": "sleep 0.1 && ~/src/Scripts/cliphist.sh w",
         "tooltip": false
     },
-
-    // Updates Count
     "custom/updates": {
         "format": "  {}",
         "tooltip-format": "{}",
@@ -65,75 +49,53 @@
         "on-click": "alacritty -e ~/src/Scripts/installupdates.sh",
         "tooltip": false
     },
-
-    // Wallpaper
     "custom/wallpaper": {
         "format": "",
         "on-click": "waypaper",
         "tooltip": false
     },
-
-    // Waybar Themes
     "custom/waybarthemes": {
         "format": "",
         "on-click": "~/src/Scripts/waybar/themeswitcher.sh",
         "tooltip": false
     },
-
-    // Filemanager Launcher
     "custom/filemanager": {
         "format": "",
         "on-click": "~/src/Scripts/sandboxes/bwrap-nautilus.sh",
         "tooltip": false
     },
-
-    // Rofi Application Launcher
     "custom/appmenu": {
         "format": "hyprarch2 󰣇",
         "on-click": "rofi -show drun -replace",
         "on-click-right": "~/src/Scripts/hypr/keybindings.sh",
         "tooltip": false
     },
-
-    // Power Menu
     "custom/exit": {
         "format": "",
         "on-click": "wlogout",
         "tooltip": false
     },
-
-    // System tray
     "tray": {
         "spacing": 10
     },
-
-    // Clock
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
-
-    // CPU
     "cpu": {
         "format": "/ C {usage}% ",
         "on-click": "alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
     },
-
-    // Memory
     "memory": {
         "format": "/ M {}% ",
         "on-click": "alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
     },
-
-    // Harddisk space used
-    "disk": {
+    "used disk": {
         "interval": 30,
         "format": "   {percentage_used}% ",
         "path": "/",
         "on-click": "alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
     },
-
-    // Network
     "network": {
         "format": "{ifname}",
         "format-wifi": "   {signalStrength}%",
@@ -146,8 +108,6 @@
         "max-length": 50,
         "on-click": "alacritty --class dotfiles-floating -e nmtui"
     },
-
-    // Battery
     "battery": {
         "states": {
             "warning": 30,
@@ -157,10 +117,14 @@
         "format-charging": "  {capacity}%",
         "format-plugged": "  {capacity}%",
         "format-alt": "{icon}  {time}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
-
-    // Pulseaudio
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
@@ -175,21 +139,24 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     },
-
-    // Other
     "user": {
         "format": "{user}",
         "interval": 60,
         "icon": false
     },
-
-    // backlight
     "backlight": {
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
         "format": "{icon} {percent}%",
+        "scroll-step": 1,
         "format-icons": [
             "",
             "",
@@ -206,9 +173,6 @@
             "",
             "",
             ""
-        ],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
-        "scroll-step": 1
+        ]
     }
 }
