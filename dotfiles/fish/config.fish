@@ -36,3 +36,8 @@ alias lumine='~/src/Scripts/lumine.sh'
 alias r4in='unimatrix -n -s 96 -l o'
 alias ghostware='~/src/Scripts/github/ghostware.sh'
 end
+
+# ----------------------------------------------------
+# STARSHIP INIT
+# ----------------------------------------------------
+starship init fish | source
