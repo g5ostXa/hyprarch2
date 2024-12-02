@@ -30,6 +30,7 @@ If you like my project and want to contribute, feel free to submit a PR and give
 
 ## ⚙️ `Setup and installation`
 > [!IMPORTANT]
+> - Before you start, take a look: [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
 > - The installation process is divided in 2 main steps, both of which are essential. The first step is the installation of Arch-base (minimal) and the second step is the installation of [`hyprland`](https://hyprland.org) on top of arch.
 > - If installing in virt-manager, please verify that **_3D acceleration_** is enabled in **_Video Virtio_** and the **_Listen type_** is set to **_None_** in **_Display Spice_**.
 > - To install arch manually, please refer to the [`arch-base install`](docs/archbase/arch-lvm-luks.md) guide. Alternatively, you can simply run [`archinstall`](https://github.com/archlinux/archinstall) from the archiso to install arch the easy way.
@@ -50,27 +51,50 @@ After the installation is completed, use the following to start [`💧hyprland`]
 $ uwsm start hyprland
 ```
 
+## 🖥️ `Monitor`
+> [!TIP]
+> You have two options if you want a properly configured display.\
+> Either you set `Automatic display configuration` or, configure your own screen resolution.
+
+[` ➜ dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf):
+```
+# -------------------------------------------------------------------------------------
+# Monitor Setup
+# See https://wiki.hyprland.org/Configuring/Monitors/
+# -------------------------------------------------------------------------------------
+
+# Uncomment <monitor=,preferred,auto,1> and remove g5ostXa'a configuration if you want to use Automatic display configuration.
+
+# Automatic display configuration:
+# monitor=,preferred,auto,1
+
+# g5ostXa's configuration:
+monitor=eDP-1,1920x1080@120.035,0x0,1
+monitor=HDMI-A-1,2048x1080@60.00,auto,1
+# monitor=Virtual-1,2048x1080@60.00,0x0,1
+```
+For more detailed instructions for configuring your monitor on hyprland: [` ➜ https://wiki.hyprland.org/Configuring/Monitors/`](https://hyprland.org)
+
+## 🌐 `Quick links`
+**Wallpaper engine documentation:**\
+[` ➜ docs/wallpaper-waybar/README.md`](/docs/wallpaper-waybar/README.md)
+  
+**All available keybinds here:**\
+[` ➜ dotfiles/hypr/conf/keybindings.conf`](/dotfiles/hypr/conf/keybindings.conf)
+
+**General keybinds:**
+- `⌨️` `SUPER` + `RETURN` : Alacritty
+- `⌨️` `SUPER` + `B` : Firefox
+- `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
+- `⌨️` `SUPER` + `CTRL` + `W` : Waypaper 
+- `⌨️` `SUPER` + `SHIFT` + `B` : Reload waybar 
+- `⌨️` `SUPER` + `CTRL` + `Q` : Wlogout
+- `⌨️` `SUPER` + `Q` : Killactive
+- `⌨️` `SUPER` + `E` : Nautilus
+- `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
+- `⌨️` `SUPER` + `CTRL` + `M` : Exit hyprland
+
 ## 📸 `Screenshots`
 <img src="/docs/screenshots/screenshot-20241201-164323.png"/>
 <img src="/docs/screenshots/screenshot-20241201-165449.png"/>
 <img src="/docs/screenshots/screenshot-20241201-214501.png"/>
-
-## ➜ `Quick links`
-Wallpaper setup documentation:
-- [`docs/wallpaper-waybar/README.md`](/docs/wallpaper-waybar/README.md)
-  
-## ⌨️ `Keybindings`
-All available keybinds here:
-- [`dotfiles/hypr/conf/keybindings.conf`](/dotfiles/hypr/conf/keybindings.conf)
-
-General keybinds:
-- `SUPER` + `RETURN` : Alacritty
-- `SUPER` + `B` : Firefox
-- `SUPER` + `CTRL` + `RETURN` : Rofi
-- `SUPER` + `CTRL` + `W` : Waypaper 
-- `SUPER` + `SHIFT` + `B` : Reload waybar 
-- `SUPER` + `CTRL` + `Q` : Wlogout
-- `SUPER` + `Q` : Killactive
-- `SUPER` + `E` : Nautilus
-- `SUPER` + `SHIFT` +`N` : Toggle hypridle
-- `SUPER` + `CTRL` + `M` : Exit hyprland
