@@ -10,8 +10,8 @@
 ## ⚠️ `What you need to know...`
 > [!WARNING]
 > - This repository is basically just a **heavily** modified fork of [`ml4w-dotfiles (v2.5)`](https://github.com/mylinuxforwork/dotfiles).
-> - It is my personal playground for [`hyprland`](https://hyprland.org) and [`archlinux`](https://archlinux.org).
-> - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
+> - It is my personal playground for [`💧hyprland`](https://hyprland.org) and [`archlinux`](https://archlinux.org).
+> - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`💧hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
 > - This project assumes you're installing it from a newly created and minimal archlinux base and the repo directory path is `~/Downloads/hyprarch2/`.
 > - You must run the [`install.sh`](/install.sh) script also in `~/Downloads/hyprarch2/`
 > - Do not forget to backup your current system before proceeding.
@@ -31,7 +31,7 @@ If you like my project and want to contribute, feel free to submit a PR and give
 ## ⚙️ `Setup and installation`
 > [!IMPORTANT]
 > - Before you start, take a look: [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
-> - The installation process is divided in 2 main steps, both of which are essential. The first step is the installation of Arch-base (minimal) and the second step is the installation of [`hyprland`](https://hyprland.org) on top of arch.
+> - The installation process is divided in 2 main steps, both of which are essential. The first step is the installation of Arch-base (minimal) and the second step is the installation of [`💧hyprland`](https://hyprland.org) on top of arch.
 > - If installing in virt-manager, please verify that **_3D acceleration_** is enabled in **_Video Virtio_** and the **_Listen type_** is set to **_None_** in **_Display Spice_**.
 > - To install arch manually, please refer to the [`archlinux install guide`](https://wiki.archlinux.org/title/Installation_guide) or, simply run [`archinstall`](https://github.com/archlinux/archinstall) from the archiso to install arch the easy way.
 
@@ -73,7 +73,7 @@ monitor=eDP-1,1920x1080@120.035,0x0,1
 monitor=HDMI-A-1,2048x1080@60.00,auto,1
 # monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
-For more detailed instructions for configuring your monitor on hyprland: [` ➜ https://wiki.hyprland.org/Configuring/Monitors/`](https://hyprland.org)
+For more detailed instructions for configuring your monitor on hyprland: [` ➜ https://wiki.hyprland.org/Configuring/Monitors`](https://wiki.hyprland.org/Configuring/Monitors)
 
 ## 🌐 `Quick links`
 **Wallpaper engine documentation:**\
