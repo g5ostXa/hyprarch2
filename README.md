@@ -24,6 +24,7 @@ If you like my project and want to contribute, feel free to submit a PR and give
  / _ \/ // / _ \/ __/ _ `/ __/ __/ _ \/ __/
 /_//_/\_, / .__/_/  \_,_/_/  \__/_//_/____/
      /___/_/
+
 [hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2
 ```
 
