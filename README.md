@@ -41,7 +41,7 @@ $ uwsm start hyprland
 ##  `Screenshots`
 <img src="https://github.com/g5ostXa/hyprarch2/blob/master/docs/screenshots/screenshot-20241201-164323.png"/>
 <img src="https://github.com/g5ostXa/hyprarch2/blob/master/docs/screenshots/screenshot-20241201-165449.png"/>
-<img src="https://github.com/g5ostXa/hyprarch2/blob/master/docs/screenshots/screenshot-20241201-165540.png"/>
+<img src="https://github.com/g5ostXa/hyprarch2/blob/master/docs/screenshots/screenshot-20241201-214501.png"/>
 
 ## ➜ `Quick links`
 Wallpaper and waybar engine documentation:
@@ -62,3 +62,16 @@ General keybinds:
 - `SUPER` + `E` : Nautilus
 - `SUPER` + `SHIFT` +`N` : Toggle hypridle
 - `SUPER` + `CTRL` + `M` : Exit hyprland
+
+## :octocat: `Contributions`
+If you like my project, give it a ⭐ !\
+If you want to contribute to my project, feel free to submit a PR.
+```md
+   __                              __   ___
+  / /  __ _____  _______ _________/ /  |_  |
+ / _ \/ // / _ \/ __/ _ `/ __/ __/ _ \/ __/
+/_//_/\_, / .__/_/  \_,_/_/  \__/_//_/____/
+     /___/_/
+
+[hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2
+```
