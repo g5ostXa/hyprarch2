@@ -33,7 +33,7 @@ If you like my project and want to contribute, feel free to submit a PR and give
 > - Before you start, take a look: [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
 > - The installation process is divided in 2 main steps, both of which are essential. The first step is the installation of Arch-base (minimal) and the second step is the installation of [`hyprland`](https://hyprland.org) on top of arch.
 > - If installing in virt-manager, please verify that **_3D acceleration_** is enabled in **_Video Virtio_** and the **_Listen type_** is set to **_None_** in **_Display Spice_**.
-> - To install arch manually, please refer to the [`arch-base install`](docs/archbase/arch-lvm-luks.md) guide. Alternatively, you can simply run [`archinstall`](https://github.com/archlinux/archinstall) from the archiso to install arch the easy way.
+> - To install arch manually, please refer to the [`archlinux install guide`](https://wiki.archlinux.org/title/Installation_guide) or, simply run [`archinstall`](https://github.com/archlinux/archinstall) from the archiso to install arch the easy way.
 
 Before installing [`hyprarch2`](/), please make sure that all needed dependencies are installed:
 ```ruby
