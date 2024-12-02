@@ -50,7 +50,7 @@ After the installation is completed, use the following to start [`💧hyprland`]
 $ uwsm start hyprland
 ```
 
-## 🌆 `Screenshots`
+## 📸 `Screenshots`
 <img src="https://github.com/g5ostXa/hyprarch2/blob/master/docs/screenshots/screenshot-20241201-164323.png"/>
 <img src="https://github.com/g5ostXa/hyprarch2/blob/master/docs/screenshots/screenshot-20241201-165449.png"/>
 <img src="https://github.com/g5ostXa/hyprarch2/blob/master/docs/screenshots/screenshot-20241201-214501.png"/>
