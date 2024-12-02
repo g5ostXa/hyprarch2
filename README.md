@@ -7,7 +7,7 @@
 [![Release](https://img.shields.io/badge/Latest_Release-v1.3-blue.svg)](https://github.com/g5ostXa/hyprarch2/releases/tag/v1.3)
 </div>
 
-## ⚠️ `Disclaimer` / `What you need to know`
+## ⚠️ `What you need to know`
 > [!WARNING]
 > - This repository is basically just a **heavily** modified fork of [`ml4w-dotfiles (v2.5)`](https://github.com/mylinuxforwork/dotfiles).
 > - It is my personal playground for [`hyprland`](https://hyprland.org) and [`archlinux`](https://archlinux.org).
