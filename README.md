@@ -16,19 +16,6 @@
 > - You must run the `install.sh` script also in `~/Downloads/`
 > - Also, do not forget to backup your current system before proceeding.
 
-## :octocat: `Contributions`
-If you like my project, give it a ⭐ !\
-If you want to contribute to my project, feel free to submit a PR.
-```md
-   __                              __   ___
-  / /  __ _____  _______ _________/ /  |_  |
- / _ \/ // / _ \/ __/ _ `/ __/ __/ _ \/ __/
-/_//_/\_, / .__/_/  \_,_/_/  \__/_//_/____/
-     /___/_/
-
-[hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2
-```
-
 ## ⚙️ `Setup and installation`
 > [!IMPORTANT]
 > - The installation process is divided in 2 main steps, both of which are essential. The first step is the installation of Arch-base (minimal) and the second step is the installation of [`hyprland`](https://hyprland.org) on top of arch.
