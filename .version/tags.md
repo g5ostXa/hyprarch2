@@ -9,3 +9,6 @@
   - https://github.com/g5ostXa/hyprarch2/tree/v1.2.10
   - https://github.com/g5ostXa/hyprarch2/tree/v1.2.11
   - https://github.com/g5ostXa/hyprarch2/tree/v1.2.12
+
+  **Version 1.3**
+  - https://github.com/g5ostXa/hyprarch2/tree/v1.3
