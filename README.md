@@ -46,8 +46,7 @@ $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 $ cd hyprarch2 && ./install.sh
 ```
 
-## 💧 `Hyprland`
-Start [`hyprland`](https://hyprland.org) from tty:
+After the installation is completed, use the following to start [`💧hyprland`](https://hyprland.org) from tty:
 ```ruby
 $ uwsm start hyprland
 ```
