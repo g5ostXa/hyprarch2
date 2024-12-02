@@ -14,7 +14,7 @@
 > - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
 > - This project assumes you're installing it from a newly created and minimal archlinux base and the repo directory path is `~/Downloads/hyprarch2/`.
 > - You must run the [`install.sh`](/install.sh) script also in `~/Downloads/hyprarch2/`
-> - Also, do not forget to backup your current system before proceeding.
+> - Do not forget to backup your current system before proceeding.
 
 ## :octocat: `Contributions`
 If you like my project and want to contribute, feel free to submit a PR and give it a ⭐ !
