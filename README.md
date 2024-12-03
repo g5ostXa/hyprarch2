@@ -77,7 +77,6 @@ For more detailed instructions for configuring your monitor on hyprland: [` ➜ 
 - `⌨️` `SUPER` + `Q` : Killactive
 - `⌨️` `SUPER` + `E` : Nautilus
 - `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
-- `⌨️` `SUPER` + `CTRL` + `M` : Exit hyprland
 
 ## 🌐 `Quick links`
 **Wallpaper engine documentation:**\
