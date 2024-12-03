@@ -16,18 +16,6 @@
 > - By default, `ufw`, [`sysctl`](https://github.com.g5ostXa/sysctl) and `dnsmasq` are configured automatically. I'm working on [`the code`](src/.install/secure.sh) to make them optional and it will be fixed soon.
 > - Do not forget to backup your current system before proceeding.
 
-## :octocat: `Contributions`
-If you like my project and want to contribute, feel free to submit a PR and give it a ⭐ !
-```md
-   __                              __   ___
-  / /  __ _____  _______ _________/ /  |_  |
- / _ \/ // / _ \/ __/ _ `/ __/ __/ _ \/ __/
-/_//_/\_, / .__/_/  \_,_/_/  \__/_//_/____/
-     /___/_/
-
-[hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2
-```
-
 ## ⚙️ `Setup and installation`
 > [!IMPORTANT]
 > - Before you start, take a look: [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
@@ -85,6 +73,7 @@ For more detailed instructions for configuring your monitor on hyprland: [` ➜ 
 **Sysctl config source**\
 [` ➜ g5ostXa/sysctl`](https://github.com/g5ostXa/sysctl)
 
+## ⌨️ `Keybinds`
 **All available keybinds here:**\
 [` ➜ dotfiles/hypr/conf/keybindings.conf`](/dotfiles/hypr/conf/keybindings.conf)
 
@@ -99,6 +88,18 @@ For more detailed instructions for configuring your monitor on hyprland: [` ➜ 
 - `⌨️` `SUPER` + `E` : Nautilus
 - `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
 - `⌨️` `SUPER` + `CTRL` + `M` : Exit hyprland
+
+## :octocat: `Contributions`
+If you like my project and want to contribute, feel free to submit a PR and give it a ⭐ !
+```md
+   __                              __   ___
+  / /  __ _____  _______ _________/ /  |_  |
+ / _ \/ // / _ \/ __/ _ `/ __/ __/ _ \/ __/
+/_//_/\_, / .__/_/  \_,_/_/  \__/_//_/____/
+     /___/_/
+
+[hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2
+```
 
 ## 📸 `Screenshots`
 <img src="/docs/screenshots/screenshot-20241201-164323.png"/>
