@@ -10,10 +10,10 @@
 ## ⚠️ `What you need to know...`
 > [!WARNING]
 > - This repository is basically just a **heavily** modified clone of [`ml4w-dotfiles (v2.5)`](https://github.com/mylinuxforwork/dotfiles).
-> - It is my personal playground for [`💧hyprland`](https://hyprland.org) and [`archlinux`](https://archlinux.org).
 > - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`💧hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
 > - This project assumes you're installing it from a newly created and minimal archlinux base and the repo directory path is `~/Downloads/hyprarch2/`.
 > - You must run the [`install.sh`](/install.sh) script also in `~/Downloads/hyprarch2/`
+> - By default, `ufw`, [`sysctl`](https://github.com.g5ostXa/sysctl) and `dnsmasq` are configured automatically. I'm working on the code to make them optional and it will be fixed soon. 
 > - Do not forget to backup your current system before proceeding.
 
 ## :octocat: `Contributions`
@@ -78,7 +78,13 @@ For more detailed instructions for configuring your monitor on hyprland: [` ➜ 
 ## 🌐 `Quick links`
 **Wallpaper engine documentation:**\
 [` ➜ docs/wallpaper-waybar/README.md`](/docs/wallpaper-waybar/README.md)
-  
+
+**Wallpaper source**\
+[` ➜ g5ostXa/wallpaper`](https://github.com/g5ostXa/wallpaper)
+
+**Sysctl config source**\
+[` ➜ g5ostXa/sysctl`](https://github.com/g5ostXa/sysctl)
+
 **All available keybinds here:**\
 [` ➜ dotfiles/hypr/conf/keybindings.conf`](/dotfiles/hypr/conf/keybindings.conf)
 
