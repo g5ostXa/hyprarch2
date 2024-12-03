@@ -13,7 +13,7 @@
 > - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`💧hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
 > - This project assumes you're installing it from a newly created and minimal archlinux base and the repo directory path is `~/Downloads/hyprarch2/`.
 > - You must run the [`install.sh`](/install.sh) script also in `~/Downloads/hyprarch2/`
-> - By default, `ufw`, [`sysctl`](https://github.com.g5ostXa/sysctl) and `dnsmasq` are configured automatically. I'm working on the code to make them optional and it will be fixed soon. 
+> - By default, `ufw`, [`sysctl`](https://github.com.g5ostXa/sysctl) and `dnsmasq` are configured automatically. I'm working on [`the code`](src/.install/secure.sh) to make them optional and it will be fixed soon.
 > - Do not forget to backup your current system before proceeding.
 
 ## :octocat: `Contributions`
