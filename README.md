@@ -63,16 +63,6 @@ monitor=HDMI-A-1,2048x1080@60.00,auto,1
 ```
 For more detailed instructions for configuring your monitor on hyprland: [` ➜ Click me!`](https://wiki.hyprland.org/Configuring/Monitors)
 
-## 🌐 `Quick links`
-**Wallpaper engine documentation:**\
-[` ➜ docs/wallpaper-waybar/README.md`](/docs/wallpaper-waybar/README.md)
-
-**Wallpaper source**\
-[` ➜ g5ostXa/wallpaper`](https://github.com/g5ostXa/wallpaper)
-
-**Sysctl config source**\
-[` ➜ g5ostXa/sysctl`](https://github.com/g5ostXa/sysctl)
-
 ## ⌨️ `Keybinds`
 **All available keybinds here:**\
 [` ➜ dotfiles/hypr/conf/keybindings.conf`](/dotfiles/hypr/conf/keybindings.conf)
@@ -88,6 +78,16 @@ For more detailed instructions for configuring your monitor on hyprland: [` ➜ 
 - `⌨️` `SUPER` + `E` : Nautilus
 - `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
 - `⌨️` `SUPER` + `CTRL` + `M` : Exit hyprland
+
+## 🌐 `Quick links`
+**Wallpaper engine documentation:**\
+[` ➜ docs/wallpaper-waybar/README.md`](/docs/wallpaper-waybar/README.md)
+
+**Wallpaper source**\
+[` ➜ g5ostXa/wallpaper`](https://github.com/g5ostXa/wallpaper)
+
+**Sysctl config source**\
+[` ➜ g5ostXa/sysctl`](https://github.com/g5ostXa/sysctl)
 
 ## :octocat: `Contributions`
 If you like my project and want to contribute, feel free to submit a PR and give it a ⭐ !
