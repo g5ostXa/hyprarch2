@@ -9,7 +9,7 @@
 
 ## ⚠️ `What you need to know...`
 > [!WARNING]
-> - This repository is basically just a **heavily** modified fork of [`ml4w-dotfiles (v2.5)`](https://github.com/mylinuxforwork/dotfiles).
+> - This repository is basically just a **heavily** modified clone of [`ml4w-dotfiles (v2.5)`](https://github.com/mylinuxforwork/dotfiles).
 > - It is my personal playground for [`💧hyprland`](https://hyprland.org) and [`archlinux`](https://archlinux.org).
 > - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`💧hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
 > - This project assumes you're installing it from a newly created and minimal archlinux base and the repo directory path is `~/Downloads/hyprarch2/`.
