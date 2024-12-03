@@ -41,8 +41,9 @@ $ uwsm start hyprland
 
 ## 🖥️ `Monitor`
 > [!TIP]
-> You have two options if you want a properly configured display.\
-> Either you set `Automatic display configuration` or, configure your own screen resolution.
+> You have two options if you want a properly configured display:
+> - Either you set `Automatic display configuration` 
+> - Either you configure your own screen resolution.
 
 [` ➜ dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf):
 ```md
