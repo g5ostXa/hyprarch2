@@ -14,7 +14,7 @@
 > - This project was recently made public and there is still alot of things to do to make it more user-friendly.
 > - For example, by default, `ufw`, [`sysctl`](https://github.com.g5ostXa/sysctl) and `dnsmasq` are configured automatically. I'm working on [`the code`](src/.install/secure.sh) to make them optional and it will be fixed soon.
 > - Make sure the repo lives in `~/Downloads/` and [`install.sh`](/install.sh) is ran from `~/Downloads/hyprarch2`
-Do not forget to backup your current system before proceeding.
+> - Do not forget to backup your current system before proceeding.
 
 ## ⚙️ `Setup and installation`
 > [!IMPORTANT]
