@@ -105,11 +105,18 @@ For more detailed instructions about how to configure your monitor on hyprland: 
 **Wallpaper engine documentation:**\
 [` ➜ docs/wallpaper-waybar/README.md`](/docs/wallpaper-waybar/README.md)
 
-**Wallpaper source**\
+**Wallpaper source:**\
 [` ➜ g5ostXa/wallpaper`](https://github.com/g5ostXa/wallpaper)
 
-**Sysctl config source**\
+**Sysctl config source:**\
 [` ➜ g5ostXa/sysctl`](https://github.com/g5ostXa/sysctl)
+
+**Packages lists:**\
+[` ➜ Pacman`](/src/packages/pacman_packages.txt)
+[` ➜ AUR`](/src/packages/aur_packages.txt)
+
+
+
 
 ## :octocat: `Contributions`
 If you like my project and want to contribute, feel free to submit a PR and give it a ⭐ !
