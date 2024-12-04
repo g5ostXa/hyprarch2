@@ -14,12 +14,12 @@ alias h2status='hyprarch2 status'
 alias h2push='hyprarch2 push'
 alias h2pull='hyprarch2 pull'
 alias ghostware='~/b4shL4nd/ghostware.sh'
+alias wgstatus='sudo ~/src/Scripts/wgstatus.sh'
 # ------------------------------------------------------------------------------------------
 
 # General ----------------------------------------------------------------------------------
 alias ls='eza --icons=always --color=always'
 alias ll='ls -al'
-alias wgstatus='sudo ~/src/Scripts/wgstatus.sh'
 alias reboot='~/src/Scripts/reboot.sh'
 alias poweroff='~/src/Scripts/poweroff.sh'
 alias fire='sudo firecfg'
