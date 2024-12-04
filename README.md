@@ -39,6 +39,38 @@ After the installation is completed, use the following to start [`💧hyprland`]
 $ uwsm start hyprland
 ```
 
+## 📦 `Main apps`
+- Terminal: `Alacritty`
+- Shell: `Fish` + `Starship`
+- Browser: `Firefox`
+- App Launcher: `Rofi-wayland`
+- Wallpaper front end: `Waypaper`
+- Wallpaper back end: `Swww`
+- Logout menu: `Wlogout`
+- Bar: `Waybar`
+- File Manager: `Nautilus`
+- Theming: `GTK` / `Python-pywal`
+- GUI Theme App: `Lxappearance`
+- Current GTK Theme: `Tokyonight-gtk-theme-git`
+- Current Cursor Theme: `Bibata-Cursor-theme`
+- Editors: `Neovim` / `vscodium` / `Obsidian`
+- AUR helper: (User chooses between `Paru-bin` and `Yay-bin` during install)
+
+## ⌨️ `Keybinds`
+**All available keybinds here:**\
+[` ➜ dotfiles/hypr/conf/keybindings.conf`](/dotfiles/hypr/conf/keybindings.conf)
+
+**General keybinds:**
+- `⌨️` `SUPER` + `RETURN` : Alacritty
+- `⌨️` `SUPER` + `B` : Firefox
+- `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
+- `⌨️` `SUPER` + `CTRL` + `W` : Waypaper 
+- `⌨️` `SUPER` + `SHIFT` + `B` : Reload waybar 
+- `⌨️` `SUPER` + `CTRL` + `Q` : Wlogout
+- `⌨️` `SUPER` + `Q` : Killactive
+- `⌨️` `SUPER` + `E` : Nautilus
+- `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
+
 ## 🖥️ `Monitor`
 > [!TIP]
 > You have two options if you want a properly configured display:
@@ -63,21 +95,6 @@ monitor=HDMI-A-1,2048x1080@60.00,auto,1
 # monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
 For more detailed instructions for configuring your monitor on hyprland: [` ➜ Click me!`](https://wiki.hyprland.org/Configuring/Monitors)
-
-## ⌨️ `Keybinds`
-**All available keybinds here:**\
-[` ➜ dotfiles/hypr/conf/keybindings.conf`](/dotfiles/hypr/conf/keybindings.conf)
-
-**General keybinds:**
-- `⌨️` `SUPER` + `RETURN` : Alacritty
-- `⌨️` `SUPER` + `B` : Firefox
-- `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
-- `⌨️` `SUPER` + `CTRL` + `W` : Waypaper 
-- `⌨️` `SUPER` + `SHIFT` + `B` : Reload waybar 
-- `⌨️` `SUPER` + `CTRL` + `Q` : Wlogout
-- `⌨️` `SUPER` + `Q` : Killactive
-- `⌨️` `SUPER` + `E` : Nautilus
-- `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
 
 ## 🌐 `Quick links`
 **Wallpaper engine documentation:**\
