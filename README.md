@@ -12,9 +12,14 @@
 > - This repository is basically just a **heavily** modified clone of [`ml4w-dotfiles (v2.5)`](https://github.com/mylinuxforwork/dotfiles).
 > - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`💧hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
 > - This project was recently made public and there is still alot of things to do to make it more user-friendly.
-> - For example, by default, `ufw`, [`sysctl`](https://github.com.g5ostXa/sysctl) and `dnsmasq` are configured automatically. I'm working on [`the code`](src/.install/secure.sh) to make them optional and it will be fixed soon.
-> - Make sure the repo lives in `~/Downloads/` and [`install.sh`](/install.sh) is ran from `~/Downloads/hyprarch2`
-> - Do not forget to backup your current system before proceeding.
+
+- **What's to expect**:
+  - The install might fail on some systems.
+  - Some files and directories might get deleted upon installing (That's why a fresh minimal arch base install is recommended)
+  - A basic security configuration: Firewall (`ufw`), some kernel params (`sysctl`) and (`dnsmasq`)
+  - The basic security config may interfere with some use cases because of `ufw` and `sysctl`.
+  - By default, for the time being,  the installer will install all packages in `/src/packages/`.
+  - You can expect some significant improvements in the near future for this project. 
 
 ## ⚙️ `Setup and installation`
 > [!IMPORTANT]
@@ -38,6 +43,38 @@ After the installation is completed, use the following to start [`💧hyprland`]
 ```ruby
 $ uwsm start hyprland
 ```
+
+## 📦 `Main apps`
+- Terminal: `Alacritty`
+- Shell: `Fish` + `Starship`
+- Browser: `Firefox`
+- App Launcher: `Rofi-wayland`
+- Wallpaper front end: `Waypaper`
+- Wallpaper back end: `Swww`
+- Logout menu: `Wlogout`
+- Bar: `Waybar`
+- File Manager: `Nautilus`
+- Theming: `GTK` / `Python-pywal`
+- GUI Theme App: `Lxappearance`
+- Current GTK Theme: `Tokyonight-gtk-theme-git`
+- Current Cursor Theme: `Bibata-Cursor-theme`
+- Editors: `Neovim` / `vscodium` / `Obsidian`
+- AUR helper: (User chooses between `Paru-bin` and `Yay-bin` during install)
+
+## ⌨️ `Keybinds`
+**All available keybinds here:**\
+[` ➜ dotfiles/hypr/conf/keybindings.conf`](/dotfiles/hypr/conf/keybindings.conf)
+
+**General keybinds:**
+- `⌨️` `SUPER` + `RETURN` : Alacritty
+- `⌨️` `SUPER` + `B` : Firefox
+- `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
+- `⌨️` `SUPER` + `CTRL` + `W` : Waypaper 
+- `⌨️` `SUPER` + `SHIFT` + `B` : Reload waybar 
+- `⌨️` `SUPER` + `CTRL` + `Q` : Wlogout
+- `⌨️` `SUPER` + `Q` : Killactive
+- `⌨️` `SUPER` + `E` : Nautilus
+- `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
 
 ## 🖥️ `Monitor`
 > [!TIP]
@@ -63,21 +100,6 @@ monitor=HDMI-A-1,2048x1080@60.00,auto,1
 # monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
 For more detailed instructions for configuring your monitor on hyprland: [` ➜ Click me!`](https://wiki.hyprland.org/Configuring/Monitors)
-
-## ⌨️ `Keybinds`
-**All available keybinds here:**\
-[` ➜ dotfiles/hypr/conf/keybindings.conf`](/dotfiles/hypr/conf/keybindings.conf)
-
-**General keybinds:**
-- `⌨️` `SUPER` + `RETURN` : Alacritty
-- `⌨️` `SUPER` + `B` : Firefox
-- `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
-- `⌨️` `SUPER` + `CTRL` + `W` : Waypaper 
-- `⌨️` `SUPER` + `SHIFT` + `B` : Reload waybar 
-- `⌨️` `SUPER` + `CTRL` + `Q` : Wlogout
-- `⌨️` `SUPER` + `Q` : Killactive
-- `⌨️` `SUPER` + `E` : Nautilus
-- `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
 
 ## 🌐 `Quick links`
 **Wallpaper engine documentation:**\
