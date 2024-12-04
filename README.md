@@ -99,7 +99,7 @@ monitor=eDP-1,1920x1080@120.035,0x0,1
 monitor=HDMI-A-1,2048x1080@60.00,auto,1
 # monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
-For more detailed instructions for configuring your monitor on hyprland: [` ➜ Click me!`](https://wiki.hyprland.org/Configuring/Monitors)
+For more detailed instructions about how to configure your monitor on hyprland: [` ➜ 🖥️ Hyprland / Monitors`](https://wiki.hyprland.org/Configuring/Monitors)
 
 ## 🌐 `Quick links`
 **Wallpaper engine documentation:**\
