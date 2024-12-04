@@ -58,7 +58,7 @@ $ uwsm start hyprland
 - GUI Theme App: `Lxappearance`
 - Current GTK Theme: `Tokyonight-gtk-theme-git`
 - Current Cursor Theme: `Bibata-Cursor-theme`
-- Editors: `Neovim` / `vscodium` / `Obsidian`
+- Editors: `Neovim` / `Vscodium` / `Obsidian`
 - AUR helper: (User chooses between `Paru-bin` and `Yay-bin` during install)
 
 ## ⌨️ `Keybinds`
