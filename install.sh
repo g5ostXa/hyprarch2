@@ -11,7 +11,7 @@ RC='\033[0m'
 # Define version name
 VERSION_NAME="$HOME/Downloads/hyprarch2/.version/latest"
 
-# Install greeter
+# Installation greeter
 if command -v figlet >/dev/null 2>&1; then
 	clear
 	echo -e "${CYAN}"
@@ -42,7 +42,6 @@ if [ -n "$SSH_CONNECTION" ]; then
 		[Yy]*)
 			echo ";; Starting Installation..."
 			sleep 2
-			set -e
 			break
 			;;
 		[Nn]*)
@@ -58,7 +57,6 @@ else
 	if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
 		echo ";; Starting Installation..."
 		sleep 2
-		set -e
 	elif [ $? -eq 130 ]; then
 		echo ";; Installation canceled..."
 		exit 130
@@ -68,19 +66,12 @@ else
 	fi
 fi
 
-# Define main scripts
-PACMAN_CONFIGURATION="$HOME/Downloads/hyprarch2/src/Scripts/pacman.sh"
-SYSTEM_INSTALLATION="$HOME/Downloads/hyprarch2/src/.install/setup.sh"
-SECURITY_CONFIGURATION="$HOME/src/.install/secure.sh"
-CLEANUP_SCRIPT="$HOME/src/.install/hyprclean.sh"
-BASHRC="$HOME/.bashrc"
-
-# Execute main scripts
-source "$PACMAN_CONFIGURATION"
-source "$SYSTEM_INSTALLATION"
-source "$SECURITY_CONFIGURATION"
-source "$CLEANUP_SCRIPT"
-source "$BASHRC"
+# Installation
+~/Downloads/hyprarch2/src/Scripts/pacman.sh
+~/Downloads/hyprarch2/src/.install/setup.sh
+~/src/.install/secure.sh
+~/src/.install/hyprclean.sh
+source ~/.bashrc
 
 # End of installation message
 echo -e "${CYAN}"
