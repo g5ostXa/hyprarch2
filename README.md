@@ -7,7 +7,7 @@
 [![Release](https://img.shields.io/badge/Latest_Release-v1.3-blue.svg)](/releases/tag/v1.3)
 </div>
 
-## ⚠️ `What you need to know...`
+## ⚠️ `Disclaimer...`
 > [!WARNING]
 > - This repository is basically just a **heavily** modified clone of [`ml4w-dotfiles (v2.5)`](https://github.com/mylinuxforwork/dotfiles).
 > - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`💧hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
