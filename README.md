@@ -115,9 +115,6 @@ For more detailed instructions about how to configure your monitor on hyprland: 
 [` ➜ Pacman`](/src/packages/pacman_packages.txt)
 [` ➜ AUR`](/src/packages/aur_packages.txt)
 
-
-
-
 ## :octocat: `Contributions`
 If you like my project and want to contribute, feel free to submit a PR and give it a ⭐ !
 ```md
