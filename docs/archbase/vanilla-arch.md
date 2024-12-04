@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://github.com/g5ostXa/hyprarch2/blob/master/assets/archlinux.png" width="200" height="200"/>
+    <img src="/assets/archlinux.png" width="200" height="200"/>
 </div>
 
 <div align="center">
