@@ -26,6 +26,7 @@ alias hyprlist="~/src/Scripts/hyprlist.sh"
 alias h2status="hyprarch2 status"
 alias h2push="hyprarch2 push"
 alias h2pull="hyprarch2 pull"
+alias wgstatus='sudo ~/src/Scripts/wgstatus.sh'
 if [ -f "$HOME/b4shL4nd/ghostware.sh" ]; then
 	alias ghostware="bash -c ~/b4shL4nd/ghostware.sh"
 fi
@@ -35,7 +36,6 @@ fi
 alias ls="eza --icons=always --color=always"
 alias ll="ls -al"
 alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
-alias wgstatus="sudo ~/src/Scripts/wgstatus.sh"
 alias libvirtStop="~/src/Scripts/libvirtStop.sh"
 alias fire="sudo firecfg"
 alias unfire="sudo firecfg --clean"
