@@ -1,20 +1,22 @@
 if status is-interactive
 
-# ----------------------------------------------------
+# ------------------------------------------------------------------------------------------
 # ALIASES
-# ----------------------------------------------------
+# ------------------------------------------------------------------------------------------
 # hyprpush is meant to re-initialize the repo or rebase it locally. 
 # To push normally, use h2push.
 
-# hyprarch2
+# hyprarch2 repository owner specific ------------------------------------------------------
 alias hyprarch2='/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME'
 alias hyprpush='hyprarch2 push --set-upstream git@github.com:g5ostXa/hyprarch2.git master'
 alias hyprlist='~/src/Scripts/hyprlist.sh'
 alias h2status='hyprarch2 status'
 alias h2push='hyprarch2 push'
 alias h2pull='hyprarch2 pull'
+alias ghostware='~/b4shL4nd/ghostware.sh'
+# ------------------------------------------------------------------------------------------
 
-# General
+# General ----------------------------------------------------------------------------------
 alias ls='eza --icons=always --color=always'
 alias ll='ls -al'
 alias wgstatus='sudo ~/src/Scripts/wgstatus.sh'
@@ -31,13 +33,11 @@ alias bwrap-btop='~/src/Scripts/sandboxes/bwrap-btop.sh'
 alias st4rtX='~/src/Scripts/hypr/st4rtX.sh'
 alias killhypr='~/src/Scripts/hypr/killhypr.sh'
 alias lumine='~/src/Scripts/lumine.sh'
-
-# Misc
 alias r4in='unimatrix -n -s 96 -l o'
-alias ghostware='~/src/Scripts/github/ghostware.sh'
 end
+# ------------------------------------------------------------------------------------------
 
-# ----------------------------------------------------
+# ------------------------------------------------------------------------------------------
 # STARSHIP INIT
-# ----------------------------------------------------
+# ------------------------------------------------------------------------------------------
 starship init fish | source
