@@ -12,3 +12,4 @@
 
   **Version 1.3**
   - https://github.com/g5ostXa/hyprarch2/releases/tag/v1.3
+  - https://github.com/g5ostXa/hyprarch2/releases/tag/v1.3.1
