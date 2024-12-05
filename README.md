@@ -133,3 +133,4 @@ If you like my project and want to contribute, feel free to submit a PR and give
 <img src="/docs/screenshots/screenshot-20241201-165449.png"/>
 <img src="/docs/screenshots/screenshot-20241201-214501.png"/>
 <img src="/docs/screenshots/screenshot-20241204-051902.png"/>
+<img src="/docs/screenshots/screenshot-20241204-193025.png"/>
