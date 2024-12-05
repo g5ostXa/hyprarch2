@@ -23,7 +23,7 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**
+**General software info**
  - OS: In this case,` [Arch]`
  - Browser [e.g. Firefox, librewolf]
  - Version [e.g. 22]
