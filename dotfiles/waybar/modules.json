@@ -92,7 +92,7 @@
     },
     "used disk": {
         "interval": 30,
-        "format": "   {percentage_used}% ",
+        "format": "   {percentage_used}%",
         "path": "/",
         "on-click": "alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
     },
