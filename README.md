@@ -24,8 +24,9 @@
 ## ⚙️ `Setup and installation`
 > [!IMPORTANT]
 > - Before you start, take a look: [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
-> - If you have not yet installed archlinux (base), do it now.
-> - If installing [`arch`](https://archlinux.org/) in virt-manager, please verify that **_3D acceleration_** is enabled in **_Video Virtio_** and the **_Listen type_** is set to **_None_** in **_Display Spice_**.
+> - If installing [`arch`](https://archlinux.org/) (base) on bare metal, make sure you backup your current install before proceeding.
+> - If installing [`arch`](https://archlinux.org/) (base) in virt-manager, please enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]`.
+> - Also if using in a VM, `SSH` is a great way to install arch from the comfort of your terminal.
 > - To install arch manually, please refer to the [`archlinux install guide`](https://wiki.archlinux.org/title/Installation_guide) or, simply run [`archinstall`](https://github.com/archlinux/archinstall) from the archiso to install arch the easy way.
 
 Within your new [`arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
@@ -33,7 +34,7 @@ Within your new [`arch`](https://archlinux.org/) install, make sure all needed d
 $ sudo pacman -S --needed --noconfirm wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum figlet dnsmasq vim openssh
 ```
 
- With all dependencies installed, clone the [`hyprarch2`](/) repository in the `~/Downloads/` directory and run [`install.sh`](/install.sh) from `~/Downloads/hyprarch2/`:
+ Then, clone [`hyprarch2`](/) in `~/Downloads/` and run [`install.sh`](/install.sh) from `~/Downloads/hyprarch2/`:
 ```bash
 $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 $ cd hyprarch2 && ./install.sh
