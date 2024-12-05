@@ -5,7 +5,6 @@
 <div align="center">
 
 ![Release](https://img.shields.io/badge/hyprarch2-v1.3.2-cyan.svg)
-
 ![Hyprland](https://img.shields.io/badge/Hyprland-%236A0DAD?&logo=hyprland&logoColor=white)
 ![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=6A0DAD)
 </div>
