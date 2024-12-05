@@ -4,7 +4,7 @@
 
 <div align="center">
 
-![Release](https://img.shields.io/badge/Latest_Release-v1.3.2-blue.svg)
+![Release](https://img.shields.io/badge/Latest_Release-v1.3.2-cyan.svg)
 </div>
 
 ## ⚠️ `Disclaimer`
