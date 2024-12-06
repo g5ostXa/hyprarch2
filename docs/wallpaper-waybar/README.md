@@ -14,7 +14,7 @@ The backend for the wallpaper engine is `swww` and is the first daemon to be sta
 When `autostart.conf` runs `waypaper --restore`, it triggers a file called `dotfiles/waypaper/config.ini`, which is set to run the wallpaper script (`wallpaper.sh`).
 
 - `config.ini`
-```
+```ini
 [Settings]
 language = en
 folder = ~/wallpaper
