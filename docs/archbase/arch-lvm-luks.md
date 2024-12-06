@@ -228,17 +228,17 @@ useradd USERNAME -m -G wheel
 passwd USERNAME
 ```
 - Create main user with systemd-homed `UID=60186` (this step needs to be done after reboot):
-```elixir
+```bash
 homectl create USERNAME --disk-size=BYTES --storage=luks --umask=0077 --member-of=audio,avahi,dbus,git,groups,input,libvirt,lp,optical,power,users,uucp,uuidd,video,wheel
 ```
 
 ## Wheel and sudo
 - Access the sudoers file using vim:
-```elixir
+```bash
 EDITOR=vim visudo
 ```
 _**Note**_: To let anyone in the wheel group use sudo, uncomment this line:
-```elixir
+```vim
 %wheel ALL=(ALL:ALL) ALL
 ```
  
