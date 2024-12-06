@@ -9,14 +9,14 @@
 ![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=6A0DAD)
 </div>
 
-## ⚠️ `Disclaimer`
+## ⚠ `Disclaimer`
 > [!WARNING]
 > - This repository is basically just a **heavily** modified clone of [`ml4w-dotfiles (v2.5)`](https://github.com/mylinuxforwork/dotfiles).
 > - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`💧hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
 > - This project was recently made public and there is still alot of things to do to make it more user-friendly.
 
 **What's to expect**:
-- The install might fail on some systems.
+- The install might fail on _some systems_.
 - Some files and directories might get deleted upon installing (That's why a fresh minimal arch base install is recommended).
 - By default, for the time being,  the installer will install all packages in `/src/packages/`.
 - You can expect some significant improvements in the near future for this project. 
@@ -24,7 +24,7 @@
 ## ⚙️ `Setup and installation`
 > [!IMPORTANT]
 > - Before you start, take a look: [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
-> - If installing [`arch`](https://archlinux.org/) (base) on bare metal, make sure you backup your current install before proceeding.
+> - If installing [`arch`](https://archlinux.org/) (base) on bare metal, make sure you _backup your current installation_ before proceeding.
 > - If installing [`arch`](https://archlinux.org/) (base) in virt-manager, please enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]`.
 > - Also if using in a VM, `SSH` is a great way to install arch from the comfort of your terminal.
 > - To install arch manually, please refer to the [`archlinux install guide`](https://wiki.archlinux.org/title/Installation_guide) or, simply run [`archinstall`](https://github.com/archlinux/archinstall) from the archiso to install arch the easy way.
