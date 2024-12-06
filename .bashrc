@@ -11,7 +11,7 @@
 # Defaults
 # -----------------------------------------------------------------------------------------
 PS1='[\u@\h \W]\$ '
-YELLOW='\033[0;33m'
+MAGENTA='\033[1;35m'
 RC='\033[0m'
 HYPRARCH2_VERSION="$HOME/.version/latest"
 
@@ -62,7 +62,7 @@ cat ~/.cache/wal/sequences
 # Shell init
 # ----------------------------------------------------------------------------------------
 if [[ $(tty) == *"pts"* ]]; then
-	echo -e "${YELLOW}"
+	echo -e "${MAGENTA}"
 	figlet -f smslant "hyprarch2"
 	echo ""
 	cat "$HYPRARCH2_VERSION"
