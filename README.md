@@ -18,7 +18,7 @@
 **What you need to consider:**
 
 For me, the installer works just fine both on my two laptops and inside a VM.\
-But because there's still so much to fix,
+But because there's still so much to fix;
 - The installation might fail on _some systems_.
 - For the time being, the installer will install all packages in [`src/packages/`](/src/packages/) by default.
 - Some files and directories might get deleted upon installing.
