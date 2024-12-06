@@ -18,7 +18,7 @@
 **What's to expect**:
 - The install might fail on _some systems_.
 - Some files and directories might get deleted upon installing (That's why a fresh minimal arch base install is recommended).
-- By default, for the time being,  the installer will install all packages in `/src/packages/`.
+- By default, for the time being,  the installer will install all packages in [`src/packages/`](/src/packages/).
 - You can expect some significant improvements in the near future for this project. 
 
 ## ⚙️ `Setup and installation`
