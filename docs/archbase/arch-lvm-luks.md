@@ -78,7 +78,7 @@ Expected layout:
 | /mnt            | /dev/nvme0n1p2| Linux LVM (8e00)| Remainder of the device |
     
 ## Formatting
-```cpp
+```bash
 cryptsetup luksFormat /dev/nvme0n1p2
 
 cryptsetup open /dev/nvme0n1p2 "name of encrypted disk"
