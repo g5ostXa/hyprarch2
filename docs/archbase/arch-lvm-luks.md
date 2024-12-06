@@ -188,11 +188,11 @@ mkinitcpio -p linux
 ```bash
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 ```
-- Next, we need to edit `/etc/default/grub` to add the following line to GRUB_CMDLINE_LINUX:
-```ruby
-GRUB_CMDLINE_LINUX="cryptdevice=UUID=PASTE-UUID-HERE:NAME-OF-ENCRYPTED-DISK root=/dev/NAME-OF-VOLUME-GROUP/root"
+- Next, we need to edit `/etc/default/grub` to configure `GRUB_CMDLINE_LINUX`:\
+_**NOTE:**_ Replace `PASTE-UUID-HERE`, `NAME-OF-ENCRYPTED-DISK` and `NAME-OF-VOLUME-GROUP` with the correct values.  
 
-Note: Replace "PASTE-UUID-HERE", "NAME-OF-ENCRYPTED-DISK" and "NAME-OF-VOLUME-GROUP" with the correct values.  
+```vim
+GRUB_CMDLINE_LINUX="cryptdevice=UUID=[PASTE-UUID-HERE]:[NAME-OF-ENCRYPTED-DISK] root=/dev/[NAME-OF-VOLUME-GROUP]/root"
 ```
 - Finally, generate the new grub configuration:
 ```bash
