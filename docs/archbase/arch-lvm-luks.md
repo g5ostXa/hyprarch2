@@ -13,19 +13,19 @@ By g5ostXa :ghost:
 <div align="left">
 
 ## Table of contents
-- [Preparation](#preparation)
-- [Partitions](#partitions)
-- [Formatting](#formatting)
-- [Base Installation](#base-installation)
-- [Fstab and Enter installation](#fstab-and-enter-installation)
-- [Locales](#locales)
-- [Hosts and hostname](#hosts-and-hostname)
-- [Root password and system install](#root-password-and-system-install)
-- [Kernel hooks and grub configuration](#kernel-hooks-and-grub-configuration)
-- [Systemd services](#systemd-services)
-- [Users](#users)
-- [Wheel and sudo](#wheel-and-sudo)
-- [Exit installation and reboot](#exit-installation-and-reboot)
+- [`Preparation`](#preparation)
+- [`Partitions`](#partitions)
+- [`Formatting`](#formatting)
+- [`Base Installation`](#base-installation)
+- [`Fstab and Enter installation`](#fstab-and-enter-installation)
+- [`Locales`](#locales)
+- [`Hosts and hostname`](#hosts-and-hostname)
+- [`Root password and system install`](#root-password-and-system-install)
+- [`Kernel hooks and grub configuration`](#kernel-hooks-and-grub-configuration)
+- [`Systemd services`](#systemd-services)
+- [`Users`](#users)
+- [`Wheel and sudo`](#wheel-and-sudo)
+- [`Exit installation and reboot`](#exit-installation-and-reboot)
 
 ## Preparation
 - Set temporary root password:
@@ -78,7 +78,7 @@ Expected layout:
 | /mnt            | /dev/nvme0n1p2| Linux LVM (8e00)| Remainder of the device |
     
 ## Formatting
-```bash
+```fish
 cryptsetup luksFormat /dev/nvme0n1p2
 
 cryptsetup open /dev/nvme0n1p2 "name of encrypted disk"
