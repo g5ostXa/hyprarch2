@@ -108,6 +108,10 @@ install_wallpaper() {
 
 copy_files() {
 	if [ -f "$HOME/.bashrc" ]; then
+		echo -e "${YELLOW};; Creating a backup of ~/.bashrc...${RC}"
+		cp -r "$HOME"/.bashrc "$HOME"/.bashrc.bak
+		echo -e "${YELLOW};; Created ~/.bashrc.bak!${RC}"
+		sleep 2
 		rm -rf "$HOME/.bashrc"
 	fi
 	if [ ! -d "$HYPRARCH2_DIR" ]; then
