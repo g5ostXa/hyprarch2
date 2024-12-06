@@ -2,18 +2,17 @@
  * General 
  * ----------------------------------------------------- */
 
- * {
+* {
     font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     border: none;
     border-radius: 0px;
 }
 
 window#waybar {
-    background-color: rgba(0,0,0,0.5);
-    border-bottom: 0px solid #ffffff;
-    /* color: #FFFFFF; */
     background: transparent;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 0px solid #ffffff;
+    /*color: #18ffff;*/
+    background: transparent;
     transition-property: background-color, box-shadow;
     transition-duration: .5s;
 }
@@ -23,7 +22,7 @@ window#waybar {
  * ----------------------------------------------------- */
 
 #workspaces {
-    background: rgba(0, 0, 0, 0.3);
+    background: transparent;
     margin: 2px 1px 3px 1px;
     padding: 0px 1px;
     border-radius: 15px;
@@ -41,25 +40,26 @@ window#waybar {
     border-radius: 15px;
     border: 0px;
     color: @textcolor1;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
     transition: all 0.3s ease-in-out;
-    opacity: 0.4;
+    opacity: 0.8;
 }
 
 #workspaces button.active {
-    color: @textcolor1;
-    background: rgba(0, 0, 0, 0.6);
+    color: @textcolor2;
+    background: transparent;
     border-radius: 15px;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
-    opacity: 1.0;
+    border:1.3px solid @textcolor2;
+    opacity:1.5;
 }
 
 #workspaces button:hover {
     color: @textcolor1;
-    background: rgba(0, 0, 0, 0.5);
+    background: transparent;
     border-radius: 15px;
-    opacity: 0.7;
+    opacity:0.7;
 }
 
 /* -----------------------------------------------------
@@ -68,14 +68,13 @@ window#waybar {
 
 tooltip {
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0.8;
-    padding: 20px;
-    margin: 0px;
+    opacity:1.0;
+    padding:20px;
+    margin:0px;
 }
 
 tooltip label {
-    color: @textcolor2;
+    color: @textcolor1;
 }
 
 /* -----------------------------------------------------
@@ -83,18 +82,19 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #window {
-    background: rgba(0, 0, 0, 0.3);
+    background: transparent;
     margin: 5px 15px 5px 0px;
     padding: 2px 10px 0px 10px;
     border-radius: 12px;
-    color: @textcolor2;
-    font-size: 16px;
-    font-weight: normal;
-    opacity: 0.8;
+    color:@textcolor1;
+    font-size:16px;
+    font-weight:normal;
+    border:1.3px solid @bordercolor;
+    opacity:1.2;
 }
 
 window#waybar.empty #window {
-    background-color: transparent;
+    background-color:transparent;
 }
 
 /* -----------------------------------------------------
@@ -102,18 +102,19 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #taskbar {
-    background: rgba(0, 0, 0, 0.3);
+    background: transparent;
     margin: 3px 15px 3px 0px;
     padding: 0px;
     border-radius: 15px;
     font-weight: normal;
     font-style: normal;
-    opacity: 0.8;
-    border: 3px solid rgba(0, 0, 0, 0.4);
+    border:1.3px solid @bordercolor;
+    opacity:1.2;
 }
 
 #taskbar button {
-    margin: 0;
+    color: transparent;
+    margin:0;
     border-radius: 15px;
     padding: 0px 5px 0px 5px;
 }
@@ -144,11 +145,11 @@ window#waybar.empty #window {
     font-size: 20px;
     font-weight: bold;
     opacity: 0.8;
-    color: @iconcolor;
+    color: #ffffff;
 }
 
 #custom-wallpaper, #custom-keybindings {
-    margin-right: 23px;
+    margin-right:23px;
 }
 
 /* -----------------------------------------------------
@@ -156,14 +157,14 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-appmenu, #custom-appmenuwlr {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: @backgrounddark;
     font-size: 16px;
     color: @textcolor1;
     border-radius: 15px;
     padding: 0px 10px 0px 10px;
     margin: 3px 15px 3px 14px;
-    opacity: 0.8;
-    border: 3px solid rgba(0, 0, 0, 0.4);
+    opacity:0.8;
+    border:1.3px solid @bordercolor;
 }
 
 /* -----------------------------------------------------
@@ -172,9 +173,9 @@ window#waybar.empty #window {
 
 #custom-exit, #custom-exitwlr {
     margin: 0px 20px 0px 0px;
-    padding: 0px;
-    font-size: 20px;
-    color: @iconcolor;
+    padding:0px;
+    font-size:20px;
+    color: #05fae6;
 }
 
 /* -----------------------------------------------------
@@ -182,26 +183,27 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-updates {
-    background-color: rgba(42, 47, 59, 0.5);
+    background-color: transparent;
     font-size: 16px;
     color: @textcolor2;
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 5px 15px 5px 0px;
-    opacity: 0.8;
+    border:1.3px solid @bordercolor;
+    opacity:1.2;
 }
 
 #custom-updates.green {
-    background-color: rgba(0, 128, 0, 0.5);
+    border:1.5px solid @bordercolor;
 }
 
 #custom-updates.yellow {
-    background-color: rgba(255, 154, 60, 0.8);
+    background-color: #ff9a3c;
     color: #FFFFFF;
 }
 
 #custom-updates.red {
-    background-color: rgba(220, 47, 47, 0.8);
+    background-color: #dc2f2f;
     color: #FFFFFF;
 }
 
@@ -210,14 +212,14 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #disk,#memory,#cpu {
-    margin: 0px;
-    padding: 0px;
-    font-size: 16px;
-    color: @iconcolor;
+    margin:0px;
+    padding:0px;
+    font-size:16px;
+    color:@iconcolor;
 }
 
 #memory {
-    margin-right: 10px;
+    margin-right:10px;
 }
 
 /* -----------------------------------------------------
@@ -225,28 +227,29 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #clock {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: @backgrounddark;
     font-size: 16px;
     color: @textcolor1;
     border-radius: 15px;
     padding: 1px 10px 0px 10px;
     margin: 3px 15px 3px 0px;
-    opacity: 0.8;
-    border: 3px solid rgba(0, 0, 0, 0.4);
+    opacity:1.2;
+    border:1.3px solid @bordercolor;   
 }
 
 /* -----------------------------------------------------
  * Backlight
  * ----------------------------------------------------- */
 
-#backlight {
-    background-color: rgba(0, 0, 0, 0.3);
+ #backlight {
+    background-color: transparent;
     font-size: 16px;
     color: @textcolor2;
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 5px 15px 5px 0px;
-    opacity: 0.8;
+    border:1.3px solid @bordercolor;
+    opacity:1.2;
 }
 
 /* -----------------------------------------------------
@@ -254,17 +257,18 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #pulseaudio {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
     font-size: 16px;
     color: @textcolor2;
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 5px 15px 5px 0px;
-    opacity: 0.8;
+    border:1.3px solid @bordercolor;
+    opacity:1.2;
 }
 
 #pulseaudio.muted {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: @backgrounddark;
     color: @textcolor1;
 }
 
@@ -273,22 +277,23 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #network {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
     font-size: 16px;
     color: @textcolor2;
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 5px 15px 5px 0px;
-    opacity: 0.8;
+    border:1.3px solid @bordercolor;
+    opacity:1.2;
 }
 
 #network.ethernet {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
     color: @textcolor2;
 }
 
 #network.wifi {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
     color: @textcolor2;
 }
 
@@ -297,29 +302,31 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #battery {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
     font-size: 16px;
     color: @textcolor2;
     border-radius: 15px;
     padding: 2px 15px 0px 10px;
     margin: 5px 15px 5px 0px;
-    opacity: 0.8;
+    border:1.3px solid @bordercolor;
+    opacity:1.2;
 }
 
 #battery.charging, #battery.plugged {
     color: @textcolor2;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+    border:1.3px solid @bordercolor;
 }
 
 @keyframes blink {
     to {
-        background-color: rgba(255, 0, 0, 0.5);
+        background-color: transparent;
         color: @textcolor2;
     }
 }
 
 #battery.critical:not(.charging) {
-    background-color: rgba(245, 60, 60, 0.8);
+    background-color: #f53c3c;
     color: @textcolor3;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -333,7 +340,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-    background-color: rgba(41, 128, 185, 0.8);
+    background-color: #2980b9;
 }
 
 #tray > .passive {
@@ -342,7 +349,7 @@ window#waybar.empty #window {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: rgba(235, 77, 75, 0.8);
+    background-color: #eb4d4b;
 }
 
 /* -----------------------------------------------------
@@ -350,17 +357,11 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 label:focus {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-backlight {
-    background-color: rgba(144, 177, 177, 0.8);
-}
-
-#network {
-    background-color: rgba(41, 128, 185, 0.8);
+    background-color: #000000;
 }
 
 #network.disconnected {
-    background-color: rgba(245, 60, 60, 0.8);
+    background-color: #f53c3c;
+    color: #ffffff;
 }
+

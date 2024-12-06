@@ -32,8 +32,6 @@
         "custom/appmenu",
         "custom/wallpaper",
         "custom/waybarthemes",
-        "backlight",
-        "pulseaudio",
         "wlr/taskbar",
         "hyprland/window"
     ],
@@ -50,6 +48,8 @@
         "group/hardware",
         "custom/cliphist",
         "group/quicklinks",
+        "backlight",
+        "pulseaudio",
         "network",
         "clock",
         "custom/exit"
