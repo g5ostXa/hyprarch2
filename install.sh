@@ -67,9 +67,9 @@ else
 fi
 
 # Installation
-~/Downloads/hyprarch2/src/Scripts/pacman.sh
-~/Downloads/hyprarch2/src/.install/setup.sh
-~/src/.install/hyprclean.sh
+source ~/Downloads/hyprarch2/src/Scripts/pacman.sh
+source ~/Downloads/hyprarch2/src/.install/setup.sh
+source ~/src/.install/hyprclean.sh
 source ~/.bashrc
 
 # End of installation message
