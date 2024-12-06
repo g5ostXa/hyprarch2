@@ -17,7 +17,7 @@
 
 **What you need to consider:**
 
-For me, the installer works just fine both on my two laptops and inside a VM.\
+For me, the installer works just fine both on my two intel laptops and inside a VM.\
 But because there's still so much to fix;
 - The installation might fail on _some systems_.
 - For the time being, the installer will install all packages in [`src/packages/`](/src/packages/) by default.
@@ -28,7 +28,7 @@ But because there's still so much to fix;
 
 You can expect some significant improvements for this project.\
 Here's a quick summary:
-- The integration of a customizable arch install script.
+- The integration of a customizable [`archlinux`](https://archlinux.org) install script.
 - A lot of packages will be stripped out so you don't get a bloated install.
 - The user will be able to choose exactly what to install.
 - A much more enjoyable and reliable installation process.
