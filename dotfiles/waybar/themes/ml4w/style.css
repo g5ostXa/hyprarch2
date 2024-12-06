@@ -57,7 +57,7 @@ window#waybar {
 
 #workspaces button:hover {
     color: @textcolor1;
-    background: transparent;
+    background: @textcolor2;
     border-radius: 15px;
     opacity:0.7;
 }
