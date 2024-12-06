@@ -12,14 +12,28 @@
 ## ⚠ `Disclaimer`
 > [!WARNING]
 > - This repository is basically just a **heavily** modified clone of [`ml4w-dotfiles (v2.5)`](https://github.com/mylinuxforwork/dotfiles).
-> - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`💧hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
+> - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
 > - This project was recently made public and there is still alot of things to do to make it more user-friendly.
 
-**What's to expect**:
-- The install might fail on _some systems_.
-- Some files and directories might get deleted upon installing (That's why a fresh minimal arch base install is recommended).
-- By default, for the time being,  the installer will install all packages in [`src/packages/`](/src/packages/).
-- You can expect some significant improvements in the near future for this project. 
+**What you need to consider:**
+
+For me, the installer works just fine both on my two intel laptops and inside a VM.\
+But because there's still so much to fix;
+- The installation might fail on _some systems_.
+- For the time being, the installer will install all packages in [`src/packages/`](/src/packages/) by default.
+- Some files and directories might get deleted upon installing.
+- A fresh minimal arch base install is recommended for this project.
+
+**What you can expect for the future:**
+
+You can expect some significant improvements for this project.\
+Here's a quick summary:
+- The integration of a customizable [`archlinux`](https://archlinux.org) install script.
+- A lot of packages will be stripped out so you don't get a bloated install.
+- The user will be able to choose exactly what to install.
+- A much more enjoyable and reliable installation process.
+- Availability to a wider range of users.
+- And so much more!
 
 ## ⚙️ `Setup and installation`
 > [!IMPORTANT]
@@ -40,7 +54,7 @@ $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 $ cd hyprarch2 && ./install.sh
 ```
 
-After the installation is completed, use the following to start [`💧hyprland`](https://hyprland.org) from tty:
+After the installation is completed, use the following to start [`hyprland`](https://hyprland.org) from tty:
 ```ruby
 $ uwsm start hyprland
 ```
@@ -101,7 +115,7 @@ monitor=eDP-1,1920x1080@120.035,0x0,1
 monitor=HDMI-A-1,2048x1080@60.00,auto,1
 # monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
-For more detailed instructions about how to configure your monitor on hyprland: [` ➜ 🖥️ Hyprland / Monitors`](https://wiki.hyprland.org/Configuring/Monitors)
+For more detailed instructions about how to configure your monitor on hyprland: [` ➜ 🖥️ Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
 
 ## 🌐 `Quick links`
 **Wallpaper engine documentation:**\
