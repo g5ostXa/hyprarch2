@@ -15,11 +15,11 @@
 > - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`💧hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
 > - This project was recently made public and there is still alot of things to do to make it more user-friendly.
 
-- **What's to expect**:
-  - The install might fail on some systems.
-  - Some files and directories might get deleted upon installing (That's why a fresh minimal arch base install is recommended)
-  - By default, for the time being,  the installer will install all packages in `/src/packages/`.
-  - You can expect some significant improvements in the near future for this project. 
+**What's to expect**:
+- The install might fail on some systems.
+- Some files and directories might get deleted upon installing (That's why a fresh minimal arch base install is recommended).
+- By default, for the time being,  the installer will install all packages in `/src/packages/`.
+- You can expect some significant improvements in the near future for this project. 
 
 ## ⚙️ `Setup and installation`
 > [!IMPORTANT]
