@@ -12,7 +12,7 @@
 ## ⚠ `Disclaimer`
 > [!WARNING]
 > - This repository is basically just a **heavily** modified clone of [`ml4w-dotfiles (v2.5)`](https://github.com/mylinuxforwork/dotfiles).
-> - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`💧hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
+> - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
 > - This project was recently made public and there is still alot of things to do to make it more user-friendly.
 
 **What you need to consider:**
@@ -54,7 +54,7 @@ $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 $ cd hyprarch2 && ./install.sh
 ```
 
-After the installation is completed, use the following to start [`💧hyprland`](https://hyprland.org) from tty:
+After the installation is completed, use the following to start [`hyprland`](https://hyprland.org) from tty:
 ```ruby
 $ uwsm start hyprland
 ```
@@ -115,7 +115,7 @@ monitor=eDP-1,1920x1080@120.035,0x0,1
 monitor=HDMI-A-1,2048x1080@60.00,auto,1
 # monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
-For more detailed instructions about how to configure your monitor on hyprland: [` ➜ 🖥️ Hyprland / Monitors`](https://wiki.hyprland.org/Configuring/Monitors)
+For more detailed instructions about how to configure your monitor on hyprland: [` ➜ 🖥️ Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
 
 ## 🌐 `Quick links`
 **Wallpaper engine documentation:**\
