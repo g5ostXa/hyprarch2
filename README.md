@@ -18,8 +18,6 @@
 - **What's to expect**:
   - The install might fail on some systems.
   - Some files and directories might get deleted upon installing (That's why a fresh minimal arch base install is recommended)
-  - A basic pre-configured security config: Firewall (`ufw`), some kernel params (`sysctl`) and (`dnsmasq`)
-  - The basic security config may interfere with some use cases because of `ufw` and `sysctl`.
   - By default, for the time being,  the installer will install all packages in `/src/packages/`.
   - You can expect some significant improvements in the near future for this project. 
 
@@ -110,9 +108,6 @@ For more detailed instructions about how to configure your monitor on hyprland: 
 
 **Wallpaper source:**\
 [` ➜ g5ostXa/wallpaper`](https://github.com/g5ostXa/wallpaper)
-
-**Sysctl config source:**\
-[` ➜ g5ostXa/sysctl`](https://github.com/g5ostXa/sysctl)
 
 **Packages lists:**\
 [` ➜ Pacman`](/src/packages/pacman_packages.txt)

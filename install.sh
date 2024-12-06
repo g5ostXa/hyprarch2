@@ -69,7 +69,6 @@ fi
 # Installation
 ~/Downloads/hyprarch2/src/Scripts/pacman.sh
 ~/Downloads/hyprarch2/src/.install/setup.sh
-~/src/.install/secure.sh
 ~/src/.install/hyprclean.sh
 source ~/.bashrc
 
