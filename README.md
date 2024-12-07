@@ -45,10 +45,9 @@ If you want to use a different distro, which is totally fine, go ahead and insta
 To install [`Arch`](https://archlinux.org) manually, refer to the [`Arch install guide`](https://wiki.archlinux.org/title/Installation_guide) or, run [`archinstall`](https://github.com/archlinux/archinstall) from the `archiso` to install [`Arch`](https://archlinux.org) the easy way.
 > [!IMPORTANT]
 > - If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
-
-Using `virt-manager`:
-- Enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]`. (Required)
-- Also, set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf) for a smoother experience. (Optional)
+> - Installing in `virt-manager` requires you to:
+>   - Enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]`.
+>   - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
 
 **Usage:**\
 Within your new [`Arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
