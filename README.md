@@ -33,7 +33,9 @@ Here's a quick summary:
 - The user will be able to choose exactly what to install.
 - A much more enjoyable and reliable installation process.
 - Availability to a wider range of users.
-- Before you begin, preview [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
+
+So, with that out of the way, happy install!\
+Before you begin, you may preview [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
 
 ## ⚙️ `Setup and installation`
 **Prerequisites:**\
