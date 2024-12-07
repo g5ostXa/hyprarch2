@@ -61,7 +61,7 @@ $ uwsm start hyprland
 
 ## 📦 `Main apps`
 - Terminal: `alacritty`
-- Shell: `Fish` + `starship`
+- Shell: `fish` + `starship`
 - Browser: `firefox`
 - App Launcher: `rofi-wayland`
 - Wallpaper front end: `waypaper`
@@ -72,9 +72,9 @@ $ uwsm start hyprland
 - Theming: `GTK` / `python-pywal`
 - GUI Theme App: `lxappearance`
 - Current GTK Theme: `tokyonight-gtk-theme-git`
-- Current Cursor Theme: `bibata- cursor-theme`
+- Current Cursor Theme: `bibata-cursor-theme`
 - Editors: `neovim` / `vscodium` / `obsidian`
-- AUR helper: User chooses between `Paru-bin` and `Yay-bin` during install.
+- AUR helper: User chooses between `paru-bin` and `yay-bin` during install.
 
 ## ⌨️ `Keybinds`
 **All available keybinds here:**\
