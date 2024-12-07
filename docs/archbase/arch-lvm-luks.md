@@ -200,7 +200,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## Systemd services
-
 - To create user with systemd-homed:
 ```bash
 systemctl enable systemd-homed.service
@@ -219,7 +218,7 @@ systemctl enable reflector.timer
 ```
 
 ## Users
-- Creating a regular user with `UID=1000` right now is recommended 
+- Creating a regular user with `UID=1000` right now is recommended:
 ```bash
 useradd USERNAME -m -G wheel
 ```
