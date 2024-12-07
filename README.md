@@ -12,7 +12,7 @@
 ## ⚠ `Disclaimer`
 > [!WARNING]
 > - This repository is basically just a **heavily** modified clone of [`ml4w-dotfiles (v2.5)`](https://github.com/mylinuxforwork/dotfiles).
-> - Requires a strong knowledge base of [`archlinux`](https://archlinux.org), [`hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
+> - Requires a strong knowledge base of [`Archlinux`](https://archlinux.org), [`hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
 > - This project was recently made public and there is still alot of things to do to make it more user-friendly.
 
 **What you need to consider:**
@@ -28,21 +28,27 @@ But because there's still so much to fix;
 
 You can expect some significant improvements for this project.\
 Here's a quick summary:
-- The integration of a customizable [`archlinux`](https://archlinux.org) install script.
+- The integration of a customizable [`Archlinux`](https://archlinux.org) install script.
 - A lot of packages will be stripped out so you don't get a bloated install.
 - The user will be able to choose exactly what to install.
 - A much more enjoyable and reliable installation process.
 - Availability to a wider range of users.
-- And so much more!
+- Before you begin, preview [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
 
 ## ⚙️ `Setup and installation`
-> [!IMPORTANT]
-> - Before you start, take a look: [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
-> - If installing [`arch`](https://archlinux.org/) (base) on bare metal, make sure you _backup your current installation_ before proceeding.
-> - If installing [`arch`](https://archlinux.org/) (base) in virt-manager, you need to enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]` or [`hyprland`](https://hyprland.org) won't start.
-> - Also if using in a VM, `SSH` is a great way to install arch from the comfort of your terminal.
-> - To install arch manually, please refer to the [`archlinux install guide`](https://wiki.archlinux.org/title/Installation_guide) or, simply run [`archinstall`](https://github.com/archlinux/archinstall) from the archiso to install arch the easy way.
+**Prerequisites:**\
+If you have not done so already, you need a fresh minimal archlinux installation to start with.\
+If you want to use a different distro, which is totally fine, go ahead and install [`Archlinux`](https://archlinux.org) anyway.
 
+To install [`Arch`](https://archlinux.org) manually, refer to the [`Arch install guide`](https://wiki.archlinux.org/title/Installation_guide) or, run [`archinstall`](https://github.com/archlinux/archinstall) from the `archiso` to install [`Arch`](https://archlinux.org) the easy way.
+> [!IMPORTANT]
+> - If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
+
+Using `virt-manager`:
+- Make sure to enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]`.
+- Also, set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf) for a smoother experience. (Optional)
+
+**Usage:**\
 Within your new [`arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
 ```ruby
 $ sudo pacman -S --needed --noconfirm wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum figlet vim openssh
