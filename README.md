@@ -38,7 +38,7 @@ Here's a quick summary:
 ## ⚙️ `Setup and installation`
 **Prerequisites:**\
 First, preview: [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)\
-If you have not done so already, you need a fresh minimal archlinux installation.\
+If you have not done so already, you need a fresh minimal [`Archlinux`](https://archlinux.org) installation.\
 If you want to use a different distro, which is totally fine, go ahead and install [`Archlinux`](https://archlinux.org) anyway.
 
 To install [`Arch`](https://archlinux.org) manually, refer to the [`Arch install guide`](https://wiki.archlinux.org/title/Installation_guide) or, run [`archinstall`](https://github.com/archlinux/archinstall) from the `archiso` to install [`Arch`](https://archlinux.org) the easy way.
