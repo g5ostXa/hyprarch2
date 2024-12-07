@@ -431,7 +431,6 @@ libnotify
 libnsl
 libnvme
 libogg
-libomxil-bellagio
 libopenmpt
 libosinfo
 libp11-kit
