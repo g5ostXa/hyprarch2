@@ -39,7 +39,6 @@ Before you begin, you may preview [` ➜ screenshots`](https://github.com/g5ostX
 
 ## ⚙️ `Setup and installation`
 **Prerequisites:**\
-First, preview: [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)\
 If you have not done so already, you need a fresh minimal [`Archlinux`](https://archlinux.org) installation.\
 If you want to use a different distro, which is totally fine, go ahead and install [`Archlinux`](https://archlinux.org) anyway.
 
@@ -48,7 +47,7 @@ To install [`Arch`](https://archlinux.org) manually, refer to the [`Arch install
 > - If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
 
 Using `virt-manager`:
-- Enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]`.
+- Enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]`. (Required)
 - Also, set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf) for a smoother experience. (Optional)
 
 **Usage:**\
