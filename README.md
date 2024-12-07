@@ -39,7 +39,7 @@ Here's a quick summary:
 > [!IMPORTANT]
 > - Before you start, take a look: [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
 > - If installing [`arch`](https://archlinux.org/) (base) on bare metal, make sure you _backup your current installation_ before proceeding.
-> - If installing [`arch`](https://archlinux.org/) (base) in virt-manager, please enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]`.
+> - If installing [`arch`](https://archlinux.org/) (base) in virt-manager, you need to enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]` or [`hyprland`](https://hyprland.org) won't start.
 > - Also if using in a VM, `SSH` is a great way to install arch from the comfort of your terminal.
 > - To install arch manually, please refer to the [`archlinux install guide`](https://wiki.archlinux.org/title/Installation_guide) or, simply run [`archinstall`](https://github.com/archlinux/archinstall) from the archiso to install arch the easy way.
 
