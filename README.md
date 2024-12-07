@@ -45,11 +45,11 @@ To install [`Arch`](https://archlinux.org) manually, refer to the [`Arch install
 > - If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
 
 Using `virt-manager`:
-- Make sure to enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]`.
+- Enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]`.
 - Also, set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf) for a smoother experience. (Optional)
 
 **Usage:**\
-Within your new [`arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
+Within your new [`Arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
 ```ruby
 $ sudo pacman -S --needed --noconfirm wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum figlet vim openssh
 ```
