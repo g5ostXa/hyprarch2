@@ -336,7 +336,7 @@ else
 fi
 
 # Load ~/.bashrc
-source "$HOME"/.bashrc
+source ~/.bashrc
 
 # Installation end message -------------------------------------------------------------
 echo -e "${CYAN}"
