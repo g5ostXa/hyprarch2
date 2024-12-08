@@ -57,6 +57,9 @@ export PATH="/usr/lib/ccache/bin/:$PATH"
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
 
+# Set UWSM env variable
+export UWSM_USE_SESSION_SLICE=true
+
 # ----------------------------------------------------------------------------------------
 # Shell init
 # ----------------------------------------------------------------------------------------
