@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ------------------------------------------------
-# install.sh / Good luck !
+# install.sh
 # ------------------------------------------------
 
 # Set colors
@@ -12,6 +12,9 @@ RC='\033[0m'
 
 # Set hyprarch2 latest version name
 VERSION_NAME="$HOME/Downloads/hyprarch2/.version/latest"
+
+# Set pacman config script path
+PACMAN_CONFIG="$HOME/Downloads/hyprarch2/src/Scripts/pacman.sh"
 
 # Set packages directory
 PACMAN_PACKAGES="$HOME/Downloads/hyprarch2/src/packages/pacman_packages.txt"
@@ -163,13 +166,13 @@ install_wallpaper() {
 		sleep 1
 		rm -rf "$WALLPAPER_DIR"
 		cd && git clone "$WALLPAPER_REPO"
-		echo -e "${CYAN};; Wallpaper repository installed !${RC}"
+		echo -e "${CYAN};; Successfully installed wallpapers!${RC}"
 		sleep 2
 	else
 		echo -e "${YELLOW};; Installing wallpapers...${RC}"
 		sleep 1
 		cd && git clone "$WALLPAPER_REPO"
-		echo -e "${CYAN};; Wallpaper repository installed !${RC}"
+		echo -e "${CYAN};; Successfully installed wallpapers!${RC}"
 		sleep 2
 	fi
 
@@ -288,7 +291,7 @@ is_installed_figlet
 echo -e "${CYAN}"
 figlet -f smslant "pacman.sh"
 echo -e "${RC}" && echo ""
-source ~/Downloads/hyprarch2/src/Scripts/pacman.sh
+source "$PACMAN_CONFIG"
 
 # Install packages (pacman)
 is_installed_gum
@@ -333,7 +336,7 @@ else
 fi
 
 # Load ~/.bashrc
-source ~/.bashrc
+source "$HOME"/.bashrc
 
 # Installation end message -------------------------------------------------------------
 echo -e "${CYAN}"
