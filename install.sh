@@ -303,5 +303,3 @@ echo ""
 echo ";; Installation status: COMPLETE"
 echo ""
 echo -e "${RC}"
-source "$HOME/.bashrc"
-
