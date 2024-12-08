@@ -1,0 +1,11 @@
+[Unit]
+Description=Start UWSM with Session Slice
+After=graphical.target
+
+[Service]
+ExecStart=/usr/bin/env UWSM_USE_SESSION_SLICE=true uwsm start
+Restart=always
+Environment=UWSM_USE_SESSION_SLICE=true
+
+[Install]
+WantedBy=default.target
