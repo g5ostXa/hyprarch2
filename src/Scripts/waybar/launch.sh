@@ -27,4 +27,4 @@ if [ ! -f ~/dotfiles/waybar/themes${arrThemes[1]}/style.css ]; then
 fi
 
 # Loading the configuration
-waybar -c ~/dotfiles/waybar/themes${arrThemes[0]}/config -s ~/dotfiles/waybar/themes${arrThemes[1]}/style.css &
+uwsm app -- waybar -c ~/dotfiles/waybar/themes${arrThemes[0]}/config -s ~/dotfiles/waybar/themes${arrThemes[1]}/style.css &
