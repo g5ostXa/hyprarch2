@@ -51,7 +51,7 @@
     },
     "custom/wallpaper": {
         "format": "",
-        "on-click": "waypaper",
+        "on-click": "uwsm app -- waypaper",
         "tooltip": false
     },
     "custom/waybarthemes": {
@@ -61,12 +61,12 @@
     },
     "custom/filemanager": {
         "format": "",
-        "on-click": "~/src/Scripts/sandboxes/bwrap-nautilus.sh",
+        "on-click": "uwsm app -- ~/src/Scripts/sandboxes/bwrap-nautilus.sh",
         "tooltip": false
     },
     "custom/appmenu": {
         "format": "hyprarch2 󰣇",
-        "on-click": "rofi -show drun -replace",
+        "on-click": "uwsm app -- rofi -show drun -replace",
         "on-click-right": "~/src/Scripts/hypr/keybindings.sh",
         "tooltip": false
     },
@@ -84,17 +84,17 @@
     },
     "cpu": {
         "format": "/ C {usage}% ",
-        "on-click": "alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
+        "on-click": "uwsm app -- alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
     },
     "memory": {
         "format": "/ M {}% ",
-        "on-click": "alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
+        "on-click": "uwsm app -- alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
     },
     "disk": {
         "interval": 30,
         "format": " {percentage_used}%",
         "path": "/",
-        "on-click": "alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
+        "on-click": "uwsm app -- alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
     },
     "network": {
         "format": "{ifname}",
@@ -106,7 +106,7 @@
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
-        "on-click": "alacritty --class dotfiles-floating -e nmtui"
+        "on-click": "uwsm app -- alacritty --class dotfiles-floating -e nmtui"
     },
     "battery": {
         "states": {
@@ -153,8 +153,8 @@
         "icon": false
     },
     "backlight": {
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
+        "on-scroll-up": "uwsm app -- brightnessctl set 1%+",
+        "on-scroll-down": "uwsm app -- brightnessctl set 1%-",
         "format": "{icon} {percent}%",
         "scroll-step": 1,
         "format-icons": [
