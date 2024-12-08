@@ -157,8 +157,7 @@ install_wallpaper() {
     fi
     cd || exit
     git clone "$WALLPAPER_REPO"
-    echo -e "${CYAN};; Successfully installed wallpapers!${RC}"
-    sleep 2
+    echo -e "${CYAN};; Successfully installed wallpapers!${RC}" && sleep 2
 
 }
 
