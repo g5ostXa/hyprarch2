@@ -10,7 +10,7 @@ idle_toggle() {
 		killall "$SERVICE"
 		notify-send --urgency=normal ":: $SERVICE DEACTIVATED"
 	else
-		"$SERVICE" &
+		uwsm app -- "$SERVICE" &
 		notify-send --urgency=normal ":: $SERVICE ACTIVATED"
 	fi
 
