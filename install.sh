@@ -294,9 +294,6 @@ else
     echo -e "${RED};; trash-empty command not found, skipping...${RC}"
 fi
 
-# Reload bashrc
-source ~/.bashrc
-
 # -----------------------------------------------------------------------------
 # Installation END
 # -----------------------------------------------------------------------------
@@ -306,3 +303,4 @@ echo ""
 echo ";; Installation status: COMPLETE"
 echo ""
 echo -e "${RC}"
+source "~/.bashrc"
