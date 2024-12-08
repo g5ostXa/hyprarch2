@@ -258,6 +258,30 @@ sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
 sleep 2
 set -e
 
+# Install AUR packages#!/bin/bash
+    link_if_exists ~/dotfiles/waypaper ~/.config/waypaper
+    link_if_exists ~/dotfiles/uwsm ~/.config/uwsm
+
+}
+
+# -----------------------------------------------------------------------------
+# Installation START
+# -----------------------------------------------------------------------------
+required_dependencies figlet "figlet is not installed..."
+required_dependencies gum "gum is not installed..."
+
+# Configure pacman
+echo -e "${CYAN}"
+figlet -f smslant "pacman.sh"
+echo -e "${RC}\n"
+source "$PACMAN_CONFIG"
+
+# Install main packages
+gum spin --spinner points --title "Preparing to install main packages..." -- sleep 5
+sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
+sleep 2
+set -e
+
 # Install AUR packages
 install_aur_packages
 
@@ -303,4 +327,50 @@ echo ""
 echo ";; Installation status: COMPLETE"
 echo ""
 echo -e "${RC}"
-source "~/.bashrc"
+source "$HOME/.bashrc"
+
+install_aur_packages
+
+# Install wallpapers
+install_wallpaper
+
+# Copy dotfiles and related data
+copy_files
+
+# Create symlinks for config files
+create_symlinks
+
+# Cleanup
+if [ -d "$HYPRARCH2_DIR" ]; then
+    echo -e "${YELLOW};; Removing $HYPRARCH2_DIR...${RC}"
+    rm -rf "$HYPRARCH2_DIR"
+else
+    echo -e "${RED};; $HYPRARCH2_DIR does not exist, skipping...${RC}"
+fi
+
+# Run cleanup script if available
+if [ -f "$CLEANUP_SCRIPT" ]; then
+    echo -e "${YELLOW};; Executing cleanup script...${RC}"
+    source "$CLEANUP_SCRIPT"
+else
+    echo -e "${RED};; Cleanup script $CLEANUP_SCRIPT not found, skipping...${RC}"
+fi
+
+# Run trash-empty
+echo -e "${YELLOW};; Emptying the trash...${RC}"
+if command -v trash-empty &>/dev/null; then
+    trash-empty
+else
+    echo -e "${RED};; trash-empty command not found, skipping...${RC}"
+fi
+
+# -----------------------------------------------------------------------------
+# Installation END
+# -----------------------------------------------------------------------------
+echo -e "${CYAN}"
+figlet -f smslant "hyprarch2"
+echo ""
+echo ";; Installation status: COMPLETE"
+echo ""
+echo -e "${RC}"
+source "$HOME/.bashrc"
