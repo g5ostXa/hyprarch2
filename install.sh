@@ -109,7 +109,7 @@ install_aur_packages() {
     AUR_HELPER=$(gum choose "paru" "yay" "CANCEL")
 
     if [[ -z "$AUR_HELPER" || "$AUR_HELPER" == "CANCEL" ]]; then
-        echo -e "${RED}Operation canceled...${RC}"
+        echo -e "${RED};; Operation canceled...${RC}"
         exit 0
     fi
 
@@ -151,9 +151,10 @@ install_aur_packages() {
 
 # Install wallpapers from my GitHub
 install_wallpaper() {
-    echo -e "${YELLOW};; Installing wallpapers...${RC}"
-    sleep 1
-    [ -d "$WALLPAPER_DIR" ] && rm -rf "$WALLPAPER_DIR"
+    echo -e "${YELLOW};; Installing wallpapers...${RC}" && sleep 1
+    if [ -d "$WALLPAPER_DIR" ]; then
+        rm -rf "$WALLPAPER_DIR"
+    fi
     cd || exit
     git clone "$WALLPAPER_REPO"
     echo -e "${CYAN};; Successfully installed wallpapers!${RC}"
@@ -192,24 +193,32 @@ copy_files() {
     fi
 
     # Ensure .version/ exists
-    [ ! -d "$HOME/.version/" ] && cp -r "$HYPRARCH2_DIR/.version/" "$HOME/"
+    if [ ! -d "$HOME/.version/" ]; then
+        cp -r "$HYPRARCH2_DIR/.version/" "$HOME/"
+    fi
 
     # Ensure .github/ exists
-    [ ! -d "$HOME/.github/" ] && cp -r "$HYPRARCH2_DIR/.github/" "$HOME/"
+    if [ ! -d "$HOME/.github/" ]; then
+        cp -r "$HYPRARCH2_DIR/.github/" "$HOME/"
+    fi
 
     # Ensure .gitignore exists
-    [ ! -f "$HOME/.gitignore" ] && cp "$HYPRARCH2_DIR/.gitignore" "$HOME/"
+    if [ ! -f "$HOME/.gitignore" ]; then
+        cp "$HYPRARCH2_DIR/.gitignore" "$HOME/"
+    fi
 
     sleep 2
 
 }
 
 create_symlinks() {
-    # A helper function to create symlinks only if source exists
     link_if_exists() {
-        local source=$1
-        local target=$2
-        [ -e "$source" ] && ln -s "$source" "$target"
+        local SOURCE_DOTS=$1
+        local TARGET_DOTS=$2
+        if [ -e "$SOURCE_DOTS" ]; then
+            ln -s "$SOURCE_DOTS" "$TARGET_DOTS"
+        fi
+
     }
 
     link_if_exists ~/dotfiles/gtk/.Xresources ~/.Xresources
