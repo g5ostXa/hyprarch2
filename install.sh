@@ -50,9 +50,7 @@ EOF
     echo -e "${RC}" && echo ""
 fi
 
-# Gum does not work well with ssh
-# That's why if installing via ssh, instead use a basic bash prompt
-
+# If installing via ssh, use a basic bash prompt instead
 # Basic bash prompt if installing via ssh
 if [ -n "$SSH_CONNECTION" ]; then
     while true; do
