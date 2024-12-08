@@ -12,17 +12,13 @@
 # 6. Cleans up temporary files and directories.
 # -----------------------------------------------------------------------------
 
-# ---------------------
 # Color Variables
-# ---------------------
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RC='\033[0m'
 
-# ---------------------
 # Configuration Variables
-# ---------------------
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 VERSION_NAME="$HYPRARCH2_DIR/.version/latest"
 PACMAN_CONFIG="$HYPRARCH2_DIR/src/Scripts/pacman.sh"
@@ -31,85 +27,71 @@ WALLPAPER_REPO="https://github.com/g5ostXa/wallpaper.git"
 WALLPAPER_DIR="$HOME/wallpaper"
 CLEANUP_SCRIPT="$HOME/src/Scripts/cleanup.sh"
 
-# ---------------------
-# Helper Functions
-# ---------------------
-
-# Display an ASCII greeting using figlet if installed, else fallback
-show_greeting() {
+# Installation greeter
+if command -v figlet >/dev/null 2>&1; then
 	clear
 	echo -e "${CYAN}"
-	if command -v figlet >/dev/null 2>&1; then
-		figlet -f smslant "Installer"
-	else
-		cat <<"EOF"
+	figlet -f smslant "Installer"
+	echo "Welcome to hyprarch2"
+	cat "$VERSION_NAME"
+	echo -e "${RC}" && echo ""
+else
+	clear
+	echo -e "${CYAN}"
+	cat <<"EOF"
  ___           _        _ _
 |_ _|_ __  ___| |_ __ _| | | ___ _ __
  | || '_ \/ __| __/ _` | | |/ _ \ '__|
  | || | | \__ \ || (_| | | |  __/ |
 |___|_| |_|___/\__\__,_|_|_|\___|_|
 EOF
-	fi
 	echo "Welcome to hyprarch2"
 	cat "$VERSION_NAME"
-	echo -e "${RC}\n"
-}
+	echo -e "${RC}" && echo ""
+fi
 
-# If installing via ssh, use basic bash prompt
-# Otherwise, use gum
-confirm_installation() {
-	if [ -n "$SSH_CONNECTION" ]; then
-		while true; do
-			read -r -p "Do you want to start the installation now? (Y/N): " yn
-			case $yn in
-			[Yy]*)
-				echo "Starting installation..."
-				sleep 2
-				break
-				;;
-			[Nn]*)
-				echo "Installation canceled."
-				exit
-				;;
-			*) echo "Please answer yes or no." ;;
-			esac
-		done
+# Gum does not work well with ssh
+# That's why if installing via ssh, instead use a basic bash prompt
+
+# Basic bash prompt if installing via ssh
+if [ -n "$SSH_CONNECTION" ]; then
+	while true; do
+		read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
+		case $yn in
+		[Yy]*)
+			echo ";; Starting Installation..."
+			sleep 2
+			break
+			;;
+		[Nn]*)
+			echo ";; Installation canceled..."
+			exit
+			;;
+		*)
+			echo ";; Please answer yes or no."
+			;;
+		esac
+	done
+else
+	# Gum prompt if not using ssh
+	if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
+		echo ";; Starting Installation..."
+		sleep 2
+	elif [ $? -eq 130 ]; then
+		echo ";; Installation canceled..."
+		exit 130
 	else
-		# Use gum if available, otherwise fallback to basic prompt
-		if command -v gum >/dev/null 2>&1; then
-			if gum confirm "Do you want to start the installation now?"; then
-				echo "Starting installation..."
-				sleep 2
-			else
-				echo "Installation canceled."
-				exit
-			fi
-		else
-			while true; do
-				read -r -p "Do you want to start the installation now? (Y/N): " yn
-				case $yn in
-				[Yy]*)
-					echo "Starting installation..."
-					sleep 2
-					break
-					;;
-				[Nn]*)
-					echo "Installation canceled."
-					exit
-					;;
-				*) echo "Please answer yes or no." ;;
-				esac
-			done
-		fi
+		echo ";; Installation canceled..."
+		exit
 	fi
-}
+fi
 
 # Check if all needed packages are installed
-require_command() {
-	local cmd=$1
-	local msg=$2
-	if ! command -v "$cmd" >/dev/null 2>&1; then
-		echo -e "${RED};; $msg${RC}"
+required_dependencies() {
+	local PACKAGE=$1
+	local CHECK_FAILED=$2
+	if ! command -v "$PACKAGE" >/dev/null 2>&1; then
+		echo -e "${RED};; $CHECK_FAILED${RC}"
 		exit 1
 	fi
 }
@@ -130,7 +112,7 @@ install_aur_packages() {
 		exit 0
 	fi
 
-	require_command git "git is not installed..."
+	required_dependencies git "git is not installed..."
 
 	# Install chosen AUR helper
 	cd || exit
@@ -253,10 +235,8 @@ create_symlinks() {
 # ---------------------
 # Installation START
 # ---------------------
-show_greeting
-confirm_installation
-require_command figlet "figlet is not installed..."
-require_command gum "gum is not installed..."
+required_dependencies figlet "figlet is not installed..."
+required_dependencies gum "gum is not installed..."
 
 # Configure pacman
 echo -e "${CYAN}"
@@ -318,3 +298,4 @@ echo ""
 echo ";; Installation status: COMPLETE"
 echo ""
 echo -e "${RC}"
+
