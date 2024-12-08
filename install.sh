@@ -86,8 +86,8 @@ fi
 
 # Check if all needed packages are installed
 required_dependencies() {
-    local PACKAGE=$1
-    local CHECK_FAILED=$2
+    local PACKAGE="$1"
+    local CHECK_FAILED="$2"
     if ! command -v "$PACKAGE" >/dev/null 2>&1; then
         echo -e "${RED};; $CHECK_FAILED${RC}"
         exit 1
@@ -210,8 +210,8 @@ copy_files() {
 
 create_symlinks() {
     link_if_exists() {
-        local SOURCE_DOTS=$1
-        local TARGET_DOTS=$2
+        local SOURCE_DOTS="$1"
+        local TARGET_DOTS="$2"
         if [ -e "$SOURCE_DOTS" ]; then
             ln -s "$SOURCE_DOTS" "$TARGET_DOTS"
         fi
