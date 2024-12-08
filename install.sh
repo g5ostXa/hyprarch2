@@ -230,7 +230,7 @@ create_symlinks() {
 	if [ -d "$HOME/dotfiles/dunst/" ]; then
 		ln -s ~/dotfiles/dunst/ ~/.config/
 	fi
-	if [ -d "$HOME/dotfiles/gtk-3.0/" ];then
+	if [ -d "$HOME/dotfiles/gtk-3.0/" ]; then
 		ln -s ~/dotfiles/gtk/gtk-3.0/ ~/.config/
 	fi
 	if [ -d "$HOME/dotfiles/gtk/gtk-4.0/" ]; then
