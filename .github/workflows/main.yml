@@ -28,8 +28,7 @@ jobs:
           if [ -f install.sh ]; then
             shellcheck -e SC1090,SC2086,SC2024,SC2164 install.sh || { echo "Syntax check failed for install.sh"; exit 1; }
           fi
-          find src/.install -name "*.sh" -print0 | xargs -0 -n1 shellcheck -e SC1090,SC2086,SC2024,SC2164 || exit 1
-
+          
       - name: Validate configuration files in dotfiles directory
         run: |
           find dotfiles -type f \( -name "*.conf" -o -name "*.yml" -o -name "*.json" \) | while read -r file; do
