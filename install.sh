@@ -108,8 +108,8 @@ install_aur_packages() {
 		if [[ ! "$AUR_HELPER" == "CANCEL" ]]; then
 			required_dependencies git ";; git is not installed..."
 			cd || exit
-			git clone https://aur.archlinux.org/"$AUR_HELPER"-bin
-			cd "$AUR_HELPER"-bin || exit
+			git clone "https://aur.archlinux.org/${AUR_HELPER}-bin"
+			cd "${AUR_HELPER}-bin" || exit
 			makepkg -si
 			cd || exit
 		else
@@ -253,8 +253,7 @@ source "$PACMAN_CONFIG"
 # Install main packages
 gum spin --spinner points --title "Preparing to install main packages..." -- sleep 5
 sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
-sleep 2
-set -e
+sleep 2 && set -e
 
 # Call function (AUR)
 install_aur_packages
