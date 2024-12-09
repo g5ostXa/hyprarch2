@@ -97,30 +97,29 @@ required_dependencies() {
 
 # Prompt user to install AUR helper and packages
 install_aur_packages() {
-	clear
-	echo -e "${CYAN}"
+ clear && echo -e "${CYAN}"
 	figlet -f smslant "AUR"
-	echo -e "${RC}\n"
+	echo -e "${RC}" && echo ""
 
-	echo -e "${YELLOW}Which AUR helper do you want to install?${RC}\n"
-	local AUR_HELPER
+	echo -e "${YELLOW};; Which aur helper do you want to install ?${RC}" && echo ""
 	AUR_HELPER=$(gum choose "paru" "yay" "CANCEL")
 
-	if [[ -z "$AUR_HELPER" || "$AUR_HELPER" == "CANCEL" ]]; then
-		echo -e "${RED};; Operation canceled...${RC}"
-		exit 0
+	if [ -n "$AUR_HELPER" ]; then
+		if [[ ! "$AUR_HELPER" == "CANCEL" ]]; then
+			is_installed_git
+			cd || exit
+			git clone https://aur.archlinux.org/"$AUR_HELPER"-bin
+			cd "$AUR_HELPER"-bin || exit
+			makepkg -si
+			cd || exit
+		else
+			echo -e "${RED};; Operation canceled... :(${RC}"
+			exit 0
+		fi
+	else
+		exit 1
 	fi
 
-	required_dependencies git "git is not installed..."
-
-	# Install chosen AUR helper
-	cd || exit
-	git clone "https://aur.archlinux.org/${AUR_HELPER}-bin"
-	cd "${AUR_HELPER}-bin" || exit
-	makepkg -si --noconfirm
-	cd || exit
-
-	# Install packages from AUR
 	"$AUR_HELPER" -S --needed --noconfirm \
 		bibata-cursor-theme \
 		dracula-icons-theme \
