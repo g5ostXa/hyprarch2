@@ -97,7 +97,7 @@ required_dependencies() {
 
 # Prompt user to install AUR helper and packages
 install_aur_packages() {
- clear && echo -e "${CYAN}"
+	clear && echo -e "${CYAN}"
 	figlet -f smslant "AUR"
 	echo -e "${RC}" && echo ""
 
@@ -106,7 +106,7 @@ install_aur_packages() {
 
 	if [ -n "$AUR_HELPER" ]; then
 		if [[ ! "$AUR_HELPER" == "CANCEL" ]]; then
-			is_installed_git
+			required_dependencies git ";; git is not installed..."
 			cd || exit
 			git clone https://aur.archlinux.org/"$AUR_HELPER"-bin
 			cd "$AUR_HELPER"-bin || exit
@@ -241,8 +241,8 @@ create_symlinks() {
 # -----------------------------------------------------------------------------
 # Installation START
 # -----------------------------------------------------------------------------
-required_dependencies figlet "figlet is not installed..."
-required_dependencies gum "gum is not installed..."
+required_dependencies figlet ";; figlet is not installed..."
+required_dependencies gum ";; gum is not installed..."
 
 # Configure pacman
 echo -e "${CYAN}"
