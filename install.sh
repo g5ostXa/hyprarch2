@@ -159,8 +159,7 @@ install_wallpaper() {
 
 }
 
-# Dotfiles setup
-copy_files() {
+struct_setup() {
 	# Backup existing .bashrc
 	if [ -f "$HOME/.bashrc" ]; then
 		echo -e "${YELLOW};; Creating a backup of ~/.bashrc...${RC}"
@@ -183,23 +182,23 @@ copy_files() {
 	sudo cp -r "$HYPRARCH2_DIR/dotfiles/login/issue" "/etc/"
 	sudo chown root:root /etc/issue
 
-	# Ensure .bashrc is present
+	# Check .bashrc exists
 	if [ ! -f "$HOME/.bashrc" ]; then
 		echo -e "${YELLOW};; Copying .bashrc to home folder...${RC}"
 		cp "$HYPRARCH2_DIR/.bashrc" "$HOME/"
 	fi
 
-	# Ensure .version/ exists
+	# Check .version/ exists
 	if [ ! -d "$HOME/.version/" ]; then
 		cp -r "$HYPRARCH2_DIR/.version/" "$HOME/"
 	fi
 
-	# Ensure .github/ exists
+	# Check .github/ exists
 	if [ ! -d "$HOME/.github/" ]; then
 		cp -r "$HYPRARCH2_DIR/.github/" "$HOME/"
 	fi
 
-	# Ensure .gitignore exists
+	# Check .gitignore exists
 	if [ ! -f "$HOME/.gitignore" ]; then
 		cp "$HYPRARCH2_DIR/.gitignore" "$HOME/"
 	fi
@@ -258,16 +257,16 @@ sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
 sleep 2
 set -e
 
-# Install AUR packages
+# Call function (AUR)
 install_aur_packages
 
-# Install wallpapers
+# Call function (Walls)
 install_wallpaper
 
-# Copy dotfiles and related data
-copy_files
+# Call function (Setup)
+struct_setup
 
-# Create symlinks for config files
+# Call fucntion (Sym)
 create_symlinks
 
 # Cleanup
