@@ -40,7 +40,7 @@ main_operation() {
 
 	is_installed_gum
 	BRIGHTNESS_LEVEL=$(gum choose "0%" "5%" "15%" "35%" "50%" "65%" "80%" "CANCEL")
-	if [[ -n "$BRIGHTNESS_LEVEL" ]]; then
+	if [ -n "$BRIGHTNESS_LEVEL" ]; then
 		if [[ ! "$BRIGHTNESS_LEVEL" == "CANCEL" ]]; then
 			brightnessctl set "$BRIGHTNESS_LEVEL" intel_backlight
 		else
