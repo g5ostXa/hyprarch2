@@ -99,9 +99,9 @@ required_dependencies() {
 install_aur_packages() {
 	clear && echo -e "${CYAN}"
 	figlet -f smslant "AUR"
-	echo -e "${RC}" && echo ""
+	echo -e "${RC}\n"
 
-	echo -e "${YELLOW};; Which aur helper do you want to install ?${RC}" && echo ""
+	echo -e "${YELLOW};; Which aur helper do you want to install ?${RC}\n"
 	AUR_HELPER=$(gum choose "paru" "yay" "CANCEL")
 
 	if [ -n "$AUR_HELPER" ]; then
