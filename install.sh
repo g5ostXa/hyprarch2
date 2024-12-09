@@ -253,8 +253,7 @@ source "$PACMAN_CONFIG"
 # Install main packages
 gum spin --spinner points --title "Preparing to install main packages..." -- sleep 5
 sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
-sleep 2
-set -e
+sleep 2 && set -e
 
 # Call function (AUR)
 install_aur_packages
