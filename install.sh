@@ -108,8 +108,8 @@ install_aur_packages() {
 		if [[ ! "$AUR_HELPER" == "CANCEL" ]]; then
 			required_dependencies git ";; git is not installed..."
 			cd || exit
-			git clone https://aur.archlinux.org/"$AUR_HELPER"-bin
-			cd "$AUR_HELPER"-bin || exit
+			git clone "https://aur.archlinux.org/${AUR_HELPER}-bin"
+			cd "${AUR_HELPER}-bin" || exit
 			makepkg -si
 			cd || exit
 		else
