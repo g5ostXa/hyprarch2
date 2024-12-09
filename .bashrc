@@ -27,8 +27,8 @@ alias h2status="hyprarch2 status"
 alias h2push="hyprarch2 push"
 alias h2pull="hyprarch2 pull"
 alias wgstatus='sudo ~/src/Scripts/wgstatus.sh'
-if [ -f "$HOME/b4shL4nd/ghostware.sh" ]; then
-	alias ghostware="bash -c ~/b4shL4nd/ghostware.sh"
+if [ -f "$HOME/gh-projects/b4shL4nd/ghostware.sh" ]; then
+	alias ghostware="bash -c ~/gh-projects/b4shL4nd/ghostware.sh"
 fi
 # ----------------------------------------------------------------------------------------
 
