@@ -158,8 +158,8 @@ install_wallpaper() {
 
 }
 
-struct_setup() {
-	# Backup existing .bashrc
+# Copy files and build structure
+main_setup() {
 	if [ -f "$HOME/.bashrc" ]; then
 		echo -e "${YELLOW};; Creating a backup of ~/.bashrc...${RC}"
 		cp "$HOME/.bashrc" "$HOME/.bashrc.bak"
@@ -206,6 +206,7 @@ struct_setup() {
 
 }
 
+# Link dots to ~/.config/
 create_symlinks() {
 	link_if_exists() {
 		local SOURCE_DOTS="$1"
@@ -262,9 +263,9 @@ install_aur_packages
 install_wallpaper
 
 # Call function (Setup)
-struct_setup
+main_setup
 
-# Call fucntion (Sym)
+# Call function (Sym)
 create_symlinks
 
 # Cleanup
