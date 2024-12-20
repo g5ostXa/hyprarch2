@@ -1,17 +1,5 @@
 #!/bin/bash
 
-# -----------------------------------------------------------------------------
-# install.sh
-# -----------------------------------------------------------------------------
-# This script installs the hyprarch2 environment by performing the following:
-# 1. Displays a greeting using figlet (if installed).
-# 2. Checks whether the user wants to proceed with installation.
-# 3. Installs required packages from both official repositories and the AUR.
-# 4. Installs wallpapers and copies dotfiles into place.
-# 5. Creates symlinks for configuration files.
-# 6. Cleans up temporary files and directories.
-# -----------------------------------------------------------------------------
-
 # Color Variables
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
