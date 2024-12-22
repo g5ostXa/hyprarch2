@@ -6,10 +6,10 @@
 
 # Overview:
 # - Install required packages from both official repositories and the AUR.
-# - Install wallpapers and copies dotfiles into place.
+# - Install wallpapers and copy dotfiles into place.
 # - Create symlinks for dotfiles and make them point to -/.config/
 # - Clean up temporary files and directories.
-# - These functions are wrapped in a bash written interactive installer.
+# - These functions are wrapped in an interactive installer.
 
 # Color Variables
 RED='\033[0;31m'
