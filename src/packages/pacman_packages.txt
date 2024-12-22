@@ -201,6 +201,7 @@ http-parser
 hwdata
 hyphen
 hyprcursor
+hyprgraphics
 hypridle
 hyprland
 hyprlang
@@ -714,6 +715,7 @@ python-jaraco.context
 python-jaraco.functools
 python-jaraco.text
 python-jinja
+python-legacy-cgi
 python-linux-procfs
 python-mako
 python-markdown

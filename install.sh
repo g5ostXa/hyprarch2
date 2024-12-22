@@ -1,16 +1,14 @@
 #!/bin/bash
 
-# -----------------------------------------------------------------------------
+# ---------------------------------
 # install.sh
-# -----------------------------------------------------------------------------
-# This script installs the hyprarch2 environment by performing the following:
-# 1. Displays a greeting using figlet (if installed).
-# 2. Checks whether the user wants to proceed with installation.
-# 3. Installs required packages from both official repositories and the AUR.
-# 4. Installs wallpapers and copies dotfiles into place.
-# 5. Creates symlinks for configuration files.
-# 6. Cleans up temporary files and directories.
-# -----------------------------------------------------------------------------
+# ---------------------------------
+
+# Quick overview:
+# - Install required packages from both official repositories and the AUR.
+# - Install wallpapers and copy dotfiles into place.
+# - Create symlinks for dotfiles and make them point to -/.config/
+# - Clean up
 
 # Color Variables
 RED='\033[0;31m'
@@ -239,9 +237,9 @@ create_symlinks() {
 
 }
 
-# -----------------------------------------------------------------------------
+# ----------------------------------------------------------------
 # Installation START
-# -----------------------------------------------------------------------------
+# ----------------------------------------------------------------
 required_dependencies figlet ";; figlet is not installed..."
 required_dependencies gum ";; gum is not installed..."
 
