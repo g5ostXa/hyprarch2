@@ -4,12 +4,11 @@
 # install.sh
 # ---------------------------------
 
-# Overview:
+# Quick overview:
 # - Install required packages from both official repositories and the AUR.
 # - Install wallpapers and copy dotfiles into place.
 # - Create symlinks for dotfiles and make them point to -/.config/
-# - Clean up temporary files and directories.
-# - These functions are wrapped in an interactive installer.
+# - Clean up
 
 # Color Variables
 RED='\033[0;31m'
