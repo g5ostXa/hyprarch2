@@ -12,7 +12,7 @@
 ## ⚠ `Disclaimer`
 > [!WARNING]
 > - This repository is basically just a **heavily** modified clone of [`ml4w-dotfiles (v2.5)`](https://github.com/mylinuxforwork/dotfiles).
-> - Requires a strong knowledge base of [`Archlinux`](https://archlinux.org), [`hyprland`](https://hyprland.org), `bash-scripting` and `git`, especially if you're on bare metal.
+> - Requires a strong knowledge base of [`Archlinux`](https://archlinux.org) and [`Hyprland`](https://hyprland.org), especially if you're on bare metal.
 > - This project was recently made public and there is still alot of things to do to make it more user-friendly.
 
 **What you need to consider:**
