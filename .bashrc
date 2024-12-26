@@ -8,7 +8,7 @@
 #
 
 # -----------------------------------------------------------------------------------------
-# Defaults
+# Variables
 # -----------------------------------------------------------------------------------------
 PS1='[\u@\h \W]\$ '
 MAGENTA='\033[1;35m'
@@ -16,10 +16,8 @@ RC='\033[0m'
 HYPRARCH2_VERSION="$HOME/.version/latest"
 
 # -----------------------------------------------------------------------------------------
-# Aliases
+# Maintainer's specific aliases
 # -----------------------------------------------------------------------------------------
-
-# hyprarch2 repository owner specific -----------------------------------------------------
 alias hyprarch2="/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME"
 alias hyprpush="hyprarch2 push --set-upstream git@github.com:g5ostXa/hyprarch2.git master"
 alias hyprlist="~/src/Scripts/hyprlist.sh"
@@ -30,9 +28,10 @@ alias wgstatus='sudo ~/src/Scripts/wgstatus.sh'
 if [ -f "$HOME/gh-projects/b4shL4nd/ghostware.sh" ]; then
 	alias ghostware="bash -c ~/gh-projects/b4shL4nd/ghostware.sh"
 fi
-# ----------------------------------------------------------------------------------------
 
-# System ---------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------
+# Main aliases
+# -----------------------------------------------------------------------------------------
 alias ls="eza --icons=always --color=always"
 alias ll="ls -al"
 alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
@@ -47,18 +46,14 @@ alias reboot="~/src/Scripts/reboot.sh"
 alias poweroff="~/src/Scripts/poweroff.sh"
 alias st4rtX="~/src/Scripts/hypr/st4rtX.sh"
 alias lumine="~/src/Scripts/lumine.sh"
-alias r4in="unimatrix -n -s 96 -l o"
-# ----------------------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------------------
 # General
 # ----------------------------------------------------------------------------------------
 export PATH="/usr/lib/ccache/bin/:$PATH"
+export UWSM_USE_SESSION_SLICE=true
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
-
-# Set UWSM env variable
-export UWSM_USE_SESSION_SLICE=true
 
 # ----------------------------------------------------------------------------------------
 # Shell init
