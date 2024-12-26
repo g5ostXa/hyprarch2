@@ -101,28 +101,20 @@ $ uwsm start hyprland
 
 ## 🖥️ `Monitor`
 > [!TIP]
-> You have two options if you want a properly configured display:
-> - Either you set `Automatic display configuration` 
-> - Either you configure your own screen resolution.
+> - To configure your monitor(s) manually, you need to edit [`dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
 
-[` ➜ dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf):
+Here's what a manual configuration should look like:
 ```md
 # -------------------------------------------------------------------------------------
 # Monitor Setup
-# See https://wiki.hyprland.org/Configuring/Monitors/
 # -------------------------------------------------------------------------------------
 
-# Uncomment <monitor=,preferred,auto,1> and remove g5ostXa'a configuration if you want to use Automatic display configuration.
-
-# Automatic display configuration:
-# monitor=,preferred,auto,1
-
-# g5ostXa's configuration:
+# Custom configuration example:
 monitor=eDP-1,1920x1080@120.035,0x0,1
 monitor=HDMI-A-1,2048x1080@60.00,auto,1
-# monitor=Virtual-1,2048x1080@60.00,0x0,1
+monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
-For more detailed instructions about how to configure your monitor on hyprland: [` ➜ 🖥️ Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
+For more detailed instructions about how to configure your monitor(s): [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
 
 ## 🌐 `Quick links`
 **Wallpaper engine documentation:**\
