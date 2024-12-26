@@ -1,7 +1,3 @@
-/*
- * Theme based on Dracula GTK Theme (https://draculatheme.com/gtk)
- */
-
 * {
     base00: #282a36;
     base01: #44475a;
@@ -118,7 +114,6 @@ element selected {
 }
 
 element alternate {
-    /* background-color: @base03; */
 }
 
 element normal normal,
