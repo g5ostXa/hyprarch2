@@ -12,7 +12,7 @@
 ## ⚠ `Disclaimer`
 > [!WARNING]
 > - This repository is basically just a _**heavily modified**_ [`ml4w-dotfiles`](https://github.com/mylinuxforwork/dotfiles) clone.
-> - I recently made this project public, so it's not very user-friendly yet, but I'm working on it.
+> - I recently made this project public, so it's not very user-friendly yet.
 
 **What you need to consider:**
 
