@@ -1,7 +1,3 @@
-/* -----------------------------------------------------
- * General 
- * ----------------------------------------------------- */
-
 * {
     font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     border: none;
@@ -11,15 +7,10 @@
 window#waybar {
     background: transparent;
     border-bottom: 0px solid #ffffff;
-    /*color: #18ffff;*/
     background: transparent;
     transition-property: background-color, box-shadow;
     transition-duration: .5s;
 }
-
-/* -----------------------------------------------------
- * Workspaces 
- * ----------------------------------------------------- */
 
 #workspaces {
     background: transparent;
@@ -62,10 +53,6 @@ window#waybar {
     opacity:0.7;
 }
 
-/* -----------------------------------------------------
- * Tooltips
- * ----------------------------------------------------- */
-
 tooltip {
     border-radius: 10px;
     opacity:1.0;
@@ -76,10 +63,6 @@ tooltip {
 tooltip label {
     color: @textcolor1;
 }
-
-/* -----------------------------------------------------
- * Window
- * ----------------------------------------------------- */
 
 #window {
     background: transparent;
@@ -96,10 +79,6 @@ tooltip label {
 window#waybar.empty #window {
     background-color:transparent;
 }
-
-/* -----------------------------------------------------
- * Taskbar
- * ----------------------------------------------------- */
 
 #taskbar {
     background: transparent;
@@ -119,10 +98,6 @@ window#waybar.empty #window {
     padding: 0px 5px 0px 5px;
 }
 
-/* -----------------------------------------------------
- * Modules
- * ----------------------------------------------------- */
-
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
 }
@@ -130,10 +105,6 @@ window#waybar.empty #window {
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
 }
-
-/* -----------------------------------------------------
- * Custom Quicklinks
- * ----------------------------------------------------- */
 
 #custom-filemanager, 
 #custom-cliphist, 
@@ -146,10 +117,6 @@ window#waybar.empty #window {
     color: #ffffff;
 }
 
-/* -----------------------------------------------------
- * Custom Modules
- * ----------------------------------------------------- */
-
 #custom-appmenu, #custom-appmenuwlr {
     background-color: @backgrounddark;
     font-size: 16px;
@@ -161,20 +128,12 @@ window#waybar.empty #window {
     border:1.3px solid @bordercolor;
 }
 
-/* -----------------------------------------------------
- * Custom Exit
- * ----------------------------------------------------- */
-
 #custom-exit, #custom-exitwlr {
     margin: 0px 20px 0px 0px;
     padding:0px;
     font-size:20px;
     color: #05fae6;
 }
-
-/* -----------------------------------------------------
- * Custom Updates
- * ----------------------------------------------------- */
 
 #custom-updates {
     background-color: transparent;
@@ -201,10 +160,6 @@ window#waybar.empty #window {
     color: #FFFFFF;
 }
 
-/* -----------------------------------------------------
- * Hardware Group
- * ----------------------------------------------------- */
-
 #disk,#memory,#cpu {
     margin:0px;
     padding:0px;
@@ -215,10 +170,6 @@ window#waybar.empty #window {
 #memory {
     margin-right:10px;
 }
-
-/* -----------------------------------------------------
- * Clock
- * ----------------------------------------------------- */
 
 #clock {
     background-color: @backgrounddark;
@@ -231,11 +182,7 @@ window#waybar.empty #window {
     border:1.3px solid @bordercolor;   
 }
 
-/* -----------------------------------------------------
- * Backlight
- * ----------------------------------------------------- */
-
- #backlight {
+#backlight {
     background-color: transparent;
     font-size: 16px;
     color: @textcolor2;
@@ -245,10 +192,6 @@ window#waybar.empty #window {
     border:1.3px solid @bordercolor;
     opacity:1.2;
 }
-
-/* -----------------------------------------------------
- * Pulseaudio
- * ----------------------------------------------------- */
 
 #pulseaudio {
     background-color: transparent;
@@ -265,10 +208,6 @@ window#waybar.empty #window {
     background-color: @backgrounddark;
     color: @textcolor1;
 }
-
-/* -----------------------------------------------------
- * Network
- * ----------------------------------------------------- */
 
 #network {
     background-color: transparent;
@@ -290,10 +229,6 @@ window#waybar.empty #window {
     background-color: transparent;
     color: @textcolor2;
 }
-
-/* -----------------------------------------------------
- * Battery
- * ----------------------------------------------------- */
 
 #battery {
     background-color: transparent;
@@ -329,10 +264,6 @@ window#waybar.empty #window {
     animation-direction: alternate;
 }
 
-/* -----------------------------------------------------
- * Tray
- * ----------------------------------------------------- */
-
 #tray {
     background-color: #2980b9;
 }
@@ -346,10 +277,6 @@ window#waybar.empty #window {
     background-color: #eb4d4b;
 }
 
-/* -----------------------------------------------------
- * Other
- * ----------------------------------------------------- */
-
 label:focus {
     background-color: #000000;
 }
@@ -358,4 +285,3 @@ label:focus {
     background-color: #f53c3c;
     color: #ffffff;
 }
-
