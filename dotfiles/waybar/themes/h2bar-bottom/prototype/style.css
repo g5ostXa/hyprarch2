@@ -95,9 +95,9 @@ window#waybar.empty #window {
     padding: 0px 5px 0px 5px;
 }
 
-#custom-filemanager, 
-#custom-cliphist, 
-#custom-wallpaper, 
+#custom-filemanager,
+#custom-cliphist,
+#custom-wallpaper,
 #custom-waybarthemes {
     margin-right: 20px;
     font-size: 20px;
@@ -106,7 +106,8 @@ window#waybar.empty #window {
     color: #ffffff;
 }
 
-#custom-appmenu, #custom-appmenuwlr {
+#custom-appmenu,
+#custom-appmenuwlr {
     background-color: #1e1e1e;
     font-size: 16px;
     color: #e0e0e0;
@@ -117,7 +118,8 @@ window#waybar.empty #window {
     border: 1.3px solid #444;
 }
 
-#custom-exit, #custom-exitwlr {
+#custom-exit,
+#custom-exitwlr {
     margin: 0px 20px 0px 0px;
     padding: 0px;
     font-size: 20px;
@@ -149,7 +151,9 @@ window#waybar.empty #window {
     color: #ffffff;
 }
 
-#disk, #memory, #cpu {
+#disk,
+#memory,
+#cpu {
     margin: 0px;
     padding: 0px;
     font-size: 16px;
@@ -168,7 +172,7 @@ window#waybar.empty #window {
     padding: 1px 10px 0px 10px;
     margin: 3px 15px 3px 0px;
     opacity: 1.2;
-    border: 1.3px solid #444;   
+    border: 1.3px solid #444;
 }
 
 #backlight {
@@ -230,7 +234,8 @@ window#waybar.empty #window {
     opacity: 1.2;
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging,
+#battery.plugged {
     color: #e0e0e0;
     background-color: #2e2e2e;
     border: 1.3px solid #444;
@@ -274,4 +279,3 @@ label:focus {
     background-color: #f53c3c;
     color: #ffffff;
 }
-
