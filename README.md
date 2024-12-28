@@ -13,7 +13,7 @@
 > [!WARNING]
 > - [Hyprland](https://wiki.hyprland.org/) and [Archlinux](https://wiki.archlinux.org/) are not meant for beginners!
 > - It is **strongly** advised that you fully read and understand the [documentation](https://wiki.hyprland.org/Getting-Started/Installation/) before installing.
-> - This project is based on [ml4w-dotfiles](https://github.com/mylinuxforwork/dorfiles), which can be found on the [AUR](https://aur.archlinux.org).
+> - This project is based on [ml4w-dotfiles](https://github.com/mylinuxforwork/dotfiles), which can be found on the [AUR](https://aur.archlinux.org).
 
 **What you need to consider:**
 
