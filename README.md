@@ -12,14 +12,17 @@
 ## ⚠ `Disclaimer`
 > [!WARNING]
 > - [Hyprland](https://wiki.hyprland.org/) and [Archlinux](https://wiki.archlinux.org/) are not meant for beginners!
-> - It is strongly advised that you fully read and understand the [documentation](https://wiki.hyprland.org) before installing.
+> - It is **strongly** advised that you fully read and understand the [documentation](https://wiki.hyprland.org/Getting-Started/Installation/) before installing.
 > - This project is based on [ml4w-dotfiles](https://github.com/mylinuxforwork/dorfiles), which can be found on the [AUR](https://aur.archlinux.org).
 
 **What you need to consider:**
 
-- On old hardware, the installation has a greater chance to fail.
-- For the time being, the installer will install all packages in [`src/packages/`](/src/packages/) by default.
-- This repo was recently made public, many improvements are still needed. 
+- Many things still need improvements, as this project was recently made public.
+- Tested on dell hardware with intel processors and in KVM / qemu virtual machines, which works just fine.
+- Not tested on AMD processors or with NVIDIA drivers.
+- Before intalling, take a look at the [packages](/src/packages/) lists, and edit them to remove what you don't want or add extra packages.
+> [!CAUTION]
+> - Removing packages from the lists might break things, especially the AUR packages.
 
 **What you can expect for the future:**
 
@@ -30,9 +33,6 @@ Here's a quick summary:
 - The user will be able to choose exactly what to install.
 - A much more enjoyable and reliable installation process.
 - Availability to a wider range of users.
-
-So, with that out of the way, happy install!\
-Before you begin, you may preview [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
 
 ## ⚙️ `Setup and installation`
 **Prerequisites:**\
