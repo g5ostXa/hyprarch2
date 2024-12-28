@@ -13,4 +13,4 @@
 @define-color textcolor3 #FFFFFF;
 @define-color iconcolor #FFFFFF;
 
-@import '../style.css';
+@import '../../style.css';
