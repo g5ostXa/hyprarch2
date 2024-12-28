@@ -8,9 +8,6 @@
 wallpaper="$1"
 used_wallpaper="$wallpaper"
 
-# Define service
-srvc="waybar"
-
 main_function() {
 	# Apply pywal colors
 	wal -q -i "$used_wallpaper"
@@ -23,7 +20,7 @@ main_function() {
 	newwall=$(echo "$wallpaper" | sed "s|$HOME/wallpaper/||g")
 
 	# Send notification only if waybar is running to prevent a wallpaper update notification every time hyprland is launched
-	if pgrep -x "$srvc" >/dev/null; then
+	if pgrep -x waybar >/dev/null; then
 		notify-send --icon=/usr/share/icons/Dracula/16/folder-pictures.svg "Wallpaper and colors updated!" "with image $newwall"
 	fi
 
