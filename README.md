@@ -4,24 +4,25 @@
 
 <div align="center">
 
-![Release](https://img.shields.io/badge/hyprarch2-v1.3.3-cyan.svg)
-![Hyprland](https://img.shields.io/badge/Hyprland-%236A0DAD?&logo=hyprland&logoColor=white)
-![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=6A0DAD)
+[![Release](https://img.shields.io/badge/hyprarch2-v1.3.3-cyan.svg)](https://github.com/g5ostXa/hyprarch2/)
+[![Hyprland](https://img.shields.io/badge/Hyprland-%236A0DAD?&logo=hyprland&logoColor=white)](https://hyprland.org/)
+[![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=6A0DAD)](https://archlinux.org/)
 </div>
 
 ## ⚠ `Disclaimer`
 > [!WARNING]
-> - This repository is basically just a _**heavily modified**_ [`ml4w-dotfiles`](https://github.com/mylinuxforwork/dotfiles) clone.
-> - The project was made public recently, so it's not very user-friendly yet.
+> - [Hyprland](https://wiki.hyprland.org/) and [Archlinux](https://wiki.archlinux.org/) are not meant for beginners!
+> - It is **strongly** advised that you fully read and understand the [documentation](https://wiki.hyprland.org/Getting-Started/Installation/) before installing.
+> - This project is based on [ml4w-dotfiles](https://github.com/mylinuxforwork/dorfiles), which can be found on the [AUR](https://aur.archlinux.org).
 
 **What you need to consider:**
 
-For me, the installer works just fine both on my two intel laptops and inside a VM.\
-But because there's still so much to fix;
-- The installation might fail on _some systems_.
-- For the time being, the installer will install all packages in [`src/packages/`](/src/packages/) by default.
-- Some files and directories might get deleted upon installing.
-- A fresh minimal arch base install is recommended for this project.
+- Many things still need improvements, as this project was recently made public.
+- Tested on dell hardware with intel processors and in KVM / qemu virtual machines, which works just fine.
+- Not tested on AMD processors or with NVIDIA drivers.
+- Before intalling, take a look at the [packages](/src/packages/) lists, and edit them to remove what you don't want or add extra packages.
+> [!CAUTION]
+> - Removing packages from the lists might break things, especially the AUR packages.
 
 **What you can expect for the future:**
 
@@ -32,9 +33,6 @@ Here's a quick summary:
 - The user will be able to choose exactly what to install.
 - A much more enjoyable and reliable installation process.
 - Availability to a wider range of users.
-
-So, with that out of the way, happy install!\
-Before you begin, you may preview [` ➜ screenshots`](https://github.com/g5ostXa/hyprarch2#-screenshots)
 
 ## ⚙️ `Setup and installation`
 **Prerequisites:**\
