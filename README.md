@@ -11,16 +11,16 @@
 
 ## ⚠ `Disclaimer`
 > [!WARNING]
-> - [Hyprland](https://wiki.hyprland.org/) and [Archlinux](https://wiki.archlinux.org/) are not meant for beginners!
-> - It is **strongly** advised that you fully read and understand the [documentation](https://wiki.hyprland.org/Getting-Started/Installation/) before installing.
-> - This project is based on [ml4w-dotfiles](https://github.com/mylinuxforwork/dorfiles), which can be found on the [AUR](https://aur.archlinux.org).
+> - [`Hyprland`](https://wiki.hyprland.org/) and [`Archlinux`](https://wiki.archlinux.org/) are not meant for beginners!
+> - It is **strongly** advised that you fully read and understand the [`documentation`](https://wiki.hyprland.org/Getting-Started/Installation/) before installing.
+> - This project is based on [`ml4w-dotfiles`](https://github.com/mylinuxforwork/dotfiles), which can be found on the [`AUR`](https://aur.archlinux.org).
 
 **What you need to consider:**
 
 - Many things still need improvements, as this project was recently made public.
 - Tested on dell hardware with intel processors and in KVM / qemu virtual machines, which works just fine.
 - Not tested on AMD processors or with NVIDIA drivers.
-- Before intalling, take a look at the [packages](/src/packages/) lists, and edit them to remove what you don't want or add extra packages.
+- Before intalling, take a look at the [`packages`](/src/packages/) lists, and edit them to remove what you don't want or add extra packages.
 > [!CAUTION]
 > - Removing packages from the lists might break things, especially the AUR packages.
 
