@@ -11,17 +11,15 @@
 
 ## ⚠ `Disclaimer`
 > [!WARNING]
-> - This repository is basically just a _**heavily modified**_ [`ml4w-dotfiles`](https://github.com/mylinuxforwork/dotfiles) clone.
-> - The project was made public recently, so it's not very user-friendly yet.
+> - [Hyprland](https://wiki.hyprland.org/) and [Archlinux](https://wiki.archlinux.org/) are not meant for beginners!
+> - It is strongly advised that you fully read and understand the [documentation](https://wiki.hyprland.org) before installing.
+> - This project is based on [ml4w-dotfiles](https://github.com/mylinuxforwork/dorfiles), which can be found on the [AUR](https://aur.archlinux.org).
 
 **What you need to consider:**
 
-For me, the installer works just fine both on my two intel laptops and inside a VM.\
-But because there's still so much to fix;
-- The installation might fail on _some systems_.
+- On old hardware, the installation has a greater chance to fail.
 - For the time being, the installer will install all packages in [`src/packages/`](/src/packages/) by default.
-- Some files and directories might get deleted upon installing.
-- A fresh minimal arch base install is recommended for this project.
+- This repo was recently made public, many improvements are still needed. 
 
 **What you can expect for the future:**
 
