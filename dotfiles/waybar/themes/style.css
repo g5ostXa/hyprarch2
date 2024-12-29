@@ -42,22 +42,22 @@ window#waybar {
     border-radius: 15px;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
-    border:1.5px solid @textcolor1;
-    opacity:2.0;
+    border: 1.5px solid @textcolor1;
+    opacity: 2.0;
 }
 
 #workspaces button:hover {
     color: @textcolor2;
     background: @textcolor3;
     border-radius: 15px;
-    opacity:1.0;
+    opacity: 1.0;
 }
 
 tooltip {
     border-radius: 10px;
-    opacity:1.5;
-    padding:20px;
-    margin:0px;
+    opacity: 1.5;
+    padding: 20px;
+    margin: 0px;
 }
 
 tooltip label {
@@ -69,15 +69,15 @@ tooltip label {
     margin: 5px 15px 5px 0px;
     padding: 2px 10px 2px 10px;
     border-radius: 12px;
-    color:@textcolor1;
-    font-size:16px;
-    font-weight:normal;
-    border:1.3px solid @bordercolor;
-    opacity:1.0;
+    color: @textcolor1;
+    font-size: 16px;
+    font-weight: normal;
+    border: 1.3px solid @bordercolor;
+    opacity: 1.0;
 }
 
 window#waybar.empty #window {
-    background-color:transparent;
+    background-color: transparent;
 }
 
 #taskbar {
@@ -87,8 +87,8 @@ window#waybar.empty #window {
     border-radius: 15px;
     font-weight: normal;
     font-style: normal;
-    border:1.3px solid @textcolor2;
-    opacity:1.2;
+    border: 1.3px solid @textcolor2;
+    opacity: 1.2;
 }
 
 #taskbar button {
@@ -124,14 +124,14 @@ window#waybar.empty #window {
     border-radius: 15px;
     padding: 0px 10px 0px 10px;
     margin: 3px 15px 3px 15px;
-    opacity:2.0;
-    border:1.5px solid @bordercolor;
+    opacity: 2.0;
+    border: 1.5px solid @bordercolor;
 }
 
 #custom-exit, #custom-exitwlr {
     margin: 0px 20px 0px 0px;
-    padding:0px;
-    font-size:20px;
+    padding: 0px;
+    font-size: 20px;
     color: @color7;
 }
 
@@ -142,12 +142,12 @@ window#waybar.empty #window {
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 5px 15px 5px 0px;
-    border:1.3px solid @textcolor1;
-    opacity:1.2;
+    border: 1.3px solid @textcolor1;
+    opacity: 1.2;
 }
 
 #custom-updates.green {
-    border:1.5px solid #FFFFFF;
+    border: 1.5px solid #FFFFFF;
 }
 
 #custom-updates.yellow {
@@ -160,15 +160,15 @@ window#waybar.empty #window {
     color: #FFFFFF;
 }
 
-#disk,#memory,#cpu {
-    margin:0px;
-    padding:0px;
-    font-size:16px;
-    color:@iconcolor;
+#disk, #memory, #cpu {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    color: @iconcolor;
 }
 
 #memory {
-    margin-right:10px;
+    margin-right: 10px;
 }
 
 #clock {
@@ -178,8 +178,8 @@ window#waybar.empty #window {
     border-radius: 15px;
     padding: 1px 10px 0px 10px;
     margin: 3px 15px 3px 0px;
-    opacity:1.5;
-    border:1.3px solid @bordercolor;
+    opacity: 1.5;
+    border: 1.3px solid @bordercolor;
 }
 
 #backlight {
@@ -189,8 +189,8 @@ window#waybar.empty #window {
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 5px 15px 5px 0px;
-    border:1.3px solid @bordercolor;
-    opacity:1.5;
+    border: 1.3px solid @bordercolor;
+    opacity: 1.5;
 }
 
 #pulseaudio {
@@ -200,8 +200,8 @@ window#waybar.empty #window {
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 5px 15px 5px 0px;
-    border:1.3px solid @bordercolor;
-    opacity:1.5;
+    border: 1.3px solid @bordercolor;
+    opacity: 1.5;
 }
 
 #pulseaudio.muted {
@@ -216,8 +216,8 @@ window#waybar.empty #window {
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 5px 15px 5px 0px;
-    border:1.3px solid @bordercolor;
-    opacity:1.5;
+    border: 1.3px solid @bordercolor;
+    opacity: 1.5;
 }
 
 #network.ethernet {
@@ -237,14 +237,14 @@ window#waybar.empty #window {
     border-radius: 15px;
     padding: 2px 15px 0px 10px;
     margin: 5px 15px 5px 0px;
-    border:1.3px solid @bordercolor;
-    opacity:1.5;
+    border: 1.3px solid @bordercolor;
+    opacity: 1.5;
 }
 
 #battery.charging, #battery.plugged {
     color: @textcolor2;
     background-color: transparent;
-    border:1.3px solid @bordercolor;
+    border: 1.3px solid @bordercolor;
 }
 
 @keyframes blink {
