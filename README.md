@@ -43,7 +43,8 @@ To install [`Arch`](https://archlinux.org) manually, refer to the [`Arch install
 > [!IMPORTANT]
 > - If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
 > - Installing in `virt-manager` requires you to:
->   - Enable `[3D acceleration]` in `[Video Virtio]` and set `[Listen type]` to `[None]` in `[Display Spice]`.
+>   - Enable `[3D acceleration]` in `[Video Virtio]`.
+>   - Set `[Listen type]` to `[None]` in `[Display Spice]`.
 >   - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
 
 **Usage:**\
