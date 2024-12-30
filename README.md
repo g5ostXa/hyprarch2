@@ -15,24 +15,14 @@
 > - It is **strongly** advised that you fully read and understand the [`documentation`](https://wiki.hyprland.org/Getting-Started/Installation/) before installing.
 > - This project is based on [`ml4w-dotfiles`](https://github.com/mylinuxforwork/dotfiles), which can be found on the [`AUR`](https://aur.archlinux.org).
 
-**What you need to consider:**
+**What you need to consider before installing:**
 
-- Many things still need improvements, as this project was recently made public.
-- Tested on dell hardware with intel processors and in KVM / qemu virtual machines, which works just fine.
+- This project is was just recently made public and still needs many improvements.
+- Tested on several models of dell laptops with intel processors and in KVM / qemu virtual machines.
 - Not tested on AMD processors or with NVIDIA drivers.
-- Before intalling, take a look at the [`packages`](/src/packages/) lists, and edit them to remove what you don't want or add extra packages.
+- You might want to view the [`packages`](/src/packages/) lists, and edit them to remove what you don't want or add extra packages.
 > [!CAUTION]
 > - Removing packages from the lists might break things, especially the AUR packages.
-
-**What you can expect for the future:**
-
-You can expect some significant improvements for this project.\
-Here's a quick summary:
-- The integration of a customizable [`Archlinux`](https://archlinux.org) install script.
-- A lot of packages will be stripped out so you don't get a bloated install.
-- The user will be able to choose exactly what to install.
-- A much more enjoyable and reliable installation process.
-- Availability to a wider range of users.
 
 ## ⚙️ `Setup and installation`
 **Prerequisites:**\
