@@ -150,6 +150,7 @@ gnome-desktop-4
 gnome-desktop-common
 gnome-themes-extra
 gnu-free-fonts
+gnulib-l10n
 gnupg
 gnutls
 gobject-introspection
