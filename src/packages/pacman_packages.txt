@@ -256,6 +256,7 @@ kcrash
 kcrash5
 kdbusaddons
 kdbusaddons5
+kdeclarative5
 kdecoration
 kded5
 keyutils
@@ -271,6 +272,7 @@ kidentitymanagement
 kio
 kio5
 kirigami
+kirigami2
 kitemmodels
 kitemviews
 kitemviews5
@@ -800,7 +802,10 @@ qgpgme-qt6
 qqc2-desktop-style
 qt5-base
 qt5-declarative
+qt5-graphicaleffects
 qt5-multimedia
+qt5-quickcontrols
+qt5-quickcontrols2
 qt5-speech
 qt5-svg
 qt5-translations
