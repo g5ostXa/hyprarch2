@@ -205,6 +205,7 @@ hyprcursor
 hyprgraphics
 hypridle
 hyprland
+hyprland-qt-support
 hyprland-qtutils
 hyprlang
 hyprlock
