@@ -17,7 +17,7 @@
 
 **What you need to consider before installing:**
 
-- This project is was just recently made public and still needs many improvements.
+- This project was just recently made public and still needs many improvements.
 - Tested on several models of dell laptops with intel processors and in KVM / qemu virtual machines.
 - Not tested on AMD processors or with NVIDIA drivers.
 - You might want to view the [`packages`](/src/packages/) lists, and edit them to remove what you don't want or add extra packages.
