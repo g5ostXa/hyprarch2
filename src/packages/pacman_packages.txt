@@ -15,7 +15,6 @@ apparmor
 appstream
 aquamarine
 archlinux-keyring
-argon2
 at-spi2-core
 atkmm
 attica
@@ -800,7 +799,6 @@ qemu-ui-spice-app
 qemu-ui-spice-core
 qemu-vhost-user-gpu
 qgpgme-qt6
-qqc2-desktop-style
 qt5-base
 qt5-declarative
 qt5-graphicaleffects
