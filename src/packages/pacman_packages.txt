@@ -549,6 +549,7 @@ linux-api-headers
 linux-firmware
 linux-firmware-whence
 linux-headers
+llhttp
 llvm-libs
 lm_sensors
 lmdb
