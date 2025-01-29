@@ -864,9 +864,10 @@ ruby-test-unit
 ruby-typeprof
 rubygems
 sdbus-cpp
-sdl2
+sdl2-compat
 sdl2_image
 sdl2_ttf
+sdl3
 seabios
 seatd
 sed
