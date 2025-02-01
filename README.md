@@ -89,7 +89,7 @@ $ uwsm start hyprland
 
 ## 🖥️ `Monitor`
 > [!TIP]
-> - To configure your monitor(s) manually, you need to edit [`dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
+> - To configure your monitor(s), you need to edit [`dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
 
 Here's what a manual configuration should look like:
 ```md
