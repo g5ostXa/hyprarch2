@@ -97,9 +97,11 @@ Here's what a manual configuration should look like:
 # Monitor Setup
 # -------------------------------------------------------------------------------------
 
-# Custom configuration example:
+# General:
 monitor=eDP-1,1920x1080@120.035,0x0,1
 monitor=HDMI-A-1,2048x1080@60.00,auto,1
+
+# Virtual machine:
 monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
 For more detailed instructions about how to configure your monitor(s): [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
