@@ -955,6 +955,7 @@ usbredir
 usbutils
 util-linux
 util-linux-libs
+uwsm
 v4l-utils
 vapoursynth
 vde2
