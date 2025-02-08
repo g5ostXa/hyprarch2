@@ -91,6 +91,7 @@ efibootmgr
 efitools
 efivar
 electron32
+electron33
 enchant
 ethtool
 exempi
@@ -469,6 +470,7 @@ libsndfile
 libsodium
 libsoup3
 libsoxr
+libspng
 libssh
 libssh2
 libstemmer
@@ -829,7 +831,6 @@ rav1e
 re2
 readline
 reflector
-reiserfsprogs
 ripgrep
 rofi-wayland
 rsync
