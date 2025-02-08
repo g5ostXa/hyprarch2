@@ -6,7 +6,6 @@ paru-bin-debug
 python-imageio
 python-imageio-ffmpeg
 python-screeninfo
-reiserfsprogs
 tokyonight-gtk-theme-git
 trizen
 typos-lsp-bin
