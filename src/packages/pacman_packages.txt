@@ -90,7 +90,6 @@ edk2-ovmf
 efibootmgr
 efitools
 efivar
-electron32
 electron33
 enchant
 ethtool
