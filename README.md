@@ -22,7 +22,7 @@
 - Not tested on AMD processors or with NVIDIA drivers.
 - You might want to view the [`packages`](/src/packages/) lists, and edit them to remove what you don't want or add extra packages.
 > [!CAUTION]
-> - Removing packages from the lists might break things, especially the AUR packages.
+> - Removing packages from the lists might break things.
 
 ## ⚙️ `Setup and installation`
 **Prerequisites:**\
