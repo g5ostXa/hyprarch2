@@ -126,7 +126,6 @@ install_aur_packages() {
 		trizen \
 		typos-lsp-bin \
 		unimatrix-git \
-		uwsm \
 		vim-language-server \
 		vscodium-bin \
 		waypaper \
