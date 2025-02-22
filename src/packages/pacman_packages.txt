@@ -880,6 +880,7 @@ signon-kwallet-extension
 signon-plugin-oauth2
 signon-ui
 signond
+simdjson
 slang
 sleuthkit
 slurp
