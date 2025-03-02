@@ -124,7 +124,6 @@ install_aur_packages() {
 		pacseek-bin \
 		tokyonight-gtk-theme-git \
 		trizen \
-		typos-lsp-bin \
 		unimatrix-git \
 		vim-language-server \
 		vscodium-bin \
