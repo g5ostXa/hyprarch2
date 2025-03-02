@@ -946,6 +946,7 @@ ttf-font-awesome
 ttf-jetbrains-mono-nerd
 tumbler
 twolame
+typos-lsp
 tzdata
 uchardet
 udisks2
