@@ -701,6 +701,7 @@ pwgen
 python
 python-attrs
 python-autocommand
+python-build
 python-cairo
 python-cffi
 python-charset-normalizer
@@ -717,6 +718,7 @@ python-gobject
 python-idna
 python-importlib-metadata
 python-inflect
+python-installer
 python-jaraco.collections
 python-jaraco.context
 python-jaraco.functools
@@ -741,6 +743,7 @@ python-platformdirs
 python-psutil
 python-pycparser
 python-pygments
+python-pyproject-hooks
 python-pyudev
 python-pywal
 python-pyxdg
