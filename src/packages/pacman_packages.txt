@@ -1,8 +1,8 @@
 aalib
 abseil-cpp
 acl
-adobe-source-code-pro-fonts
 adwaita-cursors
+adwaita-fonts
 adwaita-icon-theme
 adwaita-icon-theme-legacy
 akonadi-mime
@@ -75,6 +75,7 @@ device-mapper
 dhcpcd
 dialog
 diffutils
+discord
 distro-info
 distro-info-data
 dmidecode
@@ -186,6 +187,7 @@ gtksourceview4
 guile
 gum
 gupnp
+gupnp-dlna
 gupnp-igd
 gvfs
 gzip
