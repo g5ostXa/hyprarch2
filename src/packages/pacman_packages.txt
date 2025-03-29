@@ -75,7 +75,6 @@ device-mapper
 dhcpcd
 dialog
 diffutils
-discord
 distro-info
 distro-info-data
 dmidecode
