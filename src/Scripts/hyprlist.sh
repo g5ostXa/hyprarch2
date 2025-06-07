@@ -15,9 +15,11 @@ PKG_LIST_DIR="$HOME/src/packages"
 
 prep_function() {
 	if [ -d "$PKG_LIST_DIR" ]; then
+		sudo -v
 		rm -rf "$PKG_LIST_DIR"/*
 		gum spin --spinner meter --title "Updating package lists..." -- sleep 3
 	else
+		sudo -v
 		mkdir -p "$PKG_LIST_DIR"
 		gum spin --spinner meter --title "Updating package lists..." -- sleep 3
 	fi
@@ -25,8 +27,8 @@ prep_function() {
 }
 
 main_function() {
-	pacman -Qqn >"$PKG_LIST_DIR"/pacman_packages.txt
-	pacman -Qm | awk '{print $1}' >"$PKG_LIST_DIR"/aur_packages.txt
+	sudo pacman -Qqn >"$PKG_LIST_DIR"/pacman_packages.txt
+	sudo pacman -Qm | awk '{print $1}' >"$PKG_LIST_DIR"/aur_packages.txt
 
 	echo -e "${GREEN}Total number of packages (pacman):${RC}"
 	wc -l "$PKG_LIST_DIR"/pacman_packages.txt

@@ -1,0 +1,14 @@
+bibata-cursor-theme
+dracula-icons-theme
+pacseek-bin
+paru-bin
+paru-bin-debug
+python-imageio-ffmpeg
+python-screeninfo
+tokyonight-gtk-theme-git
+trizen
+unimatrix-git
+vim-language-server
+vscodium-bin
+waypaper
+wlogout
