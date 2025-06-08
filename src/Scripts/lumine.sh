@@ -13,7 +13,7 @@ is_installed_brightnessctl() {
 
 is_installed_figlet() {
 	if command -v figlet >/dev/null 2>&1; then
-		clear && figlet -f smslant "lumine.sh"
+		clear && figlet -f smslant "lumine"
 		echo ""
 	else
 		clear
