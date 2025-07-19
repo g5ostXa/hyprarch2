@@ -34,6 +34,7 @@ bat
 binutils
 bison
 blas
+bluez-libs
 breeze-icons
 bridge-utils
 brightnessctl
@@ -160,6 +161,7 @@ gperftools
 gpgme
 gpgmepp
 gpm
+gpsd
 gptfdisk
 graphene
 graphite
@@ -555,6 +557,16 @@ licenses
 linux
 linux-api-headers
 linux-firmware
+linux-firmware-amdgpu
+linux-firmware-atheros
+linux-firmware-broadcom
+linux-firmware-cirrus
+linux-firmware-intel
+linux-firmware-mediatek
+linux-firmware-nvidia
+linux-firmware-other
+linux-firmware-radeon
+linux-firmware-realtek
 linux-firmware-whence
 linux-headers
 llhttp
@@ -698,6 +710,7 @@ poppler
 poppler-glib
 popt
 portaudio
+pps-tools
 procps-ng
 progress
 psmisc
@@ -839,6 +852,7 @@ qt6-webchannel
 qt6-webengine
 qtkeychain-qt6
 rav1e
+rdma-core
 re2
 readline
 reflector
