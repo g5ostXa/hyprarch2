@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# ---------------------------------
-# install.sh | By g5ostXa | 
-# ---------------------------------
+# -------------------------------
+# install.sh | By g5ostXa |  💎
+# -------------------------------
 
 # Quick overview:
 # - Install required packages from both official repositories and the AUR.
