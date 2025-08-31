@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ---------------------------------
-# install.sh
+# install.sh | By g5ostXa | 
 # ---------------------------------
 
 # Quick overview:
