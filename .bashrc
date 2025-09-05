@@ -48,7 +48,6 @@ alias lumine="~/src/Scripts/lumine.sh"
 # General
 # ----------------------------------------------------------------------------------------
 export PATH="/usr/lib/ccache/bin/:$PATH"
-export UWSM_USE_SESSION_SLICE=true
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
 
