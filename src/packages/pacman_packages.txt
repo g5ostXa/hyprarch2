@@ -91,7 +91,7 @@ edk2-ovmf
 efibootmgr
 efitools
 efivar
-electron34
+electron37
 enchant
 ethtool
 exempi
@@ -478,7 +478,6 @@ libsndfile
 libsodium
 libsoup3
 libsoxr
-libspng
 libssh
 libssh2
 libstemmer
@@ -981,7 +980,6 @@ tslib
 ttf-fira-code
 ttf-fira-sans
 ttf-firacode-nerd
-ttf-font-awesome
 ttf-jetbrains-mono-nerd
 tumbler
 twolame
@@ -1028,6 +1026,7 @@ wireless_tools
 wl-clipboard
 wlr-randr
 woff2
+woff2-font-awesome
 wolfssl
 wpa_supplicant
 x264
