@@ -92,7 +92,7 @@
     },
     "disk": {
         "interval": 30,
-        "format": " {percentage_used}%",
+        "format": "  {percentage_used}%",
         "path": "/",
         "on-click": "uwsm app -- alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
     },
