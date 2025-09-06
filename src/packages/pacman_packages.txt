@@ -856,7 +856,7 @@ re2
 readline
 reflector
 ripgrep
-rofi-wayland
+rofi
 rsync
 rtkit
 rubberband
