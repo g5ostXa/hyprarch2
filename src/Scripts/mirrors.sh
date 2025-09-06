@@ -12,7 +12,7 @@
 MIRRORLIST="/etc/pacman.d/mirrorlist"
 MIRRORLIST_BAK="/etc/pacman.d/mirrorlist.bak"
 REFLECTOR_CMD="sudo reflector --country Canada --protocol https --latest 20 --age 6 --sort rate --save $MIRRORLIST"
-SYNC_DATABASE="sudo pacman -Syu"
+SYNC_DATABASE="sudo pacman -Sy"
 
 create_mirrorlist() {
 	gum spin --spinner globe --title "Fetching the latest mirrors..." -- $REFLECTOR_CMD
