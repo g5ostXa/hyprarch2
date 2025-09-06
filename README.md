@@ -9,27 +9,10 @@
 [![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=6A0DAD)](https://archlinux.org/)
 </div>
 
-## ⚠ `Disclaimer`
-> [!WARNING]
-> - [`Hyprland`](https://wiki.hyprland.org/) and [`Archlinux`](https://wiki.archlinux.org/) are not meant for beginners!
-> - It is **strongly** advised that you fully read and understand the [`documentation`](https://wiki.hyprland.org/Getting-Started/Installation/) before installing.
-> - This project is based on [`ml4w-dotfiles`](https://github.com/mylinuxforwork/dotfiles), which can be found on the [`AUR`](https://aur.archlinux.org).
-
-**What you need to consider before installing:**
-
-- This project was just recently made public and still needs many improvements.
-- Tested on several models of dell laptops with intel processors and in KVM / qemu virtual machines.
-- Not tested on AMD processors or with NVIDIA drivers.
-- You might want to view the [`packages`](/src/packages/) lists, and edit them to remove what you don't want or add extra packages.
-> [!CAUTION]
-> - Removing packages from the lists might break things.
-
 ## ⚙️ `Setup and installation`
-**Prerequisites:**\
-If you have not done so already, you need a fresh minimal [`Archlinux`](https://archlinux.org) installation.\
-If you want to use a different distro, which is totally fine, go ahead and install [`Archlinux`](https://archlinux.org) anyway.
+**Prerequisites:**
+- If you have not done so already, you need a fresh minimal [`Archlinux`](https://archlinux.org) installation.
 
-To install [`Arch`](https://archlinux.org) manually, refer to the [`Arch install guide`](https://wiki.archlinux.org/title/Installation_guide) or, run [`archinstall`](https://github.com/archlinux/archinstall) from the `archiso` to install [`Arch`](https://archlinux.org) the easy way.
 > [!IMPORTANT]
 > - If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
 > - Installing in `virt-manager` requires you to:
@@ -37,19 +20,19 @@ To install [`Arch`](https://archlinux.org) manually, refer to the [`Arch install
 >   - Set `[Listen type]` to `[None]` in `[Display Spice]`.
 >   - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
 
-**Usage:**\
-Within your new [`Arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
+**Usage:**
+- Within your new [`Arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
 ```ruby
 $ sudo pacman -S --needed --noconfirm wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum figlet vim openssh
 ```
 
- Then, clone [`hyprarch2`](/) in `~/Downloads/` and run [`install.sh`](/install.sh) from `~/Downloads/hyprarch2/`:
+- Then, clone [`hyprarch2`](/) in `~/Downloads/` and run [`install.sh`](/install.sh) from `~/Downloads/hyprarch2/`:
 ```bash
 $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 $ cd hyprarch2 && ./install.sh
 ```
 
-After the installation is completed, use the following to start [`hyprland`](https://hyprland.org) from tty:
+- After the installation is completed, use the following to start [`hyprland`](https://hyprland.org) from tty:
 ```ruby
 $ uwsm start hyprland
 ```
