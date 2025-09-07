@@ -1,6 +1,5 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
-require("symbols-outline").setup()
 
 local opts = {
   highlight_hovered_item = true,
