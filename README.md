@@ -10,29 +10,31 @@
 </div>
 
 ## ⚙️ `Setup and installation`
-**Prerequisites:**
-- If you have not done so already, you need a fresh minimal [`Archlinux`](https://archlinux.org) installation.
+<h3>Prerequisites:</h3>
+
+If you have not done so already, you need a fresh, minimal [`Archlinux`](https://archlinux.org) installation.
 
 > [!IMPORTANT]
-> - If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
+> If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
 > - Installing in `virt-manager` requires you to:
 >   - Enable `[3D acceleration]` in `[Video Virtio]`.
 >   - Set `[Listen type]` to `[None]` in `[Display Spice]`.
 >   - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
 
-**Usage:**
-- Within your new [`Arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
+Within your new [`Arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
 ```ruby
 $ sudo pacman -S --needed --noconfirm wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum figlet vim openssh
 ```
 
-- Then, clone [`hyprarch2`](/) in `~/Downloads/` and run [`install.sh`](/install.sh) from `~/Downloads/hyprarch2/`:
+<h3>Usage:</h3>
+
+Clone [`hyprarch2`](/) in `~/Downloads/` and run [`install.sh`](/install.sh) from `~/Downloads/hyprarch2/`:
 ```bash
 $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 $ cd hyprarch2 && ./install.sh
 ```
 
-- After the installation is completed, use the following to start [`hyprland`](https://hyprland.org) from tty:
+After the installation is completed, use the following to start [`hyprland`](https://hyprland.org) from tty:
 ```ruby
 $ uwsm start hyprland
 ```
