@@ -94,7 +94,7 @@ required_dependencies() {
 
 # User chooses AUR helper
 install_aur_packages() {
-	clear && echo -e "${CYAN}"
+	echo -e "${CYAN}"
 	figlet -f smslant "AUR"
 	echo -e "${RC}\n"
 
