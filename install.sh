@@ -48,8 +48,7 @@ EOF
 	echo -e "${RC}" && echo ""
 fi
 
-# If installing via ssh, use a basic bash prompt instead
-# Basic bash prompt if installing via ssh
+# Simple prompt if installing via ssh
 if [ -n "$SSH_CONNECTION" ]; then
 	while true; do
 		read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
@@ -69,7 +68,7 @@ if [ -n "$SSH_CONNECTION" ]; then
 		esac
 	done
 else
-	# Gum prompt if not using ssh
+	# Gum prompt if not installing via ssh
 	if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
 		echo ";; Starting Installation..."
 		sleep 2
@@ -93,7 +92,7 @@ required_dependencies() {
 
 }
 
-# Prompt user to install AUR helper and packages
+# User chooses AUR helper
 install_aur_packages() {
 	clear && echo -e "${CYAN}"
 	figlet -f smslant "AUR"
@@ -118,6 +117,7 @@ install_aur_packages() {
 		exit 1
 	fi
 
+	# Install AUR packages
 	"$AUR_HELPER" -S --needed --noconfirm \
 		bibata-cursor-theme \
 		dracula-icons-theme \
@@ -142,7 +142,7 @@ install_aur_packages() {
 
 }
 
-# Install wallpapers from my GitHub
+# Install wallpaper repository
 install_wallpaper() {
 	echo -e "${YELLOW};; Installing wallpapers...${RC}" && sleep 1
 	if [ -d "$WALLPAPER_DIR" ]; then
@@ -154,7 +154,7 @@ install_wallpaper() {
 
 }
 
-# Copy files and build structure
+# I know this is a mess, but it does what I want it to do
 main_setup() {
 	if [ -f "$HOME/.bashrc" ]; then
 		echo -e "${YELLOW};; Creating a backup of ~/.bashrc...${RC}"
@@ -202,7 +202,7 @@ main_setup() {
 
 }
 
-# Link dots to ~/.config/
+# Link dotfiles to ~/.config/ because I like it complicated
 create_symlinks() {
 	link_if_exists() {
 		local SOURCE_DOTS="$1"
@@ -235,9 +235,6 @@ create_symlinks() {
 
 }
 
-# ----------------------------------------------------------------
-# Installation START
-# ----------------------------------------------------------------
 required_dependencies figlet ";; figlet is not installed..."
 required_dependencies gum ";; gum is not installed..."
 
@@ -272,7 +269,6 @@ else
 	echo -e "${RED};; $HYPRARCH2_DIR does not exist, skipping...${RC}"
 fi
 
-# Run cleanup script if available
 if [ -f "$CLEANUP_SCRIPT" ]; then
 	echo -e "${YELLOW};; Executing cleanup script...${RC}"
 	source "$CLEANUP_SCRIPT"
@@ -288,9 +284,6 @@ else
 	echo -e "${RED};; trash-empty command not found, skipping...${RC}"
 fi
 
-# -----------------------------------------------------------------------------
-# Installation END
-# -----------------------------------------------------------------------------
 echo -e "${CYAN}"
 figlet -f smslant "hyprarch2"
 echo ""
