@@ -121,6 +121,7 @@ install_aur_packages() {
 	"$AUR_HELPER" -S --needed --noconfirm \
 		bibata-cursor-theme \
 		dracula-icons-theme \
+		hyprls-git \
 		pacseek-bin \
 		tokyonight-gtk-theme-git \
 		trizen \

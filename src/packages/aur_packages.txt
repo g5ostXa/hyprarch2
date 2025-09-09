@@ -1,5 +1,6 @@
 bibata-cursor-theme
 dracula-icons-theme
+hyprls-git
 pacseek-bin
 paru-bin
 paru-bin-debug
