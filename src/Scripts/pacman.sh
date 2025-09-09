@@ -14,7 +14,7 @@ if grep -Fq "#ParallelDownloads" /etc/pacman.conf; then
 	sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 	echo -e "${CYAN}Parallel downloads activated!${RC}"
 else
-	echo -e "${RED}Failed to activate parallel downloads...${RC}"
+	echo -e "${CYAN}ParallelDownloads is already enabled!${RC}"
 fi
 
 if grep -Fxq "#Color" /etc/pacman.conf; then
