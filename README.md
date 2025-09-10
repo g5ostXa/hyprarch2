@@ -91,9 +91,6 @@ monitor=Virtual-1,2048x1080@60.00,0x0,1
 For more detailed instructions about how to configure your monitor(s): [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
 
 ## 🌐 `Quick links`
-**Wallpaper engine documentation:**\
-[` ➜ docs/wallpaper-waybar/README.md`](/docs/wallpaper-waybar/README.md)
-
 **Wallpaper source:**\
 [` ➜ g5ostXa/wallpaper`](https://github.com/g5ostXa/wallpaper)
 
