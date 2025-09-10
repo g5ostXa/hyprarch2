@@ -114,7 +114,7 @@ If you like my project and want to contribute, feel free to submit a PR and give
 ```
 
 ## 📸 `Screenshots`
-<img src="/docs/screenshots/screenshot-20241206-122335.png"/>
-<img src="/docs/screenshots/screenshot-20241201-164323.png"/>
-<img src="/docs/screenshots/screenshot-20241201-165449.png"/>
-<img src="/docs/screenshots/screenshot-20241204-051902.png"/>
+<img src="/assets/screenshots/screenshot-20241206-122335.png"/>
+<img src="/assets/screenshots/screenshot-20241201-164323.png"/>
+<img src="/assets/screenshots/screenshot-20241201-165449.png"/>
+<img src="/assets/screenshots/screenshot-20241204-051902.png"/>
