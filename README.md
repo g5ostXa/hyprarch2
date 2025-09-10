@@ -9,6 +9,18 @@
 [![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=6A0DAD)](https://archlinux.org/)
 </div>
 
+## :octocat: `Contributions`
+If you like my project and want to contribute, feel free to submit a PR and give it a ⭐ !
+```md
+   __                              __   ___
+  / /  __ _____  _______ _________/ /  |_  |
+ / _ \/ // / _ \/ __/ _ `/ __/ __/ _ \/ __/
+/_//_/\_, / .__/_/  \_,_/_/  \__/_//_/____/
+     /___/_/
+
+[hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2
+```
+
 ## ⚙️ `Setup and installation`
 <h3>Prerequisites:</h3>
 
@@ -26,7 +38,7 @@ Within your new [`Arch`](https://archlinux.org/) install, make sure all needed d
 $ sudo pacman -S --needed --noconfirm wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum figlet vim openssh
 ```
 
-<h3>Usage:</h3>
+<h3>Usage:</h3> 
 
 Clone [`hyprarch2`](/) in `~/Downloads/` and run [`install.sh`](/install.sh) from `~/Downloads/hyprarch2/`:
 ```bash
@@ -55,22 +67,6 @@ $ uwsm start hyprland
 - Current Cursor Theme: `bibata-cursor-theme`
 - Editors: `neovim` / `vscodium` / `obsidian`
 
-## ⌨️ `Keybinds`
-**All available keybinds here:**\
-[` ➜ dotfiles/hypr/conf/keybindings.conf`](/dotfiles/hypr/conf/keybindings.conf)
-
-**General keybinds:**
-- `⌨️` `SUPER` + `RETURN` : Alacritty
-- `⌨️` `SUPER` + `B` : Firefox
-- `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
-- `⌨️` `SUPER` + `CTRL` + `W` : Waypaper 
-- `⌨️` `SUPER` + `SHIFT` + `B` : Reload waybar 
-- `⌨️` `SUPER` + `CTRL` + `Q` : Wlogout
-- `⌨️` `SUPER` + `Q` : Killactive
-- `⌨️` `SUPER` + `E` : Nautilus
-- `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
-- `⌨️` `SUPER` + `CTRL` +`M` : Kill hyprland
-
 ## 🖥️ `Monitor`
 > [!TIP]
 > - To configure your monitor(s), you need to edit [`dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
@@ -90,25 +86,21 @@ monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
 For more detailed instructions about how to configure your monitor(s): [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
 
-## 🌐 `Quick links`
-**Wallpaper source:**\
-[` ➜ g5ostXa/wallpaper`](https://github.com/g5ostXa/wallpaper)
+## ⌨️ `Keybinds`
+**All available keybinds here:**\
+[` ➜ dotfiles/hypr/conf/keybindings.conf`](/dotfiles/hypr/conf/keybindings.conf)
 
-**Packages lists:**\
-[` ➜ Pacman`](/src/packages/pacman_packages.txt)
-[` ➜ AUR`](/src/packages/aur_packages.txt)
-
-## :octocat: `Contributions`
-If you like my project and want to contribute, feel free to submit a PR and give it a ⭐ !
-```md
-   __                              __   ___
-  / /  __ _____  _______ _________/ /  |_  |
- / _ \/ // / _ \/ __/ _ `/ __/ __/ _ \/ __/
-/_//_/\_, / .__/_/  \_,_/_/  \__/_//_/____/
-     /___/_/
-
-[hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2
-```
+**General keybinds:**
+- `⌨️` `SUPER` + `RETURN` : Alacritty
+- `⌨️` `SUPER` + `B` : Firefox
+- `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
+- `⌨️` `SUPER` + `CTRL` + `W` : Waypaper 
+- `⌨️` `SUPER` + `SHIFT` + `B` : Reload waybar 
+- `⌨️` `SUPER` + `CTRL` + `Q` : Wlogout
+- `⌨️` `SUPER` + `Q` : Killactive
+- `⌨️` `SUPER` + `E` : Nautilus
+- `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
+- `⌨️` `SUPER` + `CTRL` +`M` : Kill hyprland
 
 ## 📸 `Screenshots`
 <img src="/assets/screenshots/screenshot-20241206-122335.png"/>
