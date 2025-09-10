@@ -38,7 +38,7 @@ Within your new [`Arch`](https://archlinux.org/) install, make sure all needed d
 $ sudo pacman -S --needed --noconfirm wireless_tools dialog os-prober mtools dosfstools base-devel git reflector xdg-utils xdg-user-dirs gum figlet vim openssh
 ```
 
-<h3>Usage:</h3> 
+<h3>Usage:</h3>
 
 Clone [`hyprarch2`](/) in `~/Downloads/` and run [`install.sh`](/install.sh) from `~/Downloads/hyprarch2/`:
 ```bash
