@@ -87,10 +87,8 @@ monitor=Virtual-1,2048x1080@60.00,0x0,1
 For more detailed instructions about how to configure your monitor(s): [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
 
 ## ⌨️ `Keybinds`
-**All available keybinds here:**\
-[` ➜ dotfiles/hypr/conf/keybindings.conf`](/dotfiles/hypr/conf/keybindings.conf)
+[` ➜ All keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
 
-**General keybinds:**
 - `⌨️` `SUPER` + `RETURN` : Alacritty
 - `⌨️` `SUPER` + `B` : Firefox
 - `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
