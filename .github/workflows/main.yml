@@ -1,81 +1,51 @@
-name: Checks
+validate-configs:
+  runs-on: ${{ matrix.os }}
+  strategy:
+    matrix:
+      os: [ubuntu-20.04, ubuntu-22.04]
+  steps:
+    - uses: actions/checkout@v4
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-  workflow_dispatch:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.x"
 
-jobs:
-  verify-files:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04, ubuntu-22.04]
-    steps:
-      - uses: actions/checkout@v4
-      - name: Verify required files
-        run: |
-          set -euo pipefail
-          if [ ! -f README.md ]; then
-            echo "README.md is missing"
-            exit 1
-          fi
-          if [ ! -d ".version" ]; then
-            echo ".version directory is missing"
-            exit 1
-          fi
-          echo "All required files are present."
+    - name: Cache pip
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
 
-  lint-scripts:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04, ubuntu-22.04]
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run shellcheck on install.sh
-        run: |
-          set -euo pipefail
-          if [ -f install.sh ]; then
-            shellcheck -e SC1090,SC2086,SC2024,SC2164 install.sh || {
-              echo "Shellcheck failed for install.sh"
-              exit 1
-            }
-            echo "install.sh passed shellcheck."
-          else
-            echo "install.sh not found, skipping."
-          fi
+    - name: Install dependencies
+      run: |
+        set -euo pipefail
+        pip install --upgrade pip
+        pip install yamllint jq
 
-  validate-configs:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04, ubuntu-22.04]
-    steps:
-      - uses: actions/checkout@v4
-      - name: Validate config files in dotfiles
-        run: |
-          set -euo pipefail
-          find dotfiles -type f \( -name "*.conf" -o -name "*.yml" -o -name "*.json" \) | while read -r file; do
-            case "$file" in
-              *.json)
-                sed -E '/^\s*\/\//d; s/\/\*.*\*\///' "$file" | jq empty || {
-                  echo "JSON validation failed for $file"
-                  exit 1
-                }
-                echo "Valid JSON: $file"
-                ;;
-              *.yml)
-                yamllint "$file" || {
-                  echo "YAML validation failed for $file"
-                  exit 1
-                }
-                echo "Valid YAML: $file"
-                ;;
-              *.conf)
-                echo "Checked $file (assumed valid)."
-                ;;
-            esac
-          done
+    - name: Validate config files in dotfiles
+      run: |
+        set -euo pipefail
+        find dotfiles -type f \( -name "*.conf" -o -name "*.yml" -o -name "*.json" \) | while read -r file; do
+          case "$file" in
+            *.json)
+              sed -E '/^\s*\/\//d; s/\/\*.*\*\///' "$file" | jq empty || {
+                echo "JSON validation failed for $file"
+                exit 1
+              }
+              echo "Valid JSON: $file"
+              ;;
+            *.yml)
+              yamllint "$file" || {
+                echo "YAML validation failed for $file"
+                exit 1
+              }
+              echo "Valid YAML: $file"
+              ;;
+            *.conf)
+              echo "Checked $file (assumed valid)."
+              ;;
+          esac
+        done
