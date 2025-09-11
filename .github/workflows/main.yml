@@ -8,57 +8,63 @@ on:
   workflow_dispatch:
 
 jobs:
-  verify-files:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04, ubuntu-22.04]
+  checks:
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - name: Verify required files
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Check if README.md and .version exist
         run: |
           set -euo pipefail
           if [ ! -f README.md ]; then
-            echo "README.md is missing"
+            echo "❌ README.md is missing!"
             exit 1
           fi
           if [ ! -d ".version" ]; then
-            echo ".version directory is missing"
+            echo "❌ .version directory is missing!"
             exit 1
           fi
-          echo "All required files are present."
-        
-          lint-scripts:
-          runs-on: ${{ matrix.os }}
-          strategy:
-            matrix:
-              os: [ubuntu-20.04, ubuntu-22.04]
-          steps:
-            - uses: actions/checkout@v4
-        
-            - name: Run shellcheck on install.sh
-              run: |
-                set -euo pipefail
-                if [ -f install.sh ]; then
-                  shellcheck -e SC1090,SC2086,SC2024,SC2164 install.sh || {
-                    echo "Shellcheck failed for install.sh"
-                    exit 1
-                  }
-                  echo "install.sh passed shellcheck."
-                else
-                  echo "install.sh not found, skipping."
-                fi
-        
-            - name: Syntax test with bash -n
-              run: |
-                set -euo pipefail
-                if [ -f install.sh ]; then
-                  echo "Running bash syntax validation..."
-                  bash -n install.sh || {
-                    echo "Bash reported syntax errors in install.sh"
-                    exit 1
-                  }
-                  echo "Bash syntax validation passed."
-                else
-                  echo "install.sh not found, skipping."
-                fi
+          echo "✅ Required files are present."
+
+      - name: Syntax check for install.sh (exclude SC1090, SC2086, SC2024, SC2164)
+        run: |
+          set -euo pipefail
+          if [ -f install.sh ]; then
+            shellcheck -e SC1090,SC2086,SC2024,SC2164 install.sh || {
+              echo "❌ Syntax check failed for install.sh"
+              exit 1
+            }
+            echo "✅ install.sh passed syntax check."
+          else
+            echo "⚠️ install.sh not found, skipping check."
+          fi
+
+      - name: Validate configuration files in dotfiles directory
+        run: |
+          set -euo pipefail
+          find dotfiles -type f \( -name "*.conf" -o -name "*.yml" -o -name "*.json" \) | while read -r file; do
+            case "$file" in
+              *.json)
+                # Remove comments before validation
+                sed -E '/^\s*\/\//d; s/\/\*.*\*\///' "$file" | jq empty || {
+                  echo "❌ JSON validation failed for $file"
+                  exit 1
+                }
+                echo "✅ JSON valid: $file"
+                ;;
+              *.yml)
+                yamllint "$file" || {
+                  echo "❌ YAML validation failed for $file"
+                  exit 1
+                }
+                echo "✅ YAML valid: $file"
+                ;;
+              *.conf)
+                echo "ℹ️ $file is assumed valid."
+                ;;
+              *)
+                echo "Skipping $file (not a recognized config type)."
+                ;;
+            esac
+          done
