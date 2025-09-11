@@ -9,7 +9,6 @@ alias hyprlist='~/src/Scripts/hyprlist.sh'
 alias h2status='hyprarch2 status'
 alias h2push='hyprarch2 push'
 alias h2pull='hyprarch2 pull'
-alias wgstatus='sudo ~/src/Scripts/wgstatus.sh'
 
 # -----------------------------------------------------------------------------------------
 # Main aliases
