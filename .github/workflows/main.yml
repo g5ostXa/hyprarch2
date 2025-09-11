@@ -9,7 +9,10 @@ on:
 
 jobs:
   verify-files:
-    runs-on: ubuntu-22.04
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-20.04, ubuntu-22.04]
     steps:
       - uses: actions/checkout@v4
       - name: Verify required files
@@ -26,7 +29,10 @@ jobs:
           echo "All required files are present."
 
   lint-scripts:
-    runs-on: ubuntu-22.04
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-20.04, ubuntu-22.04]
     steps:
       - uses: actions/checkout@v4
       - name: Run shellcheck on install.sh
@@ -43,7 +49,10 @@ jobs:
           fi
 
   validate-configs:
-    runs-on: ubuntu-22.04
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-20.04, ubuntu-22.04]
     steps:
       - uses: actions/checkout@v4
       - name: Validate config files in dotfiles
