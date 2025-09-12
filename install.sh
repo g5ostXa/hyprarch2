@@ -115,8 +115,9 @@ install_packages() {
 		exit 1
 	fi
 
-	"$AUR_HELPER" -S --needed --noconfirm \
-		"hyprland"
+	"$AUR_HELPER" -S --needed --noconfirm
+
+	"hyprland"
 	"uwsm"
 	"alacritty"
 	"aquamarine"
