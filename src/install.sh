@@ -80,7 +80,6 @@ else
 	fi
 fi
 
-# Check if all needed packages are installed
 required_dependencies() {
 	local PACKAGE="$1"
 	local CHECK_FAILED="$2"
