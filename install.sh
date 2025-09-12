@@ -20,7 +20,6 @@ RC='\033[0m'
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 VERSION_NAME="$HYPRARCH2_DIR/.version/latest"
 PACMAN_CONFIG="$HYPRARCH2_DIR/src/Scripts/pacman.sh"
-PACMAN_PACKAGES="$HYPRARCH2_DIR/src/packages/pacman_packages.txt"
 WALLPAPER_REPO="https://github.com/g5ostXa/wallpaper.git"
 WALLPAPER_DIR="$HOME/wallpaper"
 CLEANUP_SCRIPT="$HOME/src/Scripts/cleanup.sh"
@@ -92,8 +91,7 @@ required_dependencies() {
 
 }
 
-# User chooses AUR helper
-install_aur_packages() {
+install_packages() {
 	echo -e "${CYAN}"
 	figlet -f smslant "AUR"
 	echo -e "${RC}\n"
@@ -117,19 +115,58 @@ install_aur_packages() {
 		exit 1
 	fi
 
-	# Install AUR packages
 	"$AUR_HELPER" -S --needed --noconfirm \
-		bibata-cursor-theme \
-		dracula-icons-theme \
-		hyprls-git \
-		pacseek-bin \
-		tokyonight-gtk-theme-git \
-		trizen \
-		unimatrix-git \
-		vim-language-server \
-		vscodium-bin \
-		waypaper \
-		wlogout
+ 		"hyprland"
+		"uwsm"
+		"alacritty"
+		"aquamarine"
+		"waybar"
+		"rofi" 
+		"dunst"
+		"cliphist"
+		"wlogout"
+		"xdg-desktop-portal-hyprland"
+		"qt5-wayland"
+		"qt6-wayland"
+		"waypaper"
+		"hyprpicker"
+		"hyprlock"
+		"hyprcursor"
+		"hypridle"
+		"hyprgraphics"
+		"hyprland-qt-support"
+		"hyprland-qtutils"
+		"hyprlang"
+		"hyprls-git"
+		"hyprwayland-scanner"
+		"fastfetch"
+		"otf-font-awesome"
+		"woff2-font-awesome"
+		"ttf-fira-sans"
+		"ttf-fira-code"
+		"ttf-firacode-nerd"
+		"brightnessctl"
+		"neovim"
+		"nautilus"
+		"fastfetch"
+		"pipewire"
+		"pavucontrol"
+		"pulseaudio"
+		"bibata-cursor-theme"
+		"dracula-icons-theme"
+		"tokyonight-gtk-theme-git"
+		"trizen"
+		"python-pywal"
+		"gtk2"
+		"gtk3"
+		"gtk4"
+		"lxappearance"
+		"swww"
+		"fish"
+		"starship"
+		"python-pip"
+		"eza"
+		"swappy"		
 
 	# Remove AUR helper build directory if it exists
 	if [ -d "$HOME/${AUR_HELPER}-bin" ]; then
@@ -246,12 +283,7 @@ echo -e "${RC}\n"
 source "$PACMAN_CONFIG"
 
 # Install main packages
-gum spin --spinner points --title "Preparing to install main packages..." -- sleep 5
-sudo pacman -Syu && sudo pacman -S --needed - <"$PACMAN_PACKAGES"
-sleep 2 && set -e
-
-# Call function (AUR)
-install_aur_packages
+install_packages
 
 # Call function (Walls)
 install_wallpaper
