@@ -641,6 +641,7 @@ opus
 orc
 os-prober
 osinfo-db
+otf-font-awesome
 oxygen
 oxygen5
 p11-kit
