@@ -1,12 +1,11 @@
 <div align="center">
-<img src="/assets/logos/IMG_3279.png" width="300" height="300"/>
-</div>
 
-<div align="center">
+<img src="/assets/logos/IMG_3279.png" width="300" height="300"/>
 
 [![Release](https://img.shields.io/badge/hyprarch2-v1.3.6-cyan.svg)](https://github.com/g5ostXa/hyprarch2/)
 [![Hyprland](https://img.shields.io/badge/Hyprland-%236A0DAD?&logo=hyprland&logoColor=white)](https://hyprland.org/)
 [![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=6A0DAD)](https://archlinux.org/)
+
 </div>
 
 ## :octocat: `Contributions`
