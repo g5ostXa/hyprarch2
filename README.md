@@ -21,7 +21,7 @@ If you like my project and want to contribute, feel free to submit a PR and give
 ```
 
 ## ⚙️ `Setup and installation`
-<h4>Prerequisites:</h4>
+<h3> 🗒️ Prerequisites:</h3>
 
 If you have not done so already, you need a fresh, minimal [`Archlinux`](https://archlinux.org) installation.
 
@@ -37,7 +37,7 @@ Within your new [`Arch`](https://archlinux.org/) install, make sure all needed d
 $ sudo pacman -S --needed --noconfirm git reflector xdg-utils xdg-user-dirs gum figlet vim openssh
 ```
 
-<h4>Usage:</h4>
+<h3> 🖱️ Usage:</h3>
 
 Clone [`hyprarch2`](/) in `~/Downloads/` and run [`install.sh`](/install.sh) from `~/Downloads/hyprarch2/`:
 ```bash
