@@ -30,7 +30,7 @@ jobs:
       - name: Syntax check for install.sh (exclude SC1090, SC2086, SC2024, SC2164)
         run: |
           set -euo pipefail
-          if [ -f install.sh ]; then
+          if [ -f /src/install.sh ]; then
             shellcheck -e SC1090,SC2086,SC2024,SC2164 install.sh || {
               echo "❌ Syntax check failed for install.sh"
               exit 1

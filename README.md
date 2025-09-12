@@ -39,7 +39,7 @@ $ sudo pacman -S --needed --noconfirm git reflector xdg-utils xdg-user-dirs gum 
 
 <h4> 🖱️ Usage:</h4>
 
-Clone [`hyprarch2`](/) in `~/Downloads/` and run [`install.sh`](/install.sh) from `~/Downloads/hyprarch2/`:
+Clone [`hyprarch2`](/) in `~/Downloads/` and run [`install.sh`](/src/install.sh) from `~/Downloads/hyprarch2/src/`:
 ```bash
 $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 $ cd hyprarch2 && ./install.sh
