@@ -95,7 +95,8 @@ install_packages() {
 	echo -e "${CYAN}"
 	figlet -f smslant "AUR"
 	echo -e "${RC}\n"
-	set -e
+	
+ 	set -e
 
 	echo -e "${YELLOW};; Which aur helper do you want to install ?${RC}\n"
 	AUR_HELPER=$(gum choose "paru" "yay" "CANCEL")
