@@ -95,7 +95,7 @@ install_packages() {
 	figlet -f smslant "AUR"
 	echo -e "${RC}\n"
 
-	set -e
+	set -euo pipefail
 
 	echo -e "${YELLOW};; Which aur helper do you want to install ?${RC}\n"
 	AUR_HELPER=$(gum choose "paru" "yay" "CANCEL")
@@ -258,7 +258,7 @@ create_symlinks() {
 	link_if_exists ~/dotfiles/gtk/.Xresources ~/.Xresources
 	link_if_exists ~/dotfiles/alacritty ~/.config/alacritty
 	link_if_exists ~/dotfiles/dunst ~/.config/dunst
-	link_if_exists ~/dotfiles/gtk/gtk-3.0 ~/.config/gtk-3.0
+	<F3 >link_if_exists ~/dotfiles/gtk/gtk-3.0 ~/.config/gtk-3.0
 	link_if_exists ~/dotfiles/gtk/gtk-4.0 ~/.config/gtk-4.0
 	link_if_exists ~/dotfiles/hypr ~/.config/hypr
 	link_if_exists ~/dotfiles/nvim ~/.config/nvim
@@ -286,16 +286,9 @@ figlet -f smslant "pacman.sh"
 echo -e "${RC}\n"
 source "$PACMAN_CONFIG"
 
-# Install main packages
 install_packages
-
-# Call function (Walls)
 install_wallpaper
-
-# Call function (Setup)
 main_setup
-
-# Call function (Sym)
 create_symlinks
 
 # Cleanup
@@ -323,7 +316,9 @@ fi
 
 echo -e "${CYAN}"
 figlet -f smslant "hyprarch2"
+
 echo ""
 echo ";; Installation status: COMPLETE"
+
 echo ""
 echo -e "${RC}"
