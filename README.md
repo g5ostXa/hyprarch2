@@ -64,7 +64,7 @@ $ uwsm start hyprland
 - GUI Theme App: `lxappearance`
 - Current GTK Theme: `tokyonight-gtk-theme-git`
 - Current Cursor Theme: `bibata-cursor-theme`
-- Editors: `neovim` / `vscodium` / `obsidian`
+- Editors: `neovim` / `vscodium`
 
 ## 🖥️ `Monitor`
 > [!TIP]
