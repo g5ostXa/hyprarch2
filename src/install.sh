@@ -123,6 +123,7 @@ install_packages() {
 		"aquamarine"
 		"waybar"
 		"rofi"
+		"libnotify"
 		"dunst"
 		"cliphist"
 		"wlogout"
