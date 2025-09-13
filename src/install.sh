@@ -258,7 +258,7 @@ create_symlinks() {
 	link_if_exists ~/dotfiles/gtk/.Xresources ~/.Xresources
 	link_if_exists ~/dotfiles/alacritty ~/.config/alacritty
 	link_if_exists ~/dotfiles/dunst ~/.config/dunst
-	<F3 >link_if_exists ~/dotfiles/gtk/gtk-3.0 ~/.config/gtk-3.0
+	link_if_exists ~/dotfiles/gtk/gtk-3.0 ~/.config/gtk-3.0
 	link_if_exists ~/dotfiles/gtk/gtk-4.0 ~/.config/gtk-4.0
 	link_if_exists ~/dotfiles/hypr ~/.config/hypr
 	link_if_exists ~/dotfiles/nvim ~/.config/nvim
