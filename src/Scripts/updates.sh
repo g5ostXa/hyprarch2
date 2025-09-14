@@ -7,13 +7,13 @@ threshold_red=100
 
 # Define which AUR helper is installed
 define_helper() {
-	if command -v paru >/dev/null; then
+	if command -v paru >/dev/null 2>&1; then
 		AUR_HELPER="paru"
 	else
-		if command -v yay >/dev/null; then
+		if command -v yay >/dev/null 2>&1; then
 			AUR_HELPER="yay"
 		else
-			if command -v notify-send >/dev/null; then
+			if command -v notify-send >/dev/null 2>&1; then
 				notify-send --urgency=critical "Neither paru or yay is installed..."
 			else
 				echo "Neither paru or yay is installed..."
