@@ -14,7 +14,7 @@ cat <<"EOF"
 EOF
 
 main_function() {
-	trizen -Scc
+	sudo pacman -Scc
 
 	# Remove orphaned packages
 	orphaned_packages=$(sudo pacman -Qtdq)
@@ -26,6 +26,10 @@ main_function() {
 	dependency_packages=$(sudo pacman -Qqd)
 	if [ -n "$dependency_packages" ]; then
 		sudo pacman -Rsu $dependency_packages
+	fi
+
+	if pgrep -x dunst >/dev/null; then
+		notify-send --urgency=normal "Package cache cleanup done."
 	fi
 
 }
