@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # -------------------------------------------------
-# gtk.sh | by Stephan Raabe (ml4w)
+# gtk.sh | by Stephan Raabe (ml4w) | 2025
 # -------------------------------------------------
-config="$HOME/.config/gtk-3.0/settings.ini"
+config="$HOME/dotfiles/gtk/gtk-3.0/settings.ini"
 if [ ! -f "$config" ]; then exit 1; fi
 
 gnome_schema="org.gnome.desktop.interface"
