@@ -7,6 +7,22 @@ threshold_green=0
 threshold_yellow=25
 threshold_red=100
 
+# Define AUR helper. (paru or yay)
+if command -v paru >/dev/null; then
+	AUR_HELPER="paru"
+elif
+	command -v yay >/dev/null
+then
+	AUR_HELPER="yay"
+elif
+	command -v notify-send >/dev/null
+then
+	notify-send --urgency=critical "Neither paru or yay is installed..."
+	exit 1
+else
+	echo "Neither paru or yay is installed..."
+fi
+
 if ! updates_arch=$(checkupdates 2>/dev/null | wc -l); then
 	updates_arch=0
 fi
