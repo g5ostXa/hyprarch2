@@ -128,6 +128,7 @@ install_packages() {
 		"cliphist"
 		"wlogout"
 		"xdg-desktop-portal-hyprland"
+		"xdg-desktop-portal-gtk"
 		"qt5-wayland"
 		"qt6-wayland"
 		"waypaper"
