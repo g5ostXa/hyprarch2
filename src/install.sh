@@ -162,7 +162,7 @@ install_packages() {
 		"gtk2"
 		"gtk3"
 		"gtk4"
-		"lxappearance"
+		"nwg-look"
 		"swww"
 		"fish"
 		"starship"

@@ -61,7 +61,7 @@ $ uwsm start hyprland
 - Bar: `waybar`
 - File Manager: `nautilus`
 - Theming: `GTK` / `python-pywal`
-- GUI Theme App: `lxappearance`
+- GUI Theme App: `nwg-look`
 - Current GTK Theme: `tokyonight-gtk-theme-git`
 - Current Cursor Theme: `bibata-cursor-theme`
 - Editors: `neovim` / `vscodium`
