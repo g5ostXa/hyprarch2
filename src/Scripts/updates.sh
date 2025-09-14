@@ -1,33 +1,32 @@
 #!/bin/bash
 
-# ----------------------------------------------------
-# updates.sh
-# ----------------------------------------------------
+# Define some variables
 threshold_green=0
 threshold_yellow=25
 threshold_red=100
 
-# Define AUR helper. (paru or yay)
+# Define which AUR helper is installed
 if command -v paru >/dev/null; then
 	AUR_HELPER="paru"
-elif
-	command -v yay >/dev/null
-then
-	AUR_HELPER="yay"
-elif
-	command -v notify-send >/dev/null
-then
-	notify-send --urgency=critical "Neither paru or yay is installed..."
-	exit 1
 else
-	echo "Neither paru or yay is installed..."
+	if command -v yay >/dev/null; then
+		AUR_HELPER="yay"
+	else
+		if command -v notify-send >/dev/null; then
+			notify-send --urgency=critical "Neither paru or yay is installed..."
+		else
+			echo "Neither paru or yay is installed..."
+			exit 1
+		fi
+	fi
 fi
 
+# Get updates total number
 if ! updates_arch=$(checkupdates 2>/dev/null | wc -l); then
 	updates_arch=0
 fi
 
-if ! updates_aur=$(paru -Qua 2>/dev/null | wc -l); then
+if ! updates_aur=$("$AUR_HELPER" -Qua 2>/dev/null | wc -l); then
 	updates_aur=0
 fi
 
