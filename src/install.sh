@@ -157,7 +157,6 @@ install_packages() {
 		"bibata-cursor-theme"
 		"dracula-icons-theme"
 		"tokyonight-gtk-theme-git"
-		"trizen"
 		"python-pywal"
 		"gtk2"
 		"gtk3"
@@ -169,6 +168,8 @@ install_packages() {
 		"python-pip"
 		"eza"
 		"swappy"
+		"vscodium-bin"
+		"firefox"
 	)
 
 	"$AUR_HELPER" -S --needed --noconfirm "${PACKAGES[@]}"
