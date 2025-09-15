@@ -24,7 +24,7 @@ main_function() {
 	if [ "$THEME_PREF" -eq 1 ]; then
 			"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark"
 	else
-		 "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light"
+			"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light"
 	fi
 	
 	# Set wallpaper
