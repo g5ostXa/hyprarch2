@@ -1,4 +1,5 @@
 * {
+    @import "colors.css";
     font-family: "Fira Sans Semibold", "Font Awesome 7 Free", "Font Awesome 7 Brands", "Font Awesome 6 Free", "Font Awesome 6 Brands", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     border: none;
     border-radius: 0px;
