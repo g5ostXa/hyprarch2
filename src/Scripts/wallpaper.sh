@@ -25,7 +25,7 @@ main_function() {
 		"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light"
 	fi
 	
-	waypaper
+	uwsm app-- waypaper --restore
 	
 	# Send notification only if waybar is running to prevent a wallpaper update notification every time hyprland is launched
 	if pgrep -x waybar >/dev/null; then
