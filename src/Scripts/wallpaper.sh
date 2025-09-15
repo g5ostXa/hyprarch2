@@ -20,12 +20,12 @@ main_function() {
 	THEME_PREF=$(grep -E '^gtk-application-prefer-dark-theme=' "$SETTINGS_FILE" | awk -F'=' '{print $2}')
 	
 	if [ "$THEME_PREF" -eq 1 ]; then
-			"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark"
-	else
+		"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark"
+		else
 		"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light"
 	fi
 	
-	uwsm app -- waypaper --restore
+ # command to set wallpaper here
 	
 	# Send notification only if waybar is running to prevent a wallpaper update notification every time hyprland is launched
 	if pgrep -x waybar >/dev/null; then
