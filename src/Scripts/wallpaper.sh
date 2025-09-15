@@ -26,7 +26,7 @@ main_function() {
 
     SETTINGS_FILE="$HOME/.config/gtk-3.0/settings.ini"
     THEME_PREF=$(grep -E '^gtk-application-prefer-dark-theme=' "$SETTINGS_FILE" | awk -F'=' '{print $2}')
-    "$HOME"/.local/bin/matugen image $used_wallpaper -m "dark"
+    "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark"
 
 	# Reload waybar
 	source "$HOME/src/Scripts/waybar/launch.sh"
