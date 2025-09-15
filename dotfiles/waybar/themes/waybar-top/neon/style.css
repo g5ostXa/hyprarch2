@@ -1,7 +1,7 @@
 /* -----------------------------------------------------
  * Import Pywal colors 
  * ----------------------------------------------------- */
-@import '../../../../../.cache/wal/colors-waybar.css';
+@import '../../../../../dotfiles/waybar/colors.css';
 
 @define-color backgroundlight @color5;
 @define-color backgrounddark @color11;
