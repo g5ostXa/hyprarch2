@@ -20,9 +20,9 @@ main_function() {
 	THEME_PREF=$(grep -E '^gtk-application-prefer-dark-theme=' "$SETTINGS_FILE" | awk -F'=' '{print $2}')
 	
 	if [ "$THEME_PREF" -eq 1 ]; then
-    "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark"
+			"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark"
 	else
-    "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light"
+		"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light"
 	fi
 	
 	waypaper
