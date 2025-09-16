@@ -7,7 +7,7 @@ __      _| | ___   __ _  ___  _   _| |_
                   |___/                  
 */
 
-@import '../../.cache/wal/colors-wlogout.css';
+@import 'colors.css';
 
 * {
     font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
@@ -17,7 +17,7 @@ __      _| | ___   __ _  ___  _   _| |_
 }
 
 window {
-    background-color: rgba(12, 12, 12, 0.1);
+    background-color: alpha(@primary, 0.2)
 }
 
 button {
@@ -27,7 +27,7 @@ button {
     background-position: center;
     background-size: 25%;
     border-style: solid;
-    background-color: rgba(12, 12, 12, 0.3);
+    background-color: alpha(@primary, 0.2);
     border: 3px solid black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     outline: none;
@@ -37,7 +37,7 @@ button:focus,
 button:active,
 button:hover {
     color: @color11;
-    background-color: rgba(12, 12, 12, 0.5);
+    background-color: alpha(@primary, 0.9);
     border: 3px solid black;
     outline: none;
 }
