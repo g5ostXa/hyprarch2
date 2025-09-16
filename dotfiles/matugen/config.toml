@@ -29,7 +29,7 @@ output_path = '~/.config/wlogout/colors.css'
 [templates.dunst]
 input_path = '~/.config/matugen/templates/dunstrc-colors'
 output_path = '~/.config/dunst/dunstrc'
-post_hook = 'pkill -SIGUSR2 dunst
+post_hook = 'pkill -SIGUSR2 dunst'
 
 [templates.btop]
 input_path = '~/.config/matugen/templates/btop.theme'
