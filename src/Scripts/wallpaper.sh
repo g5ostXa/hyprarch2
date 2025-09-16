@@ -22,13 +22,13 @@ main_function() {
 	
 	# Set theme using matugen based on $used_wallpaper colors
 	if [ "$THEME_PREF" -eq 1 ]; then
-			"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark"
+		"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark"
 	else
-			"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light"
+		"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light"
 	fi
 	
 	# Set wallpaper
- swww img "$used_wallpaper" --transition-type center
+	swww img "$used_wallpaper" --transition-type center
 	
 	# Send notification only if waybar is running to prevent a wallpaper update notification every time hyprland is launched
 	if pgrep -x waybar >/dev/null; then
