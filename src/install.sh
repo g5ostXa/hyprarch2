@@ -51,7 +51,7 @@ fi
 if [ -n "$SSH_CONNECTION" ]; then
 	while true; do
 		read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
-		case $yn in
+		case $yn ins
 		[Yy]*)
 			echo ";; Starting Installation..."
 			sleep 2
@@ -176,20 +176,14 @@ install_packages() {
 	)
 
 	"$AUR_HELPER" -S --needed --noconfirm "${PACKAGES[@]}"
-
-	# Remove AUR helper build directory if it exists
-	if [ -d "$HOME/${AUR_HELPER}-bin" ]; then
-		echo -e "${CYAN};; Removing ${AUR_HELPER}-bin...${RC}"
-		rm -rf "$HOME/${AUR_HELPER}-bin"
-		sleep 2
-		elseloneliness
-		echo -e "${RED};; ${AUR_HELPER}-bin does not exist...${RC}"
-		sleep 2
-	fi
-
+	
 	# Update rust before intalling matugen-git
 	if command -v rustup >/dev/null 2>&1; then
 		rustup default table
+		"$AUR_HELPER" -S --noconfirm matugen-git
+	else
+		sudo pacman -S --noconfirm rustup
+		rustup default stable
 		"$AUR_HELPER" -S --noconfirm matugen-git
 	fi
 
