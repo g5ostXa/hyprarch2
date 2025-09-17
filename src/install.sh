@@ -51,7 +51,7 @@ fi
 if [ -n "$SSH_CONNECTION" ]; then
 	while true; do
 		read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
-		case $yn ins
+		case $yn in
 		[Yy]*)
 			echo ";; Starting Installation..."
 			sleep 2
@@ -176,7 +176,7 @@ install_packages() {
 	)
 
 	"$AUR_HELPER" -S --needed --noconfirm "${PACKAGES[@]}"
-	
+
 	# Update rust before intalling matugen-git
 	if command -v rustup >/dev/null 2>&1; then
 		rustup default table
