@@ -47,7 +47,6 @@ alias lumine="~/src/Scripts/lumine.sh"
 # ----------------------------------------------------------------------------------------
 export PATH="/usr/lib/ccache/bin/:$PATH"
 eval "$(starship init bash)"
-cat ~/.cache/wal/sequences
 
 # ----------------------------------------------------------------------------------------
 # Shell init
