@@ -251,7 +251,7 @@ main_setup() {
 
 # Link dotfiles to ~/.config/ because I like it complicated
 create_symlinks() {
-	ln -s ~/dotfiles/gtk/.Xressources ~/
+	ln -s ~/dotfiles/.Xressources ~/
 	ln -s ~/dotfiles/gtk-3.0 ~/.config
 	ln -s ~/dotfiles/gtk-4.0 ~/.config
 	ln -s ~/dotfiles/alacritty ~/.config
