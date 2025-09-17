@@ -151,7 +151,6 @@ install_packages() {
 		"brightnessctl"
 		"neovim"
 		"nautilus"
-		"fastfetch"
 		"pipewire"
 		"pavucontrol"
 		"pulseaudio"
@@ -171,6 +170,9 @@ install_packages() {
 		"swappy"
 		"vscodium-bin"
 		"firefox"
+		"btop"
+		"rustup"
+
 	)
 
 	"$AUR_HELPER" -S --needed --noconfirm "${PACKAGES[@]}"
@@ -180,9 +182,15 @@ install_packages() {
 		echo -e "${CYAN};; Removing ${AUR_HELPER}-bin...${RC}"
 		rm -rf "$HOME/${AUR_HELPER}-bin"
 		sleep 2
-	else
+		elseloneliness
 		echo -e "${RED};; ${AUR_HELPER}-bin does not exist...${RC}"
 		sleep 2
+	fi
+
+	# Update rust before intalling matugen-git
+	if command -v rustup >/dev/null 2>&1; then
+		rustup default table
+		"$AUR_HELPER" -S --noconfirm matugen-git
 	fi
 
 }
@@ -249,35 +257,27 @@ main_setup() {
 
 # Link dotfiles to ~/.config/ because I like it complicated
 create_symlinks() {
-	link_if_exists() {
-		local SOURCE_DOTS="$1"
-		local TARGET_DOTS="$2"
-		if [ -e "$SOURCE_DOTS" ]; then
-			ln -s "$SOURCE_DOTS" "$TARGET_DOTS"
-		fi
-
-	}
-
-	link_if_exists ~/dotfiles/gtk/.Xresources ~/.Xresources
-	link_if_exists ~/dotfiles/alacritty ~/.config/alacritty
-	link_if_exists ~/dotfiles/dunst ~/.config/dunst
-	link_if_exists ~/dotfiles/gtk/gtk-3.0 ~/.config/gtk-3.0
-	link_if_exists ~/dotfiles/gtk/gtk-4.0 ~/.config/gtk-4.0
-	link_if_exists ~/dotfiles/hypr ~/.config/hypr
-	link_if_exists ~/dotfiles/nvim ~/.config/nvim
-	link_if_exists ~/dotfiles/rofi ~/.config/rofi
-	link_if_exists ~/dotfiles/starship/starship.toml ~/.config/starship.toml
-	link_if_exists ~/dotfiles/swappy ~/.config/swappy
-	link_if_exists ~/dotfiles/vim ~/.config/vim
-	link_if_exists ~/dotfiles/wal ~/.config/wal
-	link_if_exists ~/dotfiles/waybar ~/.config/waybar
-	link_if_exists ~/dotfiles/wlogout ~/.config/wlogout
-	link_if_exists ~/dotfiles/fastfetch ~/.config/fastfetch
-	link_if_exists ~/dotfiles/fish ~/.config/fish
-	link_if_exists ~/dotfiles/pacseek ~/.config/pacseek
-	link_if_exists ~/dotfiles/waypaper ~/.config/waypaper
-	link_if_exists ~/dotfiles/uwsm ~/.config/uwsm
-
+	ln -s ~/dotfiles/gtk/.Xressources ~/
+	ln -s ~/dotfiles/gtk-3.0 ~/.config
+	ln -s ~/dotfiles/gtk-4.0 ~/.config
+	ln -s ~/dotfiles/alacritty ~/.config
+	ln -s ~/dotfiles/dunst ~/.config
+	ln -s ~/dotfiles/hypr ~/.config
+	ln -s ~/dotfiles/nvim ~/.config
+	ln -s ~/dotfiles/rofi ~/.config
+	ln -s ~/dotfiles/starship ~/.config
+	ln -s ~/dotfiles/swappy ~/.config
+	ln -s ~/dotfiles/vim ~/.config
+	ln -s ~/dotfiles/wal/ ~/.config
+	ln -s ~/dotfiles/waybar ~/.config
+	ln -s ~/dotfiles/wlogout ~/.config
+	ln -s ~/dotfiles/fastfetch ~/.config
+	ln -s ~/dotfiles/fish ~/.config
+	ln -s ~/dotfiles/pacseek ~/.config
+	ln -s ~/dotfiles/waypaper ~/.config
+	ln -s ~/dotfiles/uwsm ~/.config
+	ln -s ~/dotfiles/matugen ~/.config
+	ln -s ~/dotfiles/btop ~/.config
 }
 
 required_dependencies figlet ";; figlet is not installed..."
