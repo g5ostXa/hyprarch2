@@ -60,7 +60,7 @@ $ uwsm start hyprland
 - Logout menu: `wlogout`
 - Bar: `waybar`
 - File Manager: `nautilus`
-- Theming: `GTK` / `python-pywal`
+- Theming: `GTK` / `python-pywal` / `matugen`
 - GUI Theme App: `nwg-look`
 - Current GTK Theme: `tokyonight-gtk-theme-git`
 - Current Cursor Theme: `bibata-cursor-theme`
