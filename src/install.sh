@@ -142,7 +142,6 @@ install_packages() {
 		"hyprlang"
 		"hyprls-git"
 		"hyprwayland-scanner"
-		"fastfetch"
 		"otf-font-awesome"
 		"woff2-font-awesome"
 		"ttf-fira-sans"
