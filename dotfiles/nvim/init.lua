@@ -22,16 +22,6 @@ vim.api.nvim_create_autocmd('VimLeave', {
 	command = 'set guicursor=a:ver25'
 })
 
-vim.lsp.config('pyright', {
-  settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = 'off'
-      }
-    }
-  }
-})
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.lsp.config('*', { capabilities = capabilities })
 
