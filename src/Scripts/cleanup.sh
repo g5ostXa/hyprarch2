@@ -29,7 +29,7 @@ main_function() {
 	fi
 
 	if pgrep -x dunst >/dev/null; then
-		notify-send --urgency=normal "Package cache cleanup done."
+		notify-send --urgency=normal "Cleanup done !"
 	fi
 
 }
