@@ -157,7 +157,7 @@ install_packages() {
 		"bibata-cursor-theme"
 		"dracula-icons-theme"
 		"tokyonight-gtk-theme-git"
-		"python-pywal"
+		"wallust"
 		"gtk2"
 		"gtk3"
 		"gtk4"
@@ -268,7 +268,7 @@ create_symlinks() {
 	link_if_exists ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 	link_if_exists ~/dotfiles/swappy ~/.config/swappy
 	link_if_exists ~/dotfiles/vim ~/.config/vim
-	link_if_exists ~/dotfiles/wal ~/.config/wal
+	link_if_exists ~/dotfiles/wallust ~/.config/wallust
 	link_if_exists ~/dotfiles/waybar ~/.config/waybar
 	link_if_exists ~/dotfiles/wlogout ~/.config/wlogout
 	link_if_exists ~/dotfiles/fastfetch ~/.config/fastfetch

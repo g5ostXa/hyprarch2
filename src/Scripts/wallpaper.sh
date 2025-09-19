@@ -8,9 +8,9 @@
 wallpaper="$1"
 used_wallpaper="$wallpaper"
 
-# Apply pywal colors
-wal -q -i "$used_wallpaper" && swww img "$used_wallpaper" --transition-type outer --transition-step 90 --transition-fps 60
-source "$HOME/.cache/wal/colors.sh"
+if ! wallust run "$used_wallpaper"; then
+    exit 1
+fi
 
 # Copy selected wallpaper to ~/.cache/
 cp "$wallpaper" "$HOME/.cache/current_wallpaper.jpg"

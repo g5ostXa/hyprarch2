@@ -14,7 +14,7 @@ configuration {
     window-format: "{w} · {c} · {t}";
 }
 
-@import "~/.cache/wal/colors-rofi-pywal"
+@import "~/.cache/wal/colors-rofi.rasi"
 
 window {
     width: 900px;

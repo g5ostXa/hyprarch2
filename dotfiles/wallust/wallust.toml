@@ -1,0 +1,33 @@
+[global]
+backend = "wal"
+palette = "dark16"
+color = "lab"
+
+[wallpaper]
+program = "swww"
+args = [
+    "img",
+    "{file}",
+    "--transition-type",
+    "outer",
+    "--transition-step",
+    "90",
+    "--transition-fps",
+    "60",
+]
+
+[templates.colors-hyprland]
+path = "~/.cache/wal/colors-hyprland.conf"
+template = "~/.config/wallust/templates/colors-hyprland.conf"
+
+[templates.colors-waybar]
+path = "~/.cache/wal/colors-waybar.css"
+template = "~/.config/wallust/templates/colors-waybar.css"
+
+[templates.colors-wlogout]
+path = "~/.cache/wal/colors-wlogout.css"
+template = "~/.config/wallust/templates/colors-wlogout.css"
+
+[templates.colors-rofi]
+path = "~/.cache/wal/colors-rofi.rasi"
+template = "~/.config/wallust/templates/colors-rofi.rasi"
