@@ -259,7 +259,6 @@ create_symlinks() {
 	ln -s ~/dotfiles/starship/starship.toml ~/.config
 	ln -s ~/dotfiles/swappy ~/.config
 	ln -s ~/dotfiles/vim ~/.config
-	ln -s ~/dotfiles/wal/ ~/.config
 	ln -s ~/dotfiles/waybar ~/.config
 	ln -s ~/dotfiles/wlogout ~/.config
 	ln -s ~/dotfiles/fastfetch ~/.config
@@ -267,9 +266,8 @@ create_symlinks() {
 	ln -s ~/dotfiles/pacseek ~/.config
 	ln -s ~/dotfiles/waypaper ~/.config
 	ln -s ~/dotfiles/uwsm ~/.config
-	ln -s ~/dotfiles/matugen ~/.config
-	ln -s ~/dotfiles/btop ~/.config
- 
+	ln -s ~/dotfiles/wallust ~/.config
+
 }
 
 required_dependencies figlet ";; figlet is not installed..."
