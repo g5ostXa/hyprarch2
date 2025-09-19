@@ -14,18 +14,16 @@ cat <<"EOF"
 EOF
 
 main_function() {
-	sudo pacman -Scc
 
-	# Remove orphaned packages
-	orphaned_packages=$(sudo pacman -Qtdq)
-	if [ -n "$orphaned_packages" ]; then
-		sudo pacman -Rns $orphaned_packages
-	fi
-
-	# Remove packages that are no longer required
 	dependency_packages=$(sudo pacman -Qqd)
 	if [ -n "$dependency_packages" ]; then
-		sudo pacman -Rsu $dependency_packages
+		sudo pacman -Rsu "$dependency_packages"
+	fi
+	sudo pacman -Scc
+
+	orphaned_packages=$(sudo pacman -Qtdq)
+	if [ -n "$orphaned_packages" ]; then
+		sudo pacman -Rns "$orphaned_packages"
 	fi
 
 	if pgrep -x dunst >/dev/null; then
