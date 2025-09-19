@@ -157,7 +157,7 @@ install_packages() {
 		"bibata-cursor-theme"
 		"dracula-icons-theme"
 		"tokyonight-gtk-theme-git"
-		"python-pywal"
+		"wallust"
 		"gtk2"
 		"gtk3"
 		"gtk4"
@@ -248,34 +248,39 @@ main_setup() {
 
 # Link dotfiles to ~/.config/ because I like it complicated
 create_symlinks() {
-	link_if_exists() {
-		local SOURCE_DOTS="$1"
-		local TARGET_DOTS="$2"
-		if [ -e "$SOURCE_DOTS" ]; then
-			ln -s "$SOURCE_DOTS" "$TARGET_DOTS"
-		fi
+        mkdir -p "$HOME/.config"
 
-	}
+        link_into_config() {
+                local SOURCE_DOTS="$1"
+                local TARGET_LINK="$HOME/.config/$(basename "$SOURCE_DOTS")"
 
-	link_if_exists ~/dotfiles/gtk/.Xresources ~/.Xresources
-	link_if_exists ~/dotfiles/alacritty ~/.config/alacritty
-	link_if_exists ~/dotfiles/dunst ~/.config/dunst
-	link_if_exists ~/dotfiles/gtk/gtk-3.0 ~/.config/gtk-3.0
-	link_if_exists ~/dotfiles/gtk/gtk-4.0 ~/.config/gtk-4.0
-	link_if_exists ~/dotfiles/hypr ~/.config/hypr
-	link_if_exists ~/dotfiles/nvim ~/.config/nvim
-	link_if_exists ~/dotfiles/rofi ~/.config/rofi
-	link_if_exists ~/dotfiles/starship/starship.toml ~/.config/starship.toml
-	link_if_exists ~/dotfiles/swappy ~/.config/swappy
-	link_if_exists ~/dotfiles/vim ~/.config/vim
-	link_if_exists ~/dotfiles/wal ~/.config/wal
-	link_if_exists ~/dotfiles/waybar ~/.config/waybar
-	link_if_exists ~/dotfiles/wlogout ~/.config/wlogout
-	link_if_exists ~/dotfiles/fastfetch ~/.config/fastfetch
-	link_if_exists ~/dotfiles/fish ~/.config/fish
-	link_if_exists ~/dotfiles/pacseek ~/.config/pacseek
-	link_if_exists ~/dotfiles/waypaper ~/.config/waypaper
-	link_if_exists ~/dotfiles/uwsm ~/.config/uwsm
+                if [ -e "$SOURCE_DOTS" ] && [ ! -e "$TARGET_LINK" ] && [ ! -L "$TARGET_LINK" ]; then
+                        ln -s "$SOURCE_DOTS" "$HOME/.config"
+                fi
+        }
+
+        if [ -e "$HOME/dotfiles/gtk/.Xresources" ] && [ ! -e "$HOME/.Xresources" ] && [ ! -L "$HOME/.Xresources" ]; then
+                ln -s "$HOME/dotfiles/gtk/.Xresources" "$HOME/.Xresources"
+        fi
+
+        link_into_config "$HOME/dotfiles/alacritty"
+        link_into_config "$HOME/dotfiles/dunst"
+        link_into_config "$HOME/dotfiles/gtk/gtk-3.0"
+        link_into_config "$HOME/dotfiles/gtk/gtk-4.0"
+        link_into_config "$HOME/dotfiles/hypr"
+        link_into_config "$HOME/dotfiles/nvim"
+        link_into_config "$HOME/dotfiles/rofi"
+        link_into_config "$HOME/dotfiles/starship/starship.toml"
+        link_into_config "$HOME/dotfiles/swappy"
+        link_into_config "$HOME/dotfiles/vim"
+        link_into_config "$HOME/dotfiles/wallust"
+        link_into_config "$HOME/dotfiles/waybar"
+        link_into_config "$HOME/dotfiles/wlogout"
+        link_into_config "$HOME/dotfiles/fastfetch"
+        link_into_config "$HOME/dotfiles/fish"
+        link_into_config "$HOME/dotfiles/pacseek"
+        link_into_config "$HOME/dotfiles/waypaper"
+        link_into_config "$HOME/dotfiles/uwsm"
 
 }
 
