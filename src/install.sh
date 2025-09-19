@@ -245,43 +245,31 @@ main_setup() {
 	sleep 2
 
 }
-
+      
 # Link dotfiles to ~/.config/ because I like it complicated
 create_symlinks() {
-        mkdir -p "$HOME/.config"
-
-        link_into_config() {
-                local SOURCE_DOTS="$1"
-                local TARGET_LINK="$HOME/.config/$(basename "$SOURCE_DOTS")"
-
-                if [ -e "$SOURCE_DOTS" ] && [ ! -e "$TARGET_LINK" ] && [ ! -L "$TARGET_LINK" ]; then
-                        ln -s "$SOURCE_DOTS" "$HOME/.config"
-                fi
-        }
-
-        if [ -e "$HOME/dotfiles/gtk/.Xresources" ] && [ ! -e "$HOME/.Xresources" ] && [ ! -L "$HOME/.Xresources" ]; then
-                ln -s "$HOME/dotfiles/gtk/.Xresources" "$HOME/.Xresources"
-        fi
-
-        link_into_config "$HOME/dotfiles/alacritty"
-        link_into_config "$HOME/dotfiles/dunst"
-        link_into_config "$HOME/dotfiles/gtk/gtk-3.0"
-        link_into_config "$HOME/dotfiles/gtk/gtk-4.0"
-        link_into_config "$HOME/dotfiles/hypr"
-        link_into_config "$HOME/dotfiles/nvim"
-        link_into_config "$HOME/dotfiles/rofi"
-        link_into_config "$HOME/dotfiles/starship/starship.toml"
-        link_into_config "$HOME/dotfiles/swappy"
-        link_into_config "$HOME/dotfiles/vim"
-        link_into_config "$HOME/dotfiles/wallust"
-        link_into_config "$HOME/dotfiles/waybar"
-        link_into_config "$HOME/dotfiles/wlogout"
-        link_into_config "$HOME/dotfiles/fastfetch"
-        link_into_config "$HOME/dotfiles/fish"
-        link_into_config "$HOME/dotfiles/pacseek"
-        link_into_config "$HOME/dotfiles/waypaper"
-        link_into_config "$HOME/dotfiles/uwsm"
-
+	ln -s ~/dotfiles/.Xressources ~/
+	ln -s ~/dotfiles/gtk-3.0 ~/.config
+	ln -s ~/dotfiles/gtk-4.0 ~/.config
+	ln -s ~/dotfiles/alacritty ~/.config
+	ln -s ~/dotfiles/dunst ~/.config
+	ln -s ~/dotfiles/hypr ~/.config
+	ln -s ~/dotfiles/nvim ~/.config
+	ln -s ~/dotfiles/rofi ~/.config
+	ln -s ~/dotfiles/starship/starship.toml ~/.config
+	ln -s ~/dotfiles/swappy ~/.config
+	ln -s ~/dotfiles/vim ~/.config
+	ln -s ~/dotfiles/wal/ ~/.config
+	ln -s ~/dotfiles/waybar ~/.config
+	ln -s ~/dotfiles/wlogout ~/.config
+	ln -s ~/dotfiles/fastfetch ~/.config
+	ln -s ~/dotfiles/fish ~/.config
+	ln -s ~/dotfiles/pacseek ~/.config
+	ln -s ~/dotfiles/waypaper ~/.config
+	ln -s ~/dotfiles/uwsm ~/.config
+	ln -s ~/dotfiles/matugen ~/.config
+	ln -s ~/dotfiles/btop ~/.config
+ 
 }
 
 required_dependencies figlet ";; figlet is not installed..."
