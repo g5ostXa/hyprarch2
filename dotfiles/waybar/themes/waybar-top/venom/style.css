@@ -1,7 +1,7 @@
 /* -----------------------------------------------------
- * Import Pywal colors 
+ * Import Wallust colors
  * ----------------------------------------------------- */
-@import '../../../../../.cache/wal/colors-waybar.css';
+@import '../../../../../.cache/wallust/colors-waybar.css';
 
 @define-color backgroundlight @color1;
 @define-color backgrounddark #FFFFFF;
