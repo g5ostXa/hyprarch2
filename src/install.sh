@@ -157,7 +157,7 @@ install_packages() {
 		"bibata-cursor-theme"
 		"dracula-icons-theme"
 		"tokyonight-gtk-theme-git"
-		"python-pywal"
+		"python-pywal16"
 		"gtk2"
 		"gtk3"
 		"gtk4"
