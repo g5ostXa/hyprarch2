@@ -105,7 +105,7 @@
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
-        "on-click": "uwsm app -- alacritty --class dotfiles-floating -e nmtui"
+        "on-click": "uwsm app -- nm-connection-editor"
     },
     "battery": {
         "states": {
