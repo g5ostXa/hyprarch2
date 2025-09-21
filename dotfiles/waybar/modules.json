@@ -82,19 +82,17 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "/ C {usage}% ",
-        "on-click": "uwsm app -- alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
-    },
+        "format": "/ C {usage}% "
+        },
     "memory": {
-        "format": "/ M {}% ",
-        "on-click": "uwsm app -- alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
-    },
+        "format": "/ M {}% "
+        },
     "disk": {
         "interval": 30,
         "format": "  {percentage_used}%",
-        "path": "/",
-        "on-click": "uwsm app -- alacritty -e ~/src/Scripts/sandboxes/bwrap-btop.sh"
+        "path": "/"
     },
+    
     "network": {
         "format": "{ifname}",
         "format-wifi": "   {signalStrength}%",
