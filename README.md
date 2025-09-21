@@ -27,14 +27,10 @@ If you have not done so already, you need a fresh, minimal [`Archlinux`](https:/
 
 > [!IMPORTANT]
 > If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
->
-- Installing in `virt-manager` requires you to:
->  
-- Enable `[3D acceleration]` in `[Video Virtio]`.
->  
-- Set `[Listen type]` to `[None]` in `[Display Spice]`.
->  
-- Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
+> - Installing in `virt-manager` requires you to:
+> - Enable `[3D acceleration]` in `[Video Virtio]`.
+> - Set `[Listen type]` to `[None]` in `[Display Spice]`.
+> - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
 
 Within your new [`Arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
 ```ruby
@@ -72,8 +68,7 @@ $ uwsm start hyprland
 
 ## 🖥️ `Monitor`
 > [!TIP]
->
-- To configure your monitor(s), you need to edit [`dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
+> - To configure your monitor(s), you need to edit [`dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
 
 Here's what a manual configuration should look like:
 ```md
