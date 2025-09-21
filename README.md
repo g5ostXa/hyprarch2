@@ -27,10 +27,14 @@ If you have not done so already, you need a fresh, minimal [`Archlinux`](https:/
 
 > [!IMPORTANT]
 > If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
-> - Installing in `virt-manager` requires you to:
->   - Enable `[3D acceleration]` in `[Video Virtio]`.
->   - Set `[Listen type]` to `[None]` in `[Display Spice]`.
->   - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
+>
+Installing in `virt-manager` requires you to:
+>  
+Enable `[3D acceleration]` in `[Video Virtio]`.
+>  
+Set `[Listen type]` to `[None]` in `[Display Spice]`.
+>  
+Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
 
 Within your new [`Arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
 ```ruby
@@ -51,24 +55,25 @@ $ uwsm start hyprland
 ```
 
 ## 📦 `Main apps`
-- Terminal: `alacritty`
-- Shell: `fish` + `starship`
-- Browser: `firefox`
-- App Launcher: `rofi`
-- Wallpaper front end: `waypaper`
-- Wallpaper back end: `swww`
-- Logout menu: `wlogout`
-- Bar: `waybar`
-- File Manager: `nautilus`
-- Theming: `GTK` / `python-pywal16`
-- GUI Theme App: `nwg-look`
-- Current GTK Theme: `tokyonight-gtk-theme-git`
-- Current Cursor Theme: `bibata-cursor-theme`
-- Editors: `neovim` / `vscodium`
+Terminal: `alacritty`
+Shell: `fish` + `starship`
+Browser: `firefox`
+App Launcher: `rofi`
+Wallpaper front end: `waypaper`
+Wallpaper back end: `swww`
+Logout menu: `wlogout`
+Bar: `waybar`
+File Manager: `nautilus`
+Theming: `GTK` / `python-pywal16`
+GUI Theme App: `nwg-look`
+Current GTK Theme: `tokyonight-gtk-theme-git`
+Current Cursor Theme: `bibata-cursor-theme`
+Editors: `neovim` / `vscodium`
 
 ## 🖥️ `Monitor`
 > [!TIP]
-> - To configure your monitor(s), you need to edit [`dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
+>
+To configure your monitor(s), you need to edit [`dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
 
 Here's what a manual configuration should look like:
 ```md
@@ -88,16 +93,16 @@ For more detailed instructions about how to configure your monitor(s): [`🖥 Hy
 ## ⌨️ `Keybinds`
 [` ➜ All keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
 
-- `⌨️` `SUPER` + `RETURN` : Alacritty
-- `⌨️` `SUPER` + `B` : Firefox
-- `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
-- `⌨️` `SUPER` + `W` : Waypaper 
-- `⌨️` `SUPER` + `SHIFT` + `B` : Reload waybar 
-- `⌨️` `SUPER` + `CTRL` + `Q` : Wlogout
-- `⌨️` `SUPER` + `Q` : Killactive
-- `⌨️` `SUPER` + `E` : Nautilus
-- `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
-- `⌨️` `SUPER` + `CTRL` +`M` : Kill hyprland
+`⌨️` `SUPER` + `RETURN` : Alacritty
+`⌨️` `SUPER` + `B` : Firefox
+`⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
+`⌨️` `SUPER` + `W` : Waypaper 
+`⌨️` `SUPER` + `SHIFT` + `B` : Reload waybar 
+`⌨️` `SUPER` + `CTRL` + `Q` : Wlogout
+`⌨️` `SUPER` + `Q` : Killactive
+`⌨️` `SUPER` + `E` : Nautilus
+`⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
+`⌨️` `SUPER` + `CTRL` +`M` : Kill hyprland
 
 ## 📸 `Screenshots`
 <img src="/assets/screenshots/h2sc1.png"/>
