@@ -91,7 +91,7 @@ For more detailed instructions about how to configure your monitor(s): [`🖥 Hy
 - `⌨️` `SUPER` + `RETURN` : Alacritty
 - `⌨️` `SUPER` + `B` : Firefox
 - `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
-- `⌨️` `SUPER` + `CTRL` + `W` : Waypaper 
+- `⌨️` `SUPER` + `W` : Waypaper 
 - `⌨️` `SUPER` + `SHIFT` + `B` : Reload waybar 
 - `⌨️` `SUPER` + `CTRL` + `Q` : Wlogout
 - `⌨️` `SUPER` + `Q` : Killactive
