@@ -29,6 +29,7 @@ main_function() {
 	else
 		git clone --depth=1 "$INSTALLER_REPO".git ./
 		cd "$INSTALLER_REPO" && go build -o h2install
+		cd "$HOME/Downloads/hyprarch2/src" && cp -r "$HOME/Downloads/h2install/h2install" ./
 		./h2install
 	fi
 
