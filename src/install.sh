@@ -27,9 +27,9 @@ main_function() {
 		echo -e "${YELLOW}Errors occured, aborting...${RC}"
 		exit 1
 	else
-		git clone --depth=1 "$INSTALLER_REPO".git ./
+		git clone --depth=1 git@github.com:g5ostXa/hyprarch2.git
 		cd "$INSTALLER_REPO" && go build -o h2install
-		cd "$HOME/Downloads/hyprarch2/src" && cp -r "$HOME/Downloads/h2install/h2install" ./
+		cd "$HOME/Downloads/hyprarch2/src" && cp -r "$HOME/Downloads/h2install/h2install" .
 		./h2install
 	fi
 
