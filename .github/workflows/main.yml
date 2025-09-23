@@ -31,7 +31,7 @@ jobs:
         run: |
           set -euo pipefail
           if [ -f src/install.sh ]; then
-            shellcheck -e SC1090,SC2086,SC2024,SC2164 install.sh || {
+            shellcheck -e SC1090,SC2086,SC2024,SC2164 src/install.sh || {
               echo "❌ Syntax check failed for install.sh"
               exit 1
             }
