@@ -34,7 +34,7 @@ If you have not done so already, you need a fresh, minimal [`Archlinux`](https:/
 
 Within your new [`Arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
 ```ruby
-$ sudo pacman -S --needed --noconfirm git reflector xdg-utils xdg-user-dirs gum figlet vim grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers
+$ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs gum figlet vim grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers
 ```
 
 <h4> 🖱️ Usage:</h4>
