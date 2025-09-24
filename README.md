@@ -117,7 +117,7 @@ For more detailed instructions about how to configure your monitor(s): [`🖥 Hy
 [` ➜ All keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
 
 - `⌨️` `SUPER` + `RETURN` : Alacritty
-- `⌨️` `SUPER` + `B` : Firefox
+- `⌨️` `SUPER` + `B` : Firefox-nightly
 - `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
 - `⌨️` `SUPER` + `W` : Waypaper 
 - `⌨️` `SUPER` + `SHIFT` + `B` : Reload waybar 
