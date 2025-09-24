@@ -67,7 +67,7 @@ func_main() {
 }
 ```
 
-Then, run [`install.sh`](src/install.sh) from `~/Downlaods/hyprarch2/src/`:
+Then, run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
 ```bash
 $ cd hyprarch2/src && ./install.sh
 ```
