@@ -39,36 +39,17 @@ $ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs g
 
 <h4> 🖱️ Usage:</h4>
 
+> [!CAUTION]
+> - [`hyprarch2`]() now uses a new [`golang written installer`](https://github.com/g5ostXa/h2install).
+> - If you want to try it, please use a VM or an old PC because the installer isn't very stable yet.
+> - `--dry-run` mode was removed in this next patch for functionality and readability reasons.
+
 First, clone [`hyprarch2`](/) in `~/Downloads/`:
 ```bash
 $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 ```
 
-> [!CAUTION]
-> - [`hyprarch2`](/) has a [`new installer`](https://github.com/g5ostXa/h2install) which is written in `golang`.
-> - The installer is still very unstable, even though it works fine for me at the momment.
-> - I recommend running in `--dry-run` mode first.
-
-To do that, edit [`install.sh`](src/install.sh) and add `--dry-run` when running the installer like shown below:
-```bash
-func_main() {
-	src_check && src_copy && target_check
-
-	if [ -f "/etc/issue" ]; then
-		sudo chown root:root /etc/issue
-	else
-		echo -e "${YELLOW}Failed to copy issue to /etc...${RC}"
-		sleep 1
-	fi
-
-	cd "$HOME/Downloads" && git clone --depth=1 https://github.com/g5ostXa/h2install.git
-	cd h2install && rm -rf .git/ && go mod tidy && go build -o h2installer
-	./h2installer --dry-run
-
-}
-```
-
-Then, run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
+Then, please run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
 ```bash
 $ cd hyprarch2/src && ./install.sh
 ```
