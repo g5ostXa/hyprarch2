@@ -46,7 +46,8 @@ alias lumine="~/src/Scripts/lumine.sh"
 export PATH=$PATH:"~/.local/bin/"
 export PATH="/usr/lib/ccache/bin/:$PATH"
 export GH_PROJECTS="$HOME/gh-projects/"
-export HYPRARCH2_VERSION="$HOME/.version/latest"
+export HYPRARCH2_VERSION=$(cat "$HOME/.version/latest")
+export BROWSER="firefox-nightly"
 
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
@@ -55,7 +56,7 @@ if [[ $(tty) == *"pts"* ]]; then
 	echo -e "${MAGENTA}"
 	figlet -f smslant "hyprarch2"
 	echo ""
-	cat "$HYPRARCH2_VERSION"
+	echo "$HYPRARCH2_VERSION"
 	echo -e "${RC}"
 fi
 
