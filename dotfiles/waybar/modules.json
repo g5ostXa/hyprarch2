@@ -25,10 +25,10 @@
             "Alacritty"
         ],
         "app_ids-mapping": {
-            "firefoxdeveloperedition": "firefox-developer-edition"
+            "firefoxnightly": "firefox-nightly"
         },
         "rewrite": {
-            "Firefox Web Browser": "Firefox",
+            "Firefox Web Browser": "firefox-nightly",
             "Foot Server": "Terminal"
         }
     },

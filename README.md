@@ -80,7 +80,7 @@ $ uwsm start hyprland
 ## 📦 `Main apps`
 - Terminal: `alacritty`
 - Shell: `fish` + `starship`
-- Browser: `firefox`
+- Browser: `firefox-nightly`
 - App Launcher: `rofi`
 - Wallpaper front end: `waypaper`
 - Wallpaper back end: `swww`
