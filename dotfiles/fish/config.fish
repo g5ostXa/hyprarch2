@@ -13,7 +13,7 @@ alias h2pull='hyprarch2 pull'
 # Main aliases
 # -----------------------------------------------------------------------------------------
 alias ls='eza --icons=always --color=always'
-alias ll='ls -al'
+alias ll='ls -a'
 alias reboot='~/src/Scripts/reboot.sh'
 alias poweroff='~/src/Scripts/poweroff.sh'
 alias fire='sudo firecfg'

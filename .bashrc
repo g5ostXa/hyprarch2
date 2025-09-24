@@ -26,7 +26,7 @@ alias h2pull="hyprarch2 pull"
 # Main aliases
 # -----------------------------------------------------------------------------------------
 alias ls="eza --icons=always --color=always"
-alias ll="ls -al"
+alias ll="ls -a"
 alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
 alias virtkill="~/src/Scripts/virtkill.sh"
 alias fire="sudo firecfg"
