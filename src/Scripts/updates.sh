@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Define waybar module color based on the number of updates
 threshold_green=0

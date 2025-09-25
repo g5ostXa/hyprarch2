@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 kill_destroy_disable_fire() {
 	sudo virsh net-destroy default

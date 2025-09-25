@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # -------------------------------------------------
 # gtk.sh | by Stephan Raabe (ml4w) | 2025
