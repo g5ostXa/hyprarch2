@@ -3,8 +3,11 @@
 # ----------------------------------
 # st4rtX.sh
 # ----------------------------------
-DNS_RESTART="sudo systemctl restart dnsmasq.service"
 
+# Set exit on error
+set -euo pipefail
+
+# Check if feglet is installed and print banner
 is_installed_figlet() {
 	if ! command -v figlet >/dev/null 2>&1; then
 		clear
@@ -19,39 +22,29 @@ is_installed_figlet() {
 
 }
 
+# Check if gum is installed / exit if false
 is_installed_gum() {
 	if ! command -v gum >/dev/null 2>&1; then
-		echo "Missing package 'gum'..."
-		echo "Type 'sudo pacman -Syu gum' to install"
+		echo "Gum is missing, use pacman -S gum to install the package..."
 		exit 1
 	fi
 
 }
 
+#Check if uwsm is installed
 is_installed_uwsm() {
 	if ! command -v uwsm >/dev/null 2>&1; then
-		echo "Missing AUR package 'uwsm'..."
+		echo "uwsm is missing, use pacman -S uwsm to install the package..."
 		exit 1
 	fi
 
 }
 
-is_installed_figlet
-if pgrep -x dnsmasq >/dev/null; then
-	is_installed_gum
-	if gum confirm "Do you want to restart dnsmasq.service before launching hyprland?"; then
-		sudo -v && set -e
-		gum spin --spinner points --title "Restarting dnsmasq.service..." -- sleep 3 && $DNS_RESTART
-		is_installed_uwsm
-		uwsm select
-		uwsm start hyprland
-	else
-		is_installed_gum
-		is_installed_uwsm
-		gum spin --spinner points --title "Launching hyprland..." -- sleep 3 && uwsm select && uwsm start hyprland
-	fi
-else
-	is_installed_gum
-	is_installed_uwsm
-	gum spin --spinner points --title "Launching hyprland..." -- sleep 3 && uwsm select && uwsm start hyprland
-fi
+# Script entry
+is_installed_figlet && is_installed_gum && is_installed_uwsm
+
+# Gum animation
+gum spin --spinner points --title "Launching hyprland..." -- sleep 3
+
+# Set defaults and lunch hyprland
+uwsm select && uwsm start hyprland
