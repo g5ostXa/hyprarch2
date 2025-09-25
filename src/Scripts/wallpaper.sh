@@ -9,8 +9,8 @@ wallpaper="$1"
 used_wallpaper="$wallpaper"
 
 # Apply pywal colors
-wal -q -i "$used_wallpaper"
 source "$HOME/.cache/wal/colors.sh"
+wal -q -i "$used_wallpaper"
 
 # Copy selected wallpaper to ~/.cache/
 cp "$wallpaper" "$HOME/.cache/current_wallpaper.jpg"
