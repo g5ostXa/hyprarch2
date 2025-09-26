@@ -5,6 +5,7 @@
 #-----------------------------------------------------
 
 wallpaper="$1"
+
 [ -z "$wallpaper" ] && {
 	notify-send --urgency=critical "No wallpaper found" --icon=dialog-error
 	exit 1
