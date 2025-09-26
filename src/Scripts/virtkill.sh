@@ -8,7 +8,6 @@ kill_destroy_disable_fire() {
 	sudo systemctl disable --now libvirtd-ro.socket
 	sudo systemctl disable --now libvirtd.service
 	sudo firecfg
-
 }
 
 kill_destroy_disable_fire

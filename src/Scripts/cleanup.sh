@@ -29,7 +29,6 @@ main_function() {
 	if pgrep -x dunst >/dev/null; then
 		notify-send --urgency=normal "Cleanup done !"
 	fi
-
 }
 
 main_function

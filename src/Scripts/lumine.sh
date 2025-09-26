@@ -8,7 +8,6 @@ is_installed_brightnessctl() {
 		echo ";; brightnessctl is not installed..."
 		exit 1
 	fi
-
 }
 
 is_installed_figlet() {
@@ -21,7 +20,6 @@ is_installed_figlet() {
 		echo "lumine.sh"
 		echo "-------------------" && echo ""
 	fi
-
 }
 
 is_installed_gum() {
@@ -29,7 +27,6 @@ is_installed_gum() {
 		echo ";; gum is not installed..."
 		exit 1
 	fi
-
 }
 
 main_operation() {
@@ -51,7 +48,6 @@ main_operation() {
 		echo ";; Variable not set: $BRIGHTNESS_LEVEL"
 		exit 1
 	fi
-
 }
 
 # Script start

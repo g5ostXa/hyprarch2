@@ -18,14 +18,12 @@ src_check() {
 		echo -e "${RED};; $HYPRARCH2_DIR does not exist, exiting...${RC}"
 		exit 1
 	fi
-
 }
 
 # Copy all hyprarch2 files to home directory
 src_copy() {
 	cp -r "$HYPRARCH2_DIR"/* "$HOME/"
 	sudo cp -r "$HYPRARCH2_DIR/dotfiles/login/issue" "/etc/"
-
 }
 
 # Make sure all files were copied
@@ -49,7 +47,6 @@ target_check() {
 	if [ ! -f "$HOME/.gitignore" ]; then
 		cp "$HYPRARCH2_DIR/.gitignore" "$HOME"
 	fi
-
 }
 
 func_main() {
@@ -65,7 +62,6 @@ func_main() {
 	cd "$HOME/Downloads" && git clone --depth=1 https://github.com/g5ostXa/h2install.git
 	cd h2install && rm -rf .git/ && go mod tidy && go build -o h2installer
 	./h2installer
-
 }
 
 # Script entry

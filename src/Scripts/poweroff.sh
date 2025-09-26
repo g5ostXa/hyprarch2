@@ -18,7 +18,6 @@ gum_prompt() {
 	else
 		echo ":: Aborted..."
 	fi
-
 }
 
 main_function() {
@@ -39,7 +38,6 @@ main_function() {
 	sleep 1
 	echo -e "${RC}"
 	systemctl poweroff
-
 }
 
 gum_prompt

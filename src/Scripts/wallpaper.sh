@@ -2,24 +2,22 @@
 
 #-----------------------------------------------------
 # wallpaper.sh
-# ----------------------------------------------------
+#-----------------------------------------------------
 
-# Get selected wallpaper
 wallpaper="$1"
-used_wallpaper="$wallpaper"
+[ -z "$wallpaper" ] && {
+	notify-send --urgency=critical "No wallpaper found" --icon=dialog-error
+	exit 1
+}
 
-# Apply pywal colors / Set wallpaper
-source "$HOME/.cache/wal/colors.sh" && sleep 0.7
-wal -q -i "$used_wallpaper"
+func_main() {
+	# Set wallpaper and colors
+	wal -q -i "$wallpaper"
+	cp "$wallpaper" "$HOME/.cache/current_wallpaper.jpg"
 
-# Copy selected wallpaper to ~/.cache/
-cp "$wallpaper" "$HOME/.cache/current_wallpaper.jpg"
+	# Get wallpaper name and send notification
+	newwall=$(basename "$wallpaper")
+	notify-send --urgency=normal "Wallpaper and colors updated!" "with image $newwall" --icon=folder-pictures
+}
 
-# Get new wallpaper's name
-newwall=$(echo "$wallpaper" | sed "s|$HOME/wallpaper/||g")
-
-# Send notification
-notify-send --icon=/usr/share/icons/Dracula/16/folder-pictures.svg "Wallpaper and colors updated!" "with image $newwall"
-
-# Reload waybar
-source "$HOME/src/Scripts/waybar/launch.sh"
+func_main

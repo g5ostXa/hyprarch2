@@ -17,7 +17,6 @@ define_helper() {
 		echo "Neither paru or yay is installed..."
 		exit 1
 	fi
-
 }
 
 # Get total number of updates
@@ -31,7 +30,6 @@ get_number() {
 	fi
 
 	updates=$(("$updates_arch" + "$updates_aur")) && css_class="green"
-
 }
 
 define_helper && get_number

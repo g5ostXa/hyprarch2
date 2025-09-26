@@ -18,7 +18,6 @@ create_mirrorlist() {
 	gum spin --spinner globe --title "Fetching the latest mirrors..." -- $REFLECTOR_CMD
 	gum spin --spinner points --title "Synchronizing package database..." -- $SYNC_DATABASE
 	echo ";; The mirrors are now up to date!"
-
 }
 
 is_installed_figlet() {
@@ -31,7 +30,6 @@ is_installed_figlet() {
 		echo "Mirrors.sh"
 		echo "--------------------------"
 	fi
-
 }
 
 is_installed_gum() {
@@ -40,7 +38,6 @@ is_installed_gum() {
 		echo ";; Type 'sudo pacman -S gum' to install, then run this script again."
 		exit 1
 	fi
-
 }
 
 is_installed_reflector() {
@@ -52,7 +49,6 @@ is_installed_reflector() {
 			exit 1
 		fi
 	fi
-
 }
 
 refresh_backup() {
@@ -72,7 +68,6 @@ refresh_backup() {
 		sleep 2
 		create_mirrorlist
 	fi
-
 }
 
 create_backup() {
@@ -91,7 +86,6 @@ create_backup() {
 		sleep 2
 		create_mirrorlist
 	fi
-
 }
 
 if [ -f "$MIRRORLIST_BAK" ]; then
