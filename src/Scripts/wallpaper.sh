@@ -8,8 +8,8 @@
 wallpaper="$1"
 used_wallpaper="$wallpaper"
 
-# Apply pywal colors
-source "$HOME/.cache/wal/colors.sh"
+# Apply pywal colors / Set wallpaper
+source "$HOME/.cache/wal/colors.sh" && sleep 0.7
 wal -q -i "$used_wallpaper"
 
 # Copy selected wallpaper to ~/.cache/
