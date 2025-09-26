@@ -35,7 +35,7 @@ choice=$(echo -e "$listNames" | rofi -dmenu -replace -config ~/dotfiles/rofi/con
 
 # Set new theme by writing the theme information to ~/.cache/.themestyle.sh
 if [ "$choice" ]; then
-	notify-send --urgency=normal "Waybar theme loaded..."
+	notify-send --urgency=normal "Waybar theme loaded..." --icon=dialog-information
 	echo "${listThemes[$choice + 1]}" >~/.cache/.themestyle.sh
 	~/src/Scripts/waybar/launch.sh
 fi
