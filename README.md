@@ -109,7 +109,8 @@ For more detailed instructions about how to configure your monitor(s): [`🖥 Hy
 - `⌨️` `SUPER` + `CTRL` +`M` : Kill hyprland
 
 ## 📸 `Screenshots`
-<img src="/assets/screenshots/h2sc1.png"/>
+<img src="/assets/screenshots/h2sc5.png"/>
+<img src="/assets/screenshots/h2sc6.png"/>
 <img src="/assets/screenshots/h2sc2.png"/>
 <img src="/assets/screenshots/h2sc3.png"/>
 <img src="/assets/screenshots/h2sc4.png"/>
