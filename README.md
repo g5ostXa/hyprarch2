@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="/assets/logos/hyprarch2-0X1.png" width="415" height="415"/>
+<img src="/assets/logos/hyprarch2-sx234.png" width="525" height="525"/>
 
 [![Release](https://img.shields.io/badge/hyprarch2-v1.3.7-cyan.svg)](https://github.com/g5ostXa/hyprarch2/)
 [![Hyprland](https://img.shields.io/badge/Hyprland-%236A0DAD?&logo=hyprland&logoColor=white)](https://hyprland.org/)
