@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# // ======= install.sh =======
+# ======= install.sh =======
 
 # Color Variables
 RED='\033[0;31m'
@@ -63,6 +63,7 @@ target_check() {
 	fi
 }
 
+# Install the h2install repository and run h2installer
 func_main() {
 	is_installed_git && is_installed_go && src_check && src_copy && target_check
 
@@ -80,6 +81,50 @@ func_main() {
 
 # Script entry
 echo -e "${YELLOW};; INFO: You're about to clone the h2install repository${RC}"
-
 read -rp ";; Are you sure you want to start the installation now? [y/N]" ans
 [[ "$ans" =~ ^[Yy]$ ]] && func_main
+
+# Check if h2installer binary was created and exists
+if [ ! -f "$HOME/Downloads/h2install/h2installer" ]; then
+	echo -e "${RED};; ERROR: h2installer was not built successfully!${RC}"
+	exit 1
+else
+	echo -e "${YELLOW};; h2installer was built successfully!${RC}"
+fi
+
+# Check if essential files were copied
+echo -e "${YELLOW};; Verifying if all essential files are copied...${RC}"
+
+# Check .bashrc exists
+if [ -f "$HOME/.bashrc" ]; then
+	echo -e "${YELLOW};; .bashrc exists and was copied.${RC}"
+else
+	echo -e "${RED};; .bashrc was not copied properly!${RC}"
+	exit 1
+fi
+
+# Check .version directory exists
+if [ -d "$HOME/.version/" ]; then
+	echo -e "${YELLOW};; .version directory exists.${RC}"
+else
+	echo -e "${RED};; .version directory was not copied!${RC}"
+	exit 1
+fi
+
+# Check .github directory exists
+if [ -d "$HOME/.github/" ]; then
+	echo -e "${YELLOW};; .github directory exists.${RC}"
+else
+	echo -e "${RED};; .github directory was not copied!${RC}"
+	exit 1
+fi
+
+# Check .gitignore exists
+if [ -f "$HOME/.gitignore" ]; then
+	echo -e "${YELLOW};; .gitignore exists and was copied.${RC}"
+else
+	echo -e "${RED};; .gitignore was not copied!${RC}"
+	exit 1
+fi
+
+echo -e "${YELLOW};; Installation completed successfully!${RC}"
