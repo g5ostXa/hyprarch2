@@ -2,13 +2,15 @@
 
 # // ======= install.sh =======
 
-# Color Variables
+# Colors
+CYAN='\033[0;36m'
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
 RC='\033[0m'
 
-# hyprarch2 source directory
+# Main variables
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
+DOTFILES_TARGET_DIR="$HOME/dotfiles"
 
 # Check if git is installed
 is_installed_git() {
@@ -78,8 +80,15 @@ func_main() {
 	./h2installer
 }
 
-# Script entry
 echo -e "${YELLOW};; INFO: You're about to clone the h2install repository'${RC}"
 
 read -rp ";; Are you sure you want to start the installation now? [y/N]" ans
 [[ "$ans" =~ ^[Yy]$ ]] && func_main
+
+if [ -d "$DOTFILES_TARGET_DIR" ]; then
+	echo -e "${YELLOW};; Installation status:${RC}"
+	echo -e "${CYAN}SUCCESS !${RC}" && echo ""
+	echo -e "${CYAN};; You may now launch hyprland with uwsm start hyprland${RC}"
+else
+	echo -e "${RED}Errors occured, exited with code 1${RC}"
+fi
