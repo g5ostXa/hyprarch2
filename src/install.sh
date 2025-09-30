@@ -13,7 +13,7 @@ HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 # Check if git is installed
 is_installed_git() {
 	if ! command -v "git" >/dev/null 2>&1; then
-		echo -e "${YELLOW}Git not installed, aborting...${RC}"
+		echo -e "${YELLOW};; Git not installed, aborting...${RC}"
 		exit 1
 	fi
 }
@@ -21,7 +21,7 @@ is_installed_git() {
 # Check if go is installed
 is_installed_go() {
 	if ! command -v "go" >/dev/null 2>&1; then
-		echo -e "${YELLOW}Go is not installed, aborting...${RC}"
+		echo -e "${YELLOW};; Go is not installed, aborting...${RC}"
 		exit 1
 	fi
 }
@@ -69,7 +69,7 @@ func_main() {
 	if [ -f "/etc/issue" ]; then
 		sudo chown root:root /etc/issue
 	else
-		echo -e "${YELLOW}Failed to copy issue to /etc...${RC}"
+		echo -e "${YELLOW};; Failed to copy issue to /etc...${RC}"
 		sleep 1
 	fi
 
@@ -79,7 +79,7 @@ func_main() {
 }
 
 # Script entry
-echo -e "${YELLOW}:: INFO: You're about to clone the h2install repository'${RC}"
+echo -e "${YELLOW};; INFO: You're about to clone the h2install repository'${RC}"
 
 read -rp ";; Are you sure you want to start the installation now? [y/N]" ans
 [[ "$ans" =~ ^[Yy]$ ]] && func_main
