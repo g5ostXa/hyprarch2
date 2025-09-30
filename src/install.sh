@@ -10,6 +10,22 @@ RC='\033[0m'
 # hyprarch2 source directory
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 
+# Check if git is installed
+is_installed_git() {
+	if ! command -v "git" >/dev/null 2>&1; then
+		echo -e "${YELLOW}Git not installed, aborting...${RC}"
+		exit 1
+	fi
+}
+
+# Check if go is installed
+is_installed_go() {
+	if ! command -v "go" >/dev/null 2>&1; then
+		echo -e "${YELLOW}Go is not installed, aborting...${RC}"
+		exit 1
+	fi
+}
+
 # Check if hyprarch2 directory exists
 src_check() {
 	if [ ! -d "$HYPRARCH2_DIR" ]; then
@@ -48,7 +64,7 @@ target_check() {
 }
 
 func_main() {
-	src_check && src_copy && target_check
+	is_installed_git && is_installed_go && src_check && src_copy && target_check
 
 	if [ -f "/etc/issue" ]; then
 		sudo chown root:root /etc/issue
@@ -63,5 +79,7 @@ func_main() {
 }
 
 # Script entry
+echo -e "${YELLOW}:: INFO: You're about to clone the h2install repository'${RC}"
+
 read -rp ";; Are you sure you want to start the installation now? [y/N]" ans
 [[ "$ans" =~ ^[Yy]$ ]] && func_main
