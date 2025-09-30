@@ -79,7 +79,7 @@ func_main() {
 }
 
 # Script entry
-echo -e "${YELLOW}:: INFO: You're about to clone the h2installer'${RC}"
+echo -e "${YELLOW}:: INFO: You're about to clone the h2installer repository'${RC}"
 
 read -rp ";; Are you sure you want to start the installation now? [y/N]" ans
 [[ "$ans" =~ ^[Yy]$ ]] && func_main
