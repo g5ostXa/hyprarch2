@@ -11,6 +11,7 @@ RC='\033[0m'
 # Main variables
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 DOTS_TARGET_DIR="$HOME/dotfiles"
+H2INSTALLER_REPO="https://github.com/g5ostXa/h2install"
 
 # Check if git is installed
 is_installed_git() {
@@ -76,7 +77,7 @@ func_main() {
 		sleep 1
 	fi
 
-	cd "$HOME/Downloads" && git clone --depth=1 https://github.com/g5ostXa/h2install.git
+	cd "$HOME/Downloads" && git clone --depth=1 "$H2INSTALLER_REPO".git
 	cd h2install && rm -rf .git/ && go mod tidy && go build -o h2installer
 	./h2installer
 }
