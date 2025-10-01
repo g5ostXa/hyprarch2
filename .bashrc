@@ -45,7 +45,6 @@ alias lumine="~/src/Scripts/lumine.sh"
 # --------------------------------------------------------------------------------------------
 export PATH=$PATH:"$HOME/.local/bin/"
 export PATH="/usr/lib/ccache/bin/:$PATH"
-export GH_PROJECTS="$HOME/gh-projects/"
 export HYPRARCH2_VERSION=$(cat "$HOME/.version/latest")
 export BROWSER="firefox-nightly"
 
