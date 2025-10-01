@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-# -------------------------------------------------------------------------------------
-# keybindings.sh
-# -------------------------------------------------------------------------------------
+# // ======= keybindings.sh =======
 
 # Parse and load keybinds
 config_file=~/dotfiles/hypr/conf/keybindings.conf

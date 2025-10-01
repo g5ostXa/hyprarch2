@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-# ----------------------------------------------------------
-# cliphist.sh
-# ----------------------------------------------------------
+# // ======= cliphist.sh =======
+
 case $1 in
 d)
 	cliphist list | rofi -dmenu -replace -config ~/dotfiles/rofi/config-cliphist.rasi | cliphist delete

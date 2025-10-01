@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-# -----------------------------------------------------
-# themeswitcher.sh
-# -----------------------------------------------------
+# // ======= themeswitcher.sh =======
 
 # Default theme folder
 themes_path="$HOME/dotfiles/waybar/themes"

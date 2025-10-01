@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-# ----------------------------
-# lumine.sh
-# ----------------------------
+# // ======= lumine.sh =======
+
 is_installed_brightnessctl() {
 	if ! command -v brightnessctl >/dev/null 2>&1; then
 		echo ";; brightnessctl is not installed..."

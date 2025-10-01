@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-# ----------------------------------
-# st4rtX.sh
-# ----------------------------------
+# // ======= st4rtX.sh =======
 
 # Set exit on error
 set -euo pipefail

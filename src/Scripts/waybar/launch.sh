@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-# -----------------------------------------------------
-# launch.sh
-# -----------------------------------------------------
+# // ======= launch.sh =======
 
 # Quit all running waybar instances
 killall waybar

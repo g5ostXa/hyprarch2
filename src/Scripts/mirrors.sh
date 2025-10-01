@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 
-# ----------
-# mirrors.sh
-# ---------------
-# By g5ostXa (2024)
-# ---------------------------
-# Requires: reflector | gum | figlet
-# ----------------------------------------------------
+# // ======= mirrors.sh =======
 
 # Define variables
 MIRRORLIST="/etc/pacman.d/mirrorlist"

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# // ======= virtkill.sh ========
+
 kill_destroy_disable_fire() {
 	sudo virsh net-destroy default
 	killall virt-manager

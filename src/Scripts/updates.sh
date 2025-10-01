@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# // ======= updates.sh =======
+
 # Define waybar module color based on the number of updates
 threshold_green=0
 threshold_yellow=25

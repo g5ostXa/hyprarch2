@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-# -------------------------------------------------
-# gtk.sh | by Stephan Raabe (ml4w) | 2025
-# -------------------------------------------------
+# // ======= gtk.sh =======
+
 config="$HOME/dotfiles/gtk/gtk-3.0/settings.ini"
 if [ ! -f "$config" ]; then exit 1; fi
 
