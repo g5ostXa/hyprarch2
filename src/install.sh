@@ -88,7 +88,7 @@ func_main() {
 	else
 		echo -e "${CYAN};; h2installer was built successfully!${RC}"
 		./h2installer
-	fi	
+	fi
 }
 
 # Script entry
