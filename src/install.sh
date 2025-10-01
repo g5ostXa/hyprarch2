@@ -12,6 +12,7 @@ RC='\033[0m'
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 DOTS_TARGET_DIR="$HOME/dotfiles"
 H2INSTALLER_REPO="https://github.com/g5ostXa/h2install"
+H2INSTALLER_TARGET_LOC="$HOME/Downloads/h2install/h2installer"
 
 # Check if git is installed
 is_installed_git() {
@@ -73,27 +74,27 @@ func_main() {
 	if [ -f "/etc/issue" ]; then
 		sudo chown root:root /etc/issue
 	else
-		echo -e "${YELLOW};; Failed to copy issue to /etc...${RC}"
+		echo -e "${RED};; Failed to copy issue to /etc/, aborting...${RC}"
 		sleep 1
 	fi
 
 	cd "$HOME/Downloads" && git clone --depth=1 "$H2INSTALLER_REPO".git
 	cd h2install && rm -rf .git/ && go mod tidy && go build -o h2installer
-	./h2installer
+
+	# Check if h2installer binary was created and exists
+	if [ ! -f "$H2INSTALLER_TARGET_LOC" ]; then
+		echo -e "${RED};; ERROR: h2installer failed to build, aborting...${RC}"
+		exit 1
+	else
+		echo -e "${CYAN};; h2installer was built successfully!${RC}"
+		./h2installer
+	fi	
 }
 
 # Script entry
 echo -e "${YELLOW};; INFO: You're about to clone the h2install repository${RC}"
 read -rp ";; Are you sure you want to start the installation now? [y/N]" ans
 [[ "$ans" =~ ^[Yy]$ ]] && func_main
-
-# Check if h2installer binary was created and exists
-if [ ! -f "$HOME/Downloads/h2install/h2installer" ]; then
-	echo -e "${RED};; ERROR: h2installer was not built successfully!${RC}"
-	exit 1
-else
-	echo -e "${CYAN};; h2installer was built successfully!${RC}"
-fi
 
 # Check if essential files were copied
 echo -e "${YELLOW};; Verifying if all essential files are copied...${RC}"
