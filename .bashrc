@@ -39,6 +39,7 @@ alias reboot="~/src/Scripts/reboot.sh"
 alias poweroff="~/src/Scripts/poweroff.sh"
 alias st4rtX="~/src/Scripts/hypr/st4rtX.sh"
 alias lumine="~/src/Scripts/lumine.sh"
+alias sys-info="~/src/Scripts/sys-info.sh"
 
 # --------------------------------------------------------------------------------------------
 # General

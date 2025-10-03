@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# // ======= xdg.sh ======= 
+# // ======= xdg.sh =======
 
 sleep 1
 

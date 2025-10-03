@@ -20,9 +20,7 @@ is_installed_figlet() {
 		figlet -f smslant "Mirrorlist"
 		echo ""
 	else
-		echo "--------------------------"
-		echo "Mirrors.sh"
-		echo "--------------------------"
+		echo "# // ======= mirrors.sh ======="
 	fi
 }
 
