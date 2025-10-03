@@ -2,13 +2,13 @@
 
 # // ======= sys-info.sh =======
 
-set -euo pipefail
-
 func_main() {
 	printf "Started sys-info\n"
 	date
-	homectl && hostnamectl
-	echo "" && lsblk
+	homectl
+	hostnamectl
+	echo ""
+	lsblk
 }
 
 func_Banner() {
