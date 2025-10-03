@@ -45,8 +45,6 @@ $ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs g
 
 > [!CAUTION]
 > - [`hyprarch2`]() now uses a new [`golang written installer`](https://github.com/g5ostXa/h2install).
-> - If you want to try it, please use a VM or an old PC because the installer isn't very stable yet.
-> - `--dry-run` mode was removed in this next patch for functionality and readability reasons.
 
 First, clone [`hyprarch2`](/) in `~/Downloads/`:
 ```bash
