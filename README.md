@@ -47,7 +47,7 @@ $ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs g
 > - [`hyprarch2`]() now uses a new [`golang written installer`](https://github.com/g5ostXa/h2install).
 > - The installer installs all [`hyprarch2`](https://github.com/g5ostXa/hyprarch2) main apps and pacakages by default.
 > - It is recommended to use the installer, rather than just putting `dotfiles/` in `~/.config`.
-> - If you want to only use `~/dotfiles`, please make sure that all packages listed in [`h2install.go`](https://github.com/g5ostXa/h2install.go) are pre-installed.
+> - If you want to only use `~/dotfiles`, please make sure that all packages listed in [`h2install.go`](https://github.com/g5ostXa/h2install/blob/main/h2install.go) are pre-installed.
 > - This is NOT compatible with a different distro than Arch.
 
 First, clone [`hyprarch2`](/) in `~/Downloads/`:
