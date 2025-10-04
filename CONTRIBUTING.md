@@ -23,7 +23,7 @@ By participating you agree to the project’s [`Code of Conduct`](/CODE_OF_CONDU
     
 - **Small fixes**: typos, docs, missing deps, minor config tweaks.
     
-- **Features**: new keybinds, wallpapers/theme variants, opt‑in modules.
+- **Features**: new keybinds, wallpapers/theme variants, opt-in modules.
     
 - **Performance/cleanups**: faster startup, fewer external calls, smaller dependency surface.
 
@@ -42,7 +42,7 @@ By participating you agree to the project’s [`Code of Conduct`](/CODE_OF_CONDU
 
 **Bash**
 
-- `set -Eeuo pipefail` in non‑trivial scripts; trap errors.
+- `set -Eeuo pipefail` in non-trivial scripts; trap errors.
     
 - Prefer `#!/usr/bin/env bash` and POSIX where reasonable.
     
@@ -51,11 +51,11 @@ By participating you agree to the project’s [`Code of Conduct`](/CODE_OF_CONDU
 
 **Hyprland**
 
-- Keep defaults sensible; no per‑host assumptions.
+- Keep defaults sensible; no per-host assumptions.
     
 - Gate optional modules with `env` flags or includes.
     
-- Comment non‑obvious rules and animations.
+- Comment non-obvious rules and animations.
     
 
 **Waybar/CSS**
@@ -81,13 +81,13 @@ By participating you agree to the project’s [`Code of Conduct`](/CODE_OF_CONDU
     git fetch upstream && git rebase upstream/master
     ```
     
-2. **Self‑checklist** (keep PRs focused):
+2. **Self-checklist** (keep PRs focused):
     
     -  Describes _what_ and _why_ in the PR body.
         
     -  Works on a fresh Arch VM.
         
-    -  No machine‑specific values committed.
+    -  No machine-specific values committed.
         
     -  `shfmt` + `shellcheck` (and `stylua`/`prettier` if touched).
         
@@ -132,7 +132,7 @@ Use the GitHub Issues tab. Include:
 
 ### Licensing
 
-By contributing, you agree that your changes are licensed under the **GPL‑3.0** license of this repository.
+By contributing, you agree that your changes are licensed under the **GPL-3.0** license of this repository.
 
 ---
 
