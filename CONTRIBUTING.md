@@ -4,7 +4,7 @@ This doc shows how to file good issues, propose changes, test safely in a VM, an
 ### Code of Conduct
 By participating you agree to the project’s [`Code of Conduct`](/CODE_OF_CONDUCT.md).
 
-### Repo overvie
+### Repo overview
 - [**dotfiles/**](/dotfiles) — user config (e.g. `hypr/` with `conf/` including `keybindings.conf`, `monitor.conf`).
 - [**src/**](/src) — installer wrapper and scripts.
 - [**assets/**](/assets) — images and misc assets used in README/themes.
