@@ -20,9 +20,9 @@ fi
 IFS=';' read -ra arrThemes <<<"$themestyle"
 echo ${arrThemes[0]}
 
-if [ ! -f ~/dotfiles/waybar/themes${arrThemes[1]}/style.css ]; then
-	themestyle="/waybar-bottom;/waybar-bottom/main"
+if [ ! -f ~/.config/waybar/themes${arrThemes[1]}/style.css ]; then
+        themestyle="/waybar-bottom;/waybar-bottom/main"
 fi
 
 # Loading the configuration
-uwsm app -- waybar -c ~/dotfiles/waybar/themes${arrThemes[0]}/config -s ~/dotfiles/waybar/themes${arrThemes[1]}/style.css &
+uwsm app -- waybar -c ~/.config/waybar/themes${arrThemes[0]}/config -s ~/.config/waybar/themes${arrThemes[1]}/style.css &

@@ -22,7 +22,7 @@ If you like my project and want to contribute, feel free to submit a PR and give
 > [!NOTE]
 > - If only installing the [`dotfiles/`](/dotfiles), please make sure you copy them to your `~/.config/` directory.
 > - If installing via the [`installer`](https://github.com/g5ostXa/h2install), which is managed by [`install.sh`](/src/install.sh), simply follow the instructions below.
-> - Please note that the installer installs [`dotfiles/`](/dotfiles) in your home directroy and create symlinks that point to `~/.config/`
+> - The installer now installs [`dotfiles/`](/dotfiles) directly into your `~/.config/` directory—no additional symlinks are required.
 
 ## ⚙️ `Setup and installation`
 <h4> 🗒️ Prerequisites:</h4>
@@ -47,7 +47,7 @@ $ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs g
 > - [`hyprarch2`]() now uses a new [`golang written installer`](https://github.com/g5ostXa/h2install).
 > - The installer installs all [`hyprarch2`](https://github.com/g5ostXa/hyprarch2) main apps and pacakages by default.
 > - It is recommended to use the installer, rather than just putting `dotfiles/` in `~/.config`.
-> - If you want to only use `~/dotfiles`, please make sure that all packages listed in [`h2install.go`](https://github.com/g5ostXa/h2install/blob/main/h2install.go) are pre-installed.
+> - If you prefer a manual setup, copy the contents of [`dotfiles/`](/dotfiles) to `~/.config/` and make sure that all packages listed in [`h2install.go`](https://github.com/g5ostXa/h2install/blob/main/h2install.go) are pre-installed.
 > - This is NOT compatible with a different distro than Arch.
 
 First, clone [`hyprarch2`](/) in `~/Downloads/`:

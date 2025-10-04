@@ -3,7 +3,7 @@
 # // ======= themeswitcher.sh =======
 
 # Default theme folder
-themes_path="$HOME/dotfiles/waybar/themes"
+themes_path="$HOME/.config/waybar/themes"
 
 # Initialize arrays
 listThemes=""
@@ -14,7 +14,7 @@ options=$(find $themes_path -maxdepth 2 -type d)
 for value in $options; do
 	if [ ! $value == "$themes_path" ]; then
 		if [ $(find $value -maxdepth 1 -type d | wc -l) = 1 ]; then
-			result=$(echo $value | sed "s#$HOME/dotfiles/waybar/themes/#/#g")
+                        result=$(echo $value | sed "s#$HOME/.config/waybar/themes/#/#g")
 			IFS='/' read -ra arrThemes <<<"$result"
 			listThemes[${#listThemes[@]}]="/${arrThemes[1]};$result"
 			if [ -f $themes_path$result/config.sh ]; then
@@ -29,7 +29,7 @@ done
 
 # Show rofi dialog
 listNames=${listNames::-2}
-choice=$(echo -e "$listNames" | rofi -dmenu -replace -config ~/dotfiles/rofi/config-wallpaper.rasi -no-show-icons -width 30 -p "Themes" -format i)
+choice=$(echo -e "$listNames" | rofi -dmenu -replace -config ~/.config/rofi/config-wallpaper.rasi -no-show-icons -width 30 -p "Themes" -format i)
 
 # Set new theme by writing the theme information to ~/.cache/.themestyle.sh
 if [ "$choice" ]; then

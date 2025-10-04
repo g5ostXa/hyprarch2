@@ -10,7 +10,7 @@ RC='\033[0m'
 
 # Main variables
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
-DOTS_TARGET_DIR="$HOME/dotfiles"
+DOTS_TARGET_DIR="$HOME/.config"
 H2INSTALLER_REPO="https://github.com/g5ostXa/h2install"
 H2INSTALLER_TARGET_LOC="$HOME/Downloads/h2install/h2installer"
 
@@ -40,8 +40,33 @@ src_check() {
 
 # Copy all hyprarch2 files to home directory
 src_copy() {
-	cp -r "$HYPRARCH2_DIR"/* "$HOME/"
-	sudo cp -r "$HYPRARCH2_DIR/dotfiles/login/issue" "/etc/"
+        mkdir -p "$DOTS_TARGET_DIR"
+
+        # Remove legacy installs that relied on ~/dotfiles symlinks
+        if [ -e "$HOME/dotfiles" ]; then
+                echo -e "${YELLOW};; Removing legacy ~/dotfiles directory${RC}"
+                rm -rf "$HOME/dotfiles"
+        fi
+
+        # Drop any ~/.config symlinks that still point at ~/dotfiles
+        if [ -d "$DOTS_TARGET_DIR" ]; then
+                find "$DOTS_TARGET_DIR" -maxdepth 1 -type l -lname "$HOME/dotfiles/*" -print -exec rm -f {} \;
+        fi
+
+        # Copy repository dotfiles directly into ~/.config
+        cp -rf "$HYPRARCH2_DIR/dotfiles/." "$DOTS_TARGET_DIR/"
+
+        # Copy supporting directories to $HOME
+        cp -rfT "$HYPRARCH2_DIR/assets" "$HOME/assets"
+        cp -rfT "$HYPRARCH2_DIR/src" "$HOME/src"
+
+        # Copy required hidden files into $HOME
+        cp -f "$HYPRARCH2_DIR/.bashrc" "$HOME/"
+        cp -rfT "$HYPRARCH2_DIR/.version" "$HOME/.version"
+        cp -rfT "$HYPRARCH2_DIR/.github" "$HOME/.github"
+        cp -f "$HYPRARCH2_DIR/.gitignore" "$HOME/"
+
+        sudo cp -r "$HYPRARCH2_DIR/dotfiles/login/issue" "/etc/"
 }
 
 # Make sure all files were copied
@@ -131,12 +156,12 @@ else
 	exit 1
 fi
 
-# Check if dotfiles exist
-if [ -d "$DOTS_TARGET_DIR" ]; then
-	echo -e "${CYAN};; dotfiles target directorty exists.${RC}"
+# Check if configuration files exist
+if [ -d "$DOTS_TARGET_DIR" ] && [ -d "$DOTS_TARGET_DIR/hypr" ]; then
+        echo -e "${CYAN};; configuration files exist in ~/.config.${RC}"
 else
-	echo -e "${RED};; dotfiles target directory does not exist...${RC}"
-	exit 1
+        echo -e "${RED};; configuration files were not copied to ~/.config...${RC}"
+        exit 1
 fi
 
 # End of script message
