@@ -20,9 +20,9 @@ If you like my project and want to contribute, feel free to submit a PR and give
 [hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2
 ```
 > [!NOTE]
-> - If only installing the [`dotfiles/`](/dotfiles), please make sure you copy them to your `~/.config/` directory.
-> - If installing via the [`installer`](https://github.com/g5ostXa/h2install), which is managed by [`install.sh`](/src/install.sh), simply follow the instructions below.
+> - It is recommended installing via the [`installer`](https://github.com/g5ostXa/h2install), which is managed by [`install.sh`](/src/install.sh).
 > - Please note that the installer installs [`dotfiles/`](/dotfiles) in your home directroy and create symlinks that point to `~/.config/`
+> - We are currently working on renaming `~/dotfiles/` to `~/.config/`, but for now we still use symlinks.
 
 ## ⚙️ `Setup and installation`
 <h4> 🗒️ Prerequisites:</h4>
