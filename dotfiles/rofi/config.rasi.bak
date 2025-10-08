@@ -11,4 +11,4 @@ configuration {
     me-accept-entry:            "MousePrimary";
 }
 
-@theme "~/dotfiles/rofi/custom.rasi"
+@theme "~/.config/rofi/custom.rasi"
