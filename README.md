@@ -101,8 +101,7 @@ monitor=Virtual-1,2048x1080@60.00,0x0,1
 For more detailed instructions about how to configure your monitor(s): [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
 
 ## ⌨️ `Keybinds`
-[` ➜ All keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
-
+General keybinds:
 - `⌨️` `SUPER` + `RETURN` : Alacritty
 - `⌨️` `SUPER` + `B` : Firefox-nightly
 - `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
@@ -113,6 +112,8 @@ For more detailed instructions about how to configure your monitor(s): [`🖥 Hy
 - `⌨️` `SUPER` + `E` : Nautilus
 - `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
 - `⌨️` `SUPER` + `CTRL` +`M` : Kill hyprland
+
+[` ➜ See all available keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
 
 ## 📸 `Screenshots`
 <img src="/assets/screenshots/h2sc5.png"/>
