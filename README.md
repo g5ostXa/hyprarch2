@@ -19,15 +19,17 @@ If you like my project and want to contribute, feel free to submit a PR and give
 
 [hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2
 ```
-> [!NOTE]
+> [!CAUTION]
 > - It is recommended installing via the [`installer`](https://github.com/g5ostXa/h2install), which is managed by [`install.sh`](/src/install.sh).
 > - Please note that the installer installs [`dotfiles/`](/dotfiles) in your home directroy and create symlinks that point to `~/.config/`
 > - We are currently working on renaming `~/dotfiles/` to `~/.config/`, but for now we still use symlinks.
+> - This is NOT compatible with a different distro than upstream [`Archlinux`](https://archlinux.org).
 
 ## ⚙️ `Setup and installation`
 <h4> 🗒️ Prerequisites:</h4>
 
-If you have not done so already, you need a fresh, minimal [`Archlinux`](https://archlinux.org) installation.
+If you have not done so already, you need to install [`Archlinux`](https://archlinux.org).\
+It is recommended to have a minimal, up-to-date Arch-base installation.
 
 > [!IMPORTANT]
 > If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
@@ -36,26 +38,19 @@ If you have not done so already, you need a fresh, minimal [`Archlinux`](https:/
 > - Set `[Listen type]` to `[None]` in `[Display Spice]`.
 > - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
 
-Within your new [`Arch`](https://archlinux.org/) install, make sure all needed dependencies are installed for [`hyprarch2`](/):
+Within your new [`Archlinux`](https://archlinux.org/) install, make sure all needed dependencies are installed _**before**_ installing [`hyprarch2`](/):
 ```ruby
 $ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs gum figlet vim grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers
 ```
 
 <h4> 🖱️ Usage:</h4>
 
-> [!CAUTION]
-> - [`hyprarch2`]() now uses a new [`golang written installer`](https://github.com/g5ostXa/h2install).
-> - The installer installs all [`hyprarch2`](https://github.com/g5ostXa/hyprarch2) main apps and pacakages by default.
-> - It is recommended to use the installer, rather than just putting `dotfiles/` in `~/.config`.
-> - If you want to only use `~/dotfiles`, please make sure that all packages listed in [`h2install.go`](https://github.com/g5ostXa/h2install/blob/main/h2install.go) are pre-installed.
-> - This is NOT compatible with a different distro than Arch.
-
 First, clone [`hyprarch2`](/) in `~/Downloads/`:
 ```bash
 $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 ```
 
-Then, please run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
+Then, run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
 ```bash
 $ cd hyprarch2/src && ./install.sh
 ```
