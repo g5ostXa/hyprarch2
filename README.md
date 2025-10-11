@@ -21,7 +21,7 @@ If you like my project and want to contribute, feel free to submit a PR and give
 ```
 > [!CAUTION]
 > - It is recommended installing via the [`installer`](https://github.com/g5ostXa/h2install), which is managed by [`install.sh`](/src/install.sh).
-> - Please note that the installer installs [`dotfiles/`](/dotfiles) in your home directroy and create symlinks that point to `~/.config/`
+> - The installer installs [`dotfiles/`](/dotfiles) in your home directroy and create symlinks that point to `~/.config/`
 > - We are currently working on renaming `~/dotfiles/` to `~/.config/`, but for now we still use symlinks.
 > - This is NOT compatible with a different distro than upstream [`Archlinux`](https://archlinux.org).
 
