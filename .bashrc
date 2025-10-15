@@ -21,6 +21,7 @@ alias hyprpush="hyprarch2 push --set-upstream git@github.com:g5ostXa/hyprarch2.g
 alias h2status="hyprarch2 status"
 alias h2push="hyprarch2 push"
 alias h2pull="hyprarch2 pull"
+alias virtkill="~/src/Scripts/virtkill.sh"
 
 # ---------------------------------------------------------------------------------------------
 # Main aliases
@@ -28,7 +29,6 @@ alias h2pull="hyprarch2 pull"
 alias ls="eza --icons=always --color=always"
 alias ll="ls -a"
 alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
-alias virtkill="~/src/Scripts/virtkill.sh"
 alias fire="sudo firecfg"
 alias unfire="sudo firecfg --clean"
 alias clean="~/src/Scripts/cleanup.sh"
