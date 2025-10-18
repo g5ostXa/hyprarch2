@@ -14,6 +14,7 @@ alias h2pull='hyprarch2 pull'
 # -----------------------------------------------------------------------------------------
 alias ls='eza --icons=always --color=always'
 alias ll='ls -a'
+alias N='$EDITOR'
 alias reboot='~/src/Scripts/reboot.sh'
 alias poweroff='~/src/Scripts/poweroff.sh'
 alias fire='sudo firecfg'

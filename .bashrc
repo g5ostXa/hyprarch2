@@ -28,6 +28,7 @@ alias virtkill="~/src/Scripts/virtkill.sh"
 # ---------------------------------------------------------------------------------------------
 alias ls="eza --icons=always --color=always"
 alias ll="ls -a"
+alias N="$EDITOR"
 alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
 alias fire="sudo firecfg"
 alias unfire="sudo firecfg --clean"
@@ -48,6 +49,7 @@ export PATH=$PATH:"$HOME/.local/bin/"
 export PATH="/usr/lib/ccache/bin/:$PATH"
 export HYPRARCH2_VERSION=$(cat "$HOME/.version/latest")
 export BROWSER="firefox-nightly"
+export EDITOR="nvim"
 
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
