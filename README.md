@@ -17,7 +17,7 @@ If you like my project and want to contribute, feel free to submit a PR and give
 /_//_/\_, / .__/_/  \_,_/_/  \__/_//_/____/
      /___/_/
 
-[hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2
+[hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2.git
 ```
 > [!CAUTION]
 > - It is recommended installing via the [`installer`](https://github.com/g5ostXa/h2install), which is managed by [`install.sh`](/src/install.sh).
