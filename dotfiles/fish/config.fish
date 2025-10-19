@@ -28,7 +28,6 @@ alias bwrap-btop='~/src/Scripts/sandboxes/bwrap-btop.sh'
 alias start-hypr='~/src/Scripts/hypr/start-hypr.sh'
 alias lumine='~/src/Scripts/lumine.sh'
 alias r4in='unimatrix -n -s 96 -l o'
-alias sys-info='~/src/Scripts/sys-info.sh'
 end
 
 # ------------------------------------------------------------------------------------------

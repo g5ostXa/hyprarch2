@@ -40,7 +40,6 @@ alias reboot="~/src/Scripts/reboot.sh"
 alias poweroff="~/src/Scripts/poweroff.sh"
 alias start-hypr="~/src/Scripts/hypr/start-hypr.sh"
 alias lumine="~/src/Scripts/lumine.sh"
-alias sys-info="~/src/Scripts/sys-info.sh"
 
 # --------------------------------------------------------------------------------------------
 # General
