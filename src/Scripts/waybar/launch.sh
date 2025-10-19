@@ -25,4 +25,4 @@ if [ ! -f ~/.config/waybar/themes${arrThemes[1]}/style.css ]; then
 fi
 
 # Loading the configuration
-uwsm app -- waybar -c ~/.config/waybar/themes${arrThemes[0]}/config -s ~/dotfiles/waybar/themes${arrThemes[1]}/style.css &
+uwsm app -- waybar -c ~/.config/waybar/themes${arrThemes[0]}/config -s ~/.config/waybar/themes${arrThemes[1]}/style.css &
