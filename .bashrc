@@ -38,7 +38,7 @@ alias cw="cliphist wipe"
 alias mirrors-update="~/src/Scripts/mirrors.sh"
 alias reboot="~/src/Scripts/reboot.sh"
 alias poweroff="~/src/Scripts/poweroff.sh"
-alias st4rtX="~/src/Scripts/hypr/st4rtX.sh"
+alias start-hypr="~/src/Scripts/hypr/start-hypr.sh"
 alias lumine="~/src/Scripts/lumine.sh"
 alias sys-info="~/src/Scripts/sys-info.sh"
 

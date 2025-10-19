@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# // ======= st4rtX.sh =======
+# // ======= start-hypr.sh =======
 
 # Set exit on error
 set -euo pipefail
@@ -10,11 +10,11 @@ is_installed_figlet() {
 	if ! command -v figlet >/dev/null 2>&1; then
 		clear
 		echo "--------------------------------"
-		echo "st4rtX.sh"
+		echo "start-hypr.sh"
 		echo "--------------------------------"
 	else
 		clear
-		figlet -f smslant "st4rtX"
+		figlet -f smslant "start-hypr"
 		echo ""
 	fi
 
