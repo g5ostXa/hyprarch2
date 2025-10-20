@@ -12,23 +12,8 @@ RC='\033[0m'
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 DOTS_TARGET_DIR="$HOME/dotfiles"
 H2INSTALLER_REPO="https://github.com/g5ostXa/h2install"
+H2INSTALLER_DIR="$HOME/Downloads/h2install"
 H2INSTALLER_TARGET_LOC="$HOME/Downloads/h2install/h2installer"
-
-# Check if git is installed
-is_installed_git() {
-	if ! command -v "git" >/dev/null 2>&1; then
-		echo -e "${RED};; Git not installed, aborting...${RC}"
-		exit 1
-	fi
-}
-
-# Check if go is installed
-is_installed_go() {
-	if ! command -v "go" >/dev/null 2>&1; then
-		echo -e "${RED};; Go is not installed, aborting...${RC}"
-		exit 1
-	fi
-}
 
 # Check if hyprarch2 directory exists
 src_check() {
@@ -69,16 +54,23 @@ target_check() {
 
 # Install the h2install repository and run h2installer
 func_main() {
-	is_installed_git && is_installed_go && src_check && src_copy && target_check
+	src_check
+	src_copy || exit 1
+	target_check || exit 1
 
 	if [ -f "/etc/issue" ]; then
 		sudo chown root:root /etc/issue
 	else
-		echo -e "${RED};; Failed to copy issue to /etc/, aborting...${RC}"
-		sleep 1
+		echo -e "${RED};; Failed to copy issue to /etc/, skipping...${RC}"
 	fi
 
-	cd "$HOME/Downloads" && git clone --depth=1 "$H2INSTALLER_REPO".git
+	cd "$HOME/Downloads" || exit 1
+	
+	if [ -d "$H2INSTALLER_DIR" ]; then
+		rm -rf "$H2INSTALLER_DIR"
+	fi
+
+	git clone --depth=1 "$H2INSTALLER_REPO".git
 	cd h2install && rm -rf .git/ && go mod tidy && go build -o h2installer
 
 	# Check if h2installer binary was created and exists
@@ -94,7 +86,7 @@ func_main() {
 # Script entry
 echo -e "${YELLOW};; INFO: You're about to clone the h2install repository${RC}"
 read -rp ";; Are you sure you want to start the installation now? [y/N]" ans
-[[ "$ans" =~ ^[Yy]$ ]] && func_main
+[[ "$ans" =~ ^[Yy]$ ]] && func_main || exit 1
 
 # Check if essential files were copied
 echo -e "${YELLOW};; Verifying if all essential files are copied...${RC}"
@@ -104,7 +96,6 @@ if [ -f "$HOME/.bashrc" ]; then
 	echo -e "${CYAN};; .bashrc exists and was copied.${RC}"
 else
 	echo -e "${RED};; .bashrc was not copied properly!${RC}"
-	exit 1
 fi
 
 # Check .version directory exists
@@ -112,7 +103,6 @@ if [ -d "$HOME/.version/" ]; then
 	echo -e "${CYAN};; .version directory exists.${RC}"
 else
 	echo -e "${RED};; .version directory was not copied!${RC}"
-	exit 1
 fi
 
 # Check .github directory exists
@@ -120,7 +110,6 @@ if [ -d "$HOME/.github/" ]; then
 	echo -e "${CYAN};; .github directory exists.${RC}"
 else
 	echo -e "${RED};; .github directory was not copied!${RC}"
-	exit 1
 fi
 
 # Check .gitignore exists
@@ -128,7 +117,6 @@ if [ -f "$HOME/.gitignore" ]; then
 	echo -e "${CYAN};; .gitignore exists and was copied.${RC}"
 else
 	echo -e "${RED};; .gitignore was not copied!${RC}"
-	exit 1
 fi
 
 # Check if dotfiles exist
@@ -136,12 +124,11 @@ if [ -d "$DOTS_TARGET_DIR" ]; then
 	echo -e "${CYAN};; dotfiles target directory exists.${RC}"
 else
 	echo -e "${RED};; dotfiles target directory does not exist...${RC}"
-	exit 1
 fi
 
 # End of script message
 echo -e "${CYAN}"
-echo ";; Installation completed successfully!"
+echo ";; hyprarch2 dotfiles are now installed!"
 echo ""
-echo ";; You now may launch hyprland or reboot"
+echo ";; You now may launch hyprland or reboot..."
 echo -e "${RC}"
