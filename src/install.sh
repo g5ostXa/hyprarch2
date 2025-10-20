@@ -65,7 +65,7 @@ func_main() {
 	fi
 
 	cd "$HOME/Downloads" || exit 1
-	
+
 	if [ -d "$H2INSTALLER_DIR" ]; then
 		rm -rf "$H2INSTALLER_DIR"
 	fi
@@ -93,7 +93,7 @@ echo -e "${YELLOW};; Verifying if all essential files are copied...${RC}"
 
 # Check .bashrc exists
 if [ -f "$HOME/.bashrc" ]; then
-	echo -e "${CYAN};; .bashrc exists and was copied.${RC}"
+	echo -e "${CYAN};; .bashrc exists.${RC}"
 else
 	echo -e "${RED};; .bashrc was not copied properly!${RC}"
 fi
@@ -114,7 +114,7 @@ fi
 
 # Check .gitignore exists
 if [ -f "$HOME/.gitignore" ]; then
-	echo -e "${CYAN};; .gitignore exists and was copied.${RC}"
+	echo -e "${CYAN};; .gitignore exists.${RC}"
 else
 	echo -e "${RED};; .gitignore was not copied!${RC}"
 fi
