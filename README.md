@@ -29,7 +29,7 @@ If you like my project and want to contribute, feel free to submit a PR and give
 <h4> 🗒️ Prerequisites:</h4>
 
 If you have not done so already, you need to install [`Archlinux`](https://archlinux.org).\
-It is recommended to have a minimal, up-to-date Arch-base installation.
+It is recommended to have a minimal, up-to-date arch-base installation.
 
 > [!IMPORTANT]
 > If installing on bare metal, do not forget to _backup your current installation_ before proceeding.\
