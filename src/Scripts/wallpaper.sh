@@ -22,4 +22,8 @@ notify-send --urgency=normal "Wallpaper and colors updated!" "with image $newwal
 
 # Reload waybar if needed
 sleep 0.25
-if ! pgrep -x "$BAR" >/dev/null; then "$LAUNCH_BAR"; fi
+if ! pgrep -x "$BAR" >/dev/null 2>&1; then
+	source "$LAUNCH_BAR"
+else
+	killall "$BAR" && source "$LAUNCH_BAR"
+fi
