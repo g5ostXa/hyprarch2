@@ -24,7 +24,6 @@ check_errors() {
 	journalctl -p 3 -b
 	echo -e "${YELLOW}Checking systemd for any failed services...${RC}"
 	systemctl --failed
-
 }
 
 check_errors

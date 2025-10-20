@@ -17,7 +17,6 @@ is_installed_figlet() {
 		figlet -f smslant "start-hypr"
 		echo ""
 	fi
-
 }
 
 # Check if gum is installed / exit if false
@@ -26,7 +25,6 @@ is_installed_gum() {
 		echo "Gum is missing, use pacman -S gum to install the package..."
 		exit 1
 	fi
-
 }
 
 #Check if uwsm is installed
@@ -35,7 +33,6 @@ is_installed_uwsm() {
 		echo "uwsm is missing, use pacman -S uwsm to install the package..."
 		exit 1
 	fi
-
 }
 
 # Script entry
