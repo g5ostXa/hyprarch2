@@ -32,8 +32,8 @@ If you have not done so already, you need to install [`Archlinux`](https://archl
 It is recommended to have a minimal, up-to-date Arch-base installation.
 
 > [!IMPORTANT]
-> If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
-> - Installing in `virt-manager` requires you to:
+> If installing on bare metal, do not forget to _backup your current installation_ before proceeding.\
+> Installing in `virt-manager` requires you to:
 > - Enable `[3D acceleration]` in `[Video Virtio]`.
 > - Set `[Listen type]` to `[None]` in `[Display Spice]`.
 > - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
