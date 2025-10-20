@@ -40,7 +40,7 @@ It is recommended to have a minimal, up-to-date Arch-base installation.
 
 Within your new [`Archlinux`](https://archlinux.org/) install, make sure all needed dependencies are installed _**before**_ installing [`hyprarch2`](/):
 ```ruby
-$ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs gum figlet vim grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers
+$ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs gum figlet vim networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers
 ```
 
 <h4> 🖱️ Usage:</h4>
