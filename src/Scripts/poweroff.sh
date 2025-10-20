@@ -37,5 +37,4 @@ main_function() {
 	echo -e "${RC}"
 	systemctl poweroff
 }
-
 gum_prompt

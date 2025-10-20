@@ -9,25 +9,20 @@ cat <<"EOF"
 | |___| |  __/ (_| | | | | | |_| | |_) |
  \____|_|\___|\__,_|_| |_|  \__,_| .__/ 
                                  |_|    
-
 EOF
 
-main_function() {
-	sudo pacman -Scc
+sudo pacman -Scc
 
-	orphaned_packages=$(sudo pacman -Qtdq)
-	if [ -n "$orphaned_packages" ]; then
-		sudo pacman -Rns $orphaned_packages
-	fi
+orphaned_packages=$(sudo pacman -Qtdq)
+if [ -n "$orphaned_packages" ]; then
+	sudo pacman -Rns $orphaned_packages
+fi
 
-	dependency_packages=$(sudo pacman -Qqd)
-	if [ -n "$dependency_packages" ]; then
-		sudo pacman -Rsu $dependency_packages
-	fi
+dependency_packages=$(sudo pacman -Qqd)
+if [ -n "$dependency_packages" ]; then
+	sudo pacman -Rsu $dependency_packages
+fi
 
-	if pgrep -x dunst >/dev/null; then
-		notify-send --urgency=normal "Cleanup done !" --icon=dialog-information
-	fi
-}
-
-main_function
+if pgrep -x dunst >/dev/null; then
+	notify-send --urgency=normal "Cleanup done !" --icon=dialog-information
+fi

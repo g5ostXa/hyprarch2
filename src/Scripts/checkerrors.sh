@@ -19,11 +19,7 @@ cat <<"EOF"
 EOF
 echo -e "${RC}"
 
-check_errors() {
-	echo -e "${YELLOW}Checking for system errors with journalctl...${RC}"
-	journalctl -p 3 -b
-	echo -e "${YELLOW}Checking systemd for any failed services...${RC}"
-	systemctl --failed
-}
-
-check_errors
+echo -e "${YELLOW}Checking for system errors with journalctl...${RC}"
+journalctl -p 3 -b
+echo -e "${YELLOW}Checking systemd for any failed services...${RC}"
+systemctl --failed

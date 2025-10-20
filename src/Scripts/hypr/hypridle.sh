@@ -4,15 +4,10 @@
 
 SERVICE="hypridle"
 
-idle_toggle() {
-	if pgrep -x "$SERVICE" >/dev/null; then
-		killall "$SERVICE"
-		notify-send --urgency=normal ":: $SERVICE DEACTIVATED" --icon=dialog-information
-	else
-		uwsm app -- "$SERVICE" &
-		notify-send --urgency=normal ":: $SERVICE ACTIVATED" --icon=dialog-information
-	fi
-
-}
-
-idle_toggle
+if pgrep -x "$SERVICE" >/dev/null; then
+	killall "$SERVICE"
+	notify-send --urgency=normal ":: $SERVICE DEACTIVATED" --icon=dialog-information
+else
+	uwsm app -- "$SERVICE" &
+	notify-send --urgency=normal ":: $SERVICE ACTIVATED" --icon=dialog-information
+fi
