@@ -133,7 +133,7 @@ fi
 
 # Check if dotfiles exist
 if [ -d "$DOTS_TARGET_DIR" ]; then
-	echo -e "${CYAN};; dotfiles target directorty exists.${RC}"
+	echo -e "${CYAN};; dotfiles target directory exists.${RC}"
 else
 	echo -e "${RED};; dotfiles target directory does not exist...${RC}"
 	exit 1
