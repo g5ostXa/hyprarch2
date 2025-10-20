@@ -15,9 +15,9 @@ is_installed_figlet() {
 		echo ""
 	else
 		clear
-		echo "-------------------"
-		echo "lumine.sh"
-		echo "-------------------" && echo ""
+		echo ""
+		echo "// ===== lumine.sh ====="
+		echo ""
 	fi
 }
 

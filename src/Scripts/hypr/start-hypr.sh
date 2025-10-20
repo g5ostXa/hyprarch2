@@ -9,9 +9,9 @@ set -euo pipefail
 is_installed_figlet() {
 	if ! command -v figlet >/dev/null 2>&1; then
 		clear
-		echo "--------------------------------"
-		echo "start-hypr.sh"
-		echo "--------------------------------"
+		echo ""
+		echo "// ===== start-hypr.sh ====="
+		echo ""
 	else
 		clear
 		figlet -f smslant "start-hypr"
