@@ -40,7 +40,7 @@ alias reboot="~/src/Scripts/reboot.sh"
 alias poweroff="~/src/Scripts/poweroff.sh"
 alias start-hypr="~/src/Scripts/hypr/start-hypr.sh"
 alias lumine="~/src/Scripts/lumine.sh"
-alias r4in='unimatrix -n -s 96 -l o'
+alias r4in="unimatrix -n -s 96 -l o"
 
 # --------------------------------------------------------------------------------------------
 # General
