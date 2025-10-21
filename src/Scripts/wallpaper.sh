@@ -2,15 +2,12 @@
 
 # ========= wallpaper.sh ==========
 
+# Get wallpaper
 wallpaper="$1"
 
-BAR="waybar"
+# Define bar and path for it's launcher
+MY_BAR="waybar"
 LAUNCH_BAR="$HOME/src/Scripts/waybar/launch.sh"
-
-[ -z "$wallpaper" ] && {
-	notify-send --urgency=critical "No wallpaper found..." --icon=dialog-error
-	exit 1
-}
 
 # Set wallpaper and colors
 wal -q -i "$wallpaper"
@@ -20,10 +17,10 @@ cp "$wallpaper" "$HOME/.cache/current_wallpaper.jpg"
 newwall=$(basename "$wallpaper")
 notify-send --urgency=normal "Wallpaper and colors updated!" "with image $newwall" --icon=folder-pictures
 
-# Reload waybar if needed
+# Reload waybar
 sleep 0.25
-if ! pgrep -x "$BAR" >/dev/null 2>&1; then
-	source "$LAUNCH_BAR"
+if ! pgrep -x "$MY_BAR" >/dev/null 2>&1; then
+	"$LAUNCH_BAR"
 else
-	killall "$BAR" && source "$LAUNCH_BAR"
+	killall "$MY_BAR" && "$LAUNCH_BAR"
 fi
