@@ -50,6 +50,7 @@ export PATH="/usr/lib/ccache/bin/:$PATH"
 export HYPRARCH2_VERSION=$(cat "$HOME/.version/latest")
 export BROWSER="firefox-nightly"
 export EDITOR="nvim"
+export LAPTOP_MONITOR_NAME="eDP-1"
 
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
