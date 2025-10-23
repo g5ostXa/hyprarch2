@@ -8,8 +8,8 @@
 
 </div>
 
-## :octocat: `Contributions`
-If you like my project and want to contribute, feel free to submit a PR and give it a ⭐ !
+### :octocat: `Support`
+If you like my project, feel free to give it a star ⭐ !
 ```md
    __                              __   ___
   / /  __ _____  _______ _________/ /  |_  |
@@ -19,32 +19,31 @@ If you like my project and want to contribute, feel free to submit a PR and give
 
 [hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2.git
 ```
-> [!CAUTION]
-> - It is recommended installing via the [`installer`](https://github.com/g5ostXa/h2install), which is managed by [`install.sh`](/src/install.sh).
+> [!WARNING]
+> Before you begin...
+> - These dotfiles may not work if not installing via [`install.sh`](/src/install.sh). 
 > - The installer installs [`dotfiles/`](/dotfiles) in your home directroy and create symlinks that point to `~/.config/`
 > - We are currently working on renaming `~/dotfiles/` to `~/.config/`, but for now we still use symlinks.
 > - This is NOT compatible with a different distro than upstream [`Archlinux`](https://archlinux.org).
 
-## ⚙️ `Setup and installation`
-<h4> 🗒️ Prerequisites:</h4>
-
+#### 🗒️ Prerequisites:
 If you have not done so already, you need to install [`Archlinux`](https://archlinux.org).\
 It is recommended to have a minimal, up-to-date arch-base installation.
 
+If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
+
 > [!IMPORTANT]
-> If installing on bare metal, do not forget to _backup your current installation_ before proceeding.\
-> Installing in `virt-manager` requires you to:
-> - Enable `[3D acceleration]` in `[Video Virtio]`.
-> - Set `[Listen type]` to `[None]` in `[Display Spice]`.
-> - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
+> Using virt-manager requires you to:
+  - Enable `[3D acceleration]` in `[Video Virtio]`.
+  - Set `[Listen type]` to `[None]` in `[Display Spice]`.
+  - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
 
 Within your new [`Archlinux`](https://archlinux.org/) install, make sure all needed dependencies are installed _**before**_ installing [`hyprarch2`](/):
 ```ruby
 $ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs gum figlet vim networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers
 ```
 
-<h4> 🖱️ Usage:</h4>
-
+#### 🖱️ Usage:
 First, clone [`hyprarch2`](/) in `~/Downloads/`:
 ```bash
 $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
@@ -60,7 +59,7 @@ After the installation is completed, use the following to start [`hyprland`](htt
 $ uwsm start hyprland
 ```
 
-## 📦 `Main apps`
+### 📦 `Main apps`
 - Terminal: `alacritty`
 - Shell: `fish` + `starship`
 - Browser: `firefox-nightly`
@@ -76,7 +75,7 @@ $ uwsm start hyprland
 - Current Cursor Theme: `bibata-cursor-theme`
 - Editors: `neovim` / `vscodium`
 
-## 🖥️ `Monitor`
+### 🖥️ `Monitor`
 > [!TIP]
 > - To configure your monitor(s), you need to edit [`dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
 
@@ -95,7 +94,7 @@ monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
 For more detailed instructions about how to configure your monitor(s): [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
 
-## ⌨️ `Keybinds`
+### ⌨️ `Keybinds`
 General keybinds:
 - `⌨️` `SUPER` + `RETURN` : Alacritty
 - `⌨️` `SUPER` + `B` : Firefox-nightly
@@ -110,7 +109,7 @@ General keybinds:
 
 [` ➜ See all available keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
 
-## 📸 `Screenshots`
+### 📸 `Screenshots`
 <img src="/assets/screenshots/h2sc5.png"/>
 <img src="/assets/screenshots/h2sc6.png"/>
 <img src="/assets/screenshots/h2sc2.png"/>
