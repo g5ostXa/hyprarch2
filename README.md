@@ -19,6 +19,8 @@ If you like my project, feel free to give it a star ⭐ !
 
 [hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2.git
 ```
+
+### ⚙️ `Setup and installation`
 > [!WARNING]
 > Before you begin...
 > - These dotfiles may not work if not installing via [`install.sh`](/src/install.sh). 
