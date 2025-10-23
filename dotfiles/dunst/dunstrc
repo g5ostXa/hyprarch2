@@ -10,7 +10,7 @@
     follow = mouse
     
 ### Geometry ###
-    width = 400
+    width = 350
     height = (0,400)
     origin = top-right
     offset = 10x50
@@ -38,7 +38,7 @@
     idle_threshold = 120
 
 ### Text ###
-    font = Font Awesome 12.5
+    font = Jet Brains Mono Nerd Font Mono 12
     line_height = 1
     markup = full
     format = "<b>%s</b>\n%b"
