@@ -65,8 +65,8 @@ Uncomment the line below:
 # source = ~/.config/hypr/conf/kvm.conf
 ```
 
-I also like to set my monitor before installing, but it's up to you, really. \
-(*See monitor's section for more info*)
+I also like to set my monitor(s) before installing, but it's not required. \
+(*See Monitor(s) section to learn more*)
 
 Once you're all set, run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
 ```bash
@@ -80,7 +80,7 @@ After the installation is completed, use the following to start [`hyprland`](htt
 $ uwsm start hyprland
 ```
 
-### 🖥️ `Monitor`
+### 🖥️ `Monitor(s)`
 To configure your monitor(s), you need to edit [`monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
 
 Here's what a manual configuration should look like:
