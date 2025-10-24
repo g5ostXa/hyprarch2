@@ -57,8 +57,8 @@ $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 ```
 
 ### 💧 `Hyprland pre-conf`
-At this point, you may need to change a few things before running the intaller. \
-If you're in a `VM` you need to set the virtual machine environment in `~/Downloads/hyprarch2/dotfiles/hypr/hyprland.conf`.
+At this point, you may need to change a few things before running the installer. \
+If using a `VM`, you need to set the virtual machine environment in `~/Downloads/hyprarch2/dotfiles/hypr/hyprland.conf`.
 
 As simple as uncommenting this single line:
 ```md
