@@ -40,26 +40,65 @@ If installing on bare metal, do not forget to _backup your current installation_
   - Set `[Listen type]` to `[None]` in `[Display Spice]`.
   - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
 
-Within your new [`Archlinux`](https://archlinux.org/) install, make sure all needed dependencies are installed _**before**_ installing [`hyprarch2`](/):
+****⬇️ Within your new [`Archlinux`](https://archlinux.org/) install**** ⬇️ \
+Make sure all needed dependencies are installed _**before**_ installing [`hyprarch2`](/):
 ```ruby
 $ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs gum figlet vim networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers
 ```
 
 #### 🖱️ Usage:
-First, clone [`hyprarch2`](/) in `~/Downloads/`:
+First, create `~/Downloads/` if needed:
+```bash
+$ mkdir -p ~/Downloads
+```
+Then, `cd` into it and clone the project:
 ```bash
 $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 ```
 
-Then, run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
+### 💧 `Hyprland pre-conf`
+At this point, you may need to change a few things before running the intaller. \
+If you're in a `VM` you need to set the virtual machine environment in `~/Downloads/hyprarch2/dotfiles/hypr/hyprland.conf`.
+
+As simple as uncommenting this single line:
+```md
+# source = ~/.config/hypr/conf/kvm.conf
+```
+
+I also like to set my monitor before installing, but it's up to you, really. \
+(*See monitor's section for more info*)
+
+Once you're all set, run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
 ```bash
 $ cd hyprarch2/src && ./install.sh
 ```
+> [!NOTE]
+> This step may take a while to complete depending on your connection speed.
 
 After the installation is completed, use the following to start [`hyprland`](https://hyprland.org) from tty:
 ```ruby
 $ uwsm start hyprland
 ```
+
+### 🖥️ `Monitor`
+To configure your monitor(s), you need to edit [`monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
+
+Here's what a manual configuration should look like:
+```md
+# -------------------------------------------------------------------------------------
+# Monitor Setup
+# -------------------------------------------------------------------------------------
+
+# General:
+monitor=eDP-1,1920x1080@120.035,0x0,1
+monitor=HDMI-A-1,2048x1080@60.00,auto,1
+
+# Virtual machine:
+monitor=Virtual-1,2048x1080@60.00,0x0,1
+```
+For more detailed instructions about how to configure your monitor(s): [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
+
+---
 
 ### 📦 `Main apps`
 - Terminal: `alacritty`
@@ -77,24 +116,7 @@ $ uwsm start hyprland
 - Current Cursor Theme: `bibata-cursor-theme`
 - Editors: `neovim` / `vscodium`
 
-### 🖥️ `Monitor`
-> [!TIP]
-> - To configure your monitor(s), you need to edit [`dotfiles/hypr/conf/monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
-
-Here's what a manual configuration should look like:
-```md
-# -------------------------------------------------------------------------------------
-# Monitor Setup
-# -------------------------------------------------------------------------------------
-
-# General:
-monitor=eDP-1,1920x1080@120.035,0x0,1
-monitor=HDMI-A-1,2048x1080@60.00,auto,1
-
-# Virtual machine:
-monitor=Virtual-1,2048x1080@60.00,0x0,1
-```
-For more detailed instructions about how to configure your monitor(s): [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
+---
 
 ### ⌨️ `Keybinds`
 General keybinds:
@@ -110,6 +132,8 @@ General keybinds:
 - `⌨️` `SUPER` + `CTRL` +`M` : Kill hyprland
 
 [` ➜ See all available keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
+
+---
 
 ### 📸 `Screenshots`
 <img src="/assets/screenshots/h2sc5.png"/>
