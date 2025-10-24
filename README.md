@@ -40,27 +40,30 @@ If installing on bare metal, do not forget to _backup your current installation_
   - Set `[Listen type]` to `[None]` in `[Display Spice]`.
   - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
 
-****⬇️ Within your new [`Archlinux`](https://archlinux.org/) install**** ⬇️ \
+---
+
+**⬇️ From Within your new [`Archlinux`](https://archlinux.org/) install ⬇️**
+
 Make sure all needed dependencies are installed _**before**_ installing [`hyprarch2`](/):
 ```ruby
 $ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs gum figlet vim networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers
 ```
 
 #### 🖱️ Usage:
-First, create `~/Downloads/` if needed:
+If you haven't done so already, create the `~/Downloads/` directory:
 ```bash
 $ mkdir -p ~/Downloads
 ```
-Then, `cd` to ~/Downloads/ and clone the project:
+Change directory to `~/Downloads/` and clone the project:
 ```bash
 $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 ```
 
 ### 💧 `Hyprland pre-conf`
 At this point, you may want to change a few things before installing. \
-If using a `VM`, set the virtual machine env in `~/Downloads/hyprarch2/dotfiles/hypr/hyprland.conf`. 
+If using a `VM`, set the virtual machine environment in `~/Downloads/hyprarch2/dotfiles/hypr/hyprland.conf`. 
 
-Uncomment the line below:
+Uncomment the line below to set the virtual machine environment:
 ```md
 # source = ~/.config/hypr/conf/kvm.conf
 ```
