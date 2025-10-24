@@ -24,7 +24,7 @@ If you like my project, feel free to give it a ⭐ !
 > [!WARNING]
 > Before you begin...
 > - These dotfiles may not work if not installing via [`install.sh`](/src/install.sh). 
-> - The installer installs [`dotfiles/`](/dotfiles) in your home directroy and create symlinks that point to `~/.config/`
+> - The installer installs [`dotfiles/`](/dotfiles) in your home directroy and creates symlinks that point to `~/.config/`
 > - We are currently working on renaming `~/dotfiles/` to `~/.config/`, but for now we still use symlinks.
 > - This is NOT compatible with a different distro than upstream [`Archlinux`](https://archlinux.org).
 
