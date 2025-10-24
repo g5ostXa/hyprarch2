@@ -133,8 +133,6 @@ General keybinds:
 - `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
 - `⌨️` `SUPER` + `CTRL` +`M` : Kill hyprland
 
-[` ➜ See all available keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
-
 ---
 
 ### 📸 `Screenshots`
