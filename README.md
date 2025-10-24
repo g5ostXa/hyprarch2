@@ -119,6 +119,8 @@ For more detailed instructions about how to configure your monitor(s): [`🖥 Hy
 ---
 
 ### ⌨️ `Keybinds`
+[` ➜ See all available keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
+
 General keybinds:
 - `⌨️` `SUPER` + `RETURN` : Alacritty
 - `⌨️` `SUPER` + `B` : Firefox-nightly
