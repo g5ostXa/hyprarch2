@@ -24,7 +24,7 @@ If you like my project, feel free to give it a ⭐ !
 > [!WARNING]
 > Before you begin...
 > - These dotfiles may not work if not installing via [`install.sh`](/src/install.sh). 
-> - The installer installs [`dotfiles/`](/dotfiles) in your home directroy and creates symlinks that point to `~/.config/`
+> - The installer installs [`dotfiles/`](/dotfiles) in your home directory and creates symlinks that point to `~/.config/`
 > - We are currently working on renaming `~/dotfiles/` to `~/.config/`, but for now we still use symlinks.
 > - This is NOT compatible with a different distro than upstream [`Archlinux`](https://archlinux.org).
 
@@ -51,16 +51,16 @@ First, create `~/Downloads/` if needed:
 ```bash
 $ mkdir -p ~/Downloads
 ```
-Then, `cd` into it and clone the project:
+Then, `cd` to ~/Downloads/ and clone the project:
 ```bash
 $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 ```
 
 ### 💧 `Hyprland pre-conf`
-At this point, you may need to change a few things before running the installer. \
-If using a `VM`, you need to set the virtual machine environment in `~/Downloads/hyprarch2/dotfiles/hypr/hyprland.conf`.
+At this point, you may want to change a few things before installing. \
+If using a `VM`, set the virtual machine env in `~/Downloads/hyprarch2/dotfiles/hypr/hyprland.conf`. 
 
-As simple as uncommenting this single line:
+Uncomment the line below:
 ```md
 # source = ~/.config/hypr/conf/kvm.conf
 ```
