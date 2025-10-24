@@ -9,7 +9,7 @@
 </div>
 
 ### :octocat: `Support`
-If you like my project, feel free to give it a star ⭐ !
+If you like my project, feel free to give it a ⭐ !
 ```md
    __                              __   ___
   / /  __ _____  _______ _________/ /  |_  |
