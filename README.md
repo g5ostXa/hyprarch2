@@ -8,7 +8,7 @@
 
 </div>
 
-### :octocat: `Support`
+## :octocat: `Support`
 If you like my project, feel free to give it a ⭐ !
 ```md
    __                              __   ___
@@ -19,37 +19,33 @@ If you like my project, feel free to give it a ⭐ !
 
 [hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2.git
 ```
+<br>
 
-### ⚙️ `Setup and installation`
+## ⚙️ `Setup and installation`
 > [!WARNING]
 > Before you begin...
 > - These dotfiles may not work if not installing via [`install.sh`](/src/install.sh). 
 > - The installer installs [`dotfiles/`](/dotfiles) in your home directory and creates symlinks that point to `~/.config/`
 > - We are currently working on renaming `~/dotfiles/` to `~/.config/`, but for now we still use symlinks.
 > - This is NOT compatible with a different distro than upstream [`Archlinux`](https://archlinux.org).
+> - If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
+<br>
 
-#### 🗒️ Prerequisites:
+🗒️ **Prerequisites**:
+<br>
+
 If you have not done so already, you need to install [`Archlinux`](https://archlinux.org).\
 It is recommended to have a minimal, up-to-date arch-base installation.
 
-If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
-
-> [!IMPORTANT]
-> Using virt-manager requires you to:
-  - Enable `[3D acceleration]` in `[Video Virtio]`.
-  - Set `[Listen type]` to `[None]` in `[Display Spice]`.
-  - Set the `virtual machine environment` in [`hyprland.conf`](/dotfiles/hypr/hyprland.conf).
-
----
-
-**From Within your new [`Archlinux`](https://archlinux.org/) install ⬇️**
-
-Make sure all needed dependencies are installed _**before**_ installing [`hyprarch2`](/):
+In your new [`Arch`](https://archlinux.org/) install, make sure **all needed dependencies** are installed before installing [`hyprarch2`](/):
 ```ruby
 $ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs gum figlet vim networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers
 ```
+<br>
 
-#### 🖱️ Usage:
+🖱️ **Usage**:
+<br>
+
 If you haven't done so already, create the `~/Downloads/` directory:
 ```bash
 $ mkdir -p ~/Downloads
@@ -58,8 +54,8 @@ Change directory to `~/Downloads/` and clone the project:
 ```bash
 $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 ```
+<br>
 
-### 💧 `Hyprland pre-conf`
 At this point, you may want to change a few things before installing. \
 If using a `VM`, set the virtual machine environment in `~/Downloads/hyprarch2/dotfiles/hypr/hyprland.conf`. 
 
@@ -67,6 +63,7 @@ Uncomment the line below to set the virtual machine environment:
 ```md
 # source = ~/.config/hypr/conf/kvm.conf
 ```
+<br>
 
 I also like to set my monitor(s) before installing, but it's not required. \
 (*See Monitor(s) section to learn more*)
@@ -75,15 +72,26 @@ Once you're all set, run [`install.sh`](src/install.sh) from `~/Downloads/hyprar
 ```bash
 $ cd hyprarch2/src && ./install.sh
 ```
-> [!NOTE]
-> This step may take a while to complete depending on your connection speed.
+<br>
 
-After the installation is completed, use the following to start [`hyprland`](https://hyprland.org) from tty:
+## 💧 `Start Hyprland`
+After the install is over, start [`hyprland`](https://wiki.hyprland.org):
 ```ruby
 $ uwsm start hyprland
 ```
+<br>
 
-### 🖥️ `Monitor(s)`
+If you get an error, kill the compositor and re-launch it again. \
+This will make sure all the configs are loaded properly:
+```bash
+uwsm stop && uwsm start hyprland
+```
+<br>
+
+It is also recommended to reboot after installing.
+
+
+## 🖥️ `Monitor(s)`
 To configure your monitor(s), you need to edit [`monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
 
 Here's what a manual configuration should look like:
@@ -99,11 +107,13 @@ monitor=HDMI-A-1,2048x1080@60.00,auto,1
 # Virtual machine:
 monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
-For more detailed instructions about how to configure your monitor(s): [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors)
+<br>
+
+Visit [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors) to learn more about configuring your monitor(s)
 
 ---
 
-### 📦 `Main apps`
+## 📦 `Main apps`
 - Terminal: `alacritty`
 - Shell: `fish` + `starship`
 - Browser: `firefox-nightly`
@@ -121,7 +131,7 @@ For more detailed instructions about how to configure your monitor(s): [`🖥 Hy
 
 ---
 
-### ⌨️ `Keybinds`
+## ⌨️ `Keybinds`
 [` ➜ See all available keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
 
 General keybinds:
@@ -138,7 +148,7 @@ General keybinds:
 
 ---
 
-### 📸 `Screenshots`
+## 📸 `Screenshots`
 <img src="/assets/screenshots/h2sc5.png"/>
 <img src="/assets/screenshots/h2sc6.png"/>
 <img src="/assets/screenshots/h2sc2.png"/>
