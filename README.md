@@ -88,9 +88,6 @@ uwsm stop && uwsm start hyprland
 ```
 <br>
 
-It is also recommended to reboot after installing.
-
-
 ## 🖥️ `Monitor(s)`
 To configure your monitor(s), you need to edit [`monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
 
