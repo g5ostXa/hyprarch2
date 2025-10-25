@@ -50,6 +50,8 @@ If you haven't done so already, create the `~/Downloads/` directory:
 ```bash
 $ mkdir -p ~/Downloads
 ```
+<br>
+
 Change directory to `~/Downloads/` and clone the project:
 ```bash
 $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
@@ -57,9 +59,7 @@ $ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 <br>
 
 At this point, you may want to change a few things before installing. \
-If using a `VM`, set the virtual machine environment in `~/Downloads/hyprarch2/dotfiles/hypr/hyprland.conf`. 
-
-Uncomment the line below to set the virtual machine environment:
+If using a `VM`, uncomment the following in `~/Downloads/hyprarch2/dotfiles/hypr/hyprland.conf`:
 ```md
 # source = ~/.config/hypr/conf/kvm.conf
 ```
