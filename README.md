@@ -42,7 +42,7 @@ If installing on bare metal, do not forget to _backup your current installation_
 
 ---
 
-**⬇️ From Within your new [`Archlinux`](https://archlinux.org/) install ⬇️**
+**From Within your new [`Archlinux`](https://archlinux.org/) install ⬇️**
 
 Make sure all needed dependencies are installed _**before**_ installing [`hyprarch2`](/):
 ```ruby
