@@ -107,8 +107,7 @@ monitor=Virtual-1,2048x1080@60.00,0x0,1
 <br>
 
 Visit [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors) to learn more about configuring your monitor(s)
-
----
+<br>
 
 ## 📦 `Main apps`
 - Terminal: `alacritty`
@@ -126,8 +125,6 @@ Visit [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors) to 
 - Current Cursor Theme: `bibata-cursor-theme`
 - Editors: `neovim` / `vscodium`
 
----
-
 ## ⌨️ `Keybinds`
 [` ➜ See all available keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
 
@@ -142,8 +139,6 @@ General keybinds:
 - `⌨️` `SUPER` + `E` : Nautilus
 - `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
 - `⌨️` `SUPER` + `CTRL` +`M` : Kill hyprland
-
----
 
 ## 📸 `Screenshots`
 <img src="/assets/screenshots/h2sc5.png"/>
