@@ -23,10 +23,9 @@ If you like my project, feel free to give it a ⭐ !
 
 ## ⚙️ `Setup and installation`
 > [!WARNING]
-> Before you begin...
-> - These dotfiles may not work if not installing via [`install.sh`](/src/install.sh). 
-> - The installer installs [`dotfiles/`](/dotfiles) in your home directory and creates symlinks that point to `~/.config/`
-> - We are currently working on renaming `~/dotfiles/` to `~/.config/`, but for now we still use symlinks.
+> Before you begin... 
+> - These dots are meant to be installed via the installation process down below.
+> - Copying dots in you `.config` without using yhe [`installer`](/src/install.sh) is therefor not recommended.
 > - This is NOT compatible with a different distro than upstream [`Archlinux`](https://archlinux.org).
 > - If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
 <br>
