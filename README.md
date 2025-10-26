@@ -81,10 +81,9 @@ $ uwsm start hyprland
 ```
 <br>
 
-If you get an error, kill the compositor and re-launch it again. \
-This will make sure all the configs are loaded properly:
+If you get an error, kill the compositor and re-launch it again:
 ```bash
-uwsm stop && uwsm start hyprland
+$ uwsm stop && uwsm start hyprland
 ```
 <br>
 
