@@ -24,8 +24,8 @@ If you like my project, feel free to give it a ⭐ !
 ## ⚙️ `Setup and installation`
 > [!WARNING]
 > Before you begin... 
-> - These dots are meant to be installed via the installation process down below.
-> - Copying dots in your `~/.config/` without using the [`installer`](/src/install.sh) is not recommended.
+> - My dotfiles are meant to be installed via the installation process down below.
+> - Copying dotfiles in your `~/.config/` without using the [`installer`](/src/install.sh) is not recommended.
 > - This is NOT compatible with a different distro than upstream [`Arch`](https://archlinux.org).
 > - If installing on bare metal, do not forget to **backup your current installation** before proceeding.
 <br>
