@@ -25,9 +25,9 @@ If you like my project, feel free to give it a ⭐ !
 > [!WARNING]
 > Before you begin... 
 > - These dots are meant to be installed via the installation process down below.
-> - Copying dots in you `.config` without using yhe [`installer`](/src/install.sh) is therefor not recommended.
-> - This is NOT compatible with a different distro than upstream [`Archlinux`](https://archlinux.org).
-> - If installing on bare metal, do not forget to _backup your current installation_ before proceeding.
+> - Copying dots in your `~/.config/` without using yhe [`installer`](/src/install.sh) is not recommended.
+> - This is NOT compatible with a different distro than upstream [`Arch`](https://archlinux.org).
+> - If installing on bare metal, do not forget to **backup your current installation** before proceeding.
 <br>
 
 🗒️ **Prerequisites**:
