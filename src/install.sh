@@ -10,10 +10,71 @@ RC='\033[0m'
 
 # Main variables
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
+VERSION_NAME="$HYPRARCH2_DIR/.version/latest"
 DOTS_TARGET_DIR="$HOME/dotfiles"
 H2INSTALLER_REPO="https://github.com/g5ostXa/h2install"
-H2INSTALLER_DIR="$HOME/Downloads/h2install"
 H2INSTALLER_TARGET_LOC="$HOME/Downloads/h2install/h2installer"
+
+if ! command -v "gum" >/dev/null; then
+    echo -e "${RED};; Dependency gum NOT FOUND... ${RC}"
+    exit 1
+fi
+
+# Installation greeter
+if command -v figlet >/dev/null 2>&1; then
+	clear
+	echo -e "${CYAN}"
+	figlet -f smslant "Installer"
+	echo "Welcome to hyprarch2"
+	cat "$VERSION_NAME"
+	echo -e "${RC}" && echo ""
+else
+	clear
+	echo -e "${CYAN}"
+	cat <<"EOF"
+ ___           _        _ _
+|_ _|_ __  ___| |_ __ _| | | ___ _ __
+ | || '_ \/ __| __/ _` | | |/ _ \ '__|
+ | || | | \__ \ || (_| | | |  __/ |
+|___|_| |_|___/\__\__,_|_|_|\___|_|
+EOF
+	echo "Welcome to hyprarch2"
+	cat "$VERSION_NAME"
+	echo -e "${RC}" && echo ""
+fi
+
+# Simple prompt if installing via ssh
+if [ -n "$SSH_CONNECTION" ]; then
+	while true; do
+		read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
+		case $yn in
+		[Yy]*)
+			echo ";; Starting Installation..."
+			sleep 2
+			break
+			;;
+		[Nn]*)
+			echo ";; Installation canceled..."
+			exit
+			;;
+		*)
+			echo ";; Please answer yes or no."
+			;;
+		esac
+	done
+else
+	# Gum prompt if not installing via ssh
+	if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
+		echo ";; Starting Installation..."
+		sleep 2
+	elif [ $? -eq 130 ]; then
+		echo ";; Installation canceled..."
+		exit 130
+	else
+		echo ";; Installation canceled..."
+		exit
+	fi
+fi
 
 # Check if hyprarch2 directory exists
 src_check() {
@@ -64,11 +125,12 @@ func_main() {
 		echo -e "${RED};; Failed to copy issue to /etc/, skipping...${RC}"
 	fi
 
-	cd "$HOME/Downloads" || exit 1
-
 	if [ -d "$H2INSTALLER_DIR" ]; then
 		rm -rf "$H2INSTALLER_DIR"
-	fi
+        cd "$HOME/Downloads" || exit 1
+    else
+        cd "$HOME/Downloads" || exit 1
+    fi
 
 	git clone --depth=1 "$H2INSTALLER_REPO".git
 	cd h2install && rm -rf .git/ && go mod tidy && go build -o h2installer
@@ -93,37 +155,37 @@ echo -e "${YELLOW};; Verifying if all essential files are copied...${RC}"
 
 # Check .bashrc exists
 if [ -f "$HOME/.bashrc" ]; then
-	echo -e "${CYAN};; .bashrc exists.${RC}"
+	echo -e "${CYAN};; ~/.bashrc initialization successful!${RC}"
 else
-	echo -e "${RED};; .bashrc was not copied properly!${RC}"
+	echo -e "${RED};; Failed to initialize ~/.bashrc...${RC}"
 fi
 
 # Check .version directory exists
 if [ -d "$HOME/.version/" ]; then
-	echo -e "${CYAN};; .version directory exists.${RC}"
+	echo -e "${CYAN};; Found ~/.version/ directory!${RC}"
 else
-	echo -e "${RED};; .version directory was not copied!${RC}"
+	echo -e "${RED};; ~/.version/ not found...${RC}"
 fi
 
 # Check .github directory exists
 if [ -d "$HOME/.github/" ]; then
-	echo -e "${CYAN};; .github directory exists.${RC}"
+	echo -e "${CYAN};; Found ~/.github/ directory!${RC}"
 else
-	echo -e "${RED};; .github directory was not copied!${RC}"
+	echo -e "${RED};; ~/.github/ not found...${RC}"
 fi
 
 # Check .gitignore exists
 if [ -f "$HOME/.gitignore" ]; then
-	echo -e "${CYAN};; .gitignore exists.${RC}"
+	echo -e "${CYAN};; Found ~/.gitignore!${RC}"
 else
-	echo -e "${RED};; .gitignore was not copied!${RC}"
+	echo -e "${RED};; ~/.gitignore not found...${RC}"
 fi
 
 # Check if dotfiles exist
 if [ -d "$DOTS_TARGET_DIR" ]; then
-	echo -e "${CYAN};; dotfiles target directory exists.${RC}"
+	echo -e "${CYAN};; Found ~/dotfiles/ directory!${RC}"
 else
-	echo -e "${RED};; dotfiles target directory does not exist...${RC}"
+	echo -e "${RED};; ~/dotfiles/ not found...${RC}"
 fi
 
 # End of script message
