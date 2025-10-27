@@ -75,14 +75,14 @@ $ cd hyprarch2/src && ./install.sh
 
 ## 💧 `Start Hyprland`
 Use the following command to start [`hyprland`](https://wiki.hyprland.org):
-```ruby
+```bash
 $ uwsm start hyprland
 ```
 <br>
 
 If you get an error, kill the compositor and re-launch it again:
 ```bash
-$ uwsm stop && uwsm start hyprland
+$ uwsm stop
 ```
 <br>
 
