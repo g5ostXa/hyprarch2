@@ -37,7 +37,8 @@ jobs:
             }
             echo "✅ install.sh passed syntax check."
           else
-            echo "⚠️ install.sh not found, skipping check."
+            echo "⚠️ install.sh not found..."
+            exit 1
           fi
 
       - name: Validate configuration files in dotfiles directory
