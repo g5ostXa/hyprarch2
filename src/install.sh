@@ -8,14 +8,21 @@ RED='\033[0;31m'
 YELLOW='\033[0;33m'
 RC='\033[0m'
 
-# Main variables
-HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
+# Get hyprarch2's current version name
 VERSION_NAME="$HYPRARCH2_DIR/.version/latest"
+
+# Set hyprarch2's source directory
+HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
+
+# Set dotfiles target directory
 DOTS_TARGET_DIR="$HOME/dotfiles"
+
+# Define h2installer's paths'
 H2INSTALLER_REPO="https://github.com/g5ostXa/h2install"
 H2INSTALLER_DIR="$HOME/Downloads/h2install"
 H2INSTALLER_TARGET_LOC="$HOME/Downloads/h2install/h2installer"
 
+# Make sure gum is installed, exit if not found
 if ! command -v "gum" >/dev/null; then
 	echo -e "${RED};; Dependency gum NOT FOUND... ${RC}"
 	exit 1
@@ -115,18 +122,20 @@ target_check() {
 	fi
 }
 
-# Install the h2install repository and run h2installer
+# Run some checks, build h2install binary and run if successful
 func_main() {
 	src_check
 	src_copy || exit 1
 	target_check || exit 1
 
+	# TTY login
 	if [ -f "/etc/issue" ]; then
 		sudo chown root:root /etc/issue
 	else
 		echo -e "${RED};; Failed to copy issue to /etc/, skipping...${RC}"
 	fi
 
+	# Remove any existing h2install directory in ~/Downloads
 	if [ -d "$H2INSTALLER_DIR" ]; then
 		rm -rf "$H2INSTALLER_DIR"
 		cd "$HOME/Downloads" || exit 1
@@ -134,10 +143,13 @@ func_main() {
 		cd "$HOME/Downloads" || exit 1
 	fi
 
+	# Get h2installer
 	git clone --depth=1 "$H2INSTALLER_REPO".git
+
+	# Go to and build h2installer
 	cd h2install && rm -rf .git/ && go mod tidy && go build -o h2installer
 
-	# Check if h2installer binary was created and exists
+	# Check if installer was successfully built and run it
 	if [ ! -f "$H2INSTALLER_TARGET_LOC" ]; then
 		echo -e "${RED};; ERROR: h2installer failed to build, aborting...${RC}"
 		exit 1
