@@ -62,10 +62,10 @@ If using a `VM`, uncomment the following in `~/Downloads/hyprarch2/dotfiles/hypr
 ```md
 # source = ~/.config/hypr/conf/kvm.conf
 ```
+> [!TIP]
+> I usually set my monitor(s) before installing, but it's not required.
+> - See Monitor(s) section to learn more
 <br>
-
-I also like to set my monitor(s) before installing, but it's not required. \
-(*See Monitor(s) section to learn more*)
 
 Once you're all set, run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
 ```bash
@@ -74,7 +74,7 @@ $ cd hyprarch2/src && ./install.sh
 <br>
 
 ## 💧 `Start Hyprland`
-After the install is over, start [`hyprland`](https://wiki.hyprland.org):
+Use the following command to start [`hyprland`](https://wiki.hyprland.org):
 ```ruby
 $ uwsm start hyprland
 ```
