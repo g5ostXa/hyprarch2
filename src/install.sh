@@ -17,7 +17,7 @@ HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
 # Set dotfiles target directory
 DOTS_TARGET_DIR="$HOME/dotfiles"
 
-# Define h2installer's paths'
+# Define h2installer's paths
 H2INSTALLER_REPO="https://github.com/g5ostXa/h2install"
 H2INSTALLER_DIR="$HOME/Downloads/h2install"
 H2INSTALLER_TARGET_LOC="$HOME/Downloads/h2install/h2installer"
