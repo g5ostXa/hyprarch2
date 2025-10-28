@@ -109,7 +109,7 @@ Visit [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors) to 
 
 ## 📦 `Main apps`
 - Terminal: `alacritty`
-- Shell: `fish` + `starship`
+- Shell: `fish`
 - Browser: `firefox-nightly`
 - App Launcher: `rofi`
 - Wallpaper front end: `waypaper`
