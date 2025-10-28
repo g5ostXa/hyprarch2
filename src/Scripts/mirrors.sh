@@ -57,10 +57,12 @@ refresh_backup() {
 		echo ";; Refreshed $MIRRORLIST_BAK"
 		sleep 2
 		create_mirrorlist
+		sudo chmod 644 "$MIRRORLIST"
 	else
 		echo ";; Unchanged: $MIRRORLIST_BAK"
 		sleep 2
 		create_mirrorlist
+		sudo chmod 644 "$MIRRORLIST"
 	fi
 }
 
@@ -75,10 +77,12 @@ create_backup() {
 		echo ";; Saved $MIRRORLIST as $MIRRORLIST_BAK"
 		sleep 2
 		create_mirrorlist
+		sudo chmod 644 "$MIRRORLIST"
 	else
 		echo ";; No backup created..."
 		sleep 2
 		create_mirrorlist
+		sudo chmod 644 "$MIRRORLIST"
 	fi
 }
 
