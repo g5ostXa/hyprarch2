@@ -1,71 +1,71 @@
 name: Checks
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-  workflow_dispatch:
+    push:
+        branches: ["master", "dev-main-1"]
+    pull_request:
+        branches: ["master"]
+    workflow_dispatch:
 
 jobs:
-  checks:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Check out the repository
-        uses: actions/checkout@v4
+    checks:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Check out the repository
+              uses: actions/checkout@v4
 
-      - name: Check if README.md and .version exist
-        run: |
-          set -euo pipefail
-          if [ ! -f README.md ]; then
-            echo "❌ README.md is missing!"
-            exit 1
-          fi
-          if [ ! -d ".version" ]; then
-            echo "❌ .version directory is missing!"
-            exit 1
-          fi
-          echo "✅ Required files are present."
+            - name: Check if README.md and .version exist
+              run: |
+                  set -euo pipefail
+                  if [ ! -f README.md ]; then
+                    echo "❌ README.md is missing!"
+                    exit 1
+                  fi
+                  if [ ! -d ".version" ]; then
+                    echo "❌ .version directory is missing!"
+                    exit 1
+                  fi
+                  echo "✅ Required files are present."
 
-      - name: Syntax check for install.sh
-        run: |
-          set -euo pipefail
-          if [ -f src/install.sh ]; then
-            shellcheck src/install.sh || {
-              echo "❌ Syntax check failed for install.sh"
-              exit 1
-            }
-            echo "✅ install.sh passed syntax check."
-          else
-            echo "⚠️ install.sh not found..."
-            exit 1
-          fi
+            - name: Syntax check for install.sh
+              run: |
+                  set -euo pipefail
+                  if [ -f src/install.sh ]; then
+                    shellcheck src/install.sh || {
+                      echo "❌ Syntax check failed for install.sh"
+                      exit 1
+                    }
+                    echo "✅ install.sh passed syntax check."
+                  else
+                    echo "⚠️ install.sh not found..."
+                    exit 1
+                  fi
 
-      - name: Validate configuration files in dotfiles directory
-        run: |
-          set -euo pipefail
-          find dotfiles -type f \( -name "*.conf" -o -name "*.yml" -o -name "*.json" \) | while read -r file; do
-            case "$file" in
-              *.json)
-                # Remove comments before validation
-                sed -E '/^\s*\/\//d; s/\/\*.*\*\///' "$file" | jq empty || {
-                  echo "❌ JSON validation failed for $file"
-                  exit 1
-                }
-                echo "✅ JSON valid: $file"
-                ;;
-              *.yml)
-                yamllint "$file" || {
-                  echo "❌ YAML validation failed for $file"
-                  exit 1
-                }
-                echo "✅ YAML valid: $file"
-                ;;
-              *.conf)
-                echo "ℹ️ $file is assumed valid."
-                ;;
-              *)
-                echo "Skipping $file (not a recognized config type)."
-                ;;
-            esac
-          done
+            - name: Validate configuration files in dotfiles directory
+              run: |
+                  set -euo pipefail
+                  find dotfiles -type f \( -name "*.conf" -o -name "*.yml" -o -name "*.json" \) | while read -r file; do
+                    case "$file" in
+                      *.json)
+                        # Remove comments before validation
+                        sed -E '/^\s*\/\//d; s/\/\*.*\*\///' "$file" | jq empty || {
+                          echo "❌ JSON validation failed for $file"
+                          exit 1
+                        }
+                        echo "✅ JSON valid: $file"
+                        ;;
+                      *.yml)
+                        yamllint "$file" || {
+                          echo "❌ YAML validation failed for $file"
+                          exit 1
+                        }
+                        echo "✅ YAML valid: $file"
+                        ;;
+                      *.conf)
+                        echo "ℹ️ $file is assumed valid."
+                        ;;
+                      *)
+                        echo "Skipping $file (not a recognized config type)."
+                        ;;
+                    esac
+                  done
