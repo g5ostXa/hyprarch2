@@ -2,7 +2,7 @@ name: Checks
 
 on:
     push:
-        branches: ["master", "dev-main-1"]
+        branches: ["master"]
     pull_request:
         branches: ["master"]
     workflow_dispatch:
