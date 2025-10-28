@@ -1,13 +1,9 @@
 format = """
 [░▒▓](#1d2230)\
 [ ](bg:#1d2230 fg:#FFFFFF)\
-[](bg:#1D2230 fg:#1D2230)\
 $directory\
-[](fg:#1D2230 bg:#1D2230)\
 $git_branch\
 $git_status\
-[](fg:#1D2230 bg:#1D2230)\
-[](fg:#1D2230 bg:#1D2230)\
 $time\
 [ ](fg:#1d2230)\
 \n$character"""
