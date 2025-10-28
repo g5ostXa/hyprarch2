@@ -108,35 +108,31 @@ Visit [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors) to 
 <br>
 
 ## 📦 `Main apps`
-- Terminal: `alacritty`
-- Shell: `fish`
-- Browser: `firefox-nightly`
-- App Launcher: `rofi`
-- Wallpaper front end: `waypaper`
-- Wallpaper back end: `swww`
-- Logout menu: `wlogout`
-- Bar: `waybar`
-- File Manager: `nautilus`
-- Theming: `GTK` / `python-pywal16`
-- GUI Theme App: `nwg-look`
-- Current GTK Theme: `tokyonight-gtk-theme-git`
-- Current Cursor Theme: `bibata-cursor-theme`
-- Editors: `neovim` / `vscodium`
+- Terminal: `Alacritty`
+- Browser: `Firefox-Nightly`
+- App Launcher: `Rofi`
+- Wallpaper front end: `Waypaper`
+- Wallpaper back end: `Swww`
+- Logout menu: `Wlogout`
+- Bar: `Waybar`
+- File Manager: `Nautilus`
+- GTK Theme: `Tokyonight`
+- Editor: `Neovim`
 
 ## ⌨️ `Keybinds`
 [` ➜ See all available keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
 
 General keybinds:
-- `⌨️` `SUPER` + `RETURN` : Alacritty
-- `⌨️` `SUPER` + `B` : Firefox-nightly
-- `⌨️` `SUPER` + `CTRL` + `RETURN` : Rofi
-- `⌨️` `SUPER` + `W` : Waypaper 
-- `⌨️` `SUPER` + `SHIFT` + `B` : Reload waybar 
-- `⌨️` `SUPER` + `CTRL` + `Q` : Wlogout
-- `⌨️` `SUPER` + `Q` : Killactive
-- `⌨️` `SUPER` + `E` : Nautilus
-- `⌨️` `SUPER` + `SHIFT` +`N` : Toggle hypridle
-- `⌨️` `SUPER` + `CTRL` +`M` : Kill hyprland
+- `SUPER` + `RETURN` : Alacritty
+- `SUPER` + `B` : Firefox-Nightly
+- `SUPER` + `CTRL` + `RETURN` : Rofi
+- `SUPER` + `W` : Waypaper 
+- `SUPER` + `SHIFT` + `B` : Reload Waybar 
+- `SUPER` + `CTRL` + `Q` : Wlogout
+- `SUPER` + `Q` : Killactive
+- `SUPER` + `E` : Nautilus
+- `SUPER` + `SHIFT` +`N` : Toggle Hypridle
+- `SUPER` + `CTRL` +`M` : Kill Hyprland
 
 ## 📸 `Screenshots`
 <img src="/assets/screenshots/h2sc5.png"/>
