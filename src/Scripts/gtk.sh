@@ -24,7 +24,6 @@ else
 fi
 echo "Color Theme:" $prefer_dark_theme_value
 echo "Font Name:" "$font_name"
-echo "Terminal:" "$TERM"
 
 gsettings set "$gnome_schema" gtk-theme "$gtk_theme"
 gsettings set "$gnome_schema" icon-theme "$icon_theme"

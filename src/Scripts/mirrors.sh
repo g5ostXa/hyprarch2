@@ -2,14 +2,21 @@
 
 # // ======= mirrors.sh =======
 
-# Define variables
+# Define mirrorlist target location
 MIRRORLIST="/etc/pacman.d/mirrorlist"
 MIRRORLIST_BAK="/etc/pacman.d/mirrorlist.bak"
-REFLECTOR_CMD="sudo reflector --country Canada --protocol https --latest 20 --age 6 --sort rate --save $MIRRORLIST"
+
+# Define your country for faster mirrors
+COUNTRY="Canada"
+
+# Define reflector cmd with your desired options
+GET_MIRRORS="sudo reflector --country $COUNTRY --protocol https --latest 20 --age 6 --sort rate --save $MIRRORLIST"
+
+# Sync package database
 SYNC_DATABASE="sudo pacman -Sy"
 
-create_mirrorlist() {
-	gum spin --spinner globe --title "Fetching the latest mirrors..." -- $REFLECTOR_CMD
+func_main() {
+	gum spin --spinner globe --title "Fetching the latest mirrors..." -- $GET_MIRRORS
 	gum spin --spinner points --title "Synchronizing package database..." -- $SYNC_DATABASE
 	echo ";; The mirrors are now up to date!"
 }
@@ -56,12 +63,12 @@ refresh_backup() {
 		sudo chmod 644 "$MIRRORLIST_BAK"
 		echo ";; Refreshed $MIRRORLIST_BAK"
 		sleep 2
-		create_mirrorlist
+		func_main
 		sudo chmod 644 "$MIRRORLIST"
 	else
 		echo ";; Unchanged: $MIRRORLIST_BAK"
 		sleep 2
-		create_mirrorlist
+		func_main
 		sudo chmod 644 "$MIRRORLIST"
 	fi
 }
@@ -76,12 +83,12 @@ create_backup() {
 		sudo chmod 644 "$MIRRORLIST_BAK"
 		echo ";; Saved $MIRRORLIST as $MIRRORLIST_BAK"
 		sleep 2
-		create_mirrorlist
+		func_main
 		sudo chmod 644 "$MIRRORLIST"
 	else
 		echo ";; No backup created..."
 		sleep 2
-		create_mirrorlist
+		func_main
 		sudo chmod 644 "$MIRRORLIST"
 	fi
 }
