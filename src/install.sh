@@ -9,7 +9,7 @@ YELLOW='\033[0;33m'
 RC='\033[0m'
 
 # Get hyprarch2's current version name
-VERSION_NAME="$HYPRARCH2_DIR/.version/latest"
+VERSION_NAME="$HOME/Downloads/hyprarch2/.version/latest"
 
 # Set hyprarch2's source directory
 HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
