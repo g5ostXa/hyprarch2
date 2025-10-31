@@ -8,25 +8,22 @@
 //
 {
     // General Settings
-
     // Position TOP
     "position": "top",
     "margin-top": 14,
     "margin-bottom": 0,
-
     // Position BOTTOM
     // "position": "bottom",
     // "margin-top": 0,
     // "margin-bottom": 14,
-    
     "height": 16,
     "margin-left": 0,
-    "margin-right": 0,    
+    "margin-right": 0,
     "spacing": 0,
-
     // Load Modules
-    "include": ["~/.config/waybar/modules.json"],
-
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],
     // Modules Left
     "modules-left": [
         "custom/appmenu",
@@ -37,16 +34,14 @@
         "wlr/taskbar",
         "hyprland/window"
     ],
-
     // Modules Center
     "modules-center": [
         "hyprland/workspaces"
     ],
-
     // Modules Right    
     "modules-right": [
         "custom/updates",
-        "battery", 
+        "battery",
         "group/hardware",
         "custom/cliphist",
         "group/quicklinks",
@@ -54,16 +49,13 @@
         "clock",
         "custom/exit"
     ],
-
     // Group Quicklinks
     "group/quicklinks": {
         "orientation": "horizontal",
         "modules": [
-            "custom/filemanager",
-            "custom/browser"
+            "custom/filemanager"
         ]
     },
-
     // Group Hardware
     "group/hardware": {
         "orientation": "horizontal",
@@ -74,4 +66,3 @@
         ]
     }
 }
-
