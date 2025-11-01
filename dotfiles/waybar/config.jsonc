@@ -49,6 +49,7 @@
 	"modules-right": [
 		"custom/cliphist",
 		"custom/left_div#6",
+		"custom/volume",
 		"custom/left_div#7",
 		"backlight",
 		"custom/left_div#8",
@@ -113,7 +114,7 @@
 			"default": ""
 		},
 		"persistent-workspaces": {
-			"*": 5
+			"*": 4
 		},
 		"on-scroll-up": "hyprctl dispatch workspace +1",
 		"on-scroll-down": "hyprctl dispatch workspace -1",
@@ -245,6 +246,15 @@
 		"on-click-right": "sleep 0.1 && ~/src/Scripts/cliphist.sh d",
 		"on-click-middle": "sleep 0.1 && ~/src/Scripts/cliphist.sh w",
 		"tooltip": false
+	},
+	"custom/volume": {
+		"exec": "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'",
+		"interval": 2,
+		"format": " {}",
+		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+		"tooltip": true,
+		"tooltip-format": "Volume: {}"
 	},
 	"backlight": {
 		"format": "{icon} {percent}%",
