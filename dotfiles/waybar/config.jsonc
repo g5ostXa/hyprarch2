@@ -177,8 +177,10 @@
 		"tooltip": false
 	},
 	"custom/distro": {
-		"format": "󰣇",
-		"tooltip": false
+		"format": "󰣇 hyprarch2",
+		"tooltip": false,
+		"on-click": "uwsm app -- rofi -show drun -replace",
+		"on-click-right": "$HOME/src/Scripts/hypr/keybindings.sh"
 	},
 	"clock#time": {
 		"format": "{:%H:%M}",
