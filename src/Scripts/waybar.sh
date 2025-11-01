@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-# // ======= launch.sh =======
-
-# Quit all running waybar instances
+# // ======= waybar.sh =======
 
 WAYBAR_CONFIG="$HOME/.config/waybar/config.jsonc"
 
