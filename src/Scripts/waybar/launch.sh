@@ -6,7 +6,7 @@ WAYBAR_CONFIG="$HOME/.config/waybar/config.jsonc"
 
 if pgrep -x waybar >/dev/null 2>&1; then
 	killall waybar
-	sleep 0.2
+	sleep 0.25
 fi
 
 if [ -f "$WAYBAR_CONFIG" ]; then

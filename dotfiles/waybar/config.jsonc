@@ -49,7 +49,6 @@
 	"modules-right": [
 		"custom/cliphist",
 		"custom/left_div#6",
-		"group/wireplumber",
 		"custom/left_div#7",
 		"backlight",
 		"custom/left_div#8",
@@ -240,79 +239,12 @@
 		"max-length": 2,
 		"on-click": "~/src/Scripts/updates.sh"
 	},
-	/*-------------------
-	    modules-right
-	-------------------*/
-	"group/wireplumber": {
-		"orientation": "horizontal",
-		"modules": [
-			"wireplumber#output",
-			"wireplumber#input"
-		],
-		"drawer": {
-			// "transition-duration":
-			"transition-left-to-right": false
-			// "children-class":
-			// "click-to-reveal":
-		}
-	},
-	/*-------------------
-	    output device
-	-------------------*/
-	"wireplumber#output": {
-		"format": "{icon} {volume}%",
-		"format-muted": "󰝟 {volume}%",
-		// "format-source":
-		// "format-source-muted":
-		"format-icons": [
-			"󰕿",
-			"󰖀",
-			"󰕾"
-		],
-		// "rotate":
-		// "states":
-		"min-length": 7,
-		"max-length": 7,
-		// "scroll-step":
-		"on-click": "uwsm app -- pavucontrol",
-		// "on-click-middle":
-		// "on-click-right":
-		//"on-scroll-up": "~/.config/waybar/scripts/volume.sh output raise",
-		//"on-scroll-down": "~/.config/waybar/scripts/volume.sh output lower",
-		// "tooltip":
-		"tooltip-format": "Device: {node_name}",
-		// "max-volume":
-		// "reverse-scrolling":
-		"node-type": "Audio/Sink"
-	},
 	"custom/cliphist": {
 		"format": "  ",
 		"on-click": "sleep 0.1 && ~/src/Scripts/cliphist.sh",
 		"on-click-right": "sleep 0.1 && ~/src/Scripts/cliphist.sh d",
 		"on-click-middle": "sleep 0.1 && ~/src/Scripts/cliphist.sh w",
 		"tooltip": false
-	},
-	/*----------------
-	    microphone
-	----------------*/
-	"wireplumber#input": {
-		"format": "󰍬 {volume}%",
-		"format-muted": "󰍭 {volume}%",
-		// "format-source":
-		// "format-source-muted":
-		// "rotate":
-		// "states":
-		"min-length": 7,
-		"max-length": 7,
-		// "scroll-step":
-		"on-click": "uwsm app -- pavucontrol",
-		// "on-click-middle":
-		// "on-click-right":
-		// "tooltip":
-		"tooltip-format": "Device: {node_name}",
-		// "max-volume":
-		// "reverse-scrolling":
-		"node-type": "Audio/Source"
 	},
 	"backlight": {
 		"format": "{icon} {percent}%",
