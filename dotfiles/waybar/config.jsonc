@@ -47,6 +47,7 @@
 		"custom/right_div#5"
 	],
 	"modules-right": [
+		"custom/cliphist",
 		"custom/left_div#6",
 		"group/wireplumber",
 		"custom/left_div#7",
@@ -283,6 +284,13 @@
 		// "max-volume":
 		// "reverse-scrolling":
 		"node-type": "Audio/Sink"
+	},
+	"custom/cliphist": {
+		"format": "",
+		"on-click": "sleep 0.1 && ~/src/Scripts/cliphist.sh",
+		"on-click-right": "sleep 0.1 && ~/src/Scripts/cliphist.sh d",
+		"on-click-middle": "sleep 0.1 && ~/src/Scripts/cliphist.sh w",
+		"tooltip": false
 	},
 	/*----------------
 	    microphone

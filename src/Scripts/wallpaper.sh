@@ -7,7 +7,7 @@ wallpaper="$1"
 
 # Define bar and path for it's launcher
 MY_BAR="waybar"
-LAUNCH_BAR="$HOME/src/Scripts/waybar/launch.sh"
+LAUNCH_BAR="$HOME/src/Scripts/waybar.sh"
 
 # Set wallpaper and colors
 wal -q -i "$wallpaper"
