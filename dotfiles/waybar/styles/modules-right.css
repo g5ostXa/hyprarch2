@@ -1,11 +1,3 @@
-/*----------------
-    media info
-----------------*/
-
-#mpris {
-	padding: 0 12px;
-}
-
 /*------------
     volume
 ------------*/
@@ -13,6 +5,7 @@
 #custom-left_div.6 {
 	color: @volume;
 }
+
 #pulseaudio,
 #wireplumber {
 	background-color: @volume;
@@ -26,6 +19,7 @@
 	background-color: @volume;
 	color: @backlight;
 }
+
 #backlight {
 	background-color: @backlight;
 }
@@ -38,9 +32,11 @@
 	background-color: @backlight;
 	color: @battery;
 }
+
 #battery {
 	background-color: @battery;
 }
+
 #custom-left_inv.2 {
 	color: @battery;
 }
@@ -54,6 +50,7 @@
 	padding: 0 19px 0 16px;
 	color: @accent;
 }
+
 #custom-power_menu:hover {
 	background-color: @hover-bg;
 }

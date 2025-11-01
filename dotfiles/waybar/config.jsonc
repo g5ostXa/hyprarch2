@@ -48,7 +48,7 @@
 	],
 	"modules-right": [
 		"custom/left_div#6",
-		"group/pipewire-pulse",
+		"group/wireplumber",
 		"custom/left_div#7",
 		"backlight",
 		"custom/left_div#8",
@@ -240,30 +240,69 @@
 	/*-------------------
 	    modules-right
 	-------------------*/
+	"group/wireplumber": {
+		"orientation": "horizontal",
+		"modules": [
+			"wireplumber#output",
+			"wireplumber#input"
+		],
+		"drawer": {
+			// "transition-duration":
+			"transition-left-to-right": false
+			// "children-class":
+			// "click-to-reveal":
+		}
+	},
 	/*-------------------
 	    output device
 	-------------------*/
-	"group/pipewire-pulse": {
+	"wireplumber#output": {
 		"format": "{icon} {volume}%",
-		"format-bluetooth": "{volume}% {icon} {format_source}",
-		"format-bluetooth-muted": " {icon} {format_source}",
-		"format-muted": " {format_source}",
-		"format-source": "{volume}% ",
-		"format-source-muted": "",
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": [
-				"",
-				" ",
-				" "
-			]
-		},
-		"on-click": "uwsm app -- pavucontrol"
+		"format-muted": "󰝟 {volume}%",
+		// "format-source":
+		// "format-source-muted":
+		"format-icons": [
+			"󰕿",
+			"󰖀",
+			"󰕾"
+		],
+		// "rotate":
+		// "states":
+		"min-length": 7,
+		"max-length": 7,
+		// "scroll-step":
+		"on-click": "uwsm app -- pavucontrol",
+		// "on-click-middle":
+		// "on-click-right":
+		//"on-scroll-up": "~/.config/waybar/scripts/volume.sh output raise",
+		//"on-scroll-down": "~/.config/waybar/scripts/volume.sh output lower",
+		// "tooltip":
+		"tooltip-format": "Device: {node_name}",
+		// "max-volume":
+		// "reverse-scrolling":
+		"node-type": "Audio/Sink"
+	},
+	/*----------------
+	    microphone
+	----------------*/
+	"wireplumber#input": {
+		"format": "󰍬 {volume}%",
+		"format-muted": "󰍭 {volume}%",
+		// "format-source":
+		// "format-source-muted":
+		// "rotate":
+		// "states":
+		"min-length": 7,
+		"max-length": 7,
+		// "scroll-step":
+		"on-click": "uwsm app -- pavucontrol",
+		// "on-click-middle":
+		// "on-click-right":
+		// "tooltip":
+		"tooltip-format": "Device: {node_name}",
+		// "max-volume":
+		// "reverse-scrolling":
+		"node-type": "Audio/Source"
 	},
 	"backlight": {
 		"format": "{icon} {percent}%",

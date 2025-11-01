@@ -3,12 +3,12 @@
 -----------*/
 
 #custom-trigger:hover,
-#idle_inhibitor:hover,
+/*#idle_inhibitor:hover,*/
 #clock.date:hover,
 #network:hover,
-#bluetooth:hover,
+/*#bluetooth:hover,*/
 #custom-system_update:hover,
-#mpris:hover,
+/*#mpris:hover,*/
 #pulseaudio:hover,
 #wireplumber:hover {
 	color: @hover-fg;
@@ -18,8 +18,8 @@
     disabled
 ---------------*/
 
-#idle_inhibitor.deactivated,
-#mpris.paused,
+/*#idle_inhibitor.deactivated,
+#mpris.paused,*/
 #pulseaudio.output.muted,
 #pulseaudio.input.source-muted,
 #wireplumber.muted {
