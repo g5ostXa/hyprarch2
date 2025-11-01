@@ -286,7 +286,7 @@
 		"node-type": "Audio/Sink"
 	},
 	"custom/cliphist": {
-		"format": "",
+		"format": "  ",
 		"on-click": "sleep 0.1 && ~/src/Scripts/cliphist.sh",
 		"on-click-right": "sleep 0.1 && ~/src/Scripts/cliphist.sh d",
 		"on-click-middle": "sleep 0.1 && ~/src/Scripts/cliphist.sh w",

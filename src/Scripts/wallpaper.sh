@@ -16,11 +16,3 @@ cp "$wallpaper" "$HOME/.cache/current_wallpaper.jpg"
 # Get wallpaper name and send notification
 newwall=$(basename "$wallpaper")
 notify-send --urgency=normal "Wallpaper and colors updated!" "with image $newwall" --icon=folder-pictures
-
-# Reload waybar
-sleep 0.25
-if ! pgrep -x "$MY_BAR" >/dev/null 2>&1; then
-	"$LAUNCH_BAR"
-else
-	killall "$MY_BAR" && "$LAUNCH_BAR"
-fi
