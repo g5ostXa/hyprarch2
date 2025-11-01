@@ -2,14 +2,10 @@
 
 # ========= wallpaper.sh ==========
 
-# Get wallpaper
+# Get used wallpaper
 wallpaper="$1"
 
-# Define bar and path for it's launcher
-MY_BAR="waybar"
-LAUNCH_BAR="$HOME/src/Scripts/waybar.sh"
-
-# Set wallpaper and colors
+# Set wallpaper and load colors
 wal -q -i "$wallpaper"
 cp "$wallpaper" "$HOME/.cache/current_wallpaper.jpg"
 
