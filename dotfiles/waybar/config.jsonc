@@ -1,0 +1,391 @@
+{
+	/*-------------------------------------------------------
+	    NOTE:
+	    Wildcard includes are broken after v0.14.0:
+	      - https://github.com/Alexays/Waybar/issues/4354
+	      - https://github.com/sejjy/mechabar/issues/31
+	-------------------------------------------------------*/
+	/*
+	"include": [
+		"~/.config/waybar/modules/*.jsonc",
+		"~/.config/waybar/modules/custom/*.jsonc",
+		"~/.config/waybar/modules/hyprland/*.jsonc"
+
+		// modules that are not included by default:
+		// "~/.config/waybar/modules/extras/*.jsonc"
+	],
+	*/
+	/*------------
+	    layout
+	------------*/
+	"modules-left": [
+		"group/user",
+		"custom/left_div#1",
+		"hyprland/workspaces",
+		"custom/right_div#1",
+		"hyprland/window"
+	],
+	"modules-center": [
+		"hyprland/windowcount",
+		"custom/left_div#2",
+		"temperature",
+		"custom/left_div#3",
+		"memory",
+		"custom/left_div#4",
+		"cpu",
+		"custom/left_inv#1",
+		"custom/left_div#5",
+		"custom/distro",
+		"custom/right_div#2",
+		"custom/right_inv#1",
+		"clock#time",
+		"custom/right_div#3",
+		"clock#date",
+		"custom/right_div#4",
+		"network",
+		"custom/system_update",
+		"custom/right_div#5"
+	],
+	"modules-right": [
+		"custom/left_div#6",
+		"group/pipewire-pulse",
+		"custom/left_div#7",
+		"backlight",
+		"custom/left_div#8",
+		"battery",
+		"custom/left_inv#2",
+		"custom/power_menu"
+	],
+	/*-------------
+	    options
+	-------------*/
+	"layer": "bottom",
+	// "output":
+	"position": "bottom",
+	"height": 0,
+	"width": 0,
+	"margin": 0,
+	// "margin-top":
+	// "margin-left":
+	// "margin-bottom":
+	// "margin-right":
+	"spacing": 0,
+	// "name":
+	"mode": "dock",
+	// "start_hidden":
+	// "modifier-reset":
+	// "exclusive":
+	// "fixed-center":
+	// "passthrough":
+	// "ipc":
+	// "id":
+	"reload_style_on_change": true,
+	/*--------------------------------------------------------
+	    HINT:
+	    See the modules directory for more config options.
+	--------------------------------------------------------*/
+	/*------------------
+	    modules-left
+	------------------*/
+	"group/user": {
+		"orientation": "horizontal",
+		"modules": [
+			"custom/trigger",
+			"custom/user"
+		],
+		"drawer": {}
+	},
+	"custom/trigger": {
+		"format": "󰍜",
+		"min-length": 4,
+		"max-length": 4,
+		"tooltip": false
+	},
+	"custom/user": {
+		"exec": "id -un",
+		"format": "{}",
+		"tooltip": false
+	},
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"active": "",
+			"default": ""
+		},
+		"persistent-workspaces": {
+			"*": 5
+		},
+		"on-scroll-up": "hyprctl dispatch workspace +1",
+		"on-scroll-down": "hyprctl dispatch workspace -1",
+		"cursor": true
+	},
+	"hyprland/window": {
+		"format": "{}",
+		"rewrite": {
+			"": "Desktop",
+			"alacritty": "Terminal",
+			"~": "Terminal"
+		},
+		"swap-icon-label": false
+	},
+	/*--------------------
+	    modules-center
+	--------------------*/
+	"hyprland/windowcount": {
+		"format": "[{}]",
+		"swap-icon-label": false
+	},
+	"temperature": {
+		"thermal-zone": 1,
+		"critical-threshold": 90,
+		"interval": 10,
+		"format-critical": "󰀦 {temperatureC}°C",
+		"format": "{icon} {temperatureC}°C",
+		"format-icons": [
+			"󱃃",
+			"󰔏",
+			"󱃂"
+		],
+		"min-length": 8,
+		"max-length": 8,
+		"tooltip-format": "Temp in Fahrenheit: {temperatureF}°F"
+	},
+	"memory": {
+		"interval": 10,
+		"format": "󰘚 {percentage}%",
+		"format-warning": "󰀧 {percentage}%",
+		"format-critical": "󰀧 {percentage}%",
+		"states": {
+			"warning": 75,
+			"critical": 90
+		},
+		"min-length": 7,
+		"max-length": 7,
+		"tooltip-format": "Memory Used: {used:0.1f} GB / {total:0.1f} GB"
+	},
+	"cpu": {
+		"interval": 10,
+		"format": "󰍛 {usage}%",
+		"format-warning": "󰀨 {usage}%",
+		"format-critical": "󰀨 {usage}%",
+		"min-length": 7,
+		"max-length": 7,
+		"states": {
+			"warning": 75,
+			"critical": 90
+		},
+		"tooltip": false
+	},
+	"custom/distro": {
+		"format": "󰣇",
+		"tooltip": false
+	},
+	"clock#time": {
+		"format": "{:%H:%M}",
+		"min-length": 5,
+		"max-length": 5,
+		"tooltip-format": "Standard Time: {:%I:%M %p}"
+	},
+	"clock#date": {
+		"format": "󰸗 {:%m-%d}",
+		"min-length": 8,
+		"max-length": 8,
+		"tooltip-format": "{calendar}",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 6,
+			"format": {
+				"months": "<span alpha='100%'><b>{}</b></span>",
+				"days": "<span alpha='90%'>{}</span>",
+				"weekdays": "<span alpha='80%'><i>{}</i></span>",
+				"today": "<span alpha='100%'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click": "mode"
+		}
+	},
+	"network": {
+		"interval": 10,
+		"format": "󰤨",
+		"format-ethernet": "󰈀",
+		"format-wifi": "{icon}",
+		"format-disconnected": "󰤯",
+		"format-disabled": "󰤮",
+		"format-icons": [
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		],
+		"min-length": 2,
+		"max-length": 2,
+		"on-click": "uwsm app -- nm-connection-editor",
+		"on-click-right": "nmcli radio wifi off && notify-send 'Wi-Fi Disabled' -i 'network-wireless-off' -r 1125",
+		"tooltip-format": "Gateway: {gwaddr}",
+		"tooltip-format-ethernet": "Interface: {ifname}",
+		"tooltip-format-wifi": "Network: {essid}\nIP Addr: {ipaddr}/{cidr}\nStrength: {signalStrength}%\nFrequency: {frequency} GHz",
+		"tooltip-format-disconnected": "Wi-Fi Disconnected",
+		"tooltip-format-disabled": "Wi-Fi Disabled"
+	},
+	"custom/system_update": {
+		"exec": "~/src/Scripts/updates.sh",
+		"return-type": "json",
+		"interval": 3600,
+		"format": "{}",
+		"min-length": 2,
+		"max-length": 2,
+		"on-click": "~/src/Scripts/updates.sh"
+	},
+	/*-------------------
+	    modules-right
+	-------------------*/
+	/*-------------------
+	    output device
+	-------------------*/
+	"group/pipewire-pulse": {
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": " {format_source}",
+		"format-source": "{volume}% ",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				" ",
+				" "
+			]
+		},
+		"on-click": "uwsm app -- pavucontrol"
+	},
+	"backlight": {
+		"format": "{icon} {percent}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"min-length": 7,
+		"max-length": 7,
+		"on-scroll-up": "uwsm app -- brightnessctl set 1%+",
+		"on-scroll-down": "uwsm app -- brightnessctl set 1%-",
+		"tooltip": false
+	},
+	"battery": {
+		"states": {
+			"warning": 20,
+			"critical": 10
+		},
+		"format": "{icon} {capacity}%",
+		"format-time": "{H} hr {M} min",
+		"format-icons": [
+			"󰂎",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹"
+		],
+		"format-charging": "󰉁 {capacity}%",
+		"min-length": 7,
+		"max-length": 7,
+		"tooltip-format": "Discharging: {time}",
+		"tooltip-format-charging": "Charging: {time}",
+		"events": {
+			"on-discharging-warning": "notify-send 'Battery Low (20%)' -i 'battery-020'",
+			"on-discharging-critical": "notify-send 'Battery Critical (10%)' -u critical -i 'battery-010'"
+		}
+	},
+	"custom/power_menu": {
+		"format": "󰤄",
+		"on-click": "uwsm app -- wlogout",
+		"tooltip-format": "wlogout"
+	},
+	/*-------------------
+	    left dividers
+	-------------------*/
+	"custom/left_div#1": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left_div#2": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left_div#3": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left_div#4": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left_div#5": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left_div#6": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left_div#7": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left_div#8": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left_inv#1": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left_inv#2": {
+		"format": "",
+		"tooltip": false
+	},
+	/*--------------------
+	    right dividers
+	--------------------*/
+	"custom/right_div#1": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right_div#2": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right_div#3": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right_div#4": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right_div#5": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right_inv#1": {
+		"format": "",
+		"tooltip": false
+	}
+}
