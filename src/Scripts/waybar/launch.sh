@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-# // ======= waybar.sh =======
+# // ======= launch.sh =======
 
-WAYBAR_CONFIG="$HOME/.config/waybar/config.jsonc"
-
-if pgrep -x waybar >/dev/null 2>&1; then
-	killall waybar
-	sleep 0.25
-fi
-
-if [ -f "$WAYBAR_CONFIG" ]; then
-	uwsm app -- waybar -c "$WAYBAR_CONFIG" &
-	sleep 0.25
+if command -v waybar >/dev/null 2>&1; then
+	if ! pgrep -x waybar >/dev/null 2>&1; then
+		sleep 0.25
+		uwsm app -- waybar -c ~/.config/waybar/config.jsonc &
+	else
+		killall waybar
+		sleep 0.25
+		uwsm app -- waybar -c ~/.config/waybar/config.jsonc &
+	fi
 else
-	notify-send --urgency=critical "Waybar config file not found..." "Failed to launch waybar!"
+	notify-send --urgency=critical "Waybar launcher not found, aborting..."
+	exit 1
 fi
