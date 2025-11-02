@@ -2,7 +2,7 @@
 	background-color: @outline;
 }
 #waybar > box {
-	margin: 4px;
+	margin: 5px;
 	background-color: @main-bg;
 }
 
@@ -11,10 +11,10 @@
 --------------*/
 
 tooltip {
-	border: 2px solid @main-br;
-	border-radius: 10px;
+	border: 3px @main-br;
+	border-radius: 0.5px;
 	background-color: @main-bg;
 }
 tooltip > box {
-	padding: 0 6px;
+	padding: 0 3px;
 }
