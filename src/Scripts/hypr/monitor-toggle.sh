@@ -3,19 +3,17 @@
 # // ==== monitor_toggle.sh ====
 
 # Script to toggle laptop monitor on and off
-# Edit .bashrc and replace the value of <MONITOR_NAME> to match the name of your monitor
-# Or, set the variable above the <CURRENT_STATUS> variable down below.
+# Monitor(s) are define in .config/hypr/conf/environment.conf
 
-# LAPTOP_MONITOR_NAME=""
-CURRENT_STATUS=$(hyprctl monitors -j | jq -r ".[] | select(.name==\"$LAPTOP_MONITOR_NAME\") | .dpmsStatus")
+CURRENT_STATUS=$(hyprctl monitors -j | jq -r ".[] | select(.name==\"$PRIMARY_MONITOR\") | .dpmsStatus")
 
 func_main() {
 	if [ "$CURRENT_STATUS" = "true" ]; then
-		hyprctl dispatch dpms off "$LAPTOP_MONITOR_NAME"
-		notify-send --urgency=normal "DPMS turned OFF for $LAPTOP_MONITOR_NAME"
+		hyprctl dispatch dpms off "$PRIMARY_MONITOR"
+		notify-send --urgency=normal "DPMS turned OFF for $PRIMARY_MONITOR"
 	else
-		hyprctl dispatch dpms on "$LAPTOP_MONITOR_NAME"
-		notify-send --urgency=normal "DPMS turned ON for $LAPTOP_MONITOR_NAME"
+		hyprctl dispatch dpms on "$PRIMARY_MONITOR"
+		notify-send --urgency=normal "DPMS turned ON for $PRIMARY_MONITOR"
 	fi
 }
 

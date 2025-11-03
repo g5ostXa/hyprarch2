@@ -11,6 +11,10 @@
 	color: @teal;
 }
 
+#custom-trigger:hover {
+	color: @accent;
+}
+
 /*----------------
     Workspaces
 ----------------*/

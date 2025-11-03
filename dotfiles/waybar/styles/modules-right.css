@@ -1,4 +1,12 @@
 /*------------
+	Clipboard
+-------------*/
+
+#custom-clipboard:hover {
+	color: @accent;
+}
+
+/*------------
     Volume
 ------------*/
 
@@ -47,9 +55,9 @@
 #custom-power_menu {
 	border-radius: 16px;
 	padding: 0 19px 0 16px;
-	color: @accent;
+	color: @teal;
 }
 
 #custom-power_menu:hover {
-	background-color: @hover-bg;
+	color: @accent;
 }
