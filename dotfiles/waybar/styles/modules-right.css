@@ -1,18 +1,17 @@
 /*------------
-    volume
+    Volume
 ------------*/
 
 #custom-left_div.6 {
 	color: @volume;
 }
 
-#pulseaudio,
-#wireplumber {
+#custom-volume {
 	background-color: @volume;
 }
 
 /*----------------
-    brightness
+    Brightness
 ----------------*/
 
 #custom-left_div.7 {
@@ -25,7 +24,7 @@
 }
 
 /*-------------
-    battery
+    Battery
 -------------*/
 
 #custom-left_div.8 {
@@ -42,7 +41,7 @@
 }
 
 /*----------------
-    power menu
+    Power Menu
 ----------------*/
 
 #custom-power_menu {

@@ -47,7 +47,7 @@
 		"custom/right_div#5"
 	],
 	"modules-right": [
-		"custom/cliphist",
+		"custom/clipboard",
 		"custom/left_div#6",
 		"custom/volume",
 		"custom/left_div#7",
@@ -240,7 +240,7 @@
 		"max-length": 2,
 		"on-click": "~/src/Scripts/updates.sh"
 	},
-	"custom/cliphist": {
+	"custom/clipboard": {
 		"format": "  ",
 		"on-click": "sleep 0.1 && ~/src/Scripts/cliphist.sh",
 		"on-click-right": "sleep 0.1 && ~/src/Scripts/cliphist.sh d",
