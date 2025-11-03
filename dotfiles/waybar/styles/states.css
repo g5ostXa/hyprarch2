@@ -11,7 +11,7 @@
 
 
 /*-------------
-    warning
+    Warning
 -------------*/
 #memory.warning,
 #cpu.warning,
@@ -20,7 +20,7 @@
 }
 
 /*--------------
-    critical
+    Critical
 --------------*/
 
 #temperature.critical,
@@ -31,7 +31,7 @@
 }
 
 /*--------------
-    charging
+    Charging
 --------------*/
 
 #battery.charging {
