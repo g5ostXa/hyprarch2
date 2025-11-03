@@ -4,6 +4,11 @@
 
 #custom-user {
 	padding-right: 12px;
+	color: @accent;
+}
+
+#custom-trigger {
+	color: @teal;
 }
 
 /*----------------
