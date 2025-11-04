@@ -234,11 +234,8 @@
 	"custom/system_update": {
 		"exec": "~/src/Scripts/updates.sh",
 		"return-type": "json",
-		"interval": 3600,
-		"format": "{}",
-		"min-length": 2,
-		"max-length": 2,
-		"on-click": "~/src/Scripts/updates.sh"
+		"restart-interval": 60,
+		"format": "{}"
 	},
 	"custom/clipboard": {
 		"format": "  ",

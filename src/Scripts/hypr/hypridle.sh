@@ -9,5 +9,5 @@ if pgrep -x "$SERVICE" >/dev/null; then
 	notify-send --urgency=normal ":: $SERVICE DEACTIVATED" --icon=dialog-information
 else
 	uwsm app -- "$SERVICE" &
-	notify-send --urgency=normal ":: $SERVICE ACTIVATED" --icon=dialog-information
+	notify-send --urgency=normal ":: $SERVICE ACTIVATED"
 fi
