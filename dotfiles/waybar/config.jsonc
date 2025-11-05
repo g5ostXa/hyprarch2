@@ -219,7 +219,7 @@
 		"exec": "~/src/Scripts/updates.sh",
 		"return-type": "json",
 		"restart-interval": 60,
-		"format": " {} "
+		"format": "  {}"
 	},
 	"custom/clipboard": {
 		"format": "  ",
