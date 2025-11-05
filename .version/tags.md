@@ -22,3 +22,4 @@
   - https://github.com/g5ostXa/hyprarch2/tree/v1.3.8
   - https://github.com/g5ostXa/hyprarch2/tree/v1.3.9
   - https://github.com/g5ostXa/hyprarch2/tree/v1.3.10
+  - https://github.com/g5ostXa/hyprarch2/tree/v1.3.12
