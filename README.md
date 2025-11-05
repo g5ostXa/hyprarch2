@@ -116,7 +116,7 @@ Visit [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors) to 
 - Logout menu: `Wlogout`
 - Bar: `Waybar`
 - File Manager: `Nautilus`
-- GTK Theme: `Tokyonight`
+- Theming: `Pywal16` / `GTK`
 - Editor: `Neovim`
 
 ## ⌨️ `Keybinds`
