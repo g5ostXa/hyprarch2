@@ -12,3 +12,6 @@ cp "$wallpaper" "$HOME/.cache/current_wallpaper.jpg"
 # Get wallpaper name and send notification
 newwall=$(basename "$wallpaper")
 notify-send --urgency=normal "Wallpaper and colors updated!" "with image $newwall" --icon=folder-pictures
+
+# Reload waybar
+"$HOME/src/Scripts/waybar/launch.sh"

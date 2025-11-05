@@ -4,12 +4,12 @@
 
 if command -v waybar >/dev/null 2>&1; then
 	if ! pgrep -x waybar >/dev/null 2>&1; then
-		sleep 0.25
 		uwsm app -- waybar -c ~/.config/waybar/config.jsonc &
+		sleep 0.5
 	else
 		killall waybar
-		sleep 0.25
 		uwsm app -- waybar -c ~/.config/waybar/config.jsonc &
+		sleep 0.5
 	fi
 else
 	notify-send --urgency=critical "Waybar launcher not found, aborting..."

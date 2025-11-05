@@ -10,7 +10,7 @@
     follow = mouse
     
 ### Geometry ###
-    width = 350
+    width = 400
     height = (0,400)
     origin = top-right
     offset = 10x50
