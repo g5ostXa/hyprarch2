@@ -24,5 +24,5 @@ if [ -n "$dependency_packages" ]; then
 fi
 
 if pgrep -x dunst >/dev/null; then
-	notify-send --urgency=normal "Cleanup done !" --icon=dialog-information
+	notify-send --urgency=normal "Cleanup done !"
 fi
