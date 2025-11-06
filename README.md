@@ -45,9 +45,15 @@ $ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs g
 🖱️ **Usage**:
 <br>
 
-If you haven't done so already, create the `~/Downloads/` directory:
+If you haven't done so already, create your user directories including `~/Downloads`:
 ```bash
-$ mkdir -p ~/Downloads
+$ xdg-user-dirs-update
+```
+<br>
+
+If `~/Downloads` got deleted somehow, add the `--force` option:
+```bash
+$ xdg-user-dirs-update --force
 ```
 <br>
 
