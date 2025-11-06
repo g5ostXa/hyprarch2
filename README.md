@@ -86,10 +86,16 @@ $ hyprctl reload
 ```
 <br>
 
-Alternatively, kill [`hyprland`](https://hyprland.org) and reboot, in case you didn't do so after installing:
+Alternatively, kill [`hyprland`](https://hyprland.org) and reboot, in case you didn't do so after installing.
+- From hyprland session:
 ```bash
 $ uwsm stop
 ```
+- From TTY:
+```bash
+$ systemctl reboot
+```
+
 <br>
 
 ## 🖥️ `Monitor(s)`
