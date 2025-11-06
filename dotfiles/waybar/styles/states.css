@@ -3,11 +3,23 @@
 -----------*/
 
 #clock.date:hover,
-#network:hover,
 #custom-system_update:hover {
     color: @hover-fg;
 }
 
+#backlight:hover,
+#custom-volume:hover,
+#custom-power_menu:hover,
+#custom-clipboard:hover,
+#custom-trigger:hover,
+#network:hover {
+    color: @accent;
+}
+
+#workspaces button:hover {
+    background-color: @hover-bg;
+    color: @hover-fg;
+}
 
 /*-------------
     Warning

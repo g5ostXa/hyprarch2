@@ -234,6 +234,7 @@
 		"format": " {}",
 		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
 		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+		"on-click": "uwsm app -- pavucontrol",
 		"tooltip": true,
 		"tooltip-format": "Volume: {}"
 	},
@@ -254,10 +255,12 @@
 		"max-length": 7,
 		"on-scroll-up": "uwsm app -- brightnessctl set 1%+",
 		"on-scroll-down": "uwsm app -- brightnessctl set 1%-",
+		"on-click": "uwsm app -- alacritty -e ~/src/Scripts/lumine.sh",
 		"tooltip": false
 	},
 	"battery": {
 		"states": {
+			"full": 100,
 			"warning": 20,
 			"critical": 10
 		},

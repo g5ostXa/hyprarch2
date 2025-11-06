@@ -1,12 +1,4 @@
 /*------------
-	Clipboard
--------------*/
-
-#custom-clipboard:hover {
-	color: @accent;
-}
-
-/*------------
     Volume
 ------------*/
 
@@ -40,12 +32,14 @@
 	color: @battery;
 }
 
-#battery {
-	background-color: @battery;
-}
-
 #custom-left_inv.2 {
 	color: @battery;
+}
+
+#battery,
+#battery.full {
+	background-color: @battery;
+	color: @teal;
 }
 
 /*----------------
@@ -56,8 +50,4 @@
 	border-radius: 16px;
 	padding: 0 19px 0 16px;
 	color: @teal;
-}
-
-#custom-power_menu:hover {
-	color: @accent;
 }

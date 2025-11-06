@@ -105,7 +105,7 @@
 
 #network {
 	background-color: @tray;
-	padding: 0 6px 0 4px;
+	padding: 0 8px 0 12px;
 }
 
 #custom-system_update {

@@ -11,10 +11,6 @@
 	color: @teal;
 }
 
-#custom-trigger:hover {
-	color: @accent;
-}
-
 /*----------------
     Workspaces
 ----------------*/
@@ -33,11 +29,6 @@
 	border-radius: 16px;
 	min-width: 16px;
 	padding: 0 10px;
-}
-
-#workspaces button:hover {
-	background-color: @hover-bg;
-	color: @hover-fg;
 }
 
 #workspaces button.active label {
