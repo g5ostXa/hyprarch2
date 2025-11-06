@@ -80,7 +80,13 @@ $ uwsm start hyprland
 ```
 <br>
 
-If you get an error, kill the compositor and re-launch it again:
+If you get an error, don't worry, you simply need to reload your [`hyprland`](https://hyprland.org) config:
+```bash
+$ hyprctl reload
+```
+<br>
+
+Alternatively, kill [`hyprland`](https://hyprland.org) and reboot, in case you didn't do so after installing:
 ```bash
 $ uwsm stop
 ```
