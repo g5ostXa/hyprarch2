@@ -1,5 +1,6 @@
 * {
-	all: initial; /* ignore GTK theme */
+	all: initial;
+	/* ignore GTK theme */
 }
 
 @import "styles/modules-center.css";

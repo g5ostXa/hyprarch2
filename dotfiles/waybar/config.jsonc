@@ -169,8 +169,8 @@
 	},
 	"clock#time": {
 		"format": "{:%H:%M}",
-		"min-length": 5,
-		"max-length": 5,
+		"min-length": 6,
+		"max-length": 6,
 		"tooltip-format": "Standard Time: {:%I:%M %p}"
 	},
 	"clock#date": {
@@ -205,8 +205,8 @@
 			"󰤥",
 			"󰤨"
 		],
-		"min-length": 2,
-		"max-length": 2,
+		"min-length": 1,
+		"max-length": 1,
 		"on-click": "uwsm app -- nm-connection-editor",
 		"on-click-right": "nmcli radio wifi off && notify-send 'Wi-Fi Disabled' -i 'network-wireless-off' -r 1125",
 		"tooltip-format": "Gateway: {gwaddr}",

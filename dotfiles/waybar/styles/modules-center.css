@@ -62,7 +62,6 @@
 }
 
 #custom-distro {
-	padding: 0 10px 0 5px;
 	background-color: @accent;
 	color: @main-bg;
 }
