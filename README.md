@@ -70,7 +70,7 @@ If using a `VM`, uncomment the following in `~/Downloads/hyprarch2/dotfiles/hypr
 ```
 > [!TIP]
 > I usually set my monitor(s) before installing, but it's not required.
-> - See [`Monitor(s)`](https://github.com/g5ostXa/hyprarch2/edit/master/README.md#%EF%B8%8F-monitors) section to learn more
+> - See [`Monitor(s)`](https://github.com/g5ostXa/hyprarch2#%EF%B8%8F-monitors) section to learn more
 <br>
 
 Once you're all set, run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
