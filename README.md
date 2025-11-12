@@ -122,7 +122,7 @@ monitor=Virtual-1,2048x1080@60.00,0x0,1
 <br>
 
 Optionally, you can set you monitor(s) as env variables for extra compatibility. \
-Edit [`environment.conf`](/dotfiles/hypr/conf/environment.conf) and change the values of the following vars to match your monitor(s):
+Edit [`environment.conf`](/dotfiles/hypr/conf/environment.conf) and change the values of the following env variables to match your monitor(s):
 ```md
 # Monitor(s)
 env = PRIMARY_MONITOR,<Monitor-1-name>
