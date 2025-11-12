@@ -70,7 +70,7 @@ If using a `VM`, uncomment the following in `~/Downloads/hyprarch2/dotfiles/hypr
 ```
 > [!TIP]
 > I usually set my monitor(s) before installing, but it's not required.
-> - See Monitor(s) section to learn more
+> - See [`Monitor(s)`](https://github.com/g5ostXa/hyprarch2/edit/master/README.md#%EF%B8%8F-monitors) section to learn more
 <br>
 
 Once you're all set, run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
@@ -105,9 +105,8 @@ $ systemctl reboot
 <br>
 
 ## 🖥️ `Monitor(s)`
-To configure your monitor(s), you need to edit [`monitor.conf`](/dotfiles/hypr/conf/monitor.conf)
-
-Here's what a manual configuration should look like:
+To configure your monitor(s), you need to edit [`monitor.conf`](/dotfiles/hypr/conf/monitor.conf) \
+Here's an example configuration:
 ```md
 # -------------------------------------------------------------------------------------
 # Monitor Setup
@@ -119,6 +118,15 @@ monitor=HDMI-A-1,2048x1080@60.00,auto,1
 
 # Virtual machine:
 monitor=Virtual-1,2048x1080@60.00,0x0,1
+```
+<br>
+
+Optionally, you can set you monitor(s) as env variables for extra compatibility. \
+Edit `dotfiles/hypr/conf/environment.conf` and change the values of the following vars to match your monitor(s):
+```md
+# Monitor(s)
+env = PRIMARY_MONITOR,<Monitor-1-name>
+env = SECONDARY_MONITOR,<Monitor-2-name>
 ```
 <br>
 
