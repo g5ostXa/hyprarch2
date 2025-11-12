@@ -23,3 +23,4 @@
   - https://github.com/g5ostXa/hyprarch2/releases/tag/v1.3.9
   - https://github.com/g5ostXa/hyprarch2/releases/tag/v1.3.10
   - https://github.com/g5ostXa/hyprarch2/releases/tag/v1.3.12
+  - https://github.com/g5ostXa/hyprarch2/releases/tag/v1.3.13
