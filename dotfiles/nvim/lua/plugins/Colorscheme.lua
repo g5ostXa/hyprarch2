@@ -1,4 +1,5 @@
 return {
-  "folke/tokyonight.nvim",
-  name = "tokyonight",
+  "catppuccin/nvim",
+  name = "catppuccin-mocha",
+  priority = 1000
   }
