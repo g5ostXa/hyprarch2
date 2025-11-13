@@ -18,26 +18,26 @@ jobs:
               run: |
                   set -euo pipefail
                   if [ ! -f README.md ]; then
-                    echo "❌ README.md is missing!"
+                    echo "README.md is missing!"
                     exit 1
                   fi
                   if [ ! -d ".version" ]; then
-                    echo "❌ .version directory is missing!"
+                    echo ".version directory is missing!"
                     exit 1
                   fi
-                  echo "✅ Required files are present."
+                  echo "Required files are present."
 
             - name: Syntax check for install.sh
               run: |
                   set -euo pipefail
                   if [ -f src/install.sh ]; then
                     shellcheck src/install.sh || {
-                      echo "❌ Syntax check failed for install.sh"
+                      echo "Syntax check failed for install.sh"
                       exit 1
                     }
-                    echo "✅ install.sh passed syntax check."
+                    echo "install.sh passed syntax check."
                   else
-                    echo "⚠️ install.sh not found..."
+                    echo "install.sh not found..."
                     exit 1
                   fi
 
@@ -49,20 +49,20 @@ jobs:
                       *.json)
                         # Remove comments before validation
                         sed -E '/^\s*\/\//d; s/\/\*.*\*\///' "$file" | jq empty || {
-                          echo "❌ JSON validation failed for $file"
+                          echo "JSON validation failed for $file"
                           exit 1
                         }
-                        echo "✅ JSON valid: $file"
+                        echo "JSON valid: $file"
                         ;;
                       *.yml)
                         yamllint "$file" || {
-                          echo "❌ YAML validation failed for $file"
+                          echo "YAML validation failed for $file"
                           exit 1
                         }
-                        echo "✅ YAML valid: $file"
+                        echo "YAML valid: $file"
                         ;;
                       *.conf)
-                        echo "ℹ️ $file is assumed valid."
+                        echo "$file is assumed valid."
                         ;;
                       *)
                         echo "Skipping $file (not a recognized config type)."
