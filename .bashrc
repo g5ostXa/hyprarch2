@@ -47,6 +47,9 @@ alias r4in="unimatrix -n -s 96 -l o"
 # --------------------------------------------------------------------------------------------
 export PATH=$PATH:"$HOME/.local/bin/"
 export PATH="/usr/lib/ccache/bin/:$PATH"
+export GOPATH="$HOME/go"
+export PATH=$PATH:$GOPATH/bin
+
 export HYPRARCH2_VERSION=$(cat "$HOME/.version/latest")
 export EDITOR="nvim"
 
