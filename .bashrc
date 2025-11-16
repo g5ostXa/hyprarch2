@@ -6,45 +6,42 @@
 # ~/.bashrc
 #
 
-# ---------------------------------------------------------------------------------------------
-# Colors
-# ---------------------------------------------------------------------------------------------
+# // ===== Colors =====
 PS1='[\u@\h \W]\$ '
 MAGENTA='\033[1;35m'
 RC='\033[0m'
 
-# ---------------------------------------------------------------------------------------------
-# Maintainer's specific aliases
-# ---------------------------------------------------------------------------------------------
-alias hyprarch2="/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME"
-alias hyprpush="hyprarch2 push --set-upstream git@github.com:g5ostXa/hyprarch2.git master"
-alias h2status="hyprarch2 status"
-alias h2push="hyprarch2 push"
-alias h2pull="hyprarch2 pull"
+# // ===== Maintainer's specific aliases (hyprarch2) =====
+alias Hy2="/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME"
+
+# :: Initialize and set SSH for github, first run only:
+# alias H2PUSSH="hyprarch2 push --set-upstream git@github.com:g5ostXa/hyprarch2.git master"
+
+# :: Murder virt-manager and all libvirt services:
 alias virtkill="~/src/Scripts/virtkill.sh"
 
-# ---------------------------------------------------------------------------------------------
-# Main aliases
-# ---------------------------------------------------------------------------------------------
+# :: Set firejail globally
+alias setfire="sudo firecfg"
+
+# :: Unset firejail globally
+alias unsetfire="sudo firecfg --clean"
+
+# // ===== General aliases =====
 alias ls="eza --icons=always --color=always"
 alias ll="ls -a"
-alias N="$EDITOR"
 alias bwrap-btop="~/src/Scripts/sandboxes/bwrap-btop.sh"
-alias fire="sudo firecfg"
-alias unfire="sudo firecfg --clean"
-alias clean="~/src/Scripts/cleanup.sh"
+alias Hy2clean="~/src/Scripts/cleanup.sh"
 alias errcheck="~/src/Scripts/checkerrors.sh"
 alias cw="cliphist wipe"
 alias mirrors-update="~/src/Scripts/mirrors.sh"
 alias reboot="~/src/Scripts/reboot.sh"
 alias poweroff="~/src/Scripts/poweroff.sh"
-alias start-hypr="~/src/Scripts/hypr/start-hypr.sh"
+alias Hy2in="~/src/Scripts/hypr/start-hypr.sh"
+alias Hy2out="~/src/Scripts/hypr/killhypr.sh"
 alias lumine="~/src/Scripts/lumine.sh"
 alias r4in="unimatrix -n -s 96 -l o"
 
-# --------------------------------------------------------------------------------------------
-# General
-# --------------------------------------------------------------------------------------------
+# // ===== General ======
 export PATH=$PATH:"$HOME/.local/bin/"
 export PATH="/usr/lib/ccache/bin/:$PATH"
 export GOPATH="$HOME/go"
@@ -64,18 +61,14 @@ if [[ $(tty) == *"pts"* ]]; then
 	echo -e "${RC}"
 fi
 
-# --------------------------------------------------------------------------------------------
-# Set fish interactively
-# --------------------------------------------------------------------------------------------
+# // ===== Set fish interactively =====
 if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]
 then
 	shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
 	exec fish $LOGIN_OPTION
 fi
 
-# -------------------------------------------------------------------------------------------
-# Start hyprland using uwsm
-# -------------------------------------------------------------------------------------------
+# // ===== Set UWSM for hyprland management =====
 if uwsm check may-start && uwsm select; then
 	exec systemd-cat -t uwsm_start uwsm start default
 fi
