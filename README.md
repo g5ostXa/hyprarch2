@@ -1,11 +1,12 @@
 <div align="center">
-
-<img src="/assets/logos/hyprarch2-sx234.png" width="525" height="525"/>
-
-[![Release](https://img.shields.io/badge/hyprarch2-v1.3.13-cyan.svg)](https://github.com/g5ostXa/hyprarch2/)
-[![Hyprland](https://img.shields.io/badge/Hyprland-%236A0DAD?&logo=hyprland&logoColor=white)](https://hyprland.org/)
-[![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=6A0DAD)](https://archlinux.org/)
-
+  <img src="/assets/logos/hyprarch2-sx234.png" width="525" height="525"/>
+    <p align="center">
+         <img src="https://img.shields.io/github/last-commit/g5ostXa/hyprarch2?style=flat&color=B4BEFE&logo=github&logoColor=D9E0EE&labelColor=242438&label=Last%20Commit">
+         <img src="https://img.shields.io/github/stars/g5ostXa/hyprarch2?style=flat&logo=github&color=B4BEFE&logoColor=D9E0EE&labelColor=242438">
+      <a href="https://github.com/g5ostXa/hyprarch2">
+         <img src="https://img.shields.io/github/repo-size/g5ostXa/hyprarch2?style=flat&color=B4BEFE&label=SIZE&logo=googledrive&logoColor=D9E0EE&labelColor=242438">
+      </a>
+   </p>
 </div>
 
 ## :octocat: `Support`
