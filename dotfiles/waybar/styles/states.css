@@ -2,17 +2,12 @@
     Hover
 -----------*/
 
-#clock.date:hover,
-#custom-system_update:hover {
-    color: @hover-fg;
-}
-
 #backlight:hover,
+#battery:hover,
 #custom-volume:hover,
 #custom-power_menu:hover,
 #custom-clipboard:hover,
-#custom-trigger:hover,
-#network:hover {
+#custom-trigger:hover {
     color: @accent;
 }
 
