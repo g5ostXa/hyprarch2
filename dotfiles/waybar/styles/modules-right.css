@@ -39,7 +39,7 @@
 #battery,
 #battery.full {
 	background-color: @battery;
-	color: @teal;
+	color: @accent;
 }
 
 /*----------------

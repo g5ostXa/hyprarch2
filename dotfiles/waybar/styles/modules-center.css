@@ -20,6 +20,7 @@
 
 #temperature {
 	background-color: @temperature;
+	color: @mauve;
 }
 
 /*------------
@@ -33,6 +34,7 @@
 
 #memory {
 	background-color: @memory;
+	color: @sapphire;
 }
 
 /*---------
@@ -46,6 +48,7 @@
 
 #cpu {
 	background-color: @cpu;
+	color: @sky;
 }
 
 #custom-left_inv.1 {
@@ -77,6 +80,7 @@
 #clock.time {
 	padding-right: 6px;
 	background-color: @time;
+	color: @sky;
 }
 
 #custom-right_div.3 {
@@ -91,6 +95,7 @@
 #clock.date {
 	padding-left: 6px;
 	background-color: @date;
+	color: @sapphire;
 }
 
 #custom-right_div.4 {
@@ -105,11 +110,13 @@
 #network {
 	background-color: @tray;
 	padding: 0 8px 0 12px;
+	color: @mauve;
 }
 
 #custom-system_update {
 	background-color: @tray;
 	padding: 0 2px 0 2px;
+	color: @mauve;
 }
 
 #custom-right_div.5 {
