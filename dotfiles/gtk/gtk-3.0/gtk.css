@@ -1,0 +1,68 @@
+headerbar,
+headerbar:backdrop {
+    background: #181825;
+    color: #cdd6f4;
+    box-shadow: none;
+}
+
+headerbar>label.title {
+    color: #cdd6f4;
+}
+
+headerbar button,
+headerbar button:backdrop {
+    background: transparent;
+    color: #cdd6f4;
+    border: none;
+    box-shadow: none;
+    min-height: 28px;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+headerbar button:hover {
+    background: #313244;
+    color: #f5e0dc;
+}
+
+headerbar button:active {
+    background: #45475a;
+    color: #f2cdcd;
+}
+
+headerbar button:focus,
+headerbar button:checked {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+filechooser button,
+filechooserwidget button {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: transparent;
+    color: #cdd6f4;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+
+filechooser button:hover,
+filechooserwidget button:hover {
+    background: #313244;
+}
+
+filechooser button:active,
+filechooserwidget button:active {
+    background: #45475a;
+}
+
+filechooser treeview>header>button,
+filechooserwidget treeview>header>button {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: #181825;
+    color: #cdd6f4;
+}
