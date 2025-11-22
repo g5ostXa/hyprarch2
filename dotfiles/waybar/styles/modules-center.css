@@ -20,7 +20,7 @@
 
 #temperature {
 	background-color: @temperature;
-	color: @mauve;
+	color: @lavender;
 }
 
 /*------------
@@ -110,13 +110,13 @@
 #network {
 	background-color: @tray;
 	padding: 0 8px 0 12px;
-	color: @mauve;
+	color: @lavender;
 }
 
 #custom-system_update {
 	background-color: @tray;
 	padding: 0 2px 0 2px;
-	color: @mauve;
+	color: @lavender;
 }
 
 #custom-right_div.5 {
