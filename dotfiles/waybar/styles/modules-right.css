@@ -39,7 +39,6 @@
 #battery,
 #battery.full {
 	background-color: @battery;
-	color: @accent;
 }
 
 /*----------------
