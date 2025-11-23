@@ -255,7 +255,7 @@
 		"max-length": 7,
 		"on-scroll-up": "uwsm app -- brightnessctl set 1%+",
 		"on-scroll-down": "uwsm app -- brightnessctl set 1%-",
-		"on-click": "uwsm app -- alacritty -e ~/src/Scripts/lumine.sh",
+		"on-click": "uwsm app -- alacritty -e ~/src/Scripts/lumineV2.sh",
 		"tooltip": false
 	},
 	"battery": {

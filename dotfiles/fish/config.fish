@@ -27,7 +27,7 @@ alias reboot='~/src/Scripts/reboot.sh'
 alias poweroff='~/src/Scripts/poweroff.sh'
 alias Hy2in='~/src/Scripts/hypr/start-hypr.sh'
 alias Hy2out='~/src/Scripts/hypr/killhypr.sh'
-alias lumine='~/src/Scripts/lumine.sh'
+alias lumine='~/src/Scripts/lumineV2.sh'
 alias r4in='unimatrix -n -s 96 -l o'
 end
 
