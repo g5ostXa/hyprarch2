@@ -27,7 +27,7 @@ is_installed_gum() {
 	fi
 }
 
-#Check if uwsm is installed
+# Check if uwsm is installed
 is_installed_uwsm() {
 	if ! command -v uwsm >/dev/null 2>&1; then
 		echo "uwsm is missing, use pacman -S uwsm to install the package..."
