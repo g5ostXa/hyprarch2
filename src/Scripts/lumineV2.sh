@@ -2,6 +2,8 @@
 
 # // ===== lumineV2.sh =====
 #
+# // By g5ostXa / 2025
+#
 # // Requires:
 # gum figlet brightnessctl libnotify
 #
