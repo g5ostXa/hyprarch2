@@ -2,6 +2,8 @@
 
 # // ======= virtkill.sh ========
 
+sudo -v
+
 sudo virsh net-destroy default
 sudo systemctl disable --now libvirtd.socket
 sudo systemctl disable --now libvirtd-admin.socket
