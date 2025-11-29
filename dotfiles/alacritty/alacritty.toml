@@ -6,7 +6,7 @@ family = "FiraCode Nerd Font"
 style = "Regular"
 
 [window]
-opacity = 0.7
+opacity = 1.0
 
 [window.padding]
 x = 15
