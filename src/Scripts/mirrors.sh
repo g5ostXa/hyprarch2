@@ -2,6 +2,9 @@
 
 # // ======= mirrors.sh =======
 
+# // By g5ostXa / 2024
+# // Requires: gum reflector
+
 # Define mirrorlist target location
 MIRRORLIST="/etc/pacman.d/mirrorlist"
 MIRRORLIST_BAK="/etc/pacman.d/mirrorlist.bak"
@@ -35,30 +38,23 @@ is_installed_figlet() {
 	fi
 }
 
-is_installed_gum() {
-	if ! command -v gum >/dev/null 2>&1; then
-		echo ";; gum needs to be installed to run this script..."
-		echo ";; Type 'sudo pacman -S gum' to install, then run this script again."
-		exit 1
-	fi
-}
-
-is_installed_reflector() {
-	if ! command -v reflector >/dev/null 2>&1; then
-		if gum confirm "Do you want to install reflector now?"; then
-			sudo pacman -Syu --noconfirm reflector
-		else
-			echo ";; Aborting script..."
+check_depends() {
+	local -a packages=(
+		"gum"
+		"reflector"
+	)
+	for depends in "${packages[@]}"; do
+		if ! command -v "$depends" >/dev/null 2>&1; then
+			echo ";; Some dependencies are not installed, aborting..."
 			exit 1
 		fi
-	fi
+	done
 }
 
 refresh_backup() {
 	is_installed_figlet
 	sudo -v
-	is_installed_gum
-	is_installed_reflector
+	check_depends
 	if gum confirm "Remove existing backup and create a fresh one?"; then
 		sudo rm -rf "$MIRRORLIST_BAK"
 		sudo cp -r "$MIRRORLIST" "$MIRRORLIST_BAK"
@@ -78,8 +74,7 @@ refresh_backup() {
 create_backup() {
 	is_installed_figlet
 	sudo -v
-	is_installed_gum
-	is_installed_reflector
+	check_depends
 	if gum confirm "Do you want to create a backup of your current mirrorlist?"; then
 		sudo cp -r "$MIRRORLIST" "$MIRRORLIST_BAK"
 		sudo chmod 644 "$MIRRORLIST_BAK"
