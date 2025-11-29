@@ -16,7 +16,9 @@ GET_MIRRORS="sudo reflector --country $COUNTRY --protocol https --latest 20 --ag
 SYNC_DATABASE="sudo pacman -Sy"
 
 func_main() {
+	# shellcheck disable=SC2086
 	gum spin --spinner globe --title "Fetching the latest mirrors..." -- $GET_MIRRORS
+	# shellcheck disable=SC2086
 	gum spin --spinner points --title "Synchronizing package database..." -- $SYNC_DATABASE
 	echo ";; The mirrors are now up to date!"
 }
