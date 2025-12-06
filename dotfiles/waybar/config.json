@@ -139,9 +139,9 @@
     "on-click-right": "$HOME/src/Scripts/hypr/keybindings.sh"
   },
   "clock#time": {
-    "format": "{:%H:%M}",
-    "min-length": 6,
-    "max-length": 6,
+    "format": " {:%H:%M}",
+    "min-length": 8,
+    "max-length": 8,
     "tooltip-format": "Standard Time: {:%I:%M %p}"
   },
   "clock#date": {
@@ -190,7 +190,7 @@
     "exec": "~/src/Scripts/updates.sh",
     "return-type": "json",
     "restart-interval": 60,
-    "format": "  {}"
+    "format": "  {} "
   },
   "custom/clipboard": {
     "format": "  ",
