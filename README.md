@@ -52,9 +52,9 @@ $ xdg-user-dirs-update
 ```
 <br>
 
-If `~/Downloads` got deleted somehow, add the `--force` option:
+If the command above did not re-create your user dirs including `~/Downloads`, the following will:
 ```bash
-$ xdg-user-dirs-update --force
+$ xdg-user-dirs-update && xdg-user-dirs-update --force
 ```
 <br>
 
