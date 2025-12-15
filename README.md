@@ -13,7 +13,7 @@
 **⚠️ Recent paru compatibility issues with libalpm16**
 > [!CAUTION]
 > - Unfortunately, paru is currently broken, which breaks this project as well. 
-> - I don't have time to find and implement a workaround right now so, until further notice, installing is not recommended. 
+> - I don't have time to find and implement a workaround right now so, until further notice, installing is discouraged. 
 
 ## :octocat: `Support`
 If you like my project, feel free to give it a ⭐ !
