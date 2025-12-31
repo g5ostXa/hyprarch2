@@ -11,9 +11,9 @@
 <br>
 
 > [!CAUTION]
-> ⚠️ Recent paru compatibility issues with libalpm16
-> - Unfortunately, paru-bin is currently broken, which breaks this project as well. 
-> - I don't have time to find and implement a workaround right now so, until further notice, installing is discouraged. 
+> - Unfortunately, a lot of maintenance is required for this project.
+> - Since I don't have time right now to fix things, installing is discouraged until further notice.
+> - Thanks for your understanding, and Happy new year! 
 
 ## :octocat: `Support`
 If you like my project, feel free to give it a ⭐ !
