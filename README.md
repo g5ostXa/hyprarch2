@@ -10,11 +10,6 @@
 </div>
 <br>
 
-> [!CAUTION]
-> - Unfortunately, a lot of maintenance is required for this project.
-> - Since I don't have time right now to fix things, installing is discouraged until further notice.
-> - Thanks for your understanding, and Happy new year! 
-
 ## :octocat: `Support`
 If you like my project, feel free to give it a ⭐ !
 ```neon
