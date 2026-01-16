@@ -140,7 +140,7 @@ Visit [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors) to 
 - Browser: `Firefox-Nightly`
 - App Launcher: `Rofi`
 - Wallpaper front end: `Waypaper`
-- Wallpaper back end: `Awww`
+- Wallpaper back end: `Swww`
 - Logout menu: `Wlogout`
 - Bar: `Waybar`
 - File Manager: `Nautilus`
