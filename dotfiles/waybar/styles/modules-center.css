@@ -116,7 +116,6 @@
 #custom-system_update {
 	background-color: @tray;
 	padding: 0 2px 0 2px;
-	color: @lavender;
 }
 
 #custom-right_div.5 {

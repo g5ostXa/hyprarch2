@@ -3,7 +3,6 @@
 -----------*/
 
 #backlight:hover,
-#battery:hover,
 #custom-volume:hover,
 #custom-power_menu:hover,
 #custom-clipboard:hover,
@@ -21,7 +20,8 @@
 -------------*/
 #memory.warning,
 #cpu.warning,
-#battery.warning {
+#battery.warning,
+#custom-system_update.warning {
     color: @warning;
 }
 
@@ -32,7 +32,8 @@
 #temperature.critical,
 #memory.critical,
 #cpu.critical,
-#battery.critical {
+#battery.critical,
+#custom-system_update.critical {
     color: @critical;
 }
 
@@ -42,4 +43,12 @@
 
 #battery.charging {
     color: @charging;
+}
+
+/*-------------------
+    Sys-update OK
+-------------------*/
+
+#custom-system_update.ok {
+    color: @teal;
 }
