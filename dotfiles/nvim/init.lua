@@ -14,10 +14,7 @@ vim.cmd "Neotree"
 vim.opt.relativenumber = true
 
 -- Theme
-vim.cmd.colorscheme "catppuccin-mocha"
-
--- Get theme colors (catppuccin-mocha)
-local mocha = require("catppuccin.palettes").get_palette "mocha"
+vim.cmd.colorscheme "tokyonight-night"
 
 -- Set cursor back to "Beam" in alacritty when exiting nvim
 vim.api.nvim_create_autocmd('VimLeave', {
