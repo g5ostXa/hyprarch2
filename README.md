@@ -11,7 +11,7 @@
 <br>
 
 ## :octocat: `Support`
-If you like my project, feel free to give it a ⭐ !
+If you like my project, feel free to  buy me a coffee, or simply give it a ⭐ !
 ```neon
    __                              __   ___
   / /  __ _____  _______ _________/ /  |_  |
