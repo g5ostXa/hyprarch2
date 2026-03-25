@@ -139,8 +139,8 @@ Visit [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors) to 
 - Terminal: `Alacritty`
 - Browser: `Firefox-Nightly`
 - App Launcher: `Rofi`
-- Wallpaper front end: `Waypaper`
-- Wallpaper back end: `Swww`
+- Wallpaper front end: `Waypaper-git`
+- Wallpaper back end: `Awww`
 - Logout menu: `Wlogout`
 - Bar: `Waybar`
 - File Manager: `Nautilus`
