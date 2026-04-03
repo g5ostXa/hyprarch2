@@ -16,14 +16,28 @@ COUNTRY="Canada"
 GET_MIRRORS="sudo reflector --country $COUNTRY --protocol https --latest 20 --age 6 --sort rate --save $MIRRORLIST"
 
 # Sync package database
-SYNC_DATABASE="sudo pacman -Sy"
+SYNC_DATABASE="sudo pacman -Syu"
 
 func_main() {
+	# Error handling
+	set -euo pipefail
+
 	# shellcheck disable=SC2086
 	gum spin --spinner globe --title "Fetching the latest mirrors..." -- $GET_MIRRORS
-	# shellcheck disable=SC2086
-	gum spin --spinner points --title "Synchronizing package database..." -- $SYNC_DATABASE
-	echo ";; The mirrors are now up to date!"
+	echo ";; Done fetching mirrors."
+	echo ""
+
+	# Prompt user to synchronize package database
+	if gum confirm "Do you wish to Synchronize package database and run full update/upgrade ? (Recommended)"; then
+		# shellcheck disable=SC2086
+		gum spin --spinner points --title "Synchronizing package database..." -- $SYNC_DATABASE
+		echo ";; Mirrors update done."
+		echo ""
+	else
+		echo ";; Package database not synchronized..."
+		echo ""
+		exit 0
+	fi
 }
 
 is_installed_figlet() {
