@@ -18,7 +18,7 @@ func_main() {
 }
 
 if [[ -z "$CURRENT_STATUS" ]]; then
-	notify-send --urgency=critical ":: Monitor not found..." "Please set the your monitors env vars in .config/hypr/conf/monitor.conf"
+	notify-send --urgency=critical ":: Monitor not found..." "Please define your monitors in ~/.config/hypr/conf/environment.conf"
 	exit 1
 else
 	func_main
