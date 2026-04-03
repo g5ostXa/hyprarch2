@@ -41,5 +41,5 @@ is_installed_figlet && is_installed_gum && is_installed_uwsm
 # Gum animation
 gum spin --spinner points --title "Launching hyprland..." -- sleep 3
 
-# Set defaults and lunch hyprland
+# Set defaults and launch hyprland
 uwsm select && uwsm start hyprland
