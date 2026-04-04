@@ -16,7 +16,7 @@ COUNTRY="Canada"
 GET_MIRRORS="sudo reflector --country $COUNTRY --protocol https --latest 20 --age 6 --sort rate --save $MIRRORLIST"
 
 # Sync package database
-SYNC_DATABASE="sudo pacman -Syu"
+SYNC_DATABASE="sudo pacman -Syu --noconfirm"
 
 func_main() {
 	# Error handling
