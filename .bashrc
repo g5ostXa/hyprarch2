@@ -28,6 +28,9 @@ alias lumine="~/src/Scripts/lumineV2.sh"
 alias r4in="unimatrix -n -s 96 -l o"
 alias Ghostconf="nvim $HOME/.config/ghostty/config.ghostty"
 
+# Specific to me
+alias Hy2="/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME"
+
 # // ===== General ======
 export PATH=$PATH:"$HOME/.local/bin/"
 export PATH="/usr/lib/ccache/bin/:$PATH"
