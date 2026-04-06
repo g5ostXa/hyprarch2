@@ -12,21 +12,6 @@ PS1='[\u@\h \W]\$ '
 MAGENTA='\033[1;35m'
 RC='\033[0m'
 
-# // ===== Maintainer's specific aliases (hyprarch2) =====
-alias Hy2="/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME"
-
-# :: Initialize and set SSH for github, first run only:
-# alias H2PUSSH="hyprarch2 push --set-upstream git@github.com:g5ostXa/hyprarch2.git master"
-
-# :: Murder virt-manager and all libvirt services:
-alias virtkill="~/src/Scripts/virtkill.sh"
-
-# :: Set firejail globally
-alias setfire="sudo firecfg"
-
-# :: Unset firejail globally
-alias unsetfire="sudo firecfg --clean"
-
 # // ===== General aliases =====
 alias ls="eza --icons=always --color=always"
 alias ll="ls -a"
@@ -41,6 +26,7 @@ alias Hy2in="~/src/Scripts/hypr/start-hypr.sh"
 alias Hy2out="~/src/Scripts/hypr/killhypr.sh"
 alias lumine="~/src/Scripts/lumineV2.sh"
 alias r4in="unimatrix -n -s 96 -l o"
+alias Ghostconf="nvim $HOME/.config/ghostty/config.ghostty"
 
 # // ===== General ======
 export PATH=$PATH:"$HOME/.local/bin/"
@@ -56,9 +42,15 @@ cat ~/.cache/wal/sequences
 
 if [[ $(tty) == *"pts"* ]]; then
 	echo -e "${MAGENTA}"
-	figlet -f smslant "hyprarch2"
+	cat <<"EOF"
+     __                              __   ___
+    / /  __ _____  _______ _________/ /  |_  |
+   / _ \/ // / _ \/ __/ _ `/ __/ __/ _ \/ __/
+  /_//_/\_, / .__/_/  \_,_/_/  \__/_//_/____/
+        /___/_/
+EOF
 	echo ""
-	echo "$HYPRARCH2_VERSION"
+	echo " $HYPRARCH2_VERSION"
 	echo -e "${RC}"
 fi
 

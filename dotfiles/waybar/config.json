@@ -82,7 +82,7 @@
     "format": "{}",
     "rewrite": {
       "": "Desktop",
-      "alacritty": "Terminal",
+      "ghostty": "Terminal",
       "~": "Terminal"
     },
     "swap-icon-label": false
@@ -226,7 +226,7 @@
     "max-length": 7,
     "on-scroll-up": "uwsm app -- brightnessctl set 1%+",
     "on-scroll-down": "uwsm app -- brightnessctl set 1%-",
-    "on-click": "uwsm app -- alacritty -e ~/src/Scripts/lumineV2.sh",
+    "on-click": "uwsm app -- ghostty -e ~/src/Scripts/lumineV2.sh",
     "tooltip": false
   },
   "battery": {

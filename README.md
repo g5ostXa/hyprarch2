@@ -29,6 +29,7 @@ If you like my project, feel free to  buy me a coffee, or simply give it a ⭐ !
 > [!WARNING]
 > Before you begin... 
 > - My dotfiles are meant to be installed via the installation process down below.
+> - Alot of it is very specific to me so if you're unfamiliar with hyprland, I suggest you try [`mylinuxforwork's dotfiles`](https://github.com/mylinuxforwork/dotfiles) instead.
 > - Copying dotfiles in your `~/.config/` without using the [`installer`](/src/install.sh) is not recommended.
 > - This is NOT compatible with a different distro than upstream [`Arch`](https://archlinux.org).
 > - If installing on bare metal, do not forget to **backup your current installation** before proceeding.
@@ -138,31 +139,30 @@ Visit [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors) to 
 <br>
 
 ## 📦 `Main apps`
-- Terminal: `Alacritty`
-- Browser: `Firefox-Nightly`
-- App Launcher: `Rofi`
-- Wallpaper front end: `Waypaper-git`
-- Wallpaper back end: `Awww`
-- Logout menu: `Wlogout`
-- Bar: `Waybar`
-- File Manager: `Nautilus`
-- Theming: `Pywal16` / `GTK`
-- Editor: `Neovim`
+- Terminal: `ghostty`
+- Browser: `firefox-nightly`
+- App Launcher: `rofi`
+- Wallpaper front end: `waypaper-git`
+- Wallpaper back end: `awww`
+- Logout menu: `wlogout`
+- Bar: `waybar`
+- File Manager: `nautilus`
+- Theming: `pywal16` / `GTK`
+- Editor: `neovim`
 
 ## ⌨️ `Keybinds`
 [` ➜ See all available keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
 
 General keybinds:
-- `SUPER` + `RETURN` : Alacritty
-- `SUPER` + `B` : Firefox-Nightly
-- `SUPER` + `CTRL` + `RETURN` : Rofi
-- `SUPER` + `W` : Waypaper 
-- `SUPER` + `SHIFT` + `B` : Reload Waybar 
-- `SUPER` + `CTRL` + `Q` : Wlogout
-- `SUPER` + `Q` : Killactive
-- `SUPER` + `E` : Nautilus
-- `SUPER` + `SHIFT` +`N` : Toggle Hypridle
-- `SUPER` + `CTRL` +`M` : Kill Hyprland
+- `SUPER` + `RETURN` : ghostty
+- `SUPER` + `B` : firefox-nightly
+- `SUPER` + `CTRL` + `RETURN` : rofi
+- `SUPER` + `W` : waypaper 
+- `SUPER` + `SHIFT` + `B` : reload waybar 
+- `SUPER` + `CTRL` + `Q` : logout
+- `SUPER` + `Q` : kill active window
+- `SUPER` + `SHIFT` +`N` : toggle hypridle
+- `SUPER` + `CTRL` +`M` : kill hyprland
 
 ## 📸 `Screenshots`
 <img src="/assets/screenshots/h2sc1.png"/>
