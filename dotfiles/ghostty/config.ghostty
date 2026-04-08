@@ -1,0 +1,8 @@
+theme = Catppuccin Mocha
+font-size = 16 
+cursor-style = bar
+background-opacity = 0.85
+cursor-style-blink = true 
+window-padding-x = 15
+window-padding-y = 15
+
