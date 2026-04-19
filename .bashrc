@@ -8,7 +8,7 @@
 # =============================================
 
 # // ===== Colors =====
-PS1='[\u@\h \W]\$ '
+PS1='[\u@\h \W]\$'
 MAGENTA='\033[1;35m'
 RC='\033[0m'
 
@@ -35,9 +35,10 @@ export PATH=$PATH:"$HOME/.local/bin/"
 export PATH="/usr/lib/ccache/bin/:$PATH"
 export GOPATH="$HOME/go"
 export PATH=$PATH:$GOPATH/bin
-
+export GITHUB_PROJECTS_DIR="$HOME/gh-projects"
 export HYPRARCH2_VERSION=$(cat "$HOME/.version/latest")
 export EDITOR="nvim"
+export CRUSH_GLOBAL_DATA="$HOME/.config/crush"
 
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
