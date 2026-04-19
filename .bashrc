@@ -29,16 +29,16 @@ alias r4in="unimatrix -n -s 96 -l o"
 
 # Specific to me
 alias Hy2="/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME"
+export CRUSH_GLOBAL_DATA="$HOME/.config/crush"
+export GITHUB_PROJECTS_DIR="$HOME/gh-projects"
 
 # // ===== General ======
 export PATH=$PATH:"$HOME/.local/bin/"
 export PATH="/usr/lib/ccache/bin/:$PATH"
 export GOPATH="$HOME/go"
 export PATH=$PATH:$GOPATH/bin
-export GITHUB_PROJECTS_DIR="$HOME/gh-projects"
 export HYPRARCH2_VERSION=$(cat "$HOME/.version/latest")
 export EDITOR="nvim"
-export CRUSH_GLOBAL_DATA="$HOME/.config/crush"
 
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
