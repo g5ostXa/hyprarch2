@@ -1,5 +1,5 @@
 theme = Catppuccin Mocha
-font-size = 16 
+font-size = 15 
 background-opacity = 0.85
 cursor-style = bar
 cursor-style-blink = true 
