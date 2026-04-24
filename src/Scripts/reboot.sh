@@ -9,7 +9,7 @@ RC='\033[0m'
 gum_prompt() {
 	if gum confirm "Are you sure you want to reboot the system ?"; then
 		clear
-		gum spin --spinner points --title "Running reboot.sh ..." -- sleep 3
+		gum spin --spinner points --title "Running reboot.sh ..." --padding "2 2" --spinner.foreground "112" --title.foreground "10" -- sleep 3
 		main_function
 	elif [ $? -eq 130 ]; then
 		exit 130

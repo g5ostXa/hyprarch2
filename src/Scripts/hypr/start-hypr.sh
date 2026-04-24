@@ -39,7 +39,7 @@ is_installed_uwsm() {
 is_installed_figlet && is_installed_gum && is_installed_uwsm
 
 # Gum animation
-gum spin --spinner points --title "Launching hyprland..." -- sleep 3
+gum spin --spinner points --title "Launching hyprland..." --padding "2 2" --spinner.foreground "112" --title.foreground "10" -- sleep 3
 
 # Set defaults and launch hyprland
 uwsm select && uwsm start hyprland
