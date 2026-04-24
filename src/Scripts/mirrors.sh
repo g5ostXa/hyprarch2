@@ -28,7 +28,7 @@ func_main() {
 	echo ""
 
 	# Prompt user to synchronize package database
-	if gum confirm "Do you wish to Synchronize package database now?"; then
+	if gum confirm "Do you wish to synchronize package database now?"; then
 		# shellcheck disable=SC2086
 		gum spin --spinner points --title "Synchronizing package database..." --padding "2 2" --spinner.foreground "112" --title.foreground "10" -- $SYNC_DATABASE
 		echo ";; Mirrors update done!"
