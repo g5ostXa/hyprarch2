@@ -290,8 +290,8 @@ create_symlinks() {
 			break
 			;;
 		[Nn]*)
-			echo ";; Symplinks not created..."
-			exit
+			echo ";; Symplinks not created, please add your configs manually before launching hyprland..."
+			return
 			;;
 		*)
 			echo ";; Please answer yes or no."
