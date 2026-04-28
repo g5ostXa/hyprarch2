@@ -15,11 +15,11 @@ install_greeter() {
 	clear
 	echo -e "${CYAN}"
 	cat <<"EOF"
-	 ___           _        _ _
-	|_ _|_ __  ___| |_ __ _| | | ___ _ __
-	 | || '_ \/ __| __/ _` | | |/ _ \ '__|
-	 | || | | \__ \ || (_| | | |  __/ |
-	|___|_| |_|___/\__\__,_|_|_|\___|_|
+ ___           _        _ _
+|_ _|_ __  ___| |_ __ _| | | ___ _ __
+ | || '_ \/ __| __/ _` | | |/ _ \ '__|
+ | || | | \__ \ || (_| | | |  __/ |
+|___|_| |_|___/\__\__,_|_|_|\___|_|
 EOF
 	echo "Welcome to hyprarch2"
 	cat "$VERSION_NAME"
@@ -60,8 +60,12 @@ check_paru() {
 
 				cd "$HOME/.cache" || exit
 
+				if [ -d "paru" ]; then
+					rm -rf ./paru
+				fi
+
 				git clone --depth=1 https://aur.archlinux.org/paru.git
-				makepkg -si --noconfirm
+				cd paru && makepkg -si --noconfirm
 				cd "$HOME" || exit
 				break
 				;;
