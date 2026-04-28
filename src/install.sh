@@ -305,6 +305,7 @@ create_symlinks() {
 }
 
 func_main() {
+	sudo -v
 	bash "$HYPRARCH2_DIR/src/Scripts/pacman.sh"
 
 	check_paru && check_depends && src_copy
