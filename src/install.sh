@@ -90,7 +90,7 @@ check_depends() {
 		"ghostty"
 		"aquamarine"
 		"waybar"
-		"rofi "
+		"rofi"
 		"dunst"
 		"libnotify"
 		"cliphist"
@@ -152,7 +152,7 @@ check_depends() {
 		case $yn in
 		[Yy]*)
 			echo "Installing dependencies..."
-			paru -S --noconfirm --needed "${h2depends[@]}" || exit 1
+			paru -S --needed "${h2depends[@]}" || exit 1
 			break
 			;;
 		[Nn]*)
