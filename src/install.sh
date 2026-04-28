@@ -147,24 +147,22 @@ check_depends() {
 		"gum"
 		"figlet"
 	)
-	for required_packages in "${h2depends[@]}"; do
-		while true; do
-			read -r -p "Install all required packages now? (Yy/Nn):" yn
-			case $yn in
-			[Yy]*)
-				echo ";; Installing dependencies..."
-				paru -S --noconfirm --needed "$required_packages" || exit
-				break
-				;;
-			[Nn]*)
-				echo ";; Installation canceled..."
-				exit
-				;;
-			*)
-				echo ";; Please answer yes or no."
-				;;
-			esac
-		done
+	while true; do
+		read -r -p "Install all required packages now? (y/n): " yn
+		case $yn in
+		[Yy]*)
+			echo "Installing dependencies..."
+			paru -S --noconfirm --needed "${h2depends[@]}" || exit 1
+			break
+			;;
+		[Nn]*)
+			echo "Installation canceled."
+			exit 0
+			;;
+		*)
+			echo "Please answer yes or no."
+			;;
+		esac
 	done
 }
 
