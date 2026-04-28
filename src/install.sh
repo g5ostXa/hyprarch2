@@ -286,6 +286,10 @@ create_symlinks() {
 			ln -s ~/hyprarch2/dotfiles/waypaper ~/.config
 			ln -s ~/hyprarch2/dotfiles/uwsm ~/.config
 
+			if [ -d "$HYPRARCH2_DIR/.git" ]; then
+				rm -rf "$HYPRARCH2_DIR/.git"
+			fi
+
 			echo ";; Done."
 			break
 			;;
