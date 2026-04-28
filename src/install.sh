@@ -235,7 +235,7 @@ get_wallpaper() {
 				cp -r "$HOME/wallpaper" "$HOME/wallpaper_backup"
 			fi
 
-			cd $HOME && git clone --depth=1 https://github.com/g5ostXa/wallpaper.git
+			cd "$HOME" && git clone --depth=1 https://github.com/g5ostXa/wallpaper.git
 			break
 			;;
 		[Nn]*)
