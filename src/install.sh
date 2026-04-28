@@ -8,7 +8,7 @@ RED='\033[0;31m'
 YELLOW='\033[0;33m'
 RC='\033[0m'
 
-VERSION_NAME="$HOME/Downloads/hyprarch2/.version/latest"
+VERSION_NAME="$HOME/hyprarch2/.version/latest"
 HYPRARCH2_DIR="$HOME/hyprarch2"
 
 install_greeter() {
