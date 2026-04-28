@@ -50,26 +50,20 @@ $ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs g
 🖱️ **Usage**:
 <br>
 
-If you haven't done so already, create your user directories including `~/Downloads`:
+If you haven't done so already, create your user directories including `~/.config`:
 ```bash
-$ xdg-user-dirs-update
+$ xdg-user-dirs-update && mkdir -p "$HOME/.config"
 ```
 <br>
 
-If the command above did not re-create your user dirs including `~/Downloads`, the following will:
+Make sure your current directory is `$HOME` and download the project:
 ```bash
-$ xdg-user-dirs-update && xdg-user-dirs-update --force
-```
-<br>
-
-Change directory to `~/Downloads/` and clone the project:
-```bash
-$ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
+$ cd "$HOME" && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 ```
 <br>
 
 At this point, you may want to change a few things before installing. \
-If using a `VM`, uncomment the following in `~/Downloads/hyprarch2/dotfiles/hypr/hyprland.conf`:
+If using a `VM`, uncomment the following in `~/hyprarch2/dotfiles/hypr/hyprland.conf`:
 ```md
 # source = ~/.config/hypr/conf/kvm.conf
 ```
@@ -78,9 +72,9 @@ If using a `VM`, uncomment the following in `~/Downloads/hyprarch2/dotfiles/hypr
 > - See [`Monitor(s)`](https://github.com/g5ostXa/hyprarch2#%EF%B8%8F-monitors) section to learn more
 <br>
 
-Once you're all set, run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
+Once you're all set, run [`install.sh`](src/install.sh) from `~/hyprarch2/src/`:
 ```bash
-$ cd hyprarch2/src && ./install.sh
+$ cd "$HOME/hyprarch2/src && ./install.sh
 ```
 <br>
 

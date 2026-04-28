@@ -8,57 +8,61 @@ RED='\033[0;31m'
 YELLOW='\033[0;33m'
 RC='\033[0m'
 
-# Get hyprarch2's current version name
 VERSION_NAME="$HOME/Downloads/hyprarch2/.version/latest"
-
-# Set hyprarch2's source directory
-HYPRARCH2_DIR="$HOME/Downloads/hyprarch2"
-
-# Set dotfiles target directory
-DOTS_TARGET_DIR="$HOME/dotfiles"
-
-# Define h2installer's paths
-H2INSTALLER_REPO="https://github.com/g5ostXa/h2install"
-H2INSTALLER_DIR="$HOME/Downloads/h2install"
-H2INSTALLER_TARGET_LOC="$HOME/Downloads/h2install/h2installer"
-
-# Make sure gum is installed, exit if not found
-if ! command -v "gum" >/dev/null; then
-	echo -e "${RED};; Dependency gum NOT FOUND... ${RC}"
-	exit 1
-fi
+HYPRARCH2_DIR="$HOME/hyprarch2"
 
 install_greeter() {
-	if command -v figlet >/dev/null 2>&1; then
-		clear
-		echo -e "${CYAN}"
-		figlet -f smslant "Installer"
-		echo "Welcome to hyprarch2"
-		cat "$VERSION_NAME"
-		echo -e "${RC}" && echo ""
-	else
-		clear
-		echo -e "${CYAN}"
-		cat <<"EOF"
+	clear
+	echo -e "${CYAN}"
+	cat <<"EOF"
 	 ___           _        _ _
 	|_ _|_ __  ___| |_ __ _| | | ___ _ __
 	 | || '_ \/ __| __/ _` | | |/ _ \ '__|
 	 | || | | \__ \ || (_| | | |  __/ |
 	|___|_| |_|___/\__\__,_|_|_|\___|_|
 EOF
-		echo "Welcome to hyprarch2"
-		cat "$VERSION_NAME"
-		echo -e "${RC}" && echo ""
-	fi
+	echo "Welcome to hyprarch2"
+	cat "$VERSION_NAME"
+	echo -e "${RC}" && echo ""
 
-	# Simple prompt if installing via ssh
-	if [ -n "$SSH_CONNECTION" ]; then
+	while true; do
+		read -r -p ";; DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
+
+		case $yn in
+		[Yy]*)
+			echo ";; Starting Installation..."
+			func_main || exit 1
+			break
+			;;
+		[Nn]*)
+			echo ";; Installation canceled..."
+			exit
+			;;
+		*)
+			echo ";; Please answer yes or no."
+			;;
+		esac
+	done
+}
+
+check_paru() {
+	if ! command -v "paru" >/dev/null 2>&1; then
+		echo -e "${YELLOW};; Paru: Requiured but not found.${RC}"
+
 		while true; do
-			read -r -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
+			read -r -p ";; Install paru and all hyprarch2 dependencies now? (Yy/Nn):" yn
 			case $yn in
 			[Yy]*)
-				echo ";; Starting Installation..."
-				func_main || exit 1
+				echo ";; Installing paru..."
+				if [ ! -d "$HOME/.cache" ]; then
+					mkdir -p "HOME/.cache"
+				fi
+
+				cd "$HOME/.cache" || exit
+
+				git clone --depth=1 https://aur.archlinux.org/paru.git
+				makepkg -si --noconfirm
+				cd "$HOME" || exit
 				break
 				;;
 			[Nn]*)
@@ -70,93 +74,233 @@ EOF
 				;;
 			esac
 		done
-	else
-		# Gum prompt if not installing via ssh
-		if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?"; then
-			echo ";; Starting Installation..."
-			func_main || exit 1
-		elif [ $? -eq 130 ]; then
-			echo ";; Installation canceled..."
-			exit 130
-		else
-			echo ";; Installation canceled..."
-			exit
-		fi
 	fi
 }
 
-# Check if hyprarch2 directory exists
-src_check() {
-	if [ ! -d "$HYPRARCH2_DIR" ]; then
-		echo -e "${RED};; $HYPRARCH2_DIR does not exist, exiting...${RC}"
-		exit 1
-	fi
+check_depends() {
+	# Install all hyprarch2's exterrnal depends
+	local -a h2depends=(
+		"hyprland"
+		"hyprpolkitagent"
+		"uwsm"
+		"ghostty"
+		"aquamarine"
+		"waybar"
+		"rofi "
+		"dunst"
+		"libnotify"
+		"cliphist"
+		"wlogout"
+		"xdg-desktop-portal-hyprland"
+		"xdg-desktop-portal-gtk"
+		"qt5-wayland"
+		"waypaper-git"
+		"hyprpicker"
+		"hyprlock"
+		"hyprcursor"
+		"hypridle"
+		"hyprgraphics"
+		"hyprlang"
+		"hyprls-git"
+		"hyprwayland-scanner"
+		"otf-font-awesome"
+		"woff2-font-awesome"
+		"ttf-fira-sans"
+		"ttf-fira-code"
+		"ttf-firacode-nerd"
+		"gnu-free-fonts"
+		"brightnessctl"
+		"neovim"
+		"nautilus"
+		"fastfetch"
+		"pavucontrol"
+		"pipewire"
+		"pipewire-pulse"
+		"pipewire-alsa"
+		"pipewire-jack"
+		"wireplumber"
+		"bibata-cursor-theme"
+		"dracula-icons-theme"
+		"tokyonight-gtk-theme-git"
+		"python-pywal16"
+		"gtk3"
+		"gtk4"
+		"awww"
+		"fish"
+		"starship"
+		"python-pip"
+		"eza"
+		"swappy"
+		"firefox-nightly-bin"
+		"vscodium-bin"
+		"ccache"
+		"jq"
+		"pacman-contrib"
+		"fzf"
+		"ttf-0xproto-nerd"
+		"grim"
+		"bubblewrap"
+	)
+	for required_packages in "${h2depends[@]}"; do
+		while true; do
+			read -r -p "Install all required packages now? (Yy/Nn):" yn
+			case $yn in
+			[Yy]*)
+				echo ";; Installing dependencies..."
+				paru -S --noconfirm --needed "$required_packages" || exit
+				break
+				;;
+			[Nn]*)
+				echo ";; Installation canceled..."
+				exit
+				;;
+			*)
+				echo ";; Please answer yes or no."
+				;;
+			esac
+		done
+	done
 }
 
-# Copy all hyprarch2 files to home directory
 src_copy() {
-	cp -r "$HYPRARCH2_DIR"/* "$HOME/"
-	sudo cp -r "$HYPRARCH2_DIR/dotfiles/login/issue" "/etc/"
-}
-
-# Make sure all files were copied
-target_check() {
-	if [ ! -f "$HOME/.bashrc" ]; then
-		echo -e "${YELLOW};; Copying .bashrc to home folder...${RC}"
-		cp "$HYPRARCH2_DIR/.bashrc" "$HOME"
+	echo -e "${CYAN};; Copying assets/ ...${RC}"
+	if [ -d "$HOME/assets" ]; then
+		cp -r "$HOME/assets" "$HOME/assets_backup"
 	fi
 
-	# Check .version/ exists
-	if [ ! -d "$HOME/.version/" ]; then
-		cp -r "$HYPRARCH2_DIR/.version/" "$HOME"
+	sleep 1.5
+	cp -r "$HYPRARCH2_DIR/assets" "$HOME"/.
+	echo ";; DONE."
+
+	echo -e "${CYAN};; Copying dotfiles/ ...${RC}"
+	if [ -d "$HOME/dotfiles" ]; then
+		cp -r "$HOME/dotfiles" "$HOME/dotfiles_backup"
 	fi
 
-	# Check .github/ exists
-	if [ ! -d "$HOME/.github/" ]; then
-		cp -r "$HYPRARCH2_DIR/.github/" "$HOME"
+	sleep 1.5
+	cp -r "$HYPRARCH2_DIR/dotfiles" "$HOME"/.
+	echo ";; DONE."
+
+	echo -e "${CYAN};; Copying src/ ...${RC}"
+	if [ -d "$HOME/src" ]; then
+		cp -r "$HOME/src" "$HOME/src_backup"
 	fi
 
-	# Check .gitignore exists
-	if [ ! -f "$HOME/.gitignore" ]; then
-		cp "$HYPRARCH2_DIR/.gitignore" "$HOME"
+	sleep 1.5
+	cp -r "$HYPRARCH2_DIR/src" "$HOME"/.
+	echo ";; DONE."
+
+	echo -e "${CYAN};; Copying .version/ ...${RC}"
+	if [ -d "$HOME/.version" ]; then
+		cp -r "$HOME/.version" "$HOME/.version_backup"
 	fi
-}
 
-# Run some checks, build h2install binary and run if successful
-func_main() {
-	src_check
-	src_copy || exit 1
-	target_check || exit 1
+	sleep 1.5
+	cp -r "$HYPRARCH2_DIR/.version" "$HOME"/.
+	echo ";; Done."
 
-	# TTY login
+	echo -e "${CYAN};; Copying issue file ...${RC}"
 	if [ -f "/etc/issue" ]; then
-		sudo chown root:root /etc/issue
-	else
-		echo -e "${RED};; Failed to copy issue to /etc/, skipping...${RC}"
+		cp -r "/etc/issue" "/etc/issue_backup"
 	fi
 
-	# Remove any existing h2install directory in ~/Downloads
-	if [ -d "$H2INSTALLER_DIR" ]; then
-		rm -rf "$H2INSTALLER_DIR"
-		cd "$HOME/Downloads" || exit 1
-	else
-		cd "$HOME/Downloads" || exit 1
+	sleep 1.5
+	sudo cp -r "$HYPRARCH2_DIR/dotfiles/login/issue" "/etc/issue"
+	sudo chown root:root /etc/issue
+	sudo chmod 644 /etc/issue
+	echo ";; Done."
+
+	echo -e "${CYAN};; Copying .bashrc ... ${RC}"
+	if [ -f "$HOME/.bashrc" ]; then
+		cp -r "$HOME/.bashrc" "$HOME/.bashrc_backup"
 	fi
 
-	# Get h2installer
-	git clone --depth=1 "$H2INSTALLER_REPO".git
+	sleep 1.5
+	cp -r "$HYPRARCH2_DIR/.bashrc" "$HOME"/.
+	echo "DONE."
+}
 
-	# Go to and build h2installer
-	cd h2install && rm -rf .git/ && go mod tidy && go build -o h2installer
+get_wallpaper() {
+	echo -e "${YELLOW}For wallpapers to work on hyprarch2, you need to put your walls in ~/wallpaper.${RC}"
+	echo -e "${YELLOW}You can add your own walls to that folder later${RC}"
 
-	# Check if installer was successfully built and run it
-	if [ ! -f "$H2INSTALLER_TARGET_LOC" ]; then
-		echo -e "${RED};; ERROR: h2installer failed to build, aborting...${RC}"
-		exit 1
-	else
-		echo -e "${CYAN};; h2installer was built successfully!${RC}"
-		./h2installer
-	fi
+	while true; do
+		read -r -p ";; Install wallpapers now? (Yy/Nn):" yn
+
+		case $yn in
+		[Yy]*)
+			echo ";; Starting Installation..."
+
+			if [ -d "$HOME/wallpaper" ]; then
+				cp -r "$HOME/wallpaper" "$HOME/wallpaper_backup"
+			fi
+
+			cd $HOME && git clone --depth=1 https://github.com/g5ostXa/wallpaper.git
+			break
+			;;
+		[Nn]*)
+			echo ";; Installation canceled..."
+			return
+			;;
+		*)
+			echo ";; Please answer yes or no."
+			;;
+		esac
+	done
+}
+
+create_symlinks() {
+	while true; do
+		read -r -p ";; Do you want to symlinks my dotfiles to your ~/.config/ folder? (Yy/Nn):" yn
+
+		case $yn in
+		[Yy]*)
+			echo ";; Creating symlinks ..."
+			sleep 1.5
+
+			if [ -d "$HOME/.config" ]; then
+				cp -r "$HOME/.config" "$HOME/.config_backup"
+			fi
+
+			ln -s ~/hyprarch2/dotfiles/gtk/.Xresources ~/
+			ln -s ~/hyprarch2/dotfiles/ghostty ~/.config
+			ln -s ~/hyprarch2/dotfiles/btop ~/.config
+			ln -s ~/hyprarch2/dotfiles/dunst ~/.config
+			ln -s ~/hyprarch2/dotfiles/gtk ~/.config
+			ln -s ~/hyprarch2/dotfiles/hypr/ ~/.config
+			ln -s ~/hyprarch2/dotfiles/nvim ~/.config
+			ln -s ~/hyprarch2/dotfiles/rofi ~/.config
+			ln -s ~/hyprarch2/dotfiles/starship.toml ~/.config
+			ln -s ~/hyprarch2/dotfiles/swappy ~/.config
+			ln -s ~/hyprarch2/dotfiles/vim ~/.config
+			ln -s ~/hyprarch2/dotfiles/wal ~/.config
+			ln -s ~/hyprarch2/dotfiles/waybar ~/.config
+			ln -s ~/hyprarch2/dotfiles/wlogout ~/.config
+			ln -s ~/hyprarch2/dotfiles/fastfetch ~/.config
+			ln -s ~/hyprarch2/dotfiles/fish ~/.config
+			ln -s ~/hyprarch2/dotfiles/pacseek ~/.config
+			ln -s ~/hyprarch2/dotfiles/waypaper ~/.config
+			ln -s ~/hyprarch2/dotfiles/uwsm ~/.config
+
+			echo ";; Done."
+			break
+			;;
+		[Nn]*)
+			echo ";; Symplinks not created..."
+			exit
+			;;
+		*)
+			echo ";; Please answer yes or no."
+			;;
+		esac
+	done
+}
+
+func_main() {
+	bash "$HYPRARCH2_DIR/src/Scripts/pacman.sh"
+
+	check_paru && check_depends && src_copy
+	get_wallpaper && create_symlinks
 }
 
 # Script entry
@@ -177,20 +321,6 @@ if [ -d "$HOME/.version/" ]; then
 	echo -e "${CYAN};; Found ~/.version/ directory!${RC}"
 else
 	echo -e "${RED};; ~/.version/ not found...${RC}"
-fi
-
-# Check .github directory exists
-if [ -d "$HOME/.github/" ]; then
-	echo -e "${CYAN};; Found ~/.github/ directory!${RC}"
-else
-	echo -e "${RED};; ~/.github/ not found...${RC}"
-fi
-
-# Check .gitignore exists
-if [ -f "$HOME/.gitignore" ]; then
-	echo -e "${CYAN};; Found ~/.gitignore!${RC}"
-else
-	echo -e "${RED};; ~/.gitignore not found...${RC}"
 fi
 
 # Check if dotfiles exist
