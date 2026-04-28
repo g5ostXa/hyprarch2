@@ -140,6 +140,8 @@ check_depends() {
 		"ttf-0xproto-nerd"
 		"grim"
 		"bubblewrap"
+		"gum"
+		"figlet"
 	)
 	for required_packages in "${h2depends[@]}"; do
 		while true; do
