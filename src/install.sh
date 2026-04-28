@@ -201,18 +201,18 @@ src_copy() {
 
 	sleep 1.5
 	cp -r "$HYPRARCH2_DIR/.version" "$HOME"/.
-	echo ";; Done."
+	echo ";; DONE."
 
 	echo -e "${CYAN};; Copying issue file ...${RC}"
 	if [ -f "/etc/issue" ]; then
-		cp -r "/etc/issue" "/etc/issue_backup"
+		sudo cp -r "/etc/issue" "/etc/issue_backup"
 	fi
 
 	sleep 1.5
 	sudo cp -r "$HYPRARCH2_DIR/dotfiles/login/issue" "/etc/issue"
 	sudo chown root:root /etc/issue
 	sudo chmod 644 /etc/issue
-	echo ";; Done."
+	echo ";; DONE."
 
 	echo -e "${CYAN};; Copying .bashrc ... ${RC}"
 	if [ -f "$HOME/.bashrc" ]; then
@@ -332,8 +332,15 @@ else
 	echo -e "${RED};; ~/.version/ not found...${RC}"
 fi
 
+# Check src directory exists
+if [ -d "$HOME/src" ]; then
+	echo -e "${CYAN};; Found ~/src/ directory!${RC}"
+else
+	echo -e "${RED};; ~/src/ not found...${RC}"
+fi
+
 # Check if dotfiles exist
-if [ -d "$DOTS_TARGET_DIR" ]; then
+if [ -d "$HOME/dotfiles" ]; then
 	echo -e "${CYAN};; Found ~/dotfiles/ directory!${RC}"
 else
 	echo -e "${RED};; ~/dotfiles/ not found...${RC}"
