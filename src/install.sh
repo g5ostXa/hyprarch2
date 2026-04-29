@@ -55,7 +55,7 @@ check_paru() {
 			[Yy]*)
 				echo ";; Installing paru..."
 				if [ ! -d "$HOME/.cache" ]; then
-					mkdir -p "HOME/.cache"
+					mkdir -p "$HOME/.cache"
 				fi
 
 				cd "$HOME/.cache" || exit
@@ -260,9 +260,10 @@ create_symlinks() {
 		case $yn in
 		[Yy]*)
 			echo ";; Creating symlinks ..."
-			sleep 1.5
-
-			if [ -d "$HOME/.config" ]; then
+			
+			if [ ! -d "$HOME/.config" ]; then
+				mkdir -p "$HOME/.config"
+			else
 				cp -r "$HOME/.config" "$HOME/.config_backup"
 			fi
 
