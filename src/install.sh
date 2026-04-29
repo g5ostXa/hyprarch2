@@ -8,7 +8,16 @@ RC='\033[0m'
 HYPRARCH2_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 
 set -Eeuo pipefail
-trap 'status=$?; echo -e "${RED};; Error at line ${LINENO}: ${BASH_COMMAND} exited with status ${status}${RC}" >&2' ERR
+
+err_report() {
+	local status="$1"
+	local line="$2"
+	local command="$3"
+
+	echo -e "${RED};; Error at line ${line}: ${command} exited with status ${status}${RC}" >&2
+}
+
+trap 'err_report "$?" "$LINENO" "$BASH_COMMAND"' ERR
 
 install_greeter() {
 	clear
@@ -160,6 +169,7 @@ check_depends() {
 		"gum"
 		"figlet"
 	)
+
 	while true; do
 		read -r -p ";; Install all required packages now? (y/n): " yn
 		case $yn in
@@ -246,21 +256,24 @@ get_wallpaper() {
 
 backup_existing() {
 	local path="$1"
+	local backup
+
 	if [[ -e "$path" || -L "$path" ]]; then
-		local backup="${path}.backup.$(date +%Y%m%d-%H%M%S)"
+		backup="${path}.backup.$(date +%Y%m%d-%H%M%S)"
 		echo ";; Backing up $path -> $backup"
 		mv -- "$path" "$backup"
 	fi
-
 }
 
 link_one() {
 	local src="$1"
 	local dest="$2"
+
 	if [[ ! -e "$src" && ! -L "$src" ]]; then
 		echo -e "${YELLOW};; Missing source, skipping: $src${RC}"
 		return 0
 	fi
+
 	backup_existing "$dest"
 	ln -s -- "$src" "$dest"
 }
