@@ -7,7 +7,6 @@ RC='\033[0m'
 set -Eeuo pipefail
 
 err_report() {
-
 	local status="$1"
 	local line="$2"
 	local command="$3"
@@ -16,9 +15,7 @@ err_report() {
 }
 
 trap 'err_report "$?" "$LINENO" "$BASH_COMMAND"' ERR
-
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-
 
 if [[ -f "$SCRIPT_DIR/src/Scripts/pacman.sh" ]]; then
 	HYPRARCH2_SOURCE="$SCRIPT_DIR"
@@ -34,11 +31,9 @@ export HYPRARCH2_SOURCE
 export HYPRARCH2_TARGET
 
 install_greeter() {
-
 	clear
 	echo -e "${CYAN}"
 	cat <<"EOF"
-
  ___           _        _ _
 |_ _|_ __  ___| |_ __ _| | | ___ _ __
  | || '_ \/ __| __/ _` | | |/ _ \ '__|
@@ -46,9 +41,10 @@ install_greeter() {
 |___|_| |_|___/\__\__,_|_|_|\___|_|
 
 EOF
-
 	echo "Welcome to hyprarch2"
+
 	VERSION_NAME="$HYPRARCH2_SOURCE/.version/latest"
+
 	if [[ -f "$VERSION_NAME" ]]; then
 		cat "$VERSION_NAME"
 		echo -e "${RC}" && echo ""
@@ -56,6 +52,7 @@ EOF
 		echo ";; Version file not found: $VERSION_NAME"
 		echo ""
 	fi
+
 	while true; do
 		read -r -p ";; DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn):" yn
 		case $yn in
@@ -73,13 +70,12 @@ EOF
 			;;
 		esac
 	done
-
 }
 
 check_paru() {
-
 	if ! command -v "paru" >/dev/null 2>&1; then
 		echo -e "${YELLOW};; Paru: Required but not found...${RC}"
+
 		while true; do
 			read -r -p ";; Install paru and all hyprarch2 dependencies now? (Yy/Nn):" yn
 			case $yn in
@@ -87,14 +83,17 @@ check_paru() {
 				echo ";; Installing paru..."
 				mkdir -p "$HYPRARCH2_TARGET/.cache"
 				cd "$HYPRARCH2_TARGET/.cache" || exit 1
+
 				if [[ -d "paru" ]]; then
 					rm -rf ./paru
 				fi
+
 				if ! git clone --depth=1 https://aur.archlinux.org/paru.git; then
 					echo -e "${RED};; paru clone failed, exiting...${RC}"
 					exit 1
 				fi
 				cd paru || exit 1
+
 				makepkg -si --noconfirm || exit 1
 				cd "$HYPRARCH2_TARGET" || exit 1
 				break
@@ -109,11 +108,9 @@ check_paru() {
 			esac
 		done
 	fi
-
 }
 
 check_depends() {
-
 	local -a h2depends=(
 		"hyprland"
 		"hyprpolkitagent"
@@ -199,9 +196,9 @@ check_depends() {
 }
 
 backup_existing() {
-
 	local path="$1"
 	local backup
+
 	if [[ -e "$path" || -L "$path" ]]; then
 		backup="${path}.backup.$(date +%Y%m%d-%H%M%S)"
 		echo ";; Backing up $path -> $backup"
@@ -211,50 +208,49 @@ backup_existing() {
 }
 
 src_copy() {
-
 	mkdir -p "$HYPRARCH2_TARGET"
 	echo -e "${CYAN};; Copying assets/ ...${RC}"
-	
+
 	backup_existing "$HYPRARCH2_TARGET/assets"
 	cp -a "$HYPRARCH2_SOURCE/assets" "$HYPRARCH2_TARGET/assets"
 	echo ";; DONE."
 	echo -e "${CYAN};; Copying dotfiles/ ...${RC}"
-	
+
 	backup_existing "$HYPRARCH2_TARGET/dotfiles"
 	cp -a "$HYPRARCH2_SOURCE/dotfiles" "$HYPRARCH2_TARGET/dotfiles"
 	echo ";; DONE."
 	echo -e "${CYAN};; Copying src/ ...${RC}"
-	
+
 	backup_existing "$HYPRARCH2_TARGET/src"
 	cp -a "$HYPRARCH2_SOURCE/src" "$HYPRARCH2_TARGET/src"
 	echo ";; DONE."
 	echo -e "${CYAN};; Copying .version/ ...${RC}"
-	
+
 	backup_existing "$HYPRARCH2_TARGET/.version"
 	cp -a "$HYPRARCH2_SOURCE/.version" "$HYPRARCH2_TARGET/.version"
 	echo ";; DONE."
 	echo -e "${CYAN};; Copying issue file ...${RC}"
-	
+
 	if [[ -f "/etc/issue" ]]; then
 		sudo cp -a "/etc/issue" "/etc/issue_backup"
 	fi
 	sleep 1.5
-	
+
 	sudo cp -a "$HYPRARCH2_SOURCE/dotfiles/login/issue" "/etc/issue"
 	sudo chown root:root "/etc/issue"
 	sudo chmod 644 "/etc/issue"
 	echo ";; DONE."
+
 	echo -e "${CYAN};; Copying .bashrc ... ${RC}"
 	backup_existing "$HYPRARCH2_TARGET/.bashrc"
 	cp -a "$HYPRARCH2_SOURCE/.bashrc" "$HYPRARCH2_TARGET/.bashrc"
 	echo ";; DONE."
-
 }
 
 get_wallpaper() {
-
 	echo -e "${YELLOW}For wallpapers to work on hyprarch2, you need to put your walls in ~/wallpaper.${RC}"
 	echo -e "${YELLOW}You can add your own walls to that folder later.${RC}"
+
 	while true; do
 		read -r -p ";; Install wallpapers now? (Yy/Nn):" yn
 		case $yn in
@@ -273,32 +269,31 @@ get_wallpaper() {
 			;;
 		esac
 	done
-} 
+}
 
 link_one() {
-
 	local src="$1"
 	local dest="$2"
+
 	if [[ ! -e "$src" && ! -L "$src" ]]; then
 		echo -e "${YELLOW};; Missing source, skipping: $src${RC}"
 		return 0
 	fi
+
 	backup_existing "$dest"
 	ln -s -- "$src" "$dest"
 
 }
-
 create_symlinks() {
-
 	while true; do
 		read -r -p ";; Do you want to symlink my dotfiles to your ~/.config/ folder? (Yy/Nn): " yn
 		case $yn in
 		[Yy]*)
 			echo ";; Creating symlinks ..."
 			mkdir -p "$HYPRARCH2_TARGET/.config"
-			
+
 			local dotfiles="$HYPRARCH2_TARGET/dotfiles"
-			
+
 			link_one "$dotfiles/gtk/.Xresources" "$HYPRARCH2_TARGET/.Xresources"
 			link_one "$dotfiles/ghostty" "$HYPRARCH2_TARGET/.config/ghostty"
 			link_one "$dotfiles/btop" "$HYPRARCH2_TARGET/.config/btop"
@@ -334,21 +329,20 @@ create_symlinks() {
 }
 
 func_main() {
-
 	sudo -v
+
 	if ! bash "$HYPRARCH2_SOURCE/src/Scripts/pacman.sh"; then
 		echo -e "${YELLOW};; Warning: failed to run pacman.sh${RC}"
 	fi
+
 	check_paru
 	check_depends
 	src_copy
 	get_wallpaper
 	create_symlinks
-
 }
 
 verify_install() {
-
 	echo -e "${YELLOW};; Verifying if all essential files are copied...${RC}"
 	if [[ -f "$HYPRARCH2_TARGET/.bashrc" ]]; then
 		echo -e "${CYAN};; ~/.bashrc initialization successful!${RC}"
@@ -370,11 +364,11 @@ verify_install() {
 	else
 		echo -e "${RED};; ~/dotfiles/ not found...${RC}"
 	fi
-
 }
 
 install_greeter
 verify_install
+
 echo -e "${CYAN}"
 echo ";; hyprarch2 dotfiles are now installed!"
 echo ""
