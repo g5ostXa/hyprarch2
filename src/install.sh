@@ -303,7 +303,7 @@ create_symlinks() {
 			link_one "$dotfiles/hypr" "$HYPRARCH2_TARGET/.config/hypr"
 			link_one "$dotfiles/nvim" "$HYPRARCH2_TARGET/.config/nvim"
 			link_one "$dotfiles/rofi" "$HYPRARCH2_TARGET/.config/rofi"
-			link_one "$dotfiles/starship.toml" "$HYPRARCH2_TARGET/.config/starship.toml"
+			link_one "$dotfiles/starship/starship.toml" "$HYPRARCH2_TARGET/.config/starship.toml"
 			link_one "$dotfiles/swappy" "$HYPRARCH2_TARGET/.config/swappy"
 			link_one "$dotfiles/vim" "$HYPRARCH2_TARGET/.config/vim"
 			link_one "$dotfiles/wal" "$HYPRARCH2_TARGET/.config/wal"
