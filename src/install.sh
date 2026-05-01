@@ -284,6 +284,7 @@ link_one() {
 	ln -s -- "$src" "$dest"
 
 }
+
 create_symlinks() {
 	while true; do
 		read -r -p ";; Do you want to symlink my dotfiles to your ~/.config/ folder? (Yy/Nn): " yn
