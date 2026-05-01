@@ -11,7 +11,6 @@ err_report() {
 	local line="$2"
 	local command="$3"
 	echo -e "${RED};; Error at line ${line}: ${command} exited with status ${status}${RC}" >&2
-
 }
 
 trap 'err_report "$?" "$LINENO" "$BASH_COMMAND"' ERR
@@ -192,7 +191,6 @@ check_depends() {
 			;;
 		esac
 	done
-
 }
 
 backup_existing() {
@@ -204,7 +202,6 @@ backup_existing() {
 		echo ";; Backing up $path -> $backup"
 		mv -- "$path" "$backup"
 	fi
-
 }
 
 src_copy() {
@@ -282,7 +279,6 @@ link_one() {
 
 	backup_existing "$dest"
 	ln -s -- "$src" "$dest"
-
 }
 
 create_symlinks() {
@@ -326,7 +322,6 @@ create_symlinks() {
 			;;
 		esac
 	done
-
 }
 
 func_main() {
