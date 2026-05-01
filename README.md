@@ -30,7 +30,6 @@ If you like my project, feel free to  buy me a coffee, or simply give it a ⭐ !
 > Before you begin... 
 > - My dotfiles are meant to be installed via the installation process down below.
 > - Alot of it is very specific to me so if you're unfamiliar with [`hyprland`](https://hyprland.org), I suggest you try [`mylinuxforwork's dotfiles`](https://github.com/mylinuxforwork/dotfiles) instead.
-> - Copying dotfiles in your `~/.config/` without using the [`installer`](/src/install.sh) is not recommended.
 > - This is NOT compatible with a different distro than upstream [`Arch`](https://archlinux.org).
 > - If installing on bare metal, do not forget to **backup your current installation** before proceeding.
 <br>
@@ -43,33 +42,27 @@ It is recommended to have a minimal, up-to-date arch-base installation.
 
 In your new [`Arch`](https://archlinux.org/) install, make sure **all needed dependencies** are installed before installing [`hyprarch2`](/):
 ```ruby
-$ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs gum figlet vim networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers
+$ sudo pacman -S --needed --noconfirm git reflector xdg-utils xdg-user-dirs vim networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers
 ```
 <br>
 
 🖱️ **Usage**:
 <br>
 
-If you haven't done so already, create your user directories including `~/Downloads`:
+If you haven't done so already, create your user directories including `~/.config`:
 ```bash
-$ xdg-user-dirs-update
+$ xdg-user-dirs-update && mkdir -p "$HOME/.config"
 ```
 <br>
 
-If the command above did not re-create your user dirs including `~/Downloads`, the following will:
+Make sure your current directory is `$HOME` and download the project:
 ```bash
-$ xdg-user-dirs-update && xdg-user-dirs-update --force
-```
-<br>
-
-Change directory to `~/Downloads/` and clone the project:
-```bash
-$ cd ~/Downloads && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
+$ cd "$HOME" && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 ```
 <br>
 
 At this point, you may want to change a few things before installing. \
-If using a `VM`, uncomment the following in `~/Downloads/hyprarch2/dotfiles/hypr/hyprland.conf`:
+If using a `VM`, uncomment the following in `~/hyprarch2/dotfiles/hypr/hyprland.conf`:
 ```md
 # source = ~/.config/hypr/conf/kvm.conf
 ```
@@ -78,9 +71,9 @@ If using a `VM`, uncomment the following in `~/Downloads/hyprarch2/dotfiles/hypr
 > - See [`Monitor(s)`](https://github.com/g5ostXa/hyprarch2#%EF%B8%8F-monitors) section to learn more
 <br>
 
-Once you're all set, run [`install.sh`](src/install.sh) from `~/Downloads/hyprarch2/src/`:
+Once you're all set, run [`install.sh`](src/install.sh) from `~/hyprarch2/src/`:
 ```bash
-$ cd hyprarch2/src && ./install.sh
+$ cd "$HOME/hyprarch2/src && ./install.sh
 ```
 <br>
 
@@ -169,5 +162,4 @@ General keybinds:
 <img src="/assets/screenshots/h2sc2.png"/>
 <img src="/assets/screenshots/h2sc3.png"/>
 <img src="/assets/screenshots/h2sc4.png"/>
-<img src="/assets/screenshots/h2sc5.png"/>
 
