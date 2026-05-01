@@ -10,8 +10,6 @@
 </div>
 <br>
 
-
-
 ## :octocat: `Support`
 If you like my project, feel free to  buy me a coffee, or simply give it a ⭐ !
 ```neon
@@ -29,7 +27,7 @@ If you like my project, feel free to  buy me a coffee, or simply give it a ⭐ !
 > [!WARNING]
 > Before you begin... 
 > - My dotfiles are meant to be installed via the installation process down below.
-> - Alot of it is very specific to me so if you're unfamiliar with [`hyprland`](https://hyprland.org), I suggest you try [`mylinuxforwork's dotfiles`](https://github.com/mylinuxforwork/dotfiles) instead.
+> - Alot of it is very specific to me so if you're unfamiliar with [`hyprland`](https://hypr.land), I suggest you try [`mylinuxforwork's dotfiles`](https://github.com/mylinuxforwork/dotfiles) instead.
 > - This is NOT compatible with a different distro than upstream [`Arch`](https://archlinux.org).
 > - If installing on bare metal, do not forget to **backup your current installation** before proceeding.
 <br>
@@ -78,19 +76,19 @@ $ cd "$HOME/hyprarch2/src && ./install.sh
 <br>
 
 ## 💧 `Start Hyprland`
-Use the following command to start [`hyprland`](https://wiki.hyprland.org):
+Use the following command to start [`hyprland`](https://wiki.hypr.land):
 ```bash
 $ uwsm start hyprland
 ```
 <br>
 
-If you get an error, don't worry, you simply need to reload your [`hyprland`](https://hyprland.org) config:
+If you get an error, don't worry, you simply need to reload your [`hyprland`](https://hypr.land) config:
 ```bash
 $ hyprctl reload
 ```
 <br>
 
-Alternatively, kill [`hyprland`](https://hyprland.org) and reboot, in case you didn't do so after installing.
+Alternatively, kill [`hyprland`](https://hypr.land) and reboot, in case you didn't do so after installing.
 - From hyprland session:
 ```bash
 $ uwsm stop
@@ -128,7 +126,7 @@ env = SECONDARY_MONITOR,<Monitor-2-name>
 ```
 <br>
 
-Visit [`🖥 Hyprland Wiki`](https://wiki.hyprland.org/Configuring/Monitors) to learn more about configuring your monitor(s)
+Visit [`🖥 Hyprland Wiki`](https://wiki.hypr.land/Configuring/Basics/Monitors/) to learn more about configuring your monitor(s)
 <br>
 
 ## 📦 `Main apps`
