@@ -14,14 +14,14 @@ err_report() {
 }
 
 trap 'err_report "$?" "$LINENO" "$BASH_COMMAND"' ERR
-SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+PACSCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 
-if [[ -f "$SCRIPT_DIR/src/Scripts/pacman.sh" ]]; then
-	HYPRARCH2_SOURCE="$SCRIPT_DIR"
-elif [[ -f "$SCRIPT_DIR/../src/Scripts/pacman.sh" ]]; then
-	HYPRARCH2_SOURCE="$(cd "$SCRIPT_DIR/.." && pwd -P)"
+if [[ -f "$PACSCRIPT_DIR/src/Scripts/pacman.sh" ]]; then
+	HYPRARCH2_SOURCE="$PACSCRIPT_DIR"
+elif [[ -f "$PACSCRIPT_DIR/../src/Scripts/pacman.sh" ]]; then
+	HYPRARCH2_SOURCE="$(cd "$PACSCRIPT_DIR/.." && pwd -P)"
 else
-	HYPRARCH2_SOURCE="$SCRIPT_DIR"
+	HYPRARCH2_SOURCE="$PACSCRIPT_DIR"
 fi
 
 HYPRARCH2_TARGET="${HYPRARCH2_TARGET:-$HOME}"
