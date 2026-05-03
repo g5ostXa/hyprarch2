@@ -2,31 +2,26 @@
 
 # // ======= gtk.sh =======
 
-config="$HOME/.config/gtk/gtk-3.0/settings.ini"
-if [ ! -f "$config" ]; then exit 1; fi
-
+config="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini"
 gnome_schema="org.gnome.desktop.interface"
-gtk_theme="$(grep 'gtk-theme-name' "$config" | sed 's/.*\s*=\s*//')"
-icon_theme="$(grep 'gtk-icon-theme-name' "$config" | sed 's/.*\s*=\s*//')"
-cursor_theme="$(grep 'gtk-cursor-theme-name' "$config" | sed 's/.*\s*=\s*//')"
-cursor_size="$(grep 'gtk-cursor-theme-size' "$config" | sed 's/.*\s*=\s*//')"
-font_name="$(grep 'gtk-font-name' "$config" | sed 's/.*\s*=\s*//')"
-prefer_dark_theme="$(grep 'gtk-application-prefer-dark-theme' "$config" | sed 's/.*\s*=\s*//')"
 
-echo "GTK-Theme:" "$gtk_theme"
-echo "Icon Theme:" "$icon_theme"
-echo "Cursor Theme:" "$cursor_theme"
-echo "Cursor Size:" "$cursor_size"
-if [ "$prefer_dark_theme" == "0" ]; then
-	prefer_dark_theme_value="prefer-light"
-else
-	prefer_dark_theme_value="prefer-dark"
+[ -f "$config" ] || exit 1
+
+gtk_theme="$(grep '^gtk-theme-name=' "$config" | cut -d '=' -f2-)"
+icon_theme="$(grep '^gtk-icon-theme-name=' "$config" | cut -d '=' -f2-)"
+cursor_theme="$(grep '^gtk-cursor-theme-name=' "$config" | cut -d '=' -f2-)"
+cursor_size="$(grep '^gtk-cursor-theme-size=' "$config" | cut -d '=' -f2-)"
+font_name="$(grep '^gtk-font-name=' "$config" | cut -d '=' -f2-)"
+prefer_dark_theme="$(grep '^gtk-application-prefer-dark-theme=' "$config" | cut -d '=' -f2-)"
+
+[ -n "$gtk_theme" ] && gsettings set "$gnome_schema" gtk-theme "$gtk_theme"
+[ -n "$icon_theme" ] && gsettings set "$gnome_schema" icon-theme "$icon_theme"
+[ -n "$cursor_theme" ] && gsettings set "$gnome_schema" cursor-theme "$cursor_theme"
+[ -n "$cursor_size" ] && gsettings set "$gnome_schema" cursor-size "$cursor_size"
+[ -n "$font_name" ] && gsettings set "$gnome_schema" font-name "$font_name"
+
+if [ "$prefer_dark_theme" = "0" ]; then
+	gsettings set "$gnome_schema" color-scheme prefer-light
+elif [ "$prefer_dark_theme" = "1" ]; then
+	gsettings set "$gnome_schema" color-scheme prefer-dark
 fi
-echo "Color Theme:" $prefer_dark_theme_value
-echo "Font Name:" "$font_name"
-
-gsettings set "$gnome_schema" gtk-theme "$gtk_theme"
-gsettings set "$gnome_schema" icon-theme "$icon_theme"
-gsettings set "$gnome_schema" cursor-theme "$cursor_theme"
-gsettings set "$gnome_schema" font-name "$font_name"
-gsettings set "$gnome_schema" color-scheme "$prefer_dark_theme_value"

@@ -292,10 +292,12 @@ create_symlinks() {
 			local dotfiles="$HYPRARCH2_TARGET/dotfiles"
 
 			link_one "$dotfiles/gtk/.Xresources" "$HYPRARCH2_TARGET/.Xresources"
+			link_one "$dotfiles/gtk/gtk-3.0" "$HYPRARCH2_TARGET/.config/gtk-3.0"
+			link_one "$dotfiles/gtk/gtk-4.0" "$HYPRARCH2_TARGET/.config/gtk-4.0"
+			link_one "$dotfiles/gtk/.gtkrc-2.0" "$HYPRARCH2_TARGET/.gtkrc-2.0"
 			link_one "$dotfiles/ghostty" "$HYPRARCH2_TARGET/.config/ghostty"
 			link_one "$dotfiles/btop" "$HYPRARCH2_TARGET/.config/btop"
 			link_one "$dotfiles/dunst" "$HYPRARCH2_TARGET/.config/dunst"
-			link_one "$dotfiles/gtk" "$HYPRARCH2_TARGET/.config/gtk"
 			link_one "$dotfiles/hypr" "$HYPRARCH2_TARGET/.config/hypr"
 			link_one "$dotfiles/nvim" "$HYPRARCH2_TARGET/.config/nvim"
 			link_one "$dotfiles/rofi" "$HYPRARCH2_TARGET/.config/rofi"
