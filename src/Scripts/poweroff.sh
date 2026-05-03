@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 
-# // ======= poweroff.sh ========
+# // ======= poweroff.sh =======
 
-# Define colors
-CYAN='\033[0;36m'
+set -euo pipefail
+
+YELLOW='\033[0;33m'
 RC='\033[0m'
 
-gum_prompt() {
-	if gum confirm "Are you sure you want to power off the system ?"; then
+func_main() {
+	if gum confirm ":: Are you sure you want to power off the system ?"; then
 		clear
-		gum spin --spinner points --title "Running poweroff.sh ..." --padding "2 2" --spinner.foreground "112" --title.foreground "10" -- sleep 3
-		main_function
+		gum spin --spinner points --title "Shutting down..." --padding "2 2" --spinner.foreground "112" --title.foreground "10" -- sleep 3
+		systemctl poweroff
 	elif [ $? -eq 130 ]; then
 		exit 130
 	else
@@ -18,23 +19,10 @@ gum_prompt() {
 	fi
 }
 
-main_function() {
+if command -v "gum" >/dev/null 2>&1; then
+	func_main
+else
 	clear
-	echo -e "${CYAN}"
-	echo "Poweroff in..."
-	echo "5..."
-	sleep 1
-	echo "4..."
-	sleep 1
-	echo "3..."
-	sleep 1
-	echo "2..."
-	sleep 1
-	echo "1..."
-	sleep 1
-	echo "Good bye!"
-	sleep 1
-	echo -e "${RC}"
+	echo -e "${YELLOW}:: Shutting down...${RC}" && sleep 3
 	systemctl poweroff
-}
-gum_prompt
+fi

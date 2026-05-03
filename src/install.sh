@@ -340,21 +340,25 @@ func_main() {
 
 verify_install() {
 	echo -e "${YELLOW};; Verifying if all essential files are copied...${RC}"
+
 	if [[ -f "$HYPRARCH2_TARGET/.bashrc" ]]; then
 		echo -e "${CYAN};; ~/.bashrc initialization successful!${RC}"
 	else
 		echo -e "${RED};; Failed to initialize ~/.bashrc...${RC}"
 	fi
+
 	if [[ -d "$HYPRARCH2_TARGET/.version" ]]; then
 		echo -e "${CYAN};; Found ~/.version/ directory!${RC}"
 	else
 		echo -e "${RED};; ~/.version/ not found...${RC}"
 	fi
+
 	if [[ -d "$HYPRARCH2_TARGET/src" ]]; then
 		echo -e "${CYAN};; Found ~/src/ directory!${RC}"
 	else
 		echo -e "${RED};; ~/src/ not found...${RC}"
 	fi
+
 	if [[ -d "$HYPRARCH2_TARGET/dotfiles" ]]; then
 		echo -e "${CYAN};; Found ~/dotfiles/ directory!${RC}"
 	else
