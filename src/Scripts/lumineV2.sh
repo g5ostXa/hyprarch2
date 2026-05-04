@@ -55,7 +55,7 @@ main() {
 			exit 0
 		fi
 	else
-		echo -e "${RED}Failed to define BRIGHTNESSCTL_LEVEL, aboting...${RC}"
+		echo -e "${RED}Failed to define BRIGHTNESSCTL_LEVEL, aborting...${RC}"
 		exit 1
 	fi
 }
