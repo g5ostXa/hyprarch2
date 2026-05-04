@@ -5,7 +5,7 @@
 # Set exit on error
 set -euo pipefail
 
-# Check if feglet is installed and print banner
+# Check if figlet is installed and print banner
 is_installed_figlet() {
 	if ! command -v figlet >/dev/null 2>&1; then
 		clear
