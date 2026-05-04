@@ -1,9 +1,4 @@
 ## Contributing to **hyprarch2**
-What branch name to use to submit a PR:
-- Please use `dev-main-1` or `g5ostXa-patch-1`. If they already exists, use `dev-main-2`, `g5ostXa-patch-2`, etc.
-
-These below are only examples to give you some kind of starting point for contributing. \
-No need to worry about it, just contribute the way you want.
 
 ### Code of Conduct
 By participating you agree to the project’s [`Code of Conduct`](/CODE_OF_CONDUCT.md).
@@ -25,3 +20,4 @@ By participating you agree to the project’s [`Code of Conduct`](/CODE_OF_CONDU
 
 ### Maintainer
 - @g5ostXa (project owner)
+
