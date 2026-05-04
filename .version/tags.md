@@ -32,3 +32,4 @@
 
 - **Version 1.4**
   - https://github.com/g5ostXa/hyprarch2/tree/v1.4
+  - https://github.com/g5ostXa/hyprarch2/tree/v1.4.1

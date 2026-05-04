@@ -32,4 +32,4 @@
 
 - **Version 1.4**
   - https://github.com/g5ostXa/hyprarch2/releases/tag/v1.4
-  
+  - https://github.com/g5ostXa/hyprarch2/releases/tag/v1.4.1
