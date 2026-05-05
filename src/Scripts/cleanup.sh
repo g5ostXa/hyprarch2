@@ -10,8 +10,7 @@ case "${1:-}" in
 -n | --dry-run)
 	dry_run=true
 	;;
-"")
-	;;
+"") ;;
 *)
 	echo "Usage: $0 [--dry-run]"
 	exit 2
