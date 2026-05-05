@@ -1,71 +1,86 @@
-name: Checks
+name: CI
 
 on:
   push:
-    branches: [ "master", "dev-main-1", "g5ostXa-patch-1" ]
+    branches:
+      - "**"
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - "**"
+  merge_group:
   workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   checks:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check out the repository
+      - name: Check out repository
         uses: actions/checkout@v6
 
-      - name: Check if README.md and .version exist
+      - name: Install check tools
         run: |
           set -euo pipefail
-          if [ ! -f README.md ]; then
-            echo "README.md is missing!"
-            exit 1
-          fi
-          if [ ! -d ".version" ]; then
-            echo ".version directory is missing!"
-            exit 1
-          fi
-          echo "Required files are present."
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends shellcheck shfmt jq yamllint
 
-      - name: Syntax check for install.sh
+      - name: Verify required project paths
         run: |
           set -euo pipefail
-          if [ -f src/install.sh ]; then
-            shellcheck src/install.sh || {
-              echo "Syntax check failed for install.sh"
+          for path in README.md .version src dotfiles; do
+            if [ ! -e "$path" ]; then
+              echo "Missing required path: $path"
               exit 1
-            }
-            echo "install.sh passed syntax check."
-          else
-            echo "install.sh not found..."
+            fi
+          done
+          echo "Required paths are present."
+
+      - name: Format shell scripts in src with shfmt
+        run: |
+          set -euo pipefail
+          find src -type f -name '*.sh' -print0 | xargs -0 -r shfmt -w
+
+      - name: Commit shell formatting on push
+        if: github.event_name == 'push'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Apply shfmt to src shell scripts
+          file_pattern: "src/**/*.sh"
+
+      - name: Require committed shell formatting
+        if: github.event_name != 'push'
+        run: |
+          set -euo pipefail
+          if ! git diff --quiet -- src; then
+            echo "shfmt changed files in src/. Run: find src -type f -name '*.sh' -print0 | xargs -0 -r shfmt -w"
+            git --no-pager diff -- src
             exit 1
           fi
 
-      - name: Validate configuration files in dotfiles directory
+      - name: Lint shell scripts with shellcheck
         run: |
           set -euo pipefail
-          find dotfiles -type f \( -name "*.conf" -o -name "*.yml" -o -name "*.json" \) | while read -r file; do
+          find src -type f -name '*.sh' -print0 | xargs -0 -r shellcheck
+
+      - name: Validate JSON/YAML files in dotfiles
+        run: |
+          set -euo pipefail
+
+          while IFS= read -r -d '' file; do
             case "$file" in
               *.json)
-                # Remove comments before validation
-                sed -E '/^\s*\/\//d; s/\/\*.*\*\///' "$file" | jq empty || {
-                  echo "JSON validation failed for $file"
-                  exit 1
-                }
-                echo "JSON valid: $file"
+                jq empty "$file"
                 ;;
-              *.yml)
-                yamllint "$file" || {
-                  echo "YAML validation failed for $file"
-                  exit 1
-                }
-                echo "YAML valid: $file"
-                ;;
-              *.conf)
-                echo "$file is assumed valid."
-                ;;
-              *)
-                echo "Skipping $file (not a recognized config type)."
+              *.yml|*.yaml)
+                yamllint "$file"
                 ;;
             esac
-          done
+            echo "Validated: $file"
+          done < <(find dotfiles -type f \( -name '*.json' -o -name '*.yml' -o -name '*.yaml' \) -print0)
