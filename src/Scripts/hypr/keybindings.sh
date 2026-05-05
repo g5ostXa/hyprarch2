@@ -5,6 +5,7 @@
 # Parse and load keybinds
 config_file=~/.config/hypr/conf/keybindings.conf
 keybinds=$(grep -oP '(?<=bind = ).*' $config_file)
+# shellcheck disable=SC2016
 keybinds=$(echo "$keybinds" | sed 's/$mainMod/SUPER/g' | sed 's/,\([^,]*\)$/ = \1/' | sed 's/, exec//g' | sed 's/^,//g')
 
 # List all available keybinds in rofi
