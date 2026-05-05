@@ -8,7 +8,7 @@ d)
 	;;
 
 w)
-	if [ $(echo -e "Clear\nCancel" | rofi -dmenu -config ~/.config/rofi/config-short.rasi) == "Clear" ]; then
+	if [ "$(echo -e "Clear\nCancel" | rofi -dmenu -config ~/.config/rofi/config-short.rasi)" == "Clear" ]; then
 		cliphist wipe
 	fi
 	;;
