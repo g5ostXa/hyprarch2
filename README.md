@@ -27,7 +27,7 @@ If you like my project, feel free to  buy me a coffee, or simply give it a ⭐ !
 > [!WARNING]
 > Before you begin... 
 > - My dotfiles are meant to be installed via the installation process down below.
-> - Alot of it is very specific to me so if you're unfamiliar with [`hyprland`](https://hypr.land), I suggest you try [`mylinuxforwork's dotfiles`](https://github.com/mylinuxforwork/dotfiles) instead.
+> - A lot of it is very specific to me so if you're unfamiliar with [`hyprland`](https://hypr.land), I suggest you try [`mylinuxforwork's dotfiles`](https://github.com/mylinuxforwork/dotfiles) instead.
 > - This is NOT compatible with a different distro than upstream [`Arch`](https://archlinux.org).
 > - If installing on bare metal, do not forget to **backup your current installation** before proceeding.
 <br>
@@ -117,7 +117,7 @@ monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
 <br>
 
-Optionally, you can set you monitor(s) as env variables for extra compatibility. \
+Optionally, you can set your monitor(s) as env variables for extra compatibility. \
 Edit [`environment.conf`](/dotfiles/hypr/conf/environment.conf) and change the values of the following env variables to match your monitor(s):
 ```md
 # Monitor(s)
