@@ -30,7 +30,7 @@ alias r4in="unimatrix -n -s 96 -l o"
 # Specific to me
 alias Hy2="/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME"
 export CRUSH_GLOBAL_DATA="$HOME/.config/crush"
-export GITHUB_PROJECTS_DIR="$HOME/gh-projects"
+export PROJECTS_DIR="$HOME/Projects"
 
 # // ===== General ======
 export PATH=$PATH:"$HOME/.local/bin/"
