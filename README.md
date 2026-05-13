@@ -88,7 +88,7 @@ $ hyprctl reload
 ```
 <br>
 
-Alternatively, kill [`hyprland`](https://hypr.land) and reboot, in case you didn't do so after installing.
+Alternatively, kill [`hyprland`](https://hypr.land) and reboot, in case you haven't done so after installing.
 - From hyprland session:
 ```bash
 $ uwsm stop
