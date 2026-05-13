@@ -28,7 +28,7 @@ If you like my project, feel free to  buy me a coffee, or simply give it a ⭐ !
 > Before you begin... 
 > - My dotfiles are meant to be installed via the installation process down below.
 > - A lot of it is very specific to me so if you're unfamiliar with [`hyprland`](https://hypr.land), I suggest you try [`mylinuxforwork's dotfiles`](https://github.com/mylinuxforwork/dotfiles) instead.
-> - This is NOT compatible with a different distro than upstream [`Arch`](https://archlinux.org).
+> - This project only works with upstream [`Arch`](https://archlinux.org).
 > - If installing on bare metal, do not forget to **backup your current installation** before proceeding.
 <br>
 
