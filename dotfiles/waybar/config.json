@@ -68,8 +68,8 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "active": "",
-      "default": ""
+      "active": "♦",
+      "default": "◦"
     },
     "persistent-workspaces": {
       "*": 4
@@ -226,7 +226,7 @@
     "max-length": 7,
     "on-scroll-up": "uwsm app -- brightnessctl set 1%+",
     "on-scroll-down": "uwsm app -- brightnessctl set 1%-",
-    "on-click": "uwsm app -- ghostty -e ~/src/Scripts/lumineV2.sh",
+    "on-click": "uwsm app -- ghostty -e ~/src/Scripts/lumineV3.sh",
     "tooltip": false
   },
   "battery": {
@@ -260,7 +260,7 @@
     }
   },
   "custom/power_menu": {
-    "format": "󰤄",
+    "format": "☾",
     "on-click": "uwsm app -- wlogout",
     "tooltip-format": "wlogout"
   },
