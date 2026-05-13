@@ -29,7 +29,7 @@ HYPRARCH2_TARGET="${HYPRARCH2_TARGET:-$HOME}"
 export HYPRARCH2_SOURCE
 export HYPRARCH2_TARGET
 
-install_greeter() {
+start_install() {
 	clear
 	echo -e "${CYAN}"
 	cat <<"EOF"
@@ -330,36 +330,8 @@ func_main() {
 	create_symlinks
 }
 
-verify_install() {
-	echo -e "${YELLOW};; Verifying if all essential files are copied...${RC}"
-
-	if [[ -f "$HYPRARCH2_TARGET/.bashrc" ]]; then
-		echo -e "${CYAN};; ~/.bashrc initialization successful!${RC}"
-	else
-		echo -e "${RED};; Failed to initialize ~/.bashrc...${RC}"
-	fi
-
-	if [[ -d "$HYPRARCH2_TARGET/.version" ]]; then
-		echo -e "${CYAN};; Found ~/.version/ directory!${RC}"
-	else
-		echo -e "${RED};; ~/.version/ not found...${RC}"
-	fi
-
-	if [[ -d "$HYPRARCH2_TARGET/src" ]]; then
-		echo -e "${CYAN};; Found ~/src/ directory!${RC}"
-	else
-		echo -e "${RED};; ~/src/ not found...${RC}"
-	fi
-
-	if [[ -d "$HYPRARCH2_TARGET/dotfiles" ]]; then
-		echo -e "${CYAN};; Found ~/dotfiles/ directory!${RC}"
-	else
-		echo -e "${RED};; ~/dotfiles/ not found...${RC}"
-	fi
-}
-
-install_greeter
-verify_install
+# Script entry point
+start_install
 
 echo -e "${CYAN}"
 echo ";; hyprarch2 dotfiles are now installed!"
