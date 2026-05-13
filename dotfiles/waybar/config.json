@@ -260,7 +260,7 @@
     }
   },
   "custom/power_menu": {
-    "format": "☾",
+    "format": "󰤄",
     "on-click": "uwsm app -- wlogout",
     "tooltip-format": "wlogout"
   },
