@@ -152,8 +152,8 @@ General keybinds:
 - `SUPER` + `SHIFT` + `B` : reload waybar 
 - `SUPER` + `CTRL` + `Q` : logout
 - `SUPER` + `Q` : kill active window
-- `SUPER` + `SHIFT` +`N` : toggle hypridle
-- `SUPER` + `CTRL` +`M` : kill hyprland
+- `SUPER` + `SHIFT` + `N` : toggle hypridle
+- `SUPER` + `CTRL` + `M` : kill hyprland
 
 ## 📸 `Screenshots`
 <img src="/assets/screenshots/h2sc1.png"/>
