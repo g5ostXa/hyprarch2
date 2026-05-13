@@ -163,7 +163,6 @@ check_depends() {
 		"eza"
 		"swappy"
 		#"firefox-nightly-bin"
-		"vscodium-bin"
 		"ccache"
 		"jq"
 		"pacman-contrib"
@@ -171,6 +170,7 @@ check_depends() {
 		"ttf-0xproto-nerd"
 		"grim"
 		"bubblewrap"
+		"btop"
 		"gum"
 		"figlet"
 	)
@@ -178,7 +178,9 @@ check_depends() {
 		read -r -p ";; Install all required packages now? (y/n): " yn
 		case $yn in
 		[Yy]*)
-			echo ">> Installing dependencies..."
+			echo -e "${CYAN}>> Installing dependencies...${RC}"
+			echo -e "${CYAN}>> Note: firefox-nightly won't be installed by default, please install your browser after the installation has finished.${RC}"
+			sleep 3
 			paru -S --needed "${h2depends[@]}" || exit 1
 			break
 			;;
@@ -268,50 +270,38 @@ get_wallpaper() {
 	done
 }
 
-link_one() {
-	local src="$1"
-	local dest="$2"
-
-	if [[ ! -e "$src" && ! -L "$src" ]]; then
-		echo -e "${YELLOW};; Missing source, skipping: $src${RC}"
-		return 0
-	fi
-
-	backup_existing "$dest"
-	ln -s -- "$src" "$dest"
-}
-
 create_symlinks() {
 	while true; do
 		read -r -p ";; Do you want to symlink my dotfiles to your ~/.config/ folder? (Yy/Nn): " yn
 		case $yn in
 		[Yy]*)
 			echo ";; Creating symlinks ..."
-			mkdir -p "$HYPRARCH2_TARGET/.config"
 
-			local dotfiles="$HYPRARCH2_TARGET/dotfiles"
+			if [ ! -d "$HOME/.config" ]; then
+				mkdir -p "$HOME/.config"
+			fi
 
-			link_one "$dotfiles/gtk/.Xresources" "$HYPRARCH2_TARGET/.Xresources"
-			link_one "$dotfiles/gtk/gtk-3.0" "$HYPRARCH2_TARGET/.config/gtk-3.0"
-			link_one "$dotfiles/gtk/gtk-4.0" "$HYPRARCH2_TARGET/.config/gtk-4.0"
-			link_one "$dotfiles/gtk/.gtkrc-2.0" "$HYPRARCH2_TARGET/.gtkrc-2.0"
-			link_one "$dotfiles/ghostty" "$HYPRARCH2_TARGET/.config/ghostty"
-			link_one "$dotfiles/btop" "$HYPRARCH2_TARGET/.config/btop"
-			link_one "$dotfiles/dunst" "$HYPRARCH2_TARGET/.config/dunst"
-			link_one "$dotfiles/hypr" "$HYPRARCH2_TARGET/.config/hypr"
-			link_one "$dotfiles/nvim" "$HYPRARCH2_TARGET/.config/nvim"
-			link_one "$dotfiles/rofi" "$HYPRARCH2_TARGET/.config/rofi"
-			link_one "$dotfiles/starship/starship.toml" "$HYPRARCH2_TARGET/.config/starship.toml"
-			link_one "$dotfiles/swappy" "$HYPRARCH2_TARGET/.config/swappy"
-			link_one "$dotfiles/vim" "$HYPRARCH2_TARGET/.config/vim"
-			link_one "$dotfiles/wal" "$HYPRARCH2_TARGET/.config/wal"
-			link_one "$dotfiles/waybar" "$HYPRARCH2_TARGET/.config/waybar"
-			link_one "$dotfiles/wlogout" "$HYPRARCH2_TARGET/.config/wlogout"
-			link_one "$dotfiles/fastfetch" "$HYPRARCH2_TARGET/.config/fastfetch"
-			link_one "$dotfiles/fish" "$HYPRARCH2_TARGET/.config/fish"
-			link_one "$dotfiles/pacseek" "$HYPRARCH2_TARGET/.config/pacseek"
-			link_one "$dotfiles/waypaper" "$HYPRARCH2_TARGET/.config/waypaper"
-			link_one "$dotfiles/uwsm" "$HYPRARCH2_TARGET/.config/uwsm"
+			ln -s ~/dotfiles/gtk/.Xresources ~/
+			ln -s ~/dotfiles/gtk/gtk-3.0 ~/.config/gtk-3.0
+			ln -s ~/dotfiles/gtk/gtk-4.0 ~/.config/gtk-4.0
+			ln -s ~/dotfiles/gtk/.gtkrc-2.0 ~/
+			ln -s ~/dotfiles/ghostty ~/.config
+			ln -s ~/dotfiles/btop ~/.config
+			ln -s ~/dotfiles/dunst ~/.config
+			ln -s ~/dotfiles/hypr ~/.config
+			ln -s ~/dotfiles/nvim ~/.config
+			ln -s ~/dotfiles/rofi ~/.config
+			ln -s ~/dotfiles/starship/starship.toml ~/.config
+			ln -s ~/dotfiles/swappy ~/.config
+			ln -s ~/dotfiles/vim ~/.config
+			ln -s ~/dotfiles/wal ~/.config
+			ln -s ~/dotfiles/waybar ~/.config
+			ln -s ~/dotfiles/wlogout ~/.config
+			ln -s ~/dotfiles/fastfetch ~/.config
+			ln -s ~/dotfiles/fish ~/.config
+			ln -s ~/dotfiles/pacseek ~/.config
+			ln -s ~/dotfiles/waypaper ~/.config
+			ln -s ~/dotfiles/uwsm ~/.config
 			echo ";; DONE."
 			break
 			;;
