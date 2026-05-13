@@ -163,7 +163,6 @@ check_depends() {
 		"eza"
 		"swappy"
 		#"firefox-nightly-bin"
-		"vscodium-bin"
 		"ccache"
 		"jq"
 		"pacman-contrib"
@@ -171,6 +170,7 @@ check_depends() {
 		"ttf-0xproto-nerd"
 		"grim"
 		"bubblewrap"
+		"btop"
 		"gum"
 		"figlet"
 	)
