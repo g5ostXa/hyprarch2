@@ -71,7 +71,7 @@ If using a `VM`, uncomment the following in `~/hyprarch2/dotfiles/hypr/hyprland.
 
 Once you're all set, run [`install.sh`](src/install.sh) from `~/hyprarch2/src/`:
 ```bash
-$ cd "$HOME/hyprarch2/src && ./install.sh
+$ cd "$HOME/hyprarch2/src" && ./install.sh
 ```
 <br>
 
