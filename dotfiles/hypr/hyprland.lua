@@ -1,3 +1,33 @@
+-- [MOCHA-COLORS]:
+local mocha = {
+    rosewater = 0xfff5e0dc,
+    flamingo  = 0xfff2cdcd,
+    pink      = 0xfff5c2e7,
+    mauve     = 0xffcba6f7,
+    red       = 0xfff38ba8,
+    maroon    = 0xffeba0ac,
+    peach     = 0xfffab387,
+    yellow    = 0xfff9e2af,
+    green     = 0xffa6e3a1,
+    teal      = 0xff94e2d5,
+    sky       = 0xff89dceb,
+    sapphire  = 0xff74c7ec,
+    blue      = 0xff89b4fa,
+    lavender  = 0xffb4befe,
+    text      = 0xffcdd6f4,
+    subtext1  = 0xffbac2de,
+    subtext0  = 0xffa6adc8,
+    overlay2  = 0xff9399b2,
+    overlay1  = 0xff7f849c,
+    overlay0  = 0xff6c7086,
+    surface2  = 0xff585b70,
+    surface1  = 0xff45475a,
+    surface0  = 0xff313244,
+    base      = 0xff1e1e2e,
+    mantle    = 0xff181825,
+    crust     = 0xff11111b,
+}
+
 -- [MONITORS]:
 -- eDP-1:
 hl.monitor({
@@ -15,14 +45,6 @@ hl.monitor({
     scale = 1
 })
 
--- Virtual-1:
--- hl.monitor({
--- output = "Virtual-1",
--- mode = "2048x1080@59.998",
--- position = "0x0",
--- scale = 1
--- })
-
 -- [ENVIRONMENT]:
 -- General:
 hl.env("XCURSOR_SIZE", "24")
@@ -37,7 +59,6 @@ hl.env("XDG_SESSION_DESKTOP", "hyprland")
 -- Monitors:
 hl.env("PRIMARY_MONITOR", "eDP-1")
 hl.env("SECONDARY_MONITOR", "HDMI-A-1")
--- hl.env("VIRTUAL_MONITOR", "Virtual-1")
 
 -- GTK:
 hl.env("GKD_SCALE", "1")
@@ -66,8 +87,8 @@ hl.config({
         border_size = 2,
         layout = "dwindle",
         col = {
-            active_border = 0xFF000000,
-            inactive_border = 0x00000000,
+            active_border = mocha.mauve,
+            inactive_border = mocha.surface0,
         },
         resize_on_border = true,
     },
@@ -91,7 +112,7 @@ hl.config({
             enabled = true,
             range = 30,
             render_power = 4,
-            color = 0x66000000,
+            color = mocha.crust,
         }
     },
 
@@ -128,6 +149,7 @@ hl.config({
 })
 
 -- [ANIMATIONS]:
+-- High:
 hl.config({
     animations = {
         enabled = true,
@@ -151,6 +173,7 @@ hl.config({
 })
 
 --[[
+-- Low:
 hl.config({
     animations = {
         enabled = true,
@@ -168,3 +191,112 @@ hl.config({
     },
 })
 --]]
+
+-- [VIRTUAL-MACHINE-ENVIRONMENT]:
+--[[
+hl.env("WLR_RENDERER_ALLOW_SOFTWARE", "1")
+
+hl.config({
+    cursor = {
+        no_hardware_cursors = true,
+    },
+})
+--]]
+
+-- [WINDOW-RULES]:
+hl.windowrule({
+    class = "^(Pavucontrol)$",
+    float = true,
+    pin = true,
+    size = { 900, 600 }
+})
+
+hl.windowrule({
+    class = "^(waypaper)$",
+    float = true,
+    pin = true,
+    size = { 900, 600 }
+})
+
+hl.windowrule({
+    class = "^(nm-connection-editor)$",
+    float = true,
+    pin = true,
+    size = { 900, 600 }
+})
+
+hl.windowrule({
+    class = "^(localsend)$",
+    float = true,
+    pin = true,
+    size = { 900, 600 }
+})
+
+hl.windowrule({
+    class = "^(proton-authenticator)$",
+    float = true,
+    pin = true,
+    size = { 900, 600 }
+})
+
+-- [KEYBINDINGS]:
+local mainMod = "SUPER"
+
+-- Custom:
+hl.bind(mainMod .. " CTRL", "H", "exec", "~/src/Scripts/hypr/keybindings.sh")
+hl.bind(mainMod, "PRINT", "exec", "~/src/Scripts/screenshot.sh")
+hl.bind(mainMod .. " SHIFT", "B", "exec", "~/src/Scripts/waybar/launch.sh")
+hl.bind(mainMod .. " CTRL", "C", "exec", "~/src/Scripts/cliphist.sh")
+hl.bind(mainMod .. " CTRL", "M", "exec", "~/src/Scripts/hypr/killhypr.sh")
+hl.bind(mainMod .. " SHIFT", "N", "exec", "~/src/Scripts/hypr/hypridle.sh")
+hl.bind(mainMod .. " SHIFT", "V", "exec", "~/src/Scripts/hypr/monitor-toggle.sh")
+hl.bind(mainMod, "RETURN", "exec", "uwsm app -- ghostty")
+hl.bind(mainMod, "E", "exec", "uwsm app -- ~/src/Scripts/sandboxes/bwrap-nautilus.sh")
+hl.bind(mainMod, "B", "exec", "uwsm app -- firefox-nightly")
+hl.bind(mainMod, "W", "exec", "uwsm app -- waypaper")
+hl.bind(mainMod .. " CTRL", "O", "exec", "uwsm app -- firejail --apparmor obsidian")
+hl.bind(mainMod .. " CTRL", "RETURN", "exec", "rofi -show drun")
+hl.bind(mainMod .. " CTRL", "Q", "exec", "uwsm app -- wlogout")
+hl.bind(mainMod .. " SHIFT", "P", "exec", "uwsm app -- firejail --apparmor proton-authenticator")
+
+-- General:
+hl.bind(mainMod, "Q", "killactive")
+hl.bind(mainMod, "F", "fullscreen")
+hl.bind(mainMod, "T", "togglefloating")
+hl.bind(mainMod .. " SHIFT", "T", "exec", "hyprctl dispatch workspaceopt allfloat")
+hl.bind(mainMod, "left", "movefocus", "l")
+hl.bind(mainMod, "right", "movefocus", "r")
+hl.bind(mainMod, "up", "movefocus", "u")
+hl.bind(mainMod, "down", "movefocus", "d")
+
+-- Navigate workspaces:
+for i = 1, 9 do
+    hl.bind(mainMod, tostring(i), "workspace", tostring(i))
+end
+hl.bind(mainMod, "0", "workspace", "10")
+
+-- Move window to any workspace:
+for i = 1, 9 do
+    hl.bind(mainMod .. " SHIFT", tostring(i), "movetoworkspace", tostring(i))
+end
+hl.bind(mainMod .. " SHIFT", "0", "movetoworkspace", "10")
+
+-- Misc:
+hl.bind(mainMod, "mouse_down", "workspace", "e+1")
+hl.bind(mainMod, "mouse_up", "workspace", "e-1")
+hl.bindm(mainMod, "mouse:272", "movewindow")
+hl.bindm(mainMod, "mouse:273", "resizewindow")
+hl.bind(mainMod .. " SHIFT", "right", "resizeactive", "100 0")
+hl.bind(mainMod .. " SHIFT", "left", "resizeactive", "-100 0")
+hl.bind(mainMod .. " SHIFT", "up", "resizeactive", "0 -100")
+hl.bind(mainMod .. " SHIFT", "down", "resizeactive", "0 100")
+hl.binde("", "XF86MonBrightnessUp", "exec", "brightnessctl -q s +20%")
+hl.binde("", "XF86MonBrightnessDown", "exec", "brightnessctl -q s 20%-")
+
+-- [MISCELLANEOUS]:
+hl.config({
+    misc = {
+        disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+    },
+})
