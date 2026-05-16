@@ -209,27 +209,26 @@ backup_existing() {
 src_copy() {
 	mkdir -p "$HYPRARCH2_TARGET"
 	echo -e "${CYAN};; Copying assets/ ...${RC}"
-
 	backup_existing "$HYPRARCH2_TARGET/assets"
 	cp -a "$HYPRARCH2_SOURCE/assets" "$HYPRARCH2_TARGET/assets"
 	echo ";; DONE."
-	echo -e "${CYAN};; Copying dotfiles/ ...${RC}"
 
+	echo -e "${CYAN};; Copying dotfiles/ ...${RC}"
 	backup_existing "$HYPRARCH2_TARGET/dotfiles"
 	cp -a "$HYPRARCH2_SOURCE/dotfiles" "$HYPRARCH2_TARGET/dotfiles"
 	echo ";; DONE."
-	echo -e "${CYAN};; Copying src/ ...${RC}"
 
+	echo -e "${CYAN};; Copying src/ ...${RC}"
 	backup_existing "$HYPRARCH2_TARGET/src"
 	cp -a "$HYPRARCH2_SOURCE/src" "$HYPRARCH2_TARGET/src"
 	echo ";; DONE."
-	echo -e "${CYAN};; Copying .version/ ...${RC}"
 
+	echo -e "${CYAN};; Copying .version/ ...${RC}"
 	backup_existing "$HYPRARCH2_TARGET/.version"
 	cp -a "$HYPRARCH2_SOURCE/.version" "$HYPRARCH2_TARGET/.version"
 	echo ";; DONE."
-	echo -e "${CYAN};; Copying issue file ...${RC}"
 
+	echo -e "${CYAN};; Copying issue file ...${RC}"
 	if [[ -f "/etc/issue" ]]; then
 		sudo cp -a "/etc/issue" "/etc/issue_backup"
 	fi

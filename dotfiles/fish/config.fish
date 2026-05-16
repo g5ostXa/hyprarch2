@@ -14,9 +14,6 @@ alias Hy2in='~/src/Scripts/hypr/start-hypr.sh'
 alias Hy2out='~/src/Scripts/hypr/killhypr.sh'
 alias lumine='~/src/Scripts/lumineV3.sh'
 alias r4in='unimatrix -n -s 96 -l o'
-
-# Specific to me
-alias Hy2='/usr/bin/git --git-dir=$HOME/.hyprarch2/ --work-tree=$HOME'
 end
 
 # // ===== STARSHIP INIT =====
