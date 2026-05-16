@@ -1,11 +1,11 @@
 format = """
-[░▒▓](#1d2230)\
-[ ](bg:#1d2230 fg:#FFFFFF)\
+[░▒▓](#1D2230)\
+[󰷖 ](bg:#1D2230 fg:#7B0DEA)\
 $directory\
 $git_branch\
 $git_status\
 $time\
-[ ](fg:#1d2230)\
+[ ](fg:#1D2230)\
 \n$character"""
 
 [character]
@@ -18,7 +18,7 @@ vimcmd_replace_symbol = '[](bold fg:color_purple)'
 vimcmd_visual_symbol = '[](bold green)'
 
 [directory]
-style = "fg:#FFFFFF bg:#1D2230"
+style = "fg:#00FF87 bg:#1D2230"
 format = "[ $path ]($style)"
 
 [directory.substitutions]
@@ -62,5 +62,5 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:#1D2230)]($style)'
 [time]
 disabled = true
 time_format = "%R" # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+style = "bg:#000000"
+format = '[[  $time ](fg:#a0a9cb bg:#000000)]($style)'
