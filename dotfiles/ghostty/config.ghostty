@@ -1,8 +1,16 @@
+# Theme:
 theme = Catppuccin Mocha
+
+# Font:
 font-size = 15 
-background-opacity = 0.85
+
+# Opacity:
+# background-opacity = 0.85
+
+# Cursor:
 cursor-style = bar
 cursor-style-blink = true 
+
+# Window:
 window-padding-x = 15
 window-padding-y = 15
-
