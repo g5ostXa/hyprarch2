@@ -38,7 +38,7 @@ If you like my project, feel free to  buy me a coffee, or simply give it a ⭐ !
 If you have not done so already, you need to install [`Archlinux`](https://archlinux.org).\
 It is recommended to have a minimal, up-to-date arch-base installation.
 
-In your new [`Arch`](https://archlinux.org/) install, make sure **all needed dependencies** are installed before installing [`hyprarch2`](/):
+In your new [`Arch`](https://archlinux.org/) install, make sure **all needed dependencies** are installed before installing [`hyprarch2`](https://github.com/g5ostXa/hyprarch2):
 ```ruby
 $ sudo pacman -S --needed --noconfirm go git reflector xdg-utils xdg-user-dirs vim networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers
 ```
