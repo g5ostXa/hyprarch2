@@ -2,7 +2,7 @@
 theme = Catppuccin Mocha
 
 # Font:
-font-size = 15 
+font-size = 17 
 
 # Opacity:
 background-opacity = 0.85

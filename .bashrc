@@ -2,7 +2,7 @@
 #     / /  ___ ____ / /  ________
 #    / _ \/ _ `(_-</ _ \/ __/ __/
 # (_)_.__/\_,_/___/_//_/_/  \__/
-# 
+#
 # ~/.bashrc
 #
 # =============================================
@@ -28,28 +28,37 @@ alias lumine="~/src/Scripts/lumineV3.sh"
 alias r4in="unimatrix -n -s 96 -l o"
 
 # // ===== General ======
-export HYPRARCH2_VERSION=$(cat "$HOME/.version/latest")
+export PATH="$HOME/src:$HOME/.local/bin:$PATH"
+export HYPRARCH2_VERSION_FILE="$HOME/.version/latest"
+if [[ -f "$HYPRARCH2_VERSION_FILE" ]]; then
+	export HYPRARCH2_VERSION=$(cat "$HYPRARCH2_VERSION_FILE")
+else
+	export HYPRARCH2_VERSION="unknown"
+fi
 
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
 
 if [[ $(tty) == *"pts"* ]]; then
-	echo -e "${MAGENTA}"
-	cat <<"EOF"
+	if command -v cvndyfetch >/dev/null 2>&1; then
+		cvndyfetch
+	else
+		echo -e "${MAGENTA}"
+		cat <<"EOF"
    __                              __   ___
   / /  __ _____  _______ _________/ /  |_  |
  / _ \/ // / _ \/ __/ _ `/ __/ __/ _ \/ __/
 /_//_/\_, / .__/_/  \_,_/_/  \__/_//_/____/
      /___/_/
 EOF
-	echo ""
-	echo "$HYPRARCH2_VERSION"
-	echo -e "${RC}"
+		echo ""
+		echo "$HYPRARCH2_VERSION"
+		echo -e "${RC}"
+	fi
 fi
 
 # // ===== Set fish interactively =====
-if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]
-then
+if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]; then
 	shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
 	exec fish $LOGIN_OPTION
 fi
