@@ -315,6 +315,60 @@ create_symlinks() {
 	done
 }
 
+# This is an optional extra for a better looking prompt header.
+# Visit https://github.com/g5ostXa/cvndyfetch for more info.
+get_cvndyfetch() {
+	local cvndy_src="https://github.com/g5ostXa/cvndyfetch.git"
+	local cvndy_cache="$HYPRARCH2_TARGET/.cache/cvndyfetch"
+	local cvndy_bin="$HYPRARCH2_TARGET/src/cvndyfetch"
+	local cvndy_build_bin="$cvndy_cache/cvndyfetch"
+	local -a build_flags=(
+		"-ldflags"
+		"-X main.mainTitle=hyprarch2 -X main.latestVersion=.version/latest"
+	)
+
+	while true; do
+		read -r -p ";; Install cvndyfetch for an elegant prompt header? (Optional) (Yy/Nn): " yn
+		case $yn in
+		[Yy]*)
+			if ! command -v "go" >/dev/null 2>&1; then
+				echo -e "${YELLOW};; Go is required to build cvndyfetch.${RC}"
+				if ! sudo pacman -S --needed --noconfirm go; then
+					echo -e "${YELLOW};; Could not install Go, skipping cvndyfetch.${RC}"
+					return
+				fi
+			fi
+
+			echo -e "${YELLOW};; Cloning latest cvndyfetch ...${RC}"
+			rm -rf "$cvndy_cache"
+			mkdir -p "$(dirname "$cvndy_cache")" "$(dirname "$cvndy_bin")"
+
+			if ! git clone --depth=1 "$cvndy_src" "$cvndy_cache"; then
+				echo -e "${YELLOW};; Could not clone cvndyfetch, skipping optional prompt header.${RC}"
+				return
+			fi
+
+			echo -e "${CYAN};; Building cvndyfetch ...${RC}"
+			if (cd "$cvndy_cache" && go build "${build_flags[@]}" -o "$cvndy_build_bin" .); then
+				backup_existing "$cvndy_bin"
+				install -Dm755 "$cvndy_build_bin" "$cvndy_bin"
+				echo -e "${CYAN};; cvndyfetch installed to $cvndy_bin.${RC}"
+			else
+				echo -e "${YELLOW};; Could not build cvndyfetch, keeping the existing prompt header if one is already installed.${RC}"
+			fi
+			break
+			;;
+		[Nn]*)
+			echo ";; Skipping cvndyfetch."
+			return
+			;;
+		*)
+			echo ";; Please answer yes or no."
+			;;
+		esac
+	done
+}
+
 func_main() {
 	sudo -v
 
@@ -327,6 +381,7 @@ func_main() {
 	src_copy
 	get_wallpaper
 	create_symlinks
+	get_cvndyfetch
 }
 
 # Script entry point
