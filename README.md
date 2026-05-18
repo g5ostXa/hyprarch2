@@ -139,7 +139,6 @@ Visit [`🖥 Hyprland Wiki`](https://wiki.hypr.land/Configuring/Basics/Monitors/
 - Bar: `waybar`
 - File Manager: `nautilus`
 - Theming: `pywal16` / `GTK`
-- Editor: `neovim`
 
 ## ⌨️ `Keybinds`
 [` ➜ See all available keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
