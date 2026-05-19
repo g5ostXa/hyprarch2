@@ -80,7 +80,11 @@ check_paru() {
 			case $yn in
 			[Yy]*)
 				echo ";; Installing paru..."
-				mkdir -p "$HYPRARCH2_TARGET/.cache"
+
+				if [ ! -d "$HYPRARCH2_TARGET/.cache" ]; then
+					mkdir -p "$HYPRARCH2_TARGET/.cache"
+				fi
+
 				cd "$HYPRARCH2_TARGET/.cache" || exit 1
 
 				if [[ -d "paru" ]]; then
