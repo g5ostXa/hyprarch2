@@ -109,11 +109,14 @@ Here's an example configuration:
 # -------------------------------------------------------------------------------------
 
 # General:
-monitor=eDP-1,1920x1080@120.035,0x0,1
-monitor=HDMI-A-1,2048x1080@60.00,auto,1
+monitor=,preferred,auto,1
+
+# Examples:
+# monitor=eDP-1,1920x1080@120.035,0x0,1
+# monitor=HDMI-A-1,2048x1080@60.00,auto,1
 
 # Virtual machine:
-monitor=Virtual-1,2048x1080@60.00,0x0,1
+# monitor=Virtual-1,2048x1080@60.00,0x0,1
 ```
 <br>
 
