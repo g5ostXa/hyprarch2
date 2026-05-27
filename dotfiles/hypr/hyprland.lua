@@ -10,15 +10,15 @@
 
 -- Initialization:
 -- require("conf.monitor")
-require("conf.autostart")
+-- require("conf.autostart")
 
 -- General:
-require("conf.environment")
+-- require("conf.environment")
 -- require("conf.keyboard")
 -- Load ~/.cache/wal/colors-hyprland.conf ?
 -- require("conf.window")
 -- require("conf.layouts")
-require("conf.misc")
+-- require("conf.misc")
 -- require("conf.keybindings")
 -- require("conf.windowrules")
 -- require("conf.amimations")
