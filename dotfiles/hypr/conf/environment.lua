@@ -4,7 +4,7 @@
 
 -- General:
 hl.env("XCURSOR_SIZE", "24")
-hl.env("QT_QPA_PLATFORM", "wayland") -- Fixed: h1 -> hl
+hl.env("QT_QPA_PLATFORM", "wayland")
 hl.env("GTK_THEME", "Tokyonight-Dark:dark")
 
 -- XDG Desktop Portal:
