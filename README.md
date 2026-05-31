@@ -64,7 +64,7 @@ $ cd "$HOME" && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 ```
 <br>
 
-1> [!TIP]
+> [!TIP]
 > I usually set my monitor(s) before installing, but it's not required.
 > - See [`Monitor(s)`](https://github.com/g5ostXa/hyprarch2#%EF%B8%8F-monitors) section to learn more
 <br>
@@ -78,7 +78,7 @@ $ cd "$HOME/hyprarch2/src" && ./install.sh
 ## 💧 `Start Hyprland`
 Use the following command to start [`hyprland`](https://wiki.hypr.land):
 ```bash
-$ uwsm start hyprland
+$ start-hyprland
 ```
 <br>
 
