@@ -3,7 +3,7 @@
 # // ==== monitor-toggle.sh ====
 
 # Script to toggle laptop monitor on and off
-# Monitor(s) are define in .config/hypr/conf/environment.conf
+# Monitor(s) are define in .config/hypr/conf/environment.lua
 
 CURRENT_STATUS=$(hyprctl monitors -j | jq -r ".[] | select(.name==\"$PRIMARY_MONITOR\") | .dpmsStatus")
 
@@ -18,7 +18,7 @@ func_main() {
 }
 
 if [[ -z "$CURRENT_STATUS" ]]; then
-	notify-send --urgency=critical ":: Monitor not found..." "Please define your monitors in ~/.config/hypr/conf/environment.conf"
+	notify-send --urgency=critical ":: Monitor not found..." "Please define your monitors in ~/.config/hypr/conf/environment.lua"
 	exit 1
 else
 	func_main
