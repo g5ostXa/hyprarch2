@@ -21,5 +21,5 @@ hl.env("PRIMARY_MONITOR", "eDP-1")
 hl.env("GDK_SCALE", "1")
 
 -- Default Browser:
-hl.env("BROWSER", "firefox-nightly") -- Fixed: BRWOSER -> BROWSER
+hl.env("BROWSER", "firefox-nightly")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
