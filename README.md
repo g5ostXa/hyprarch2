@@ -2,8 +2,7 @@
   <img src="/assets/logos/hyprarch2-sx234.png" width="525" height="525"/>
     <p align="center">
          <img src="https://img.shields.io/github/actions/workflow/status/g5ostXa/hyprarch2/main.yml?style=flat&label=Build&color=B4BEFE&logo=github&logoColor=D9E0EE&labelColor=242438">
-         <img src="https://img.shields.io/github/stars/g5ostXa/hyprarch2?style=flat&logo=github&color=B4BEFE&logoColor=D9E0EE&labelColor=242438">
-      <a href="https://github.com/g5ostXa/hyprarch2">
+         <a href="https://github.com/g5ostXa/hyprarch2">
          <img src="https://img.shields.io/github/repo-size/g5ostXa/hyprarch2?style=flat&color=B4BEFE&label=SIZE&logo=googledrive&logoColor=D9E0EE&labelColor=242438">
       </a>
    </p>
