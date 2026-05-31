@@ -8,7 +8,6 @@ local defaultBrowser = "firefox-nightly"
 local defaultTerm    = "ghostty"
 
 -- Custom:
-hl.bind(mainMod .. " + CTRL + H", hl.dsp.exec_cmd("~/src/Scripts/hypr/keybindings.sh"))
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("~/src/Scripts/screenshot.sh"))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("~/src/Scripts/waybar/launch.sh"))
 hl.bind(mainMod .. " + CTRL + C", hl.dsp.exec_cmd("~/src/Scripts/cliphist.sh"))
