@@ -58,11 +58,6 @@ $ cd "$HOME" && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 ```
 <br>
 
-At this point, you may want to change a few things before installing. \
-If using a `VM`, uncomment the following in `~/hyprarch2/dotfiles/hypr/hyprland.conf`:
-```md
-# source = ~/.config/hypr/conf/kvm.conf
-```
 > [!TIP]
 > I usually set my monitor(s) before installing, but it's not required.
 > - See [`Monitor(s)`](https://github.com/g5ostXa/hyprarch2#%EF%B8%8F-monitors) section to learn more
@@ -77,7 +72,7 @@ $ cd "$HOME/hyprarch2/src" && ./install.sh
 ## 💧 `Start Hyprland`
 Use the following command to start [`hyprland`](https://wiki.hypr.land):
 ```bash
-$ uwsm start hyprland
+$ start-hyprland
 ```
 <br>
 
@@ -100,31 +95,36 @@ $ systemctl reboot
 <br>
 
 ## 🖥️ `Monitor(s)`
-To configure your monitor(s), you need to edit [`monitor.conf`](/dotfiles/hypr/conf/monitor.conf) \
+To configure your monitor(s), you need to edit [`monitor.lua`](/dotfiles/hypr/conf/monitor.lua) \
 Here's an example configuration:
-```md
-# -------------------------------------------------------------------------------------
-# Monitor Setup
-# -------------------------------------------------------------------------------------
+```lua
+--------------------
+----- Monitors -----
+--------------------
 
-# General:
-monitor=,preferred,auto,1
+hl.monitor({
+	output   = "",
+	mode     = "preferred",
+	position = "auto",
+	scale    = "1",
+})
 
-# Examples:
-# monitor=eDP-1,1920x1080@120.035,0x0,1
-# monitor=HDMI-A-1,2048x1080@60.00,auto,1
+-- Examples:
 
-# Virtual machine:
-# monitor=Virtual-1,2048x1080@60.00,0x0,1
+-- hl.monitor({
+--    	output    = "eDP-1",
+--    	mode      = "1920x1080@120.035",
+--    	position  = "2048x0",
+--    	scale     = "1",
+--})
 ```
 <br>
 
 Optionally, you can set your monitor(s) as env variables for extra compatibility. \
-Edit [`environment.conf`](/dotfiles/hypr/conf/environment.conf) and change the values of the following env variables to match your monitor(s):
-```md
-# Monitor(s)
-env = PRIMARY_MONITOR,<Monitor-1-name>
-env = SECONDARY_MONITOR,<Monitor-2-name>
+Edit [`environment.lua`](/dotfiles/hypr/conf/environment.lua) and change the values of the following env variables to match your monitor(s):
+```lua
+-- Monitor(s):
+hl.env("PRIMARY_MONITOR", "eDP-1")
 ```
 <br>
 
