@@ -135,8 +135,7 @@
   "custom/distro": {
     "format": "󰣇 hyprarch2",
     "tooltip": false,
-    "on-click": "uwsm app -- rofi -show drun -replace",
-    "on-click-right": "$HOME/src/Scripts/hypr/keybindings.sh"
+    "on-click": "uwsm app -- rofi -show drun -replace"
   },
   "clock#time": {
     "format": " {:%H:%M}",
