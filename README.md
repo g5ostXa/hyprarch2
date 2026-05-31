@@ -64,7 +64,7 @@ $ cd "$HOME" && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 ```
 <br>
 
-> [!TIP]
+1> [!TIP]
 > I usually set my monitor(s) before installing, but it's not required.
 > - See [`Monitor(s)`](https://github.com/g5ostXa/hyprarch2#%EF%B8%8F-monitors) section to learn more
 <br>
@@ -101,7 +101,7 @@ $ systemctl reboot
 <br>
 
 ## 🖥️ `Monitor(s)`
-To configure your monitor(s), you need to edit [`monitor.conf`](/dotfiles/hypr/conf/monitor.lua) \
+To configure your monitor(s), you need to edit [`monitor.lua`](/dotfiles/hypr/conf/monitor.lua) \
 Here's an example configuration:
 ```lua
 --------------------
@@ -127,7 +127,7 @@ hl.monitor({
 <br>
 
 Optionally, you can set your monitor(s) as env variables for extra compatibility. \
-Edit [`environment.conf`](/dotfiles/hypr/conf/environment.lua) and change the values of the following env variables to match your monitor(s):
+Edit [`environment.lua`](/dotfiles/hypr/conf/environment.lua) and change the values of the following env variables to match your monitor(s):
 ```lua
 -- Monitor(s):
 hl.env("PRIMARY_MONITOR", "eDP-1")
