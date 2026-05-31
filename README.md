@@ -67,7 +67,7 @@ $ cd "$HOME" && git clone --depth 1 https://github.com/g5ostXa/hyprarch2.git
 At this point, you may want to change a few things before installing. \
 If using a `VM`, uncomment the following in `~/hyprarch2/dotfiles/hypr/hyprland.conf`:
 ```md
-# source = ~/.config/hypr/conf/kvm.conf
+# source = ~/.config/hypr/conf/kvm.lua
 ```
 > [!TIP]
 > I usually set my monitor(s) before installing, but it's not required.
