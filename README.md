@@ -143,7 +143,7 @@ Visit [`🖥 Hyprland Wiki`](https://wiki.hypr.land/Configuring/Basics/Monitors/
 - Theming: `pywal16` / `GTK`
 
 ## ⌨️ `Keybinds`
-[` ➜ See all available keybindings here`](/dotfiles/hypr/conf/keybindings.conf)
+[` ➜ See all available keybindings here`](/dotfiles/hypr/conf/keybindings.lua)
 
 General keybinds:
 - `SUPER` + `RETURN` : ghostty
