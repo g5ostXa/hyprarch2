@@ -12,7 +12,7 @@
 > [!NOTE]
 > About hyprland migrating to lua...
 > - We are currently working on the transition, and the changes are done in `integrate-lua` branch.
-> - The config currently works in `integrate-lua` branch, but remains ioncomplete.
+> - The config currently works in `integrate-lua` branch, but remains incomplete.
 > - We'll do our best to ship the new configuration as soon as possible.
 
 ## :octocat: `Support`
