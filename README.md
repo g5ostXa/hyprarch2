@@ -9,6 +9,12 @@
 </div>
 <br>
 
+> [!NOTE]
+> About hyprland migrating to lua...
+> - We are currently working on the transition, and the changes are done in `integrate-lua` branch.
+> - The config currently works in `integrate-lua` branch, but remains ioncomplete.
+> - We'll do our best to ship the new configuration as soon as possible.
+
 ## :octocat: `Support`
 If you like my project, feel free to give it a ⭐ !
 ```neon
@@ -21,12 +27,6 @@ If you like my project, feel free to give it a ⭐ !
 [hypr@arch~]$ git clone https://github.com/g5ostXa/hyprarch2.git
 ```
 <br>
-
-> [!NOTE]
-> About hyprland migrating to lua...
-> - We are currently working on the transition, and the changes are done in `integrate-lua` branch.
-> - The config currently works in `integrate-lua` branch, but remains ioncomplete.
-> - We'll do our best to ship the new configuration as soon as possible.
 
 ## ⚙️ `Setup and installation`
 > [!WARNING]
