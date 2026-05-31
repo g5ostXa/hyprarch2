@@ -22,6 +22,12 @@ If you like my project, feel free to give it a ⭐ !
 ```
 <br>
 
+> [!NOTE]
+> About hyprland migrating to lua...
+> - We are currently working on the transition, and the changes are done in `integrate-lua` branch.
+> - The config currently works in `integrate-lua` branch, but remains ioncomplete.
+> - We'll do our best to ship the new configuration as soon as possible.
+
 ## ⚙️ `Setup and installation`
 > [!WARNING]
 > Before you begin... 
@@ -100,31 +106,36 @@ $ systemctl reboot
 <br>
 
 ## 🖥️ `Monitor(s)`
-To configure your monitor(s), you need to edit [`monitor.conf`](/dotfiles/hypr/conf/monitor.conf) \
+To configure your monitor(s), you need to edit [`monitor.conf`](/dotfiles/hypr/conf/monitor.lua) \
 Here's an example configuration:
-```md
-# -------------------------------------------------------------------------------------
-# Monitor Setup
-# -------------------------------------------------------------------------------------
+```lua
+--------------------
+----- Monitors -----
+--------------------
 
-# General:
-monitor=,preferred,auto,1
+hl.monitor({
+	output   = "",
+	mode     = "preferred",
+	position = "auto",
+	scale    = "1",
+})
 
-# Examples:
-# monitor=eDP-1,1920x1080@120.035,0x0,1
-# monitor=HDMI-A-1,2048x1080@60.00,auto,1
+-- Examples:
 
-# Virtual machine:
-# monitor=Virtual-1,2048x1080@60.00,0x0,1
+-- hl.monitor({
+--    	output    = "eDP-1",
+--    	mode      = "1920x1080@120.035",
+--    	position  = "2048x0",
+--    	scale     = "1",
+--})
 ```
 <br>
 
 Optionally, you can set your monitor(s) as env variables for extra compatibility. \
-Edit [`environment.conf`](/dotfiles/hypr/conf/environment.conf) and change the values of the following env variables to match your monitor(s):
-```md
-# Monitor(s)
-env = PRIMARY_MONITOR,<Monitor-1-name>
-env = SECONDARY_MONITOR,<Monitor-2-name>
+Edit [`environment.conf`](/dotfiles/hypr/conf/environment.lua) and change the values of the following env variables to match your monitor(s):
+```lua
+-- Monitor(s):
+hl.env("PRIMARY_MONITOR", "eDP-1")
 ```
 <br>
 
