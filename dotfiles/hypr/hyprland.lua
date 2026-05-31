@@ -13,17 +13,18 @@ require("conf.autostart")
 
 -- General:
 require("conf.environment")
--- require("conf.keyboard")
--- Load ~/.cache/wal/colors-hyprland.conf ?
--- require("conf.window")
--- require("conf.layouts")
+require("conf.keyboard")
+require("conf.window")
+require("conf.layouts")
 require("conf.misc")
--- require("conf.keybindings")
--- require("conf.windowrules")
--- require("conf.amimations")
+require("conf.keybindings")
+require("conf.windowrules")
+require("conf.animations-high")
 
 -- Virtual machine environment:
 -- require("conf.kvm")
 
 -- Environment for xdg-desktop-portal-hyprland:
--- Normally use exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+hl.on("hyprland.start", function()
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+end)
