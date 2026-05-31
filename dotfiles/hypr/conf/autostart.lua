@@ -19,6 +19,4 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("uwsm app -- awww-daemon --format argb")
     -- Wallpaper and waybar
     hl.exec_cmd("uwsm app -- waypaper --restore")
-    -- Startup notification
-    -- hl.exec_cmd("notify-send --urgency=normal "You are now logged in as $USER" --icon=user-identity")
 end)

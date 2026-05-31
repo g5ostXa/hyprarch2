@@ -14,8 +14,8 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 -- Monitor(s):
 hl.env("PRIMARY_MONITOR", "eDP-1")
-hl.env("SECONDARY_MONITOR", "HDMI-A-1")
-hl.env("VIRTUAL_MONITOR", "Virtual-1")
+-- hl.env("SECONDARY_MONITOR", "HDMI-A-1")
+-- hl.env("VIRTUAL_MONITOR", "Virtual-1")
 
 -- GTK:
 hl.env("GDK_SCALE", "1")

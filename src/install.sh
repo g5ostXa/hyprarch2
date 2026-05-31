@@ -177,6 +177,7 @@ check_depends() {
 		"btop"
 		"gum"
 		"figlet"
+		"lua"
 	)
 	while true; do
 		read -r -p ";; Install all required packages now? (y/n): " yn
