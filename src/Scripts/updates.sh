@@ -14,7 +14,7 @@ define_helper() {
 	elif command -v yay >/dev/null 2>&1; then
 		AUR_HELPER="yay"
 	elif command -v notify-send >/dev/null 2>&1; then
-		notify-send --urgency=critical "Neither paru or yay is installed..."
+		notify-send --urgency=critical "Neither paru nor yay is installed..."
 		exit 1
 	else
 		exit 1
