@@ -9,10 +9,10 @@ CURRENT_STATUS=$(hyprctl monitors -j | jq -r ".[] | select(.name==\"$PRIMARY_MON
 
 func_main() {
 	if [ "$CURRENT_STATUS" = "true" ]; then
-		hyprctl dispatch dpms off "$PRIMARY_MONITOR"
+		hyprctl dispatch 'hl.dsp.dpms({ action = "disable", output = "'"$PRIMARY_MONITOR"'" })'
 		notify-send --urgency=normal ":: DPMS turned OFF for $PRIMARY_MONITOR"
 	else
-		hyprctl dispatch dpms on "$PRIMARY_MONITOR"
+		hyprctl dispatch 'hl.dsp.dpms({ action = "enable", output = "'"$PRIMARY_MONITOR"'" })'
 		notify-send --urgency=normal ":: DPMS turned ON for $PRIMARY_MONITOR"
 	fi
 }
