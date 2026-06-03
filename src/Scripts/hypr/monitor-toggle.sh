@@ -3,7 +3,7 @@
 # // ==== monitor-toggle.sh ====
 
 # Script to toggle laptop monitor on and off
-# Monitor(s) are define in .config/hypr/conf/environment.lua
+# Monitor(s) are defined in .config/hypr/conf/environment.lua
 
 CURRENT_STATUS=$(hyprctl monitors -j | jq -r ".[] | select(.name==\"$PRIMARY_MONITOR\") | .dpmsStatus")
 
