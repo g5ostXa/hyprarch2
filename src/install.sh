@@ -144,6 +144,8 @@ check_depends() {
 		"ttf-fira-sans"
 		"ttf-fira-code"
 		"ttf-firacode-nerd"
+		"ttf-nerd-fonts-symbols"
+		"ttf-nerd-fonts-symbols-mono"
 		"ttf-jetbrains-mono-nerd"
 		"gnu-free-fonts"
 		"brightnessctl"
