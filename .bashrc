@@ -28,8 +28,8 @@ alias lumine="~/src/Scripts/lumineV3.sh"
 alias r4in="unimatrix -n -s 96 -l o"
 
 # // ===== General ======
-export PATH="$HOME/src:$HOME/.local/bin:$PATH"
-export HYPRARCH2_VERSION_FILE="$HOME/.version/latest"
+export PATH="$HOME/src:$HOME/.local/bin:$HOME/go/bin:$PATH"
+export HYPRARCH2_VERSION_FILE="$HOME/.config/hyprarch2/.version/latest"
 if [[ -f "$HYPRARCH2_VERSION_FILE" ]]; then
 	export HYPRARCH2_VERSION=$(cat "$HYPRARCH2_VERSION_FILE")
 else
@@ -40,8 +40,8 @@ eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
 
 if [[ $(tty) == *"pts"* ]]; then
-	if command -v cvndyfetch >/dev/null 2>&1; then
-		cvndyfetch
+	if [[ -f "$HOME/go/bin/cvndyfetch" ]]; then
+		"$HOME/go/bin/cvndyfetch" --title "hyprarch2" --version-file "$HOME/.config/hyprarch2/.version/latest"
 	else
 		echo -e "${MAGENTA}"
 		cat <<"EOF"
@@ -67,3 +67,4 @@ fi
 if uwsm check may-start && uwsm select; then
 	exec systemd-cat -t uwsm_start uwsm start default
 fi
+

@@ -25,9 +25,11 @@ else
 fi
 
 HYPRARCH2_TARGET="${HYPRARCH2_TARGET:-$HOME}"
+HYPRARCH2_CONFIG_DIR="$HYPRARCH2_TARGET/.config/hyprarch2"
 
 export HYPRARCH2_SOURCE
 export HYPRARCH2_TARGET
+export HYPRARCH2_CONFIG_DIR
 
 start_install() {
 	clear
@@ -232,9 +234,12 @@ src_copy() {
 	cp -a "$HYPRARCH2_SOURCE/src" "$HYPRARCH2_TARGET/src"
 	echo ";; DONE."
 
-	echo -e "${CYAN};; Copying .version/ ...${RC}"
-	backup_existing "$HYPRARCH2_TARGET/.version"
-	cp -a "$HYPRARCH2_SOURCE/.version" "$HYPRARCH2_TARGET/.version"
+	echo -e "${CYAN};; Setting up config directory ...${RC}"
+	mkdir -p "$HYPRARCH2_CONFIG_DIR"
+	if [[ -d "$HYPRARCH2_SOURCE/.version" ]]; then
+		backup_existing "$HYPRARCH2_CONFIG_DIR/.version"
+		cp -a "$HYPRARCH2_SOURCE/.version" "$HYPRARCH2_CONFIG_DIR/.version"
+	fi
 	echo ";; DONE."
 
 	echo -e "${CYAN};; Copying issue file ...${RC}"
@@ -329,12 +334,7 @@ create_symlinks() {
 get_cvndyfetch() {
 	local cvndy_src="https://github.com/g5ostXa/cvndyfetch.git"
 	local cvndy_cache="$HYPRARCH2_TARGET/.cache/cvndyfetch"
-	local cvndy_bin="$HYPRARCH2_TARGET/src/cvndyfetch"
 	local cvndy_build_bin="$cvndy_cache/cvndyfetch"
-	local -a build_flags=(
-		"-ldflags"
-		"-X main.mainTitle=hyprarch2 -X main.latestVersion=.version/latest"
-	)
 
 	while true; do
 		read -r -p ";; Install cvndyfetch for an elegant prompt header? (Optional) (Yy/Nn): " yn
@@ -350,7 +350,7 @@ get_cvndyfetch() {
 
 			echo -e "${YELLOW};; Cloning latest cvndyfetch ...${RC}"
 			rm -rf "$cvndy_cache"
-			mkdir -p "$(dirname "$cvndy_cache")" "$(dirname "$cvndy_bin")"
+			mkdir -p "$cvndy_cache"
 
 			if ! git clone --depth=1 "$cvndy_src" "$cvndy_cache"; then
 				echo -e "${YELLOW};; Could not clone cvndyfetch, skipping optional prompt header.${RC}"
@@ -358,10 +358,10 @@ get_cvndyfetch() {
 			fi
 
 			echo -e "${CYAN};; Building cvndyfetch ...${RC}"
-			if (cd "$cvndy_cache" && go build "${build_flags[@]}" -o "$cvndy_build_bin" .); then
-				backup_existing "$cvndy_bin"
-				install -Dm755 "$cvndy_build_bin" "$cvndy_bin"
-				echo -e "${CYAN};; cvndyfetch installed to $cvndy_bin.${RC}"
+			if (cd "$cvndy_cache" && go build -v -o "$cvndy_build_bin" .); then
+				mkdir -p "$HOME/go/bin"
+				install -Dm755 "$cvndy_build_bin" "$HOME/go/bin/cvndyfetch"
+				echo -e "${CYAN};; cvndyfetch installed to $HOME/go/bin/cvndyfetch.${RC}"
 			else
 				echo -e "${YELLOW};; Could not build cvndyfetch, keeping the existing prompt header if one is already installed.${RC}"
 			fi
