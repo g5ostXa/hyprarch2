@@ -332,9 +332,9 @@ create_symlinks() {
 # This is an optional extra for a better looking prompt header.
 # Visit https://github.com/g5ostXa/ghostshell for more info.
 get_ghostshell() {
-	local cvndy_src="https://github.com/g5ostXa/ghostshell.git"
-	local cvndy_cache="$HYPRARCH2_TARGET/.cache/ghostshell"
-	local cvndy_build_bin="$cvndy_cache/ghostshell"
+	local ghost_src="https://github.com/g5ostXa/ghostshell.git"
+	local ghost_cache="$HYPRARCH2_TARGET/.cache/ghostshell"
+	local ghost_build_bin="$ghost_cache/ghostshell"
 
 	while true; do
 		read -r -p ";; Install ghostshell for an elegant prompt header? (Optional) (Yy/Nn): " yn
@@ -349,18 +349,18 @@ get_ghostshell() {
 			fi
 
 			echo -e "${YELLOW};; Cloning latest ghostshell ...${RC}"
-			rm -rf "$cvndy_cache"
-			mkdir -p "$cvndy_cache"
+			rm -rf "$ghost_cache"
+			mkdir -p "$ghost_cache"
 
-			if ! git clone --depth=1 "$cvndy_src" "$cvndy_cache"; then
+			if ! git clone --depth=1 "$ghost_src" "$ghost_cache"; then
 				echo -e "${YELLOW};; Could not clone ghostshell, skipping optional prompt header.${RC}"
 				return
 			fi
 
 			echo -e "${CYAN};; Building ghostshell ...${RC}"
-			if (cd "$cvndy_cache" && go build -v -o "$cvndy_build_bin" .); then
+			if (cd "$ghost_cache" && go build -v -o "$ghost_build_bin" .); then
 				mkdir -p "$HOME/go/bin"
-				install -Dm755 "$cvndy_build_bin" "$HOME/go/bin/ghostshell"
+				install -Dm755 "$ghost_build_bin" "$HOME/go/bin/ghostshell"
 				echo -e "${CYAN};; ghostshell installed to $HOME/go/bin/ghostshell.${RC}"
 			else
 				echo -e "${YELLOW};; Could not build ghostshell, keeping the existing prompt header if one is already installed.${RC}"
