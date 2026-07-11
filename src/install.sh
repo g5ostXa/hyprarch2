@@ -390,7 +390,7 @@ func_main() {
 	src_copy
 	get_wallpaper
 	create_symlinks
-	get_cvndyfetch
+	# get_cvndyfetch
 }
 
 # Script entry point
