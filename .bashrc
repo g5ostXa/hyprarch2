@@ -40,8 +40,8 @@ eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
 
 if [[ $(tty) == *"pts"* ]]; then
-	if [[ -f "$HOME/go/bin/cvndyfetch" ]]; then
-		"$HOME/go/bin/cvndyfetch" --title "hyprarch2" --version-file "$HOME/.config/hyprarch2/.version/latest"
+	if [[ -f "$HOME/go/bin/ghostshell" ]]; then
+		"$HOME/go/bin/ghostshell" --title "hyprarch2" --version-file "$HOME/.config/hyprarch2/.version/latest"
 	else
 		echo -e "${MAGENTA}"
 		cat <<"EOF"
@@ -67,4 +67,3 @@ fi
 if uwsm check may-start && uwsm select; then
 	exec systemd-cat -t uwsm_start uwsm start default
 fi
-

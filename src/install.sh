@@ -330,45 +330,45 @@ create_symlinks() {
 }
 
 # This is an optional extra for a better looking prompt header.
-# Visit https://github.com/g5ostXa/cvndyfetch for more info.
-get_cvndyfetch() {
-	local cvndy_src="https://github.com/g5ostXa/cvndyfetch.git"
-	local cvndy_cache="$HYPRARCH2_TARGET/.cache/cvndyfetch"
-	local cvndy_build_bin="$cvndy_cache/cvndyfetch"
+# Visit https://github.com/g5ostXa/ghostshell for more info.
+get_ghostshell() {
+	local cvndy_src="https://github.com/g5ostXa/ghostshell.git"
+	local cvndy_cache="$HYPRARCH2_TARGET/.cache/ghostshell"
+	local cvndy_build_bin="$cvndy_cache/ghostshell"
 
 	while true; do
-		read -r -p ";; Install cvndyfetch for an elegant prompt header? (Optional) (Yy/Nn): " yn
+		read -r -p ";; Install ghostshell for an elegant prompt header? (Optional) (Yy/Nn): " yn
 		case $yn in
 		[Yy]*)
 			if ! command -v "go" >/dev/null 2>&1; then
-				echo -e "${YELLOW};; Go is required to build cvndyfetch.${RC}"
+				echo -e "${YELLOW};; Go is required to build ghostshell.${RC}"
 				if ! sudo pacman -S --needed --noconfirm go; then
-					echo -e "${YELLOW};; Could not install Go, skipping cvndyfetch.${RC}"
+					echo -e "${YELLOW};; Could not install Go, skipping ghostshell.${RC}"
 					return
 				fi
 			fi
 
-			echo -e "${YELLOW};; Cloning latest cvndyfetch ...${RC}"
+			echo -e "${YELLOW};; Cloning latest ghostshell ...${RC}"
 			rm -rf "$cvndy_cache"
 			mkdir -p "$cvndy_cache"
 
 			if ! git clone --depth=1 "$cvndy_src" "$cvndy_cache"; then
-				echo -e "${YELLOW};; Could not clone cvndyfetch, skipping optional prompt header.${RC}"
+				echo -e "${YELLOW};; Could not clone ghostshell, skipping optional prompt header.${RC}"
 				return
 			fi
 
-			echo -e "${CYAN};; Building cvndyfetch ...${RC}"
+			echo -e "${CYAN};; Building ghostshell ...${RC}"
 			if (cd "$cvndy_cache" && go build -v -o "$cvndy_build_bin" .); then
 				mkdir -p "$HOME/go/bin"
-				install -Dm755 "$cvndy_build_bin" "$HOME/go/bin/cvndyfetch"
-				echo -e "${CYAN};; cvndyfetch installed to $HOME/go/bin/cvndyfetch.${RC}"
+				install -Dm755 "$cvndy_build_bin" "$HOME/go/bin/ghostshell"
+				echo -e "${CYAN};; ghostshell installed to $HOME/go/bin/ghostshell.${RC}"
 			else
-				echo -e "${YELLOW};; Could not build cvndyfetch, keeping the existing prompt header if one is already installed.${RC}"
+				echo -e "${YELLOW};; Could not build ghostshell, keeping the existing prompt header if one is already installed.${RC}"
 			fi
 			break
 			;;
 		[Nn]*)
-			echo ";; Skipping cvndyfetch."
+			echo ";; Skipping ghostshell."
 			return
 			;;
 		*)
@@ -390,7 +390,7 @@ func_main() {
 	src_copy
 	get_wallpaper
 	create_symlinks
-	# get_cvndyfetch
+	get_ghostshell
 }
 
 # Script entry point
