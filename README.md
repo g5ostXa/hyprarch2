@@ -22,6 +22,18 @@ If you like my project, feel free to give it a ⭐ !
 ```
 <br>
 
+## 👻 `Sources`
+- [`g5ostXa/wallpaper`](https://github.com/g5ostXa/wallpaper)
+- [`g5ostXa/ghostshell`](https://github.com/g5ostXa/ghostshell)
+- [`Archwiki`](https://wiki.archlinux.org)
+
+## 💙 `Inspiration`
+Special thanks to these amazing people and their projects:
+- [`sejjy/mechabar`](https://github.com/sejjy/mechabar)
+- [`My Linux for Work`](https://github.com/mylinuxforwork/dotfiles)
+- [`eylles/pywal16`](https://github.com/eylles/pywal16)
+- [`vaxry/hyprland`](https://hypr.land)
+
 ## ⚙️ `Setup and installation`
 > [!WARNING]
 > Before you begin... 
