@@ -26,6 +26,7 @@ If you like my project, feel free to give it a ⭐ !
 - [`g5ostXa/wallpaper`](https://github.com/g5ostXa/wallpaper)
 - [`g5ostXa/ghostshell`](https://github.com/g5ostXa/ghostshell)
 - [`Archwiki`](https://wiki.archlinux.org)
+- [`hyprpm/hyprland`](https://github.com/hyprwm/Hyprland)
 
 ## 💙 `Inspiration`
 Special thanks to these amazing people and their projects:
