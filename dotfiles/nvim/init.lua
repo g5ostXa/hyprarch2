@@ -16,12 +16,6 @@ vim.opt.relativenumber = true
 -- Theme
 vim.cmd.colorscheme "tokyonight-night"
 
--- Set cursor back to "Beam" in terminal when exiting nvim
-vim.api.nvim_create_autocmd('VimLeave', {
-	pattern = '*',
-	command = 'set guicursor=a:ver25'
-})
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.lsp.config('*', { capabilities = capabilities })
 

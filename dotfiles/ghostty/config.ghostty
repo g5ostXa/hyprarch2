@@ -8,7 +8,7 @@ font-size = 15
 background-opacity = 0.85
 
 # Cursor:
-cursor-style = bar
+cursor-style = block
 cursor-style-blink = true 
 
 # Window:
