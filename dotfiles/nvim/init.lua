@@ -14,7 +14,7 @@ vim.cmd "Neotree"
 vim.opt.relativenumber = true
 
 -- Theme
-vim.cmd.colorscheme "tokyonight-night"
+vim.cmd.colorscheme "catppuccin-nvim"
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.lsp.config('*', { capabilities = capabilities })
