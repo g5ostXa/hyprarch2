@@ -13,7 +13,6 @@ hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("~/src/Scripts/waybar/launch.
 hl.bind(mainMod .. " + CTRL + C", hl.dsp.exec_cmd("~/src/Scripts/cliphist.sh"))
 hl.bind(mainMod .. " + CTRL + M", hl.dsp.exec_cmd("~/src/Scripts/hypr/killhypr.sh"))
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("~/src/Scripts/hypr/hypridle.sh"))
-hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("~/src/Scripts/hypr/monitor-toggle.sh"))
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("uwsm app -- " .. defaultTerm))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("uwsm app -- ~/src/Scripts/sandboxes/bwrap-nautilus.sh"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("uwsm app -- " .. defaultBrowser))
