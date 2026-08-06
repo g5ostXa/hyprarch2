@@ -1,45 +1,18 @@
 #!/usr/bin/env bash
 
-# // ======= start-hypr.sh =======
+function check_dependencies() {
 
-# Set exit on error
-set -euo pipefail
-
-# Check if figlet is installed and print banner
-is_installed_figlet() {
-	if ! command -v figlet >/dev/null 2>&1; then
-		clear
-		echo ""
-		echo "// ===== start-hypr.sh ====="
-		echo ""
-	else
-		clear
-		figlet -f smslant "start-hypr"
-		echo ""
-	fi
+	local -a commands=(
+		"uwsm"
+		"hyprland"
+	)
+	for depends in "${commands[@]}"; do
+		if ! command -v >/dev/null 2>&1; then
+			echo ":: Command not found: $depends"
+			exit 1
+		fi
+	done
 }
 
-# Check if gum is installed / exit if false
-is_installed_gum() {
-	if ! command -v gum >/dev/null 2>&1; then
-		echo "Gum is missing, use pacman -S gum to install the package..."
-		exit 1
-	fi
-}
-
-# Check if uwsm is installed
-is_installed_uwsm() {
-	if ! command -v uwsm >/dev/null 2>&1; then
-		echo "uwsm is missing, use pacman -S uwsm to install the package..."
-		exit 1
-	fi
-}
-
-# Script entry
-is_installed_figlet && is_installed_gum && is_installed_uwsm
-
-# Gum animation
-gum spin --spinner points --title "Launching hyprland..." --padding "2 2" --spinner.foreground "112" --title.foreground "10" -- sleep 3
-
-# Set defaults and launch hyprland
-uwsm select && uwsm start hyprland
+check_dependencies
+uwsm start hyprland
