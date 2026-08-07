@@ -28,7 +28,7 @@ func_main() {
 		echo -e "${CYAN}:: Select the brightness level for your laptop screen:${RC}"
 		echo ""
 
-		BRIGHTNESS_LEVEL=$(gum choose "0%" "10" "20%" "30%" "50%" "65%" "80%" "100%" "CANCEL")
+		BRIGHTNESS_LEVEL=$(gum choose "0%" "10%" "20%" "30%" "50%" "65%" "80%" "100%" "CANCEL")
 		DEVICE_NAME=$(brightnessctl --list | grep -oP "Device '\K[^']+" | head -n 1)
 
 		if [[ -n "$BRIGHTNESS_LEVEL" ]]; then
