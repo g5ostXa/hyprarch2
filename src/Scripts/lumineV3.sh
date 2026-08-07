@@ -9,6 +9,7 @@ SERVICE="brightnessctl"
 programName="lumineV3.sh"
 
 func_banner() {
+
 	clear && echo ""
 
 	echo -e "$CYAN"
@@ -22,6 +23,7 @@ EOF
 }
 
 func_main() {
+
 	if command -v "gum" >/dev/null 2>&1; then
 		echo -e "${CYAN}:: Select the brightness level for your laptop screen:${RC}"
 		echo ""
@@ -68,6 +70,7 @@ func_main() {
 }
 
 func_service() {
+
 	func_banner
 
 	if ! command -v "$SERVICE" >/dev/null 2>&1; then
